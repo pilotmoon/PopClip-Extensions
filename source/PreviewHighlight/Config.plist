@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Required Apps</key>
+	<array>
+		<string>com.apple.Preview</string>
+	</array>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Preview Highlight</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
+	<key>Requirements</key>
+	<array>
+		<string>copy</string>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Highlight</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>modifiers</key>
+				<integer>1310720</integer>
+				<key>keyChar</key>
+				<string>H</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

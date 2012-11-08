@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Sticky Notification</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.sticky-notifications</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Service Name</key>
+			<string>Make Sticky Notification</string>
+			<key>Image File</key>
+			<string>flagnote.png</string>
+			<key>Title</key>
+			<string>Sticky Notification</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,600}$</string>
+		</dict>
+	</array>
+</dict>
+</plist>

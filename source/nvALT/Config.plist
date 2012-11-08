@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>nvALT</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.nvalt</string>
+	<key>Extension Image File</key>
+	<string>nv.png</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>nv</string>
+			<key>Shell Script File</key>
+			<string>nvALT.sh</string>
+		</dict>
+	</array>
+</dict>
+</plist>

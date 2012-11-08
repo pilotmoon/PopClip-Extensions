@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Uppercase</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.uppercase</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>uppercase.png</string>
+			<key>Shell Script File</key>
+			<string>uppercase.rb</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/ruby</string>
+			<key>Title</key>
+			<string>ABC</string>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Paste and Enter</string>
+		<key>fr</key>
+		<string>Coller et valider</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.pasteandenter</string>
+	<key>Position</key>
+	<real>1.9</real>
+	<key>Requirements</key>
+	<array>
+		<string>paste</string>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.*$</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Paste + ↵</string>
+				<key>fr</key>
+				<string>Coller + ↵</string>
+				<key>de</key>
+				<string>Einsetzen + ↵</string>
+				<key>ru</key>
+				<string>Вставить + ↵</string>
+				<key>es</key>
+				<string>Pegar + ↵</string>
+				<key>ja</key>
+				<string>ペースト + ↵</string>
+			</dict>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyCode</key>
+				<integer>36</integer>
+				<key>modifiers</key>
+				<integer>0</integer>
+			</dict>
+			<key>Before</key>
+			<string>paste</string>
+		</dict>
+	</array>
+</dict>
+</plist>

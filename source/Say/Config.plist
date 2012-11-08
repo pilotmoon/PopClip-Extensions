@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<dict>
+		<key>fr</key>
+		<string>Lire</string>
+		<key>en</key>
+		<string>Say</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.say</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Shell Script File</key>
+			<string>say.sh</string>
+			<key>Image File</key>
+			<string>speechicon.png</string>
+			<key>Title</key>
+			<string>Say</string>
+		</dict>
+	</array>
+</dict>
+</plist>

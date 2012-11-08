@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Character Count</string>
+		<key>fr</key>
+		<string>Nombre de caractères</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.charcount</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Position</key>
+			<real>3.1</real>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>{popclip charcount} Characters</string>
+				<key>fr</key>
+				<string>{popclip charcount} Caractères</string>
+			</dict>
+			<key>Regular Expression</key>
+			<string>...</string>
+		</dict>
+	</array>
+</dict>
+</plist>

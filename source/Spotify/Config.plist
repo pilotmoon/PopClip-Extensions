@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Spotify Search</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>sify.png</string>
+			<key>Shell Script File</key>
+			<string>spotify.sh</string>
+			<key>Title</key>
+			<string>Spotify Search</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
+		</dict>
+	</array>
+</dict>
+</plist>
