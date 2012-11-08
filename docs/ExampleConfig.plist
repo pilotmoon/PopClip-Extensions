@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Example</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.example</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Shell Script File</key>
+			<string>example.sh</string>
+			<key>Image File</key>
+			<string>example.png</string>
+			<key>Title</key>
+			<string>Example</string>
+		</dict>
+	</array>
+</dict>
+</plist>

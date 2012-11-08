@@ -4,7 +4,7 @@
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). Extensions are published on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
 
-![Screenshot showing extensions in use.](extpic.png)
+![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic.png)
 
 ## Disclaimer
 
@@ -16,7 +16,7 @@ I reserve the right to change or remove features in future versions of PopClip a
 
 By default, PopClip will display a warning dialog when you try to install your own extension, because it is not digitally signed by Pilotmoon Software.
 
-![Example unsigned warning.](ext_warning.png)
+![Example unsigned warning.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ext_warning.png)
 
 If you find this gets annoying while you are testing your work, you can turn off the warning. Run the following command at the Terminal, then Quit and restart PopClip:
 
@@ -73,9 +73,9 @@ Here is an example package structure, using the 'Say' extension:
        speechicon.png               -- Icon file
 
 ### The Config.plist
-Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](ExampleConfig.plist). Here is an example of the plist for 'Say', as viewed in Xcode:
+Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Here is an example of the plist for 'Say', as viewed in Xcode:
 
-![Example plist, for 'Say'.](sayplist.png)
+![Example plist, for 'Say'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/sayplist.png)
 
 ### Icons
 Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window.  Icons may be created in any graphics program. (I use [Pixelmator](http://www.pixelmator.com/).)  The icon should:
@@ -87,7 +87,7 @@ Extensions may include icons to represent actions. The icon is displayed in the 
 
 Here is the icon file for 'Say':
 
-![The 'Say' icon (256x256 PNG file)](../images/speechicon.png)
+![The 'Say' icon (256x256 PNG file)](https://raw.github.com/pilotmoon/PopClip-Extensions/master/source/Say/speechicon.png)
 
 ## Configuration Details
 
@@ -102,7 +102,7 @@ The `Config.plist` file has the following structure.
 |---|----|---------|-----------|
 |`Version`|Number|Required|Must be the number `2`.|
 |`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. I recommend you use your own prefix, ideally a reverse DNS-style domain name based prefix. For example `com.my-domain-name.my-extension-identifier`.|
-|`Extension Name`|String OR Dictionary| Required | ![Display names in use.](names.png)<br>This is a display name that appears in the preferences list of extensions.  If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. |
+|`Extension Name`|String OR Dictionary| Required | ![Display names in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/names.png)<br>This is a display name that appears in the preferences list of extensions.  If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. |
 |`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
 |`Blocked Apps`|Array|Optional|Array of bundle identifier strings (e.g. `com.apple.TextEdit`) of applications for which this extension's actions should not appear.|
 |`Required Apps`|Array|Optional|Array of bundle identifier strings of applications required for this extension's actions to appear. |
