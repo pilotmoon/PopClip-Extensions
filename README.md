@@ -6,11 +6,12 @@ PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip).
 
 ![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic.png)
 
-This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Laut of the repo:
+This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Layout of the repo:
 
     docs/                 -- Image files and resources referred to in this README file.
-    extensions/           -- Distributable versions of the extensions (zipped, with `.popclipext` extension)
-    source/               -- Source files for the extensions. The directories are left without the .popclipext extension, for easier editing.
+    extensions/           -- Distributable versions of the extensions (zipped, with `.popclipextz` extension)
+    source/               -- Source files for the extensions. The directories are left without the `.popclipext`
+                             extension, for easier editing.
     README.md             -- This repository contains the documentation for making your own extensions
     LICENSE               -- MIT License text.
 
