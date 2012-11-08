@@ -2,9 +2,19 @@
 
 ## Introduction
 
-PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). Extensions are published on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
+PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
 
 ![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic.png)
+
+This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Laut of the repo:
+
+    docs/                 -- Image files and resources referred to in this README file.
+    extensions/           -- Distributable versions of the extensions (zipped, with `.popclipext` extension)
+    source/               -- Source files for the extensions. The directories are left without the .popclipext extension, for easier editing.
+    README.md             -- This repository contains the documentation for making your own extensions
+    LICENSE               -- MIT License text.
+
+The extension source files are published under the MIT License (see LICENSE).
 
 ## Disclaimer
 
@@ -132,9 +142,6 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Position`|Number|Optional|As above; this value overrides the value specified in the extension header.|
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
-
-
-
 ## Additional Notes
 
 ### Example AppleScript File
@@ -175,7 +182,3 @@ Key presses should be expressed as a dictionary with the following keys:
 |`modifiers`|Number|Required|Bitmask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers.
 
 Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
-
----
-Nick
-[nick@pilotmoon.com](mailto:nick@pilotmoon.com)
