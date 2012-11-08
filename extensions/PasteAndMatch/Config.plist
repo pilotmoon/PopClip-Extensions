@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Paste =</string>
+		<key>fr</key>
+		<string>Coller =</string>
+		<key>ja</key>
+		<string>ペースト =</string>
+		<key>de</key>
+		<string>Einsetzen =</string>
+		<key>it</key>
+		<string>Incolla =</string>
+		<key>es</key>
+		<string>Pegar =</string>
+		<key>ru</key>
+		<string>Вставить =</string>
+		<key>nl</key>
+		<string>Plak =</string>
+		<key>nb</key>
+		<string>Lim inn =</string>
+		<key>ar</key>
+		<string>لصق =</string>
+		<key>zh-Hant</key>
+		<string>貼上 =</string>
+		<key>zh-Hans</key>
+		<string>粘贴 =</string>
+		<key>ko</key>
+		<string>붙이기 =</string>
+		<key>ro</key>
+		<string>Lipește =</string>
+		<key>sv</key>
+		<string>Klistra in =</string>
+		<key>fi</key>
+		<string>Sijoita =</string>
+		<key>da</key>
+		<string>Sæt ind =</string>
+		<key>tr</key>
+		<string>Yapıştır =</string>
+		<key>el</key>
+		<string>Επικόλληση =</string>
+		<key>th</key>
+		<string>วาง =</string>
+		<key>pl</key>
+		<string>Wklej =</string>
+		<key>hu</key>
+		<string>Beillesztés =</string>
+		<key>sk</key>
+		<string>Vložiť =</string>
+		<key>he</key>
+		<string> =הדבק</string>
+		<key>cs</key>
+		<string>Vložit =</string>
+		<key>ca</key>
+		<string>Enganxar =</string>
+		<key>hr</key>
+		<string>Zalijepi =</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.pasteplain</string>
+	<key>Position</key>
+	<real>1.91</real>
+	<key>Requirements</key>
+	<array>
+		<string>paste</string>
+		<string>formatting</string>
+		<string>formatted-text</string>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Paste =</string>
+				<key>fr</key>
+				<string>Coller =</string>
+				<key>ja</key>
+				<string>ペースト =</string>
+				<key>de</key>
+				<string>Einsetzen =</string>
+				<key>it</key>
+				<string>Incolla =</string>
+				<key>es</key>
+				<string>Pegar =</string>
+				<key>ru</key>
+				<string>Вставить =</string>
+				<key>nl</key>
+				<string>Plak =</string>
+				<key>nb</key>
+				<string>Lim inn =</string>
+				<key>ar</key>
+				<string>لصق =</string>
+				<key>zh-Hant</key>
+				<string>貼上 =</string>
+				<key>zh-Hans</key>
+				<string>粘贴 =</string>
+				<key>ko</key>
+				<string>붙이기 =</string>
+				<key>ro</key>
+				<string>Lipește =</string>
+				<key>sv</key>
+				<string>Klistra in =</string>
+				<key>fi</key>
+				<string>Sijoita =</string>
+				<key>da</key>
+				<string>Sæt ind =</string>
+				<key>tr</key>
+				<string>Yapıştır =</string>
+				<key>el</key>
+				<string>Επικόλληση =</string>
+				<key>th</key>
+				<string>วาง =</string>
+				<key>pl</key>
+				<string>Wklej =</string>
+				<key>hu</key>
+				<string>Beillesztés =</string>
+				<key>sk</key>
+				<string>Vložiť =</string>
+				<key>he</key>
+				<string> =הדבק</string>
+				<key>cs</key>
+				<string>Vložit =</string>
+				<key>ca</key>
+				<string>Enganxar =</string>
+				<key>hr</key>
+				<string>Zalijepi =</string>
+			</dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.*$</string>
+			<key>Shell Script File</key>
+			<string>null.sh</string>
+			<key>Before</key>
+			<string>paste-plain</string>
+		</dict>
+	</array>
+</dict>
+</plist>

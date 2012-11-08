@@ -176,5 +176,6 @@ Key presses should be expressed as a dictionary with the following keys:
 
 Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
 
--- Nick
+---
+Nick
 [nick@pilotmoon.com](mailto:nick@pilotmoon.com)
