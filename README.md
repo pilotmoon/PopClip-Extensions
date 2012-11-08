@@ -28,7 +28,7 @@ All the extensions and documentation were created by Nick Moore except where sta
 
 If you'd like to contribute extensions, the best way is to fork this repository to your own account and add your new extension in there. Then send me a pull request. I recommend adding a readme file in your extension directory, giving yourself credit. I'll assume you are happy for me to publish your contributions on the main PopClip extensions page.
 
-### Third Party Repos
+## Other Repos
 
 Andy Guzman is maintaining a set of [Markdown Extensions for PopClip](https://github.com/andyguzman/PopClippins) and [Lucifr](https://github.com/lucifr/PopClip-Extensions) has published a collection too.
 
