@@ -2,7 +2,7 @@
 
 ## Introduction
 
-PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). The main repository of extensions can be found on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Extensions support was introduced in PopClip v1.4.
+PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). Extensions are published on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
 
 ![Screenshot showing extensions in use.](extpic.png)
 
@@ -175,3 +175,6 @@ Key presses should be expressed as a dictionary with the following keys:
 |`modifiers`|Number|Required|Bitmask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers.
 
 Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
+
+-- Nick
+[nick@pilotmoon.com](mailto:nick@pilotmoon.com)
