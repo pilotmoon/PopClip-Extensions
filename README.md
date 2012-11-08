@@ -32,11 +32,11 @@ There are five main kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|Service|Invoke a Mac OS X Service, passing the selected text.| [MakeSticky.popclipextz](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/MakeSticky.popclipextz)| 
-|AppleScript|Run an AppleScript, with the selected text embedded.|[Evernote.popclipextz](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/Evernote.popclipextz)|
-|Shell Script|Run a shell script, with the selected text passed as an environment variable.| [Say.popclipextz](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/Say.popclipextz)
-|URL|Open an HTTP URL, with the selected text URL-encoded and inserted.|[GoogleTranslate.popclipextz](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/GoogleTranslate.popclipextz)|
-|Keypress|Press a key combination.| [Delete.popclipextz](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/Delete.popclipextz)|
+|Service|Invoke a Mac OS X Service, passing the selected text.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)| 
+|AppleScript|Run an AppleScript, with the selected text embedded.|[Evernote](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Evernote)|
+|Shell Script|Run a shell script, with the selected text passed as an environment variable.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
+|URL|Open an HTTP URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
+|Keypress|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
 
 
 ### Filtering
@@ -158,7 +158,7 @@ Here is an example of a Ruby script that could be used in a shell script extensi
     # make the text ALL CAPS
     print input.upcase 
 
-See also the [Uppercase.popclipext](https://raw.github.com/pilotmoon/PopClip-Extensions/master/extensions/Uppercase.popclipextz) extension on for a working example. 
+See also the [Uppercase](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Uppercase) extension on for a working example. 
 
 Important notes on using`paste-result`:
 
