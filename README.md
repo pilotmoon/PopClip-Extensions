@@ -21,6 +21,10 @@ The extension source files are published under the MIT License (see LICENSE).
 
 Documentation and extensions were created by Nick Moore except where stated. Contributor credits are are shown in the readme file of each individual extension. 
 
+## Third Party Repos
+
+Andy Guzman is maintaining a set of [Markdown Extensions for PopClip](https://github.com/andyguzman/PopClippins) and [Lucifr](https://github.com/lucifr/PopClip-Extensions) has published a collection too.
+
 ## Disclaimer
 
 These instructions are desiged to help a technically competent person to create their own PopClip extension. Please note that user-created extensions are not an officially supported part of PopClip. You need to be comfortable with creating and editing plist files, scripts, and so on. 
