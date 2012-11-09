@@ -13,7 +13,7 @@
 			<string>Say</string>
 		</dict>
 	</array>
-	<key>Description</key>
+	<key>Extension Description</key>
 	<string>Speak the selected text aloud, using the system default voice. To change the voice, go to "Speech" in System Preferences.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.say</string>

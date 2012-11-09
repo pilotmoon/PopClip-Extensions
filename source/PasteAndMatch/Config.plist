@@ -70,10 +70,12 @@
 			</dict>
 		</dict>
 	</array>
-	<key>Description</key>
+	<key>Extension Description</key>
 	<string>Paste as plain text only, without formatting. This option appears as "Paste =" in PopClip. (Shown only when the text area supports formatted text.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pasteplain</string>
+	<key>Extension Long Name</key>
+	<string>Paste and Match Style</string>
 	<key>Extension Name</key>
 	<dict>
 		<key>ar</key>
