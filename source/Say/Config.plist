@@ -2,27 +2,29 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<dict>
-		<key>fr</key>
-		<string>Lire</string>
-		<key>en</key>
-		<string>Say</string>
-	</dict>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.say</string>
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Shell Script File</key>
-			<string>say.sh</string>
 			<key>Image File</key>
 			<string>speechicon.png</string>
+			<key>Shell Script File</key>
+			<string>say.sh</string>
 			<key>Title</key>
 			<string>Say</string>
 		</dict>
 	</array>
+	<key>Description</key>
+	<string>Speak the selected text aloud, using the system default voice. To change the voice, go to "Speech" in System Preferences.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.say</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Say</string>
+		<key>fr</key>
+		<string>Lire</string>
+	</dict>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>

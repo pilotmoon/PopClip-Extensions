@@ -136,7 +136,11 @@ The `Config.plist` file has the following structure.
 |`Requirements`|Array|Optional|Array consisting of one or more of the following strings:<br>`copy`: require Copy to be available<br> `cut`: require Cut to be available<br>`paste`: require Paste to be available<br>`formatting`: Require the text to be in a text field with formatting ability (bold, italic etc.). Note: experimental - might not be reliable.<br>`httpurl`: require the text to contain exactly one HTTP URL; only the matching part will be passed to the action<br>`email`: require the text to contain exactly one email address ; only the matching part will be passed to the action <br>`path`: require the text to contain exactly one local file path; only the matching part will be passed to the action <br> If this field is ommitted, the default is `copy`.|
 |`Position`|Number|Optional|A number specifying where in the popup the action will appear relative to other actions. Fractional values are permitted and actions are sorted in numerical order left to right. The built in actions have the following fixed positions, which you should not use: *Open Link & Search*: `0.5`, *Cut, Copy & Paste*: `1.5`, *Dictionary, Email and Reveal in Finder*: `2.5`. The default is `3`, to appear on the right. Actions with the same position number appear in the order they were installed.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
-|`Actions`|Array|Required|Array of dictionaries defining the actions for this extension (see below).|
+|`Description`|String OR Dictionary|Optional|A short, human readable description of this extension.|
+|`Creators`|Array|Optional|Information about the creator(s) of the extension. See [Creator Dictionary](#creator-dictionary).|
+|`Apps`|Array|Optional|Information about the app(s) this extension works with. See [App Dictionary](#apps-dictionary).|
+|`OS Version`|String|Optional|Version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
+|`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 
 ### Action Dictionary
 Each action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified.
@@ -157,6 +161,22 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
 |`Position`|Number|Optional|As above; this value overrides the value specified in the extension header.|
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
+
+
+### Creator Dictionary
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`Name`|String|Optional|Name or identifier of whoever created the extension. For example `John Smith`.|
+|`Link`|String|Optional|A link to the creator's website or other URL. For example `http://johnsmith.com`|
+
+### App Dictionary
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`Name`|String|Optional|Name of an app which this extension interacts with. For exaple `Evernote` for an Evernote extension.|
+|`Link`|String|Optional|Link to a website where the user can get the app referred to in `App Name`. For example `http://evernote.com`.|
+
 
 ## Additional Notes
 
