@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>PasteAndMatch</string>
+			<string>PasteAndEnter</string>
+		</array>
+		<key>Title</key>
+		<string>Text Operations</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Say</string>
+		</array>
+		<key>Title</key>
+		<string>Miscellaneous</string>
+	</dict>
+</array>
+</plist>
