@@ -8,6 +8,7 @@
 			<string>PasteAndMatch</string>
 			<string>PasteAndEnter</string>
 			<string>Capitalize</string>
+			<string>Uppercase</string>
 		</array>
 		<key>Title</key>
 		<string>Text Operations</string>
