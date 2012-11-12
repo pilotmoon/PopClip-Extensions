@@ -138,8 +138,8 @@ The `Config.plist` file has the following structure.
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Extension Description`|String OR Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
-|`Creators`|Array|Optional|Information about the creator(s) of the extension. See [Creator Dictionary](#creator-dictionary).|
-|`Apps`|Array|Optional|Information about the app(s) this extension works with. See [App Dictionary](#apps-dictionary).|
+|`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
+|`Apps`|Array|Optional|Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
 |`OS Version`|String|Optional|Version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 
@@ -164,14 +164,14 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
 
-### Creator Dictionary
+### Credits Dictionary
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Name`|String|Optional|Name or identifier of whoever created the extension. For example `John Smith`.|
-|`Link`|String|Optional|A link to the creator's website or other URL. For example `http://johnsmith.com`|
+|`Name`|String|Optional|Name or identifier of the contributor. For example `John Smith`.|
+|`Link`|String|Optional|A link to the contributor's website or other URL. For example `http://johnsmith.com`|
 
-### App Dictionary
+### Apps Dictionary
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|

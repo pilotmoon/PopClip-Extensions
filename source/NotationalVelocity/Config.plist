@@ -2,22 +2,41 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Extension Image File</key>
-	<string>nv.png</string>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<string>Notational Velocity</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.notational-velocity</string>
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Title</key>
-			<string>nv</string>
 			<key>Shell Script File</key>
 			<string>nv.sh</string>
+			<key>Title</key>
+			<string>nv</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://notational.net/
+</string>
+			<key>Name</key>
+			<string>Notational Velocity</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Marc Abramowitz</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a note in Notational Velocity.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.notational-velocity</string>
+	<key>Extension Image File</key>
+	<string>nv.png</string>
+	<key>Extension Name</key>
+	<string>Notational Velocity</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>
