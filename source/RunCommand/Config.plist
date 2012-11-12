@@ -2,14 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.rtc</string>
-	<key>Extension Name</key>
-	<string>Run Command</string>
-	<key>Extension Image File</key>
-	<string>RTC.png</string>
 	<key>Actions</key>
 	<array>
 		<dict>
@@ -21,5 +13,24 @@
 			<string>RTC</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://twitter.com/smithjw/status/244757999665700864</string>
+			<key>Name</key>
+			<string>James Swift</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Run the selected text as a Terminal command. (Be careful!)</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.rtc</string>
+	<key>Extension Image File</key>
+	<string>RTC.png</string>
+	<key>Extension Name</key>
+	<string>Run Command</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>

@@ -33,6 +33,7 @@
 		<key>Members</key>
 		<array>
 			<string>Say</string>
+			<string>RunCommand</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
