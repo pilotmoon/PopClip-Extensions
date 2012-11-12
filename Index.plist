@@ -9,9 +9,22 @@
 			<string>PasteAndEnter</string>
 			<string>Capitalize</string>
 			<string>Uppercase</string>
+			<string>Lowercase</string>
+			<string>Formatting</string>
+			<string>Delete</string>
 		</array>
 		<key>Title</key>
 		<string>Text Operations</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Notes</string>
+			<string>Reminders</string>
+			<string>Stickies</string>
+		</array>
+		<key>Title</key>
+		<string>Notes and To-Do Apps</string>
 	</dict>
 	<dict>
 		<key>Members</key>

@@ -11,6 +11,8 @@
 		<key>fr</key>
 		<string>Supprimer</string>
 	</dict>
+	<key>Extension Description</key>
+	<string>Delete the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.delete</string>
 	<key>Extension Image File</key>

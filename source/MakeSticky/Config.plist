@@ -6,6 +6,8 @@
 	<integer>2</integer>
 	<key>Extension Name</key>
 	<string>Make Sticky</string>
+	<key>Extension Description</key>
+	<string>Make a new Stickies note with the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.make-sticky</string>
 	<key>Actions</key>

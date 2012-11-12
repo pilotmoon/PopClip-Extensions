@@ -22,7 +22,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make the selected text all uppercase. (Shown only when text can be edited.)</string>
+	<string>Make the selected text all uppercase.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.uppercase</string>
 	<key>Extension Name</key>

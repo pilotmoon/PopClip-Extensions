@@ -22,7 +22,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make each selected word start with a capital letter, with other letters lowercase. (Shown only when text can be edited.)</string>
+	<string>Make each selected word start with a capital letter, with other letters lowercase.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.capitalize</string>
 	<key>Extension Name</key>

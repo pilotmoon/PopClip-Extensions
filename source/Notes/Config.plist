@@ -4,6 +4,8 @@
 <dict>
 	<key>Version</key>
 	<integer>2</integer>
+	<key>Extension Description</key>
+	<string>Make a new note in the Notes app. (The note is added in the first folder in the first account).</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.notes</string>
 	<key>Extension Name</key>

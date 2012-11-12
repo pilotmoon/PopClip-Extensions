@@ -4,6 +4,8 @@
 <dict>
 	<key>Version</key>
 	<integer>2</integer>
+	<key>Extension Description</key>
+	<string>Make text bold, italic and underline.</string>
 	<key>Extension Name</key>
 	<string>Formatting</string>
 	<key>Extension Identifier</key>

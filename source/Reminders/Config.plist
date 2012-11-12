@@ -4,6 +4,8 @@
 <dict>
 	<key>Version</key>
 	<integer>2</integer>
+	<key>Extension Description</key>
+	<string>Add a new reminder to the Reminders app. (The reminder is added to the first list in the first account.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.reminders</string>
 	<key>Extension Name</key>
