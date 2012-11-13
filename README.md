@@ -140,7 +140,7 @@ The `Config.plist` file has the following structure.
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
 |`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
 |`Apps`|Array|Optional|Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
-|`OS Version`|String|Optional|Version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
+|`Minimum OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 
 ### Action Dictionary

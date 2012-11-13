@@ -10,6 +10,8 @@
 	<string>com.pilotmoon.popclip.extension.notes</string>
 	<key>Extension Name</key>
 	<string>Notes</string>
+	<key>Minimum OS Version</key>
+	<string>10.8</string>
 	<key>Actions</key>
 	<array>
 		<dict>
