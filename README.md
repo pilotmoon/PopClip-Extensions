@@ -101,7 +101,8 @@ Here is an example package structure, using the 'Say' extension:
        speechicon.png               -- Icon file
 
 ### The Config.plist
-Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Here is an example of the plist for 'Say', as viewed in Xcode:
+Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as the excellent [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
+). Here is an example of the plist for 'Say', as viewed in Xcode:
 
 ![Example plist, for 'Say'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/sayplist.png)
 
