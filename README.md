@@ -176,8 +176,8 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Name`|String|Optional|Name of an app which this extension interacts with. For exaple `Evernote` for an Evernote extension.|
-|`Link`|String|Optional|Link to a website where the user can get the app referred to in `App Name`. For example `http://evernote.com`.|
-|`Bundle Identifier`|String|Optional|Bundle identifier of the application. For example `com.omnigroup.OmniFocus`.|
+|`Link`|String|Optional|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
+|`Bundle Identifier`|String|Optional|Bundle identifier of the application. For example `com.evernote.Evernote`.|
 
 ## Additional Notes
 

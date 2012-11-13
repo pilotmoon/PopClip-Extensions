@@ -21,6 +21,8 @@
 </string>
 			<key>Name</key>
 			<string>Evernote</string>
+			<key>Bundle Identifier</key>
+			<string>com.evernote.Evernote</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
