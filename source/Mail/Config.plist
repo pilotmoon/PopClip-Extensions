@@ -2,22 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<string>Mail</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.mail</string>
-	<key>Extension Description</key>
-	<string>Create a new message in Mail.</string>
-	<key>Apps</key>
-	<key>Credits</key>
-	<array>
-		<dict>
-			<key>Name</key>
-			<string>Michael Bates</string>
-		</dict>
-	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
@@ -29,5 +13,20 @@
 			<string>Mail</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Michael Bates</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new message in Mail.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.mail</string>
+	<key>Extension Name</key>
+	<string>Mail</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>
