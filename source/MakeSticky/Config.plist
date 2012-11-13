@@ -10,6 +10,8 @@
 	<string>Make a new Stickies note with the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.make-sticky</string>
+	<key>Minimum OS Version</key>
+	<string>10.7</string>
 	<key>Actions</key>
 	<array>
 		<dict>

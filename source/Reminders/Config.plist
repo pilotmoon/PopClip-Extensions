@@ -10,6 +10,8 @@
 	<string>com.pilotmoon.popclip.extension.reminders</string>
 	<key>Extension Name</key>
 	<string>Reminders</string>
+	<key>Minimum OS Version</key>
+	<string>10.8</string>
 	<key>Actions</key>
 	<array>
 		<dict>
