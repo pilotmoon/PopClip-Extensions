@@ -79,6 +79,7 @@
 			<string>Dash</string>
 			<string>RunCommand</string>
 			<string>Leech</string>
+			<string>PreviewHighlight</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
