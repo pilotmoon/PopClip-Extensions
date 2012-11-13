@@ -64,8 +64,8 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Word Count</string>
-			<string>Character Count</string>
+			<string>WordCount</string>
+			<string>CharCount</string>
 			<string>Say</string>
 			<string>Open in Chrome</string>
 			<string>Dash</string>
