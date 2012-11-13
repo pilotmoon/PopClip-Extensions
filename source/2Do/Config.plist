@@ -25,7 +25,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new to-do using 2Do.</string>
+	<string>Create a new to-do in 2Do.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.2do</string>
 	<key>Extension Name</key>
