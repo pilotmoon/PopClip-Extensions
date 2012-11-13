@@ -40,7 +40,7 @@
 		</array>
 		<key>Title</key>
 		<string>Mail</string>
-	</dict>	
+	</dict>
 	<dict>
 		<key>Members</key>
 		<array>
@@ -50,7 +50,7 @@
 		</array>
 		<key>Title</key>
 		<string>Twitter</string>
-	</dict>	
+	</dict>
 	<dict>
 		<key>Members</key>
 		<array>
@@ -60,7 +60,7 @@
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
-	</dict>	
+	</dict>
 	<dict>
 		<key>Members</key>
 		<array>
@@ -70,6 +70,7 @@
 			<string>OpenInChrome</string>
 			<string>Dash</string>
 			<string>RunCommand</string>
+			<string>Leech</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
