@@ -21,5 +21,7 @@
 	<string>YouTube</string>
 	<key>Version</key>
 	<integer>2</integer>
+	<key>Extension Description</key>
+	<string>Search for videos on YouTube.</string>
 </dict>
 </plist>

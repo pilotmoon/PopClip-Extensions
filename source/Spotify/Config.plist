@@ -8,6 +8,19 @@
 	<string>Spotify Search</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<key>Extension Description</key>
+	<string>Search for music on Spotify.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.spotify.com/</string>
+			<key>Name</key>
+			<string>Spotify</string>
+			<key>Bundle Identifier</key>
+			<string>com.spotify.client</string>
+		</dict>
+	</array>
 	<key>Actions</key>
 	<array>
 		<dict>

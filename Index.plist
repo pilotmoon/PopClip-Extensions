@@ -54,7 +54,21 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>YouTube</string>
+			<string>Spotify</string>
+			<string>ImFeelingLucky</string>
+		</array>
+		<key>Title</key>
+		<string>Searches</string>
+	</dict>	
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Word Count</string>
+			<string>Character Count</string>
 			<string>Say</string>
+			<string>Open in Chrome</string>
+			<string>Dash</string>
 			<string>RunCommand</string>
 		</array>
 		<key>Title</key>

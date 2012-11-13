@@ -21,5 +21,17 @@
 	<string>I&apos;m Feeling Lucky</string>
 	<key>Version</key>
 	<integer>2</integer>
+	<key>Extension Description</key>
+	<string>Google "I'm Feeling Lucky" search.</string>
+	<key>Apps</key>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Lucifr</string>
+			<key>Link</key>
+			<string>http://lucifr.com/2012/09/06/im-feeling-lucky-popclip-extension/</string>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -8,6 +8,19 @@
 	<string>Dash</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.dash</string>
+	<key>Extension Description</key>
+	<string>Search developer documentation using Dash.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://itunes.apple.com/app/dash-docs-snippets/id458034879</string>
+			<key>Name</key>
+			<string>Dash</string>
+			<key>Bundle Identifier</key>
+			<string>com.kapeli.dash</string>
+		</dict>
+	</array>
 	<key>Actions</key>
 	<array>
 		<dict>

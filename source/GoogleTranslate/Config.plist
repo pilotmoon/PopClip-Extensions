@@ -8,6 +8,8 @@
 	<string>Google Translate</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.google-translate</string>
+	<key>Extension Description</key>
+	<string>Open Google Translate in a web browser with the selected text.</string>
 	<key>Actions</key>
 	<array>
 		<dict>

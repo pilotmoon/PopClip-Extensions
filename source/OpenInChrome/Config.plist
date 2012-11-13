@@ -27,5 +27,18 @@
 			</array>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Open the link in Google Chrome (for when you absolutely, positively need Flash). (Only shown when a web link is selected.)</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>>http://www.google.com/chrome</string>
+			<key>Name</key>
+			<string>Google Chrome</string>
+			<key>Bundle Identifier</key>
+			<string>com.google.Chrome</string>
+		</dict>
+	</array>
 </dict>
 </plist>
