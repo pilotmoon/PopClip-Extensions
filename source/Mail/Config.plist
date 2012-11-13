@@ -8,6 +8,16 @@
 	<string>Mail</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.mail</string>
+	<key>Extension Description</key>
+	<string>Create a new message in Mail.</string>
+	<key>Apps</key>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Michael Bates</string>
+		</dict>
+	</array>
 	<key>Actions</key>
 	<array>
 		<dict>

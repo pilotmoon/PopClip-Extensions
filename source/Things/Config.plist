@@ -7,6 +7,19 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.things</string>
 	<key>Extension Name</key>
+	<key>Extension Description</key>
+	<string>Create a new to-do in Things.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://culturedcode.com/things/</string>
+			<key>Name</key>
+			<string>Things</string>
+			<key>Bundle Identifier</key>
+			<string>com.culturedcode.things</string>
+		</dict>
+	</array>
 	<string>Things</string>
 	<key>Actions</key>
 	<array>

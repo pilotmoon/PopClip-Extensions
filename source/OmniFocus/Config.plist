@@ -8,6 +8,26 @@
 	<string>com.pilotmoon.popclip.extension.omnifocus</string>
 	<key>Extension Name</key>
 	<string>OmniFocus</string>
+	<key>Extension Description</key>
+	<string>Create a new task in OmniFocus.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.omnigroup.com/products/omnifocus/</string>
+			<key>Name</key>
+			<string>OmniFocus</string>
+			<key>Bundle Identifier</key>
+			<string>com.omnigroup.OmniFocus</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Marc Abramowitz</string>
+		</dict>
+	</array>
 	<key>Actions</key>
 	<array>
 		<dict>

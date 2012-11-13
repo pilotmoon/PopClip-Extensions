@@ -27,12 +27,6 @@
 			<key>Name</key>
 			<string>Marc Abramowitz</string>
 		</dict>
-		<dict>
-			<key>Name</key>
-			<string>Joe Bloggs</string>
-			<key>Link</key>
-			<string>http://pilotmoon.com/popclip</string>
-		</dict>
 	</array>
 	<key>Extension Description</key>
 	<string>Create a note in nvALT.</string>

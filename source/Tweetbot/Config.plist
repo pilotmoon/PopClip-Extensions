@@ -8,6 +8,19 @@
 	<string>Tweetbot</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.tweetbot</string>
+	<key>Extension Description</key>
+	<string>Compose a new tweet using Tweetbot. Also, you can select a username such as @tapbots to see that user's profile.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://tapbots.com/tweetbot</string>
+			<key>Name</key>
+			<string>Tweetbot</string>
+			<key>Bundle Identifier</key>
+			<string>com.tapbots.TweetbotMac</string>
+		</dict>
+	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
