@@ -19,6 +19,14 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Markdown</string>
+		</array>
+		<key>Title</key>
+		<string>Markdown</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Notes</string>
 			<string>Reminders</string>
 			<string>MakeSticky</string>

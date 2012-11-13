@@ -21,6 +21,8 @@
 			<string>M↓</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Convert Markdown-formatted text to HTML.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.markdown</string>
 	<key>Extension Name</key>
