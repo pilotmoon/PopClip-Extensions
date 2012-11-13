@@ -14,6 +14,8 @@ This repository contains the documentation for making your own extensions (this 
                              extension, for easier editing.
     README.md             -- This repository contains the documentation for making your own extensions
     LICENSE               -- MIT License text.
+    Index.plist           -- The main page is auto-generated from this repository, using Index.plist to specify
+                             the contents.
 
 
 ## License
