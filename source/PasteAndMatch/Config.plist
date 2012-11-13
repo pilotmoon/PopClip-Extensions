@@ -71,7 +71,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Paste as plain text only, without formatting. This option appears as "Paste =" in PopClip. (Shown only when the text area supports formatted text.)</string>
+	<string>Paste as plain text only, without formatting. This option appears as "Paste =" in PopClip.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pasteplain</string>
 	<key>Extension Long Name</key>
