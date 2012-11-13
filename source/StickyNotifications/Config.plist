@@ -6,6 +6,8 @@
 	<integer>2</integer>
 	<key>Extension Name</key>
 	<string>Sticky Notification</string>
+	<key>Extension Long Name</key>
+	<string>Sticky Notifications</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.sticky-notifications</string>
 	<key>Extension Description</key>
