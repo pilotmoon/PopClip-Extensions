@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>Spotlight.applescript</string>
+			<key>Image File</key>
+			<string>spotlight.png</string>
+			<key>Title</key>
+			<string>Spotlight</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,150}$</string>			
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Open Spotlight with the selected text. (Requires the Spotlight shortcut to be ⌘-space.)</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.spotlight</string>
+	<key>Extension Name</key>
+	<string>Spotlight</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
