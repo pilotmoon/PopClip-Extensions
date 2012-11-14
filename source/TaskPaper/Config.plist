@@ -25,7 +25,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new task to the Inbox in TaskPaper.</string>
+	<string>Add a new task to TaskPaper's inbox.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.taskpaper</string>
 	<key>Extension Name</key>
