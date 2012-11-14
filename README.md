@@ -28,7 +28,9 @@ All the extensions and documentation were created by Nick Moore except where sta
 
 ## Contributing
 
-If you'd like to contribute extensions, the best way is to fork this repository to your own account and add your new extension in there. Then send me a pull request. I recommend adding a readme file in your extension directory, giving yourself credit. I'll assume you are happy for me to publish your contributions on the main PopClip extensions page.
+If you'd like to contribute extensions, you can fork this repository to your own account and add your new extension in there. Then send me a pull request. I recommend adding a readme file in your extension directory, giving yourself credit. I'll assume you are happy for me to publish your contributions on the main PopClip extensions page.
+
+Alternatively, just send me the zipped extension in an email or in a tweet.
 
 ## Other Repos
 
