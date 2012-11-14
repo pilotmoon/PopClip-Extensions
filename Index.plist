@@ -28,19 +28,26 @@
 		<key>Members</key>
 		<array>
 			<string>Notes</string>
-			<string>Reminders</string>
 			<string>MakeSticky</string>
 			<string>Evernote</string>
 			<string>NotationalVelocity</string>
-			<string>nvALT</string>
+			<string>nvALT</string>			
+			<string>StickyNotifications</string>			
+		</array>
+		<key>Title</key>
+		<string>Notes Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Reminders</string>
 			<string>OmniFocus</string>
 			<string>Things</string>
-			<string>StickyNotifications</string>
 			<string>2Do</string>
 			<string>Doit</string>
 		</array>
 		<key>Title</key>
-		<string>Notes and To-Do Apps</string>
+		<string>To-Do / GTD Apps</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -49,7 +56,7 @@
 			<string>Sparrow</string>
 		</array>
 		<key>Title</key>
-		<string>Mail</string>
+		<string>Email Apps</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -59,7 +66,7 @@
 			<string>Tweetbot</string>
 		</array>
 		<key>Title</key>
-		<string>Twitter</string>
+		<string>Twitter Apps</string>
 	</dict>
 	<dict>
 		<key>Members</key>
