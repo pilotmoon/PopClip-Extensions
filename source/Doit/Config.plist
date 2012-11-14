@@ -25,7 +25,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new task in Doit.im</string>
+	<string>Create a new task in Doit.im.</string>
 	<key>Extension Identifier</key>
 	<string>com.snoworange.Doitim-Mac</string>
 	<key>Extension Name</key>
