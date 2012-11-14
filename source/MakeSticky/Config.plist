@@ -5,7 +5,7 @@
 	<key>Version</key>
 	<integer>2</integer>
 	<key>Extension Name</key>
-	<string>Make Sticky</string>
+	<string>Stickies</string>
 	<key>Extension Description</key>
 	<string>Make a new Stickies note with the selected text.</string>
 	<key>Extension Identifier</key>
