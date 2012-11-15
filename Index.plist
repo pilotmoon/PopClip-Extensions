@@ -7,14 +7,21 @@
 		<array>
 			<string>PasteAndMatch</string>
 			<string>PasteAndEnter</string>
-			<string>Capitalize</string>
-			<string>Uppercase</string>
-			<string>Lowercase</string>
 			<string>Formatting</string>
 			<string>Delete</string>
 		</array>
 		<key>Title</key>
-		<string>Text Operations</string>
+		<string>Text Editing</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Capitalize</string>
+			<string>Uppercase</string>
+			<string>Lowercase</string>
+		</array>
+		<key>Text Transformation</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -31,8 +38,8 @@
 			<string>MakeSticky</string>
 			<string>Evernote</string>
 			<string>NotationalVelocity</string>
-			<string>nvALT</string>			
-			<string>StickyNotifications</string>			
+			<string>nvALT</string>
+			<string>StickyNotifications</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -87,7 +94,7 @@
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
-	</dict>	
+	</dict>
 	<dict>
 		<key>Members</key>
 		<array>
@@ -99,6 +106,7 @@
 			<string>RunCommand</string>
 			<string>Leech</string>
 			<string>PreviewHighlight</string>
+			<string>Fantastical</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
