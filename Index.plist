@@ -20,8 +20,8 @@
 			<string>Uppercase</string>
 			<string>Lowercase</string>
 		</array>
-		<key>Text Transformation</key>
-		<string></string>
+		<key>Title</key>
+		<string>Text Transformation</string>
 	</dict>
 	<dict>
 		<key>Members</key>
