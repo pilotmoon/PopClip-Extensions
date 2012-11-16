@@ -18,6 +18,17 @@
 			<string>Highlight</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>net.sourceforge.skim-app.skim</string>
+			<key>Link</key>
+			<string>http://skim-app.sourceforge.net</string>
+			<key>Name</key>
+			<string>Skim</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Highlight the selected text in a PDF file in Preview or Skim.</string>
 	<key>Extension Identifier</key>
