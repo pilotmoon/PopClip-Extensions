@@ -19,14 +19,15 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text in a PDF file in Preview.</string>
+	<string>Highlight the selected text in a PDF file in Preview or Skim.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
 	<key>Extension Name</key>
-	<string>Preview Highlight</string>
+	<string>PDF Highlight</string>
 	<key>Required Apps</key>
 	<array>
 		<string>com.apple.Preview</string>
+		<string>net.sourceforge.skim-app.skim</string>
 	</array>
 	<key>Requirements</key>
 	<array>
