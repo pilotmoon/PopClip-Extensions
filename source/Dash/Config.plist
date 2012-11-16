@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>dashcat.png</string>
+			<string>256-head.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,160}$</string>
 			<key>Service Name</key>
