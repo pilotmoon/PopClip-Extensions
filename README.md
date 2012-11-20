@@ -12,10 +12,9 @@ This repository contains the documentation for making your own extensions (this 
     extensions/           -- Distributable versions of the extensions (zipped, with `.popclipextz` extension)
     source/               -- Source files for the extensions. The directories are left without the `.popclipext`
                              extension, for easier editing.
-    README.md             -- This repository contains the documentation for making your own extensions
+    README.md             -- This documentation.
     LICENSE               -- MIT License text.
-    Index.plist           -- The main page is auto-generated from this repository, using Index.plist to specify
-                             the contents.
+    Index.plist           -- The main page is auto-generated using Index.plist to specify the contents.
 
 
 ## License
@@ -222,6 +221,28 @@ Key presses should be expressed as a dictionary with the following keys:
 |---|----|------|----|
 |`keyChar`|String|(see note below) |Character key to press. For example `A`.|
 |`keyCode`|Number|(see note below) |Virtual key code for key to press. For example, the delete key is `51`. For help finding the code see [this StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes).|
-|`modifiers`|Number|Required|Bitmask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers.
+|`modifiers`|Number|Required|Bitmask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
 
 Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
+
+Table of modifier combinations:
+
+|Keys|Value|
+|----|-----|
+|none|0|
+|⇧|131072|
+|⌃|262144|
+|⌃⇧|393216|
+|⌥|524288|
+|⌥⇧|655360|
+|⌃⌥|786432|
+|⌃⌥⇧|917504|
+|⌘|1048576|
+|⇧⌘|1179648|
+|⌃⌘|1310720|
+|⌃⇧⌘|1441792|
+|⌥⌘|1572864|
+|⌥⇧⌘|1703936|
+|⌃⌥⌘|1835008|
+|⌃⌥⇧⌘|1966080|
+
