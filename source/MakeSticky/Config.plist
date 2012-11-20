@@ -2,28 +2,28 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<string>Stickies</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>stickies.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,600}$</string>
+			<key>Service Name</key>
+			<string>Make Sticky</string>
+			<key>Title</key>
+			<string>Sticky</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Make a new Stickies note with the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.make-sticky</string>
-	<key>Minimum OS Version</key>
+	<key>Extension Name</key>
+	<string>Stickies</string>
+	<key>Required OS Version</key>
 	<string>10.7</string>
-	<key>Actions</key>
-	<array>
-		<dict>
-			<key>Service Name</key>
-			<string>Make Sticky</string>
-			<key>Image File</key>
-			<string>stickies.png</string>
-			<key>Title</key>
-			<string>Sticky</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,600}$</string>
-		</dict>
-	</array>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>

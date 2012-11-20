@@ -2,16 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Description</key>
-	<string>Make a new note in the Notes app. (The note is added in the first folder in the first account).</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.notes</string>
-	<key>Extension Name</key>
-	<string>Notes</string>
-	<key>Minimum OS Version</key>
-	<string>10.8</string>
 	<key>Actions</key>
 	<array>
 		<dict>
@@ -23,5 +13,15 @@
 			<string>New Note</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Make a new note in the Notes app. (The note is added in the first folder in the first account).</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.notes</string>
+	<key>Extension Name</key>
+	<string>Notes</string>
+	<key>Required OS Version</key>
+	<string>10.8</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>

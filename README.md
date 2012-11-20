@@ -145,7 +145,8 @@ The `Config.plist` file has the following structure.
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
 |`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
 |`Apps`|Array|Optional|Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
-|`Minimum OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
+|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
+|`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `690` for PopClip 1.4.3.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 
 ### Action Dictionary
