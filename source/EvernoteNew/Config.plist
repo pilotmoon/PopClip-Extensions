@@ -8,7 +8,7 @@
 			<key>AppleScript File</key>
 			<string>EvernoteAddNote.applescript</string>
 			<key>Image File</key>
-			<string>EvernoteElephantEroded.png</string>
+			<string>EvernoteElephant.png</string>
 			<key>Title</key>
 			<string>Evernote</string>
 		</dict>
@@ -18,9 +18,10 @@
 		<dict>
 			<key>Bundle Identifier</key>
 			<string>com.evernote.Evernote</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
-			<string>http://www.evernote.com/
-</string>
+			<string>http://www.evernote.com/</string>
 			<key>Name</key>
 			<string>Evernote</string>
 		</dict>

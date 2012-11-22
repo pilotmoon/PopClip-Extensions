@@ -18,6 +18,8 @@
 		<dict>
 			<key>Bundle Identifier</key>
 			<string>com.flexibits.fantastical</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://flexibits.com/</string>
 			<key>Name</key>

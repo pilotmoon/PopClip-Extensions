@@ -16,13 +16,12 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Link</key>
-			<string>http://www.evernote.com/
-</string>
-			<key>Name</key>
-			<string>Evernote</string>
 			<key>Bundle Identifier</key>
 			<string>com.evernote.Evernote</string>
+			<key>Link</key>
+			<string>http://www.evernote.com/</string>
+			<key>Name</key>
+			<string>Evernote</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
