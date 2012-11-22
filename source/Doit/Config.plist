@@ -16,6 +16,8 @@
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Check Installed</key>
+			<true/>
 			<key>Bundle Identifier</key>
 			<string>com.snoworange.Doitim-Mac</string>
 			<key>Link</key>
