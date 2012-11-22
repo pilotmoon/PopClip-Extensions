@@ -20,6 +20,8 @@
 		<dict>
 			<key>Bundle Identifier</key>
 			<string>com.kapeli.dash</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://itunes.apple.com/app/dash-docs-snippets/id458034879</string>
 			<key>Name</key>
