@@ -14,6 +14,11 @@
 				<key>modifiers</key>
 				<integer>1310720</integer>
 			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.apple.Preview</string>
+				<string>net.sourceforge.skim-app.skim</string>
+			</array>
 			<key>Title</key>
 			<string>Highlight</string>
 		</dict>
@@ -35,11 +40,6 @@
 	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
 	<key>Extension Name</key>
 	<string>PDF Highlight</string>
-	<key>Required Apps</key>
-	<array>
-		<string>com.apple.Preview</string>
-		<string>net.sourceforge.skim-app.skim</string>
-	</array>
 	<key>Requirements</key>
 	<array>
 		<string>copy</string>
