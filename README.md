@@ -1,5 +1,7 @@
 # PopClip Extensions
 
+*Updated for PopClip 1.4.4*
+
 ## Introduction
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
@@ -215,7 +217,7 @@ See also the [Uppercase](https://github.com/pilotmoon/PopClip-Extensions/tree/ma
 Important notes on using`paste-result`:
 
 * PopClip will block while the script is running. Therefore long-running scripts can degrade the PopClip user experience.
-* `paste-result` works *only* with shell script extensions and not with AppleScript extensions.
+* The `paste-result` feature works with both shell script extensions and AppleScript extensions.
 
 ### Key Code format
 Key presses should be expressed as a dictionary with the following keys:
