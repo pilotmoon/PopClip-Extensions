@@ -185,7 +185,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Name`|String|Optional|Name of an app which this extension interacts with. For exaple `Evernote` for an Evernote extension.|
 |`Link`|String|Optional|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
 |`Bundle Identifier`|String|Optional|Bundle identifier of the application. For example `com.evernote.Evernote`.|
-|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether this app is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`.|
+|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether the app given by `Bundle Identifier` is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`.|
 
 ## Additional Notes
 
