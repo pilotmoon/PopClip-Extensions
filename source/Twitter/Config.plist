@@ -13,6 +13,8 @@
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://itunes.apple.com/app/twitter/id409789998</string>
 			<key>Name</key>
