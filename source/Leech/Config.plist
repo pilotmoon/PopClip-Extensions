@@ -20,6 +20,10 @@
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.manytricks.Leech</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://manytricks.com/leech/</string>
 			<key>Name</key>
