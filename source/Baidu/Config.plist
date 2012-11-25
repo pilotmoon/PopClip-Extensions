@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Junxue Zhang</string>
+			<key>Link</key>
+			<string>mailto:snow.zjx@gmail.com</string>
+		</dict>
+	</array>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Identifier</key>
+	<string>com.snowzjx.popclip.extension.baidu-search</string>
+	<key>Extension Name</key>
+	<string>Baidu Search</string>
+	<key>Extension Image File</key>
+	<string>Baidu.png</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Baidu Search</string>
+			<key>Image File</key>
+			<string>Baidu.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>URL</key>
+			<string>http://www.baidu.com/s?wd={popclip text}</string>
+		</dict>
+	</array>
+</dict>
+</plist>
