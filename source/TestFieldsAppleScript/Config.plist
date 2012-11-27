@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>copy-result</string>
+			<key>AppleScript File</key>
+			<string>TestAScript.applescript</string>
+			<key>Pass HTML</key>
+			<true/>
+			<key>Title</key>
+			<string>TestAScript</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Test applescripts.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.test.ascript</string>
+	<key>Extension Name</key>
+	<string>Test Applescript</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
