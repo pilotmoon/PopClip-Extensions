@@ -180,8 +180,8 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
-|Shell Script Environment Variable|AppleScript Field|Description|
-|---------------------------------|-----------------|-----------|
+|Shell Script Variable|AppleScript Field|Description|
+|---------------------|-----------------|-----------|
 |`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
 |`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
