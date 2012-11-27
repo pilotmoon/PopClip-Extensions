@@ -74,7 +74,17 @@
 			<string>Fantastical</string>
 		</array>
 		<key>Title</key>
-		<string>Other Apps</string>
+		<string>Other Mac Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Pocket</string>
+			<string>Leech</string>
+			<string>OpenInChrome</string>
+		</array>
+		<key>Title</key>
+		<string>Work with URLs</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -111,9 +121,7 @@
 			<string>WordCount</string>
 			<string>CharCount</string>
 			<string>Say</string>
-			<string>Leech</string>
 			<string>PreviewHighlight</string>
-			<string>OpenInChrome</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
