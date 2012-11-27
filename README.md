@@ -143,6 +143,7 @@ The `Config.plist` file has the following structure.
 |`Position`|Number|Optional|A number specifying where in the popup the action will appear relative to other actions. Fractional values are permitted and actions are sorted in numerical order left to right. The built in actions have the following fixed positions, which you should not use: *Open Link & Search*: `0.5`, *Cut, Copy & Paste*: `1.5`, *Dictionary, Email and Reveal in Finder*: `2.5`. The default is `3`, to appear on the right. Actions with the same position number appear in the order they were installed.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
+|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will pass the selected HTML text (if available) to the extension in the `POPCLIP_HTML` (shell scripts) and `{popclip html}` (AppleScript) fields. Default is `NO`. Leaving this set to `NO` PopClip does not have to process the HTML and this can be slightly faster.|
 |`Extension Description`|String OR Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
 |`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
@@ -173,6 +174,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Position`|Number|Optional|As above; this value overrides the value specified in the extension header.|
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
+|`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
 
 ### Credits Dictionary

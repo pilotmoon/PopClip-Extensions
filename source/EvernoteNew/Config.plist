@@ -29,9 +29,11 @@
 	<key>Extension Description</key>
 	<string>Send the text to Evernote.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.evernote-v2</string>
+	<string>com.pilotmoon.popclip.extension.evernote-new</string>
 	<key>Extension Name</key>
-	<string>Evernote v2</string>
+	<string>Evernote (New)</string>
+	<key>Pass HTML</key>
+	<true/>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 	<key>Version</key>
