@@ -181,7 +181,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
 |Shell Script Environment Variable|AppleScript Field|Description|
-|-|-|-|
+|---------------------------------|-----------------|-----------|
 |`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
 |`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
@@ -191,8 +191,6 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_SELECTED_URL`|`{popclip selected url}`|If the selected text is a single URL, this field will contain the full form of the URL. URLs without protocol prefix are treated as http. For example, if the selected text is `pilotmoon.com` then this field will be `http://pilotmoon.com`.|
 |`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
-
-
 
 ### Credits Dictionary
 
