@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>popclip-appear</string>
+			<key>Image File</key>
+			<string>selectall.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+			</dict>
+			<key>Regular Expression</key>
+			<string>(?s)^$</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+			<key>Title</key>
+			<string>Select All</string>
+		</dict>
+		<dict>
+			<key>After</key>
+			<string>popclip-appear</string>
+			<key>Image File</key>
+			<string>selectall.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>A</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+			</dict>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+			<key>Title</key>
+			<string>Select All</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Select all the text in the field, then invoke PopClip again. (Only appears in editable text fields.)</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.select-all</string>
+	<key>Extension Name</key>
+	<string>Select All</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
