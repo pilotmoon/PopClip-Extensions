@@ -204,9 +204,9 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Name`|String|Required|Name of an app which this extension interacts with. For exaple `Evernote` for an Evernote extension.|
-|`Link`|String|Optional|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
+|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether the app given by `Bundle Identifier` is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
+|`Link`|String|Required if `Check Installed` is `YES`|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
 |`Bundle Identifier`|String|Required if `Check Installed` is `YES`|Bundle identifier of the application. For example `com.evernote.Evernote`.|
-|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether the app given by `Bundle Identifier` is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`.|
 
 ## Additional Notes
 
