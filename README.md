@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*Updated for PopClip 1.4.4*
+*Preliminary documentation for PopClip 1.4.4*
 
 ## Introduction
 
@@ -142,6 +142,7 @@ The `Config.plist` file has the following structure.
 |`Requirements`|Array|Optional|Array consisting of one or more of the following strings:<br>`copy`: require Copy to be available<br> `cut`: require Cut to be available<br>`paste`: require Paste to be available<br>`formatting`: Require the text to be in a text field with formatting ability (bold, italic etc.). Note: experimental - might not be reliable.<br>`httpurl`: require the text to contain exactly one HTTP URL; only the matching part will be passed to the action<br>`email`: require the text to contain exactly one email address ; only the matching part will be passed to the action <br>`path`: require the text to contain exactly one local file path; only the matching part will be passed to the action <br> If this field is ommitted, the default is `copy`.|
 |`Position`|Number|Optional|A number specifying where in the popup the action will appear relative to other actions. Fractional values are permitted and actions are sorted in numerical order left to right. The built in actions have the following fixed positions, which you should not use: *Open Link & Search*: `0.5`, *Cut, Copy & Paste*: `1.5`, *Dictionary, Email and Reveal in Finder*: `2.5`. The default is `3`, to appear on the right. Actions with the same position number appear in the order they were installed.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
+|`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
 |`Extension Description`|String OR Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
 |`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
@@ -171,6 +172,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
 |`Position`|Number|Optional|As above; this value overrides the value specified in the extension header.|
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
+|`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
 
 ### Credits Dictionary
