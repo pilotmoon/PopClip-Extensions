@@ -35,7 +35,11 @@ Alternatively, just send me the zipped extension in an email or in a tweet.
 
 ## Other Repos
 
-Andy Guzman is maintaining a set of [Markdown Extensions for PopClip](https://github.com/andyguzman/PopClippins) and [Lucifr](https://github.com/lucifr/PopClip-Extensions) has published a collection too.
+Here are some other repos you might find interesting:
+
+* PopClip extensions by [Andy Guzman](https://github.com/andyguzman/PopClippins)
+* PopClip extensions by [Lucifr](https://github.com/lucifr/PopClip-Extensions)
+* PopClip extensions by [Brett Terpstra](https://github.com/ttscoff/popclipextensions)
 
 ## Disclaimer
 
