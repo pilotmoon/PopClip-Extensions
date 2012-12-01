@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Wiki</string>
+			<key>URL</key>
+			<string>http://www.msn.com/</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.wikipedia</string>
+	<key>Extension Name</key>
+	<string>Wikipedia</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>value</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Wikipedia Site</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>en.wikipedia.org</string>
+				<string>de.wikipedia.org</string>
+				<string>es.wikipedia.org</string>
+				<string>fr.wikipedia.org</string>
+				<string>it.wikipedia.org</string>
+				<string>ja.wikipedia.org</string>
+				<string>nl.wikipedia.org</string>
+				<string>pl.wikipedia.org</string>
+				<string>pt.wikipedia.org</string>
+				<string>ru.wikipedia.org</string>
+				<string>sv.wikipedia.org</string>
+				<string>zh.wikipedia.org</string>
+			</array>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<dict>
+		<key>en</key>
+		<string>Choose your preferred Wikipedia site.</string>
+	</dict>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
