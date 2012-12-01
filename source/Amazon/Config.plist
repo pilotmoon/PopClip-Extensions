@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Amazon</string>
 			<key>URL</key>
-			<string>http://www.{popclip option value}/s?field-keywords={popclip text}</string>
+			<string>http://www.{popclip option site}/s?field-keywords={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Identifier</key>
@@ -23,7 +23,7 @@
 	<array>
 		<dict>
 			<key>Option Identifier</key>
-			<string>value</string>
+			<string>site</string>
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>

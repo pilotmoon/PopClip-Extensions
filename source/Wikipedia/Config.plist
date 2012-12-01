@@ -10,7 +10,7 @@
 			<key>Title</key>
 			<string>Wiki</string>
 			<key>URL</key>
-			<string>http://www.msn.com/</string>
+			<string>http://{popclip option site}/w/index.php?search={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Identifier</key>
@@ -21,7 +21,7 @@
 	<array>
 		<dict>
 			<key>Option Identifier</key>
-			<string>value</string>
+			<string>site</string>
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
