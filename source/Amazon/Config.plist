@@ -22,6 +22,8 @@
 	<key>Options</key>
 	<array>
 		<dict>
+			<key>Option Default Value</key>
+			<string>amazon.com</string>
 			<key>Option Identifier</key>
 			<string>site</string>
 			<key>Option Label</key>
@@ -33,9 +35,9 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
-				<string>amazon.com</string>
 				<string>amazon.ca</string>
 				<string>amazon.cn</string>
+				<string>amazon.com</string>
 				<string>amazon.co.jp</string>
 				<string>amazon.co.uk</string>
 				<string>amazon.de</string>
