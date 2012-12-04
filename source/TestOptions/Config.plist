@@ -10,7 +10,7 @@
 			<key>Title</key>
 			<string>Nothing</string>
 			<key>URL</key>
-			<string>http://localhost/?one={popclip option one}&amp;two={popclip option two}&amp;three={popclip option three}&amp;four={popclip option four}&amp;five={popclip option five}</string>
+			<string>http://localhost/?one={popclip option one}&amp;two={popclip option two}&amp;three={popclip option three}&amp;four={popclip option four}&amp;five={popclip option five}&amp;user={popclip option user}&amp;pass={popclip option pass}</string>
 		</dict>
 	</array>
 	<key>Extension Identifier</key>
@@ -105,10 +105,10 @@
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
-				<string>A 2nd String</string>
+				<string>Username</string>
 			</dict>
 			<key>Option Type</key>
-			<string>username</string>
+			<string>string</string>
 		</dict>
 		<dict>
 			<key>Option Default Value</key>
