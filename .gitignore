@@ -1,3 +1,4 @@
 *.popclipext
-*.DS_Store
 source/*.popclipextz
+.DS_Store
+
