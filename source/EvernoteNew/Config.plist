@@ -9,6 +9,8 @@
 			<string>EvernoteAddNote.applescript</string>
 			<key>Image File</key>
 			<string>EvernoteElephant.png</string>
+			<key>Long Running</key>
+			<true/>
 			<key>Title</key>
 			<string>Evernote</string>
 		</dict>

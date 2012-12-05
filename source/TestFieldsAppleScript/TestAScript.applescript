@@ -1,4 +1,4 @@
-delay 5
+delay 2
 "text: {popclip text}
 html: {popclip html}
 mods: {popclip modifier flags}
@@ -8,4 +8,6 @@ durl:  {popclip selected url}
 bid:  {popclip bundle identifier}
 wnd:  {popclip window title}
 app:  {popclip app name}
-urle: {popclip urlencoded text}"
+urle: {popclip urlencoded text}
+fish: {popclip option fish}"
+error "some error" number 502

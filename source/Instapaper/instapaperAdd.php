@@ -25,4 +25,13 @@ echo "$user - $pass - $url\n";
 echo "code: $code\n";
 echo "$return\n";
 
+if ($code==201) {
+	exit(0); // success
+}
+else if ($code==403) {
+	exit(2); // bad user/pass
+}
+else {
+	exit(1); // other error. unknown.
+}
 ?>

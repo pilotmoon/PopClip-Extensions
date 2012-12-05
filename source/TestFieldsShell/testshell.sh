@@ -1,3 +1,4 @@
+sleep 5
 echo "Text: " $POPCLIP_TEXT
 echo "HTML: " $POPCLIP_HTML
 echo "Mods: " $POPCLIP_MODIFIER_FLAGS
