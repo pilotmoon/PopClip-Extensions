@@ -1,3 +1,4 @@
+delay 5
 "text: {popclip text}
 html: {popclip html}
 mods: {popclip modifier flags}
