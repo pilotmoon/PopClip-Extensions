@@ -155,6 +155,8 @@ The `Config.plist` file has the following structure.
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
 |`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `690` for PopClip 1.4.3.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
+|`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
+|`Options Title`|String OR Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for this extension.`.|
 
 ### Action Dictionary
 Each action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified.
@@ -180,6 +182,20 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
+
+### Option Dictionary
+
+Options are presented to the user in a preferences window and are saved by PopClip's preferences on behalf of the extension. The `password` type is stored in the keychain. Each option dictionary has the following structure.
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`Option Identifier`|String|Required|Unique identifying string for this option. Must be a lowercase string. This field is used to pass the option to your script. (See [Script Fields](#script-fields)|
+|`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (secure password entry field).|
+|`Option Label`|String OR Dictionary|Required|Label to appear in the user interface for this option.|
+|`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specified the default value of the option.|
+|`Option Values`|Array|Required for `multiple` type|Array of Strings representing the possible values to show in the pop-up button.|
+
+
 ### Script Fields
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
@@ -195,6 +211,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_SELECTED_URL`|`{popclip selected url}`|If the selected text is a single URL, this field will contain the full form of the URL. URLs without protocol prefix are treated as http. For example, if the selected text is `pilotmoon.com` then this field will be `http://pilotmoon.com`.|
 |`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
+|`POPCLIP_OPTION_*`|`{popclip option *}`|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
 ### Credits Dictionary
 
