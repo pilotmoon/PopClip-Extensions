@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>After</key>
-			<string>show-status</string>
+			<string>show-result</string>
 			<key>Long Running</key>
 			<true/>
 			<key>Requirements</key>
@@ -17,11 +17,6 @@
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
 			<string>instapaperAdd.php</string>
-			<key>Success Message</key>
-			<dict>
-				<key>en</key>
-				<string>Saved</string>
-			</dict>
 			<key>Title</key>
 			<dict>
 				<key>en</key>

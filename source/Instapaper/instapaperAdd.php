@@ -21,9 +21,6 @@ curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $return = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-echo "$user - $pass - $url\n";
-echo "code: $code\n";
-echo "$return\n";
 
 if ($code==201) {
 	exit(0); // success

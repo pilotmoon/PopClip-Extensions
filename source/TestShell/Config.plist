@@ -5,27 +5,24 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Image File</key>
-			<string>speechicon.png</string>
-			<key>Shell Script File</key>
-			<string>say.sh</string>
-			<key>Stoppable</key>
+			<key>After</key>
+			<string>show-result</string>
+			<key>Pass HTML</key>
 			<true/>
+			<key>Shell Script File</key>
+			<string>testsh.sh</string>
+			<key>Stoppable</key>
+			<false/>
 			<key>Title</key>
-			<string>Say</string>
+			<string>TestShell</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Speak the selected text aloud, using the system default voice. To change the voice, go to "Speech" in System Preferences.</string>
+	<string>Test shell scripts.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.say</string>
+	<string>com.pilotmoon.popclip.extension.test.shell-general</string>
 	<key>Extension Name</key>
-	<dict>
-		<key>en</key>
-		<string>Say</string>
-		<key>fr</key>
-		<string>Lire</string>
-	</dict>
+	<string>Test Shell General</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>

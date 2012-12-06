@@ -9,9 +9,11 @@
 			<string>paste-result</string>
 			<key>Image File</key>
 			<string>coffeescript.png</string>
+			<key>Long Running</key>
+			<false/>
 			<key>Requirements</key>
 			<array>
-				<string>paste</string>
+				<string>copy</string>
 			</array>
 			<key>Script Interpreter</key>
 			<string>/usr/local/bin/node</string>
