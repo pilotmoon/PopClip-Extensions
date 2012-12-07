@@ -235,6 +235,9 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 ## Additional Notes
 
 ### Example AppleScript File
+
+AppleScript files must be in UTF-8 text format. (Save as 'text' format in AppleScript editor.)
+
 Here is an example of an AppleScript file for use in an extension (this one is for sending to Evernote):
 
     tell application "Evernote"
