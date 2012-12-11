@@ -1,18 +1,17 @@
 <?php
 require 'consumer.inc';
 require 'OAuth.php';
-$host = "https://www.instapaper.com/api/1/bookmarks/add";
+$host = "https://www.instapaper.com/api/1/oauth/access_token";
 
-parse_str(base64_decode($_ENV['POPCLIP_OPTION_AUTHSECRET']));
-$url = $_ENV['POPCLIP_TEXT'];
+$user = $_ENV['POPCLIP_AUTH_USERNAME'];
+$pass = $_ENV['POPCLIP_AUTH_PASSWORD'];
 
 // generate signed request
 parse_str(base64_decode(POPCLIP_CONSUMER_INFO));
 $consumer = new OAuthConsumer($ck,$cs);
-$token = new OAuthToken($oauth_token,$oauth_token_secret);
-$params = array('url'=>$url);
-$request = OAuthRequest::from_consumer_and_token($consumer, $token, 'POST', $host, $params);
-$request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, $token);
+$params = array('x_auth_username'=>$user, 'x_auth_password'=>$pass, 'x_auth_mode'=>'client_auth');
+$request = OAuthRequest::from_consumer_and_token($consumer, NULL, 'POST', $host, $params);
+$request->sign_request(new OAuthSignatureMethod_HMAC_SHA1(), $consumer, NULL);
 
 // execute request
 $ch = curl_init($host);
@@ -25,6 +24,7 @@ $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($code==200) {
+	echo base64_encode($response);
 	exit(0); // success
 }  
 else if ($code==403) {
