@@ -1,0 +1,3 @@
+<?php
+define(POPCLIP_READABILITY_CONSUMER_INFO,'Y2s9bmlreiZjcz05dTZ2SEhDcjRLajlRekRYVlBtRGZjREtkQVc3a3RYcg==');
+?>
