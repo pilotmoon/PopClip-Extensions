@@ -9,14 +9,14 @@
 			<string>Spotlight.applescript</string>
 			<key>Image File</key>
 			<string>spotlight.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^[^\n\r]{1,300}$</string>
 			<key>Title</key>
 			<string>Spotlight</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,150}$</string>			
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Open Spotlight with the selected text. (Requires the Spotlight shortcut to be ⌘-space.)</string>
+	<string>Activate Spotlight with the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.spotlight</string>
 	<key>Extension Name</key>
