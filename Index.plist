@@ -74,7 +74,7 @@
 			<string>Fantastical</string>
 		</array>
 		<key>Title</key>
-		<string>Other Mac Apps</string>
+		<string>Other Apps</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -120,6 +120,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Spotlight</string>
 			<string>WordCount</string>
 			<string>CharCount</string>
 			<string>Say</string>
