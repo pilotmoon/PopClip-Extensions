@@ -2,37 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<string>Spotify Search</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.spotify-search</string>
-	<key>Extension Description</key>
-	<string>Search for music on Spotify.</string>
-	<key>Apps</key>
-	<array>
-		<dict>
-			<key>Link</key>
-			<string>http://www.spotify.com/</string>
-			<key>Name</key>
-			<string>Spotify</string>
-			<key>Bundle Identifier</key>
-			<string>com.spotify.client</string>
-		</dict>
-	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
 			<key>Image File</key>
 			<string>sify.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
 			<key>Shell Script File</key>
 			<string>spotify.sh</string>
 			<key>Title</key>
-			<string>Spotify Search</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,200}$</string>
+			<string>Spotify</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.spotify.client</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.spotify.com/</string>
+			<key>Name</key>
+			<string>Spotify</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for music on Spotify.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<key>Extension Name</key>
+	<string>Spotify</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>
