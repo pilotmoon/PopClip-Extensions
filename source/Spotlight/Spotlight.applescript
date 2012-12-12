@@ -4,7 +4,7 @@ tell application "System Events"
 		try
 			repeat with menuBarNum from (count of menu bars) to 0 by -1
 				repeat with theItem in (menu bar items of (item menuBarNum of menu bars))
-					if (description of theItem) is "spotlight menu" then
+					if (description of theItem) contains "spotlight" then
 						-- we found it
 						if (selected of theItem) is false then
 							click theItem
