@@ -33,7 +33,7 @@
 		<string>com.google.Chrome</string>
 	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Google Chrome. (For when you absolutely, positively need Flash.)</string>
+	<string>Open the link in Google Chrome.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
 	<key>Extension Name</key>
