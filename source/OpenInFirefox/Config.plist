@@ -6,38 +6,38 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>chromspin.png</string>
+			<string>ff.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurl</string>
 			</array>
 			<key>Shell Script File</key>
-			<string>open-in-chrome.sh</string>
+			<string>open-in-firefox.sh</string>
 			<key>Title</key>
-			<string>Chrome</string>
+			<string>Firefox</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.google.Chrome</string>
+			<string>org.mozilla.firefox</string>
 			<key>Link</key>
-			<string>http://www.google.com/chrome</string>
+			<string>http://getfirefox.com/</string>
 			<key>Name</key>
-			<string>Google Chrome</string>
+			<string>Mozilla Firefox</string>
 		</dict>
 	</array>
 	<key>Blocked Apps</key>
 	<array>
-		<string>com.google.Chrome</string>
+		<string>org.mozilla.firefox</string>
 	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Google Chrome. (For when you absolutely, positively need Flash.)</string>
+	<string>Open the link in Mozilla Firefox.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
+	<string>com.pilotmoon.popclip.extension.open-in-firefox</string>
 	<key>Extension Name</key>
-	<string>Open in Chrome</string>
+	<string>Open in Firefox</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>
