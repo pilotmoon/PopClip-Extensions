@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>copyplus.php</string>
+			<key>Title</key>
+			<dict>
+				<key>ar</key>
+				<string>نسخ +</string>
+				<key>de</key>
+				<string>Kopieren +</string>
+				<key>en</key>
+				<string>Copy +</string>
+				<key>es</key>
+				<string>Copiar +</string>
+				<key>fr</key>
+				<string>Copier +</string>
+				<key>it</key>
+				<string>Copia +</string>
+				<key>ja</key>
+				<string>コピー +</string>
+				<key>nl</key>
+				<string>Kopieer +</string>
+				<key>pt</key>
+				<string>Copiar +</string>
+				<key>ru</key>
+				<string>Копировать +</string>
+				<key>zh-Hans</key>
+				<string>拷贝 +</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Append the selected text to the existing clipboard contents.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.copyplus</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>ar</key>
+		<string>نسخ +</string>
+		<key>de</key>
+		<string>Kopieren +</string>
+		<key>en</key>
+		<string>Copy +</string>
+		<key>es</key>
+		<string>Copiar +</string>
+		<key>fr</key>
+		<string>Copier +</string>
+		<key>it</key>
+		<string>Copia +</string>
+		<key>ja</key>
+		<string>コピー +</string>
+		<key>nl</key>
+		<string>Kopieer +</string>
+		<key>pt</key>
+		<string>Copiar +</string>
+		<key>ru</key>
+		<string>Копировать +</string>
+		<key>zh-Hans</key>
+		<string>拷贝 +</string>
+	</dict>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
