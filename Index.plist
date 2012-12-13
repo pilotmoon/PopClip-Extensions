@@ -80,6 +80,15 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Dialectic</string>
+			<string>Skype</string>
+		</array>
+		<key>Title</key>
+		<string>Phone Numbers</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Pocket</string>
 			<string>Leech</string>
 			<string>OpenInSafari</string>
