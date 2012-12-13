@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Dial phone number with Dialectic.</string>
+	<string>Dial the phone number with Dialectic.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.dialectic</string>
 	<key>Extension Name</key>
