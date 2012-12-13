@@ -9,6 +9,7 @@
 			<string>PasteAndEnter</string>
 			<string>Formatting</string>
 			<string>Delete</string>
+			<string>Append</string>
 		</array>
 		<key>Title</key>
 		<string>Text Editing</string>
