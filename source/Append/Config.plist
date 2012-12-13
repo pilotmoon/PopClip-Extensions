@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>plus.png</string>
 			<key>Position</key>
-			<string>1.6</string>
+			<real>1.6000000000000001</real>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
