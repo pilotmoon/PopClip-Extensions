@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>yoj.png</string>
+			<key>Service Name</key>
+			<string>Yojimbo/New Note in Yojimbo</string>
+			<key>Title</key>
+			<string>Yojimbo</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>yojlink.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
+			<key>Service Name</key>
+			<string>Yojimbo/New Bookmark in Yojimbo</string>
+			<key>Title</key>
+			<string>Yojimbo</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.barebones.yojimbo</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.barebones.com/products/yojimbo/</string>
+			<key>Name</key>
+			<string>Yojimbo</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a note or bookmark in Yojimbo.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.yojimbo</string>
+	<key>Extension Name</key>
+	<string>Yojimbo</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
