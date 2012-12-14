@@ -84,6 +84,7 @@
 		<key>Members</key>
 		<array>
 			<string>Skype</string>
+			<string>Dialectic</string>
 		</array>
 		<key>Title</key>
 		<string>Phone Numbers</string>
