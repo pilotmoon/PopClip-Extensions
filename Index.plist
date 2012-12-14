@@ -28,10 +28,10 @@
 		<key>Members</key>
 		<array>
 			<string>Markdown</string>
+			<string>LuckyLink</string>
 		</array>
 		<key>Title</key>
 		<string>Markdown</string>
-		<string>LuckyLink</string>
 	</dict>
 	<dict>
 		<key>Members</key>
