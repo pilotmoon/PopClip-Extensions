@@ -43,7 +43,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert between full width and half width characters, and vice versa. For example, convert ヲ to ｦ.</string>
+	<string>Convert between full width and half width forms of Chinese, Japanese and Korean characters. For example, convert ヲ to ｦ.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.fullhalfwidth</string>
 	<key>Extension Image File</key>
