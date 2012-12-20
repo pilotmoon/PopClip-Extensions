@@ -49,7 +49,7 @@
 	<key>Extension Image File</key>
 	<string>FullHalfWidth.png</string>
 	<key>Extension Name</key>
-	<string>FullHalfWidth</string>
+	<string>Full/Half Width</string>
 	<key>Position</key>
 	<integer>2</integer>
 	<key>Requirements</key>
