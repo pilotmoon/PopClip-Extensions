@@ -1,0 +1,1 @@
+open -b com.apple.Safari $POPCLIP_TEXT

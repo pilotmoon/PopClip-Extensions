@@ -6,34 +6,38 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>sify.png</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,200}$</string>
+			<string>ff.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
 			<key>Shell Script File</key>
-			<string>spotify.sh</string>
+			<string>open-in-firefox.sh</string>
 			<key>Title</key>
-			<string>Spotify</string>
+			<string>Firefox</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.spotify.client</string>
-			<key>Check Installed</key>
-			<true/>
+			<string>org.mozilla.firefox</string>
 			<key>Link</key>
-			<string>http://www.spotify.com/</string>
+			<string>http://getfirefox.com/</string>
 			<key>Name</key>
-			<string>Spotify</string>
+			<string>Mozilla Firefox</string>
 		</dict>
 	</array>
+	<key>Blocked Apps</key>
+	<array>
+		<string>org.mozilla.firefox</string>
+	</array>
 	<key>Extension Description</key>
-	<string>Search for music on Spotify.</string>
+	<string>Open the link in Mozilla Firefox.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<string>com.pilotmoon.popclip.extension.open-in-firefox</string>
 	<key>Extension Name</key>
-	<string>Spotify</string>
+	<string>Open in Firefox</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>

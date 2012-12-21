@@ -6,40 +6,27 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>chromspin.png</string>
+			<string>compass.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurl</string>
 			</array>
 			<key>Shell Script File</key>
-			<string>open-in-chrome.sh</string>
+			<string>open-in-safari.sh</string>
 			<key>Title</key>
-			<string>Chrome</string>
-		</dict>
-	</array>
-	<key>Apps</key>
-	<array>
-		<dict>
-			<key>Check Installed</key>
-			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.google.Chrome</string>
-			<key>Link</key>
-			<string>http://www.google.com/chrome</string>
-			<key>Name</key>
-			<string>Google Chrome</string>
+			<string>Safari</string>
 		</dict>
 	</array>
 	<key>Blocked Apps</key>
 	<array>
-		<string>com.google.Chrome</string>
+		<string>com.apple.Safari</string>
 	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Google Chrome.</string>
+	<string>Open the link in Safari.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
+	<string>com.pilotmoon.popclip.extension.open-in-safari</string>
 	<key>Extension Name</key>
-	<string>Open in Chrome</string>
+	<string>Open in Safari</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>

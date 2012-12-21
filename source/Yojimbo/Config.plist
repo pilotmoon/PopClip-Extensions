@@ -6,40 +6,44 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>chromspin.png</string>
+			<string>yoj.png</string>
+			<key>Service Name</key>
+			<string>Yojimbo/New Note in Yojimbo</string>
+			<key>Title</key>
+			<string>Yojimbo</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>yojlink.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurl</string>
 			</array>
-			<key>Shell Script File</key>
-			<string>open-in-chrome.sh</string>
+			<key>Service Name</key>
+			<string>Yojimbo/New Bookmark in Yojimbo</string>
 			<key>Title</key>
-			<string>Chrome</string>
+			<string>Yojimbo</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.barebones.yojimbo</string>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.google.Chrome</string>
 			<key>Link</key>
-			<string>http://www.google.com/chrome</string>
+			<string>http://www.barebones.com/products/yojimbo/</string>
 			<key>Name</key>
-			<string>Google Chrome</string>
+			<string>Yojimbo</string>
 		</dict>
 	</array>
-	<key>Blocked Apps</key>
-	<array>
-		<string>com.google.Chrome</string>
-	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Google Chrome.</string>
+	<string>Create a note or bookmark in Yojimbo.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
+	<string>com.pilotmoon.popclip.extension.yojimbo</string>
 	<key>Extension Name</key>
-	<string>Open in Chrome</string>
+	<string>Yojimbo</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>

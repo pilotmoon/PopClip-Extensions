@@ -1,0 +1,1 @@
+open -b org.mozilla.firefox $POPCLIP_TEXT

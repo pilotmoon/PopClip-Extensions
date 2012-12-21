@@ -6,34 +6,34 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>sify.png</string>
+			<string>leap.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^.{1,200}$</string>
-			<key>Shell Script File</key>
-			<string>spotify.sh</string>
+			<string>(?s)^.{1,74}$</string>
+			<key>Service Name</key>
+			<string>Leap/Search in Leap</string>
 			<key>Title</key>
-			<string>Spotify</string>
+			<string>Leap</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.spotify.client</string>
+			<string>com.ironic.leap</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://www.spotify.com/</string>
+			<string>http://www.ironicsoftware.com/leap/</string>
 			<key>Name</key>
-			<string>Spotify</string>
+			<string>Leap</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search for music on Spotify.</string>
+	<string>Search files on your Mac using Leap.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<string>com.pilotmoon.popclip.extension.leap</string>
 	<key>Extension Name</key>
-	<string>Spotify</string>
+	<string>Leap</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>

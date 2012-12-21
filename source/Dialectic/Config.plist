@@ -6,34 +6,34 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>sify.png</string>
+			<string>phone.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^.{1,200}$</string>
-			<key>Shell Script File</key>
-			<string>spotify.sh</string>
+			<string>(\+)?\(?\d{1,4}\)?(-|\s|\()?\(?\d{1,3}\)?(-|\s)?\(?\d{0,4}\)?(-|\s)?\d{2,3}?(-|\s)?\d{2,3}((-|\s)?\d{1,4})?((-|\s)\d{1,3})?\b|\b((\+)?\d{3}\.\d{3,4}\.\d{4})</string>
 			<key>Title</key>
-			<string>Spotify</string>
+			<string>Dial</string>
+			<key>URL</key>
+			<string>dialectic:dial?number={popclip text}</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.spotify.client</string>
+			<string>com.jen.dialectic</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://www.spotify.com/</string>
+			<string>http://www.jonn8.com/dialectic</string>
 			<key>Name</key>
-			<string>Spotify</string>
+			<string>Dialectic</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search for music on Spotify.</string>
+	<string>Dial the phone number with Dialectic.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.spotify-search</string>
+	<string>com.pilotmoon.popclip.extension.dialectic</string>
 	<key>Extension Name</key>
-	<string>Spotify</string>
+	<string>Dialectic</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>
