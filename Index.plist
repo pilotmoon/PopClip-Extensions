@@ -110,9 +110,17 @@
 			<string>Spotify</string>
 			<string>ImFeelingLucky</string>
 			<string>Baidu</string>
+			<string>Amazon</string>
+			<string>Taobao</string>
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array/>
+		<key>Title</key>
+		<string></string>
 	</dict>
 	<dict>
 		<key>Members</key>

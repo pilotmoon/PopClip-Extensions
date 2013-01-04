@@ -15,6 +15,8 @@
 			<string>http://www.{popclip option site}/s?field-keywords={popclip text}</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Search for products on Amazon.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.amazon-search</string>
 	<key>Extension Name</key>
