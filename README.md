@@ -187,12 +187,12 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 
 ### Option Dictionary
 
-Options are presented to the user in a preferences window and are saved by PopClip's preferences on behalf of the extension. The `password` type is stored in the keychain. Each option dictionary has the following structure.
+Options are presented to the user in a preferences window and are saved by PopClip's preferences on behalf of the extension. Each option dictionary has the following structure.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Option Identifier`|String|Required|Unique identifying string for this option. Must be a lowercase string. This field is used to pass the option to your script. (See [Script Fields](#script-fields)|
-|`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (secure password entry field).|
+|`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box) or `multiple` (pop-up box with multiple choice options)|
 |`Option Label`|String OR Dictionary|Required|Label to appear in the user interface for this option.|
 |`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specified the default value of the option.|
 |`Option Values`|Array|Required for `multiple` type|Array of Strings representing the possible values to show in the pop-up button.|
