@@ -13,14 +13,10 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Check Installed</key>
-			<true/>
 			<key>Link</key>
 			<string>http://www.omnigroup.com/products/omnifocus/</string>
 			<key>Name</key>
 			<string>OmniFocus</string>
-			<key>Bundle Identifier</key>
-			<string>com.omnigroup.OmniFocus</string>
 		</dict>
 	</array>
 	<key>Credits</key>
