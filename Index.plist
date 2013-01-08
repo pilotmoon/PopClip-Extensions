@@ -28,6 +28,30 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>GoogleTranslate</string>
+			<string>TranslateTab</string>
+		</array>
+		<key>Title</key>
+		<string>Translation</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Wikipedia</string>
+			<string>GoogleMaps</string>
+			<string>YouTube</string>
+			<string>Amazon</string>
+			<string>Taobao</string>
+			<string>Baidu</string>
+			<string>ImFeelingLucky</string>
+			<string>Spotify</string>
+		</array>
+		<key>Title</key>
+		<string>Searches</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Markdown</string>
 			<string>LuckyLink</string>
 		</array>
@@ -102,30 +126,6 @@
 		</array>
 		<key>Title</key>
 		<string>Work with URLs</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>YouTube</string>
-			<string>Amazon</string>
-			<string>Taobao</string>
-			<string>Baidu</string>
-			<string>ImFeelingLucky</string>
-			<string>Spotify</string>
-			<string>Wikipedia</string>
-			<string>GoogleMaps</string>
-		</array>
-		<key>Title</key>
-		<string>Searches</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>GoogleTranslate</string>
-			<string>TranslateTab</string>
-		</array>
-		<key>Title</key>
-		<string>Translation</string>
 	</dict>
 	<dict>
 		<key>Members</key>
