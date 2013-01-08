@@ -119,8 +119,8 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Instapaper</string>
 			<string>Pocket</string>
+			<string>Instapaper</string>
 			<string>Readability</string>
 			<string>Leech</string>
 			<string>OpenInSafari</string>
