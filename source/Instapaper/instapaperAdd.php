@@ -3,8 +3,8 @@ require 'consumer.inc';
 require 'OAuth.php';
 $host = "https://www.instapaper.com/api/1/bookmarks/add";
 
-parse_str(base64_decode($_ENV['POPCLIP_OPTION_AUTHSECRET']));
-$url = $_ENV['POPCLIP_TEXT'];
+parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
+$url = getenv('POPCLIP_TEXT');
 
 // generate signed request
 parse_str(base64_decode(POPCLIP_CONSUMER_INFO));

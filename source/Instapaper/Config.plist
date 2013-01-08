@@ -7,6 +7,8 @@
 		<dict>
 			<key>After</key>
 			<string>show-status</string>
+			<key>Image File</key>
+			<string>i.png</string>
 			<key>Long Running</key>
 			<true/>
 			<key>Requirements</key>
