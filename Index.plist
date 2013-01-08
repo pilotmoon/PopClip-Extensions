@@ -10,6 +10,7 @@
 			<string>Formatting</string>
 			<string>Delete</string>
 			<string>Append</string>
+			<string>SelectAll</string>
 		</array>
 		<key>Title</key>
 		<string>Text Editing</string>
