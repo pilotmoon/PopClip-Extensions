@@ -113,6 +113,7 @@
 			<string>ImFeelingLucky</string>
 			<string>Spotify</string>
 			<string>Wikipedia</string>
+			<string>GoogleMaps</string>
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
