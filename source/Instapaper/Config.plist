@@ -78,7 +78,5 @@
 	<string>/usr/bin/php</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

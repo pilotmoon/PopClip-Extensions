@@ -3,8 +3,8 @@ require 'consumer.inc';
 require 'OAuth.php';
 $host = "https://www.readability.com/api/rest/v1/bookmarks";
 
-parse_str(base64_decode($_ENV['POPCLIP_OPTION_AUTHSECRET']));
-$url = $_ENV['POPCLIP_TEXT'];
+parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
+$url = getenv('POPCLIP_TEXT');
 
 // generate signed request
 parse_str(base64_decode(POPCLIP_READABILITY_CONSUMER_INFO));

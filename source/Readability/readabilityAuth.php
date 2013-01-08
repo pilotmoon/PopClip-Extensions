@@ -3,8 +3,8 @@ require 'consumer.inc';
 require 'OAuth.php';
 $host = "https://www.readability.com/api/rest/v1/oauth/access_token/";
 
-$user = $_ENV['POPCLIP_AUTH_USERNAME'];
-$pass = $_ENV['POPCLIP_AUTH_PASSWORD'];
+$user = getenv('POPCLIP_AUTH_USERNAME');
+$pass = getenv('POPCLIP_AUTH_PASSWORD');
 
 // generate signed request
 parse_str(base64_decode(POPCLIP_READABILITY_CONSUMER_INFO));
