@@ -20,7 +20,7 @@
 			<string>(?s)^$</string>
 			<key>Requirements</key>
 			<array>
-				<string>paste</string>
+				<string>cut</string>
 			</array>
 			<key>Title</key>
 			<string>Select All</string>
@@ -39,7 +39,7 @@
 			</dict>
 			<key>Requirements</key>
 			<array>
-				<string>paste</string>
+				<string>cut</string>
 			</array>
 			<key>Title</key>
 			<string>Select All</string>
