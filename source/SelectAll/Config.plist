@@ -20,7 +20,7 @@
 			<string>(?s)^$</string>
 			<key>Requirements</key>
 			<array>
-				<string>cut</string>
+				<string>paste</string>
 			</array>
 			<key>Title</key>
 			<string>Select All</string>
