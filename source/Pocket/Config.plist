@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Save the selected URL to view later with Pocket.</string>
+	<string>Save the URL to view later with Pocket.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pocket</string>
 	<key>Extension Name</key>

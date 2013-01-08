@@ -120,8 +120,8 @@
 		<key>Members</key>
 		<array>
 			<string>Instapaper</string>
-			<string>Readability</string>
 			<string>Pocket</string>
+			<string>Readability</string>
 			<string>Leech</string>
 			<string>OpenInSafari</string>
 			<string>OpenInChrome</string>
