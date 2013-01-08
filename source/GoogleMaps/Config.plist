@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>pin.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,500}$</string>
+			<key>Title</key>
+			<string>Maps</string>
+			<key>URL</key>
+			<string>http://{popclip option site}/?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search for a place on Google Maps.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.google-maps</string>
+	<key>Extension Name</key>
+	<string>Google Maps</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>site</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Google Maps Site</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>maps.google.com</string>
+				<string>maps.google.ae</string>
+				<string>maps.google.at</string>
+				<string>maps.google.az</string>
+				<string>maps.google.be</string>
+				<string>maps.google.bg</string>
+				<string>maps.google.ca</string>
+				<string>maps.google.ch</string>
+				<string>maps.google.cl</string>
+				<string>maps.google.cn</string>
+				<string>maps.google.co.id</string>
+				<string>maps.google.co.il</string>
+				<string>maps.google.co.in</string>
+				<string>maps.google.co.jp</string>
+				<string>maps.google.co.kr</string>
+				<string>maps.google.co.ma</string>
+				<string>maps.google.co.nz</string>
+				<string>maps.google.co.th</string>
+				<string>maps.google.co.uk</string>
+				<string>maps.google.co.ve</string>
+				<string>maps.google.co.za</string>
+				<string>maps.google.com.ar</string>
+				<string>maps.google.com.au</string>
+				<string>maps.google.com.br</string>
+				<string>maps.google.com.co</string>
+				<string>maps.google.com.do</string>
+				<string>maps.google.com.ec</string>
+				<string>maps.google.com.eg</string>
+				<string>maps.google.com.hk</string>
+				<string>maps.google.com.kw</string>
+				<string>maps.google.com.ly</string>
+				<string>maps.google.com.mx</string>
+				<string>maps.google.com.my</string>
+				<string>maps.google.com.ng</string>
+				<string>maps.google.com.pe</string>
+				<string>maps.google.com.ph</string>
+				<string>maps.google.com.pk</string>
+				<string>maps.google.com.qa</string>
+				<string>maps.google.com.sa</string>
+				<string>maps.google.com.sg</string>
+				<string>maps.google.com.tn</string>
+				<string>maps.google.com.tr</string>
+				<string>maps.google.com.tw</string>
+				<string>maps.google.com.ua</string>
+				<string>maps.google.com.vn</string>
+				<string>maps.google.cz</string>
+				<string>maps.google.de</string>
+				<string>maps.google.dk</string>
+				<string>maps.google.dz</string>
+				<string>maps.google.es</string>
+				<string>maps.google.fi</string>
+				<string>maps.google.fr</string>
+				<string>maps.google.gr</string>
+				<string>maps.google.hr</string>
+				<string>maps.google.hu</string>
+				<string>maps.google.ie</string>
+				<string>maps.google.it</string>
+				<string>maps.google.kz</string>
+				<string>maps.google.lk</string>
+				<string>maps.google.lt</string>
+				<string>maps.google.nl</string>
+				<string>maps.google.no</string>
+				<string>maps.google.pl</string>
+				<string>maps.google.pt</string>
+				<string>maps.google.ro</string>
+				<string>maps.google.rs</string>
+				<string>maps.google.ru</string>
+				<string>maps.google.se</string>
+				<string>maps.google.sk</string>
+			</array>
+		</dict>
+	</array>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
