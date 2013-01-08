@@ -6,13 +6,13 @@
 	<array>
 		<dict>
 			<key>After</key>
-			<string>paste-or-copy-result</string>
+			<string>paste-result</string>
 			<key>Image File</key>
 			<string>capitalize.png</string>
 			<key>Script Interpreter</key>
-			<string>/usr/bin/ruby</string>
+			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
-			<string>capitalize.rb</string>
+			<string>capitalize.php</string>
 			<key>Title</key>
 			<string>Abc</string>
 		</dict>
