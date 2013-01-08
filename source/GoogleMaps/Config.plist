@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Search for a place on Google Maps.</string>
+		<string>Search Google Maps.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.google-maps</string>
