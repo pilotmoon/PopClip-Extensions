@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>popclip-appear</string>
 			<key>Image File</key>
-			<string>selectall.png</string>
+			<string>all.png</string>
 			<key>Key Combo</key>
 			<dict>
 				<key>keyChar</key>
@@ -29,7 +29,7 @@
 			<key>After</key>
 			<string>popclip-appear</string>
 			<key>Image File</key>
-			<string>selectall.png</string>
+			<string>all.png</string>
 			<key>Key Combo</key>
 			<dict>
 				<key>keyChar</key>
@@ -53,7 +53,5 @@
 	<string>Select All</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
