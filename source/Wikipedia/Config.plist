@@ -5,14 +5,21 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>Image File</key>
+			<string>w.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^.{1,}$</string>
+			<string>(?s)^.{1,200}$</string>
 			<key>Title</key>
 			<string>Wiki</string>
 			<key>URL</key>
 			<string>http://{popclip option site}/w/index.php?search={popclip text}</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search for encyclopaedia articles on Wikipedia.</string>
+	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.wikipedia</string>
 	<key>Extension Name</key>
