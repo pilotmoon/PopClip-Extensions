@@ -8,7 +8,9 @@
 			<key>AppleScript File</key>
 			<string>EvernoteAddNote.applescript</string>
 			<key>Image File</key>
-			<string>EvernoteElephantEroded.png</string>
+			<string>EvernoteElephant.png</string>
+			<key>Long Running</key>
+			<true/>
 			<key>Title</key>
 			<string>Evernote</string>
 		</dict>
@@ -16,10 +18,10 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Check Installed</key>
-			<true/>
 			<key>Bundle Identifier</key>
 			<string>com.evernote.Evernote</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://www.evernote.com/</string>
 			<key>Name</key>
@@ -32,7 +34,9 @@
 	<string>com.pilotmoon.popclip.extension.evernote</string>
 	<key>Extension Name</key>
 	<string>Evernote</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Pass HTML</key>
+	<true/>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>
