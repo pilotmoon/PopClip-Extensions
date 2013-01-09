@@ -9,6 +9,8 @@
 			<string>NotesNewNote.applescript</string>
 			<key>Image File</key>
 			<string>notepad.png</string>
+			<key>Pass HTML</key>
+			<true/>
 			<key>Title</key>
 			<string>New Note</string>
 		</dict>
