@@ -2,14 +2,17 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.omnifocus</string>
-	<key>Extension Name</key>
-	<string>OmniFocus</string>
-	<key>Extension Description</key>
-	<string>Create a new task in OmniFocus.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>OmniFocusAddInboxTask.applescript</string>
+			<key>Image File</key>
+			<string>omnitick.png</string>
+			<key>Title</key>
+			<string>OmniFocus</string>
+		</dict>
+	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
@@ -26,16 +29,13 @@
 			<string>Marc Abramowitz</string>
 		</dict>
 	</array>
-	<key>Actions</key>
-	<array>
-		<dict>
-			<key>AppleScript File</key>
-			<string>OmniFocusAddInboxTask.applescript</string>
-			<key>Image File</key>
-			<string>omnitick.png</string>
-			<key>Title</key>
-			<string>OmniFocus</string>
-		</dict>
-	</array>
+	<key>Extension Description</key>
+	<string>Create a new task in OmniFocus.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.omnifocus</string>
+	<key>Extension Name</key>
+	<string>OmniFocus</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>

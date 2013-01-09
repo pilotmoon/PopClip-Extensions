@@ -9,7 +9,14 @@ tell application "OmniFocus"
 			if "{popclip text}" contains "http://" or "{popclip text}" contains "https://" then
 				insert "{popclip text}" & return & return at before first character
 			end if
-			insert ("From application: " & name of currentApplication & " on " & (current date) as string) & return & return & "{popclip text}" at before first character
+			
+			if length of "{popclip browser url}" > 0 then
+				set theSource to "From web page: {popclip browser url}"
+			else
+				set theSource to "From application: {popclip app name}"
+			end if
+			insert (theSource & " on " & (current date) as string) & return & return & "{popclip text}" at before first character
+			
 		end tell
 	end tell
 	tell application "System Events"
