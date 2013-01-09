@@ -8,5 +8,6 @@ tell application "Notes"
 		else
 			set myNote to (make new note at folder theFolder with properties {body:"{popclip text}"})
 		end if
+		set name of myNote to first paragraph of "{popclip text}"
 	end tell
 end tell
