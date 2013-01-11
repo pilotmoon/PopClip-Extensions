@@ -10,16 +10,16 @@
 			<key>Title</key>
 			<string>Day One</string>
 			<key>URL</key>
-			<string>dayone://post?entry=”{popclip text}”</string>
+			<string>dayone://post?entry={popclip text}</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.dayone.?</string>
+			<string>com.dayoneapp.dayone</string>
 			<key>Check Installed</key>
-			<false/>
+			<true/>
 			<key>Link</key>
 			<string>http://dayoneapp.com/</string>
 			<key>Name</key>
@@ -32,7 +32,7 @@
 	<string>com.pilotmoon.popclip.extension.dayone</string>
 	<key>Extension Name</key>
 	<string>Day One</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+			<key>Title</key>
+			<string>"</string>
+			<key>URL</key>
+			<string>http://www.google.com/search?q=%22{popclip text}%22</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>"Exact phrase" Google search.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.google-exact</string>
+	<key>Extension Name</key>
+	<string>Google Exact</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
