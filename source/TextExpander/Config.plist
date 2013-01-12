@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>te-snippet.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,600}$</string>
+			<key>Service Name</key>
+			<string>Create TextExpander 3 Snippet</string>
+			<key>Title</key>
+			<string>TextExpander Snippet</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.smileonmymac.textexpander</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://smilesoftware.com/TextExpander/index.html</string>
+			<key>Name</key>
+			<string>TextExpander</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array/>
+	<key>Extension Description</key>
+	<string>Create a TextExpander snippet with the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.textexpander</string>
+	<key>Extension Name</key>
+	<string>TextExpander</string>
+	<key>Required OS Version</key>
+	<string>10.7</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
