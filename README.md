@@ -43,7 +43,7 @@ Here are some other repos you might find interesting:
 
 ## Disclaimer
 
-These instructions are desiged to help a technically competent person to create their own PopClip extension. Please note that user-created extensions are not an officially supported part of PopClip. You need to be comfortable with creating and editing plist files, scripts, and so on. 
+These instructions are designed to help a technically competent person to create their own PopClip extension. Please note that user-created extensions are not an officially supported part of PopClip. You need to be comfortable with creating and editing plist files, scripts, and so on. 
 
 I reserve the right to change or remove features in future versions of PopClip at any time.
 
