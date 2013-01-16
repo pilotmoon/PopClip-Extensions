@@ -5,6 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>Image File</key>
+			<string>tembo.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^[^\n\r]{1,300}$</string>
 			<key>Service Name</key>
@@ -27,7 +29,7 @@
 	<key>Credits</key>
 	<dict>
 		<key>Link</key>
-		<string>http://www.houdah.com</string>
+		<string>http://www.houdah.com/</string>
 		<key>Name</key>
 		<string>Houdah Software s.à r.l.</string>
 	</dict>
@@ -43,18 +45,10 @@
 		<string>選択したテキストを使って Tembo 検索を開始します</string>
 	</dict>
 	<key>Extension Identifier</key>
-	<string>com.houdah.Tembo.popclip.extension.textSearch</string>
-	<key>Extension Image File</key>
-	<string>tembo.png</string>
+	<string>com.pilotmoon.popclip.extension.tembo</string>
 	<key>Extension Name</key>
 	<string>Tembo</string>
-	<key>Required Apps</key>
-	<array>
-		<string>com.houdah.Tembo</string>
-	</array>
-	<key>Required OS Version</key>
-	<string>10.6.6</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>
