@@ -16,23 +16,27 @@
 		</dict>
 	</array>
 	<key>Apps</key>
-	<dict>
-		<key>Bundle Identifier</key>
-		<string>com.houdah.Tembo</string>
-		<key>Check Installed</key>
-		<true/>
-		<key>Link</key>
-		<string>http://www.houdah.com/tembo</string>
-		<key>Name</key>
-		<string>Tembo</string>
-	</dict>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.houdah.Tembo</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.houdah.com/tembo</string>
+			<key>Name</key>
+			<string>Tembo</string>
+		</dict>
+	</array>
 	<key>Credits</key>
-	<dict>
-		<key>Link</key>
-		<string>http://www.houdah.com/</string>
-		<key>Name</key>
-		<string>Houdah Software</string>
-	</dict>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.houdah.com/</string>
+			<key>Name</key>
+			<string>Houdah Software s.à r.l.</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<dict>
 		<key>de</key>
