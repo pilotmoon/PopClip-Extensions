@@ -5,7 +5,7 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Extension Image File</key>
+			<key>Image File</key>
 			<string>tembo.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^[^\n\r]{1,300}$</string>
