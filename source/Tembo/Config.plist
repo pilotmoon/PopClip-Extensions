@@ -5,7 +5,7 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Image File</key>
+			<key>Extension Image File</key>
 			<string>tembo.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^[^\n\r]{1,300}$</string>
@@ -31,7 +31,7 @@
 		<key>Link</key>
 		<string>http://www.houdah.com/</string>
 		<key>Name</key>
-		<string>Houdah Software s.à r.l.</string>
+		<string>Houdah Software</string>
 	</dict>
 	<key>Extension Description</key>
 	<dict>
