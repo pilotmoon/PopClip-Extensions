@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^[^\n\r]{1,300}$</string>
+			<key>Service Name</key>
+			<string>Search in Tembo</string>
+			<key>Title</key>
+			<string>Tembo</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<dict>
+		<key>Bundle Identifier</key>
+		<string>com.houdah.Tembo</string>
+		<key>Check Installed</key>
+		<true/>
+		<key>Link</key>
+		<string>http://www.houdah.com/tembo</string>
+		<key>Name</key>
+		<string>Tembo</string>
+	</dict>
+	<key>Credits</key>
+	<dict>
+		<key>Link</key>
+		<string>http://www.houdah.com</string>
+		<key>Name</key>
+		<string>Houdah Software s.à r.l.</string>
+	</dict>
+	<key>Extension Description</key>
+	<dict>
+		<key>de</key>
+		<string>Startet eine Suche in Tembo mit dem ausgewählten Text.</string>
+		<key>en</key>
+		<string>Start a Tembo search with the selected text.</string>
+		<key>fr</key>
+		<string>Lance une recherche Tembo sur le texte sélectionné.</string>
+		<key>jp</key>
+		<string>選択したテキストを使って Tembo 検索を開始します</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.houdah.Tembo.popclip.extension.textSearch</string>
+	<key>Extension Image File</key>
+	<string>tembo.png</string>
+	<key>Extension Name</key>
+	<string>Tembo</string>
+	<key>Required Apps</key>
+	<array>
+		<string>com.houdah.Tembo</string>
+	</array>
+	<key>Required OS Version</key>
+	<string>10.6.6</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
