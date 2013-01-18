@@ -136,7 +136,6 @@ The `Config.plist` file has the following structure.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Version`|Number|Required|Must be the number `2`.|
 |`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. I recommend you use your own prefix, ideally a reverse DNS-style domain name based prefix. For example `com.my-domain-name.my-extension-identifier`.|
 |`Extension Name`|String OR Dictionary| Required | ![Display names in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/names.png)<br>This is a display name that appears in the preferences list of extensions.  If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. |
 |`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
@@ -144,7 +143,6 @@ The `Config.plist` file has the following structure.
 |`Required Apps`|Array|Optional|Array of bundle identifier strings of applications required for this extension's actions to appear. |
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). The engine used is [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/).|
 |`Requirements`|Array|Optional|Array consisting of one or more of the following strings:<br>`copy`: require Copy to be available<br> `cut`: require Cut to be available<br>`paste`: require Paste to be available<br>`formatting`: Require the text to be in a text field with formatting ability (bold, italic etc.). Note: experimental - might not be reliable.<br>`httpurl`: require the text to contain exactly one HTTP URL; only the matching part will be passed to the action<br>`email`: require the text to contain exactly one email address ; only the matching part will be passed to the action <br>`path`: require the text to contain exactly one local file path; only the matching part will be passed to the action <br> If this field is ommitted, the default is `copy`.|
-|`Position`|Number|Optional|A number specifying where in the popup the action will appear relative to other actions. Fractional values are permitted and actions are sorted in numerical order left to right. The built in actions have the following fixed positions, which you should not use: *Open Link & Search*: `0.5`, *Cut, Copy & Paste*: `1.5`, *Dictionary, Email and Reveal in Finder*: `2.5`. The default is `3`, to appear on the right. Actions with the same position number appear in the order they were installed.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
 |`Pass HTML`|Boolean|Optional|If `YES`, PopClip will pass the selected HTML text (if available) to the extension in the `POPCLIP_HTML` (shell scripts) and `{popclip html}` (AppleScript) fields. Default is `NO`. Leaving this set to `NO` PopClip does not have to process the HTML and this can be slightly faster.|
@@ -167,7 +165,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Title`|String OR Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title, even if it is never displayed.|
 |`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
-|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also avaliable: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
+|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt`) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also avaliable: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
 |`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. This will be passed as the parameter to `/bin/sh`. Within the script, use the environment variable `$POPCLIP_TEXT` to access the selected text. Other variables are also avaliable: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
 |`Script Interpreter`|String|Optional|Specify the interpreter to use for the script specified in `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`.
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder. For example, `http://translate.google.com/#auto%7Cauto%7C{popclip text}`.|
@@ -178,7 +176,6 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Required Apps`|Array|Optional|As above; this value overrides the value specified in the extension header. |
 |`Regular Expression`|String|Optional|As above; this value overrides the value specified in the extension header.|
 |`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Position`|Number|Optional|As above; this value overrides the value specified in the extension header.|
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
@@ -235,7 +232,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 
 ### Example AppleScript File
 
-AppleScript files must be in UTF-8 text format. (Save as 'text' format in AppleScript editor.)
+**Important: AppleScript files must be in UTF-8 plain text format. (Save as 'text' format in AppleScript editor.)**
 
 Here is an example of an AppleScript file for use in an extension (this one is for sending to Evernote):
 
