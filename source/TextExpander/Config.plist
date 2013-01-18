@@ -31,6 +31,8 @@
 	<key>Credits</key>
 	<array>
 		<dict>
+			<key>Link</key>
+			<string>http://twitter.com/mkhudon</string>
 			<key>Name</key>
 			<string>Mathieu Kittel-Hudon</string>
 		</dict>
