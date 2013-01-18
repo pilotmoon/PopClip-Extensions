@@ -6,13 +6,13 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>te-snippet.png</string>
+			<string>te.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,600}$</string>
 			<key>Service Name</key>
 			<string>Create TextExpander 3 Snippet</string>
 			<key>Title</key>
-			<string>TextExpander Snippet</string>
+			<string>TextExpander</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -29,7 +29,12 @@
 		</dict>
 	</array>
 	<key>Credits</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Mathieu Kittel-Hudon</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Create a TextExpander snippet with the selected text.</string>
 	<key>Extension Identifier</key>
