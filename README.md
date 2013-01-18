@@ -271,7 +271,7 @@ Here is an example of a Ruby script that could be used in a shell script extensi
     # make the text ALL CAPS
     print input.upcase 
 
-See also the [Uppercase](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Uppercase) extension on for a working example. 
+See also the [Uppercase](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Uppercase) extension for a working example. 
 
 ### Key Code format
 Key presses should be expressed as a dictionary with the following keys:
