@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>WolframAlpha.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
+			<key>Title</key>
+			<string>Wolfram Alpha</string>
+			<key>URL</key>
+			<string>http://www.wolframalpha.com/input/?i={popclip text}</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Guilherme Bertolini</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search for knowledge on Wolfram Alpha.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.wolframalpha</string>
+	<key>Extension Name</key>
+	<string>Wolfram Alpha</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
