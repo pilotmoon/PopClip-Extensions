@@ -249,7 +249,7 @@ Here is an example of an shell script for use in an extension (this one is for '
 
 ### Script Returning Result
 
-Scripts can return results if they specify one of these keys in the actions `After` field:
+Scripts can return results if they specify one of these keys in the Action's `After` field:
 
 |Key|Behaviour|
 |---|---------|
