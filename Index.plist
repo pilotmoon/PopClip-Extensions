@@ -46,6 +46,8 @@
 			<string>Baidu</string>
 			<string>ImFeelingLucky</string>
 			<string>Spotify</string>
+			<string>IMDb</string>
+			<string>WolframAlpha</string>
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
@@ -110,16 +112,6 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Skype</string>
-			<string>Dialectic</string>
-			<string>PhoneAmego</string>
-		</array>
-		<key>Title</key>
-		<string>Phone Numbers</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
 			<string>Pocket</string>
 			<string>Instapaper</string>
 			<string>Readability</string>
@@ -130,6 +122,16 @@
 		</array>
 		<key>Title</key>
 		<string>Work with URLs</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Skype</string>
+			<string>Dialectic</string>
+			<string>PhoneAmego</string>
+		</array>
+		<key>Title</key>
+		<string>Phone Numbers</string>
 	</dict>
 	<dict>
 		<key>Members</key>
