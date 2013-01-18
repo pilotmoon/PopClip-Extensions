@@ -41,8 +41,6 @@
 	<string>com.pilotmoon.popclip.extension.textexpander</string>
 	<key>Extension Name</key>
 	<string>TextExpander</string>
-	<key>Required OS Version</key>
-	<string>10.7</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
