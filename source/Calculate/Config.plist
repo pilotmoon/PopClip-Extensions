@@ -20,7 +20,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Perform arithmetic. For example, the text '5+6' becomes '11'. Append '=' to put the result at the end; for example '12/4=' becomes '12/4=3'.</string>
+	<string>Perform arithmetic. For example, the text '1+2' becomes '3'. Include '=' to put the result at the end; for example '14/4=' becomes '14/4=3.5'.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.calculate</string>
 	<key>Extension Name</key>
