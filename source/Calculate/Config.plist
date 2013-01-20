@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>calc.png</string>
+			<key>Regular Expression</key>
+			<string>^\s*[0-9x\.\-\+\*\/\(\)][0-9x\.\-\+\*\/\(\)\s]+[0-9x\.\-\+\*\/\(\)]\s*=?\s*$</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>calculate.php</string>
+			<key>Title</key>
+			<string>=</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.calculate</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Calculate</string>
+	</dict>
+	<key>Required Apps</key>
+	<integer>693</integer>
+</dict>
+</plist>
