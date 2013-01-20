@@ -5,12 +5,14 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>AppleScript File</key>
-			<string>ThingsAddToDo.applescript</string>
 			<key>Image File</key>
 			<string>boxtick.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^.{1,500}$</string>
+			<string>(?s)^.{1,1000}$</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>things.php</string>
 			<key>Title</key>
 			<string>Things</string>
 		</dict>
@@ -18,10 +20,10 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Check Installed</key>
-			<true/>
 			<key>Bundle Identifier</key>
 			<string>com.culturedcode.things</string>
+			<key>Check Installed</key>
+			<true/>
 			<key>Link</key>
 			<string>http://culturedcode.com/things/</string>
 			<key>Name</key>
