@@ -9,6 +9,8 @@
 			<string>copy-selection</string>
 			<key>Before</key>
 			<string>paste-plain</string>
+			<key>Image File</key>
+			<string>swap.png</string>
 			<key>Shell Script File</key>
 			<string>null.sh</string>
 			<key>Title</key>
@@ -16,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Swap clipboard with selection. Formatting is removed.</string>
+	<string>Swap the selected text with the contents of the clipboard.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.swap</string>
 	<key>Extension Name</key>
