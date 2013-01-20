@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>rdio.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
+			<key>Title</key>
+			<string>Rdio</string>
+			<key>URL</key>
+			<string>http://www.rdio.com/search/{popclip text}/</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://rdio.com/</string>
+			<key>Name</key>
+			<string>Rdio</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search for music on Rdio.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.rdio</string>
+	<key>Extension Name</key>
+	<string>Rdio</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
