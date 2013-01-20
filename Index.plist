@@ -42,24 +42,14 @@
 			<string>GoogleMaps</string>
 			<string>YouTube</string>
 			<string>Amazon</string>
-			<string>Taobao</string>
-			<string>Baidu</string>
-			<string>ImFeelingLucky</string>
-			<string>Spotify</string>
 			<string>IMDb</string>
 			<string>WolframAlpha</string>
+			<string>ImFeelingLucky</string>
+			<string>Baidu</string>
+			<string>Taobao</string>
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>Markdown</string>
-			<string>LuckyLink</string>
-		</array>
-		<key>Title</key>
-		<string>Markdown</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -109,6 +99,24 @@
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Spotify</string>
+			<string>Rdio</string>
+		</array>
+		<key>Title</key>
+		<string>Music</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Markdown</string>
+			<string>LuckyLink</string>
+		</array>
+		<key>Title</key>
+		<string>Markdown</string>
 	</dict>
 	<dict>
 		<key>Members</key>
