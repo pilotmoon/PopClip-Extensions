@@ -1,10 +1,6 @@
 <?php
-
 $text=trim(getenv('POPCLIP_TEXT'));
 $url=trim(getenv('POPCLIP_BROWSER_URL'));
-
-
-$text="my text.\nmore if it.";
 
 $title=strtok($text, "\n");
 $note=(strlen($title)<strlen($text))?$text:"";
