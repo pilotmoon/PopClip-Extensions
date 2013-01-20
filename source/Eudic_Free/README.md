@@ -7,3 +7,6 @@
 This extension is used to translate selected english word using Eudic Free.
 
 [Chinese instruction](http://mac.pcbeta.com/thread-129485-1-1.html).
+
+Contact me:
+summxt@gmail.com
