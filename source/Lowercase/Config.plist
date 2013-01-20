@@ -22,11 +22,7 @@
 			<key>Title</key>
 			<string>abc</string>
 			<key>After</key>
-			<string>paste-result</string>
-			<key>Requirements</key>
-			<array>
-				<string>paste</string>
-			</array>
+			<string>paste-result</string>			
 		</dict>
 	</array>
 </dict>
