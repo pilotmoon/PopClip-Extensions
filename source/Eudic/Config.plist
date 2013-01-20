@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Identifier</key>
+	<string>com.summxt.popclip.eudic</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Eudic</string>
+		<key>zh-Hans</key>
+		<string>欧路词典</string>
+	</dict>
+	<key>Extension Image File</key>
+	<string>eudic.png</string>
+	<key>Required Apps</key>
+	<array>
+		<string>com.eusoft.eudic</string>
+	</array>
+	<key>Regular Expression</key>
+	<string>^[A-Za-z]{1,}$</string>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Translate the word using Eudic.</string>
+		<key>zh-Hans</key>
+		<string>用欧路词典划词翻译。</string>
+	</dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Summxt</string>
+			<key>Link</key>
+			<string>http://mac.pcbeta.com/thread-129485-1-1.html</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Eudic</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://itunes.apple.com/cn/app/ou-lu-ci-dian-eudic-zeng-qiang/id402380914?l=en&amp;mt=12</string>
+			<key>Bundle Identifier</key>
+			<string>com.eusoft.eudic</string>
+		</dict>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>E</string>
+				<key>zh-Hans</key>
+				<string>欧路</string>
+			</dict>
+			<key>Image File</key>
+			<string>eudic.png</string>
+			<key>AppleScript File</key>
+			<string>Eudic.applescript</string>
+		</dict>
+	</array>
+</dict>
+</plist>
