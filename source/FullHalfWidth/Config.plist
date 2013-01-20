@@ -52,10 +52,6 @@
 	<string>Full/Half Width</string>
 	<key>Position</key>
 	<integer>2</integer>
-	<key>Requirements</key>
-	<array>
-		<string>paste</string>
-	</array>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>
