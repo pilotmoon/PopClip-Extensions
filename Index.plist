@@ -29,6 +29,14 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Calculate</string>
+		</array>
+		<key>Title</key>
+		<string>Arithmetic</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 		</array>
