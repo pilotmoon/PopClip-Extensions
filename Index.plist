@@ -52,7 +52,6 @@
 			<string>Amazon</string>
 			<string>IMDb</string>
 			<string>WolframAlpha</string>
-			<string>BibleVerses</string>
 			<string>ImFeelingLucky</string>
 			<string>Baidu</string>
 			<string>Taobao</string>
@@ -164,9 +163,10 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>BibleVerses</string>
+			<string>PreviewHighlight</string>
 			<string>Say</string>
 			<string>Swap</string>
-			<string>PreviewHighlight</string>
 			<string>CharCount</string>
 			<string>WordCount</string>
 		</array>
