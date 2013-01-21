@@ -163,11 +163,12 @@
 		<key>Members</key>
 		<array>
 			<string>Spotlight</string>
+			<string>Say</string>
+			<string>Swap</string>
+			<string>PreviewHighlight</string>
+			<string>BibleVerses</string>
 			<string>WordCount</string>
 			<string>CharCount</string>
-			<string>Swap</string>
-			<string>Say</string>
-			<string>PreviewHighlight</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
