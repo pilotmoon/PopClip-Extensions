@@ -23,5 +23,3 @@ for item in verseChunks:
 
 for item in verseListsToUrls:
     webbrowser.open("http://www.biblegateway.com/passage/?search=" + item + "&version=" + version + "&interface=print")
-
-sys.exit(0)
