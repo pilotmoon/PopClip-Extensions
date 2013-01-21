@@ -102,6 +102,7 @@
 			<string>Email</string>
 			<string>Fantastical</string>
 			<string>Leap</string>
+			<string>Spotlight</string>
 			<string>Tembo</string>
 			<string>TextExpander</string>
 		</array>
@@ -162,11 +163,10 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Say</string>
+			<string>Swap</string>
 			<string>BibleVerses</string>
 			<string>PreviewHighlight</string>
-			<string>Say</string>
-			<string>Spotlight</string>
-			<string>Swap</string>
 			<string>CharCount</string>
 			<string>WordCount</string>
 		</array>
