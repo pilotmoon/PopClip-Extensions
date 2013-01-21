@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Find Bible verses references in the text, on BibleGateway.</string>
+	<string>Find Bible verse references in the text, on BibleGateway.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extesion.bibleverses</string>
 	<key>Extension Name</key>
