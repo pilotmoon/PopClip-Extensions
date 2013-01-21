@@ -12,7 +12,7 @@
 			<key>Shell Script File</key>
 			<string>grabverses.py</string>
 			<key>Title</key>
-			<string>BibleGateway</string>
+			<string>Bible Verses</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -34,11 +34,11 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Find Bible verses on BibleGateway.</string>
+	<string>Find Bible verses references in the text, on BibleGateway.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extesion.biblegateway</string>
+	<string>com.pilotmoon.popclip.extesion.bibleverses</string>
 	<key>Extension Name</key>
-	<string>BibleGateway</string>
+	<string>Bible Verses</string>
 	<key>Options</key>
 	<array>
 		<dict>
