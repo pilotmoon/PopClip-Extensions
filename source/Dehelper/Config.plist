@@ -12,7 +12,7 @@
 		<string>德语助手</string>
 	</dict>
 	<key>Extension Image File</key>
-	<string>dehelper.png</string>
+	<string>Dehelper.png</string>
 	<key>Required Apps</key>
 	<array>
 		<string>com.eusoft.dehelper</string>
@@ -59,7 +59,7 @@
 				<string>德语助手</string>
 			</dict>
 			<key>Image File</key>
-			<string>dehelper.png</string>
+			<string>Dehelper.png</string>
 			<key>AppleScript File</key>
 			<string>Dehelper.applescript</string>
 		</dict>
