@@ -25,7 +25,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Google "I'm Feeling Lucky" search.</string>
+	<string>Go directly to Google's "I'm Feeling Lucky" search result.</string>
 	<key>Extension Identifier</key>
 	<string>com.lucifr.popclip.extension.google-lucky</string>
 	<key>Extension Name</key>

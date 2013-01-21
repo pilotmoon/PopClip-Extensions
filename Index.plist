@@ -46,12 +46,12 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Wikipedia</string>
-			<string>GoogleMaps</string>
-			<string>YouTube</string>
 			<string>Amazon</string>
+			<string>GoogleMaps</string>
 			<string>IMDb</string>
+			<string>Wikipedia</string>
 			<string>WolframAlpha</string>
+			<string>YouTube</string>
 			<string>ImFeelingLucky</string>
 			<string>Baidu</string>
 			<string>Taobao</string>
@@ -162,13 +162,13 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Spotlight</string>
-			<string>Say</string>
-			<string>Swap</string>
-			<string>PreviewHighlight</string>
 			<string>BibleVerses</string>
-			<string>WordCount</string>
+			<string>PreviewHighlight</string>
+			<string>Say</string>
+			<string>Spotlight</string>
+			<string>Swap</string>
 			<string>CharCount</string>
+			<string>WordCount</string>
 		</array>
 		<key>Title</key>
 		<string>Miscellaneous</string>
