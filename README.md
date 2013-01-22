@@ -149,8 +149,8 @@ The `Config.plist` file has the following structure.
 |`Long Running`|Boolean|Optional|Applies to AppleScript and Shell Script extension only. If `YES`, indicates that the script is expected to be long running. Set this if the script will normally take more than about 0.1 seconds to run, so PopClip knows to show the 'please wait' spinner. |
 |`Extension Description`|String OR Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String OR Dictionary|Optional|If `Extension Name` is truncated, you can include a long version of the name here.|
-|`Credits`|Array|Optional|Information about the creator(s) of the extension. See [Credits Dictionary](#creator-dictionary).|
-|`Apps`|Array|Optional|Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
+|`Credits`|Array|Optional|An array of dictionaries. Information about the creator(s) of the extension. See [Credits Dictionary](#credits-dictionary).|
+|`Apps`|Array|Optional|An array of dictionaries. Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
 |`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `693` for PopClip 1.4.4.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
