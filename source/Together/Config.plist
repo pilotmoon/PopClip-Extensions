@@ -28,8 +28,6 @@
 	<string>com.pilotmoon.popclip.extension.together</string>
 	<key>Extension Name</key>
 	<string>Together</string>
-	<key>Required OS Version</key>
-	<string>10.7</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
