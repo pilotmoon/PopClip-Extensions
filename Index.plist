@@ -163,7 +163,6 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>BibleVerses</string>
 			<string>PreviewHighlight</string>
 			<string>Say</string>
 			<string>Swap</string>
