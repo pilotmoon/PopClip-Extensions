@@ -18,7 +18,7 @@
 		<string>com.eusoft.eudic</string>
 	</array>
 	<key>Regular Expression</key>
-	<string>^[A-Za-z]{1,}$</string>
+	<string>(?s)^.{1,}$</string>
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
