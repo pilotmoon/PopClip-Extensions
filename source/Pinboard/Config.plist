@@ -38,7 +38,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Bookmark the link using Pinboard.</string>
+		<string>Bookmark the URL using Pinboard.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pinboard</string>
