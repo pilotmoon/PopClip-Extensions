@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>show-status</string>
 			<key>Image File</key>
-			<string></string>
+			<string>pinboard.png</string>
 			<key>Long Running</key>
 			<true/>
 			<key>Requirements</key>
