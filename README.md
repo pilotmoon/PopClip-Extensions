@@ -265,7 +265,7 @@ Scripts should indicate success or failure as follows. If the script indicates a
 |General failure|Return status code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
 |Failure with settings|Return status code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
 
-Here is an example of a Ruby script that could be used in a shell script extension (with the `Command Interpreter` set to `/usr/bin/ruby`) and the `After` key set to `paste-result`. 
+Here is an example of a Ruby script that could be used in a shell script extension (with the `Script Interpreter` set to `/usr/bin/ruby`) and the `After` key set to `paste-result`. 
 
     input=ENV['POPCLIP_TEXT']
     # make the text ALL CAPS
