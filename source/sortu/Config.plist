@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>sortU.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+			<key>Shell Script File</key>
+			<string>sortu.sh</string>
+			<key>Title</key>
+			<string>SortU</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Make the selected text sort and uniq.</string>
+	<key>Extension Identifier</key>
+	<string>info.yuzhuohui.popclip.extension.sortu</string>
+	<key>Extension Name</key>
+	<string>sortu</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
