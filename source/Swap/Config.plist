@@ -11,6 +11,11 @@
 			<string>paste-plain</string>
 			<key>Image File</key>
 			<string>swap.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+				<string>copy</string>
+			</array>
 			<key>Shell Script File</key>
 			<string>null.sh</string>
 			<key>Title</key>
@@ -25,10 +30,6 @@
 	<string>Swap</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
-	<key>Requirements</key>
-	<array>
-		<string>paste</string>
-	</array>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>
