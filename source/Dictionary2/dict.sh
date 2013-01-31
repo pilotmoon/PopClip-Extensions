@@ -1,0 +1,1 @@
+open "dict:///$POPCLIP_TEXT"
