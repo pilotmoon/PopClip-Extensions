@@ -22,6 +22,7 @@
 			<string>Uppercase</string>
 			<string>Lowercase</string>
 			<string>FullHalfWidth</string>
+			<string>TextSoap</string>
 		</array>
 		<key>Title</key>
 		<string>Text Transformation</string>
