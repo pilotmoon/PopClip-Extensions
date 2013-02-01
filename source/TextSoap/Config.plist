@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Long Running</key>
+			<true/>
+			<key>Shell Script File</key>
+			<string>clean-text.sh</string>
+			<key>Title</key>
+			<string>Clean Text</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.unmarked.textsoap7</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.unmarked.com/textsoap/</string>
+			<key>Name</key>
+			<string>TextSoap</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://beckism.com/</string>
+			<key>Name</key>
+			<string>Ian Beck</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Parse the selected text in place using TextSoap 7.</string>
+	<key>Extension Identifier</key>
+	<string>com.onecrayon.popclip-extension.textsoap</string>
+	<key>Extension Name</key>
+	<string>TextSoap</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
