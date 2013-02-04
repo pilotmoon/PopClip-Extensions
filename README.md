@@ -37,7 +37,7 @@ Contribtions to this repo via pull requests are welcome. Contributors, please no
 * Please do not edit the Index.plist file.
 * Don't worry about signing the extension, I will take care of that.
 
-If you are not happy with nay of the above, it's probably better if you just host the extension on your own site.
+If you are not happy with the above conditions, it's probably better if you just host the extension on your own site.
 
 ## Other Repos
 
