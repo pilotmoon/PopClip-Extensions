@@ -7,8 +7,6 @@
 		<dict>
 			<key>Image File</key>
 			<string>stickies.png</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,600}$</string>
 			<key>Service Name</key>
 			<string>Make Sticky</string>
 			<key>Title</key>
