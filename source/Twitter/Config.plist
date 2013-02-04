@@ -9,7 +9,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.twitter</string>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using the official Twitter app. Also, you can select a username such as @pilotmoon to see that user's tweets.</string>
+	<string>Compose a new tweet using the official Twitter app.</string>
 	<key>Apps</key>
 	<array>
 		<dict>

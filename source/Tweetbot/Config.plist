@@ -9,7 +9,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.tweetbot</string>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using Tweetbot. Also, you can select a username such as @tapbots to see that user's profile.</string>
+	<string>Compose a new tweet using Tweetbot.</string>
 	<key>Apps</key>
 	<array>
 		<dict>

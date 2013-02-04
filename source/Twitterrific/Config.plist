@@ -35,7 +35,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using Twitterrific. Also, you can select a username such as @iconfactory to see that user's profile.</string>
+	<string>Compose a new tweet using Twitterrific.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.twitterrific</string>
 	<key>Extension Name</key>
