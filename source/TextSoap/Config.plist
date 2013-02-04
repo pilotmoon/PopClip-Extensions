@@ -42,7 +42,7 @@
 	<key>Extension Description</key>
 	<string>Parse the selected text in place using TextSoap 7.</string>
 	<key>Extension Identifier</key>
-	<string>com.onecrayon.popclip-extension.textsoap</string>
+	<string>com.pilotmoon.popclip.extension.textsoap</string>
 	<key>Extension Name</key>
 	<string>TextSoap</string>
 	<key>Version</key>
