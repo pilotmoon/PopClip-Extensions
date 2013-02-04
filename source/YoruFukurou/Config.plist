@@ -36,12 +36,23 @@
 			<string>YoruFukurou</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://zlz.im/</string>
+			<key>Name</key>
+			<string>hzlzh</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Compose a new tweet using YoruFukurou.</string>
 	<key>Extension Identifier</key>
 	<string>com.hzlzh.popclip.extension.yorufukurou</string>
 	<key>Extension Name</key>
 	<string>YoruFukurou</string>
+	<key>New item</key>
+	<string></string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
