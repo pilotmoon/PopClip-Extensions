@@ -33,7 +33,7 @@ Contribtions to this repo via pull requests are welcome. Contributors, please no
 
 * If you contribute an extension, I will assume you are happy for me to publish your contributions on the main PopClip extensions page.
 * I might not publish your extension. I choose which extensions to publish at my sole discretion. 
-* I may make changes to any extension, as I see fit.
+* I may make changes to any extension.
 * Please do not edit the Index.plist file.
 * Don't worry about signing the extension, I will take care of that.
 
