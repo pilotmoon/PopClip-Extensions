@@ -40,7 +40,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Parse the selected text in place using TextSoap 7.</string>
+	<string>Clean up the text using TextSoap.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.textsoap</string>
 	<key>Extension Name</key>
