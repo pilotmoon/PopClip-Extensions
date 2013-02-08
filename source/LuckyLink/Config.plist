@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Replaces the selected text with Google's top result URL. For example, "Boing Boing" becomes "http://boingboing.net/". Choose between plain or Markdown format.".</string>
+	<string>Replaces the selected text with Google's top result URL. For example, 'Boing Boing' becomes 'http://boingboing.net/'. Choose between plain or Markdown format.".</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.luckylink</string>
 	<key>Extension Name</key>
