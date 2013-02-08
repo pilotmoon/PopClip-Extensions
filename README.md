@@ -6,7 +6,7 @@
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
 
-![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic.png)
+![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic3.png)
 
 This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Layout of the repo:
 
