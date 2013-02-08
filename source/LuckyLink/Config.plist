@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Replaces the selected text with Google's "I'm Feeling Lucky" result as a Markdown link.</string>
+	<string>Replaces the selected text with Google's top result URL. For example, "Boing Boing" becomes "http://boingboing.net/". Or in Markdown mode, "[Boing Boing](http://boingboing.net/)".</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.luckylink</string>
 	<key>Extension Name</key>
