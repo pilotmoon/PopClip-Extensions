@@ -27,7 +27,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Get the IP address corresponding to the selected URL.</string>
+	<string>Get the selected URL's IP address.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.getip</string>
 	<key>Extension Image File</key>

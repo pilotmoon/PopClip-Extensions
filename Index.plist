@@ -125,6 +125,7 @@
 			<string>OpenInSafari</string>
 			<string>OpenInChrome</string>
 			<string>OpenInFirefox</string>
+			<string>GetIP</string>
 		</array>
 		<key>Title</key>
 		<string>Work with URLs</string>
@@ -152,7 +153,6 @@
 		<key>Members</key>
 		<array>
 			<string>Calculate</string>
-			<string>GetIP</string>
 			<string>LuckyLink</string>
 			<string>Markdown</string>
 			<string>Sort</string>
