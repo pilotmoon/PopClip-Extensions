@@ -114,7 +114,7 @@ Here is an example package structure, using the 'Say' extension:
 
 ### The Config.plist
 Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as the excellent [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
-). Here is an example of the plist for 'Translate Tab', as viewed in PlistEdit Pro:
+). Here is an example of the plist for 'Translate Tab', as viewed in Xcode:
 
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
