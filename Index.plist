@@ -151,6 +151,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Sort</string>
 			<string>Calculate</string>
 			<string>LuckyLink</string>
 			<string>Markdown</string>
