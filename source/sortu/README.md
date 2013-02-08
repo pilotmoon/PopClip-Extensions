@@ -1,1 +1,0 @@
-## sort and unique selected text

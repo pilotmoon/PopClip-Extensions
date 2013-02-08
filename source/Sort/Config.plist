@@ -8,7 +8,9 @@
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
-			<string>sortU.png</string>
+			<string>sort.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^(.+)[\r\n](.+)$</string>
 			<key>Requirements</key>
 			<array>
 				<string>paste</string>
@@ -19,13 +21,22 @@
 			<string>SortU</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://github.com/agassiyzh</string>
+			<key>Name</key>
+			<string>Agassi</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Make the selected text sort and uniq.</string>
+	<string>Sort the selected lines in alphabetical order, and remove duplicate lines.</string>
 	<key>Extension Identifier</key>
-	<string>info.yuzhuohui.popclip.extension.sortu</string>
+	<string>com.pilotmoon.popclip.extension.sort</string>
 	<key>Extension Name</key>
-	<string>sortu</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<string>Sort</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>
