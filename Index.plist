@@ -151,10 +151,11 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Sort</string>
 			<string>Calculate</string>
+			<string>GetIP</string>
 			<string>LuckyLink</string>
 			<string>Markdown</string>
+			<string>Sort</string>
 			<string>Say</string>
 			<string>Swap</string>
 			<string>CharCount</string>
