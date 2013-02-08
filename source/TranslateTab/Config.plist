@@ -2,39 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Name</key>
-	<string>Translate Tab</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.translate-tab</string>
-	<key>Extension Description</key>
-	<string>Translate the text using Translate Tab.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>ttab.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+			<key>Service Name</key>
+			<string>Translate selection with Translate Tab</string>
+			<key>Title</key>
+			<string>Translate</string>
+		</dict>
+	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.piezo.Translate-Tab</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
 			<string>http://translate-tab.com/</string>
 			<key>Name</key>
 			<string>Translate Tab</string>
-			<key>Bundle Identifier</key>
-			<string>com.piezo.Translate-Tab</string>
 		</dict>
 	</array>
-	<key>Actions</key>
-	<array>
-		<dict>
-			<key>Service Name</key>
-			<string>Translate selection with Translate Tab</string>
-			<key>Image File</key>
-			<string>ttab.png</string>
-			<key>Title</key>
-			<string>Translate</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,1900}$</string>
-		</dict>
-	</array>
+	<key>Extension Description</key>
+	<string>Translate the text using Translate Tab.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.translate-tab</string>
+	<key>Extension Name</key>
+	<string>Translate Tab</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>

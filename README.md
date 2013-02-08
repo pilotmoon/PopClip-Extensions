@@ -37,8 +37,6 @@ Contribtions to this repo via pull requests are welcome. Contributors, please no
 * Please do not edit the Index.plist file.
 * Don't worry about signing the extension, I will take care of that.
 
-If you are not happy with the above conditions, it's probably better if you just host the extension on your own site.
-
 ## Other Repos
 
 Here are some other repos you might find interesting:
@@ -116,9 +114,9 @@ Here is an example package structure, using the 'Say' extension:
 
 ### The Config.plist
 Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as the excellent [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
-). Here is an example of the plist for 'Say', as viewed in Xcode:
+). Here is an example of the plist for 'Translate Tab', as viewed in PlistEdit Pro:
 
-![Example plist, for 'Say'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/sayplist.png)
+![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
 ### Icons
 Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window.  Icons may be created in any graphics program. (I use [Pixelmator](http://www.pixelmator.com/).)  The icon should:

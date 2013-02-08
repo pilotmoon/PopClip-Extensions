@@ -26,7 +26,7 @@
 		<key>fr</key>
 		<string>Lire</string>
 	</dict>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required Software Version</key>
+	<integer>693</integer>
 </dict>
 </plist>
