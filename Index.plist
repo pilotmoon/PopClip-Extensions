@@ -29,14 +29,6 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Calculate</string>
-		</array>
-		<key>Title</key>
-		<string>Arithmetic</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 		</array>
@@ -108,6 +100,7 @@
 			<string>Tembo</string>
 			<string>TextExpander</string>
 			<string>TextSoap</string>
+			<string>PreviewHighlight</string>
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
@@ -120,15 +113,6 @@
 		</array>
 		<key>Title</key>
 		<string>Music</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>Markdown</string>
-			<string>LuckyLink</string>
-		</array>
-		<key>Title</key>
-		<string>Markdown</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -167,14 +151,16 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>PreviewHighlight</string>
+			<string>Calculate</string>
+			<string>Lucky Link</string>
+			<string>Markdown</string>
 			<string>Say</string>
 			<string>Swap</string>
 			<string>CharCount</string>
 			<string>WordCount</string>
 		</array>
 		<key>Title</key>
-		<string>Miscellaneous</string>
+		<string>Really Useful Tools</string>
 	</dict>
 </array>
 </plist>
