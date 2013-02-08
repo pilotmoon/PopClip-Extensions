@@ -38,22 +38,6 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Wikipedia</string>
-			<string>GoogleMaps</string>
-			<string>YouTube</string>
-			<string>Amazon</string>
-			<string>IMDb</string>
-			<string>WolframAlpha</string>
-			<string>ImFeelingLucky</string>
-			<string>Baidu</string>
-			<string>Taobao</string>
-		</array>
-		<key>Title</key>
-		<string>Searches</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
 			<string>Notes</string>
 			<string>MakeSticky</string>
 			<string>Evernote</string>
@@ -108,6 +92,22 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Wikipedia</string>
+			<string>GoogleMaps</string>
+			<string>YouTube</string>
+			<string>Amazon</string>
+			<string>IMDb</string>
+			<string>WolframAlpha</string>
+			<string>ImFeelingLucky</string>
+			<string>Baidu</string>
+			<string>Taobao</string>
+		</array>
+		<key>Title</key>
+		<string>Searches</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Spotify</string>
 			<string>Rdio</string>
 		</array>
@@ -152,7 +152,7 @@
 		<key>Members</key>
 		<array>
 			<string>Calculate</string>
-			<string>Lucky Link</string>
+			<string>LuckyLink</string>
 			<string>Markdown</string>
 			<string>Say</string>
 			<string>Swap</string>
