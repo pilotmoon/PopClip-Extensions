@@ -42,10 +42,11 @@
 			<string>MakeSticky</string>
 			<string>Evernote</string>
 			<string>NotationalVelocity</string>
-			<string>nvALT</string>
+			<string>NotesTab</string>
 			<string>StickyNotifications</string>
-			<string>Yojimbo</string>
 			<string>Together</string>
+			<string>Yojimbo</string>
+			<string>nvALT</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>

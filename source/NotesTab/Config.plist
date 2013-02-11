@@ -29,9 +29,9 @@
 	<key>Extension Description</key>
 	<string>Create a new note in NotesTab Pro.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.notestabpro</string>
+	<string>com.pilotmoon.popclip.extension.notestab</string>
 	<key>Extension Name</key>
-	<string>NotesTab</string>
+	<string>NotesTab Pro</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
