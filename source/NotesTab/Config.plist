@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string></string>
+			<string>notestab.png</string>
 			<key>Title</key>
 			<string>NotesTab</string>
 			<key>URL</key>
@@ -17,19 +17,19 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.fiplab.notetab</string>
+			<string>com.fiplab.notetabpro</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
 			<string>http://notestab.com/</string>
 			<key>Name</key>
-			<string>NotesTab</string>
+			<string>NotesTab Pro</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new note in NotesTab.</string>
+	<string>Create a new note in NotesTab Pro.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.notestab</string>
+	<string>com.pilotmoon.popclip.extension.notestabpro</string>
 	<key>Extension Name</key>
 	<string>NotesTab</string>
 	<key>Required Software Version</key>
