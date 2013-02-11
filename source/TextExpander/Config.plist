@@ -21,7 +21,7 @@
 			<key>Bundle Identifier</key>
 			<string>com.smileonmymac.textexpander</string>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://smilesoftware.com/TextExpander/index.html</string>
 			<key>Name</key>
