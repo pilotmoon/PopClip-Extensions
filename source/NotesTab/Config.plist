@@ -17,7 +17,7 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.fiplab.notetabpro</string>
+			<string>com.fiplab.notestabpro</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
