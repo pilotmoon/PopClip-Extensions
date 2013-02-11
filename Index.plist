@@ -31,7 +31,6 @@
 		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
-			<string>UltraTranslator</string>
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
