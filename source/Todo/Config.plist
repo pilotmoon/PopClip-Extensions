@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string></string>
+			<string>todomug.png</string>
 			<key>Service Name</key>
 			<string>New Task With Selection</string>
 			<key>Title</key>
