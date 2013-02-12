@@ -15,7 +15,7 @@ api = {
 	#'t.cn' : 'https://api.weibo.com/2/short_url/shorten.json?access_token=yyy&url_long=',
 	'goo.gl' : 'https://www.googleapis.com/urlshortener/v1/url',
 	'is.gd' : 'http://is.gd/create.php?format=json&logstats=1&url=',  
-	'v.gd' : 'http://v.gd/create.php?format=jsonlogstats=1&url='
+	'v.gd' : 'http://v.gd/create.php?format=json&logstats=1&url='
 #	'tiny.cc' : 'http://tiny.cc/?c=rest_api&m=shorten&version=2.0.3&format=json&shortUrl=&login=xxx&apiKey=yyy&longUrl='
 }
 
