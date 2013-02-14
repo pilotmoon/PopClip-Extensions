@@ -55,7 +55,7 @@
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
-				<string>Email or username</string>
+				<string>Username</string>
 			</dict>
 			<key>Option Type</key>
 			<string>string</string>
@@ -66,7 +66,7 @@
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
-				<string>Password, if needed</string>
+				<string>Password</string>
 			</dict>
 			<key>Option Type</key>
 			<string>password</string>
