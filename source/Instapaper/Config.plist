@@ -41,7 +41,7 @@
 		<string>Save the URL to read later with Instapaper.</string>
 	</dict>
 	<key>Extension Identifier</key>
-	<string>test.instapaper</string>
+	<string>com.pilotmoon.popclip.extension.instapaper</string>
 	<key>Extension Name</key>
 	<dict>
 		<key>en</key>
