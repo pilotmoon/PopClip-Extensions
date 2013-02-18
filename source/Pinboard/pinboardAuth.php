@@ -1,6 +1,6 @@
 <?php
-$user = getenv('POPCLIP_AUTH_USERNAME');
-$pass = getenv('POPCLIP_AUTH_PASSWORD');
+$user = rawurlencode(getenv('POPCLIP_AUTH_USERNAME'));
+$pass = rawurlencode(getenv('POPCLIP_AUTH_PASSWORD'));
 
 // execute request
 $ch = curl_init("https://$user:$pass@api.pinboard.in/v1/user/api_token");
