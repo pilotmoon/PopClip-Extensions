@@ -17,4 +17,8 @@ tell application "Reminders"
 	-- make the reminder
 	tell account accountName to set myReminder to (make new reminder at list listName with properties {name:"{popclip text}"})
 	
+	if length of "{popclip browser url}" > 0 then
+		set body of myReminder to "{popclip browser url}"
+	end if
+	
 end tell
