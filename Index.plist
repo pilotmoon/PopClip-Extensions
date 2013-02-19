@@ -121,6 +121,14 @@
 		<key>Members</key>
 		<array>
 			<string>ShortenLink</string>
+			<string>Bitly</string>
+		</array>
+		<key>Title</key>
+		<string>Link Shortening</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Pocket</string>
 			<string>Instapaper</string>
 			<string>Readability</string>
