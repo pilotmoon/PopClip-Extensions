@@ -19,7 +19,7 @@
 			<key>Link</key>
 			<string>https://twitter.com/smithjw/status/244757999665700864</string>
 			<key>Name</key>
-			<string>James Swift</string>
+			<string>James Smith</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -29,7 +29,7 @@
 	<key>Extension Image File</key>
 	<string>RTC.png</string>
 	<key>Extension Name</key>
-	<string>Run Command</string>
+	<string>Terminal</string>
 	<key>Version</key>
 	<integer>2</integer>
 </dict>
