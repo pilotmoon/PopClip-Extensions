@@ -1,0 +1,42 @@
+<?php
+require 'common.inc';
+parse_str(base64_decode(POPCLIP_DROPLR_ID));
+
+parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
+$url = getenv('POPCLIP_TEXT');
+
+$service="/links.json";
+$method = 'POST';
+$contentType = 'text/plain';
+
+$time = time()*1000;
+$accessKey = base64_encode("$puk:$userEmail");
+$sig = signDroplrRequest($prk, $passHash, $method, $service, $contentType, $time);
+
+// execute request
+$ch = curl_init(DROPLR_SERVER.$service);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $url);
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+	"Authorization: droplr $accessKey:$sig",
+	"Date: $time",
+	"User-Agent: ".POPCLIP_USER_AGENT,
+	"Content-Type: ".$contentType,
+	 ));
+
+$response = curl_exec($ch);
+$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+if ($code==201) {
+	echo json_decode($response)->shortlink;
+	exit(0); // success
+}  
+else if ($code==401) {
+	exit(2); // bad auth
+}
+else {
+	exit(1); // other error
+}
+?>
