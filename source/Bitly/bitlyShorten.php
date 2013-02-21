@@ -10,11 +10,15 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-if ($code==200) {
-	echo json_decode($response)->data->url;
+$json = json_decode($response);
+$status = $json->status_code;
+$result = $json->data->url;
+
+if ($code==200&&$status==200) {
+	echo $result;
 	exit(0); // success
 }  
-else if ($code==500) {
+else if ($code==200&&$status=500) {
 	exit(2); // bad auth
 }
 else {
