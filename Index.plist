@@ -72,9 +72,10 @@
 			<string>Twitterrific</string>
 			<string>Tweetbot</string>
 			<string>YoruFukurou</string>
+			<string>Buffer</string>
 		</array>
 		<key>Title</key>
-		<string>Twitter Apps</string>
+		<string>Social Networking</string>
 	</dict>
 	<dict>
 		<key>Members</key>
