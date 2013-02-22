@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>buffer.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,500}$</string>
+			<key>Title</key>
+			<string>Buffer</string>
+			<key>URL</key>
+			<string>http://bufferapp.com/add?text={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://bufferapp.com/</string>
+			<key>Name</key>
+			<string>Buffer</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Compose a new post using Buffer.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.buffer</string>
+	<key>Extension Name</key>
+	<string>Buffer</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
