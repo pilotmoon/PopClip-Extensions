@@ -123,6 +123,7 @@
 		<array>
 			<string>ShortenLink</string>
 			<string>Bitly</string>
+			<string>Droplr</string>
 		</array>
 		<key>Title</key>
 		<string>Link Shortening</string>
