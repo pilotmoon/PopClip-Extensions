@@ -2,13 +2,14 @@
 require 'common.inc';
 parse_str(base64_decode(POPCLIP_DROPLR_ID));
 
+// authsecret contains the user's email and hashed password
 parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
 $url = getenv('POPCLIP_TEXT');
 
+// prepare a call to links.json
 $service="/links.json";
 $method = 'POST';
 $contentType = 'text/plain';
-
 $time = time()*1000;
 $accessKey = base64_encode("$puk:$userEmail");
 $sig = signDroplrRequest($prk, $passHash, $method, $service, $contentType, $time);
@@ -25,7 +26,6 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	"User-Agent: ".POPCLIP_USER_AGENT,
 	"Content-Type: ".$contentType,
 	 ));
-
 $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
