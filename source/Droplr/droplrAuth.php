@@ -23,6 +23,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 	"Date: $time",
 	"User-Agent: ".POPCLIP_USER_AGENT
 	));
+$response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($code==200) {
