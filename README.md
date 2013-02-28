@@ -87,13 +87,6 @@ All extensions have access to the following filtering mechanisms, to help preven
 * Filter by whether cut, copy or paste is available.
 * Filter by whether the text contains a URL, email address or file path.
 
-### Limitations
-Whilst the extensions mechanism is quite flexible, there are some limitations worth pointing out:
-
-* The selected text is passed as plain text. Formatting is not preserved.
-* Extensions cannot have their own preferences options. Everything must be pre-set in the extension package. Therefore, actions that would require the user to enter a username/password are currently not supported. (Although you could hard code these in your own private extensions.)
-
-
 ## Anatomy of a PopClip Extension
 
 ### About .popclipextz files
