@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>iCiBa.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,100}$</string>
+			<key>Title</key>
+			<string>Translate</string>
+			<key>URL</key>
+			<string>http://www.iciba.com/{popclip text}</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://nan.im/</string>
+			<key>Name</key>
+			<string>nan.im</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>im.nan.popclip.iciba</string>
+	<key>Extension Name</key>
+	<string>iCiBa</string>
+	<key>Extension Description</key>
+	<string>Open iCiBa Translate with the selected text.</string>
+</dict>
+</plist>
