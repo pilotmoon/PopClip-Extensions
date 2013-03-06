@@ -18,10 +18,12 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.smileonmymac.textexpander</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.smileonmymac.textexpander</string>
+			</array>
 			<key>Check Installed</key>
-			<false/>
+			<true/>
 			<key>Link</key>
 			<string>http://smilesoftware.com/TextExpander/index.html</string>
 			<key>Name</key>

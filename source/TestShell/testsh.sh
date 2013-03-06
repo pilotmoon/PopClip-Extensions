@@ -1,2 +1,2 @@
-sleep 10
-echo "08:00pm BST"
+sleep 1
+/bin/echo -n ""
