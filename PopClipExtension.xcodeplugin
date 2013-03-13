@@ -21,7 +21,7 @@
                 <key name="Required Software Version" localizedString="Required Software Version" class="SoftwareVersion" use="required"></key>
                 <key name="Requirements" localizedString="Requirements" class="RequirementsElement" use="optional"></key>
                 <key name="Stay Visible" localizedString="Stay Visible" class="Boolean" use="optional"></key>
-                <key name="Version" localizedString="Version" class="VersionNumber" use="required"></key>
+                <key name="Version" localizedString="Version" class="VersionNumber" use="deprecated"></key>
             </dictionaryKeys>
         </definition>
         <definition name="Localizer" localizedString="Localizer" class="Dictionary" identifyingKey="en">
