@@ -1,5 +1,7 @@
 <?php
 $text=getenv('POPCLIP_TEXT');
+$dsep=getenv('POPCLIP_DECIMAL_SEPARATOR');
+$gsep=getenv('POPCLIP_GROUPING_SEPARATOR');
 
 // trim whitespace
 $trimmedText=trim($text);
@@ -25,16 +27,28 @@ if (strpos($trimmedText, "=")!==FALSE) {
 // replace x with *
 $evalText=str_replace("x", "*", $trimmedText);
 
+// remove spaces
+$evalText=preg_replace('=\s=', '', $evalText);
+
+// remove grouping separator
+$evalText=str_replace($gsep, '', $evalText);
+
+// replace decimal separator with .
+$evalText=str_replace($dsep, '.', $evalText);
+
 $evalResult=eval("\$result = ($evalText); return \$result;");
 if (gettype($evalResult)==='integer' || gettype($evalResult)==='double') {
+	
+	// replace back decimal separator 
+	$resultStr=str_replace('.', $dsep, $evalResult);
 
 	if($endsWithEquals) {
 		// append to end
-		$resultStr=$text.$evalResult;
+		$resultStr=$text.$resultStr;
 	}
 	else {
 		// substitute
-		$resultStr=str_replace($trimmedText, $evalResult, $text);
+		$resultStr=str_replace($trimmedText, $resultStr, $text);
 	}
 	
 	echo $resultStr;

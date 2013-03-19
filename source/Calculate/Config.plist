@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>calc.png</string>
 			<key>Regular Expression</key>
-			<string>^\s*[0-9x\.\-\+\*\/\(\)][0-9x\.\-\+\*\/\(\)\s]+[0-9x\.\-\+\*\/\(\)]\s*=?\s*$</string>
+			<string>^\s*[0-9x\,\.\-\+\*\/\(\)][0-9x\,\.\-\+\*\/\(\)\s]+[0-9x\,\.\-\+\*\/\(\)]\s*=?\s*$</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
@@ -29,6 +29,6 @@
 		<string>Calculate</string>
 	</dict>
 	<key>Required Apps</key>
-	<integer>693</integer>
+	<integer>699</integer>
 </dict>
 </plist>
