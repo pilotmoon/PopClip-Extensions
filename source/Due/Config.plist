@@ -19,10 +19,10 @@
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Link</key>
+			<string>http://www.dueapp.com/mac.html</string>
 			<key>Name</key>
 			<string>Due</string>
-			<key>New item</key>
-			<string>http://www.dueapp.com/mac.html</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
