@@ -61,6 +61,7 @@
 			<string>Doit</string>
 			<string>TaskPaper</string>
 			<string>Todo</string>
+			<string>Due</string>
 		</array>
 		<key>Title</key>
 		<string>To-Do Apps</string>
