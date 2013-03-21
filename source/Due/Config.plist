@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>due.png</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Due</string>
+			</dict>
+			<key>URL</key>
+			<string>due://x-callback-url/add?title={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Due</string>
+			<key>New item</key>
+			<string>http://www.dueapp.com/mac.html</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Make a new reminder using Due.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.due</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Due</string>
+	</dict>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
