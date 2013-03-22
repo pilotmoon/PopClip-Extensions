@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>quotes.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>quotes.php</string>
+			<key>Title</key>
+			<string>Quotes</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Put the selected text in quotation marks.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.quotes</string>
+	<key>Extension Name</key>
+	<string>Quotes</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>quotestyle</string>
+			<key>Option Label</key>
+			<string>Style</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>"…" (double straight)</string>
+				<string>'…' (single straight)</string>
+				<string>“…” (double curly)</string>
+				<string>‘…’ (single curly)</string>
+				<string>«…»</string>
+				<string>‹…›</string>
+				<string>「…」</string>
+				<string>『…』</string>
+				<string>„…“</string>
+				<string>‚…‘</string>
+			</array>
+		</dict>
+	</array>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
