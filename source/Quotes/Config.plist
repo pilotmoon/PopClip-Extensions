@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Put the selected text in quotation marks.</string>
+	<string>Put quotation marks around the selected text. Supports several different quote styles, such as “…”, «…», 「…」.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.quotes</string>
 	<key>Extension Name</key>
