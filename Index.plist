@@ -21,6 +21,7 @@
 			<string>Capitalize</string>
 			<string>Uppercase</string>
 			<string>Lowercase</string>
+			<string>Quotes</string>
 			<string>FullHalfWidth</string>
 		</array>
 		<key>Title</key>
