@@ -34,10 +34,10 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
-				<string>"…" (double straight)</string>
-				<string>'…' (single straight)</string>
 				<string>“…” (double curly)</string>
 				<string>‘…’ (single curly)</string>
+				<string>"…" (double straight)</string>
+				<string>'…' (single straight)</string>
 				<string>«…»</string>
 				<string>‹…›</string>
 				<string>「…」</string>
