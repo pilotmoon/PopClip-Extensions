@@ -187,7 +187,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 
 ### Requirements keys
 
-These are the values supported by the `Requirements` field.
+These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it. For example, `!paste` if you only want the action to appear when Paste is *not* available.
 
 |Value|Description|
 |-----|-----------|
