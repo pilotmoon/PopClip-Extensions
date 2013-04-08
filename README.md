@@ -155,7 +155,7 @@ The `Config.plist` file has the following structure.
 |`Credits`|Array|Optional|An array of dictionaries. Information about the creator(s) of the extension. See [Credits Dictionary](#credits-dictionary).|
 |`Apps`|Array|Optional|An array of dictionaries. Information about the app(s) this extension works with. See [Apps Dictionary](#apps-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
-|`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `693` for PopClip 1.4.4.|
+|`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `701` for PopClip 1.4.5.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for this extension.`.|
