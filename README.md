@@ -189,8 +189,8 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 
 These are the values supported by the `Requirements` field.
 
-|Value|Descripion|
-|-|-|
+|Value|Description|
+|-----|-----------|
 |`copy`|The system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
 |`cut`|The system Cut command must be available.|
 |`paste`|The system Paste command must be available.|
@@ -207,8 +207,8 @@ These are the values supported by the `Requirements` field.
 
 These are the values supported by the `Before` and `After` fields.
 
-|Value|Descripion|
-|-|-|
+|Value|Description|
+|-----|-----------|
 |`cut`|Perform system Cut command, as if user pressed ⌘X.|
 |`copy`|Perform system Copy command, as if user pressed ⌘C.|
 |`paste`|Perform system Paste command, as if user pressed ⌘V.|
