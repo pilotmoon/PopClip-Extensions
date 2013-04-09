@@ -40,7 +40,7 @@
 	<string>nv.png</string>
 	<key>Extension Name</key>
 	<string>nvALT</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required Software Version</key>
+	<string>701</string>
 </dict>
 </plist>
