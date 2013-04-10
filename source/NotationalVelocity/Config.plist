@@ -15,7 +15,7 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>net.notational.velocitys</string>
+			<string>net.notational.velocity</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
