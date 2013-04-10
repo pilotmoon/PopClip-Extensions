@@ -15,12 +15,11 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>net.notational.velocity</string>
+			<string>net.notational.velocitys</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://notational.net/
-</string>
+			<string>http://notational.net/</string>
 			<key>Name</key>
 			<string>Notational Velocity</string>
 		</dict>
