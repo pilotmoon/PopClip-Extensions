@@ -14,6 +14,8 @@
 	<key>Apps</key>
 	<array>
 		<dict>
+			<key>Bundle Identifier</key>
+			<string>net.notational.velocity</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
