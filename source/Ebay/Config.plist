@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Ebay</string>
 			<key>URL</key>
-			<string>http://www.{popclip option site}/sch/i.html?_trksid=m570.l1313&amp;_nkw={popclip text}&amp;_sacat=0&amp;_from=R40</string>
+			<string>http://www.{popclip option site}/sch/i.html?_nkw={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
