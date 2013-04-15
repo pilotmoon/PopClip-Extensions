@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>scales.png</string>
 			<key>Regular Expression</key>
-			<string>(?i)^\s*(\d+(?:[\.,]\d+)?)\s?(?:(?:pounds?|lbs?)|(?:ounces?|oz?)|(?:centimetres?|centimeters?|cm)|(?:inches|inch|ins?|")|(?:feet|foot|ft|')|(?:yards?|yds?)|(?:miles?|mi)|(?:kilometres?|kilometers?|km?)|(?:kilograms?|kilos?|kg)|(?:grams?|g)|(?:metres?|meters?|m))\s*$</string>
+			<string>(?i)^\s*(\d+(?:[\.,]\d+)?)\s?(?:(?:pounds?|lbs?)|(?:ounces?|oz?)|(?:centimetres?|centimeters?|cm)|(?:inches|inch|ins?|")|(?:feet|foot|ft|')|(?:yards?|yds?)|(?:miles?|mi)|(?:kilometres?|kilometers?|km?)|(?:kilograms?|kilos?|kg)|(?:grams?|g)|(?:metres?|meters?|m)|(?:°?F)|(?:°?C))\s*$</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
@@ -23,7 +23,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert between common metric and US/imperial units. For example: ‘300 lbs’ → ‘136.1 kg’, '10 km' → ‘6.2 miles’, ‘9"’ → ‘22.9cm’, </string>
+	<string>Convert between common metric and US/Imperial units. For example: ‘300 lbs’ → ‘136.1 kg’, '10 km' → ‘6.2 miles’, ‘9"’ → ‘22.9cm’, ‘100°C’ → ‘212.0°F’.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.convert</string>
 	<key>Extension Name</key>

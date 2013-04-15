@@ -41,9 +41,10 @@ function places($number) {
 
 function doConvert($text) {
 	global $convert;
-	reset($convert);
-	while (list($unitRegex, list($outputUnit, $factor, $spaceFlag)) = each($convert)) {		
+	foreach ($convert as $unitRegex => $rules) {		
 		if (1===preg_match('/^\s*((\d+(?:'.ALL_SEPARATORS.'\d+)?)(\s*)'.$unitRegex.')\s*$/ui', $text, $matches)) {
+			// the rules for this conversion
+			list($outputUnit, $factor, $spaceFlag) = $rules;
 			// the matching input (e.g. '123.45 kg')
 			$whole=$matches[1];
 			// the number part (e.g. '123.45')
