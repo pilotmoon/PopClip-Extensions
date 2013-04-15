@@ -27,6 +27,8 @@ $convert = array(
 	'(?:kilograms?|kilos?|kg)' => array('lb', 1/$kg_per_lb),	
 	'(?:grams?|g)' => array('oz', 1/$g_per_oz),
 	'(?:metres?|meters?|m)' => array('\'', 1/$m_per_foot, 0),
+	'(?:°?F)' => array('°C', 1),
+	'(?:°?C)' => array('°F', 1),
 	);
 
 // return the number of decimal places in the input string, if any. else 1.
@@ -54,6 +56,12 @@ function doConvert($text) {
 				$outputUnit = 'yards';
 				$resultNumber /= 3;
 				$spaceFlag = 1;
+			}
+			else if ($outputUnit == '°C') {
+				$resultNumber = (($resultNumber - 32) * 5) / 9;
+			}
+			else if ($outputUnit == '°F') {
+				$resultNumber = (($resultNumber * 9) / 5) + 32;
 			}
 
 			// the whitespace to output between number an unit. mirror input unless 'space' flag is set 

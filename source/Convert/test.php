@@ -44,6 +44,10 @@ $testData=array(
 	'15m', "49.2'",
 	'16m', '17.5 yards',
 	'20m', '21.9 yards',
+	'0C', '32.0°F',
+	'100°C', '212.0°F',
+	'32F', '0.0°C',
+	'32 °F', '0.0 °C',
 	);
 $fail=FALSE;
 for ($i=0; $i<count($testData); $i+=2) {
