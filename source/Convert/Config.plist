@@ -23,7 +23,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert between common metric and US/Imperial units. For example: ‘300 lbs’ → ‘136.1 kg’, '10 km' → ‘6.2 miles’, ‘9"’ → ‘22.9cm’, ‘100°C’ → ‘212.0°F’.</string>
+	<string>Convert between values given in metric and US/Imperial units. Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.convert</string>
 	<key>Extension Name</key>
