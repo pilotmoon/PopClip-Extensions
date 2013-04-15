@@ -171,6 +171,7 @@
 		<key>Members</key>
 		<array>
 			<string>Calculate</string>
+			<string>Convert</string>
 			<string>LuckyLink</string>
 			<string>Markdown</string>
 			<string>Sort</string>
