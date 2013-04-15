@@ -41,7 +41,7 @@ function doConvert($text) {
 	global $convert;
 	reset($convert);
 	while (list($unitRegex, list($outputUnit, $factor, $spaceFlag)) = each($convert)) {		
-		if (1===preg_match('/^\s*((\d+(?:'.ALL_SEPARATORS.'\d+)?)(\s*)'.$unitRegex.')\s*$/u', $text, $matches)) {
+		if (1===preg_match('/^\s*((\d+(?:'.ALL_SEPARATORS.'\d+)?)(\s*)'.$unitRegex.')\s*$/ui', $text, $matches)) {
 			// the matching input (e.g. '123.45 kg')
 			$whole=$matches[1];
 			// the number part (e.g. '123.45')

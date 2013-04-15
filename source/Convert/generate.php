@@ -4,5 +4,5 @@ include 'convert.php';
 foreach (array_keys($convert) as $key) {
 	$regex.= ($regex?'|':'').$key;
 }
-echo '^\s*(\d+(?:[\.,]\d+)?)\s?(?:'.$regex.")\s*$";
+echo '(?i)^\s*(\d+(?:[\.,]\d+)?)\s?(?:'.$regex.")\s*$";
 ?>

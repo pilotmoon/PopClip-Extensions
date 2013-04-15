@@ -3,7 +3,7 @@ include 'convert.php';
 $testData=array(
 	'100 kg', '220.5 lb',
 	'100 kgs', NULL,
-	'50lbs',  '22.7kg',
+	'50LBS',  '22.7kg',
 	'100.20 lbs', '45.45 kg',
 	'fishy 799lbs', NULL,
 	'10002321312321323lb', '4536976629557340.0kg',
