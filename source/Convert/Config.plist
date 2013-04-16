@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>scales.png</string>
 			<key>Regular Expression</key>
-			<string>(?i)^\s*(\d+(?:[\.,]\d+)?)\s?(?:(?:pounds?|lbs?)|(?:ounces?|oz?)|(?:centimetres?|centimeters?|cm)|(?:inches|inch|ins?|")|(?:feet|foot|ft|')|(?:yards?|yds?)|(?:miles?|mi)|(?:kilometres?|kilometers?|km?)|(?:kilograms?|kilos?|kg)|(?:grams?|g)|(?:metres?|meters?|m)|(?:°?F)|(?:°?C))\s*$</string>
+			<string>(?i)^\s*(\d+(?:[\.,]\d+)?)\s?(?:(?:pounds?|lbs?)|(?:ounces?|oz)|(?:centimetres?|centimeters?|cm)|(?:inches|inch|ins?|")|(?:feet|foot|ft|')|(?:yards?|yds?)|(?:miles?|mi)|(?:kilometres?|kilometers?|km?)|(?:kilograms?|kilos?|kg)|(?:grams?|g)|(?:metres?|meters?|m)|(?:°?F|(?:degrees?\s)?fahrenheit)|(?:°?C|(?:degrees?\s)?celsius|(?:degrees?\s)?centigrade))\s*$</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
@@ -23,7 +23,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert between values given in metric and US/Imperial units. Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C.</string>
+	<string>Convert between values in metric and US/imperial units. Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.convert</string>
 	<key>Extension Name</key>

@@ -48,6 +48,9 @@ $testData=array(
 	'100°C', '212.0°F',
 	'32F', '0.0°C',
 	'32 °F', '0.0 °C',
+	'8 degrees Celsius', '46.4 °F',
+	'70 fahrenheit', '21.1 °C',
+	'1 centigrade', '33.8 °F'
 	);
 $fail=FALSE;
 for ($i=0; $i<count($testData); $i+=2) {

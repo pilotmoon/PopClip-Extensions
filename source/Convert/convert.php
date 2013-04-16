@@ -17,7 +17,7 @@ $m_per_yard = $m_per_foot * 3;
 $km_per_mile = ($m_per_yard * 1760) / 1000;
 $convert = array(
 	'(?:pounds?|lbs?)' => array('kg', $kg_per_lb),
-	'(?:ounces?|oz?)' => array('g', $g_per_oz),
+	'(?:ounces?|oz)' => array('g', $g_per_oz),
 	'(?:centimetres?|centimeters?|cm)' => array('"', 1/$cm_per_inch, 0),
 	'(?:inches|inch|ins?|")' => array('cm', $cm_per_inch),
 	'(?:feet|foot|ft|\')' => array('m', $m_per_foot),
@@ -27,8 +27,8 @@ $convert = array(
 	'(?:kilograms?|kilos?|kg)' => array('lb', 1/$kg_per_lb),	
 	'(?:grams?|g)' => array('oz', 1/$g_per_oz),
 	'(?:metres?|meters?|m)' => array('\'', 1/$m_per_foot, 0),
-	'(?:°?F)' => array('°C', 1),
-	'(?:°?C)' => array('°F', 1),
+	'(?:°?F|(?:degrees?\s)?fahrenheit)' => array('°C', 1),
+	'(?:°?C|(?:degrees?\s)?celsius|(?:degrees?\s)?centigrade)' => array('°F', 1),
 	);
 
 // return the number of decimal places in the input string, if any. else 1.
