@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+<key>Version</key>
+<integer>1</integer>
+<key>Extension Name</key>
+<string>Znajdz Aukcje</string>
+<key>Extension Identifier</key>
+<string>com.sebaszwarc.znajdzaukcje</string>
+<key>Extension Description</key>
+<string>Wyszukuje dany tekst na Allegro</string>
+<key>Actions</key>
+<array>
+	<dict>
+		<key>URL</key>
+		<string>http://allegro.pl/listing/listing.php?string={popclip text}</string>
+		<key>Image File</key>
+		<string>aukcja.png</string>
+		<key>Title</key>
+		<string>Allegro</string>
+	</dict>
+</array>
+<key>Credits</key>
+<array>
+	<dict>
+		<key>Name</key>
+		<string>Sebastian Szwarc</string>
+		<key>Link</key>
+		<string>czarnymciapkiem.wordpress.com</string>
+	</dict>
+</array>
+</dict>
+</plist>
