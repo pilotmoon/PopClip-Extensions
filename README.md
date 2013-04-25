@@ -29,9 +29,7 @@ All the extensions and documentation were created by Nick Moore except where sta
 
 ## Contributing
 
-**As you will see, I am rather behind with pull requests. Please do not send me follow-up emails and tweets about your pull request. It might just take me a (very) long time to get to it.**
-
-Contribtions to this repo via pull requests are welcome. Contributors, please note the following:
+Contributors, please note the following:
 
 * If you contribute an extension, I will assume you are happy for me to publish your contributions on the main PopClip extensions page.
 * I might not publish your extension. I choose which extensions to publish at my sole discretion. 
