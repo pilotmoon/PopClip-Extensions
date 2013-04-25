@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>sify.png</string>
+			<string>sifynew.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,200}$</string>
 			<key>Shell Script File</key>
@@ -34,7 +34,7 @@
 	<string>com.pilotmoon.popclip.extension.spotify-search</string>
 	<key>Extension Name</key>
 	<string>Spotify</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required Software Version</key>
+	<integer>701</integer>
 </dict>
 </plist>
