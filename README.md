@@ -29,7 +29,7 @@ All the extensions and documentation were created by Nick Moore except where sta
 
 ## Contributing
 
-** Please note: as you will see, I am rather behind with pull requests. Please do not send me follow-up emails and tweets about your pull request. It might just take me a (very) long time to get to it. **
+**As you will see, I am rather behind with pull requests. Please do not send me follow-up emails and tweets about your pull request. It might just take me a (very) long time to get to it.**
 
 Contribtions to this repo via pull requests are welcome. Contributors, please note the following:
 
