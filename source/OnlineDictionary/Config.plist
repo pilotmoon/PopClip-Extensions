@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>onlineDictionary.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>onlineDictionary.php</string>
+			<key>Title</key>
+			<string>onlineDictionary</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search the selected text with online dictionary. Supports dictionary.com, youdao.com,dict.cn</string>
+	<key>Extension Name</key>
+	<string>onlineDictionary</string>
+    <key>Credits</key>
+    <array>
+        <dict>
+            <key>Link</key>
+            <string>http://blog.tsnrose.com</string>
+            <key>Name</key>
+            <string>zhiyelee</string>
+        </dict>
+    </array>
+    <key>Extension Identifier</key>
+    <string>com.tsnrose.blog.popclip.extension.onlinedictionary</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>service</string>
+			<key>Option Label</key>
+			<string>select service</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>dictionary.com</string>
+				<string>dict.cn</string>
+				<string>dict.youdao.com</string>
+			</array>
+		</dict>
+	</array>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
