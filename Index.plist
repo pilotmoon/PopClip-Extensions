@@ -128,6 +128,7 @@
 			<string>ShortenLink</string>
 			<string>Bitly</string>
 			<string>Droplr</string>
+			<string>ShortMenu</string>
 		</array>
 		<key>Title</key>
 		<string>Link Shortening</string>
