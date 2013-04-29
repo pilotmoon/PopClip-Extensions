@@ -5,6 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>After</key>
+			<string>show-status</string>
 			<key>Image File</key>
 			<string>bg.png</string>
 			<key>Script Interpreter</key>
@@ -52,10 +54,20 @@
 				<string>Bible Version</string>
 			</dict>
 			<key>Option Type</key>
-			<string>string</string>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>AMP</string>
+				<string>ESV</string>
+				<string>GNT</string>
+				<string>HCSB</string>
+				<string>KJV</string>
+				<string>NIV</string>
+				<string>NLT</string>
+			</array>
 		</dict>
 	</array>
 	<key>Required Software Version</key>
-	<integer>693</integer>
+	<integer>701</integer>
 </dict>
 </plist>

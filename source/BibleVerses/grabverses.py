@@ -21,5 +21,8 @@ verseListsToUrls = []
 for item in verseChunks:
     verseListsToUrls.append(', '.join(map(str, item)))
 
+if not verseListsToUrls:
+	sys.exit(1)
+
 for item in verseListsToUrls:
     webbrowser.open("http://www.biblegateway.com/passage/?search=" + item + "&version=" + version + "&interface=print")
