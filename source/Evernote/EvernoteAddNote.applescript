@@ -12,4 +12,5 @@ tell application id "com.evernote.Evernote"
 		set title of theNote to "{popclip browser title}"
 	end if
 	open note window with theNote
+	activate
 end tell
