@@ -46,6 +46,7 @@ Here are some other repos you might find interesting:
 * PopClip extensions by [Brett Terpstra](https://github.com/ttscoff/popclipextensions)
 * PopClip extensions by [hzlzh](https://github.com/hzlzh/PopClip-Extensions)
 * PopClip extensions by [deuxdoom](https://github.com/deuxdoom/PopClipExtensions)
+* PopClip extensions by [Sebastian Szwarc](https://github.com/Behinder/PopClipExt)
 
 ## Disclaimer
 
