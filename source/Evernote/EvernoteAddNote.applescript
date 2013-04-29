@@ -1,4 +1,4 @@
-tell application "Evernote"
+tell application id "com.evernote.Evernote"
 	activate
 	if length of "{popclip html}" > 0 then
 		set theNote to create note with html "{popclip html}"
