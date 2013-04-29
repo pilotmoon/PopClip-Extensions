@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>shortmenu.png</string>
+			<key>Service Name</key>
+			<string>Shorten with Short Menu</string>
+			<key>Title</key>
+			<string>Short Menu</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.floschliep.Short-Menu</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://floschliep.com/short-menu-mac/</string>
+			<key>Name</key>
+			<string>Short Menu</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Shorten the selected URL using Short Menu.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.short-menu</string>
+	<key>Extension Image File</key>
+	<string>shortmenu.png</string>
+	<key>Extension Name</key>
+	<string>Short Menu</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+	<key>Requirements</key>
+	<array>
+		<string>httpurl</string>
+	</array>
+</dict>
+</plist>
