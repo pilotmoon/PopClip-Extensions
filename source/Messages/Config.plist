@@ -15,8 +15,6 @@
 			<string>Messages</string>
 		</dict>
 	</array>
-	<key>Apps</key>
-	<array/>
 	<key>Extension Description</key>
 	<string>Create a new message in Messages.</string>
 	<key>Extension Identifier</key>
