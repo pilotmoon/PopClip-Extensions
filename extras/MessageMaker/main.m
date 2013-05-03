@@ -1,9 +1,6 @@
 //
-//  main.m
-//  MessageMaker
-//
-//  Created by Nicholas Moore on 03/05/2013.
-//  Copyright (c) 2013 Nicholas Moore. All rights reserved.
+//  Minimal app to bring up a Messages compose window via NSSharingService.
+//  Accepts text via command line args or stdin.
 //
 
 #import <Cocoa/Cocoa.h>
