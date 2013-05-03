@@ -84,6 +84,7 @@
 		<key>Members</key>
 		<array>
 			<string>Email</string>
+			<string>Messages</string>
 			<string>Fantastical</string>
 			<string>Leap</string>
 			<string>Spotlight</string>
