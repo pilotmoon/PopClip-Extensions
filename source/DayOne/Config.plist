@@ -7,10 +7,10 @@
 		<dict>
 			<key>Image File</key>
 			<string>diary.png</string>
+			<key>Shell Script File</key>
+			<string>dayone.sh</string>
 			<key>Title</key>
 			<string>Day One</string>
-			<key>URL</key>
-			<string>dayone://post?entry={popclip text}</string>
 		</dict>
 	</array>
 	<key>Apps</key>
