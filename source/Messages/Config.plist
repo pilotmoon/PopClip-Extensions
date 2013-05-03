@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>nowait</string>
 			<key>Image File</key>
-			<string></string>
+			<string>message.png</string>
 			<key>Shell Script File</key>
 			<string>message.sh</string>
 			<key>Title</key>
