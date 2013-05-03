@@ -23,7 +23,7 @@
 	<string>com.pilotmoon.popclip.extension.messages</string>
 	<key>Extension Name</key>
 	<string>Messages</string>
-	<key>Required Apps</key>
+	<key>Required OS Version</key>
 	<string>10.8</string>
 	<key>Required Software Version</key>
 	<integer>701</integer>
