@@ -16,7 +16,7 @@ end extractDate
 on doExtractDate(str, reg)
   set dt to ""
   try
-    set dt to do shell script "echo '" & str & "'|grep -Po '" & reg & "'"
+    set dt to do shell script "echo '" & str & "'|grep -Po '" & reg & "'|head -n 1"
   on error theErr
     --log theErr
   end try
