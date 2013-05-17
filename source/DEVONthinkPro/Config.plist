@@ -40,7 +40,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Clip text to DEVONthink or search in open DEVONthink databases.</string>
+	<string>Clip the text to DEVONthink, or search in open DEVONthink databases.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.devonthink</string>
 	<key>Extension Image File</key>
