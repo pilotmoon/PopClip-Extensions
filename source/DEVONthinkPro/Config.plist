@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>DEVONthinkSearch.applescript</string>
+			<key>Before</key>
+			<string>copy</string>
+			<key>Image File</key>
+			<string>DEVONthinkSearch.png</string>
+			<key>Title</key>
+			<string>Search in DEVONthink</string>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>DEVONthinkClip.applescript</string>
+			<key>Image File</key>
+			<string>DEVONthinkClip.png</string>
+			<key>Title</key>
+			<string>Clip to DEVONthink</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.devontechnologies.com/redirect.php?id=product-dt</string>
+			<key>Name</key>
+			<string>DEVONthink Pro</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Eric Böhnisch-Volkmann</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Clip text to DEVONthink or search in open DEVONthink databases.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.devonthink</string>
+	<key>Extension Name</key>
+	<string>DEVONthink Pro</string>
+	<key>Pass HTML</key>
+	<false/>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
