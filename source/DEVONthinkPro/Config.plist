@@ -43,6 +43,8 @@
 	<string>Clip text to DEVONthink or search in open DEVONthink databases.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.devonthink</string>
+	<key>Extension Image File</key>
+	<string>DEVONthinkClip.png</string>
 	<key>Extension Name</key>
 	<string>DEVONthink Pro</string>
 	<key>Pass HTML</key>
