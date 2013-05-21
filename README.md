@@ -203,7 +203,7 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
 |`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
 |`html`|Selection must be HTML text (for example, text in a web page).|
-|`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. See the DEVONthinkPro extension for a working example of this.|
+|`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
 ### Before and After keys
 
 These are the values supported by the `Before` and `After` fields.
