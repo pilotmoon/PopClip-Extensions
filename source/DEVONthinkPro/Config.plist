@@ -6,21 +6,29 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
+			<string>DEVONthinkClip.applescript</string>
+			<key>Image File</key>
+			<string>DEVONthinkClip.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-clip-enabled=1</string>
+			</array>
+			<key>Title</key>
+			<string>Clip to DEVONthink</string>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
 			<string>DEVONthinkSearch.applescript</string>
 			<key>Before</key>
 			<string>copy</string>
 			<key>Image File</key>
 			<string>DEVONthinkSearch.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-search-enabled=1</string>
+			</array>
 			<key>Title</key>
 			<string>Search in DEVONthink</string>
-		</dict>
-		<dict>
-			<key>AppleScript File</key>
-			<string>DEVONthinkClip.applescript</string>
-			<key>Image File</key>
-			<string>DEVONthinkClip.png</string>
-			<key>Title</key>
-			<string>Clip to DEVONthink</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -40,16 +48,37 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Clip the text to DEVONthink, or search in open DEVONthink databases.</string>
+	<string>Clip the text to DEVONthink, or search in DEVONthink for the text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.devonthink</string>
 	<key>Extension Image File</key>
 	<string>DEVONthinkClip.png</string>
 	<key>Extension Name</key>
 	<string>DEVONthink Pro</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>clip-enabled</string>
+			<key>Option Label</key>
+			<string>Clip to DEVONthink</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>search-enabled</string>
+			<key>Option Label</key>
+			<string>Search in DEVONthink</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<string>Actions available for DEVONthink</string>
 	<key>Pass HTML</key>
 	<false/>
 	<key>Required Software Version</key>
-	<integer>693</integer>
+	<integer>701</integer>
 </dict>
 </plist>
