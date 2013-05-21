@@ -203,6 +203,7 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
 |`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
 |`html`|Selection must be HTML text (for example, text in a web page).|
+|`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-enableaction=1` would require an option named `enableaction` to be set on.|
 
 ### Before and After keys
 
