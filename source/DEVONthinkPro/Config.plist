@@ -48,7 +48,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Clip the text to DEVONthink, or search in DEVONthink for the text.</string>
+	<string>Clip the selected text to your DEVONthink inbox, or search your DEVONthink databases for the text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.devonthink</string>
 	<key>Extension Image File</key>
@@ -75,7 +75,7 @@
 		</dict>
 	</array>
 	<key>Options Title</key>
-	<string>Actions available for DEVONthink</string>
+	<string>Actions Available</string>
 	<key>Pass HTML</key>
 	<false/>
 	<key>Required Software Version</key>
