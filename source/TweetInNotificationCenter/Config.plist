@@ -5,25 +5,25 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>After</key>
-			<string>nowait</string>
+			<key>AppleScript File</key>
+			<string>ComposeTweet.applescript</string>
 			<key>Image File</key>
 			<string>newtwitterbird.png</string>
-			<key>Shell Script File</key>
-			<string>tweet.sh</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,195}$</string>
 			<key>Title</key>
-			<string>Messages</string>
+			<string>Tweet</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Tweet the text using the OS X built-in sharing service.</string>
+	<string>Compose a tweet using Notification Center's "Click to Tweet" box.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.tweet-osx</string>
+	<string>com.pilotmoon.popclip.extension.tweet</string>
 	<key>Extension Name</key>
 	<string>Tweet</string>
 	<key>Required OS Version</key>
 	<string>10.8</string>
-	<key>Required Software Version</key>
-	<integer>701</integer>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>
