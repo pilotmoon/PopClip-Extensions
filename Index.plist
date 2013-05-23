@@ -71,12 +71,14 @@
 	</dict>
 	<dict>
 		<key>Members</key>
-		<array>
+		<array>		
+			<string>Tweet</string>
 			<string>Twitter</string>
 			<string>Twitterrific</string>
 			<string>Tweetbot</string>
-			<string>YoruFukurou</string>
-			<string>Buffer</string>
+			<string>YoruFukurou</string>			
+			<string>Buffer</string>			
+			<string>SinaWeibo</string>
 		</array>
 		<key>Title</key>
 		<string>Social Networking</string>
