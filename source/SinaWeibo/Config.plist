@@ -13,6 +13,15 @@
 			<string>Sina Weibo</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.weibo.com</string>
+			<key>Name</key>
+			<string>Sina Weibo</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Compose a new post on Sina Weibo.</string>
 	<key>Extension Identifier</key>
