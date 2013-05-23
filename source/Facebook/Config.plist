@@ -14,7 +14,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new Facebook post.</string>
+	<string>Compose a new Facebook post.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.facebook-osx</string>
 	<key>Extension Name</key>
