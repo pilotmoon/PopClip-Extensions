@@ -9,7 +9,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.twitter</string>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using the official Twitter app.</string>
+	<string>Compose a new tweet using Twitter for Mac.</string>
 	<key>Apps</key>
 	<array>
 		<dict>
@@ -18,7 +18,7 @@
 			<key>Link</key>
 			<string>http://itunes.apple.com/app/twitter/id409789998</string>
 			<key>Name</key>
-			<string>Twitter</string>
+			<string>Twitter for Mac</string>
 			<key>Bundle Identifier</key>
 			<string>com.twitter.twitter-mac</string>
 		</dict>
