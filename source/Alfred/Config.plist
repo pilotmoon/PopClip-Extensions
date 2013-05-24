@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>Alfred.applescript</string>
+			<key>Image File</key>
+			<string>bowler.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^[^\n\r]{1,300}$</string>
+			<key>Title</key>
+			<string>Alfred</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Activate Alfred with the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.alfred</string>
+	<key>Extension Name</key>
+	<string>Alfred</string>
+</dict>
+</plist>
