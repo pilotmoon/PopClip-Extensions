@@ -143,6 +143,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>ReadingList</string>
 			<string>Pocket</string>
 			<string>Instapaper</string>
 			<string>Readability</string>
