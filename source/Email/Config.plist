@@ -14,7 +14,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new message in the default mail client (for example Mail, Sparrow or Postbox).</string>
+	<string>Create a new message in the default mail client (for example Mail, Postbox or Airmail).</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.generic-mail</string>
 	<key>Extension Name</key>
