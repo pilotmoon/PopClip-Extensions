@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Activate Alfred with the selected text.</string>
+	<string>Activate Alfred with the selected text. (Requires Alfred v2.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.alfred</string>
 	<key>Extension Name</key>
