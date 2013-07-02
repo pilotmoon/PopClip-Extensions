@@ -17,7 +17,7 @@
 			<key>Bundle Identifier</key>
 			<string>net.notational.velocity</string>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://notational.net/</string>
 			<key>Name</key>

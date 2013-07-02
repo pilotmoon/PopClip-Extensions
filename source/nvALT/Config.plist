@@ -17,7 +17,7 @@
 			<key>Bundle Identifier</key>
 			<string>net.elasticthreads.nv</string>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://brettterpstra.com/project/nvalt/
 </string>
