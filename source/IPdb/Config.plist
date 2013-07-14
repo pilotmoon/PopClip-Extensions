@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>1</integer>
+	<key>Extension Name</key>
+	<string>IPdb</string>
+	<key>Extension Identifier</key>
+	<string>com.mkpowers.popclip.extension.ipdb</string>
+	<key>Extension Description</key>
+	<string>Opens IPDb.at and searches for the chosen IP address</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>https://ipdb.at/ip/{popclip text}</string>
+			<key>Title</key>
+			<string>IPdb</string>
+			<key>Regular Expression</key>
+			<string>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b</string>
+		</dict>
+	</array>
+</dict>
+</plist>
