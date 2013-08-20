@@ -41,6 +41,7 @@
 			<key>Option Values</key>
 			<array>
 				<string>en.wikipedia.org</string>
+				<string>cs.wikipedia.org</string>
 				<string>de.wikipedia.org</string>
 				<string>es.wikipedia.org</string>
 				<string>fr.wikipedia.org</string>
