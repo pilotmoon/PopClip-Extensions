@@ -197,9 +197,9 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`paste`|The system Paste command must be available.|
 |`formatting`|The selected text control must support formatting.|
 |`httpurl`|Require the text to contain exactly one HTTP(S) URL; only the matching part will be passed to the action.|
-|`httpurls`|Require the text to contain one or one HTTP(S) URLs.|
+|`httpurls`|Require the text to contain one or more HTTP(S) URLs.|
 |`anyurl`|Require the text to contain exactly one URL of any detected type; only the matching part will be passed to the action.|
-|`anyurls`|Require the text to contain one or one URLs of any detected type.|
+|`anyurls`|Require the text to contain one or more URLs of any detected type.|
 |`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
 |`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
 |`html`|Selection must be HTML text (for example, text in a web page).|
