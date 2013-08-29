@@ -175,6 +175,7 @@
 			<string>Dash</string>
 			<string>RunCommand</string>
 			<string>URLEncode</string>
+			<string>HTMLEncode</string>
 		</array>
 		<key>Title</key>
 		<string>For Developers</string>
