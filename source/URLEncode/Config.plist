@@ -22,12 +22,12 @@
 		</dict>
 	</array>
 	<key>Credits</key>
-	<array>
-		<string>Name</string>
-		<string>Brett Terpstra</string>
-		<string>Link</string>
+	<dict>
+		<key>Link</key>
 		<string>http://brettterpstra.com</string>
-	</array>
+		<key>Name</key>
+		<string>Brett Terpstra</string>
+	</dict>
 	<key>Extension Description</key>
 	<string>Percent-encode the selected text.</string>
 	<key>Extension Identifier</key>
