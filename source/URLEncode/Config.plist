@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>Percent.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+			<key>Script Interpreter</key>
+			<string>/bin/bash</string>
+			<key>Shell Script File</key>
+			<string>urlencode.sh</string>
+			<key>Title</key>
+			<string>%</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<string>Name</string>
+		<string>Brett Terpstra</string>
+		<string>Link</string>
+		<string>http://brettterpstra.com</string>
+	</array>
+	<key>Extension Description</key>
+	<string>Percent-encode the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.urlencode</string>
+	<key>Extension Name</key>
+	<string>URL Encode</string>
+	<key>Required Apps</key>
+	<integer>701</integer>
+</dict>
+</plist>
