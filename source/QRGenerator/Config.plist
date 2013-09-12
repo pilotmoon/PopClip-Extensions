@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>qrIcon.png</string>
+			<key>Pass HTML</key>
+			<true/>
+			<key>Shell Script File</key>
+			<string>testsh.sh</string>
+			<key>Stoppable</key>
+			<false/>
+			<key>Title</key>
+			<string>QRGenerator</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Generate QR image</string>
+	<key>Extension Identifier</key>
+	<string>popclip.extension.qrGenerator.shell-general</string>
+	<key>Extension Name</key>
+	<string>QR Generator</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
