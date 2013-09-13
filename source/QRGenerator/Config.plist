@@ -20,7 +20,7 @@
 	<key>Extension Description</key>
 	<string>Generate QR image</string>
 	<key>Extension Identifier</key>
-	<string>popclip.extension.qrGenerator.shell-general</string>
+	<string>com.bimawa.popclip.extension.qrGenerator</string>
 	<key>Extension Name</key>
 	<string>QR Generator</string>
 	<key>Version</key>
