@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Scholar</string>
 			<key>URL</key>
-			<string>http://scholar.google.co.uk/scholar?q={popclip text}</string>
+			<string>http://scholar.google.com/scholar?q={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
