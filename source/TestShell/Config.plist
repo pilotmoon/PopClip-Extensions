@@ -6,8 +6,10 @@
 	<array>
 		<dict>
 			<key>After</key>
-			<string>show-result</string>
+			<string>paste-result</string>
 			<key>Pass HTML</key>
+			<true/>
+			<key>Restore Pasteboard</key>
 			<true/>
 			<key>Shell Script File</key>
 			<string>testsh.sh</string>
