@@ -1,6 +1,6 @@
-# PopClip Extensions
+o# PopClip Extensions
 
-*Documentation for PopClip 1.4.5*
+*Documentation for PopClip 1.4.7*
 
 ## Introduction
 
@@ -151,6 +151,7 @@ The `Config.plist` file has the following structure.
 |`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
 |`Pass HTML`|Boolean|Optional|If `YES`, PopClip will pass the selected HTML text (if available) to the extension in the `POPCLIP_HTML` (shell scripts) and `{popclip html}` (AppleScript) fields. Default is `NO`. Leaving this set to `NO` PopClip does not have to process the HTML and this can be slightly faster.|
 |`Long Running`|Boolean|Optional|Applies to AppleScript and Shell Script extension only. If `YES`, indicates that the script is expected to be long running. Set this if the script will normally take more than about 0.1 seconds to run, so PopClip knows to show the 'please wait' spinner. |
+|`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String or Dictionary|Optional|You can include a long version of the extension name here. Appears on the web site but not in the app.|
 |`Credits`|Array|Optional|An array of dictionaries. Information about the creator(s) of the extension. See [Credits Dictionary](#credits-dictionary).|
@@ -183,6 +184,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
+|`Restore Pasteboard`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Long Running`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
 
@@ -204,6 +206,7 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
 |`html`|Selection must be HTML text (for example, text in a web page).|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
+
 ### Before and After keys
 
 These are the values supported by the `Before` and `After` fields.
