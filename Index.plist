@@ -174,7 +174,6 @@
 		<key>Members</key>
 		<array>
 			<string>Dash</string>
-			<string>Github</string>			
 			<string>RunCommand</string>
 			<string>URLEncode</string>
 			<string>HTMLEncode</string>
