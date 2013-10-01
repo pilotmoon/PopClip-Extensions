@@ -6,22 +6,22 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>Github.png</string>
+			<string>ocat.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,}$</string>
 			<key>Title</key>
 			<string>Github</string>
 			<key>URL</key>
-      <string>https://github.com/search?q={popclip text}</string>
+			<string>https://github.com/search?q={popclip text}</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Link</key>
-      <string>https://github.com/</string>
+			<string>https://github.com/</string>
 			<key>Name</key>
-			<string>Github</string>
+			<string>GitHub</string>
 		</dict>
 	</array>
 	<key>Credits</key>
@@ -34,12 +34,12 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search more than 7.2M Repositories.</string>
+	<string>Search GitHub Repositories.</string>
 	<key>Extension Identifier</key>
-	<string>com.cfddream.popclip.extension.github</string>
+	<string>com.pilotmoon.popclip.extension.github-search</string>
 	<key>Extension Name</key>
-	<string>Github Search</string>
-	<key>Version</key>
-	<integer>3</integer>
+	<string>GitHub Search</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
 </dict>
 </plist>
