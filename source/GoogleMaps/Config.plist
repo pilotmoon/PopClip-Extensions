@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,500}$</string>
 			<key>Title</key>
-			<string>Maps</string>
+			<string>Google Maps</string>
 			<key>URL</key>
 			<string>http://{popclip option site}/?q={popclip text}</string>
 		</dict>

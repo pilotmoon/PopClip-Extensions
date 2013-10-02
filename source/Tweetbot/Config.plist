@@ -31,7 +31,7 @@
 			<key>Shell Script File</key>
 			<string>post.sh</string>
 			<key>Title</key>
-			<string>Tweet</string>
+			<string>TweetBot</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,195}$</string>
 		</dict>

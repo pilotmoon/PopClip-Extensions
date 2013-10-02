@@ -16,7 +16,7 @@
 			<key>Shell Script File</key>
 			<string>calculate.php</string>
 			<key>Title</key>
-			<string>=</string>
+			<string>Calculate</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>

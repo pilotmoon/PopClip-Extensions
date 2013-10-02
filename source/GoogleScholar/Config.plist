@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,1900}$</string>
 			<key>Title</key>
-			<string>Scholar</string>
+			<string>Google Scholar</string>
 			<key>URL</key>
 			<string>http://scholar.google.com/scholar?q={popclip text}</string>
 		</dict>

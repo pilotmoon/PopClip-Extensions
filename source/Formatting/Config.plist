@@ -33,7 +33,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>keyChar</key>
-				<string>B</string>
+				<string>Bold</string>
 			</dict>
 		</dict>
 		<dict>
@@ -46,7 +46,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>keyChar</key>
-				<string>I</string>
+				<string>Italic</string>
 			</dict>
 		</dict>
 		<dict>
@@ -59,7 +59,7 @@
 				<key>modifiers</key>
 				<integer>1048576</integer>
 				<key>keyChar</key>
-				<string>U</string>
+				<string>Underline</string>
 			</dict>
 		</dict>
 	</array>

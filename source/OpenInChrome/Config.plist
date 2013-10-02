@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>open-in-chrome.sh</string>
 			<key>Title</key>
-			<string>Chrome</string>
+			<string>Open in Chrome</string>
 		</dict>
 	</array>
 	<key>Apps</key>

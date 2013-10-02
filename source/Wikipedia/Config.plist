@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,200}$</string>
 			<key>Title</key>
-			<string>Wiki</string>
+			<string>Wikipedia</string>
 			<key>URL</key>
 			<string>http://{popclip option site}/w/index.php?search={popclip text}</string>
 		</dict>

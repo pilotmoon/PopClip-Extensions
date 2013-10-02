@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>htmlencode.php</string>
 			<key>Title</key>
-			<string>&amp;;</string>
+			<string>HTML Encode</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -22,7 +22,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.htmlencode</string>
 	<key>Extension Name</key>
-	<string>HTMLEncode</string>
+	<string>HTML Encode</string>
 	<key>Required Software Version</key>
 	<integer>701</integer>
 </dict>

@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>notestab.png</string>
 			<key>Title</key>
-			<string>NotesTab</string>
+			<string>NotesTab Pro</string>
 			<key>URL</key>
 			<string>notestab://create/{popclip text}</string>
 		</dict>

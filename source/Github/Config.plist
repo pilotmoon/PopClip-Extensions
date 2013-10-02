@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,}$</string>
 			<key>Title</key>
-			<string>Github</string>
+			<string>GitHub Search</string>
 			<key>URL</key>
 			<string>https://github.com/search?q={popclip text}</string>
 		</dict>

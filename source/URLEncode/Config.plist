@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>urlencode.sh</string>
 			<key>Title</key>
-			<string>%</string>
+			<string>URL Encode</string>
 		</dict>
 	</array>
 	<key>Credits</key>
@@ -31,7 +31,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urlencode</string>
 	<key>Extension Name</key>
-	<string>URLEncode</string>
+	<string>URL Encode</string>
 	<key>Required Apps</key>
 	<integer>701</integer>
 </dict>

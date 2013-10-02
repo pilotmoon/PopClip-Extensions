@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>open-in-firefox.sh</string>
 			<key>Title</key>
-			<string>Firefox</string>
+			<string>Open in Firefox</string>
 		</dict>
 	</array>
 	<key>Apps</key>

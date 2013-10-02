@@ -16,7 +16,7 @@
 			<key>Shell Script File</key>
 			<string>readinglist.sh</string>
 			<key>Title</key>
-			<string>Reading List</string>
+			<string>Add to Reading List</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>

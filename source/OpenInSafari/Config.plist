@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>open-in-safari.sh</string>
 			<key>Title</key>
-			<string>Safari</string>
+			<string>Open in Safari</string>
 		</dict>
 	</array>
 	<key>Blocked Apps</key>
