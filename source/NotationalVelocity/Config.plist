@@ -8,7 +8,9 @@
 			<key>Shell Script File</key>
 			<string>nv.sh</string>
 			<key>Title</key>
-			<string>nv</string>
+			<string>nvALT</string>
+			<key>Image File</key>
+			<string>rocket.png</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -35,8 +37,6 @@
 	<string>Create a note in Notational Velocity.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.notational-velocity</string>
-	<key>Extension Image File</key>
-	<string>nv.png</string>
 	<key>Extension Name</key>
 	<string>Notational Velocity</string>
 	<key>Version</key>
