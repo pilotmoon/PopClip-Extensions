@@ -3,10 +3,7 @@ $url = getenv('POPCLIP_TEXT');
 $token = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
 
 // use page title if we have it, or use url as title
-$title = getenv('POPCLIP_BROWSER_TITLE');
-if (strlen($title)===0) {
-	$title=$url;
-}
+$title=$url;
 
 $params = http_build_query(array('url'=>$url, 'description'=>$title));
 $call = "https://api.pinboard.in/v1/posts/add?auth_token=$token&$params";
