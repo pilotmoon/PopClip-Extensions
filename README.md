@@ -251,6 +251,8 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
 |`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
+|`POPCLIP_SPECIAL_BROWSER_TITLE`|`{popclip special browser title}`|The title of the web page, ONLY only if the user selected the URL in the address bar (i.e. this is likely the title of the corresponding web page to the URL). (Safari and Chrome only.)|
+|`POPCLIP_LINK_TEXT`|`{popclip link text}`|When `httpurl` requirement is in force, this gives the text of the link, if available. (Safari and Chrome only.)|
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
