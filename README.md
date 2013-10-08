@@ -167,7 +167,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title, even if it is never displayed.|
+|`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title. For extensions with icons, the title is displayed in the toolip when the user hovers over the action's button in PopClip.|
 |`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt`) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
@@ -246,6 +246,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |---------------------|-----------------|-----------|
 |`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
+|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
 |`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
