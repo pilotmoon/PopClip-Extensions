@@ -1,9 +1,9 @@
 <?php
-$url = getenv('POPCLIP_TEXT');
+$url = getenv('POPCLIP_URLS');
 $token = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
 
 // use link text if we have it, or use url as title
-$title = getenv('POPCLIP_LINK_TEXT');
+$title = getenv('POPCLIP_URL_TITLES');
 if (strlen($title)===0) {
 	$title = getenv('POPCLIP_SPECIAL_BROWSER_TITLE');
 	if (strlen($title)===0) {

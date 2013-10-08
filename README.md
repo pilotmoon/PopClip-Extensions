@@ -200,8 +200,6 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`formatting`|The selected text control must support formatting.|
 |`httpurl`|Require the text to contain exactly one HTTP(S) URL; only the matching part will be passed to the action.|
 |`httpurls`|Require the text to contain one or more HTTP(S) URLs.|
-|`anyurl`|Require the text to contain exactly one URL of any detected type; only the matching part will be passed to the action.|
-|`anyurls`|Require the text to contain one or more URLs of any detected type.|
 |`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
 |`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
 |`html`|Selection must be HTML text (for example, text in a web page).|
@@ -247,13 +245,13 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
+|`POPCLIP_URL_TITLES`|`{popclip url titles}`|Newline-separated list of titles for the urls in `POPCLIP_URLS` which PopClip detected in the selected text. If no title is available, the string will contain an empty line.|
 |`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
 |`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_SPECIAL_BROWSER_TITLE`|`{popclip special browser title}`|The title of the web page, ONLY only if the user selected the URL in the address bar (i.e. this is likely the title of the corresponding web page to the URL). (Safari and Chrome only.)|
-|`POPCLIP_LINK_TEXT`|`{popclip link text}`|When `httpurl` requirement is in force, this gives the text of the link, if available. (Safari and Chrome only.)|
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
