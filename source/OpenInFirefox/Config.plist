@@ -9,7 +9,7 @@
 			<string>ff.png</string>
 			<key>Requirements</key>
 			<array>
-				<string>httpurl</string>
+				<string>httpurls</string>
 			</array>
 			<key>Shell Script File</key>
 			<string>open-in-firefox.sh</string>

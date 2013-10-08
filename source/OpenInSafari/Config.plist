@@ -9,7 +9,7 @@
 			<string>compass.png</string>
 			<key>Requirements</key>
 			<array>
-				<string>httpurl</string>
+				<string>httpurls</string>
 			</array>
 			<key>Shell Script File</key>
 			<string>open-in-safari.sh</string>
