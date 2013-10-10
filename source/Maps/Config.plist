@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>compass.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,500}$</string>
+			<key>Title</key>
+			<string>Maps</string>
+			<key>URL</key>
+			<string>maps://maps.apple.com/?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search Maps.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.maps</string>
+	<key>Extension Name</key>
+	<string>Maps</string>
+	<key>Required OS Version</key>
+	<string>10.9</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
