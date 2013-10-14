@@ -79,6 +79,6 @@
 	<key>Options Script Interpreter</key>
 	<string>/usr/bin/php</string>
 	<key>Required Software Version</key>
-	<integer>715</integer>
+	<integer>714</integer>
 </dict>
 </plist>
