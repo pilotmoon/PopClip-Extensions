@@ -1,4 +1,4 @@
-o# PopClip Extensions
+# PopClip Extensions
 
 *Documentation for PopClip 1.4.7*
 
