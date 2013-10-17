@@ -2,66 +2,62 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
-	<key>Extension Description</key>
-	<string>Make text bold, italic and underline.</string>
-	<key>Extension Name</key>
-	<string>Formatting</string>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.formatting</string>
-	<key>Position</key>
-	<integer>2</integer>
-	<key>Stay Visible</key>
-	<true/>
-	<key>Extension Image File</key>
-	<string>formatting.png</string>
-	<key>Requirements</key>
-	<array>
-		<string>cut</string>
-		<string>formatting</string>
-	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
 			<key>Image File</key>
 			<string>bold.png</string>
-			<key>Title</key>
-			<string>B</string>
 			<key>Key Combo</key>
 			<dict>
+				<key>keyChar</key>
+				<string>B</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
-				<key>keyChar</key>
-				<string>Bold</string>
 			</dict>
+			<key>Title</key>
+			<string>Bold</string>
 		</dict>
 		<dict>
 			<key>Image File</key>
 			<string>italic.png</string>
-			<key>Title</key>
-			<string>I</string>
 			<key>Key Combo</key>
 			<dict>
+				<key>keyChar</key>
+				<string>I</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
-				<key>keyChar</key>
-				<string>Italic</string>
 			</dict>
+			<key>Title</key>
+			<string>Italic</string>
 		</dict>
 		<dict>
 			<key>Image File</key>
 			<string>underline.png</string>
-			<key>Title</key>
-			<string>U</string>
 			<key>Key Combo</key>
 			<dict>
+				<key>keyChar</key>
+				<string>U</string>
 				<key>modifiers</key>
 				<integer>1048576</integer>
-				<key>keyChar</key>
-				<string>Underline</string>
 			</dict>
+			<key>Title</key>
+			<string>Underline</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Make text bold, italic and underline.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.formatting</string>
+	<key>Extension Image File</key>
+	<string>formatting.png</string>
+	<key>Extension Name</key>
+	<string>Formatting</string>
+	<key>Requirements</key>
+	<array>
+		<string>cut</string>
+		<string>formatting</string>
+	</array>
+	<key>Stay Visible</key>
+	<true/>
 </dict>
 </plist>
