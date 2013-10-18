@@ -41,6 +41,7 @@
 		<array>
 			<string>Notes</string>
 			<string>MakeSticky</string>
+			<string>Evernote</string>
 			<string>NotationalVelocity</string>
 			<string>nvALT</string>
 			<string>NotesTab</string>
@@ -48,6 +49,7 @@
 			<string>Together</string>
 			<string>Yojimbo</string>
 			<string>DayOne</string>
+			<string>DEVONthinkPro</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -91,6 +93,7 @@
 			<string>Leap</string>
 			<string>Spotlight</string>
 			<string>Tembo</string>
+			<string>Alfred</string>
 			<string>TextExpander</string>
 			<string>TextSoap</string>
 			<string>PreviewHighlight</string>
@@ -147,7 +150,8 @@
 			<string>Pocket</string>
 			<string>Instapaper</string>
 			<string>Readability</string>
-			<string>Pinboard</string>			
+			<string>Pinboard</string>
+			<string>Leech</string>			
 			<string>OpenInSafari</string>
 			<string>OpenInChrome</string>
 			<string>OpenInFirefox</string>
