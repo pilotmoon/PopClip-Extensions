@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Search Maps.</string>
+		<string>Search the Maps app.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.maps</string>
