@@ -29,9 +29,12 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.barebones.yojimbo</string>
+			<array>
+				<string>com.barebones.yojimbo4</string>
+				<string>com.barebones.yojimbo</string>
+			</array>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://www.barebones.com/products/yojimbo/</string>
 			<key>Name</key>

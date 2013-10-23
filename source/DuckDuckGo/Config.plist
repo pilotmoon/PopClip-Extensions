@@ -6,13 +6,22 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>duckduck.png</string>
+			<string>duck.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,200}$</string>
 			<key>Title</key>
 			<string>DuckDuckGo</string>
 			<key>URL</key>
 			<string>https://duckduckgo.com/?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://duckduckgo.com/</string>
+			<key>Name</key>
+			<string>DuckDuckGo</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>

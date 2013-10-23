@@ -15,8 +15,21 @@
 			<string>Alfred</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.runningwithcrayons.Alfred-2</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://alfredapp.com/</string>
+			<key>Name</key>
+			<string>Alfred</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Activate Alfred with the selected text.</string>
+	<string>Activate Alfred with the selected text. (Requires Alfred v2.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.alfred</string>
 	<key>Extension Name</key>

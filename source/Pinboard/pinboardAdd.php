@@ -1,11 +1,14 @@
 <?php
-$url = getenv('POPCLIP_TEXT');
+$url = getenv('POPCLIP_URLS');
 $token = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
 
-// use page title if we have it, or use url as title
-$title = getenv('POPCLIP_BROWSER_TITLE');
+// use link text if we have it, or use url as title
+$title = getenv('POPCLIP_URL_TITLES');
 if (strlen($title)===0) {
-	$title=$url;
+	$title = getenv('POPCLIP_SPECIAL_BROWSER_TITLE');
+	if (strlen($title)===0) {
+		$title=$url;
+	}
 }
 
 $params = http_build_query(array('url'=>$url, 'description'=>$title));

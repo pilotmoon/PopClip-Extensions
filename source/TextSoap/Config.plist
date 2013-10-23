@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>clean-text.sh</string>
 			<key>Title</key>
-			<string>Clean Text</string>
+			<string>TextSoap</string>
 		</dict>
 	</array>
 	<key>Apps</key>

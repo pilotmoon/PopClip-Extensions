@@ -1730,7 +1730,7 @@ software, even if advised of the possibility of such damage.
 
 */
 ?>
-<?
+<?php
 $text = getenv('POPCLIP_TEXT');
 echo Markdown($text);
 ?>

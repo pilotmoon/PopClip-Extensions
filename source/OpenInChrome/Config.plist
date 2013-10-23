@@ -9,12 +9,12 @@
 			<string>chromspin.png</string>
 			<key>Requirements</key>
 			<array>
-				<string>httpurl</string>
+				<string>httpurls</string>
 			</array>
 			<key>Shell Script File</key>
 			<string>open-in-chrome.sh</string>
 			<key>Title</key>
-			<string>Chrome</string>
+			<string>Open in Chrome</string>
 		</dict>
 	</array>
 	<key>Apps</key>

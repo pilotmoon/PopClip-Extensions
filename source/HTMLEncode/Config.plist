@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>AmpersandSemicolon.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>htmlencode.php</string>
+			<key>Title</key>
+			<string>HTML Encode</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>HTML-encode the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.htmlencode</string>
+	<key>Extension Name</key>
+	<string>HTML Encode</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

@@ -89,10 +89,12 @@
 		<array>
 			<string>Email</string>
 			<string>Messages</string>
+			<string>Maps</string>
 			<string>Fantastical</string>
 			<string>Leap</string>
 			<string>Spotlight</string>
 			<string>Tembo</string>
+			<string>Alfred</string>
 			<string>TextExpander</string>
 			<string>TextSoap</string>
 			<string>PreviewHighlight</string>
@@ -110,11 +112,13 @@
 			<string>Ebay</string>
 			<string>IMDb</string>
 			<string>WolframAlpha</string>
+			<string>DuckDuckGo</string>
 			<string>Bing</string>
 			<string>LinkedIn</string>
 			<string>ImFeelingLucky</string>
 			<string>Baidu</string>
 			<string>Taobao</string>
+			<string>GoogleScholar</string>
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
@@ -148,7 +152,7 @@
 			<string>Instapaper</string>
 			<string>Readability</string>
 			<string>Pinboard</string>
-			<string>Leech</string>
+			<string>Leech</string>			
 			<string>OpenInSafari</string>
 			<string>OpenInChrome</string>
 			<string>OpenInFirefox</string>
@@ -172,6 +176,8 @@
 		<array>
 			<string>Dash</string>
 			<string>RunCommand</string>
+			<string>URLEncode</string>
+			<string>HTMLEncode</string>
 		</array>
 		<key>Title</key>
 		<string>For Developers</string>

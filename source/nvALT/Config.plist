@@ -8,7 +8,9 @@
 			<key>Shell Script File</key>
 			<string>nvALT.sh</string>
 			<key>Title</key>
-			<string>nv</string>
+			<string>nvALT</string>
+			<key>Image File</key>
+			<string>rocket.png</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -17,12 +19,13 @@
 			<key>Bundle Identifier</key>
 			<string>net.elasticthreads.nv</string>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://brettterpstra.com/project/nvalt/
 </string>
 			<key>Name</key>
 			<string>nvALT</string>
+
 		</dict>
 	</array>
 	<key>Credits</key>
@@ -36,8 +39,6 @@
 	<string>Create a note in nvALT.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.nvalt</string>
-	<key>Extension Image File</key>
-	<string>nv.png</string>
 	<key>Extension Name</key>
 	<string>nvALT</string>
 	<key>Required Software Version</key>

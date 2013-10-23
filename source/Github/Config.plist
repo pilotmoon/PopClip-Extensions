@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>ocat.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>GitHub Search</string>
+			<key>URL</key>
+			<string>https://github.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://github.com/</string>
+			<key>Name</key>
+			<string>GitHub</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>mailto:cfddream@gmail.com</string>
+			<key>Name</key>
+			<string>FangDun Cai</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search GitHub Repositories.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.github-search</string>
+	<key>Extension Name</key>
+	<string>GitHub Search</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

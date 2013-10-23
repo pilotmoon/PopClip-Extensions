@@ -18,7 +18,7 @@
 			<key>Image File</key>
 			<string>TranslationIcon.png</string>
 			<key>Title</key>
-			<string>Translate</string>
+			<string>Google Translate</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,1900}$</string>
 		</dict>

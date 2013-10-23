@@ -1,2 +1,2 @@
 sleep 1
-/bin/echo -n ""
+/bin/echo -n "FISHY"

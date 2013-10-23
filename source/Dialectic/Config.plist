@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(\+)?\(?\d{1,4}\)?(-|\s|\()?\(?\d{1,3}\)?(-|\s)?\(?\d{0,4}\)?(-|\s)?\d{2,3}?(-|\s)?\d{2,3}((-|\s)?\d{1,4})?((-|\s)\d{1,3})?\b|\b((\+)?\d{3}\.\d{3,4}\.\d{4})</string>
 			<key>Title</key>
-			<string>Dial</string>
+			<string>Dialectic</string>
 			<key>URL</key>
 			<string>dialectic:dial?number={popclip text}</string>
 		</dict>

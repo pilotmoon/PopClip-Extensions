@@ -8,7 +8,9 @@
 			<key>Shell Script File</key>
 			<string>nv.sh</string>
 			<key>Title</key>
-			<string>nv</string>
+			<string>Notational velocity</string>
+			<key>Image File</key>
+			<string>rocket.png</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -17,7 +19,7 @@
 			<key>Bundle Identifier</key>
 			<string>net.notational.velocity</string>
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://notational.net/</string>
 			<key>Name</key>
@@ -35,8 +37,6 @@
 	<string>Create a note in Notational Velocity.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.notational-velocity</string>
-	<key>Extension Image File</key>
-	<string>nv.png</string>
 	<key>Extension Name</key>
 	<string>Notational Velocity</string>
 	<key>Version</key>
