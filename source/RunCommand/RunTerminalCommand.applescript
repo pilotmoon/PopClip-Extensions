@@ -1,4 +1,5 @@
 tell application "Terminal"
 	activate
-	do script "{popclip text}"
+	set theTab to selected tab in first window
+	do script "{popclip text}" in theTab
 end tell
