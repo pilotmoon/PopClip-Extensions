@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>qs2.png</string>
 			<key>Service Name</key>
-			<string>Quicksilver/Send to Quicksilver</string>
+			<string>Get Current Selection (Do Not Change Shortcut)</string>
 			<key>Title</key>
 			<string>QS</string>
 		</dict>
@@ -32,7 +32,5 @@
 	<string>com.pilotmoon.popclip.extension.quicksilver</string>
 	<key>Extension Name</key>
 	<string>Quicksliver</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
