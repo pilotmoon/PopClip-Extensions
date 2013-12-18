@@ -10,7 +10,7 @@
 			<key>Title</key>
 			<string>"</string>
 			<key>URL</key>
-			<string>http://www.google.com/search?q=%22{popclip text}%22</string>
+			<string>https://www.google.com/search?q=%22{popclip text}%22</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
