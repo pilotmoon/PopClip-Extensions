@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Wikipedia</string>
 			<key>URL</key>
-			<string>http://{popclip option site}/w/index.php?search={popclip text}</string>
+			<string>https://{popclip option site}/w/index.php?search={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
