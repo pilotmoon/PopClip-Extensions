@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>TheHistListAddTask.applescript</string>
+			<key>Image File</key>
+			<string>Icon.png</string>
+			<key>Title</key>
+			<string>The Hit List</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.potionfactory.com/thehitlist/</string>
+			<key>Name</key>
+			<string>The Hit List</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Andy Kim</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new task in The Hit List.</string>
+	<key>Extension Identifier</key>
+	<string>com.potionfactory.popclip-extension.TheHitList</string>
+	<key>Extension Name</key>
+	<string>The Hit List</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
