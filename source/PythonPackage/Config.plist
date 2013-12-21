@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>mailto:whtsky@gmail.com</string>
+			<key>Name</key>
+			<string>whtsky</string>
+		</dict>
+	</array>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<string>Python Package</string>
+	<key>Extension Identifier</key>
+	<string>com.whtsky.popclip.extension.python-package</string>
+	<key>Extension Description</key>
+	<string>Search the selected text in PyPi</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>https://pypi.python.org/pypi?%3Aaction=search&amp;submit=search&amp;term={popclip text}</string>
+			<key>Image File</key>
+			<string>Python.png</string>
+			<key>Title</key>
+			<string>Python Package</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+		</dict>
+	</array>
+</dict>
+</plist>
