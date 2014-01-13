@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>copy-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>commastotabs.php</string>
+			<key>Title</key>
+			<string>CommasToTabs</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Copy with commas converted to tabs.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.commas-to-tabs</string>
+	<key>Extension Name</key>
+	<string>CommasToTabs</string>
+</dict>
+</plist>
