@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
 	<key>Extension Name</key>
 	<dict>
 		<key>en</key>
@@ -16,8 +14,6 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Position</key>
-			<real>3.09</real>
 			<key>Title</key>
 			<dict>
 				<key>fr</key>
@@ -25,8 +21,6 @@
 				<key>en</key>
 				<string>{popclip wordcount} Words</string>
 			</dict>
-			<key>Regular Expression</key>
-			<string>[^\s]\s[^\s]</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
