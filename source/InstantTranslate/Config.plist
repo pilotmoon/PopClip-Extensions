@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Image File</key>
+			<string>InstantTranslate.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/python</string>
+			<key>Shell Script File</key>
+			<string>bettertranslate.py</string>
+			<key>Title</key>
+			<string>Instant Tranlate</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://harmy.github.io</string>
+			<key>Name</key>
+			<string>harmy</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>See an instant translation of the selected text, using Google Translate. Works with single words and short phrases.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.instant-translate</string>
+	<key>Extension Name</key>
+	<string>Instant Translate</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Default Value</key>
+			<string>English</string>
+			<key>Option Identifier</key>
+			<string>destlang</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Destination Language</string>
+				<key>zh-Hans</key>
+				<string>翻译为</string>
+				<key>zh-Hant</key>
+				<string>轉換為</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Afrikaans</string>
+				<string>Albanian</string>
+				<string>Arabic</string>
+				<string>Armenian</string>
+				<string>Azerbaijani</string>
+				<string>Basque</string>
+				<string>Belarusian</string>
+				<string>Bengali</string>
+				<string>Bosnian</string>
+				<string>Bulgarian</string>
+				<string>Catalan</string>
+				<string>Cebuano</string>
+				<string>Chinese (Simplified)</string>
+				<string>Chinese (Traditional)</string>
+				<string>Croatian</string>
+				<string>Czech</string>
+				<string>Danish</string>
+				<string>Dutch</string>
+				<string>English</string>
+				<string>Esperanto</string>
+				<string>Estonian</string>
+				<string>Filipino</string>
+				<string>Finnish</string>
+				<string>French</string>
+				<string>Galician</string>
+				<string>Georgian</string>
+				<string>German</string>
+				<string>Greek</string>
+				<string>Gujarati</string>
+				<string>Haitian Creole</string>
+				<string>Hausa</string>
+				<string>Hebrew</string>
+				<string>Hindi</string>
+				<string>Hmong</string>
+				<string>Hungarian</string>
+				<string>Icelandic</string>
+				<string>Igbo</string>
+				<string>Indonesian</string>
+				<string>Irish</string>
+				<string>Italian</string>
+				<string>Japanese</string>
+				<string>Javanese</string>
+				<string>Kannada</string>
+				<string>Khmer</string>
+				<string>Korean</string>
+				<string>Lao</string>
+				<string>Latin</string>
+				<string>Latvian</string>
+				<string>Lithuanian</string>
+				<string>Macedonian</string>
+				<string>Malay</string>
+				<string>Maltese</string>
+				<string>Maori</string>
+				<string>Marathi</string>
+				<string>Mongolian</string>
+				<string>Nepali</string>
+				<string>Norwegian</string>
+				<string>Persian</string>
+				<string>Polish</string>
+				<string>Portuguese</string>
+				<string>Punjabi</string>
+				<string>Romanian</string>
+				<string>Russian</string>
+				<string>Serbian</string>
+				<string>Slovak</string>
+				<string>Slovenian</string>
+				<string>Somali</string>
+				<string>Spanish</string>
+				<string>Swahili</string>
+				<string>Swedish</string>
+				<string>Tamil</string>
+				<string>Telugu</string>
+				<string>Thai</string>
+				<string>Turkish</string>
+				<string>Ukrainian</string>
+				<string>Urdu</string>
+				<string>Vietnamese</string>
+				<string>Welsh</string>
+				<string>Yiddish</string>
+				<string>Yoruba</string>
+				<string>Zulu</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
