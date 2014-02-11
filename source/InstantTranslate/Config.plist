@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>See an instant translation of the selected text, using Google Translate. Works with single words and short phrases.</string>
+	<string>See an instant translation of the selected text, using Google Translate. Great for single words and short phrases.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.instant-translate</string>
 	<key>Extension Name</key>
