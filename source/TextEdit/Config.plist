@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>TextEdit.applescript</string>
+			<key>Image File</key>
+			<string>textedit.png</string>
+			<key>Long Running</key>
+			<true/>
+			<key>Title</key>
+			<string>TextEdit</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new TextEdit document containing the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.textedit</string>
+	<key>Extension Name</key>
+	<string>TextEdit</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
