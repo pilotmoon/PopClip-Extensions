@@ -88,6 +88,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>TextEdit</string>
 			<string>Email</string>
 			<string>Messages</string>
 			<string>Maps</string>
