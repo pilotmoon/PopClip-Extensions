@@ -66,6 +66,7 @@
 			<string>TaskPaper</string>
 			<string>Todo</string>
 			<string>Due</string>
+			<string>Wunderlist</string>			
 		</array>
 		<key>Title</key>
 		<string>To-Do Apps</string>
