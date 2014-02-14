@@ -20,6 +20,10 @@
 			<string>https://wunderlist.com/</string>
 			<key>Name</key>
 			<string>Wunderlist</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifier</key>
+			<string>com.wunderkinder.wunderlistdesktop</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
