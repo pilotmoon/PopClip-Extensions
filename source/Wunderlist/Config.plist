@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>wunderlist.png</string>
+			<key>Service Name</key>
+			<string>Add to Wunderlist</string>
+			<key>Title</key>
+			<string>Wunderlist</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://wunderlist.com/</string>
+			<key>Name</key>
+			<string>Wunderlist</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Add the selected text to Wunderlist as a new item.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.wunderlist</string>
+	<key>Extension Name</key>
+	<string>Wunderlist</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
