@@ -52,7 +52,6 @@
 			<string>DayOne</string>
 			<string>DEVONthinkPro</string>
 			<string>Notefile</string>
-			<string>NoteAway</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -69,6 +68,7 @@
 			<string>Todo</string>
 			<string>Due</string>
 			<string>Wunderlist</string>			
+			<string>TheHitList</string>					
 		</array>
 		<key>Title</key>
 		<string>To-Do Apps</string>
