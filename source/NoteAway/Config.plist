@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Name</key>
+	<string>NoteAway</string>
+	<key>Extension Description</key>
+	<string>Create a new note in NoteAway.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.noteaway</string>
+	<key>Required Software Version</key>
+	<integer>1</integer>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.randomapplications.noteaway</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://noteaway.com</string>
+			<key>Name</key>
+			<string>NoteAway</string>
+		</dict>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>noteaway.png</string>
+			<key>Title</key>
+			<string>NoteAway</string>
+			<key>Service Name</key>
+			<string>Add to NoteAway</string>
+		</dict>
+	</array>
+</dict>
+</plist>
