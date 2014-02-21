@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>gimages.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+			<key>Title</key>
+			<string>Google Images</string>
+			<key>URL</key>
+			<string>https://www.google.com/search?tbm=isch&amp;q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for pictures on Google Images.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.google-images</string>
+	<key>Extension Name</key>
+	<string>Google Images</string>
+</dict>
+</plist>
