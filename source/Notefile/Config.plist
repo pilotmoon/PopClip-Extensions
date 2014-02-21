@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>notefile://add?text={popclip text}</string>
+			<key>Title</key>
+			<string>Notefile</string>
+			<key>Image File</key>
+			<string>notefile.png</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.junecloud.mac.Notefile</string>
+			<key>Check Installed</key>
+			<false/>
+			<key>Link</key>
+			<string>http://junecloud.com/software/mac/notefile.html</string>
+			<key>Name</key>
+			<string>Notefile</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a note in Notefile.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.junecloud-notefile</string>
+	<key>Extension Name</key>
+	<string>Notefile</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
