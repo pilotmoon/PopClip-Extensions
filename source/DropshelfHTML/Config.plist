@@ -5,8 +5,10 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Service Name</key>
-			<string>Send to Dropshelf</string>
+			<key>Shell Script File</key>
+			<string>dropshelf.php</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
 			<key>Title</key>
 			<string>Dropshelf</string>
 			<key>Image File</key>
