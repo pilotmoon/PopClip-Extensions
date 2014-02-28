@@ -112,6 +112,7 @@
 		<array>
 			<string>Wikipedia</string>
 			<string>GoogleMaps</string>
+			<string>GoogleImages</string>			
 			<string>YouTube</string>
 			<string>Amazon</string>
 			<string>Ebay</string>
