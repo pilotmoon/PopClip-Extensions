@@ -137,7 +137,7 @@ Fields with the type "String or Dictionary" can take either a String or Dictiona
 
 ### Plist Troubleshooting
 
-If PopClip reports "Error: Missing "Extension Identifier" field, that usually means that the `Config.plist` has malformed XML, or the XML is not a valid plist. (I know, the error message is misleading. Sorry!)
+If PopClip reports `Error: Missing "Extension Identifier" field`, that usually means that the `Config.plist` has malformed XML, or the XML is not a valid plist. (I know, the error message is misleading. Sorry!)
 
 Common reasons for malformed XML are:
 
