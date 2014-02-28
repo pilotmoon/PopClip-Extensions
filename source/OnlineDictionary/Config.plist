@@ -14,13 +14,13 @@
 			<key>Shell Script File</key>
 			<string>onlineDictionary.php</string>
 			<key>Title</key>
-			<string>onlineDictionary</string>
+			<string>Online Dictionary</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search the selected text with online dictionary. Supports dictionary.com, youdao.com,dict.cn</string>
+	<string>Search for the selected work in an online dictionary. Supports dictionary.com, youdao.com, dict.cn</string>
 	<key>Extension Name</key>
-	<string>onlineDictionary</string>
+	<string>Online Dictionary</string>
     <key>Credits</key>
     <array>
         <dict>
@@ -31,14 +31,14 @@
         </dict>
     </array>
     <key>Extension Identifier</key>
-    <string>com.tsnrose.blog.popclip.extension.onlinedictionary</string>
+    <string>com.pilotmoon.popclip.extension.online-dictionary</string>
 	<key>Options</key>
 	<array>
 		<dict>
 			<key>Option Identifier</key>
 			<string>service</string>
 			<key>Option Label</key>
-			<string>select service</string>
+			<string>Dictionary Service</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
@@ -51,6 +51,6 @@
 		</dict>
 	</array>
 	<key>Required Software Version</key>
-	<integer>693</integer>
+	<integer>701</integer>
 </dict>
 </plist>
