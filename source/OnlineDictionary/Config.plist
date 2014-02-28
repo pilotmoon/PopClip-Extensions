@@ -41,12 +41,20 @@
 			<string>Dictionary Service</string>
 			<key>Option Type</key>
 			<string>multiple</string>
+			<key>Option Default Value</key>
+			<string>dictionary.com</string>			
 			<key>Option Values</key>
 			<array>
-				<string>dictionary.com</string>
-				<string>dict.cn</string>
-				<string>dict.youdao.com</string>
-				<string>iciba.com</string>
+				<string>dict.cc</string>
+				<string>dict.leo.org</string>
+				<string>lingvo-online.ru</string>
+				<string>merriam-webster.com</string>
+				<string>thefreedictionary.com</string>
+				<string>wordwebonline.com</string>
+			    <string>dict.cn</string>
+			    <string>dict.youdao.com</string>
+			    <string>dictionary.com</string>
+			    <string>iciba.com</string>
 			</array>
 		</dict>
 	</array>
