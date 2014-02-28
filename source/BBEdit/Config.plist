@@ -15,6 +15,19 @@
 			<string>BBedit</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.barebones.bbedit</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.barebones.com/products/bbedit/</string>
+			<key>Name</key>
+			<string>BBEdit</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Create a new BBEdit document containing the selected text.</string>
 	<key>Extension Identifier</key>
