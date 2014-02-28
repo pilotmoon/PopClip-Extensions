@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search for the selected work in an online dictionary. Supports Dictionary.com, Merriam Webster Online, Oxford Advanced Learner's Dictionary, Youdao, dict.cn, dict.cc, and more.</string>
+	<string>Search for the selected word in an online dictionary. Supports Dictionary.com, Merriam Webster Online, Oxford Advanced Learner's Dictionary, Youdao, dict.cn, dict.cc, and more.</string>
 	<key>Extension Name</key>
 	<string>Online Dictionary</string>
     <key>Credits</key>
