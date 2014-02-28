@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search for the selected work in an online dictionary. Choose from dictionary.com, merriam-webster.com, youdao.com, dict.cn and many more.</string>
+	<string>Search for the selected work in an online dictionary. Supports Dictionary.com, Merriam Webster Online, Oxford Advanced Learner's Dictionary, Youdao, dict.cn, dict.cc, and more.</string>
 	<key>Extension Name</key>
 	<string>Online Dictionary</string>
     <key>Credits</key>
@@ -49,6 +49,7 @@
 				<string>dict.leo.org</string>
 				<string>lingvo-online.ru</string>
 				<string>merriam-webster.com</string>
+				<string>oxfordlearnersdictionaries.com</string>
 				<string>thefreedictionary.com</string>
 				<string>wordwebonline.com</string>
 			    <string>dict.cn</string>
