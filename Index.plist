@@ -125,6 +125,7 @@
 			<string>Baidu</string>
 			<string>Taobao</string>
 			<string>GoogleScholar</string>
+			<string>OnlineDictionary</string>			
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
