@@ -184,6 +184,7 @@
 			<string>Dash</string>
 			<string>RunCommand</string>
 			<string>BBEdit</string>			
+			<string>Markdown</string>			
 			<string>URLEncode</string>
 			<string>HTMLEncode</string>
 		</array>
@@ -195,13 +196,12 @@
 		<array>
 			<string>Calculate</string>
 			<string>Convert</string>
-			<string>LuckyLink</string>
-			<string>Markdown</string>
 			<string>Sort</string>
-			<string>Say</string>
 			<string>Swap</string>
+			<string>LuckyLink</string>			
 			<string>CharCount</string>
 			<string>WordCount</string>
+			<string>Say</string>
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
