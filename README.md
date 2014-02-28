@@ -108,7 +108,7 @@ Here is an example package structure, using the 'Say' extension:
        speechicon.png               -- Icon file
 
 ### The Config.plist
-Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as the excellent [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
+Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
 ). Here is an example of the plist for 'Translate Tab', as viewed in Xcode:
 
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
@@ -134,6 +134,18 @@ For example, here is the full-size icon file for 'Sort':
 ### "String or Dictionary" type
 
 Fields with the type "String or Dictionary" can take either a String or Dictionary value. If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. 
+
+### Plist Troubleshooting
+
+If PopClip reports "Error: Missing "Extension Identifier" field, that usually means that the `Config.plist` has malformed XML, or the XML is not a valid plist. (I know, the error message is misleading. Sorry!)
+
+Common reasons for malformed XML are:
+
+* Missing end tags
+* Mismatched start and end tags
+* Unescaped `&` character in the URL field (`&` must be endoded as `&amp;`)
+
+I recommend using a dedicated Plist editor such as Xcode or [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/). It's easy to make mistakes using a plain text editor.
 
 ### Config.plist Structure
 The `Config.plist` file has the following structure.
