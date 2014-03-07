@@ -1,8 +1,3 @@
 tell application id "com.deskconnect.mac"
-	set theurl to first paragraph of "{popclip urls}"
-	if length of theurl > 0 then
-		send URL theurl to all devices
-	else
-		send text "{popclip text}" to all devices
-	end if	
+	send pasteboard named "Apple CFPasteboard general" to all devices from source "PopClip"
 end tell

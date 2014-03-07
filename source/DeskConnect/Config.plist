@@ -6,13 +6,29 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>SendViaDeskConnect.applescript</string>
+			<string>SendURLViaDeskConnect.applescript</string>
 			<key>Image File</key>
 			<string>DeskConnect.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
+			<key>Title</key>
+			<string>DeskConnect</string>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>SendViaDeskConnect.applescript</string>
 			<key>Before</key>
 			<string>copy</string>
+			<key>Image File</key>
+			<string>DeskConnect.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>!httpurl</string>
+			</array>
 			<key>Title</key>
-			<string>Send via DeskConnect</string>
+			<string>DeskConnect</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -29,7 +45,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Send the text to another device via DeskConnect.</string>
+	<string>Send the text to an iOS device or another Mac via DeskConnect.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.deskconnect</string>
 	<key>Extension Name</key>
