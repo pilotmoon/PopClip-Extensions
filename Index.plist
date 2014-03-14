@@ -102,8 +102,10 @@
 			<string>Tembo</string>
 			<string>Alfred</string>
 			<string>TextExpander</string>
+			<string>Typinator</string>			
 			<string>TextSoap</string>
 			<string>PreviewHighlight</string>
+			<string>DeskConnect</string>			
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
