@@ -6,27 +6,11 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>SendURLViaDeskConnect.applescript</string>
-			<key>Image File</key>
-			<string>DeskConnect.png</string>
-			<key>Requirements</key>
-			<array>
-				<string>httpurl</string>
-			</array>
-			<key>Title</key>
-			<string>DeskConnect</string>
-		</dict>
-		<dict>
-			<key>AppleScript File</key>
 			<string>SendViaDeskConnect.applescript</string>
 			<key>Before</key>
 			<string>copy</string>
 			<key>Image File</key>
 			<string>DeskConnect.png</string>
-			<key>Requirements</key>
-			<array>
-				<string>!httpurl</string>
-			</array>
 			<key>Title</key>
 			<string>DeskConnect</string>
 		</dict>
