@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Send the selection to an iOS device, or another Mac, via DeskConnect.</string>
+	<string>Send the selection to an iOS device or another Mac, via DeskConnect.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.deskconnect</string>
 	<key>Extension Name</key>
