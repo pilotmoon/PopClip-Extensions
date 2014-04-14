@@ -265,6 +265,8 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
 |`POPCLIP_SPECIAL_BROWSER_TITLE`|`{popclip special browser title}`|The title of the web page, ONLY only if the user selected the URL in the address bar (i.e. this is likely the title of the corresponding web page to the URL). (Safari and Chrome only.)|
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
+|`POPCLIP_DECIMAL_SEPARATOR`|n/a|The decimal separator character according to the OS X system locale. For example: `.`|
+|`POPCLIP_GROUPING_SEPARATOR`|n/a|The number grouping (thousands separator) character according to the OS X system locale. For example: `,`|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
 ### Credits Dictionary
