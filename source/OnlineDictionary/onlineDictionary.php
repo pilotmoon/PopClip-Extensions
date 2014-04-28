@@ -8,7 +8,7 @@ $urlPattern = array(
 	'dict.leo.org' => 'http://dict.leo.org/?search=',
 	'lingvo-online.ru' => 'http://www.lingvo-online.ru/',
 	'merriam-webster.com' => 'http://www.merriam-webster.com/dictionary/',
-	'oxfordlearnersdictionaries.com' => 'http://oald8.oxfordlearnersdictionaries.com/dictionary/',
+	'oxfordlearnersdictionaries.com' => 'http://www.oxfordlearnersdictionaries.com/definition/english/',
 	'thefreedictionary.com' => 'http://www.thefreedictionary.com/',
 	'wordwebonline.com' => 'http://www.wordwebonline.com/search.pl?w=',
     'dict.cn' => 'http://dict.cn/',
