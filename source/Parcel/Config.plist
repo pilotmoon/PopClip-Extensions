@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>parcel.png</string>
+			<key>URL</key>
+			<string>parcel://automatic/?{popclip text}</string>
+			<key>Title</key>
+			<string>Parcel</string>
+			<key>Regular Expression</key>
+			<string>(?i)\b(?=[A-Z0-9]*[0-9][A-Z0-9]*)[A-Z0-9]{5,}\b</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.mr-brightside.ParcelOSX</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://parcelapp.net/</string>
+			<key>Name</key>
+			<string>Parcel</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Track parcel deliveries using Parcel.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.parcel</string>
+	<key>Extension Name</key>
+	<string>Parcel</string>
+	<key>Required Software Version</key>
+	<integer>1459</integer>
+</dict>
+</plist>
