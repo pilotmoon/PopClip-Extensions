@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add the selected package tracking number to Parcel.</string>
+	<string>Add a package tracking number to Parcel.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.parcel</string>
 	<key>Extension Name</key>
