@@ -105,7 +105,8 @@
 			<string>Typinator</string>			
 			<string>TextSoap</string>
 			<string>PreviewHighlight</string>
-			<string>DeskConnect</string>			
+			<string>DeskConnect</string>	
+			<string>Parcel</string>						
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
