@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Identifier</key>
+	<string>com.uribo.popclip.extension.doi</string>
+	<key>Extension Name</key>
+	<string>Digital object identifier</string>
+	<key>Version</key>
+	<integer>1</integer>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>DOI</string>
+			<key>Image File</key>
+			<string>DOIIcon.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>URL</key>
+			<string>http://dx.doi.org/{popclip text}</string>
+		</dict>
+	</array>
+</dict>
+</plist>
