@@ -10,11 +10,20 @@
 			<key>Title</key>
 			<string>Naver</string>
 			<key>URL</key>
-			<string>http://search.naver.com/search.naver?where=nexearch&amp;query={popclip text}</string>
+			<string>http://search.naver.com/search.naver?query={popclip text}</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.naver.com/</string>
+			<key>Name</key>
+			<string>Naver</string>
+		</dict>
+	</array>	
 	<key>Extension Description</key>
-	<string>Search the web using Naver</string>
+	<string>Search the web using Naver.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.SearchNaver</string>
 	<key>Extension Name</key>
