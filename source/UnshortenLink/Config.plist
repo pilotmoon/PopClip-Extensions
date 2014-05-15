@@ -25,7 +25,7 @@
 	<array>
 		<dict>
 			<key>Link</key>
-			<string>http://longurl.org/</string>
+			<string>http://longurl.org/expand</string>
 			<key>Name</key>
 			<string>LongURL</string>
 		</dict>
