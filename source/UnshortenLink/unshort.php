@@ -12,10 +12,12 @@ $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($response && $code==200) {
 	$json = json_decode($response, TRUE);
-	$url = $json['long-url'];
-	if ($url) {
-		echo $url;
-		exit(0); # success, hurrah.		
+	if ($json) {
+		$url = $json['long-url'];
+		if ($url) {
+			echo $url;
+			exit(0); # success, hurrah.		
+		}
 	}
 }  
 

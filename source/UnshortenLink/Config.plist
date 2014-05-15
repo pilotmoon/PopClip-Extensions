@@ -21,8 +21,17 @@
 			<string>Unshorten Link</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://longurl.org/</string>
+			<key>Name</key>
+			<string>LongURL</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Expand a short URL to its original form, using LongURL.org.</string>
+	<string>Expand a short URL to its original form. Implemented using LongURL.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.unshorten</string>
 	<key>Extension Name</key>
