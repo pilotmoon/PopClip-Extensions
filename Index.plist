@@ -115,9 +115,9 @@
 		<key>Members</key>
 		<array>
 			<string>Wikipedia</string>
-			<string>DuckDuckGo</string>
-			<string>Bing</string>
 			<string>GoogleSearch</string>
+			<string>Bing</string>
+			<string>DuckDuckGo</string>
 			<string>GoogleMaps</string>
 			<string>GoogleImages</string>
 			<string>ImFeelingLucky</string>					
