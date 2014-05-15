@@ -115,21 +115,22 @@
 		<key>Members</key>
 		<array>
 			<string>Wikipedia</string>
+			<string>DuckDuckGo</string>
+			<string>Bing</string>
+			<string>GoogleSearch</string>
 			<string>GoogleMaps</string>
-			<string>GoogleImages</string>			
+			<string>GoogleImages</string>
+			<string>ImFeelingLucky</string>					
 			<string>YouTube</string>
 			<string>Amazon</string>
 			<string>Ebay</string>
 			<string>IMDb</string>
-			<string>WolframAlpha</string>
-			<string>DuckDuckGo</string>
-			<string>Bing</string>
+			<string>WolframAlpha</string>						
 			<string>LinkedIn</string>
-			<string>ImFeelingLucky</string>
+			<string>GoogleScholar</string>										
 			<string>Naver</string>
 			<string>Baidu</string>
 			<string>Taobao</string>
-			<string>GoogleScholar</string>
 			<string>OnlineDictionary</string>			
 		</array>
 		<key>Title</key>
