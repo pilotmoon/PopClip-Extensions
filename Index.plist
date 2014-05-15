@@ -116,18 +116,18 @@
 		<array>
 			<string>Wikipedia</string>
 			<string>GoogleSearch</string>
-			<string>Bing</string>
-			<string>DuckDuckGo</string>
 			<string>GoogleMaps</string>
 			<string>GoogleImages</string>
-			<string>ImFeelingLucky</string>					
+			<string>GoogleScholar</string>							
+			<string>ImFeelingLucky</string>							
+			<string>Bing</string>
+			<string>DuckDuckGo</string>	
 			<string>YouTube</string>
 			<string>Amazon</string>
 			<string>Ebay</string>
 			<string>IMDb</string>
 			<string>WolframAlpha</string>						
-			<string>LinkedIn</string>
-			<string>GoogleScholar</string>										
+			<string>LinkedIn</string>									
 			<string>Naver</string>
 			<string>Baidu</string>
 			<string>Taobao</string>
