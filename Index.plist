@@ -106,7 +106,8 @@
 			<string>TextSoap</string>
 			<string>PreviewHighlight</string>
 			<string>DeskConnect</string>	
-			<string>Parcel</string>						
+			<string>Parcel</string>		
+			<string>Dropshelf</string>						
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
