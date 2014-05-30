@@ -69,7 +69,8 @@
 			<string>Todo</string>
 			<string>Due</string>
 			<string>Wunderlist</string>			
-			<string>TheHitList</string>					
+			<string>TheHitList</string>		
+			<string>Todoist</string>								
 		</array>
 		<key>Title</key>
 		<string>To-Do Apps</string>
