@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new task in OmniFocus. (Requires OmniFocus Pro.)</string>
+	<string>Create a new task in OmniFocus. (Supports OmniFocus 1 and OmniFocus 2 Pro.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.omnifocus</string>
 	<key>Extension Name</key>
