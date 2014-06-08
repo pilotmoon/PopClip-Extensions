@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>pubmedIcon.png</string>
+			<key>Title</key>
+			<string>PubMed</string>
+			<key>URL</key>
+			<string>http://www.ncbi.nlm.nih.gov/pubmed/?term={popclip text}</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://twitter.com/pwizla</string>
+			<key>Name</key>
+			<string>Pierre Wizla</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for selected text on PubMed.</string>
+	<key>Extension Identifier</key>
+	<string>com.pwizla.pubmedforpopclip</string>
+	<key>Extension Image File</key>
+	<string>pubmedIcon.png</string>
+	<key>Extension Name</key>
+	<string>Pubmed</string>
+	<key>Required Software Version</key>
+	<integer>1459</integer>
+</dict>
+</plist>
