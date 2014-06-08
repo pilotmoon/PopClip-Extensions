@@ -29,7 +29,7 @@
 	<key>Extension Image File</key>
 	<string>pubmedIcon.png</string>
 	<key>Extension Name</key>
-	<string>Pubmed</string>
+	<string>PubMed</string>
 	<key>Required Software Version</key>
 	<integer>1459</integer>
 </dict>
