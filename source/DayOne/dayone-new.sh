@@ -1,1 +1,1 @@
-echo $POPCLIP_TEXT | dayone new
+echo $POPCLIP_TEXT | ./dayone new
