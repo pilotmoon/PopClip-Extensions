@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>diary.png</string>
 			<key>Shell Script File</key>
-			<string>dayone-new.sh</string>
+			<string>dayone.sh</string>
 			<key>Title</key>
 			<string>Day One</string>
 			<key>After</key>
