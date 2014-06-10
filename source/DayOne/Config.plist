@@ -11,8 +11,6 @@
 			<string>dayone.sh</string>
 			<key>Title</key>
 			<string>Day One</string>
-			<key>After</key>
-			<string>show-status</string>			
 		</dict>
 	</array>
 	<key>Apps</key>
