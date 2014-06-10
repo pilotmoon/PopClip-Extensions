@@ -12,11 +12,13 @@
 			<key>Restore Pasteboard</key>
 			<true/>
 			<key>Shell Script File</key>
-			<string>testsh.sh</string>
+			<string>testsh5.sh</string>
 			<key>Stoppable</key>
 			<false/>
 			<key>Title</key>
 			<string>TestShell</string>
+			<key>Image File</key>
+			<string>123.png</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
