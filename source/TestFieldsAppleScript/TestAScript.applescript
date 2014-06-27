@@ -10,4 +10,3 @@ wnd:  {popclip window title}
 app:  {popclip app name}
 urle: {popclip urlencoded text}
 fish: {popclip option fish}"
-error "some error" number 502

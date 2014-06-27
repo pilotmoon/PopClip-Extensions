@@ -21,21 +21,5 @@
 	<string>com.pilotmoon.popclip.extension.test.ascript</string>
 	<key>Extension Name</key>
 	<string>Test Applescript</string>
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Option Identifier</key>
-			<string>fish</string>
-			<key>Option Label</key>
-			<dict>
-				<key>en</key>
-				<string>Fish</string>
-			</dict>
-			<key>Option Type</key>
-			<string>string</string>
-		</dict>
-	</array>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
