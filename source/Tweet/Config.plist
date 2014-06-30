@@ -12,7 +12,7 @@
 			<key>Shell Script File</key>
 			<string>tweet.sh</string>
 			<key>Title</key>
-			<string>Messages</string>
+			<string>Tweet</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>

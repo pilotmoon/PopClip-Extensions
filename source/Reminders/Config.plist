@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>reminder.png</string>
 			<key>Title</key>
-			<string>New Reminder</string>
+			<string>Reminder</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
