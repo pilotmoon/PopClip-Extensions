@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>sentence-case.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>sentence-case.php</string>
+			<key>Title</key>
+			<string>Sentence Case</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Make each sentence in the selection start with a capital letter, with other letters lowercase.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.sentence-case</string>
+	<key>Extension Name</key>
+	<string>Sentence Case</string>
+</dict>
+</plist>
