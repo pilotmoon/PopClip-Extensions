@@ -1,7 +1,7 @@
 <?php
 mb_internal_encoding("UTF-8");
 $input=getenv('POPCLIP_TEXT');
-$input="  the sky is blue. grass is green!  is the\nfrog green too?... . something";
+//$input="  the sky is blue. grass is green!  is the\nfrog green too?... . something";
 
 function mb_ucfirst($string)
 {
