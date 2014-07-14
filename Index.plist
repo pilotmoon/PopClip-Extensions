@@ -33,6 +33,7 @@
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 			<string>InstantTranslate</string>			
+			<string>Eudic</string>						
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
