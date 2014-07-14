@@ -28,7 +28,7 @@
 				<string>com.eusoft.eudic</string>				
 			</array>			
 			<key>Check Installed</key>
-			<true/>
+			<false/>
 			<key>Link</key>
 			<string>http://www.eudic.net/eudic/mac_dictionary.aspx</string>
 			<key>Name</key>
