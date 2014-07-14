@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>eudic.png</string>
+			<key>Service Name</key>
+			<string>Eudic • 翻译选中内容</string>
+			<key>Title</key>
+			<string>Search In Eudic</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Look up the selected text in Eudic, the Chinese-English dictionary.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.eudic</string>
+	<key>Extension Name</key>
+	<string>Eudic</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<array>
+				<string>com.eusoft.freeeudic</string>
+				<string>com.eusoft.eudic</string>				
+			</array>			
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.eudic.net/eudic/mac_dictionary.aspx</string>
+			<key>Name</key>
+			<string>Eudic</string>
+		</dict>
+	</array>
+</dict>
+</plist>
