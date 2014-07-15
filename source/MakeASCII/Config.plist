@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>ascii.php</string>
+			<key>Title</key>
+			<string>ASCII</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Strip out all characters not in the printable ASCII range 32—126.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.make-ascii</string>
+	<key>Extension Name</key>
+	<string>Make ASCII</string>
+</dict>
+</plist>
