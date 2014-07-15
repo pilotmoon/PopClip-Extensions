@@ -30,7 +30,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Search the web using Yandex (Яндекс).</string>
+		<string>Search the web using Yandex.</string>
 		<key>ru</key>
 		<string>искать на Яндексе</string>
 	</dict>
