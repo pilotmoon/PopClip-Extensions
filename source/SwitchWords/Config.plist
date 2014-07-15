@@ -16,7 +16,7 @@
 			<key>Image File</key>
 			<string></string>
 			<key>Regular Expression</key>
-			<string>^\s*\w+?[\s,]+\w+?\s*$</string>			
+			<string>^\s*[\w-]+?[\s,]+[\w-]+?\s*$</string>			
 		</dict>
 	</array>
 	<key>Extension Description</key>
