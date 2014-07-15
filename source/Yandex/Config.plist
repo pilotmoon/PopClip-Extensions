@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>yandex.png</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Yandex</string>
+				<key>ru</key>
+				<string>Яндекс</string>
+			</dict>
+			<key>URL</key>
+			<string>https://yandex.ru/yandsearch?text={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://yandex.ru/</string>
+			<key>Name</key>
+			<string>Yandex</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search the web using Yandex (Яндекс).</string>
+		<key>ru</key>
+		<string>искать на Яндексе</string>
+	</dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Igor Rakitin</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.yandex</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Yandex</string>
+		<key>ru</key>
+		<string>Яндекс</string>
+	</dict>
+</dict>
+</plist>
