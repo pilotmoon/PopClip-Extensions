@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>worldcat.png</string>
+			<key>Title</key>
+			<string>WorldCat</string>
+			<key>URL</key>
+			<string>https://www.worldcat.org/search?qt=worldcat_org_all&amp;q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.worldcat.org/</string>
+			<key>Name</key>
+			<string>WorldCat</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search worldwide library collections using WorldCat.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.worldcat</string>
+	<key>Extension Name</key>
+	<string>WorldCat</string>
+</dict>
+</plist>

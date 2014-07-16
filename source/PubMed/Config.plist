@@ -35,8 +35,6 @@
 	<string>Search for biomedical information on PubMed.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pubmed</string>
-	<key>Extension Image File</key>
-	<string>pubmedIcon.png</string>
 	<key>Extension Name</key>
 	<string>PubMed</string>
 </dict>
