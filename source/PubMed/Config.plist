@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search for selected text on PubMed.</string>
+	<string>Search for biomedical information on PubMed.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pubmed</string>
 	<key>Extension Image File</key>
