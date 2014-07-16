@@ -22,15 +22,22 @@
 			<string>Pierre Wizla</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.ncbi.nlm.nih.gov/pubmedp</string>
+			<key>Name</key>
+			<string>PubMed</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Search for selected text on PubMed.</string>
 	<key>Extension Identifier</key>
-	<string>com.pwizla.pubmedforpopclip</string>
+	<string>com.pilotmoon.popclip.extension.pubmed</string>
 	<key>Extension Image File</key>
 	<string>pubmedIcon.png</string>
 	<key>Extension Name</key>
 	<string>PubMed</string>
-	<key>Required Software Version</key>
-	<integer>1459</integer>
 </dict>
 </plist>
