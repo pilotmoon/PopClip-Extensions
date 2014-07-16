@@ -9,7 +9,7 @@ tell application "System Events"
 				if (selected of theItem) is false then
 					click theItem
 				end if
-				keystroke "{popclip text}"
+				keystroke "v" using command down
 				error
 			end if
 			--				end repeat

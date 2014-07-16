@@ -13,6 +13,8 @@
 			<string>(?s)^[^\n\r]{1,300}$</string>
 			<key>Title</key>
 			<string>Spotlight</string>
+			<key>Before</key>
+			<string>copy</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
