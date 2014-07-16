@@ -26,7 +26,7 @@
 	<array>
 		<dict>
 			<key>Link</key>
-			<string>http://www.ncbi.nlm.nih.gov/pubmedp</string>
+			<string>http://www.ncbi.nlm.nih.gov/pubmed</string>
 			<key>Name</key>
 			<string>PubMed</string>
 		</dict>
