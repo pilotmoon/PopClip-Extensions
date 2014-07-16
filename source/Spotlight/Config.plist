@@ -23,7 +23,7 @@
 	<string>com.pilotmoon.popclip.extension.spotlight</string>
 	<key>Extension Name</key>
 	<string>Spotlight</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<key>Required OS Version</key>
+	<string>10.7</string>
 </dict>
 </plist>
