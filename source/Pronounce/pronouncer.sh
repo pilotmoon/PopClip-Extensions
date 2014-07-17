@@ -1,4 +1,4 @@
-Url='http://dictionary.reference.com/browse/'$POPCLIP_URLENCODED_TEXT
+Url='http://dictionary.reference.com/browse/'$POPCLIP_TEXT
 
 getURL() {
     curl -s $Url | grep -m1 -oE 'http.+?mp3' | head -1
