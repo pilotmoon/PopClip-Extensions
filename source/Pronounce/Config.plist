@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>filledbubble.png</string>
+			<key>Shell Script File</key>
+			<string>pronouncer.sh</string>
+			<key>Regular Expression</key>
+			<string>([a-zA-Z-']+)</string>
+			<key>Stoppable</key>
+			<true/>
+			<key>Title</key>
+			<string>Pronounce</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>mailto:iAbdulelah@gmail.com</string>
+			<key>Name</key>
+			<string>Abdulelah</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Uses Dictionary.com to provide you with the correct pronunciation of the selected word. An alternative to "Say", for English language learners.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.pronounce</string>
+	<key>Extension Name</key>
+	<string>Pronounce</string>
+</dict>
+</plist>
