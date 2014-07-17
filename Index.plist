@@ -217,6 +217,7 @@
 			<string>CharCount</string>
 			<string>WordCount</string>
 			<string>Say</string>
+			<string>Pronounce</string>			
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
