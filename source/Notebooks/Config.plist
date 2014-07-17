@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>notebooks://addnote/{popclip text}</string>
+			<key>Title</key>
+			<string>Notebooks</string>
+			<key>Image File</key>
+			<string>notebooks.png</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.aschmid.NotebooksMac</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.notebooksapp.com/mac/</string>
+			<key>Name</key>
+			<string>Notebooks</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a note in Notebooks.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.notebooks</string>
+	<key>Extension Name</key>
+	<string>Notebooks</string>
+</dict>
+</plist>
