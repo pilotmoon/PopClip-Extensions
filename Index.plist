@@ -42,6 +42,15 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Say</string>
+			<string>Pronounce</string>			
+		</array>
+		<key>Title</key>
+		<string>Text-to-speech</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Notes</string>
 			<string>MakeSticky</string>
 			<string>Evernote</string>
@@ -215,9 +224,7 @@
 			<string>Swap</string>
 			<string>LuckyLink</string>			
 			<string>CharCount</string>
-			<string>WordCount</string>
-			<string>Say</string>
-			<string>Pronounce</string>			
+			<string>WordCount</string>	
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
