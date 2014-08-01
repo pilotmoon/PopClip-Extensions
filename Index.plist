@@ -30,6 +30,15 @@
 	</dict>
 	<dict>
 		<key>Members</key>
+		<array>		
+			<string>CharCount</string>
+			<string>WordCount</string>	
+		</array>
+		<key>Title</key>
+		<string>Text Statistics</string>
+	</dict>	
+	<dict>
+		<key>Members</key>
 		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
@@ -223,8 +232,6 @@
 			<string>Sort</string>
 			<string>Swap</string>
 			<string>LuckyLink</string>			
-			<string>CharCount</string>
-			<string>WordCount</string>	
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
