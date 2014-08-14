@@ -128,10 +128,20 @@
 			<string>PreviewHighlight</string>
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
-			<string>Dropshelf</string>						
+			<string>Dropshelf</string>			
+					
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>OnlineDictionary</string>			
+			<string>LingvoDictionary</string>				
+		</array>
+		<key>Title</key>
+		<string>Dictionaries</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -156,8 +166,7 @@
 			<string>Yandex</string>
 			<string>Naver</string>
 			<string>Baidu</string>
-			<string>Taobao</string>
-			<string>OnlineDictionary</string>			
+			<string>Taobao</string>			
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
