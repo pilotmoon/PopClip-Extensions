@@ -12,7 +12,7 @@
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
-			<string>htmldecode.php</string>
+			<string>htmlencode.php</string>
 			<key>Title</key>
 			<string>HTML Encode</string>
 		</dict>
