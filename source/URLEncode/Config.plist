@@ -18,7 +18,7 @@
 		</dict>
 		<dict>
 			<key>Regular Expression</key>
-			<string>^.*%\d\d.*$</string>
+			<string>^.*%[0-9A-Fa-f][0-9A-Fa-f].*$</string>
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
