@@ -45,7 +45,5 @@
 	<string>com.pilotmoon.popclip.extension.textsoap</string>
 	<key>Extension Name</key>
 	<string>TextSoap</string>
-	<key>Version</key>
-	<integer>3</integer>
 </dict>
 </plist>
