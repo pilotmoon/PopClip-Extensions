@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>HTML-encode (or decode) the selected text.</string>
+	<string>HTML-encode or decode)the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.htmlencode</string>
 	<key>Extension Name</key>
