@@ -42,8 +42,7 @@
 		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
-			<string>InstantTranslate</string>			
-			<string>Eudic</string>						
+			<string>InstantTranslate</string>							
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
@@ -52,7 +51,8 @@
 		<key>Members</key>
 		<array>
 			<string>OnlineDictionary</string>			
-			<string>Antidote</string>				
+			<string>Antidote</string>			
+			<string>Eudic</string>					
 			<string>Lingvo</string>	
 		</array>
 		<key>Title</key>
