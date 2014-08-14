@@ -12,13 +12,27 @@
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
-			<string>htmlencode.php</string>
+			<string>htmldecode.php</string>
 			<key>Title</key>
 			<string>HTML Encode</string>
 		</dict>
+		<dict>
+			<key>Regular Expression</key>
+			<string>^.*&amp;\w+;.*$</string>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>AmpersandSemicolonInverse.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>htmldecode.php</string>
+			<key>Title</key>
+			<string>HTML Decode</string>
+		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>HTML-encode the selected text.</string>
+	<string>HTML-encode (or decode) the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.htmlencode</string>
 	<key>Extension Name</key>

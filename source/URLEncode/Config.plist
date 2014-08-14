@@ -41,7 +41,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Percent-encode (or decode) the selected text.</string>
+	<string>Percent-encode or decode the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urlencode</string>
 	<key>Extension Name</key>
