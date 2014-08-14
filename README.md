@@ -1,23 +1,14 @@
 # PopClip Extensions
 
-*Documentation for PopClip 1.4.10*
+*Documentation for PopClip 1.5*
 
 ## Introduction
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
 
-![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/extpic3.png)
+![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/example.png)
 
-This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Layout of the repo:
-
-    docs/                 -- Image files and resources referred to in this README file.
-    extensions/           -- Distributable versions of the extensions (zipped, with `.popclipextz` extension).
-    source/               -- Source files for the extensions. Without the `.popclipext` suffix.  
-    Index.plist           -- The main page is auto-generated using Index.plist to specify the contents.
-    LICENSE               -- MIT License text.
-    PopClipExtension.xcodeplugin  -- Plist definition file for use with Xcode or PlistEdit Pro.
-    README.md             -- This documentation.
-
+This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
 
 ## License
 
@@ -25,21 +16,26 @@ All extension source files are published under the MIT License (see LICENSE) unl
 
 ## Credits
 
-All the extensions and documentation were created by Nick Moore except where stated. Contributor credits are are shown in the readme file of each individual extension.
+All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are are shown in the readme file of each individual extension.
 
 ## Contributing
 
-Contributors, please note the following:
+Thank you for contributing! Contributors, please note the following:
 
-* If you contribute an extension, I will assume you are happy for me to publish your contributions on the main PopClip extensions page.
-* I might not publish your extension. I choose which extensions to publish at my sole discretion. 
-* I may make changes to any extension.
-* Please do not edit the Index.plist file.
-* Don't worry about signing the extension, I will take care of that.
+* By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
+* I will choose which extensions to publish at my sole discretion, and I may make changes to any extension.
+* Don't worry about signing the extension. I will take care of that.
 
-## Other Repos
+## Useful Links
 
-Here are some other repos you might find interesting:
+For an easy way to create certain types of extension with no coding necessary, check out Brett Terpstra's [PopMaker](http://brettterpstra.com/2014/05/12/popmaker-popclip-extension-generator/) app.
+
+Here are some external "how to" guides for creating extensions:
+
+- [Create Your Own Custom Extension for PopClip (Tuts+)](http://computers.tutsplus.com/tutorials/create-your-own-custom-extension-for-popclip--mac-50637)
+- [PopClip: Scripting Extensions (Tuts+)](http://computers.tutsplus.com/tutorials/popclip-scripting-extensions--mac-55842)
+
+Here are some other PopClip extension repositories you might find interesting:
 
 * PopClip extensions by [Andy Guzman](https://github.com/andyguzman/PopClippins)
 * PopClip extensions by [Lucifr](https://github.com/lucifr/PopClip-Extensions)
