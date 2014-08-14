@@ -240,6 +240,7 @@
 			<string>Calculate</string>
 			<string>Convert</string>
 			<string>Sort</string>
+			<string>Shuffle</string>
 			<string>Swap</string>
 			<string>LuckyLink</string>			
 		</array>
