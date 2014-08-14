@@ -18,7 +18,7 @@
 		</dict>
 		<dict>
 			<key>Regular Expression</key>
-			<string>^.*&amp;\w+;.*$</string>
+			<string>(?s)^.*&amp;\w+;.*$</string>
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
