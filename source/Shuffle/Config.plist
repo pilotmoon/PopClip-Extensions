@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
-			<string></string>
+			<string>Shuffle.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^(.+)[\r\n](.+)$</string>
 			<key>Script Interpreter</key>
