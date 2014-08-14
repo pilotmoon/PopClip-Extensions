@@ -138,7 +138,8 @@
 		<key>Members</key>
 		<array>
 			<string>OnlineDictionary</string>			
-			<string>LingvoDictionary</string>				
+			<string>LingvoDictionary</string>	
+			<string>Antidote</string>				
 		</array>
 		<key>Title</key>
 		<string>Dictionaries</string>
