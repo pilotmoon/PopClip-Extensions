@@ -52,7 +52,8 @@
 		<key>Members</key>
 		<array>
 			<string>OnlineDictionary</string>			
-			<string>Lingvo</string>			
+			<string>Antidote</string>				
+			<string>Lingvo</string>	
 		</array>
 		<key>Title</key>
 		<string>Dictionaries</string>
