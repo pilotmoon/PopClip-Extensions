@@ -276,7 +276,10 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`Name`|String|Required|Name of the app which this extension interacts with. For example `Evernote` for an Evernote extension.|
 |`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether the app given by `Bundle Identifier` is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
 |`Link`|String|Required if `Check Installed` is `YES`|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
-|`Bundle Identifier`|String or Array|Required if `Check Installed` is `YES`|Bundle identifier of the application. For example `com.evernote.Evernote`. If an app has multiple variants, for example, Pro and Free variants, or if an app use a different bundle ID for the App Store version to the stand-alone version, then include all the possible bundle IDs as an array.|
+|`Bundle Identifier`|String|Required if `Check Installed` is `YES`|Bundle identifier of the application. For example `com.evernote.Evernote`. Use this if the app has only one identifier.|
+|`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|All possible bundle identifiers of the application. Use this if an app has multiple variants, for example, Pro and Free variants, or if an app use a different bundle ID for the App Store version to the stand-alone version. Include all the possible bundle IDs as an array.|
+
+Only one of `Bundle Identifier` or `Bundle Identifiers` is required, not both.
 
 ## Additional Notes
 
