@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>LaunchBar.applescript</string>
+			<key>Image File</key>
+			<string>LaunchBar.png</string>
+			<key>Title</key>
+			<string>LaunchBar</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>at.obdev.LaunchBar</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://obdev.at/launchbar</string>
+			<key>Name</key>
+			<string>LaunchBar</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send selected text to LaunchBar</string>
+	<key>Extension Identifier</key>
+	<string>at.obdev.LaunchBar.popclip</string>
+	<key>Extension Name</key>
+	<string>LaunchBar</string>
+</dict>
+</plist>
