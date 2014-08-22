@@ -26,10 +26,19 @@
 			<string>LaunchBar</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://twitter.com/ogott</string>
+			<key>Name</key>
+			<string>Marco Masser</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Send selected text to LaunchBar</string>
+	<string>Activate LaunchBar with the selected text.</string>
 	<key>Extension Identifier</key>
-	<string>at.obdev.LaunchBar.popclip</string>
+	<string>com.pilotmoon.popclip.extension.launchbar</string>
 	<key>Extension Name</key>
 	<string>LaunchBar</string>
 </dict>
