@@ -104,8 +104,12 @@ Here is an example package structure, using the 'Say' extension:
        speechicon.png               -- Icon file
 
 ### The Config.plist
-Every extension must contain a `Config.plist` file. This should be an XML-format plist. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or use this example as a basis: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist). Alternatively, use a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
-). Here is an example of the plist for 'Translate Tab', as viewed in Xcode:
+Every extension must contain a `Config.plist` file. This should be in Apple [Property List](https://en.wikipedia.org/wiki/Property_list) format. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
+). Alternatively, use one of the existing extensions as a basis and edit with a text editor
+
+Example plist: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist).
+
+Here is an example plist for 'Translate Tab', as viewed in Xcode:
 
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
@@ -134,9 +138,7 @@ Common reasons for malformed XML are:
 
 * Missing end tags
 * Mismatched start and end tags
-* Unescaped `&` character in the URL field (`&` must be endoded as `&amp;`)
-
-I recommend using a dedicated Plist editor such as Xcode or [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/). It's easy to make mistakes using a plain text editor.
+* Unescaped `&` characters (`&` must be endoded as `&amp;`)
 
 ### Config.plist Structure
 The `Config.plist` file has the following structure.
