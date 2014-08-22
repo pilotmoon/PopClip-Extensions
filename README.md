@@ -110,12 +110,12 @@ Every extension must contain a `Config.plist` file. This should be an XML-format
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
 ### Icons
-Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published).  Icons may be created in any graphics program. (I use [Pixelmator](http://www.pixelmator.com/).)  The icon should:
+Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published). Icons may be created in any graphics program; I use [Pixelmator](http://www.pixelmator.com/). For best results, the icon should:
 
 * be a PNG file
+* consist of a black figure on a transparent background (you can use opacity to achieve 'shades of grey')
 * be square
-* be at least 256x256 pixels
-* consist of solid black figure on a transparent background
+* be at least 256x256 pixels in size
 
 For example, here is the full-size icon file for 'Sort':
 
@@ -132,8 +132,6 @@ For example, here is the full-size icon file for 'Sort':
 Fields with the type "String or Dictionary" can take either a String or Dictionary value. If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. 
 
 ### Plist Troubleshooting
-
-If PopClip reports `Error: Missing "Extension Identifier" field`, that usually means that the `Config.plist` has malformed XML, or the XML is not a valid plist. (I know, the error message is misleading. Sorry!)
 
 Common reasons for malformed XML are:
 
