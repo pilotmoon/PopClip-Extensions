@@ -12,15 +12,15 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, array());
 $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
-if ($code==200) {
-	echo base64_encode($response);
-	exit(0); // success
+if ($code==200 && strlen($response) > 0) {
+	$data = json_decode($response);
+	if ($data===NULL) {
+		echo base64_encode($response);
+		exit(0);
+	}
 }  
-else if ($code==500) {
-	exit(2); // bad auth
-}
-else {
-	exit(1); // other error
-}
+
+exit(2);
+
 
 ?>
