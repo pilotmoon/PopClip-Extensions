@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Title</key>
+			<string>Underline</string>
+			<key>Image File</key>
+			<string>underline.png</string>
+			<key>Required Apps</key>
+			<array>
+				<string>net.sourceforge.skim-app.skim</string>
+			</array>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>M</string>
+				<key>modifiers</key>
+				<integer>1179914</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>Title</key>
+			<string>Underline</string>
+			<key>Image File</key>
+			<string>underline.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>U</string>
+				<key>modifiers</key>
+				<integer>1310720</integer>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.apple.Preview</string>
+			</array>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>net.sourceforge.skim-app.skim</string>
+			<key>Link</key>
+			<string>http://skim-app.sourceforge.net</string>
+			<key>Name</key>
+			<string>Skim</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Underline the selected text in a PDF file in Preview or Skim.</string>
+	<key>Extension Identifier</key>
+	<string>com.penlong.popclip.extension.preview-underline</string>
+	<key>Extension Name</key>
+	<string>PDF Underline</string>
+	<key>Requirements</key>
+	<array>
+		<string>copy</string>
+	</array>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
