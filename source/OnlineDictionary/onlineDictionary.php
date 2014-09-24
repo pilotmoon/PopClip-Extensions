@@ -15,6 +15,7 @@ $urlPattern = array(
     'dict.youdao.com' => 'http://dict.youdao.com/search?q=',
     'dictionary.com' => 'http://dictionary.reference.com/browse/',
     'iciba.com' => 'http://www.iciba.com/',
+    'tureng.com' => 'http://tureng.com/search/',
 );
 
 $url = isset($urlPattern[$service]) ? $urlPattern[$service] : $urlPattern['dict'];
