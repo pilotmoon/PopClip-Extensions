@@ -23,6 +23,7 @@
 			<string>Lowercase</string>
 			<string>Quotes</string>
 			<string>Hyphenate</string>				
+			<string>Underscore</string>				
 			<string>FullHalfWidth</string>
 		</array>
 		<key>Title</key>
