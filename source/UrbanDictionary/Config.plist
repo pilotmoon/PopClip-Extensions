@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+            <string>(?s)^.{1,200}$</string>
+			<key>Title</key>
+			<string>Urban</string>
+			<key>URL</key>
+            <string>http://www.urbandictionary.com/define.php?term={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+            <string>http://www.urbandictionary.com/</string>
+			<key>Name</key>
+			<string>Urban</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>mailto:zhiyelee@gmail.com</string>
+			<key>Name</key>
+			<string>zhiyelee</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search the word using UrbanDictionary.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.urban-dictionary</string>
+	<key>Extension Name</key>
+	<string>Urban</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>
