@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>etsy.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,300}$</string>
+			<key>Title</key>
+			<string>Etsy</string>
+			<key>URL</key>
+			<string>https://www.etsy.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for handmade &amp; vintage items on Etsy.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.etsy</string>
+	<key>Extension Image File</key>
+	<string>etsy.png</string>
+	<key>Extension Name</key>
+	<string>Etsy</string>
+</dict>
+</plist>
