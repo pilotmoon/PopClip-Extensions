@@ -15,7 +15,8 @@ api = {
 	#'t.cn' : 'https://api.weibo.com/2/short_url/shorten.json?access_token=yyy&url_long=',
 	'goo.gl' : 'https://www.googleapis.com/urlshortener/v1/url',
 	'is.gd' : 'http://is.gd/create.php?format=json&logstats=1&url=',  
-	'v.gd' : 'http://v.gd/create.php?format=json&logstats=1&url='
+	'v.gd' : 'http://v.gd/create.php?format=json&logstats=1&url=',
+    'short-url' : 'http://short-url.herokuapp.com/api/shorten?url='
 #	'tiny.cc' : 'http://tiny.cc/?c=rest_api&m=shorten&version=2.0.3&format=json&shortUrl=&login=xxx&apiKey=yyy&longUrl='
 }
 
@@ -47,6 +48,8 @@ elif serviceDomain == 'is.gd':
     output = json.loads(getLink(service,url))["shorturl"]
 elif serviceDomain == 'v.gd':
     output = json.loads(getLink(service,url))["shorturl"]
+elif serviceDomain == 'short-url':
+    output = json.loads(getLink(service,url))["short_url"]
 #elif serviceDomain == 'tiny.cc':
 #    output = json.loads(getLink(service,url))["results"]["short_url"]
 
