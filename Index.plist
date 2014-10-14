@@ -51,10 +51,10 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>OnlineDictionary</string>			
+			<string>OnlineDictionary</string>						
 			<string>Antidote</string>			
 			<string>Eudic</string>					
-			<string>Lingvo</string>	
+			<string>Lingvo</string>
 		</array>
 		<key>Title</key>
 		<string>Dictionaries</string>
@@ -163,11 +163,12 @@
 			<string>Amazon</string>
 			<string>Ebay</string>
 			<string>Etsy</string>
-			<string>IMDb</string>
+			<string>IMDb</string>			
 			<string>LinkedIn</string>			
 			<string>WolframAlpha</string>						
 			<string>WorldCat</string>			
 			<string>PubMed</string>												
+			<string>UrbanDictionary</string>			
 			<string>Yandex</string>
 			<string>Naver</string>
 			<string>Baidu</string>
