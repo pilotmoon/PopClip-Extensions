@@ -83,7 +83,8 @@
 			<string>DayOne</string>
 			<string>DEVONthinkPro</string>
 			<string>Notefile</string>
-			<string>NoteAway</string>			
+			<string>NoteAway</string>		
+			<string>Simplenote</string>		
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>

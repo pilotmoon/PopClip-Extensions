@@ -1,4 +1,4 @@
-tell application id "Simplenote" to activate
+tell application "Simplenote" to activate
 tell application "System Events"
 	set the clipboard to "{popclip text}"
 	set frontmost of process "Simplenote" to true
