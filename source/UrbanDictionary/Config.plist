@@ -32,7 +32,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Find out what that weird phrase actually means using Urban Dictionary.</string>
+	<string>Look up a word or phrase in Urban Dictionary.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urban-dictionary</string>
 	<key>Extension Name</key>
