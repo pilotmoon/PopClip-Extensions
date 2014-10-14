@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>simplenote.applescript</string>
+			<key>Script Interpreter</key>
+			<string>/bin/sh</string>
+			<key>Image File</key>
+			<string>simplenote-logo.png</string>
+			<key>Long Running</key>
+			<false/>
+			<key>Title</key>
+			<string>Simplenote</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.automattic.SimplenoteMac</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.simplenote.com/</string>
+			<key>Name</key>
+			<string>Simplenote</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send the text to Simplenote.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.simplenote</string>
+	<key>Extension Name</key>
+	<string>Simplenote</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
