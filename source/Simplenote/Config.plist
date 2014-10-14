@@ -30,6 +30,15 @@
 			<string>Simplenote</string>
 		</dict>
 	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Clicky Steve</string>
+			<key>Link</key>
+			<string>http://iamsteve.in/</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Send the text to Simplenote.</string>
 	<key>Extension Identifier</key>
