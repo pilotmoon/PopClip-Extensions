@@ -16,7 +16,7 @@ api = {
 	'goo.gl' : 'https://www.googleapis.com/urlshortener/v1/url',
 	'is.gd' : 'http://is.gd/create.php?format=json&logstats=1&url=',  
 	'v.gd' : 'http://v.gd/create.php?format=json&logstats=1&url=',
-    'short-url' : 'http://short-url.herokuapp.com/api/shorten?url='
+    	'shortly.pw' : 'http://api.shortly.pw/api/shorten?url='
 #	'tiny.cc' : 'http://tiny.cc/?c=rest_api&m=shorten&version=2.0.3&format=json&shortUrl=&login=xxx&apiKey=yyy&longUrl='
 }
 
@@ -48,7 +48,7 @@ elif serviceDomain == 'is.gd':
     output = json.loads(getLink(service,url))["shorturl"]
 elif serviceDomain == 'v.gd':
     output = json.loads(getLink(service,url))["shorturl"]
-elif serviceDomain == 'short-url':
+elif serviceDomain == 'shortly.pw':
     output = json.loads(getLink(service,url))["short_url"]
 #elif serviceDomain == 'tiny.cc':
 #    output = json.loads(getLink(service,url))["results"]["short_url"]
