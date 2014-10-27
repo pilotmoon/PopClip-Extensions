@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Call the phone number on your iPhone. (Requires OS X Yosemite and iOS 8.)</string>
+		<string>Call the selected phone number using your iPhone. (Requires OS X Yosemite and iOS 8.)</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.call</string>
