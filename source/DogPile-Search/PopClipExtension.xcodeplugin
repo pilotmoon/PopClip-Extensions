@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin name="PopClip Extension" id="com.pilotmoon.plist-definition.popclip-extension" version="1.0" xmlns:plisteditpro="http://www.fatcatsoftware.com/plisteditpro">
+    <extension point="com.apple.xcode.plist.structure-definition" name="PopClip Extension" id="com.pilotmoon.plist-definition.popclip-extension">
+        <definition name="_root_" localizedString="Extension Definition" class="Dictionary">
+            <dictionaryKeys>
+                <key name="Actions" localizedString="Actions" class="ActionArray" use="required"></key>
+                <key name="Apps" localizedString="Apps" class="AppInfoArray" use="optional"></key>
+                <key name="Blocked Apps" localizedString="Blocked Apps" class="Array" use="optional"></key>
+                <key name="Credits" localizedString="Credits" class="Credits" use="optional"></key>
+                <key name="Extension Description" localizedString="Extension Description" class="Localizer" use="required"></key>
+                <key name="Extension Identifier" localizedString="Extension Identifier" class="Identifier" use="required"></key>
+                <key name="Extension Image File" localizedString="Extension Image File" class="String" use="optional"></key>
+                <key name="Extension Long Name" localizedString="Extension Long Name" class="Localizer" use="optional"></key>
+                <key name="Extension Name" localizedString="Extension Name" class="Localizer" use="required"></key>
+                <key name="Pass HTML" localizedString="Pass HTML" class="Boolean" use="optional"></key>
+                <key name="Position" localizedString="Position" class="Number" use="optional"></key>
+                <key name="Preserve Image Color" localizedString="Preserve Image Color" class="Boolean" use="optional"></key>
+                <key name="Regular Expression" localizedString="Regular Expression" class="Regex" use="optional"></key>
+                <key name="Required Apps" localizedString="Required Apps" class="Array" use="optional"></key>
+                <key name="Required OS Version" localizedString="Required OS Version" class="String" use="optional"></key>
+                <key name="Required Software Version" localizedString="Required Software Version" class="SoftwareVersion" use="required"></key>
+                <key name="Requirements" localizedString="Requirements" class="RequirementsElement" use="optional"></key>
+                <key name="Stay Visible" localizedString="Stay Visible" class="Boolean" use="optional"></key>
+                <key name="Version" localizedString="Version" class="VersionNumber" use="deprecated"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="Localizer" localizedString="Localizer" class="Dictionary" identifyingKey="en">
+            <dictionaryKeys>
+                <key name="en" localizedString="en" class="String" use="required"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="VersionNumber" localizedString="VersionNumber" class="Number" default="2"></definition>
+        <definition name="Identifier" localizedString="Identifier" class="String" default="com.pilotmoon.popclip.extension." plisteditpro:valueViewerIdentifier="public.plain-text"></definition>
+        <definition name="AppInfo" localizedString="AppInfo" class="Dictionary">
+            <dictionaryKeys>
+                <key name="Bundle Identifier" localizedString="Bundle Identifier" class="String" use="optional"></key>
+                <key name="Check Installed" localizedString="Check Installed" class="Boolean" use="optional"></key>
+                <key name="Link" localizedString="Link" class="String" use="optional"></key>
+                <key name="Name" localizedString="Name" class="String" use="required"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="AppInfoArray" localizedString="AppInfoArray" class="Array" arrayElementClass="AppInfo">
+            <arrayEntries>
+                <entry class="AppInfo"></entry>
+            </arrayEntries>
+        </definition>
+        <definition name="Credits" localizedString="Credits" class="Dictionary">
+            <dictionaryKeys>
+                <key name="Link" localizedString="Link" class="String" use="optional"></key>
+                <key name="Name" localizedString="Name" class="String" use="required"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="SoftwareVersion" localizedString="SoftwareVersion" class="Number" default="693" plisteditpro:valueViewerIdentifier="com.mac.bwebster.number"></definition>
+        <definition name="Requirements" localizedString="Requirements" class="Array" arrayElementClass="String"></definition>
+        <definition name="ActionDict" localizedString="ActionDict" class="Dictionary">
+            <dictionaryKeys>
+                <key name="After" localizedString="After" class="AfterElement" use="optional"></key>
+                <key name="AppleScript File" localizedString="AppleScript File" class="String" use="optional"></key>
+                <key name="Before" localizedString="Before" class="BeforeElement" use="optional"></key>
+                <key name="Blocked Apps" localizedString="Blocked Apps" class="Array" use="optional"></key>
+                <key name="Image File" localizedString="Image File" class="String" use="optional"></key>
+                <key name="Key Combo" localizedString="Key Combo" class="String" use="optional"></key>
+                <key name="Key Combo" localizedString="Key Combo" class="KeyComboDict" use="optional"></key>
+                <key name="Pass HTML" localizedString="Pass HTML" class="Boolean" use="optional"></key>
+                <key name="Position" localizedString="Position" class="Number" use="optional"></key>
+                <key name="Preserve Image Color" localizedString="Preserve Image Color" class="Boolean" use="optional"></key>
+                <key name="Regular Expression" localizedString="Regular Expression" class="Regex" use="optional"></key>
+                <key name="Required Apps" localizedString="Required Apps" class="Array" use="optional"></key>
+                <key name="Requirements" localizedString="Requirements" class="RequirementsElement" use="optional"></key>
+                <key name="Script Interpreter" localizedString="Script Interpreter" class="String" use="optional"></key>
+                <key name="Service Name" localizedString="Service Name" class="String" use="optional"></key>
+                <key name="Shell Script File" localizedString="Shell Script File" class="String" use="optional"></key>
+                <key name="Stay Visible" localizedString="Stay Visible" class="Boolean" use="optional"></key>
+                <key name="Title" localizedString="Title" class="Localizer" use="required"></key>
+                <key name="URL" localizedString="URL" class="String" use="optional"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="ActionArray" localizedString="ActionArray" class="Array" arrayElementClass="ActionDict">
+            <arrayEntries>
+                <entry class="ActionDict"></entry>
+            </arrayEntries>
+        </definition>
+        <definition name="KeyComboDict" localizedString="KeyComboDict" class="Dictionary">
+            <dictionaryKeys>
+                <key name="keyChar" localizedString="keyChar" class="String" use="optional"></key>
+                <key name="keyCode" localizedString="keyCode" class="Number" use="optional"></key>
+                <key name="modifiers" localizedString="modifiers" class="Number" use="required"></key>
+            </dictionaryKeys>
+        </definition>
+        <definition name="Regex" localizedString="Regex" class="String" default="(?s)^.{1,}$" plisteditpro:valueViewerIdentifier="public.plain-text"></definition>
+        <definition name="BeforeElement" localizedString="BeforeElement" class="String" default="" plisteditpro:valueViewerIdentifier="public.plain-text">
+            <allowableValues>
+                <value name="cut" localizedString="cut"></value>
+                <value name="copy" localizedString="copy"></value>
+                <value name="paste" localizedString="paste"></value>
+            </allowableValues>
+        </definition>
+        <definition name="AfterElement" localizedString="AfterElement" class="String" default="" plisteditpro:valueViewerIdentifier="public.plain-text">
+            <allowableValues>
+                <value name="cut" localizedString="cut"></value>
+                <value name="copy" localizedString="copy"></value>
+                <value name="paste" localizedString="paste"></value>
+                <value name="paste-result" localizedString="paste-result"></value>
+                <value name="copy-result" localizedString="copy-result"></value>
+                <value name="popclip-appear" localizedString="popclip-appear"></value>
+            </allowableValues>
+        </definition>
+        <definition name="RequirementsElement" localizedString="RequirementsElement" class="String" default="" plisteditpro:valueViewerIdentifier="public.plain-text">
+            <allowableValues>
+                <value name="copy" localizedString="copy"></value>
+                <value name="cut" localizedString="cut"></value>
+                <value name="paste" localizedString="paste"></value>
+                <value name="formatting" localizedString="formatting"></value>
+                <value name="httpurl" localizedString="httpurl"></value>
+                <value name="email" localizedString="email"></value>
+                <value name="path" localizedString="path"></value>
+            </allowableValues>
+        </definition>
+    </extension>
+</plugin>

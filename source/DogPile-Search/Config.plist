@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Version</key>
+		<integer>1</integer>
+		<key>Extension Name</key>
+		<string>Dogpile Search</string>
+		<key>Extension Identifier</key>
+	<string>com.rymichael.extension.dogpile-search</string>
+	<key>Extension Description</key>
+	<string>Search DogPile with selected text.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+    		<key>URL</key>
+			<string>http://www.dogpile.com/search/web?q={popclip text}</string>
+			<key>Image File</key>
+			<string>dog.png</string>
+			<key>Title</key>
+			<string>DogPile</string>
+		</dict>
+	</array>
+		</dict>
+</plist>

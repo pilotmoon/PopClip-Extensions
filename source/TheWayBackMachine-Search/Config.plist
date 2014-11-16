@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Version</key>
+		<integer>1</integer>
+		<key>Extension Name</key>
+		<string>TheWayBackMachine Search</string>
+		<key>Extension Identifier</key>
+	<string>com.rymichael.extension.thewaybackmachine-search</string>
+	<key>Extension Description</key>
+	<string>Search old archives from the deepest points in website history. All text selected will automatically be appended and prepended with the www and com strings.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+    		<key>URL</key>
+			<string>http://web.archive.org/web/*/www.{popclip text}.com</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Shell Script File</key>
+			<string>example.sh</string>
+			<key>Title</key>
+			<string>TWBM</string>
+		</dict>
+	</array>
+		</dict>
+</plist>
