@@ -41,6 +41,14 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>LargeType</string>			
+		</array>
+		<key>Title</key>
+		<string>Utilities</string>
+	</dict>		
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 			<string>InstantTranslate</string>							
@@ -48,14 +56,6 @@
 		<key>Title</key>
 		<string>Translation</string>
 	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>LargeType</string>			
-		</array>
-		<key>Title</key>
-		<string>Utilities</string>
-	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
