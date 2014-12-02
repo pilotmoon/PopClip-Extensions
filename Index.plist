@@ -49,21 +49,21 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Say</string>
+			<string>Pronounce</string>			
+		</array>
+		<key>Title</key>
+		<string>Text-to-speech</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 			<string>InstantTranslate</string>							
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>Say</string>
-			<string>Pronounce</string>			
-		</array>
-		<key>Title</key>
-		<string>Text-to-speech</string>
 	</dict>
 	<dict>
 		<key>Members</key>
