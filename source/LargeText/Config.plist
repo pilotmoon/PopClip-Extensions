@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>largetext.png</string>
+			<string>large.png</string>
 			<key>Shell Script File</key>
-			<string>message.sh</string>
+			<string>launch.sh</string>
 			<key>Title</key>
 			<string>Large Text</string>
 		</dict>
