@@ -1,0 +1,61 @@
+Command-C Extensions for PopClip
+
+Copyright(c), 2014 - Leon Nisenfeld
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this 
+software and associated documentation files (the "Software"), to deal in the Software 
+without restriction, including without limitation the rights to use, copy, modify, merge, 
+publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or
+substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+DEALINGS IN THE SOFTWARE.
+
+
+=========================
+Installation Instructions
+=========================
+
+Since Command-C can support multiple iOS devices and I have no way of knowing what your
+devices are (although, I could ask the NSA ...), I've provided multiple versions of the
+extension. Here's how to figure out which to use:
+
+Whichever device is listed first in the Command-C list is Device 0, the next device is
+Device 1. I bet you know how to figure it out from there. 
+
+Choose the file that matches whichever iOS device you have as Device 0 and Device 1 (if
+you have more than one device). So, if your iPhone is listed first, use the CMD-C to
+iPhone as Device 0.popclipext file.
+
+Double click the file to load it. PopClip will install it and show the menu. (Note, this
+extension has not yet been signed by Pilot Moon software. So, when you try to load the
+extension, you'll get a message indicating it is not signed and asking you to confirm
+it's okay to load. Trust me, it's okay. I'll be submitting this to Pilot Moon for 
+signing soon.)
+
+Once the extension(s) are loaded, they're easy to use. Make sure you have the Command-C 
+app running on your device (or you've run it recently so it's still running in the 
+background). Select text on your Mac. The PopClip menu should show up and you'll see
+options to send to your iOS device. They'll show up as ->iPad and ->iPhone.
+
+If you have more than two iOS devices, it's fairly easy to update the extension code to
+make it work. Just send me $500 and I'll do it for you. Sound unreasonable? Well, if you
+can afford more than two iOS devices, you can afford to pay me. If you're really too 
+cheap for that...
+
+Right click on the .popclipext file and choose Show Package Contents. Open the 
+.applescript file. You'll see the Command-C URL. In that you'll see 'deviceIndex'. Just 
+change the number to what matches where your device is in the list. Just remember that 
+the numbering starts at zero. If you also want to change the name that shows up on the 
+PopClip menu, open the config.plist file inside the extension. Under the Actions key,
+you'll see the AppleScript filename key. Under that is the Title key. Change the title 
+there.
+
+Enjoy!
