@@ -10,15 +10,15 @@
 			<key>Shell Script File</key>
 			<string>launch.sh</string>
 			<key>Title</key>
-			<string>Large Text</string>
+			<string>Large Type</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Display the selected text on the screen in a huge font.</string>
+	<string>Display the selected text in a large, clear font in the middle of the screen.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.large-text</string>
+	<string>com.pilotmoon.popclip.extension.large-type</string>
 	<key>Extension Name</key>
-	<string>Large Text</string>
+	<string>Large Type</string>
 	<key>Required Software Version</key>
 	<integer>1459</integer>
 </dict>
