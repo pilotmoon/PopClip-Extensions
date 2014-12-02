@@ -51,14 +51,11 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>OnlineDictionary</string>						
-			<string>Antidote</string>			
-			<string>Eudic</string>					
-			<string>Lingvo</string>
+			<string>LargeType</string>			
 		</array>
 		<key>Title</key>
-		<string>Dictionaries</string>
-	</dict>
+		<string>Utilities</string>
+	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
@@ -68,6 +65,17 @@
 		<key>Title</key>
 		<string>Text-to-speech</string>
 	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>OnlineDictionary</string>						
+			<string>Antidote</string>			
+			<string>Eudic</string>					
+			<string>Lingvo</string>
+		</array>
+		<key>Title</key>
+		<string>Dictionaries</string>
+	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
