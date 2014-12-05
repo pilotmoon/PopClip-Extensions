@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>it.danilotorrisi.command-c-osx</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.danilo.to/command-c</string>
+			<key>Name</key>
+			<string>Command-C</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send text to iDevice</string>
+	<key>Extension Identifier</key>
+	<string>com.rbfconsulting.popclip.extension.cmdcipad</string>
+	<key>Extension Name</key>
+	<string>Send to iDevice</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>useipad</string>
+			<key>Option Label</key>
+			<string>Send to iPad</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+			<key>Option Default Value</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>ipadposition</string>
+			<key>Option Label</key>
+			<string>iPad Location in Command-C</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>NA</string>
+				<string>1st</string>
+				<string>2nd</string>
+				<string>3rd</string>
+			</array>
+			<key>Option Default Value</key>
+			<string>1st</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>useiphone</string>
+			<key>Option Label</key>
+			<string>Send to iPhone</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+			<key>Option Default Value</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>iphoneposition</string>
+			<key>Option Label</key>
+			<string>iPhone Location in Command-C</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>NA</string>
+				<string>1st</string>
+				<string>2nd</string>
+				<string>3rd</string>
+			</array>
+			<key>Option Default Value</key>
+			<string>2nd</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>useipod</string>
+			<key>Option Label</key>
+			<string>Send to iPod</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+			<key>Option Default Value</key>
+			<string>0</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>ipodposition</string>
+			<key>Option Label</key>
+			<string>iPod Location in Command-C</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>NA</string>
+				<string>1st</string>
+				<string>2nd</string>
+				<string>3rd</string>
+			</array>
+			<key>Option Default Value</key>
+			<string>3rd</string>
+		</dict>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>cmd-c-idevice.applescript</string>
+			<key>Title</key>
+			<string>-&gt;iPad</string>
+			<key>Requirements</key>
+			<array>
+				<string>options-useipad=YES</string>
+			</array>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>cmd-c-idevice.applescript</string>
+			<key>Title</key>
+			<string>-&gt;iPhone</string>
+			<key>Requirements</key>
+			<array>
+				<string>options-useiphone=YES</string>
+			</array>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>cmd-c-idevice.applescript</string>
+			<key>Title</key>
+			<string>-&gt;iPod</string>
+			<key>Requirements</key>
+			<array>
+				<string>options-useipod=YES</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
