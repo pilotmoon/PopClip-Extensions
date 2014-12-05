@@ -37,7 +37,7 @@
 			<key>Option Identifier</key>
 			<string>ipadposition</string>
 			<key>Option Label</key>
-			<string>iPad Location in Command-C</string>
+			<string>Location in Cmd-C</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
@@ -64,7 +64,7 @@
 			<key>Option Identifier</key>
 			<string>iphoneposition</string>
 			<key>Option Label</key>
-			<string>iPhone Location in Command-C</string>
+			<string>Location in Cmd-C</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
@@ -91,7 +91,7 @@
 			<key>Option Identifier</key>
 			<string>ipodposition</string>
 			<key>Option Label</key>
-			<string>iPod Location in Command-C</string>
+			<string>Location in Cmd-C</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
@@ -108,33 +108,45 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>After></key>
+			<string>show-result</string>
 			<key>AppleScript File</key>
-			<string>cmd-c-idevice.applescript</string>
+			<string>cmd-c-iPad.applescript</string>
+			<key>Image File</key>
+			<string>ipad.png</string>
 			<key>Title</key>
-			<string>-&gt;iPad</string>
+			<string>Send to iPad</string>
 			<key>Requirements</key>
 			<array>
-				<string>options-useipad=YES</string>
+				<string>option-useipad=1</string>
 			</array>
 		</dict>
 		<dict>
+			<key>After></key>
+			<string>show-result</string>
 			<key>AppleScript File</key>
-			<string>cmd-c-idevice.applescript</string>
+			<string>cmd-c-iPhone.applescript</string>
+			<key>Image File</key>
+			<string>iphone.png</string>
 			<key>Title</key>
-			<string>-&gt;iPhone</string>
+			<string>Send to iPhone</string>
 			<key>Requirements</key>
 			<array>
-				<string>options-useiphone=YES</string>
+				<string>option-useiphone=1</string>
 			</array>
 		</dict>
 		<dict>
+			<key>After></key>
+			<string>show-result</string>
 			<key>AppleScript File</key>
-			<string>cmd-c-idevice.applescript</string>
+			<string>cmd-c-iPod.applescript</string>
+			<key>Image File</key>
+			<string>ipod.png</string>
 			<key>Title</key>
-			<string>-&gt;iPod</string>
+			<string>Send to iPod</string>
 			<key>Requirements</key>
 			<array>
-				<string>options-useipod=YES</string>
+				<string>option-useipod=1</string>
 			</array>
 		</dict>
 	</array>
