@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Parcel</string>
 			<key>Regular Expression</key>
-			<string>(?i)\b(?=[A-Z0-9]*[0-9][A-Z0-9]*)[A-Z0-9]{5,}\b</string>
+			<string>(?i)\b(?=[A-Z0-9]?[A-Z0-9-]*[0-9][A-Z0-9-]*[A-Z0-9]?)[A-Z0-9-]{5,}\b</string>
 		</dict>
 	</array>
 	<key>Apps</key>
