@@ -8,7 +8,7 @@
 			<key>AppleScript File</key>
 			<string>textwrangler.applescript</string>
 			<key>Image File</key>
-			<string>bbedit.png</string>
+			<string>textwrangler_replacement_icon_by_sethlilly-d2zpaak-bw.png</string>
 			<key>Long Running</key>
 			<true/>
 			<key>Title</key>
@@ -31,7 +31,7 @@
 	<key>Extension Description</key>
 	<string>Create a new TextWrangler document containing the selected text.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.textwrangler</string>
+	<string>com.jjarava.popclip.extension.textwrangler</string>
 	<key>Extension Name</key>
 	<string>TextWrangler</string>
 	<key>Required Software Version</key>
