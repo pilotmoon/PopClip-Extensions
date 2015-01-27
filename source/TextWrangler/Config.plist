@@ -6,34 +6,34 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>bbedit.applescript</string>
+			<string>textwrangler.applescript</string>
 			<key>Image File</key>
 			<string>bbedit.png</string>
 			<key>Long Running</key>
 			<true/>
 			<key>Title</key>
-			<string>BBedit</string>
+			<string>TextWrangler</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.barebones.bbedit</string>
+			<string>com.barebones.textwrangler</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://www.barebones.com/products/bbedit/</string>
+			<string>http://www.barebones.com/products/textwrangler/</string>
 			<key>Name</key>
-			<string>BBEdit</string>
+			<string>TextWrangler</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new BBEdit document containing the selected text.</string>
+	<string>Create a new TextWrangler document containing the selected text.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.bbedit</string>
+	<string>com.pilotmoon.popclip.extension.textwrangler</string>
 	<key>Extension Name</key>
-	<string>BBEdit</string>
+	<string>TextWrangler</string>
 	<key>Required Software Version</key>
 	<integer>701</integer>
 </dict>
