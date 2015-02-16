@@ -47,7 +47,7 @@
 		<string>Lance une recherche HoudahSpot sur le texte sélectionné.</string>
 	</dict>
 	<key>Extension Identifier</key>
-	<string>com.houdah.popclip.extension.HoudahSpot</string>
+	<string>com.pilotmoon.popclip.extension.HoudahSpot</string>
 	<key>Extension Name</key>
 	<string>HoudahSpot</string>
 	<key>Required Software Version</key>
