@@ -22,6 +22,7 @@
 			<string>Uppercase</string>
 			<string>Lowercase</string>
 			<string>Quotes</string>
+			<string>Brackets</string>
 			<string>Hyphenate</string>				
 			<string>Underscore</string>				
 			<string>FullHalfWidth</string>
