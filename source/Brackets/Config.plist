@@ -73,8 +73,6 @@
 	<string>Put brackets around the selected text, choosing from (), [], &lt;&gt; and {}.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.brackets</string>
-	<key>Extension Image File</key>
-	<string>brackets.png</string>
 	<key>Extension Name</key>
 	<string>Brackets</string>
 	<key>Options</key>
