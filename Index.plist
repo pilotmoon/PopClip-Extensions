@@ -126,6 +126,7 @@
 			<string>SinaWeibo</string>
 			<string>Facebook</string>	
 			<string>Buffer</string>	
+			<string>LinkedIn</string>		
 		</array>
 		<key>Title</key>
 		<string>Social Networking</string>
@@ -173,8 +174,7 @@
 			<string>Amazon</string>
 			<string>Ebay</string>
 			<string>Etsy</string>
-			<string>IMDb</string>			
-			<string>LinkedIn</string>			
+			<string>IMDb</string>				
 			<string>WolframAlpha</string>						
 			<string>WorldCat</string>			
 			<string>PubMed</string>			
