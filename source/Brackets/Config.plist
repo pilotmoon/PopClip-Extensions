@@ -70,7 +70,7 @@
 		</dict>				
 	</array>
 	<key>Extension Description</key>
-	<string>Put brackets around the selected text, choosing from (), [], &lt;&gt; and {}.</string>
+	<string>Put brackets around the selected text, choosing from (), [], {} and &lt;&gt;.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.brackets</string>
 	<key>Extension Name</key>
