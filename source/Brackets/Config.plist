@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>brackets-round.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>brackets-round.php</string>
+			<key>Title</key>
+			<string>Round Brackets</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-round=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>brackets-square.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>brackets-square.php</string>
+			<key>Title</key>
+			<string>Square Brackets</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-square=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>brackets-curly.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>brackets-curly.php</string>
+			<key>Title</key>
+			<string>Curly Brackets</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-curly=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>brackets-angle.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>brackets-angle.php</string>
+			<key>Title</key>
+			<string>Angle Brackets</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-angle=1</string>
+			</array>
+		</dict>				
+	</array>
+	<key>Extension Description</key>
+	<string>Put brackets around the selected text, choosing from (), [], {} and &lt;&gt;.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.brackets</string>
+	<key>Extension Name</key>
+	<string>Brackets</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>round</string>
+			<key>Option Label</key>
+			<string>Round ( )</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>square</string>
+			<key>Option Label</key>
+			<string>Square [ ]</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>curly</string>
+			<key>Option Label</key>
+			<string>Curly { }</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>angle</string>
+			<key>Option Label</key>
+			<string>Angle &lt; &gt;</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>		
+	</array>
+	<key>Required Software Version</key>
+	<integer>719</integer>
+</dict>
+</plist>

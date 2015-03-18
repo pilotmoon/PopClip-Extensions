@@ -9,8 +9,8 @@
 			<string>Dash.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,160}$</string>
-			<key>URL</key>
-			<string>dash://{popclip text}</string>
+			<key>Shell Script File</key>
+			<string>dash.sh</string>
 			<key>Title</key>
 			<string>Dash</string>
 		</dict>
@@ -34,7 +34,5 @@
 	<string>com.pilotmoon.popclip.extension.dash</string>
 	<key>Extension Name</key>
 	<string>Dash</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

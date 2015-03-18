@@ -22,6 +22,7 @@
 			<string>Uppercase</string>
 			<string>Lowercase</string>
 			<string>Quotes</string>
+			<string>Brackets</string>
 			<string>Hyphenate</string>				
 			<string>Underscore</string>				
 			<string>FullHalfWidth</string>
@@ -41,6 +42,23 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>LargeType</string>			
+		</array>
+		<key>Title</key>
+		<string>Text Display</string>
+	</dict>		
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Say</string>
+			<string>Pronounce</string>			
+		</array>
+		<key>Title</key>
+		<string>Text-to-speech</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>GoogleTranslate</string>
 			<string>TranslateTab</string>
 			<string>InstantTranslate</string>							
@@ -51,23 +69,14 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>OnlineDictionary</string>			
+			<string>OnlineDictionary</string>						
 			<string>Antidote</string>			
 			<string>Eudic</string>					
-			<string>Lingvo</string>	
+			<string>Lingvo</string>
 		</array>
 		<key>Title</key>
 		<string>Dictionaries</string>
-	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>Say</string>
-			<string>Pronounce</string>			
-		</array>
-		<key>Title</key>
-		<string>Text-to-speech</string>
-	</dict>
+	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
@@ -83,7 +92,8 @@
 			<string>DayOne</string>
 			<string>DEVONthinkPro</string>
 			<string>Notefile</string>
-			<string>NoteAway</string>			
+			<string>NoteAway</string>		
+			<string>Simplenote</string>		
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -117,6 +127,7 @@
 			<string>SinaWeibo</string>
 			<string>Facebook</string>	
 			<string>Buffer</string>	
+			<string>LinkedIn</string>		
 		</array>
 		<key>Title</key>
 		<string>Social Networking</string>
@@ -131,6 +142,7 @@
 			<string>Fantastical</string>
 			<string>Leap</string>
 			<string>Spotlight</string>
+			<string>HoudahSpot</string>
 			<string>Tembo</string>
 			<string>Alfred</string>
 			<string>LaunchBar</string>			
@@ -140,6 +152,7 @@
 			<string>PreviewHighlight</string>
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
+			<string>Deliveries</string>		
 			<string>Dropshelf</string>			
 					
 		</array>
@@ -161,11 +174,13 @@
 			<string>YouTube</string>
 			<string>Amazon</string>
 			<string>Ebay</string>
-			<string>IMDb</string>
-			<string>LinkedIn</string>			
+			<string>Etsy</string>
+			<string>IMDb</string>				
 			<string>WolframAlpha</string>						
 			<string>WorldCat</string>			
-			<string>PubMed</string>												
+			<string>PubMed</string>			
+			<string>DOI</string>			
+			<string>UrbanDictionary</string>			
 			<string>Yandex</string>
 			<string>Naver</string>
 			<string>Baidu</string>
@@ -216,6 +231,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Call</string>
 			<string>Skype</string>
 			<string>Dialectic</string>
 			<string>PhoneAmego</string>

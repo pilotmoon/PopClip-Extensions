@@ -54,7 +54,7 @@ function force_string($str) {
 // get the required fields
 $popclip_text=force_string(getenv('POPCLIP_TEXT'));
 $popclip_html=force_string(getenv('POPCLIP_HTML'));
-$popclip_browser_url=force_string(getenv('POPCLIP_BROSWER_URL'));
+$popclip_browser_url=force_string(getenv('POPCLIP_BROWSER_URL'));
 $popclip_browser_title=force_string(getenv('POPCLIP_BROWSER_TITLE'));
 							
 /* Tidy the html. We do this because evernote 5.6.0 is much stricter about

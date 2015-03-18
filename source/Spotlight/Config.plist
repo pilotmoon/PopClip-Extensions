@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Activate Spotlight with the selected text.</string>
+	<string>Activate Spotlight with the selected text. Please note: this extension is not compatible with OS X Yosemite.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.spotlight</string>
 	<key>Extension Name</key>

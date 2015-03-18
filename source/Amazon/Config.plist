@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>Amazon</string>
 			<key>URL</key>
-			<string>http://www.{popclip option site}/s?field-keywords={popclip text}</string>
+			<string>http://{popclip option site}/s?field-keywords={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -46,6 +46,7 @@
 				<string>amazon.es</string>
 				<string>amazon.fr</string>
 				<string>amazon.it</string>
+				<string>smile.amazon.com</string>
 			</array>
 		</dict>
 	</array>

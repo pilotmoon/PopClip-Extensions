@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>twitter-search.png</string>
+			<key>Title</key>
+			<string>Twitter Search</string>
+			<key>URL</key>
+			<string>https://twitter.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search Twitter.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.twitter-search</string>
+	<key>Extension Name</key>
+	<string>Twitter Search</string>
+</dict>
+</plist>
