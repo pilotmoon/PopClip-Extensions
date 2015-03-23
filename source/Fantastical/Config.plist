@@ -7,7 +7,7 @@
 		<dict>
 			<key>Image File</key>
 			<string>fcal.png</string>
-			<key>Shell Script Name</key>
+			<key>Shell Script File</key>
 			<string>fantastical.sh</string>
 			<key>Title</key>
 			<string>Fantastical</string>
@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.flexibits.fantastical</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.flexibits.fantastical</string>
+				<string>com.flexibits.fantastical2.mac</string>
+			</array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -32,7 +35,5 @@
 	<string>com.pilotmoon.popclip.extension.fantastical</string>
 	<key>Extension Name</key>
 	<string>Fantastical</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
