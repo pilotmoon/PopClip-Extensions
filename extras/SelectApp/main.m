@@ -1,4 +1,4 @@
-#import <Foundation/Foundation.h>
+#import <Cocoa/Cocoa.h>
 
 // we are weak linking so ignore these warnings
 #pragma clang diagnostc push

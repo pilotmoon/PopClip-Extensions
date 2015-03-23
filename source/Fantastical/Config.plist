@@ -7,8 +7,8 @@
 		<dict>
 			<key>Image File</key>
 			<string>fcal.png</string>
-			<key>Service Name</key>
-			<string>Send to Fantastical</string>
+			<key>Shell Script Name</key>
+			<string>fantastical.sh</string>
 			<key>Title</key>
 			<string>Fantastical</string>
 		</dict>
