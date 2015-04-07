@@ -45,7 +45,7 @@
 				<string>ISO-8859-1</string>
 				<string>UTF-8</string>
 				<string>UTF-16</string>
-				<string>UTF-36</string>
+				<string>UTF-32</string>
 			</array>
 		</dict>
 	</array>
