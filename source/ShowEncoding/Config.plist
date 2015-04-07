@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Image File</key>
+			<string></string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,16}$</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>encoding.php</string>
+			<key>Title</key>
+			<string>Encoding</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Show the UTF-8 encoding of the selected character(s).</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.show-encoding</string>
+	<key>Extension Name</key>
+	<string>Show Encoding</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Default Value</key>
+			<string>UTF-8</string>
+			<key>Option Identifier</key>
+			<string>encoding</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Encoding</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>ASCII</string>
+				<string>ISO-8859-1</string>
+				<string>UTF-8</string>
+				<string>UTF-16</string>
+				<string>UTF-36</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
