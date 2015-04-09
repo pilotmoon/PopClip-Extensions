@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>show-status</string>
+			<key>Image File</key>
+			<string></string>
+			<key>Long Running</key>
+			<true/>			
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>trelloAdd.php</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Trello</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://trello.com/</string>
+			<key>Name</key>
+			<string>Trello</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Add the text to a Trello board.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.trello</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Trello</string>
+	</dict>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>board</string>
+			<key>Option Label</key>
+			<string>Board URL</string>
+			<key>Option Type</key>
+			<string>string</string>
+			<key>Option Default Value</key>
+			<string>Paste the URL of your Trello board here (example: https://trello.com/b/XXXXXXXX/my-board)</string>
+			<key>Option Available After Auth</key>
+			<true/>
+			<key>Option Available Before Auth</key>
+			<false/>
+		</dict>
+	</array>
+	<key>Options Script File</key>
+	<string>trelloAuth.php</string>
+	<key>Options Script Interpreter</key>
+	<string>/usr/bin/php</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
