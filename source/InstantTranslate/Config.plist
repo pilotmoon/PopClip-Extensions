@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Instantly translate the selected word or phrase, using Google Translate.</string>
+	<string>Instantly translate the selected word or phrase, using Google Translate. PLEASE NOTE: This extension is currently not working due to a Google back-end change (9 Apr 2015)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.instant-translate</string>
 	<key>Extension Name</key>
