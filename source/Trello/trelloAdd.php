@@ -11,6 +11,10 @@ $text = getenv('POPCLIP_TEXT');
 if (!$text) { // TODO REMOVE!
 	$text="SOME TEST TEXT";
 }
+$textparts=explode($text,"\n", 2);
+$firstline=$textparts[0];
+$body=$textparts[1];
+$source_url =getenv('POPCLIP_BROWSER_URL');
 
 // pull in the consumer key and consumer secret
 parse_str(base64_decode(CONSUMER_DATA));
@@ -45,8 +49,12 @@ function api($endpoint, $params=NULL, $method='GET') {
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 	if ($method==='POST') {
 		curl_setopt($ch, CURLOPT_POST, 1);
+	}
+	else if ($method==='PUT') {
+		curl_setopt($ch, CURLOPT_PUT, 1);
 	}
 	$response = curl_exec($ch);
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -59,14 +67,21 @@ function api($endpoint, $params=NULL, $method='GET') {
 	}
 }
 
-$x=api("https://trello.com/1/boards/TQiYDk1V/lists");
-var_dump($x);
+$lists=json_decode(api("https://trello.com/1/boards/TQiYDk1V/lists", array()), TRUE);
+var_dump($lists);
 var_dump($http_code);
 
-if ($http_code==200) {
+if(count($lists)>0) {
+	$target_list=$lists[0]['id'];
+	var_dump($target_list);
+
+
+	$result=json_decode(api("https://trello.com/1/cards", array('idList'=>$target_list, 'urlSource'=>$source_url, 'name'=>$text, 'pos'=>'top'), 'POST'), TRUE);
+	var_dump($result);
 	exit(0); // success
-}  
-else if ($http_code==401) {
+}
+
+if ($http_code==401) {
 	exit(2); // unauthorized
 }
 else {
