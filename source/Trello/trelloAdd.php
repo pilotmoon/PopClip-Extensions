@@ -33,7 +33,7 @@ else {
 }
 
 // make an api request
-function api($endpoint, $params) {
+function api($endpoint, $params=NULL, $method='GET') {
 	global $consumer, $access_token, $http_code;
 
 	$request = OAuthRequest::from_consumer_and_token($consumer, $access_token, 'GET', $endpoint, $params);		
@@ -45,7 +45,9 @@ function api($endpoint, $params) {
 	$ch = curl_init($url);
 	curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-	//curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+	if ($method==='POST') {
+		curl_setopt($ch, CURLOPT_POST, 1);
+	}
 	$response = curl_exec($ch);
 	$http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
@@ -57,7 +59,7 @@ function api($endpoint, $params) {
 	}
 }
 
-$x=api("https://trello.com/1/members/me/boards?fields=name", NULL);
+$x=api("https://trello.com/1/boards/TQiYDk1V/lists");
 var_dump($x);
 var_dump($http_code);
 
