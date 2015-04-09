@@ -53,7 +53,7 @@
 			<key>Option Type</key>
 			<string>string</string>
 			<key>Option Default Value</key>
-			<string>Paste the URL of your Trello board here (example: https://trello.com/b/XXXXXXXX/my-board)</string>
+			<string></string>
 			<key>Option Available After Auth</key>
 			<true/>
 			<key>Option Available Before Auth</key>
@@ -65,6 +65,6 @@
 	<key>Options Script Interpreter</key>
 	<string>/usr/bin/php</string>
 	<key>Required Software Version</key>
-	<integer>693</integer>
+	<integer>1605</integer>
 </dict>
 </plist>
