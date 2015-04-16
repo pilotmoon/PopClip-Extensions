@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Turn a long URL into a much shorter one. Services available: goo.gl, is.gd, v.gd.</string>
+	<string>Turn a long URL into a much shorter one. Services available: is.gd, v.gd.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urlshortener</string>
 	<key>Extension Name</key>
@@ -49,8 +49,7 @@
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
-			<array>
-				<string>goo.gl</string>
+			<array>				
 				<string>is.gd</string>
 				<string>v.gd</string>
 			</array>
