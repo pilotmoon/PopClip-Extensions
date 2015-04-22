@@ -8,11 +8,7 @@ def get_credentials():
 
 def get_oauth_service():
     import rauth
-    
-    # get consumer credentials
     consumer_key, consumer_secret = get_credentials()    
-
-    # set up oauth service
     return rauth.OAuth1Service(
         consumer_key=consumer_key,
         consumer_secret=consumer_secret,
