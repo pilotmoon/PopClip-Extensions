@@ -13,8 +13,8 @@ def access(request_token, request_token_secret, verifier):
     return common.get_oauth_service().get_access_token(request_token, request_token_secret, data={'oauth_verifier': verifier})
 
 def main(callback_inter=None, callback_final=None):
-    """ this is called once when the user clicks 'log in', and again (with callback params)
-    when they click though the callback landing url """
+    """ this is called once (with no params) when the user clicks 'log in',
+    and again (with params) when they click though the callback landing url """
     if (callback_inter and callback_final):        
         request_token, request_token_secret = json.loads(callback_inter)
         verifier = urlparse.parse_qs(callback_final)['oauth_verifier']
