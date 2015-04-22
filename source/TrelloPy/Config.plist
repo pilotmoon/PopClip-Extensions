@@ -14,7 +14,7 @@
 			<key>Script Interpreter</key>
 			<string>/usr/bin/python</string>
 			<key>Shell Script File</key>
-			<string>trello_add.py</string>
+			<string>main.py</string>
 			<key>Title</key>
 			<dict>
 				<key>en</key>
@@ -49,11 +49,30 @@
 			<key>Option Identifier</key>
 			<string>board</string>
 			<key>Option Label</key>
-			<string>Board URL</string>
+			<string>Board URL or ID</string>
 			<key>Option Type</key>
 			<string>string</string>
 			<key>Option Default Value</key>
 			<string></string>
+			<key>Option Available After Auth</key>
+			<true/>
+			<key>Option Available Before Auth</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>position</string>
+			<key>Option Label</key>
+			<string>Position</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Top</string>
+				<string>Bottom</string>
+			</array>		
+			<key>Option Default Value</key>
+			<string>Top</string>
 			<key>Option Available After Auth</key>
 			<true/>
 			<key>Option Available Before Auth</key>
