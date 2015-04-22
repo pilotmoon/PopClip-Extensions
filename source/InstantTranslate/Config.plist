@@ -20,7 +20,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Instantly translate the selected word or short phrase, using Microsoft Translator.</string>
+	<string>Instantly translate the selected word or short phrase. Powered by Microsoft Translator.</string>
 	<key>Extension Identifier</key>
 	<string>com.popclip.extension.instant-translate</string>
 	<key>Extension Name</key>
@@ -68,7 +68,6 @@
 				<string>Italian</string>
 				<string>Japanese</string>
 				<string>Klingon</string>
-				<string>Klingon (pIqaD)</string>
 				<string>Korean</string>
 				<string>Latvian</string>
 				<string>Lithuanian</string>

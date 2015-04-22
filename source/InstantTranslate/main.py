@@ -1,7 +1,4 @@
 # coding=utf-8
-import re
-import os
-from ms_translate import TranslatorClient
 
 LANG_CODES = {
     "Arabic": "ar",
@@ -57,14 +54,12 @@ LANG_CODES = {
     "Yucatec Maya": "yua"
 }
 
-selectedText = os.environ['POPCLIP_TEXT']
-destLang = os.environ['POPCLIP_OPTION_DESTLANG']
+import os, access, mstrans
 
-from ms_translate import TranslatorClient
-
-translator = TranslatorClient()
-translation = translator.translate_text(unicode_string=selectedText,
-                                        from_lang_code='',
-                                        to_lang_code=LANG_CODES[destLang])
+c = access.get_credentials()
+translator = mstrans.Translator(client_id=c[0], client_secret=c[1])
+translation = translator.translate_text(text=os.environ['POPCLIP_TEXT'],
+                                        from_lang='',
+                                        to_lang=LANG_CODES[os.environ['POPCLIP_OPTION_DESTLANG']])
 
 print translation.encode('utf-8')
