@@ -14,7 +14,7 @@
 			<key>Script Interpreter</key>
 			<string>/usr/bin/python</string>
 			<key>Shell Script File</key>
-			<string>trello-add.py</string>
+			<string>trello_add.py</string>
 			<key>Title</key>
 			<dict>
 				<key>en</key>
@@ -61,9 +61,9 @@
 		</dict>
 	</array>
 	<key>Options Script File</key>
-	<string>trello-auth.py</string>
+	<string>auth.py</string>
 	<key>Options Script Interpreter</key>
-	<string>/usr/bin/php</string>
+	<string>/usr/bin/python</string>
 	<key>Required Software Version</key>
 	<integer>1605</integer>
 </dict>

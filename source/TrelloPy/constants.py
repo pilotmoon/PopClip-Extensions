@@ -5,7 +5,7 @@ EXTENSION_NAME='Trello';
 # app name for display to user
 APP_NAME='PopClip Extension "' + EXTENSION_NAME + '"';
 
-# callback url
+# our callback url
 CALLBACK = 'http://reqr.net/callback/popclip?callback_ext_id=' + EXTENSION_ID + '&callback_ext_name=' + EXTENSION_NAME
 
 # data for authorization redirect
@@ -16,11 +16,11 @@ AUTHORIZE_DATA = {
     'scope': 'read,write'
 }
 
-# trell endpoints
+# trello endpoints
 ENDPOINT_REQUEST = 'https://trello.com/1/OAuthGetRequestToken'
 ENDPOINT_AUTHORIZE = 'https://trello.com/1/OAuthAuthorizeToken'
 ENDPOINT_ACCESS = 'https://trello.com/1/OAuthGetAccessToken'
 ENDPOINT_BASE = 'https://trello.com/1/'
 
-# access keys
-ACCESS_DATA = 'Y2s9OTc2NTQ4M2MyNTMyMGE0NGI0ZjA0MmYyMzY1YjhmMzkmY3M9ZmRiZWFkNTEyNjViZGQyMTQ5NGZkMGExMjdmYmViYzcyOWRjZmM4MjMwNjM0NGMyZmU4NWMyODdhODEwZWUzNw=='
+# trello access
+CONSUMER_DATA = 'WyI5NzY1NDgzYzI1MzIwYTQ0YjRmMDQyZjIzNjViOGYzOSIsICJmZGJlYWQ1MTI2NWJkZDIxNDk0ZmQwYTEyN2ZiZWJjNzI5ZGNmYzgyMzA2MzQ0YzJmZTg1YzI4N2E4MTBlZTM3Il0='
