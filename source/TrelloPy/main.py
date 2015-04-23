@@ -1,18 +1,29 @@
+from __future__ import print_function
 import os, auth, trello, traceback, sys
 
-#session = auth.get_session('["8286e4f3f8f303435c2a0cfeeb95aeb0fcbdb47b2a5e29ecebfd11c2659d6770", "78233b7cffd046ffd9bd1862f942a6ce"]')
-
-session = auth.get_session()
-board_url = os.getenv('POPCLIP_OPTION_BOARD')# or 'https://trello.com/b/7aElDmQJ/xxxxx-test'
-text = os.getenv('POPCLIP_TEXT')# or 'test text 12345'
-position = os.getenv('POPCLIP_OPTION_POSITION') or 'Top'
-source_url = os.getenv('POPCLIP_BROWSER_URL')
+testauth = '["6cf5c3fef687f4cf33a6f903c4c29ad541669bf0f45d5afb0639a7f08dd2de54", "4f52bea83d785c980eabff894b65c70c"]'
+testdata = {      
+        'session': auth.get_session(testauth), 
+        'board_url': 'https://trello.com/b/7aElDmQJ/xxxxx-test',
+        'text': 'testing 123456',
+        'position': 'Top',
+        'source_url': 'http://example.com'
+}
 
 try:
-    trello.add_card(session=session, board_url=board_url, text=text, position=position.lower(), source_url=source_url)
+    if os.getenv('POPCLIP_TEXT'):
+        trello.add_card(
+             session=auth.get_session(os.getenv('POPCLIP_OPTION_AUTHSECRET')),
+             board_url=os.getenv('POPCLIP_OPTION_BOARD'),
+             text=os.getenv('POPCLIP_TEXT'),
+             position=os.getenv('POPCLIP_OPTION_POSITION'),
+             source_url=os.getenv('POPCLIP_BROWSER_URL'))
+    else:
+        trello.add_card(**testdata)
+    
 except trello.TrelloError as e:     
     traceback.print_exc(file=sys.stderr) 
-    print e.code    
+    print('Status code', e.code, file=sys.stderr)
     if e.code == 401:
         exit(2) # bad auth
     elif e.code == 404 or e.code == 400:

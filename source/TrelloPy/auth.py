@@ -11,10 +11,9 @@ def get_oauth_service():
         authorize_url=constants.ENDPOINT_AUTHORIZE,
         base_url=constants.ENDPOINT_BASE)
 
-def get_session(testauth=None):    
+def get_session(stored_access_token):    
     """ called in main extension script to actually get a usable session """
-    auth = testauth or os.getenv('POPCLIP_OPTION_AUTHSECRET')
-    return get_oauth_service().get_session(json.loads(auth))         
+    return get_oauth_service().get_session(json.loads(stored_access_token))         
 
 def authorize():
     """ obtain and return the request token, and send user to the oauth autorization url in their browser """
