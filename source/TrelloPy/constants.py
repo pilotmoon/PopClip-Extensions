@@ -20,7 +20,7 @@ AUTHORIZE_DATA = {
 ENDPOINT_REQUEST = 'https://trello.com/1/OAuthGetRequestToken'
 ENDPOINT_AUTHORIZE = 'https://trello.com/1/OAuthAuthorizeToken'
 ENDPOINT_ACCESS = 'https://trello.com/1/OAuthGetAccessToken'
-ENDPOINT_BASE = 'https://trello.com/1/'
+ENDPOINT_BASE = 'https://trello.com/'
 
 # trello access
 CONSUMER_DATA = 'WyI5NzY1NDgzYzI1MzIwYTQ0YjRmMDQyZjIzNjViOGYzOSIsICJmZGJlYWQ1MTI2NWJkZDIxNDk0ZmQwYTEyN2ZiZWJjNzI5ZGNmYzgyMzA2MzQ0YzJmZTg1YzI4N2E4MTBlZTM3Il0='
