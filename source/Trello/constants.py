@@ -16,7 +16,8 @@ EXPECT_PARAMS = base64.urlsafe_b64encode(json.dumps({
 CALLBACK_DATA = {
     'callback_ext_id': EXTENSION_ID,
     'callback_ext_name': EXTENSION_NAME,
-    'callback_expect': EXPECT_PARAMS
+    'callback_expect': EXPECT_PARAMS,
+    'callback_site': 'https://trello.com/'
 }
 CALLBACK = 'https://pilotmoon.com/popclip_extension_callback?' + urllib.urlencode(CALLBACK_DATA)
 
