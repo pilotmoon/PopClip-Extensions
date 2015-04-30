@@ -16,7 +16,7 @@ CALLBACK_DATA = {
     'callback_ext_name': EXTENSION_NAME,
     'callback_expect': EXPECT_PARAMS
 }
-CALLBACK = 'https://pilotmoon.dev/popclip_extension_callback?' + urllib.urlencode(CALLBACK_DATA)
+CALLBACK = 'https://pilotmoon.com/popclip_extension_callback?' + urllib.urlencode(CALLBACK_DATA)
 
 # data for authorization redirect
 AUTHORIZE_DATA = {    

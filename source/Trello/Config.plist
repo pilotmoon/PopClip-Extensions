@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>show-status</string>
 			<key>Image File</key>
-			<string></string>
+			<string>trello.png</string>
 			<key>Long Running</key>
 			<true/>			
 			<key>Script Interpreter</key>
