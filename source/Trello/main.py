@@ -11,7 +11,7 @@ try:
          session=session,
          board_url=os.getenv('POPCLIP_OPTION_BOARD'),
          text=os.getenv('POPCLIP_TEXT'),
-         position=os.getenv('POPCLIP_OPTION_POSITION'),
+         position={'Top of list': 'top', 'Bottom of list': 'bottom'}[os.getenv('POPCLIP_OPTION_POSITION')]
          source_url=os.getenv('POPCLIP_BROWSER_URL'))
     
 except trello.TrelloError as e:     

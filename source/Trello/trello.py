@@ -38,7 +38,7 @@ def add_card(session, board_url, text, position='top', source_url=None):
         'idList': list_id,
         'urlSource': source_url,
         'name': text,
-        'pos': position.lower() if position else None
+        'pos': position if position else None
     })
     if r.status_code != 200:
         raise TrelloError(r.status_code)
