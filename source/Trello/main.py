@@ -14,12 +14,13 @@ testdata = {
 
 try:
     if os.getenv('POPCLIP_TEXT'):
-        authsecret = os.getenv('POPCLIP_OPTION_AUTHSECRET');
-        if not authsecret:
-            exit(2)
-            
+        try:
+            session = auth.get_session(os.getenv('POPCLIP_OPTION_AUTHSECRET');
+        except:
+            raise TrelloError(401)
+
         trello.add_card(
-             session=auth.get_session(authsecret),
+             session=,
              board_url=os.getenv('POPCLIP_OPTION_BOARD'),
              text=os.getenv('POPCLIP_TEXT'),
              position=os.getenv('POPCLIP_OPTION_POSITION'),
