@@ -10,10 +10,16 @@ testdata = {
         'source_url': 'http://example.com'
 }
 
+
+
 try:
     if os.getenv('POPCLIP_TEXT'):
+        authsecret = os.getenv('POPCLIP_OPTION_AUTHSECRET');
+        if not authsecret:
+            exit(2)
+            
         trello.add_card(
-             session=auth.get_session(os.getenv('POPCLIP_OPTION_AUTHSECRET')),
+             session=auth.get_session(authsecret),
              board_url=os.getenv('POPCLIP_OPTION_BOARD'),
              text=os.getenv('POPCLIP_TEXT'),
              position=os.getenv('POPCLIP_OPTION_POSITION'),
