@@ -88,6 +88,6 @@
 	<key>Options Script Interpreter</key>
 	<string>/usr/bin/python</string>
 	<key>Required Software Version</key>
-	<integer>1605</integer>
+	<integer>1624</integer>
 </dict>
 </plist>
