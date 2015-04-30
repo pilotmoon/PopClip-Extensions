@@ -3,10 +3,6 @@ import os, auth, trello, traceback, sys
 
 try:
     session = auth.get_session(os.getenv('POPCLIP_OPTION_AUTHSECRET'));
-except:
-    exit(2)
-
-try:
     trello.verify_login(session);
 except:
     exit(2)
