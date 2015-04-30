@@ -1,12 +1,22 @@
+import base64, json, urllib
+
 # extension identifier and name
-EXTENSION_ID='com.pilotmoon.popclip.extension.trello'
-EXTENSION_NAME='Trello';
+EXTENSION_ID = 'com.pilotmoon.popclip.extension.trello'
+EXTENSION_NAME = 'Trello';
 
 # app name for display to user
-APP_NAME='PopClip Extension "' + EXTENSION_NAME + '"';
+APP_NAME = 'PopClip';
 
-# our callback url
-CALLBACK = 'http://reqr.net/callback/popclip?callback_ext_id=' + EXTENSION_ID + '&callback_ext_name=' + EXTENSION_NAME
+# our callback url & params
+EXPECT_PARAMS = base64.urlsafe_b64encode(json.dumps({
+    'q': ['oauth_verifier', 'oauth_token']
+}))
+CALLBACK_DATA = {
+    'callback_ext_id': EXTENSION_ID,
+    'callback_ext_name': EXTENSION_NAME,
+    'callback_expect': EXPECT_PARAMS
+}
+CALLBACK = 'https://pilotmoon.dev/popclip_extension_callback?' + urllib.urlencode(CALLBACK_DATA)
 
 # data for authorization redirect
 AUTHORIZE_DATA = {    

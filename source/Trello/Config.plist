@@ -49,7 +49,7 @@
 			<key>Option Identifier</key>
 			<string>board</string>
 			<key>Option Label</key>
-			<string>Board URL or ID</string>
+			<string>Board URL</string>
 			<key>Option Type</key>
 			<string>string</string>
 			<key>Option Default Value</key>
@@ -63,7 +63,7 @@
 			<key>Option Identifier</key>
 			<string>position</string>
 			<key>Option Label</key>
-			<string>Position</string>
+			<string>Card Position</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
