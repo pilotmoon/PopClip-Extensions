@@ -1,3 +1,5 @@
+# encoding: utf8
+
 import base64, json, urllib
 
 # extension identifier and name
@@ -5,7 +7,7 @@ EXTENSION_ID = 'com.pilotmoon.popclip.extension.trello'
 EXTENSION_NAME = 'Trello';
 
 # app name for display to user
-APP_NAME = 'PopClip';
+APP_NAME = 'PopClip Extension “' + EXTENSION_NAME + '”';
 
 # our callback url & params
 EXPECT_PARAMS = base64.urlsafe_b64encode(json.dumps({
