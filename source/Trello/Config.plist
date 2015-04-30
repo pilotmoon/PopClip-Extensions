@@ -59,13 +59,13 @@
 			<key>Option Available Before Auth</key>
 			<false/>
 			<key>Option Description</key>
-			<string>Copy and paste a Trello board URL from your web browser</string>
+			<string>Copy the Trello board URL from your web browser.</string>
 		</dict>
 		<dict>
 			<key>Option Identifier</key>
 			<string>position</string>
 			<key>Option Label</key>
-			<string>Card Position</string>
+			<string>Card position</string>
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
@@ -74,13 +74,13 @@
 				<string>Bottom of list</string>
 			</array>		
 			<key>Option Default Value</key>
-			<string>Top</string>
+			<string>Top of list</string>
 			<key>Option Available After Auth</key>
 			<true/>
 			<key>Option Available Before Auth</key>
 			<false/>
 			<key>Option Description</key>
-			<string>The new card will be added to the board's first list</string>
+			<string>The new card will be added to the first list of the board.</string>
 		</dict>
 	</array>
 	<key>Options Script File</key>

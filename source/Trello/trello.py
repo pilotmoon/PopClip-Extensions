@@ -42,3 +42,8 @@ def add_card(session, board_url, text, position='top', source_url=None):
     })
     if r.status_code != 200:
         raise TrelloError(r.status_code)
+
+def verify_login(session):
+    r = session.get('/1/members/me')
+    if r.status_code != 200:    
+        raise TrelloError(r.status_code)    
