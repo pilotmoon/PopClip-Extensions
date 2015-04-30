@@ -58,6 +58,8 @@
 			<true/>
 			<key>Option Available Before Auth</key>
 			<false/>
+			<key>Option Description</key>
+			<string>Copy and paste a Trello board URL from your web browser, such as https://trello.com/b/yeVdeSyH/example</string>
 		</dict>
 		<dict>
 			<key>Option Identifier</key>
@@ -77,6 +79,8 @@
 			<true/>
 			<key>Option Available Before Auth</key>
 			<false/>
+			<key>Option Description</key>
+			<string>The new card will be added to the first list of your chosen board.</string>
 		</dict>
 	</array>
 	<key>Options Script File</key>
