@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>show-status</string>
+			<key>Image File</key>
+			<string>onenote.png</string>
+			<key>Long Running</key>
+			<true/>			
+			<key>Script Interpreter</key>
+			<string>/usr/bin/python</string>
+			<key>Shell Script File</key>
+			<string>main.py</string>
+			<key>Pass HTML</key>
+			<true />
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>OneNote</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.onenote.com/</string>
+			<key>Name</key>
+			<string>Microsoft OneNote</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Add the text to OneNote somehow.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.onenote</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>OneNote</string>
+	</dict>
+	<key>Options Script File</key>
+	<string>auth.py</string>
+	<key>Options Script Interpreter</key>
+	<string>/usr/bin/python</string>
+	<key>Required Software Version</key>
+	<integer>1624</integer>
+</dict>
+</plist>
