@@ -26,17 +26,15 @@ def get_session(stored_refresh_token):
 
 def access(authorization_code):
     """ obtain the refresh token """
-    r = get_oauth_service().get_raw_access_token(data={
+    return get_oauth_service().get_raw_access_token(data={
         'code': authorization_code,
         'grant_type': 'authorization_code',
         'redirect_uri': constants.CALLBACK
-        })
-    return r.json()['refresh_token']
+        }).json()['refresh_token']
 
 def authorize():
     """ send user to the oauth autorization url in their browser """
-    service = get_oauth_service()        
-    subprocess.call(['open', service.get_authorize_url(**constants.AUTHORIZE_DATA)])
+    subprocess.call(['open', get_oauth_service().get_authorize_url(**constants.AUTHORIZE_DATA)])
 
 def main(callback_final=None):
     """ this is called once (with no params) when the user clicks 'log in',
