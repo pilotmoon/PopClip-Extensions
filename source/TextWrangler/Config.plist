@@ -31,7 +31,7 @@
 	<key>Extension Description</key>
 	<string>Create a new TextWrangler document containing the selected text.</string>
 	<key>Extension Identifier</key>
-	<string>com.jjarava.popclip.extension.textwrangler</string>
+	<string>com.pilotmoon.popclip.extension.textwrangler</string>
 	<key>Extension Name</key>
 	<string>TextWrangler</string>
 	<key>Required Software Version</key>
