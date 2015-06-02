@@ -260,8 +260,7 @@
 			<string>Convert</string>
 			<string>Sort</string>
 			<string>Shuffle</string>
-			<string>Swap</string>
-			<string>LuckyLink</string>			
+			<string>Swap</string>			
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
