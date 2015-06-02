@@ -6,11 +6,27 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>RunTerminalCommand.applescript</string>
+			<string>terminal.applescript</string>
 			<key>Image File</key>
 			<string>RTC.png</string>
 			<key>Title</key>
 			<string>Run Terminal Command</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-term=Terminal</string>
+			</array>			
+		</dict>
+			<dict>
+			<key>AppleScript File</key>
+			<string>iterm2.applescript</string>
+			<key>Image File</key>
+			<string>RTC.png</string>
+			<key>Title</key>
+			<string>Run Terminal Command</string>
+				<key>Requirements</key>
+			<array>
+				<string>option-term=iTerm2</string>
+			</array>
 		</dict>
 	</array>
 	<key>Credits</key>
