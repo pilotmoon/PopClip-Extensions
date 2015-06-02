@@ -13,6 +13,66 @@
 			<string>Douban</string>
 			<key>URL</key>
 			<string>http://www.douban.com/search?q={popclip text}</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-douban-main=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>Douban-book.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Douban</string>
+			<key>URL</key>
+			<string>http://book.douban.com/subject_search?search_text={popclip text}</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-douban-book=1</string>
+			</array>
+		</dict>		
+		<dict>
+			<key>Image File</key>
+			<string>Douban-movie.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Douban</string>
+			<key>URL</key>
+			<string>http://movie.douban.com/subject_search?search_text={popclip text}</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-douban-movie=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>Douban-music.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Douban</string>
+			<key>URL</key>
+			<string>http://music.douban.com/subject_search?search_text={popclip text}</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-douban-music=1</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>Douban-event.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Douban</string>
+			<key>URL</key>
+			<string>http://www.douban.com/event/search?search_text={popclip text}</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-douban-event=1</string>
+			</array>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -33,15 +93,59 @@
 			<string>GuoJing</string>
 		</dict>
 	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>douban-main</string>
+			<key>Option Label</key>
+			<string>douban.com</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>douban-book</string>
+			<key>Option Label</key>
+			<string>book.douban.com</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>		
+		<dict>
+			<key>Option Identifier</key>
+			<string>douban-movie</string>
+			<key>Option Label</key>
+			<string>movie.douban.com</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>douban-music</string>
+			<key>Option Label</key>
+			<string>music.douban.com</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>douban-event</string>
+			<key>Option Label</key>
+			<string>douban.com/event</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>		
+	
+	</array>
 	<key>Extension Description</key>
-	<string>Search the web in Douban.</string>
+	<string>Search for information about books, movies, music and events using Douban.</string>
 	<key>Extension Identifier</key>
-	<string>com.snowzjx.popclip.extension.douban-sns</string>
+	<string>com.pilotmoon.popclip.extension.douban</string>
 	<key>Extension Image File</key>
 	<string>Douban.png</string>
 	<key>Extension Name</key>
-	<string>Douban Search</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<string>Douban</string>
+	<key>Required Software Version</key>
+	<integer>719</integer>
 </dict>
 </plist>

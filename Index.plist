@@ -185,6 +185,7 @@
 			<string>Naver</string>
 			<string>Baidu</string>
 			<string>Taobao</string>			
+			<string>Douban</string>			
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
