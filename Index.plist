@@ -95,6 +95,7 @@
 			<string>NoteAway</string>		
 			<string>Simplenote</string>		
 			<string>Trello</string>		
+			<string>OneNote</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
