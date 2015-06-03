@@ -36,7 +36,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Add the text to OneNote somehow.</string>
+		<string>Send the text to OneNote as a new note.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.onenote</string>
@@ -50,6 +50,6 @@
 	<key>Options Script Interpreter</key>
 	<string>/usr/bin/python</string>
 	<key>Required Software Version</key>
-	<integer>1625</integer>
+	<integer>1628</integer>
 </dict>
 </plist>
