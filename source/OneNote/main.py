@@ -1,8 +1,9 @@
-import sys, tidylib, os
+from __future__ import print_function
+import sys, tidylib, os, json
 import auth
 
-try:
-    session = auth.get_session(os.getenv('POPCLIP_OPTION_AUTHSECRET'))
+try:    
+    session = auth.get_session(json.loads(os.getenv('POPCLIP_OPTION_AUTHSECRET')))
 except:
     exit(2)
 
@@ -24,5 +25,5 @@ html, errors = tidylib.tidy_document(body, {'char-encoding': 'utf8'})
 
 # do the job
 r = session.post('pages', files={'Presentation': ('Clipping', html, 'text/html')})
-if r.status_code != 201:
+if r.status_code != 201:    
     exit(1)
