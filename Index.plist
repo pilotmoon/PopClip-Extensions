@@ -94,6 +94,7 @@
 			<string>Notefile</string>
 			<string>NoteAway</string>		
 			<string>Simplenote</string>		
+			<string>Trello</string>		
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -118,22 +119,6 @@
 	</dict>
 	<dict>
 		<key>Members</key>
-		<array>		
-			<string>Tweet</string>
-			<string>Twitter</string>
-			<string>Twitterrific</string>
-			<string>Tweetbot</string>
-			<string>YoruFukurou</string>								
-			<string>SinaWeibo</string>
-			<string>Facebook</string>	
-			<string>Buffer</string>	
-			<string>LinkedIn</string>		
-		</array>
-		<key>Title</key>
-		<string>Social Networking</string>
-	</dict>
-	<dict>
-		<key>Members</key>
 		<array>
 			<string>TextEdit</string>
 			<string>Email</string>
@@ -153,8 +138,7 @@
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
 			<string>Deliveries</string>		
-			<string>Dropshelf</string>			
-					
+			<string>Dropshelf</string>								
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
@@ -189,6 +173,22 @@
 		</array>
 		<key>Title</key>
 		<string>Searches</string>
+	</dict>
+		<dict>
+		<key>Members</key>
+		<array>		
+			<string>Tweet</string>
+			<string>Twitter</string>
+			<string>Twitterrific</string>
+			<string>Tweetbot</string>
+			<string>YoruFukurou</string>								
+			<string>SinaWeibo</string>
+			<string>Facebook</string>	
+			<string>Buffer</string>	
+			<string>LinkedIn</string>		
+		</array>
+		<key>Title</key>
+		<string>Social Networking</string>
 	</dict>
 	<dict>
 		<key>Members</key>
