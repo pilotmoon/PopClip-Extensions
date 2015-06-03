@@ -1,9 +1,11 @@
 from __future__ import print_function
 import sys, tidylib, os, json
-import auth
+import auth, requests
 
 try:    
     session = auth.get_session(json.loads(os.getenv('POPCLIP_OPTION_AUTHSECRET')))
+except requests.exceptions.ConnectionError:
+    exit(1)
 except:
     exit(2)
 
