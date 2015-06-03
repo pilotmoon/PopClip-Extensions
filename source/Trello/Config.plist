@@ -34,7 +34,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Add the text to a Trello board.</string>
+		<string>Add a new card to Trello containing the selected text. The card is added to the first list of your chosen board.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.trello</string>
