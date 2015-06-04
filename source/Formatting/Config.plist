@@ -45,7 +45,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make text bold, italic and underline.</string>
+	<string>Bold, italic and underline.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.formatting</string>
 	<key>Extension Image File</key>
