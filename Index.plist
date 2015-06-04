@@ -6,8 +6,7 @@
 		<key>Members</key>
 		<array>
 			<string>PasteAndMatch</string>
-			<string>PasteAndEnter</string>
-			<string>Formatting</string>
+			<string>PasteAndEnter</string>		
 			<string>Delete</string>
 			<string>SelectAll</string>
 		</array>
@@ -17,6 +16,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Formatting</string>
 			<string>Capitalize</string>
 			<string>Uppercase</string>
 			<string>Lowercase</string>
