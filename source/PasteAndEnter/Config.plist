@@ -34,7 +34,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>PopClip will paste, then press the Enter key for you. (Option appears as "Paste + ↵".)</string>
+	<string>PopClip will paste, then press the Enter key for you. (Appears as "Paste + ↵".)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pasteandenter</string>
 	<key>Extension Name</key>
