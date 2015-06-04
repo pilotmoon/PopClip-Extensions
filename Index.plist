@@ -250,6 +250,7 @@
 			<string>Markdown</string>			
 			<string>URLEncode</string>
 			<string>HTMLEncode</string>
+			<string>Base64Encode</string>
 		</array>
 		<key>Title</key>
 		<string>For Developers</string>
