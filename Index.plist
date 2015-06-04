@@ -9,7 +9,6 @@
 			<string>PasteAndEnter</string>
 			<string>Formatting</string>
 			<string>Delete</string>
-			<string>Append</string>
 			<string>SelectAll</string>
 		</array>
 		<key>Title</key>
@@ -262,7 +261,8 @@
 			<string>Convert</string>
 			<string>Sort</string>
 			<string>Shuffle</string>
-			<string>Swap</string>			
+			<string>Swap</string>	
+			<string>Append</string>
 		</array>
 		<key>Title</key>
 		<string>Really Useful Tools</string>
