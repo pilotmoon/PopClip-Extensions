@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>preview-result</string>
 			<key>Image File</key>
-			<string>InstantTranslate.png</string>
+			<string>itrans.png</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/python</string>
 			<key>Shell Script File</key>

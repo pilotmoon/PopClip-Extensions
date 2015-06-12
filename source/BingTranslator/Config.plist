@@ -14,7 +14,7 @@
 			<key>URL</key>
 			<string>https://www.bing.com/translator/?text={popclip text}&amp;from=auto&amp;to=auto</string>
 			<key>Image File</key>
-			<string>icon.png</string>
+			<string>btrans.png</string>
 			<key>Title</key>
 			<string>Bing Translator</string>
 			<key>Regular Expression</key>
