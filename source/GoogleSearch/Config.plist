@@ -10,17 +10,17 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,1900}$</string>
 			<key>Title</key>
-			<string>Google Search</string>
+			<string>Google</string>
 			<key>URL</key>
 			<string>https://{popclip option site}/search?q={popclip text}</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search Google using your country's site.</string>
+	<string>Search the web using Google, with option to choose the country site.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.google-search</string>
 	<key>Extension Name</key>
-	<string>Google Search</string>
+	<string>Google</string>
 	<key>Options</key>
 	<array>
 		<dict>

@@ -24,8 +24,16 @@
 			<string>Morton Fox</string>
 		</dict>
 	</array>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.bing.com/</string>
+			<key>Name</key>
+			<string>Bing</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Search Bing with the selected text.</string>
+	<string>Search the web using Bing.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.bing</string>
 	<key>Extension Name</key>
