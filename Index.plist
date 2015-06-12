@@ -149,23 +149,22 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Amazon</string>
-			<string>DOI</string>			
-			<string>Douban</string>	
-			<string>Ebay</string>
-			<string>Etsy</string>
+			<string>Wikipedia</string>				
 			<string>GoogleImages</string>
 			<string>GoogleMaps</string>
-			<string>GoogleScholar</string>										
-			<string>IMDb</string>				
-			<string>ImFeelingLucky</string>		
-			<string>PubMed</string>			
-			<string>Taobao</string>			
-			<string>UrbanDictionary</string>						
-			<string>Wikipedia</string>		
-			<string>WolframAlpha</string>						
-			<string>WorldCat</string>			
+			<string>GoogleScholar</string>	
+			<string>Amazon</string>			
+			<string>Ebay</string>											
+			<string>Etsy</string>
+			<string>IMDb</string>	
 			<string>YouTube</string>		
+			<string>DOI</string>								
+			<string>PubMed</string>			
+			<string>WorldCat</string>			
+			<string>UrbanDictionary</string>									
+			<string>WolframAlpha</string>												
+			<string>Douban</string>	
+			<string>Taobao</string>			
 		</array>
 		<key>Title</key>
 		<string>Other Searches</string>
