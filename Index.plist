@@ -59,8 +59,9 @@
 		<key>Members</key>
 		<array>
 			<string>GoogleTranslate</string>
-			<string>TranslateTab</string>
-			<string>InstantTranslate</string>							
+			<string>BingTranslator</string>
+			<string>InstantTranslate</string>	
+			<string>TranslateTab</string>									
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
