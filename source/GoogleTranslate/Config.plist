@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
 	<key>Extension Name</key>
 	<string>Google Translate</string>
 	<key>Extension Identifier</key>
@@ -16,7 +14,7 @@
 			<key>URL</key>
 			<string>http://translate.google.com/?langpair=auto%7Cauto&amp;text={popclip text}</string>
 			<key>Image File</key>
-			<string>TranslationIcon.png</string>
+			<string>gtrans.png</string>
 			<key>Title</key>
 			<string>Google Translate</string>
 			<key>Regular Expression</key>

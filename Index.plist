@@ -59,8 +59,9 @@
 		<key>Members</key>
 		<array>
 			<string>GoogleTranslate</string>
-			<string>TranslateTab</string>
-			<string>InstantTranslate</string>							
+			<string>BingTranslator</string>
+			<string>InstantTranslate</string>	
+			<string>TranslateTab</string>									
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
@@ -135,33 +136,39 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Wikipedia</string>
-			<string>GoogleSearch</string>
-			<string>GoogleMaps</string>
-			<string>GoogleImages</string>
-			<string>GoogleScholar</string>							
-			<string>ImFeelingLucky</string>							
+			<string>GoogleSearch</string>								
+			<string>Baidu</string>
+			<string>Bing</string>		
 			<string>DuckDuckGo</string>	
-			<string>StartPage</string>				
-			<string>Bing</string>
-			<string>YouTube</string>
-			<string>Amazon</string>
-			<string>Ebay</string>
-			<string>Etsy</string>
-			<string>IMDb</string>				
-			<string>WolframAlpha</string>						
-			<string>WorldCat</string>			
-			<string>PubMed</string>			
-			<string>DOI</string>			
-			<string>UrbanDictionary</string>			
+			<string>StartPage</string>							
 			<string>Yandex</string>
 			<string>Naver</string>
-			<string>Baidu</string>
-			<string>Taobao</string>			
-			<string>Douban</string>			
 		</array>
 		<key>Title</key>
-		<string>Searches</string>
+		<string>Web Search</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Wikipedia</string>				
+			<string>GoogleImages</string>
+			<string>GoogleMaps</string>
+			<string>GoogleScholar</string>	
+			<string>Amazon</string>			
+			<string>Ebay</string>											
+			<string>Etsy</string>
+			<string>IMDb</string>	
+			<string>YouTube</string>		
+			<string>DOI</string>								
+			<string>PubMed</string>			
+			<string>WorldCat</string>			
+			<string>UrbanDictionary</string>									
+			<string>WolframAlpha</string>												
+			<string>Douban</string>	
+			<string>Taobao</string>			
+		</array>
+		<key>Title</key>
+		<string>Other Searches</string>
 	</dict>
 		<dict>
 		<key>Members</key>
