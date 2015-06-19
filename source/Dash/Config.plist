@@ -18,9 +18,13 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.kapeli.dash</string>
-			<key>Check Installed</key>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.kapeli.dash</string>
+				<string>com.kapeli.dashdoc</string>
+				<string>com.kapeli.dashbeta</string>
+			</array>
+            		<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
 			<string>http://kapeli.com/dash</string>
