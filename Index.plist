@@ -165,7 +165,8 @@
 			<string>UrbanDictionary</string>									
 			<string>WolframAlpha</string>												
 			<string>Douban</string>	
-			<string>Taobao</string>			
+			<string>Taobao</string>		
+			<string>JD</string>			
 		</array>
 		<key>Title</key>
 		<string>Other Searches</string>
