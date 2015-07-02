@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>notestab.png</string>
 			<key>Title</key>
-			<string>NotesTab Pro</string>
+			<string>MiniNote Pro</string>
 			<key>URL</key>
 			<string>notestab://create/{popclip text}</string>
 		</dict>
@@ -21,17 +21,17 @@
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://notestab.com/</string>
+			<string>https://fiplab.com/apps/mininote-for-mac</string>
 			<key>Name</key>
 			<string>NotesTab Pro</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new note in NotesTab Pro.</string>
+	<string>Create a new note in MiniNote Pro.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.notestab</string>
 	<key>Extension Name</key>
-	<string>NotesTab Pro</string>
+	<string>MiniNote Pro</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
