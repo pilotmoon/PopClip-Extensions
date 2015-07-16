@@ -18,8 +18,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.houdah.Tembo</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.houdah.Tembo2</string>
+				<string>com.houdah.Tembo</string>
+			</array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
