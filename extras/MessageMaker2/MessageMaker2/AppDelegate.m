@@ -68,18 +68,14 @@ NSDictionary *_serviceNames=nil;
     NSString *dataType=[self dataType];
     NSString *serviceName=[self serviceName];
     
-    NSDictionary *lookup=@{@"message": NSSharingServiceNameComposeMessage,
-                           @"facebook": NSSharingServiceNamePostOnFacebook,
-                           @"linkedin": NSSharingServiceNamePostOnLinkedIn,
-                           @"sinaweibo": NSSharingServiceNamePostOnSinaWeibo,
-                           @"tencentweibo": NSSharingServiceNamePostOnTencentWeibo,
-                           @"twitter": NSSharingServiceNamePostOnTwitter};
-    
-    NSString *resolved=lookup[serviceName];
-    if (resolved) {
-        serviceName=resolved;
-        // otherwise use the raw string
+    NSSharingService *service=[NSSharingService sharingServiceNamed:serviceName];
+    if (!service && [serviceName isEqualToString:@"messages"]) {
+        service=[NSSharingService sharingServiceNamed:@"com.apple.share.Messages.compose"];
+        if (!service) {
+            service=[NSSharingService sharingServiceNamed:@"com.apple.messages.ShareExtension"];
+        }
     }
+    
     //    NSString *text=@"chips tónite";
     //    NSString *dataType=@"text";
     //    NSString *serviceName=@"com.apple.share.Messages.compose";
@@ -88,7 +84,7 @@ NSDictionary *_serviceNames=nil;
     //NSLog(@"Data: %@", dataType);
     //NSLog(@"Service: %@", serviceName);
     
-    if (text&&dataType&&serviceName)
+    if (text&&dataType&&service)
     {
         if ([dataType isEqualToString:@"url"])
         {
@@ -100,8 +96,8 @@ NSDictionary *_serviceNames=nil;
         }
     }
     
-    NSSharingService *service=[NSSharingService sharingServiceNamed:serviceName];
-    if (data&&service)
+
+    if (data)
     {
         service.delegate=self;
         //NSLog(@"About to perform service with %@: %@", dataType, data);
