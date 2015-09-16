@@ -35,7 +35,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text in a PDF file in Preview or Skim.</string>
+	<string>Highlight the selected text in a PDF file in Preview.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
 	<key>Extension Name</key>
@@ -44,7 +44,5 @@
 	<array>
 		<string>copy</string>
 	</array>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
