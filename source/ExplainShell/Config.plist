@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Name</key>
+	<string>Explain Shell</string>
+	<key>Extension Identifier</key>
+	<string>com.explain-shell.popclip.extension.explain-shell</string>
+	<key>Extension Description</key>
+	<string>Open selected text in a web browser as a search string on Explain Shell.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>http://explainshell.com/explain?cmd={popclip text}</string>
+			<key>Image File</key>
+			<string>eshell.png</string>
+			<key>Title</key>
+			<string>Explain Shell</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+		</dict>
+	</array>
+</dict>
+</plist>
