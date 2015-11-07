@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>After</key>
-			<string>paste-result</string>
+			<string>preview-result</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurl</string>

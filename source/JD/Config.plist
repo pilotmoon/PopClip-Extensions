@@ -6,9 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>JD.png</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.{1,}$</string>
+			<string>jd-dog.png</string>
 			<key>Title</key>
 			<string>JD</string>
 			<key>URL</key>
@@ -21,7 +19,7 @@
 			<key>Link</key>
 			<string>http://www.jd.com</string>
 			<key>Name</key>
-			<string>JD</string>
+			<string>jd.com</string>
 		</dict>
 	</array>
 	<key>Credits</key>
@@ -34,10 +32,8 @@
 	<key>Extension Description</key>
 	<string>Search for products on jd.com.</string>
 	<key>Extension Identifier</key>
-	<string>JD</string>
+	<string>com.pilotmoon.popclip.extension.jd</string>
 	<key>Extension Name</key>
 	<string>JD</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

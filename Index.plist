@@ -6,10 +6,8 @@
 		<key>Members</key>
 		<array>
 			<string>PasteAndMatch</string>
-			<string>PasteAndEnter</string>
-			<string>Formatting</string>
+			<string>PasteAndEnter</string>		
 			<string>Delete</string>
-			<string>Append</string>
 			<string>SelectAll</string>
 		</array>
 		<key>Title</key>
@@ -18,10 +16,12 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Formatting</string>
 			<string>Capitalize</string>
 			<string>Uppercase</string>
 			<string>Lowercase</string>
 			<string>Quotes</string>
+			<string>Brackets</string>
 			<string>Hyphenate</string>				
 			<string>Underscore</string>				
 			<string>FullHalfWidth</string>
@@ -59,23 +59,13 @@
 		<key>Members</key>
 		<array>
 			<string>GoogleTranslate</string>
-			<string>TranslateTab</string>
-			<string>InstantTranslate</string>							
+			<string>BingTranslator</string>
+			<string>InstantTranslate</string>	
+			<string>TranslateTab</string>									
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
 	</dict>
-	<dict>
-		<key>Members</key>
-		<array>
-			<string>OnlineDictionary</string>						
-			<string>Antidote</string>			
-			<string>Eudic</string>					
-			<string>Lingvo</string>
-		</array>
-		<key>Title</key>
-		<string>Dictionaries</string>
-	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
@@ -93,6 +83,8 @@
 			<string>Notefile</string>
 			<string>NoteAway</string>		
 			<string>Simplenote</string>		
+			<string>Trello</string>		
+			<string>OneNote</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -117,29 +109,13 @@
 	</dict>
 	<dict>
 		<key>Members</key>
-		<array>		
-			<string>Tweet</string>
-			<string>Twitter</string>
-			<string>Twitterrific</string>
-			<string>Tweetbot</string>
-			<string>YoruFukurou</string>								
-			<string>SinaWeibo</string>
-			<string>Facebook</string>	
-			<string>Buffer</string>	
-		</array>
-		<key>Title</key>
-		<string>Social Networking</string>
-	</dict>
-	<dict>
-		<key>Members</key>
 		<array>
 			<string>TextEdit</string>
 			<string>Email</string>
 			<string>Messages</string>
 			<string>Maps</string>
 			<string>Fantastical</string>
-			<string>Leap</string>
-			<string>Spotlight</string>
+			<string>Leap</string>			
 			<string>HoudahSpot</string>
 			<string>Tembo</string>
 			<string>Alfred</string>
@@ -151,8 +127,8 @@
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
 			<string>Deliveries</string>		
-			<string>Dropshelf</string>			
-					
+			<string>Dropshelf</string>								
+			<string>Unclutter</string>								
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
@@ -160,33 +136,56 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Wikipedia</string>
-			<string>GoogleSearch</string>
-			<string>GoogleMaps</string>
-			<string>GoogleImages</string>
-			<string>GoogleScholar</string>							
-			<string>ImFeelingLucky</string>							
+			<string>GoogleSearch</string>								
+			<string>Baidu</string>
+			<string>Bing</string>		
 			<string>DuckDuckGo</string>	
-			<string>StartPage</string>				
-			<string>Bing</string>
-			<string>YouTube</string>
-			<string>Amazon</string>
-			<string>Ebay</string>
-			<string>Etsy</string>
-			<string>IMDb</string>			
-			<string>LinkedIn</string>			
-			<string>WolframAlpha</string>						
-			<string>WorldCat</string>			
-			<string>PubMed</string>			
-			<string>DOI</string>			
-			<string>UrbanDictionary</string>			
+			<string>StartPage</string>							
 			<string>Yandex</string>
 			<string>Naver</string>
-			<string>Baidu</string>
-			<string>Taobao</string>			
 		</array>
 		<key>Title</key>
-		<string>Searches</string>
+		<string>Web Search</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>Wikipedia</string>				
+			<string>GoogleImages</string>
+			<string>GoogleMaps</string>
+			<string>GoogleScholar</string>	
+			<string>Amazon</string>			
+			<string>Ebay</string>											
+			<string>Etsy</string>
+			<string>IMDb</string>	
+			<string>YouTube</string>		
+			<string>DOI</string>								
+			<string>PubMed</string>			
+			<string>WorldCat</string>			
+			<string>UrbanDictionary</string>									
+			<string>WolframAlpha</string>												
+			<string>Douban</string>	
+			<string>Taobao</string>		
+			<string>JD</string>			
+		</array>
+		<key>Title</key>
+		<string>Other Searches</string>
+	</dict>
+		<dict>
+		<key>Members</key>
+		<array>		
+			<string>Tweet</string>
+			<string>Twitter</string>
+			<string>Twitterrific</string>
+			<string>Tweetbot</string>
+			<string>YoruFukurou</string>								
+			<string>SinaWeibo</string>
+			<string>Facebook</string>	
+			<string>Buffer</string>	
+			<string>LinkedIn</string>		
+		</array>
+		<key>Title</key>
+		<string>Social Networking</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -241,12 +240,24 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>OnlineDictionary</string>						
+			<string>Antidote</string>			
+			<string>Eudic</string>					
+			<string>Lingvo</string>
+		</array>
+		<key>Title</key>
+		<string>Dictionaries</string>
+	</dict>	
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>Dash</string>
 			<string>RunCommand</string>
 			<string>BBEdit</string>			
 			<string>Markdown</string>			
 			<string>URLEncode</string>
 			<string>HTMLEncode</string>
+			<string>Base64Encode</string>
 		</array>
 		<key>Title</key>
 		<string>For Developers</string>
@@ -257,12 +268,12 @@
 			<string>Calculate</string>
 			<string>Convert</string>
 			<string>Sort</string>
-			<string>Shuffle</string>
-			<string>Swap</string>
-			<string>LuckyLink</string>			
+			<string>Shuffle</string>			
+			<string>Append</string>
+			<string>Swap</string>	
 		</array>
 		<key>Title</key>
-		<string>Really Useful Tools</string>
+		<string>Useful Tools</string>
 	</dict>
 </array>
 </plist>

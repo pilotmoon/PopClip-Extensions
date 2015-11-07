@@ -1,8 +1,8 @@
 <?php
 $input=getenv('POPCLIP_TEXT');
 
-// allow urlsafe version, and allow unpadded
-$str=base64_decode(str_pad(strtr($input, '-_', '+/'), strlen($input) % 4, '=', STR_PAD_RIGHT));
+// transform urlsafe version to standard version
+$str=base64_decode(strtr($input, '-_', '+/'));
 
 // is it a utf8 string?
 if (mb_detect_encoding($str, 'UTF-8', true)) {
@@ -11,6 +11,3 @@ if (mb_detect_encoding($str, 'UTF-8', true)) {
 else {
 	echo '<Base64: Binary result not printable>';
 }
-
-return 0;
-?>

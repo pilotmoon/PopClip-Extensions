@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/perl</string>
+			<key>Shell Script File</key>
+			<string>futz.pl</string>
+			<key>Title</key>
+			<string>DateFutz</string>
+			<key>Image File</key>
+			<string></string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Turns "20140512" to "2014_05_12"</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.datefutz</string>
+	<key>Extension Name</key>
+	<string>DateFutz</string>
+</dict>
+</plist>

@@ -1,6 +1,7 @@
-Search selected text on douban
+Search selected text on douban.
 
-- Cantact me
-
+Original extension(s) by:
 * soundbbg@gmail.com
 * http://guojing.me
+
+Combined into a single extension by by Nick Moore.
