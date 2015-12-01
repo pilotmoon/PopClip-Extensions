@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Version</key>
+	<integer>2</integer>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Annotation</string>
+	</dict>
+	<key>Extension Description</key>
+	<string>Annotate the codes</string>
+	<key>Extension Identifier</key>
+	<string>net.shidanqing.popclip.extension.annotation</string>
+	<key>Extension Image File</key>
+	<string>Annotation.png</string>
+	<key>Position</key>
+	<real>1.1</real>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Requirements</key>
+			<array>
+				<string>cut</string>
+			</array>
+			<key>Title</key>
+			<string>//</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyCode</key>
+				<integer>44</integer>
+				<key>modifiers</key>
+				<real>1048576</real>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
