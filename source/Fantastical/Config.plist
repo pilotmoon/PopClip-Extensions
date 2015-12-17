@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Use the text to create a calendar entry in Fantastical. (Now updated to support Fantastical 2.)</string>
+	<string>Use the text to create a calendar entry in Fantastical.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.fantastical</string>
 	<key>Extension Name</key>
