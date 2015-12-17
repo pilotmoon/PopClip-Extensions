@@ -1,8 +1,8 @@
 <?php
 mb_internal_encoding("UTF-8"); 
-// split and uniquify
-$lines=array_unique(preg_split('/\R/m', getenv('POPCLIP_TEXT')));
-// natutal, case-insensitive sort
+// split
+$lines=preg_split('/\R/m', getenv('POPCLIP_TEXT'));
+// natural, case-insensitive sort
 natcasesort($lines);
 // exclude empty lines
 $result=array();

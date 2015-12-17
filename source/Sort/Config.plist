@@ -14,7 +14,7 @@
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
-			<string>sortu.php</string>
+			<string>sort.php</string>
 			<key>Title</key>
 			<string>Sort</string>
 		</dict>
@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Sort the selected lines, removing duplicates.</string>
+	<string>Sort the selected lines.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.sort</string>
 	<key>Extension Name</key>
