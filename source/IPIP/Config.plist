@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>ipip.php</string>
+			<key>Title</key>
+			<string>IP Location</string>
+			<key>Regular Expression</key>
+			<string>^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Get IP location from ipip.net</string>
+	<key>Extension Identifier</key>
+	<string>com.liaol.popclip.extension.ipip</string>
+	<key>Extension Name</key>
+	<string>IPIP</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
