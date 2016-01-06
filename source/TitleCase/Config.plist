@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Capitalizes words according to typical English title case conventions.</string>
+	<string>Capitalizes words according to typical English titling conventions.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.title-case</string>
 	<key>Extension Name</key>
