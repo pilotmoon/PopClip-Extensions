@@ -16,10 +16,10 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Formatting</string>
-			<string>Capitalize</string>
+			<string>Formatting</string>			
 			<string>Uppercase</string>
 			<string>Lowercase</string>
+			<string>TitleCase</string>
 			<string>Quotes</string>
 			<string>Brackets</string>
 			<string>Hyphenate</string>				
