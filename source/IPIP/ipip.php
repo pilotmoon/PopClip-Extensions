@@ -1,5 +1,5 @@
 <?php 
-$input=getenv('POPCLIP_TEXT');
+$input=trim(getenv('POPCLIP_TEXT'));
 
 $api = 'http://freeapi.ipip.net/';
 $data = file_get_contents($api . $input);
