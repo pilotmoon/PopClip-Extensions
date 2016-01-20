@@ -19,6 +19,7 @@
 			<string>Formatting</string>			
 			<string>Uppercase</string>
 			<string>Lowercase</string>
+			<string>Capitalize</string>
 			<string>TitleCase</string>
 			<string>Quotes</string>
 			<string>Brackets</string>
