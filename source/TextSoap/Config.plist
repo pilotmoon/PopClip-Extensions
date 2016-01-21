@@ -21,7 +21,7 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.unmarked.textsoap7</string>
+			<string>com.unmarked.textsoap8</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -40,7 +40,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Clean up the text using TextSoap.</string>
+	<string>Clean up the text using TextSoap 8.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.textsoap</string>
 	<key>Extension Name</key>
