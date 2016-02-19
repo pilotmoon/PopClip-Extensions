@@ -93,7 +93,6 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Reminders</string>
 			<string>OmniFocus</string>
 			<string>Things</string>
 			<string>2Do</string>
