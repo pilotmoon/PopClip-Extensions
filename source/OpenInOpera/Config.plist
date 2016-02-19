@@ -14,7 +14,12 @@
 			<key>Shell Script File</key>
 			<string>open-in-opera.sh</string>
 			<key>Title</key>
-			<string>Open in Opera</string>
+			<dict>
+				<key>en</key>
+				<string>Open in Opera</string>
+				<key>ru</key>
+				<string>Открыть в Opera</string>
+			</dict>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -35,7 +40,12 @@
 		<string>com.operasoftware.Opera</string>
 	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Opera.</string>
+	<dict>
+		<key>en</key>
+		<string>Open the link in Opera.</string>
+		<key>ru</key>
+		<string>Открыть ссылку в Opera.</string>
+	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.open-in-opera</string>
 	<key>Extension Name</key>
