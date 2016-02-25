@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>diary.png</string>
-			<key>Shell Script File</key>
-			<string>dayone.sh</string>
+			<string>ribbon.png</string>
+			<key>Service Name</key>
+			<string>New Day One Entry With Selection</string>
 			<key>Title</key>
 			<string>Day One</string>
 		</dict>
@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.dayoneapp.dayone</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.dayoneapp.dayone</string>
+				<string>com.bloombuilt.dayone-mac</string>
+			</array>			
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -27,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a journal entry using Day One.</string>
+	<string>Make a journal entry using Day One. Now updated to support Day One 2.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.dayone</string>
 	<key>Extension Name</key>
