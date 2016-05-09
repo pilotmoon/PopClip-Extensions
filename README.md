@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*Documentation for PopClip 1.5*
+*Documentation for PopClip 1.5.5*
 
 ## Introduction
 
@@ -150,7 +150,7 @@ The `Config.plist` file has the following structure.
 |`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
 |`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
 |`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `Apps` field.*|
-|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). The engine used is [RegexKitLite](http://regexkit.sourceforge.net/RegexKitLite/).|
+|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode).|
 |`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
