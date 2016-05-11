@@ -1,0 +1,1 @@
+# Generate QR Code using Google charts

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>qrcode.png</string>
+			<key>Shell Script File</key>
+			<string>qrcode.sh</string>
+			<key>Title</key>
+			<string>QR Code</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Generate and display QR code.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.qrcode</string>
+	<key>Extension Name</key>
+	<string>QR Code</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
