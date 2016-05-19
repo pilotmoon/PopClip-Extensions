@@ -18,6 +18,7 @@
 			<array>
 				<string>com.apple.Preview</string>
 				<string>net.sourceforge.skim-app.skim</string>
+				<string>com.readdle.PDFExpert-Mac</string>
 			</array>
 			<key>Title</key>
 			<string>Highlight</string>
@@ -29,20 +30,24 @@
 			<key>Bundle Identifier</key>
 			<string>net.sourceforge.skim-app.skim</string>
 			<key>Link</key>
-			<string>http://skim-app.sourceforge.net</string>
+			<string>http://skim-app.sourceforge.net/</string>
 			<key>Name</key>
 			<string>Skim</string>
 		</dict>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.readdle.PDFExpert-Mac</string>
+			<key>Link</key>
+			<string>https://pdfexpert.com/</string>
+			<key>Name</key>
+			<string>PDF Expert</string>
+		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text in a PDF file in Preview.</string>
+	<string>Highlight the selected text in a PDF file in Preview or PDF Expert.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
 	<key>Extension Name</key>
 	<string>PDF Highlight</string>
-	<key>Requirements</key>
-	<array>
-		<string>copy</string>
-	</array>
 </dict>
 </plist>
