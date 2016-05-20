@@ -19,6 +19,8 @@
 	<string>Slicereader</string>
 	<key>Required Software Version</key>
 	<integer>1459</integer>
+	<key>Extension Description</key>
+	<string>Display the selected text for easy reading in Slicereader.</string>
 	<key>Apps</key>
 	<array>
 		<dict>
