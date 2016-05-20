@@ -6,11 +6,13 @@
 	<array>
 		<dict>
 			<key>Shell Script File</key>
-			<string>alfred.sh</string>
+			<string>alfred.php</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>			
 			<key>Image File</key>
 			<string>bowler.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^[^\n\r]{1,300}$</string>
+			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>
 			<key>Title</key>
 			<string>Alfred</string>
 		</dict>
