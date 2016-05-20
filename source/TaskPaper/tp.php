@@ -31,6 +31,7 @@ function applescript_safe($string) {
 }
 
 function do_tp3($text) {
+	// based on http://support.hogbaysoftware.com/t/whats-the-latest-on-quick-entry-solutions-for-taskpaper-3/1621
 	$applescript = <<<END
 var TaskPaper = Application('com.hogbaysoftware.TaskPaper3')
 var selectedText = "{popclip text}"
