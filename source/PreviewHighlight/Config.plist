@@ -44,7 +44,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text in a PDF file in Preview or PDF Expert.</string>
+	<string>Highlight the selected text in a PDF file in Preview, Skim or PDF Expert.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.preview-highlight</string>
 	<key>Extension Name</key>
