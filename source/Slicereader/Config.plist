@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>slicereader.png</string>
+			<key>Service Name</key>
+			<string>Read in Slicereader</string>
+			<key>Title</key>
+			<string>Slicereader</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.slicereader</string>
+	<key>Extension Name</key>
+	<string>Slicereader</string>
+	<key>Required Software Version</key>
+	<integer>1459</integer>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>me.mthr.slicereader</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://mthr.me/slicereader/</string>
+			<key>Name</key>
+			<string>Slicereader</string>
+		</dict>
+		</array>
+		<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Matthew John Roberts</string>
+			<key>Link</key>
+			<string>http://www.sgtbillyshears.uk</string>
+		</dict>
+	</array>
+</dict>
+</plist>
