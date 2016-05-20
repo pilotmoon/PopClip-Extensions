@@ -5,10 +5,14 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>Regular Expression</key>
+			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>
 			<key>Image File</key>
 			<string>ttick.png</string>
-			<key>Service Name</key>
-			<string>TaskPaper: Send to Inbox</string>
+			<key>Shell Script File</key>
+			<string>tp.php</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
 			<key>Title</key>
 			<string>TaskPaper</string>
 		</dict>
@@ -18,21 +22,22 @@
 		<dict>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.hogbaysoftware.TaskPaper.mac</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.hogbaysoftware.TaskPaper.mac</string>	
+				<string>com.hogbaysoftware.TaskPaper3</string>	
+			</array>			
 			<key>Link</key>
-			<string>http://www.hogbaysoftware.com/products/taskpaper</string>
+			<string>https://www.taskpaper.com/</string>
 			<key>Name</key>
 			<string>TaskPaper</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new task to TaskPaper's inbox.</string>
+	<string>Add a new task to an Inbox project in TaskPaper.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.taskpaper</string>
 	<key>Extension Name</key>
 	<string>TaskPaper</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
