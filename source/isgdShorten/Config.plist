@@ -18,15 +18,15 @@
 			<key>Shell Script File</key>
 			<string>isgd.php</string>
 			<key>Title</key>
-			<string>Shorten Link</string>
+			<string>is.gd Shorten</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Shorten the selected URL using is.gd or v.gd.</string>
+	<string>Shorten a URL using is.gd or v.gd.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.urlshortener</string>
+	<string>com.pilotmoon.popclip.extension.isgd-shorten</string>
 	<key>Extension Name</key>
-	<string>Shorten Link</string>
+	<string>is.gd Shorten</string>
 	<key>Apps</key>
 	<array>
 		<dict>
@@ -46,11 +46,11 @@
 	<array>
 		<dict>
 			<key>Option Identifier</key>
-			<string>domain</string>
+			<string>service</string>
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
-				<string>Shortening Service</string>
+				<string>Service</string>
 			</dict>
 			<key>Option Type</key>
 			<string>multiple</string>
