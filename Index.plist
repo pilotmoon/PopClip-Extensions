@@ -206,7 +206,6 @@
 			<string>Bitly</string>
 			<string>Droplr</string>
 			<string>ShortMenu</string>
-			<string>UnshortenLink</string>			
 		</array>
 		<key>Title</key>
 		<string>Link Shortening</string>
