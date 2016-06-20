@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Service Name</key>
+			<string>有道词典 • 查询选中内容</string>
+			<key>Title</key>
+			<string>YoudaoDict</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	</dict>
+	<string>Look up selected texts in YoudaoDict, a Chinese-English and English-Chinese dictionary.</string>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://zhiye.li</string>
+			<key>Name</key>
+			<string>zhiyelee</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>li.zhiye</string>
+	<key>Extension Name</key>
+	<string>YoudaoDict</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.youdao.YoudaoDict</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://cidian.youdao.com/index-mac.html</string>
+			<key>Name</key>
+			<string>有道词典</string>
+		</dict>
+	</array>
+</dict>
+</plist>
