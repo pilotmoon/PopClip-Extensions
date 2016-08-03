@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>overdrive.png</string>
+			<key>Title</key>
+			<string>OverDrive</string>
+			<key>URL</key>
+			<string>https://www.overdrive.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Dan Cormier</string>
+			<key>Link</key>
+			<string>http://dancormier.com</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for media from your local public library on OverDrive.</string>
+	<key>Extension Identifier</key>
+	<string>com.dancormier.extension.overdrive</string>
+	<key>Extension Name</key>
+	<string>OverDrive</string>
+</dict>
+</plist>
