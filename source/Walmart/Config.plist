@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>walmart.png</string>
+			<key>Title</key>
+			<string>Walmart</string>
+			<key>URL</key>
+			<string>http://www.walmart.com/search/?cat_id=&amp;query={popclip text}</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Dan Cormier</string>
+			<key>Link</key>
+			<string>http://dancormier.com</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for products on Walmart.</string>
+	<key>Extension Identifier</key>
+	<string>com.dancormier.extension.walmart</string>
+	<key>Extension Name</key>
+	<string>Walmart</string>
+</dict>
+</plist>
