@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Name</key>
+	<string>Guokr</string>
+	<key>Extension Identifier</key>
+	<string>com.guokr.extension.guokr-search</string>
+	<key>Extension Description</key>
+	<string>Search Guokr.com in a web browser using the selected text.</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>http://www.guokr.com/search/all/?wd={popclip text}</string>
+			<key>Image File</key>
+			<string>guokr.png</string>
+			<key>Title</key>
+			<string>Guokr</string>
+		</dict>
+	</array>
+</dict>
+</plist>
