@@ -1,28 +1,31 @@
 <?php
-$apiroot = "https://api.todoist.com/API/";
+require 'common.inc';
 
-$token = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
-$text = getenv('POPCLIP_TEXT');
+$content=getenv('POPCLIP_TEXT');
 
-$params = array(
-		'token'    => $token,
-		'content'  => $text);
-
-$apicall = $apiroot . "addItem?" . http_build_query($params);
+$api = "https://todoist.com/API/v7/items/add"; 
+$token = extract_parameter(json_decode(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')), TRUE), 'access_token');
 
 // execute request
-$ch = curl_init($apicall);
+$ch = curl_init($api);
+$post = array('token'=>$token, 'content'=>$content);
+
 curl_setopt($ch, CURLOPT_TIMEOUT, 10);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
-
+#curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $post);
 $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+echo $code . "\n";
+echo $response . "\n";
 
 if ($code==200) {
 	exit(0); // ok
 }
 
-if ($code==401) {
+if ($code>=400&&$code<500) {
 	exit(2); // bad auth
 }
 
