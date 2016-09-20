@@ -34,6 +34,14 @@
 			<key>Name</key>
 			<string>Scrivener</string>
 		</dict>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.devon-technologies.thinkpro2</string>
+			<key>Link</key>
+			<string>http://www.devontechnologies.com/redirect.php?id=product-dt</string>
+			<key>Name</key>
+			<string>DEVONthink Pro</string>
+		</dict>
 	</array>
 	<key>Actions</key>
 	<array>
@@ -79,6 +87,27 @@
 			<key>Required Apps</key>
 			<array>
 				<string>com.literatureandlatte.scrivener2</string>
+			</array>
+		</dict>
+				<dict>
+			<key>Title</key>
+			<string>Highlight</string>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>L</string>
+				<key>modifiers</key>
+				<real>1179648</real>
+			</dict>
+			<key>Requirements</key>
+			<array>
+				<string>copy</string>
+			</array>
+			<key>Required Apps</key>
+			<array>
+				<string>com.devon-technologies.thinkpro2</string>
 			</array>
 		</dict>
 	</array>
