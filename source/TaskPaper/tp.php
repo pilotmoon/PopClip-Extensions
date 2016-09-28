@@ -6,12 +6,13 @@ $popclip_text=trim(force_string(getenv('POPCLIP_TEXT')));
 // select target app
 $tp2bid="com.hogbaysoftware.TaskPaper.mac";
 $tp3bid="com.hogbaysoftware.TaskPaper3";
-$bid=trim(`./SelectApp ${tp3bid} ${tp2bid}`);
+$tp3dbid="com.hogbaysoftware.TaskPaper3.direct";
+$bid=trim(`./SelectApp ${tp3dbid} ${tp3bid} ${tp2bid}`);
 if ($bid===$tp2bid) {
 	do_tp2($popclip_text);
 }
-else if ($bid==$tp3bid) {
-	do_tp3($popclip_text);
+else if ($bid==$tp3bid||$bid==$tp3dbid) {
+	do_tp3($popclip_text, $bid);
 }
 
 function force_string($str) {
@@ -30,10 +31,10 @@ function applescript_safe($string) {
 	return $string;
 }
 
-function do_tp3($text) {
+function do_tp3($text, $bid) {
 	// based on http://support.hogbaysoftware.com/t/whats-the-latest-on-quick-entry-solutions-for-taskpaper-3/1621
 	$applescript = <<<END
-var TaskPaper = Application('com.hogbaysoftware.TaskPaper3')
+var TaskPaper = Application('$bid')
 var selectedText = "{popclip text}"
 
 // Send it to TaskPaper Inbox
