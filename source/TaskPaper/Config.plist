@@ -26,6 +26,7 @@
 			<array>
 				<string>com.hogbaysoftware.TaskPaper.mac</string>	
 				<string>com.hogbaysoftware.TaskPaper3</string>	
+				<string>com.hogbaysoftware.TaskPaper3.direct</string>
 			</array>			
 			<key>Link</key>
 			<string>https://www.taskpaper.com/</string>
