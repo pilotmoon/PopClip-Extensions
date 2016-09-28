@@ -35,15 +35,6 @@ Here are some external "how to" guides for creating extensions:
 - [Create Your Own Custom Extension for PopClip (Tuts+)](http://computers.tutsplus.com/tutorials/create-your-own-custom-extension-for-popclip--mac-50637)
 - [PopClip: Scripting Extensions (Tuts+)](http://computers.tutsplus.com/tutorials/popclip-scripting-extensions--mac-55842)
 
-Here are some other PopClip extension repositories you might find interesting:
-
-* PopClip extensions by [Andy Guzman](https://github.com/andyguzman/PopClippins)
-* PopClip extensions by [Lucifr](https://github.com/lucifr/PopClip-Extensions)
-* PopClip extensions by [Brett Terpstra](https://github.com/ttscoff/popclipextensions)
-* PopClip extensions by [hzlzh](https://github.com/hzlzh/PopClip-Extensions)
-* PopClip extensions by [deuxdoom](https://github.com/deuxdoom/PopClipExtensions)
-* PopClip extensions by [Sebastian Szwarc](https://github.com/Behinder/PopClipExt)
-
 ## Disclaimer
 
 These instructions are designed to help a technically competent person to create their own PopClip extension. Please note that user-created extensions are not an officially supported part of PopClip. You need to be comfortable with creating and editing plist files, scripts, and so on. 
