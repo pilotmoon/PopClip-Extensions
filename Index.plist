@@ -215,8 +215,7 @@
 		<array>
 			<string>ReadingList</string>
 			<string>Pocket</string>
-			<string>Instapaper</string>
-			<string>Readability</string>
+			<string>Instapaper</string>			
 			<string>Pinboard</string>
 			<string>Leech</string>			
 			<string>OpenInSafari</string>
