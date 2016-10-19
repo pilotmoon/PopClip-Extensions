@@ -47,7 +47,7 @@ NSDictionary *_serviceNames=nil;
     NSArray *const args=[[NSProcessInfo processInfo] arguments];
     if ([args count]>3) {
         // return 2nd argument if available
-        return args[3];
+        return args[3];c
     }
     else {
         // get text from stdin
@@ -73,7 +73,9 @@ NSDictionary *_serviceNames=nil;
                            @"linkedin": NSSharingServiceNamePostOnLinkedIn,
                            @"sinaweibo": NSSharingServiceNamePostOnSinaWeibo,
                            @"tencentweibo": NSSharingServiceNamePostOnTencentWeibo,
-                           @"twitter": NSSharingServiceNamePostOnTwitter};
+                           @"twitter": NSSharingServiceNamePostOnTwitter,
+                           @"notes": @"com.apple.Notes.SharingExtension",
+                           };
     
     NSString *resolved=lookup[serviceName];
     if (resolved) {

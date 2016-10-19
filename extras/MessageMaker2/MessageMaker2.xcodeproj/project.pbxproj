@@ -131,6 +131,7 @@
 				TargetAttributes = {
 					01C36965198C0BC00060ADF6 = {
 						DevelopmentTeam = 6W6K75YWQ9;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -266,10 +267,10 @@
 		01C36998198C0BC00060ADF6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageMaker2/MessageMaker2.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6W6K75YWQ9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MessageMaker2/MessageMaker2-Prefix.pch";
 				INFOPLIST_FILE = "MessageMaker2/MessageMaker2-Info.plist";
@@ -282,10 +283,10 @@
 		01C36999198C0BC00060ADF6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageMaker2/MessageMaker2.entitlements;
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6W6K75YWQ9;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MessageMaker2/MessageMaker2-Prefix.pch";
 				INFOPLIST_FILE = "MessageMaker2/MessageMaker2-Info.plist";
