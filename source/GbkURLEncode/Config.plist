@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>Percent.png</string>
+			<key>Script Interpreter</key>
+			<string>/bin/bash</string>
+			<key>Shell Script File</key>
+			<string>urlencode.sh</string>
+			<key>Title</key>
+			<string>GBK URL Encode</string>
+		</dict>
+		<dict>
+			<key>Regular Expression</key>
+			<string>^.*%[0-9A-Fa-f][0-9A-Fa-f].*$</string>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>PercentInverse.png</string>
+			<key>Script Interpreter</key>
+			<string>/bin/bash</string>
+			<key>Shell Script File</key>
+			<string>urldecode.sh</string>
+			<key>Title</key>
+			<string>GBK URL Decode</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>先将utf8格式转为gbk然后encode，将以gbk格式encode的text先decode然后转为utf8显示</string>
+	<key>Extension Identifier</key>
+	<string>tech.zhangmin.extension.gbkurlencode</string>
+	<key>Extension Name</key>
+	<string>GBK URL Encode</string>
+	
+</dict>
+</plist>
