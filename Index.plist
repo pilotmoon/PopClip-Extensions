@@ -193,7 +193,6 @@
 		<key>Members</key>
 		<array>
 			<string>Spotify</string>
-			<string>Rdio</string>
 			<string>Discogs</string>
 		</array>
 		<key>Title</key>
