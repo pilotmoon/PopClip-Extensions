@@ -15,7 +15,10 @@ tell application "System Events"
 				set searchField to (some text field of theWindow whose subrole is "AXSearchField")
 				
 				-- to set the focus to search field
-				keystroke "f" using {command down}
+				if focused of searchField is false then
+					set focused of searchField to true
+					delay 0.5
+				end if
 				
 				-- wait for search field to actually have focus
 				repeat 100 times
