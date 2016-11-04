@@ -7,6 +7,8 @@
 		<dict>
 			<key>AppleScript File</key>
 			<string>musicsearch.applescript</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
 			<key>Image File</key>
 			<string>itunes.png</string>
 			<key>Long Running</key>
@@ -16,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search music in iTunes. Will search local library, Apple Music or iTunes Store according to most recent search.</string>
+	<string>Search Apple Music, iTunes Store or local library in iTunes.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.itunes-music</string>
 	<key>Extension Name</key>
