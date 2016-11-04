@@ -192,6 +192,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>iTunesMusic</string>
 			<string>Spotify</string>
 			<string>Discogs</string>
 		</array>
