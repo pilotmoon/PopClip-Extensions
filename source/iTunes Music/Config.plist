@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>musicsearch.applescript</string>
+			<key>Image File</key>
+			<string>itunes.png</string>
+			<key>Long Running</key>
+			<false/>
+			<key>Title</key>
+			<string>iTunes Music</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search music in iTunes. Will search local library, Apple Music or iTunes Store according to most recent search.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.itunes-music</string>
+	<key>Extension Name</key>
+	<string>iTunes Music</string>
+</dict>
+</plist>
