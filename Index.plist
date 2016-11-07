@@ -232,8 +232,6 @@
 		<array>
 			<string>Call</string>
 			<string>Skype</string>
-			<string>Dialectic</string>
-			<string>PhoneAmego</string>
 		</array>
 		<key>Title</key>
 		<string>Phone Numbers</string>
