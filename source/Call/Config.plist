@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Call the selected phone number using your iPhone, or another installed call handler. (Set the default call handler in FaceTime preferences.)</string>
+		<string>Call the selected phone number using your iPhone, or another call handler. (Set the default call handler in FaceTime preferences.)</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.call</string>
