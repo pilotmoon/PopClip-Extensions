@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*Documentation for PopClip 1.5.5*
+*Documentation for PopClip 1.5.6*
 
 ## Introduction
 
