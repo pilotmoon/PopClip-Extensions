@@ -109,11 +109,19 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Fantastical</string>
+			<string>BusyCal</string>							
+		</array>
+		<key>Title</key>
+		<string>Calendar Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>TextEdit</string>
 			<string>Email</string>
 			<string>Messages</string>
 			<string>Maps</string>
-			<string>Fantastical</string>
 			<string>Leap</string>			
 			<string>HoudahSpot</string>
 			<string>Tembo</string>
