@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>slack.png</string>
+			<key>URL</key>
+			<string></string>
+			<key>Title</key>
+			<string>Slack</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.tinyspeck.slackmacgap</string>
+			</array>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://slack.com/downloads/osx</string>
+			<key>Name</key>
+			<string>Slack</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string></string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.slack</string>
+	<key>Extension Name</key>
+	<string>Slack</string>
+</dict>
+</plist>
