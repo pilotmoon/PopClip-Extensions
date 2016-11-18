@@ -16,14 +16,8 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifiers</key>
-			<array>
-				<string>com.tinyspeck.slackmacgap</string>
-			</array>
-			<key>Check Installed</key>
-			<true/>
 			<key>Link</key>
-			<string>https://slack.com/downloads/osx</string>
+			<string>https://slack.com/</string>
 			<key>Name</key>
 			<string>Slack</string>
 		</dict>
