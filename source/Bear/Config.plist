@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>bear.png</string>
+			<key>Service Name</key>
+			<string>Send to Bear</string>
+			<key>Title</key>
+			<string>Bear</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>net.shinyfrog.bear</string>
+			</array>			
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://www.bear-writer.com/</string>
+			<key>Name</key>
+			<string>Bear</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new note in Bear.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.bear</string>
+	<key>Extension Name</key>
+	<string>Bear</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
