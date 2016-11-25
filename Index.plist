@@ -84,6 +84,7 @@
 			<string>NoteAway</string>					
 			<string>Trello</string>		
 			<string>OneNote</string>
+			<string>Bear</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
