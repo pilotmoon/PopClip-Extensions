@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>methane.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Resolve</string>
+			<key>URL</key>
+			<string>http://chemsearch.kovsky.net/index.php?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://chemsearch.kovsky.net/</string>
+			<key>Name</key>
+			<string>Chemistry Reference Resolver</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>mailto:wh.007detective@gmail.com</string>
+			<key>Name</key>
+			<string>Jack Wang</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Resolve your journal references.</string>
+	<key>Extension Identifier</key>
+	<string>com.whj.popclip.extension.crr</string>
+	<key>Extension Image File</key>
+	<string>methane.png</string>
+	<key>Extension Name</key>
+	<string>Reference Resolver</string>
+	<key>Version</key>
+	<integer>0</integer>
+</dict>
+</plist>
