@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>binary.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>B</string>
+				<key>modifiers</key>
+				<integer>1310720</integer>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.evernote.Evernote</string>
+			</array>
+			<key>Title</key>
+			<string>Code</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Apply "code block" formatting in Evernote.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.code-block</string>
+	<key>Extension Name</key>
+	<string>Code Block</string>
+</dict>
+</plist>
