@@ -23,6 +23,6 @@ Original extension [published on BitBucket](https://bitbucket.org/rusnazarov/qui
 Minor changes by Nick Moore in preparation for publication at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
 
 - Added descriptive text to options.
-- Removed Plain Text style option, =for simplicity of user choice.
+- Removed Plain Text style option, for simplicity of user choice.
 - Added some metadata to Config.plist.
 - Changed extension identifier and signed for distribution.
