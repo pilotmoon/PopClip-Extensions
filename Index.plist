@@ -260,6 +260,7 @@
 		<key>Members</key>
 		<array>
 			<string>Dash</string>
+			<string>Quiver</string>
 			<string>RunCommand</string>
 			<string>BBEdit</string>			
 			<string>Markdown</string>			
