@@ -8,11 +8,11 @@
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
-			<string>md2html.png</string>			
+			<string>dfstar.png</string>			
 			<key>Shell Script File</key>
 			<string>md2html.sh</string>
 			<key>Title</key>
-			<string>Markdown to HTML</string>
+			<string>Markdown→HTML</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -20,6 +20,6 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.markdown-to-html</string>
 	<key>Extension Name</key>
-	<string>Markdown to HTML</string>
+	<string>Markdown→HTML</string>
 </dict>
 </plist>

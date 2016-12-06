@@ -1,1 +1,1 @@
-echo $POPCLIP_TEXT | ./Markdown.pl
+echo "$POPCLIP_TEXT" | ./Markdown.pl
