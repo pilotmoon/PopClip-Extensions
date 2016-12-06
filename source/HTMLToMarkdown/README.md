@@ -1,5 +1,4 @@
-Markdown
-========
+# Markdown to HTML
 
 HTML-to-Markdown conversion extension for PopClip.
 
