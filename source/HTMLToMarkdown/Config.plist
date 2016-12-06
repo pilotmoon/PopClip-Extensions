@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert HTML (either HTML source code, or web page content) to Markdown.</string>
+	<string>Convert HTML (both source code and web content) to Markdown.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.html-to-markdown</string>
 	<key>Extension Name</key>
