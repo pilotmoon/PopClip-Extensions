@@ -32,15 +32,6 @@
 	</dict>
 	<dict>
 		<key>Members</key>
-		<array>		
-			<string>CharCount</string>
-			<string>WordCount</string>	
-		</array>
-		<key>Title</key>
-		<string>Text Statistics</string>
-	</dict>	
-	<dict>
-		<key>Members</key>
 		<array>
 			<string>MarkdownToHTML</string>
 			<string>CopyAsMarkdown</string>
@@ -48,6 +39,15 @@
 		<key>Title</key>
 		<string>Markdown</string>
 	</dict>
+	<dict>
+		<key>Members</key>
+		<array>		
+			<string>CharCount</string>
+			<string>WordCount</string>	
+		</array>
+		<key>Title</key>
+		<string>Text Statistics</string>
+	</dict>	
 	<dict>
 		<key>Members</key>
 		<array>
