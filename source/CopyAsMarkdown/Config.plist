@@ -22,7 +22,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Copy content from web pages as Markdown plain text.</string>
+	<string>Copy web content as Markdown text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.copy-as-markdown</string>
 	<key>Extension Name</key>

@@ -12,14 +12,16 @@
 			<key>Shell Script File</key>
 			<string>md2html.sh</string>
 			<key>Title</key>
-			<string>Markdown→HTML</string>
+			<string>Markdown to HTML</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert plain text in Markdown format to HTML markup.</string>
+	<string>Convert Markdown text to HTML markup.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.markdown-to-html</string>
 	<key>Extension Name</key>
 	<string>Markdown→HTML</string>
+	<key>Extension Long Name</key>
+	<string>Markdown to HTML</string>
 </dict>
 </plist>
