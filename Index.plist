@@ -9,6 +9,7 @@
 			<string>PasteAndEnter</string>		
 			<string>Delete</string>
 			<string>SelectAll</string>
+			<string>Highlight</string>	
 		</array>
 		<key>Title</key>
 		<string>Text Editing</string>
@@ -139,7 +140,6 @@
 			<string>TextExpander</string>
 			<string>Typinator</string>			
 			<string>TextSoap</string>
-			<string>PreviewHighlight</string>
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
 			<string>Deliveries</string>		
