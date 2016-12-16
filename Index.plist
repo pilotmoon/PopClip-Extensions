@@ -146,7 +146,8 @@
 			<string>Dropshelf</string>								
 			<string>Unclutter</string>	
 			<string>Slicereader</string>	
-			<string>Slack</string>								
+			<string>Slack</string>	
+			<string>BusyContacts</string>								
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
