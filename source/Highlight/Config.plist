@@ -56,6 +56,9 @@
 				<string>com.devon-technologies.thinkpro2</string>
 				<string>com.Alternote</string>
 			</array>
+			<key>Title</key>
+			<string>Highlight</string>
+		</dict>
 		<dict>
 			<key>Image File</key>
 			<string>hlite.png</string>
@@ -74,12 +77,9 @@
 			<key>Title</key>
 			<string>Highlight</string>
 		</dict>
-			<key>Title</key>
-			<string>Highlight</string>
-		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, and PDF Expert.</string>
+	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.highlight</string>
 	<key>Extension Name</key>
