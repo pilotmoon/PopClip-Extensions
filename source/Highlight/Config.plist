@@ -56,6 +56,24 @@
 				<string>com.devon-technologies.thinkpro2</string>
 				<string>com.Alternote</string>
 			</array>
+		<dict>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>1</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Highlight</string>
+		</dict>
 			<key>Title</key>
 			<string>Highlight</string>
 		</dict>
