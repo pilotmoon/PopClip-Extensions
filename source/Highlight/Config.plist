@@ -86,15 +86,11 @@
 			<true/>
 			<key>Title</key>
 			<string>Highlight</string>
-		<key>Apps</key>
+		<key>Required Apps</key>
 			<array>
-			<dict>
-				<key>Bundle Identifier</key>
 				<string>com.microsoft.Word</string>
-			</dict>
 			</array>
 		</dict>
-
 	</array>
 	<key>Extension Description</key>
 	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert, Microsoft Word.</string>
