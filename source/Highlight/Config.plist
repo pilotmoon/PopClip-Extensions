@@ -86,7 +86,7 @@
 			<true/>
 			<key>Title</key>
 			<string>Highlight</string>
-		<key>Required Apps</key>
+			<key>Required Apps</key>
 			<array>
 				<string>com.microsoft.Word</string>
 			</array>
