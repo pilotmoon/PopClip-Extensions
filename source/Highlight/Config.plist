@@ -77,9 +77,20 @@
 			<key>Title</key>
 			<string>Highlight</string>
 		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>word_highlight.scpt</string>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Long Running</key>
+			<true/>
+		</dict>
+			<key>Required Apps</key>
+				<string>com.microsoft.Word</string>
+			</array>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert.</string>
+	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert, MS Word.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.highlight</string>
 	<key>Extension Name</key>
