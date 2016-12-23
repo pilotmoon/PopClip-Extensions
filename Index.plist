@@ -9,6 +9,7 @@
 			<string>PasteAndEnter</string>		
 			<string>Delete</string>
 			<string>SelectAll</string>
+			<string>Highlight</string>	
 		</array>
 		<key>Title</key>
 		<string>Text Editing</string>
@@ -29,6 +30,15 @@
 		</array>
 		<key>Title</key>
 		<string>Text Transformation</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
+			<string>MarkdownToHTML</string>
+			<string>CopyAsMarkdown</string>
+		</array>
+		<key>Title</key>
+		<string>Markdown</string>
 	</dict>
 	<dict>
 		<key>Members</key>
@@ -81,10 +91,10 @@
 			<string>Yojimbo</string>
 			<string>DEVONthinkPro</string>
 			<string>Notefile</string>
-			<string>NoteAway</string>		
-			<string>Simplenote</string>		
+			<string>NoteAway</string>					
 			<string>Trello</string>		
 			<string>OneNote</string>
+			<string>Bear</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
@@ -130,14 +140,14 @@
 			<string>TextExpander</string>
 			<string>Typinator</string>			
 			<string>TextSoap</string>
-			<string>PreviewHighlight</string>
 			<string>DeskConnect</string>	
 			<string>Parcel</string>		
 			<string>Deliveries</string>		
 			<string>Dropshelf</string>								
 			<string>Unclutter</string>	
 			<string>Slicereader</string>	
-			<string>Slack</string>								
+			<string>Slack</string>	
+			<string>BusyContacts</string>								
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
@@ -260,9 +270,10 @@
 		<key>Members</key>
 		<array>
 			<string>Dash</string>
+			<string>Quiver</string>
+			<string>SnippetsLab</string>
 			<string>RunCommand</string>
-			<string>BBEdit</string>			
-			<string>Markdown</string>			
+			<string>BBEdit</string>				
 			<string>URLEncode</string>
 			<string>HTMLEncode</string>
 			<string>Base64Encode</string>

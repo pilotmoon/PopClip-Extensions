@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string></string>
+	<string>Post the text to a channel in Slack.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.slack</string>
 	<key>Extension Name</key>

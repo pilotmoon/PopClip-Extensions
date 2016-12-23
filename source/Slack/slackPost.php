@@ -28,6 +28,20 @@ $source_url = slack_escape($source_url);
 $source_title = slack_escape($source_title);
 $source_app = slack_escape($source_app);
 
+// insert links into place
+$links = explode("\n", getenv('POPCLIP_URLS'));
+$titles = explode("\n", getenv('POPCLIP_URL_TITLES'));
+$i = 0;
+foreach ($titles as $title) {
+	$title = slack_escape($title);
+	$link = $links[$i];
+	// only if single match!
+	if (mb_strlen($title) > 0 && mb_substr_count($text, $title) == 1) {
+		$text = str_replace($title, '<'.$link.'|'.$title.'>', $text);
+	}
+	$i += 1;
+}
+
 if ($source_url) {
 	// generate source link in slack markup format
 	if ($source_title) {
