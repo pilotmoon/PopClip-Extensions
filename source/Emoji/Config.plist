@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Replace shortcodes such as :grin: with their emoji, and vice-versa.</string>
+	<string>Replace &lt;a href=&quot;http://emoji.codes/&quot;&gt;short codes&lt;/a&gt; such as :grin:, :heart: or :banana: with their emoji, and vice-versa.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.emoji</string>
 	<key>Extension Name</key>
