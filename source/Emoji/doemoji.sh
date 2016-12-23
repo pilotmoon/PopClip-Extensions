@@ -1,1 +1,2 @@
-/bin/echo -n `ruby -I gemoji/lib -I gemoji-parser/lib doemoji.rb "$POPCLIP_TEXT"`
+result=`ruby -I gemoji/lib -I gemoji-parser/lib doemoji.rb "$POPCLIP_TEXT"`
+/bin/echo -n "$result"
