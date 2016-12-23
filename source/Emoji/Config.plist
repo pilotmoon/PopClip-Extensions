@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>capitalize.png</string>
+			<key>Shell Script File</key>
+			<string>doemoji.sh</string>
+			<key>Title</key>
+			<string>Emoji</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Replace shortcodes such as :grin: with their emoji, and vice-versa.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.emoji</string>
+	<key>Extension Name</key>
+	<string>Emoji</string>	
+</dict>
+</plist>

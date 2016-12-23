@@ -1,0 +1,1 @@
+/bin/echo -n `ruby -I gemoji/lib -I gemoji-parser/lib doemoji.rb "$POPCLIP_TEXT"`
