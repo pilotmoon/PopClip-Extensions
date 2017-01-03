@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>second.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>2</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Color 2</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>third.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>3</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Color 3</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>fourth.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>4</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Color 4</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>custom.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>5</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Underline</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>underline.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>6</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Underline</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>strike.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>7</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Strikethrough</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>squiggle.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>8</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Squiggle</string>
+		</dict>
+		<dict>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>0</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Clear</string>
+		</dict>
+		<dict>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>B</string>
+				<key>modifiers</key>
+				<real>1966080</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Redact</string>
+		</dict>
+				<dict>
+			<key>Image File</key>
+			<string>underline.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>U</string>
+				<key>modifiers</key>
+				<real>1310720</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.apple.Preview</string>
+			</array>
+			<key>Title</key>
+			<string>Underline</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>strike.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>S</string>
+				<key>modifiers</key>
+				<real>1310720</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.apple.Preview</string>
+			</array>
+			<key>Title</key>
+			<string>Strikethrough</string>
+		</dict>
+		<dict>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>N</string>
+				<key>modifiers</key>
+				<real>1310720</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.apple.Preview</string>
+			</array>
+			<key>Title</key>
+			<string>Note</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Advanced PDF tools, highlight, underline, comment.</string>
+	<key>Extension Identifier</key>
+	<string>com.mso.popclip.extension.advancedPDF</string>
+	<key>Extension Image File</key>
+	<string>Advanced_PDF.png</string>
+	<key>Extension Name</key>
+	<string>Advanced PDF</string>
+</dict>
+</plist>
