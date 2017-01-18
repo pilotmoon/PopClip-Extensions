@@ -2,58 +2,58 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
 	<key>Extension Name</key>
-	<dict>
-		<key>en</key>
-		<string>Delete</string>
-		<key>fr</key>
-		<string>Supprimer</string>
-	</dict>
+		<string>Accordance</string>
 	<key>Extension Description</key>
-	<string>Delete the selected text.</string>
+		<string>Copy selected text from Accordance formatted the way you need.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.delete</string>
-	<key>Extension Image File</key>
-	<string>delete.png</string>
-	<key>Position</key>
-	<real>1.1</real>
+		<string>com.saunders.accordance.extension</string>
+	<key>Version</key>
+		<real>0.1</real>
+	<key>Required Apps</key>
+		<array>
+			<string>com.OakTree.Accordance</string>
+		</array>
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Requirements</key>
-			<array>
-				<string>paste</string>
-			</array>
-			<key>Regular Expression</key>
-			<string>(?s)^$</string>
-			<key>Stay Visible</key>
-			<true/>
 			<key>Title</key>
-			<string>⌫</string>
+				<string>Copy Citation</string>
+			<key>Requirements</key>
+				<string>copy</string>
 			<key>Key Combo</key>
 			<dict>
-				<key>keyCode</key>
-				<integer>51</integer>
+				<key>keyChar</key>
+					<string>C</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+					<integer>1310720</integer>
 			</dict>
 		</dict>
 		<dict>
-			<key>Requirements</key>
-			<array>
-				<string>cut</string>
-			</array>
 			<key>Title</key>
-			<string>⌫</string>
+				<string>Copy w/o Superscript</string>
+			<key>Requirements</key>
+				<string>copy</string>
 			<key>Key Combo</key>
 			<dict>
-				<key>keyCode</key>
-				<integer>51</integer>
+				<key>keyChar</key>
+					<string>C</string>
 				<key>modifiers</key>
-				<integer>0</integer>
+					<integer>1572864</integer>
 			</dict>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+				<string>com.OakTree.Accordance</string>
+			<key>Check Installed</key>
+				<true/>
+			<key>Link</key>
+				<string>http://accordancebible.com/</string>
+			<key>Name</key>
+				<string>Accordance Bible Software</string>
 		</dict>
 	</array>
 </dict>
