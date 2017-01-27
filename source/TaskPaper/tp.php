@@ -7,11 +7,12 @@ $popclip_text=trim(force_string(getenv('POPCLIP_TEXT')));
 $tp2bid="com.hogbaysoftware.TaskPaper.mac";
 $tp3bid="com.hogbaysoftware.TaskPaper3";
 $tp3dbid="com.hogbaysoftware.TaskPaper3.direct";
-$bid=trim(`./SelectApp ${tp3dbid} ${tp3bid} ${tp2bid}`);
+$tp3sbid="com.hogbaysoftware.TaskPaper3-setapp";
+$bid=trim(`./SelectApp ${tp3dbid} ${tp3sbid} ${tp3bid} ${tp2bid}`);
 if ($bid===$tp2bid) {
 	do_tp2($popclip_text);
 }
-else if ($bid==$tp3bid||$bid==$tp3dbid) {
+else if ($bid==$tp3bid||$bid==$tp3dbid||$bid==$tp3sbid) {
 	do_tp3($popclip_text, $bid);
 }
 
