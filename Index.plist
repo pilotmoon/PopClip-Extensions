@@ -102,6 +102,15 @@
 	<dict>
 		<key>Members</key>
 		<array>
+			<string>Scrivener</string>
+			<string>Ulysses</string>
+		</array>
+		<key>Title</key>
+		<string>Writing Apps</string>
+	</dict>
+	<dict>
+		<key>Members</key>
+		<array>
 			<string>OmniFocus</string>
 			<string>Things</string>
 			<string>2Do</string>
@@ -147,7 +156,7 @@
 			<string>Unclutter</string>	
 			<string>Slicereader</string>	
 			<string>Slack</string>	
-			<string>BusyContacts</string>								
+			<string>BusyContacts</string>
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
