@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>butterflynib.png</string>			
+			<key>URL</key>
+			<string>ulysses://x-callback-url/new-sheet?text={popclip text}&amp;x-source=PopClip</string>
+			<key>Title</key>
+			<string>Spotify</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.soulmen.ulysses-setapp</string>	
+				<string>com.soulmen.ulysses3.demo</string>
+				<string>com.soulmen.ulysses3</string>					
+			</array>	
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.ulyssesapp.com</string>
+			<key>Name</key>
+			<string>Ulysses</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new inbox sheet in Ulysses.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.ulysses</string>
+	<key>Extension Name</key>
+	<string>Ulysses</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>
