@@ -10,7 +10,7 @@
 			<key>URL</key>
 			<string>ulysses://x-callback-url/new-sheet?text={popclip text}&amp;x-source=PopClip</string>
 			<key>Title</key>
-			<string>Spotify</string>
+			<string>Ulysses</string>
 		</dict>
 	</array>
 	<key>Apps</key>
