@@ -60,8 +60,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Say</string>
-			<string>Pronounce</string>			
+			<string>Say</string>	
 		</array>
 		<key>Title</key>
 		<string>Text-to-speech</string>
