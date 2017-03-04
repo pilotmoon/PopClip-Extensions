@@ -6,7 +6,9 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string></string>			
+			<string></string>
+			<key>Script Interpreter</key>
+			<string>/bin/bash</string>
 			<key>Shell Script File</key>
 			<string>sublime.sh</string>
 			<key>Title</key>
