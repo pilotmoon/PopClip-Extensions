@@ -38,7 +38,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Translate the text using Instant Translate</string>
+	<string>Translate the text using Instant Translate.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.insttranslate</string>
 	<key>Extension Name</key>
