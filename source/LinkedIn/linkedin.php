@@ -18,10 +18,10 @@ if (1===preg_match("/^\\s*([^\\s]+(?:\\s[^\\s]+){0,3})(?:\\s([^\\s]+))\\s*$/us",
 	$first=$matches[1];
 	$last=$matches[2];
 	if ($app) {
-		`open -b $app "http://www.linkedin.com/pub/dir/?first=$first+&last=$last&search=Go"`;
+		`open -b $app "https://www.linkedin.com/pub/dir/?first=$first+&last=$last&search=Go"`;
 	}
 	else {
-		`open "http://www.linkedin.com/pub/dir/?first=$first+&last=$last&search=Go"`;
+		`open "https://www.linkedin.com/pub/dir/?first=$first+&last=$last&search=Go"`;
 	}
 }
 ?>
