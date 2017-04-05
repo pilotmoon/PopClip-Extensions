@@ -245,7 +245,8 @@
 			<string>Pocket</string>
 			<string>Instapaper</string>			
 			<string>Pinboard</string>
-			<string>Leech</string>			
+			<string>Leech</string>		
+			<string>Downie</string>
 			<string>OpenInSafari</string>
 			<string>OpenInChrome</string>
 			<string>OpenInFirefox</string>
