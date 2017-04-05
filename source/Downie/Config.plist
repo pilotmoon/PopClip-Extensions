@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>downiepin.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurls</string>
+			</array>
+			<key>Shell Script File</key>
+			<string>open-in-downie.sh</string>
+			<key>Title</key>
+			<string>Downie</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.charliemonroe.Downie.2.0</string>
+				<string>com.charliemonroe.Downie-setapp</string>
+				<string>com.charliemonroe.Downie</string>
+			</array>
+			<key>Link</key>
+			<string>http://www.downieapp.com/</string>
+			<key>Name</key>
+			<string>Downie</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Download the video on the linked page using Downie.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.open-in-downie</string>
+	<key>Extension Name</key>
+	<string>Downie</string>
+</dict>
+</plist>
