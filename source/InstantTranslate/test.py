@@ -12,7 +12,7 @@ args = parser.parse_args()
 c = access.get_credentials()
 print c
 
-translator = mstrans.Translator(client_id=c[0], client_secret=c[1])
+translator = mstrans.Translator(key=c)
 translation = translator.translate_text(text=args.text,
                                         from_lang=args.from_lang,
                                         to_lang=args.to_lang)

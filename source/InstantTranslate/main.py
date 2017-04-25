@@ -56,10 +56,13 @@ LANG_CODES = {
 
 import os, access, mstrans
 
-c = access.get_credentials()
-translator = mstrans.Translator(client_id=c[0], client_secret=c[1])
-translation = translator.translate_text(text=os.environ['POPCLIP_TEXT'],
-                                        from_lang='',
-                                        to_lang=LANG_CODES[os.environ['POPCLIP_OPTION_DESTLANG']])
+try:
+    key = access.get_credentials()
+    translator = mstrans.Translator(key=key)
+    translation = translator.translate_text(text=os.environ['POPCLIP_TEXT'],
+                                           from_lang='',
+                                           to_lang=LANG_CODES[os.environ['POPCLIP_OPTION_DESTLANG']])
 
-print translation.encode('utf-8')
+    print translation.encode('utf-8')
+except Exception as e:
+    exit(1)
