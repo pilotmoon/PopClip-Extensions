@@ -183,7 +183,8 @@
 			<string>GoogleMaps</string>
 			<string>GoogleScholar</string>	
 			<string>TwitterSearch</string>	
-			<string>Amazon</string>			
+			<string>Amazon</string>	
+			<string>CamelCamelCamel</string>	
 			<string>Ebay</string>											
 			<string>Etsy</string>
 			<string>IMDb</string>	
