@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*Documentation for PopClip 1.5.6*
+*Documentation for PopClip 1.5.7*
 
 ## Introduction
 
@@ -52,6 +52,12 @@ If you find this gets annoying while you are testing your work, you can turn off
     defaults write com.pilotmoon.popclip LoadUnsignedExtensions -bool YES
 
 Please be aware that PopClip extensions can contain arbitrary executable scripts. Be careful about the extensions you create, and be wary about loading extensions you get from someone else. Proceed at your own risk.
+
+## Extra Debugging Output
+
+To help you when debugging Script extensions, PopClip can be configure to write script output and debug info to the console. To enable it, run this command in Terminal:
+
+    defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
 ## General Overview
 
