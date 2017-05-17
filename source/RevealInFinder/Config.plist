@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>RevealInFinder.applescript</string>
+			<key>Image File</key>
+			<string>Reveal.png</string>
+			<key>Title</key>
+			<string>Reveal In Finder</string>
+			<key>Regular Expression</key>
+			<string>(?is)(?:file://\S+)|(?:[/]\S+)|(?:/)</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Reveal paths in Finder</string>
+	<key>Extension Identifier</key>
+	<string>com.dmitrywolf.popclip.extension.finder</string>
+	<key>Extension Name</key>
+	<string>Reveal In Finder</string>
+	<key>Version</key>
+	<integer>1</integer>
+	<key>Extension Image File</key>
+	<string>Extension.png</string>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>dmitrywolf.com</string>
+			<key>Name</key>
+			<string>Dmitry Wolf</string>
+		</dict>
+	</array>
+</dict>
+</plist>
