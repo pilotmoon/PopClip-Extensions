@@ -21,7 +21,7 @@
 			<key>Check Installed</key>
 			<true/>
 			<key>Bundle Identifier</key>
-			<string>com.culturedcode.things</string>
+			<string>com.culturedcode.ThingsMac</string>
 			<key>Link</key>
 			<string>http://culturedcode.com/things/</string>
 			<key>Name</key>
@@ -29,10 +29,10 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new to-do in Things 2.</string>
+	<string>Create a new to-do in Things 3.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.things</string>
+	<string>com.pilotmoon.popclip.extension.things3</string>
 	<key>Extension Name</key>
-	<string>Things</string>	
+	<string>Things</string>
 </dict>
 </plist>
