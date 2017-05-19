@@ -5,8 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>AppleScript File</key>
-			<string>ThingsAddToDo.applescript</string>
+			<key>URL</key>
+			<string>things:add?title={popclip text}</string>
 			<key>Image File</key>
 			<string>boxtick.png</string>
 			<key>Regular Expression</key>
