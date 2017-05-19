@@ -25,7 +25,7 @@
 			<key>Link</key>
 			<string>http://culturedcode.com/things/</string>
 			<key>Name</key>
-			<string>Things</string>
+			<string>Things 3</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -33,6 +33,6 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.things3</string>
 	<key>Extension Name</key>
-	<string>Things</string>
+	<string>Things 3</string>
 </dict>
 </plist>
