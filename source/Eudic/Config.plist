@@ -5,18 +5,39 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>AppleScript File</key>
+			<string>eudic.applescript</string>
 			<key>Image File</key>
 			<string>eudic.png</string>
-			<key>Service Name</key>
-			<string>Eudic • 翻译选中内容</string>
 			<key>Title</key>
 			<string>Search In Eudic</string>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+		    <key>Option Identifier</key>
+			<string>eudic_version</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>EuDic Version</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>com.eusoft.freeeudic</string>
+				<string>com.eusoft.eudic</string>
+			</array>		
+			<key>Option Description</key>
+			<string></string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
 	<string>Look up the selected text in Eudic, the Chinese-English dictionary.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.eudic</string>
+	<string>com.pilotmoon1.popclip.extension.eudic</string>
 	<key>Extension Name</key>
 	<string>Eudic</string>
 	<key>Apps</key>
