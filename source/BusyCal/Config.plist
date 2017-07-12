@@ -23,13 +23,13 @@
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://www.busycal.com/busycal/</string>
+			<string>https://www.busymac.com/busycal/</string>
 			<key>Name</key>
-			<string>BusyCal</string>
+			<string>BusyCal 3</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Use the text to create a calendar entry in BusyCal.</string>
+	<string>Use the text to create a calendar entry in BusyCal 3.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.busycal</string>
 	<key>Extension Name</key>
