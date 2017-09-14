@@ -20,7 +20,8 @@
 			<array>
 				<string>com.soulmen.ulysses-setapp</string>	
 				<string>com.soulmen.ulysses3.demo</string>
-				<string>com.soulmen.ulysses3</string>					
+				<string>com.soulmen.ulysses3</string>		
+				<string>com.ulyssesapp.mac</string> <!--Added for Ulysses 11 on MAS 14 Sep 2017 -->			
 			</array>	
 			<key>Check Installed</key>
 			<true/>
