@@ -151,12 +151,12 @@
 			<string>Typinator</string>			
 			<string>TextSoap</string>	
 			<string>Parcel</string>		
-			<string>Deliveries</string>		
-			<string>Dropshelf</string>								
-			<string>Unclutter</string>	
-			<string>Slicereader</string>	
+			<string>Deliveries</string>					
+			<string>Unclutter</string>				
 			<string>Slack</string>	
 			<string>BusyContacts</string>
+			<string>Dropshelf</string>										
+			<string>Yoink</string>	
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
