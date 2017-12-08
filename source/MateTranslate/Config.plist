@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>mate.png</string>
+			<key>Service Name</key>
+			<string>Translate with Mate Translate</string>
+			<key>Title</key>
+			<string>Mate Translate</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+ 		<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>andriiliakh.Instant-Translate</string>
+				<string>com.twopeoplesoftware.InstantTranslate-nomas</string>
+				<string>com.twopeoplesoftware.Instant-Translate-setapp</string>
+			</array>
+            <key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://matetranslate.com/mac</string>
+			<key>Name</key>
+			<string>Instant Translate</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Translate the text using Mate Translate.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.matetranslate</string>
+	<key>Extension Name</key>
+	<string>Mate Translate</string>
+</dict>
+</plist>
