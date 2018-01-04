@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.literatureandlatte.scrivener2</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.literatureandlatte.scrivener2</string>
+				<string>com.literatureandlatte.scrivener3</string>	
+			</array>			
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -27,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a new clipping in the currently open Scrivener document.</string>
+	<string>Make a new clipping in the currently open Scrivener document. (Now updated for Scrivener 3.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.scrivener</string>
 	<key>Extension Name</key>
