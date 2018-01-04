@@ -19,3 +19,5 @@ Scrivener
 ### ⇧⌘L
 Alternote
 DevonThink
+
+4 Jan 2018: Added support for Scrivener 3

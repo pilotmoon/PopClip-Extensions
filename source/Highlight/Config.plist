@@ -37,6 +37,7 @@
 			<key>Required Apps</key>
 			<array>
 				<string>com.literatureandlatte.scrivener2</string>
+				<string>com.literatureandlatte.scrivener3</string>
 				<string>com.apple.iWork.Pages</string>
 			</array>
 			<key>Title</key>
