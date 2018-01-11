@@ -10,7 +10,7 @@
 			<key>Service Name</key>
 			<string>Add to Deliveries</string>
 			<key>Title</key>
-			<string>Parcel</string>
+			<string>Deliveries</string>
 			<key>Regular Expression</key>
 			<string>(?i)\b(?=[A-Z0-9]?[A-Z0-9-]*[0-9][A-Z0-9-]*[A-Z0-9]?)[A-Z0-9-]{5,}\b</string>
 		</dict>
