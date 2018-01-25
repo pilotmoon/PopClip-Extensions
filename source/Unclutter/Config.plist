@@ -30,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create new Unclutter note with selected text. (Requires Unclutter 2.0.6 or later.)</string>
+	<string>Create new Unclutter note with selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.unclutter</string>
 	<key>Extension Name</key>
