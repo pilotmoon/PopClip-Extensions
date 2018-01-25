@@ -22,8 +22,11 @@
 			<string>Unclutter</string>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.softwareambience.Unclutter</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.softwareambience.Unclutter</string>
+				<string>com.softwareambience.Unclutter-setapp</string>
+			</array>
 		</dict>
 	</array>
 	<key>Extension Description</key>
