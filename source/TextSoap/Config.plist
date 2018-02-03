@@ -20,8 +20,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.unmarked.textsoap8</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.unmarked.textsoap8</string>
+				<string>com.unmarked.textsoap-setapp</string>
+			</array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
