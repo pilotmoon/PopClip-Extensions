@@ -14,7 +14,7 @@
 			<key>Shell Script File</key>
 			<string>main.py</string>
 			<key>Title</key>
-			<string>Translate</string>
+			<string>Instant Translate</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,200}$</string>
 		</dict>
@@ -24,7 +24,7 @@
 	<key>Extension Identifier</key>
 	<string>com.popclip.extension.instant-translate</string>
 	<key>Extension Name</key>
-	<string>Translate</string>
+	<string>Instant Translate</string>
 	<key>Options</key>
 	<array>
 		<dict>
