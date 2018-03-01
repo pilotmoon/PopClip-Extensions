@@ -170,7 +170,8 @@
 			<string>TextSoap</string>	
 			<string>Parcel</string>		
 			<string>Deliveries</string>												
-			<string>Slack</string>				
+			<string>Slack</string>		
+			<string>DayOne</string>				
 		</array>
 		<key>Title</key>
 		<string>Other Apps</string>
