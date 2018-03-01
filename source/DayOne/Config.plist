@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>ribbon.png</string>
-			<key>Service Name</key>
-			<string>New Day One Entry With Selection</string>
+			<string>dayone.png</string>
+			<key>URL</key>
+			<string>dayone://post?entry={popclip text}</string>
 			<key>Title</key>
 			<string>Day One</string>
 		</dict>
@@ -30,12 +30,10 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a journal entry using Day One. Now updated to support Day One 2.</string>
+	<string>Make a journal entry using Day One.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.dayone</string>
 	<key>Extension Name</key>
 	<string>Day One</string>
-	<key>Required Software Version</key>
-	<integer>701</integer>
 </dict>
 </plist>
