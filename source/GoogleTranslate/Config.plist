@@ -12,13 +12,99 @@
 	<array>
 		<dict>
 			<key>URL</key>
-			<string>http://translate.google.com/?langpair=auto%7Cauto&amp;text={popclip text}</string>
+			<string>http://{popclip option site}/?langpair=auto%7Cauto&amp;text={popclip text}</string>
 			<key>Image File</key>
 			<string>gtrans.png</string>
 			<key>Title</key>
 			<string>Google Translate</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,1900}$</string>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>site</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Google Translate Site</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>translate.google.com</string>
+				<string>translate.google.ae</string>
+				<string>translate.google.at</string>
+				<string>translate.google.az</string>
+				<string>translate.google.be</string>
+				<string>translate.google.bg</string>
+				<string>translate.google.ca</string>
+				<string>translate.google.ch</string>
+				<string>translate.google.cl</string>
+				<string>translate.google.cn</string>
+				<string>translate.google.co.id</string>
+				<string>translate.google.co.il</string>
+				<string>translate.google.co.in</string>
+				<string>translate.google.co.jp</string>
+				<string>translate.google.co.kr</string>
+				<string>translate.google.co.ma</string>
+				<string>translate.google.co.nz</string>
+				<string>translate.google.co.th</string>
+				<string>translate.google.co.uk</string>
+				<string>translate.google.co.ve</string>
+				<string>translate.google.co.za</string>
+				<string>translate.google.com.ar</string>
+				<string>translate.google.com.au</string>
+				<string>translate.google.com.br</string>
+				<string>translate.google.com.co</string>
+				<string>translate.google.com.do</string>
+				<string>translate.google.com.ec</string>
+				<string>translate.google.com.eg</string>
+				<string>translate.google.com.hk</string>
+				<string>translate.google.com.kw</string>
+				<string>translate.google.com.ly</string>
+				<string>translate.google.com.mx</string>
+				<string>translate.google.com.my</string>
+				<string>translate.google.com.ng</string>
+				<string>translate.google.com.pe</string>
+				<string>translate.google.com.ph</string>
+				<string>translate.google.com.pk</string>
+				<string>translate.google.com.qa</string>
+				<string>translate.google.com.sa</string>
+				<string>translate.google.com.sg</string>
+				<string>translate.google.com.tn</string>
+				<string>translate.google.com.tr</string>
+				<string>translate.google.com.tw</string>
+				<string>translate.google.com.ua</string>
+				<string>translate.google.com.vn</string>
+				<string>translate.google.cz</string>
+				<string>translate.google.de</string>
+				<string>translate.google.dk</string>
+				<string>translate.google.dz</string>
+				<string>translate.google.es</string>
+				<string>translate.google.fi</string>
+				<string>translate.google.fr</string>
+				<string>translate.google.gr</string>
+				<string>translate.google.hr</string>
+				<string>translate.google.hu</string>
+				<string>translate.google.ie</string>
+				<string>translate.google.it</string>
+				<string>translate.google.kz</string>
+				<string>translate.google.lk</string>
+				<string>translate.google.lt</string>
+				<string>translate.google.nl</string>
+				<string>translate.google.no</string>
+				<string>translate.google.pl</string>
+				<string>translate.google.pt</string>
+				<string>translate.google.ro</string>
+				<string>translate.google.rs</string>
+				<string>translate.google.ru</string>
+				<string>translate.google.se</string>
+				<string>translate.google.sk</string>
+			</array>
 		</dict>
 	</array>
 </dict>
