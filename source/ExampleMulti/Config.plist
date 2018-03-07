@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Shell Script File</key>
+			<string>dummy.sh</string>
+			<key>Title</key>
+			<string>AAA</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-choice=Option A</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Shell Script File</key>
+			<string>dummy.sh</string>
+			<key>Title</key>
+			<string>BBB</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-choice=Option B</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Shell Script File</key>
+			<string>dummy.sh</string>
+			<key>Title</key>
+			<string>CCC</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-choice=Option C</string>
+			</array>
+		</dict>		
+	</array>
+	<key>Extension Description</key>
+	<string>Example extebsion.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.example-multi-1</string>
+	<key>Extension Name</key>
+	<string>Example</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Default Value</key>
+			<string>Option A</string>
+			<key>Option Identifier</key>
+			<string>choice</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Choice</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Option A</string>
+				<string>Option B</string>
+				<string>Option C</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>
