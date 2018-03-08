@@ -154,6 +154,16 @@
 		<key>Title</key>
 		<string>Drag &amp; Drop Utilities</string>
 	</dict>
+		<dict>
+		<key>Members</key>
+		<array>
+			<string>Alfred</string>		
+			<string>LaunchBar</string>				
+			<string>Quicksilver</string>
+		</array>
+		<key>Title</key>
+		<string>Launcher Utilities</string>
+	</dict>
 	<dict>
 		<key>Members</key>
 		<array>
@@ -164,8 +174,6 @@
 			<string>Leap</string>			
 			<string>HoudahSpot</string>
 			<string>Tembo</string>
-			<string>Alfred</string>
-			<string>LaunchBar</string>			
 			<string>TextExpander</string>
 			<string>Typinator</string>			
 			<string>TextSoap</string>	
