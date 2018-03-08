@@ -7,10 +7,10 @@
 		<dict>
 			<key>Image File</key>
 			<string>qs2.png</string>
-			<key>Service Name</key>
-			<string>Get Current Selection (Do Not Change Shortcut)</string>
+			<key>AppleScript File</key>
+			<string>qs.applescript</string>
 			<key>Title</key>
-			<string>QS</string>
+			<string>Quicksilver</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -27,10 +27,10 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Send the text to Quicksilver.</string>
+	<string>Activate Quicksilver with the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.quicksilver</string>
 	<key>Extension Name</key>
-	<string>Quicksliver</string>
+	<string>Quicksilver</string>
 </dict>
 </plist>
