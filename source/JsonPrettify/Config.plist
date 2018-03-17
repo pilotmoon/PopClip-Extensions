@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Regular Expression</key>
+			<string>^\{\s*\".*\}$|^\[\n?\{\s*\".*\}\n?\]$</string>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>jsonprettify.png</string>
+			<key>Script Interpreter</key>
+			<string>/bin/sh</string>
+			<key>Shell Script File</key>
+			<string>jsonprettify.sh</string>
+			<key>Title</key>
+			<string>JSON Prettify</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://github.com/StevenRudenko</string>
+			<key>Name</key>
+			<string>Steven Rudenko</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Prettifies JSON string.</string>
+	<key>Extension Identifier</key>
+	<string>com.github.stevenrudenko.popclip.extension.jsonprettify</string>
+	<key>Extension Name</key>
+	<string>JSON Prettify</string>
+</dict>
+</plist>
