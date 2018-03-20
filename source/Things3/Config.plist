@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>URL</key>
-			<string>things:add?title={popclip text}</string>
+			<string>things:add?title={popclip text}&amp;show-quick-entry=true</string>
 			<key>Image File</key>
 			<string>boxtick.png</string>
 			<key>Regular Expression</key>
