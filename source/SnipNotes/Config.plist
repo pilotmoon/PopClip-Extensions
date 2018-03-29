@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>snipnotes.png</string>
+			<key>Service Name</key>
+			<string>Save in SnipNotes</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Save in SnipNotes</string>
+				<key>de</key>
+				<string>In SnipNotes speichern</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Create a new note in SnipNotes with the selected text.</string>
+		<key>de</key>
+		<string>Erstellt eine neue Notiz in SnipNotes mit dem ausgewählten Text.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>de.lisczyk.felix.SnipNotes.popclip.extension</string>
+	<key>Extension Name</key>
+	<string>SnipNotes</string>
+	<key>Required OS Version</key>
+	<string>10.11</string>
+	<key>Version</key>
+	<integer>1</integer>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>SnipNotes</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.snipnotes.de</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>de.lisczyk.felix.SnipNotesMacApp</string>
+				<string>de.lisczyk.felix.SnipNotesMacApp.Beta</string>
+			</array>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Felix Lisczyk</string>
+			<key>Link</key>
+			<string>https://www.snipnotes.de</string>
+		</dict>
+	</array>
+</dict>
+</plist>
