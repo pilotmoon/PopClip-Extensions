@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<string>Compose new mail.</string>
 	<key>Extension Identifier</key>
-	<string>me.canor.mailb1</string>
+	<string>me.canor.mail</string>
 	<key>Extension Name</key>
 	<string>mail</string>
 	<key>Required Software Version</key>
