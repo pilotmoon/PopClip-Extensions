@@ -5,21 +5,23 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>AppleScript File</key>
+			<string>mail.applescript</string>
 			<key>Image File</key>
 			<string>envelopeicon.png</string>
+			<key>Long Running</key>
+			<true/>
 			<key>Title</key>
-			<string>Email</string>
-			<key>URL</key>
-			<string>mailto:?body={popclip text}</string>
+			<string>mail</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new message in the default mail client (for example Mail, Postbox or Airmail).</string>
+	<string>Compose new mail.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.generic-mail</string>
+	<string>me.canor.mailb1</string>
 	<key>Extension Name</key>
-	<string>Email</string>
-	<key>Version</key>
+	<string>mail</string>
+	<key>Required Software Version</key>
 	<integer>2</integer>
 </dict>
 </plist>
