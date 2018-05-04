@@ -12,11 +12,13 @@
 			<key>Shell Script File</key>
 			<string>nospaces.php</string>
 			<key>Title</key>
-			<string>NoSpaces</string>
+			<string>Remove Spaces</string>
+			<key>Image File</key>
+			<string>remspace.png</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Remove all spaces from the selected text.</string>
+	<string>Remove spaces from the selected text.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.remove-spaces</string>
 	<key>Extension Name</key>

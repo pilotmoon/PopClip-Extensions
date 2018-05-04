@@ -25,7 +25,8 @@
 			<string>Quotes</string>
 			<string>Brackets</string>
 			<string>Hyphenate</string>				
-			<string>Underscore</string>				
+			<string>Underscore</string>			
+			<string>RemoveSpaces</string>				
 			<string>FullHalfWidth</string>
 		</array>
 		<key>Title</key>
