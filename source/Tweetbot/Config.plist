@@ -28,7 +28,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>botduck.png</string>
+			<string>Tweetbot3.png</string>
 			<key>URL</key>
 			<string>tweetbot:///post?text={popclip text}</string>
 			<key>Title</key>
