@@ -7,39 +7,34 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.tweetbot</string>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using Tweetbot.</string>
+	<string>Compose a new tweet using Tweetbot. (Now updated to support Tweetbot 3.)</string>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://tapbots.com/tweetbot/mac/</string>
+			<string>https://tapbots.com/tweetbot/mac/</string>
 			<key>Name</key>
 			<string>Tweetbot</string>
-			<key>Bundle Identifier</key>
-			<string>com.tapbots.TweetbotMac</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.tapbots.TweetbotMac</string>
+				<string>com.tapbots.Tweetbot3Mac</string>
+			</array>
 		</dict>
 	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>botduck.png</string>
+			<string>Tweetbot3.png</string>
 			<key>URL</key>
 			<string>tweetbot:///post?text={popclip text}</string>
 			<key>Title</key>
 			<string>TweetBot</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,195}$</string>
-		</dict>
-		<dict>
-			<key>URL</key>
-			<string>tweetbot:///user_profile/{popclip text}</string>
-			<key>Title</key>
-			<string>{popclip text}</string>
-			<key>Regular Expression</key>
-			<string>^@\w{1,20}$</string>
 		</dict>
 	</array>
 </dict>
