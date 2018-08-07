@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>camel.png</string>						
 			<key>Title</key>
-			<string>Etsy</string>
+			<string>CamelCamelCamel</string>
 			<key>URL</key>
 			<string>https://camelcamelcamel.com/search?sq={popclip text}</string>
 		</dict>
