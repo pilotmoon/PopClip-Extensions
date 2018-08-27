@@ -234,7 +234,7 @@ Options are presented to the user in a preferences window and are saved by PopCl
 |`Option Identifier`|String|Required|Unique identifying string for this option. **It must be an all-lowercase string.** This field is used to pass the option to your script. (See [Script Fields](#script-fields).)|
 |`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box) or `multiple` (pop-up box with multiple choice options).|
 |`Option Label`|String or Dictionary|Required|Label to appear in the user interface for this option.|
-|`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specified the default value of the option.|
+|`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specifies the default value of the option.|
 |`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values to show in the pop-up button.|
 
 
