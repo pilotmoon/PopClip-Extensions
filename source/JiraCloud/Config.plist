@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string></string>			
+			<string>JiraLogo.png</string>			
 			<key>Title</key>
 			<string>Jira</string>
 			<key>URL</key>
