@@ -27,7 +27,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Clip the selected text to Curiota.</string>
+	<string>Create a new note in Curiota.</string>
 	<key>Extension Identifier</key>
 	<string>com.zengobi.curiota.popclip</string>
 	<key>Extension Image File</key>
