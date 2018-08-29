@@ -3,7 +3,7 @@ Curiota PopClip Extension
 
 ## 29 Aug 2018
 
-Modified by Nick Moore to change bundle identifier and sign for publication on Pilotnoon website.
+Modified by Nick Moore to change bundle identifier and sign for publication on Pilotmoon website.
 
 ## Original README
 
