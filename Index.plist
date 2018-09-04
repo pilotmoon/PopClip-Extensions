@@ -192,10 +192,12 @@
 			<string>GoogleSearch</string>								
 			<string>Baidu</string>
 			<string>Bing</string>		
+			<string>YahooJapanSearch</string>
+			<string>YahooSearch</string>
 			<string>DuckDuckGo</string>	
-			<string>StartPage</string>							
+			<string>StartPage</string>										
 			<string>Yandex</string>
-			<string>Naver</string>
+			<string>Naver</string>			
 		</array>
 		<key>Title</key>
 		<string>Web Search</string>
