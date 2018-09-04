@@ -15,6 +15,15 @@
 			<string>https://search.yahoo.co.jp/search?p={popclip text}</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://yahoo.co.jp/</string>
+			<key>Name</key>
+			<string>Yahoo! Japan</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
 	<string>Search the web using Yahoo! Japan.</string>
 	<key>Extension Identifier</key>

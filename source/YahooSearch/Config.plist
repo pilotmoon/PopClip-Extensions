@@ -54,5 +54,14 @@
 			</array>
 		</dict>
 	</array>
+		<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://yahoo.com/</string>
+			<key>Name</key>
+			<string>Yahoo!</string>
+		</dict>
+	</array>
 </dict>
 </plist>
