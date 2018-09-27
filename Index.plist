@@ -71,6 +71,7 @@
 		<array>
 			<string>GoogleTranslate</string>
 			<string>BingTranslator</string>
+			<string>DeepLTranslator</string>
 			<string>InstantTranslate</string>	
 			<string>TranslateTab</string>									
 			<string>MateTranslate</string>
