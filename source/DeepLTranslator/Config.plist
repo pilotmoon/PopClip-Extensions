@@ -34,7 +34,7 @@
 	<array>
 		<dict>
 			<key>Option Default Value</key>
-			<string>de</string>
+			<string>en</string>
 			<key>Option Identifier</key>
 			<string>lang</string>
 			<key>Option Label</key>
@@ -46,6 +46,7 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
+				<string>en</string>
 				<string>de</string>
 				<string>fr</string>
 				<string>es</string>
