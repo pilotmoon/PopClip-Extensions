@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>show-status</string>
+			<key>Image File</key>
+			<string>pushbullet.png</string>
+			<key>Long Running</key>
+			<true/>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>push_link.php</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Pushbullet (Link)</string>
+			</dict>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
+		</dict>
+		<dict>
+			<key>After</key>
+			<string>show-status</string>
+			<key>Image File</key>
+			<string>pushbullet.png</string>
+			<key>Long Running</key>
+			<true/>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>push_note.php</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Pushbullet</string>
+			</dict>
+			<key>Requirements</key>
+			<array>
+				<string>!httpurl</string>
+			</array>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.pushbullet.com/</string>
+			<key>Name</key>
+			<string>Pushbullet</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Send the selection to your other devices using Pushbullet.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.pushbullet</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>Pushbullet</string>
+	</dict>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Default Value</key>
+			<string></string>
+			<key>Option Description</key>
+			<string>Create an API Access token in Pushbullet settings.</string>
+			<key>Option Identifier</key>
+			<string>access</string>
+			<key>Option Label</key>
+			<string>Access Token</string>
+			<key>Option Type</key>
+			<string>string</string>
+		</dict>
+	</array>
+</dict>
+</plist>
