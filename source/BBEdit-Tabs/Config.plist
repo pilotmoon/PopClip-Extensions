@@ -31,7 +31,7 @@
 	<key>Extension Description</key>
 	<string>Create a new BBEdit tab containing the selected text.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.bbedit-tabs</string>
+	<string>com.jjarava.popclip.extension.bbedit-tabs</string>
 	<key>Extension Name</key>
 	<string>BBEdit Tabs</string>
 	<key>Required Software Version</key>
