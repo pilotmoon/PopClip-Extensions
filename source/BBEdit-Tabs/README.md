@@ -1,4 +1,4 @@
-# PopClip BBEdit-Tabd Extension README
+# PopClip BBEdit-Tabs Extension README
 
 This extension for [PopClip][pclip] will take the selected text and create a new `text document` in [BBEdit][tw], using Tabs instead of a new window (because I prefer it that way).
 
