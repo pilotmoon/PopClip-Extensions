@@ -16,7 +16,7 @@ All extension source files are published under the MIT License (see LICENSE) unl
 
 ## Credits
 
-All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are are shown in the readme file of each individual extension.
+All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are shown in the readme file of each individual extension.
 
 ## Contributing
 
