@@ -6,9 +6,9 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>diary.png</string>
-			<key>Shell Script File</key>
-			<string>dayone.sh</string>
+			<string>dayone.png</string>
+			<key>URL</key>
+			<string>dayone://post?entry={popclip text}</string>
 			<key>Title</key>
 			<string>Day One</string>
 		</dict>
@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.dayoneapp.dayone</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.dayoneapp.dayone</string>
+				<string>com.bloombuilt.dayone-mac</string>
+			</array>			
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -32,7 +35,5 @@
 	<string>com.pilotmoon.popclip.extension.dayone</string>
 	<key>Extension Name</key>
 	<string>Day One</string>
-	<key>Required Software Version</key>
-	<integer>701</integer>
 </dict>
 </plist>

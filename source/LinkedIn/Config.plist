@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>in.png</string>
 			<key>Regular Expression</key>
-			<string>(?s)^\s*([^\s]+(?:\s[^\s]+){0,3})(?:\s([^\s]+))\s*$</string>
+			<string>(?s)^.{1,195}$</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>

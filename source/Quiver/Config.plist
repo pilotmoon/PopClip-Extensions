@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>quiver.png</string>
+			<key>Shell Script File</key>
+			<string>quiver.py</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/python</string>
+			<key>Title</key>
+			<string>Quiver</string>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+		    <key>Option Identifier</key>
+			<string>style</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>HTML Style</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Clean</string>
+				<string>Original</string>
+			</array>		
+			<key>Option Description</key>
+			<string>'Clean' will remove styling (fonts, colours) when you clip content from web pages.</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>library</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Library Location</string>
+			</dict>
+			<key>Option Type</key>
+			<string>string</string>
+			<key>Option Default Value</key>
+			<string>~/Library/Containers/com.happenapps.Quiver/Data/Library/Application Support/Quiver/Quiver.qvlibrary</string>
+			<key>Option Description</key>
+			<string>You probably don't need to change this.</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.happenapps.Quiver</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://happenapps.com/#quiver</string>
+			<key>Name</key>
+			<string>Quiver</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send the selection to Quiver, the programmer's notebook.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.quiver</string>
+	<key>Extension Name</key>
+	<string>Quiver</string>
+	<key>Pass HTML</key>
+	<true/>
+	<key>Required Software Version</key>
+	<integer>1711</integer>
+</dict>
+</plist>

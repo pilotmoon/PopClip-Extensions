@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>shortlink.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>isgd.php</string>
+			<key>Title</key>
+			<string>is.gd Shorten</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Shorten a URL using is.gd or v.gd.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.isgd-shorten</string>
+	<key>Extension Name</key>
+	<string>is.gd Shorten</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://is.gd/</string>
+			<key>Name</key>
+			<string>is.gd</string>
+		</dict>
+		<dict>
+			<key>Link</key>
+			<string>https://v.gd/</string>
+			<key>Name</key>
+			<string>v.gd</string>
+		</dict>		
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>service</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Service</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>				
+				<string>is.gd</string>
+				<string>v.gd</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>it.png</string>
+			<key>Service Name</key>
+			<string>Translate with Instant Translate</string>
+			<key>Title</key>
+			<string>Instant Translate</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+ 		<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>andriiliakh.Instant-Translate</string>
+				<string>com.twopeoplesoftware.InstantTranslate-nomas</string>
+				<string>com.twopeoplesoftware.Instant-Translate-setapp</string>
+			</array>
+            <key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://insttranslate.com/mac</string>
+			<key>Name</key>
+			<string>Instant Translate</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Alx Stu</string>
+			<key>Link</key>
+			<string>www.github.com/alxstu</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Translate the text using Instant Translate.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.insttranslate</string>
+	<key>Extension Name</key>
+	<string>Instant Translate</string>
+</dict>
+</plist>

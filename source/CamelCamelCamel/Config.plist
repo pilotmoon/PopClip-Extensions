@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>camel.png</string>						
+			<key>Title</key>
+			<string>CamelCamelCamel</string>
+			<key>URL</key>
+			<string>https://camelcamelcamel.com/search?sq={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Track the price of the selected Amazon product code or URL, using CamelCamelCamel.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.camelcamelcamel</string>
+	<key>Extension Image File</key>
+	<string>camel.png</string>
+	<key>Extension Name</key>
+	<string>CamelCamelCamel</string>
+</dict>
+</plist>

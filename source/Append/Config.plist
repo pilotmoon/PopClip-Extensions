@@ -23,7 +23,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Append the selected text to the existing clipboard contents.</string>
+		<string>Append the selected text to the existing clipboard contents. If you hold down ⌥, it will prepend instead.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.append</string>

@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>2doicon.png</string>
+			<string>2do-v2.png</string>
 			<key>Service Name</key>
 			<string>2Do/New 2Do: Selection as Title</string>
 			<key>Title</key>
@@ -18,8 +18,11 @@
 		<dict>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.guidedways.TodoMac</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.guidedways.TodoMac</string>
+				<string>com.guidedways.TodoMac-setapp</string>
+			</array>
 			<key>Link</key>
 			<string>http://www.2doapp.com/</string>
 			<key>Name</key>
@@ -32,7 +35,5 @@
 	<string>com.pilotmoon.popclip.extension.2do</string>
 	<key>Extension Name</key>
 	<string>2Do</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

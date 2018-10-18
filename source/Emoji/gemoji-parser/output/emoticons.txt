@@ -1,0 +1,15 @@
+                  EMOJI_NAME  EMOTICONS
+                       angry  >:-(  >:(
+                       blush  :-)  :)
+                         cry  :'(
+                    confused  :-\  :\  :-/  :/
+                disappointed  :-(  :(
+                        kiss  :-*  :*
+                neutral_face  :-|  :|
+                 monkey_face  :o)
+                  open_mouth  :-o  :o
+                      smiley  =-)  =)
+                       smile  :-D  :D
+            stuck_out_tongue  :-p  :p  :-P  :P  :-b  :b
+stuck_out_tongue_winking_eye  ;-p  ;p  ;-P  ;P  ;-b  ;b
+                        wink  ;-)  ;)

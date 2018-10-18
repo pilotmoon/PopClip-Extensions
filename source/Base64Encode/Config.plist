@@ -31,8 +31,27 @@
 			<string>Base64 Decode</string>
 		</dict>
 	</array>
+	<key>Options</key>
+	<array>
+		<dict>		
+			<key>Option Identifier</key>
+			<string>variant</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Base64 Variant</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Standard (+/)</string>
+				<string>URL Safe (-_)</string>
+			</array>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Base64-encode or decode the selected text.</string>
+	<string>Base64-encode or decode the selected text. Supports both standard and URL-safe Base64 variants.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.base64</string>
 	<key>Extension Name</key>

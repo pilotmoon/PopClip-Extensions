@@ -14,7 +14,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search Twitter.</string>
+	<string>Search the world's tweets on Twitter.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.twitter-search</string>
 	<key>Extension Name</key>

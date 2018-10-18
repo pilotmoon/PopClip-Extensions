@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>show-status</string>		
+			<key>Long Running</key>
+			<true/>		
+			<key>Image File</key>
+			<string>slack.png</string>
+			<key>Shell Script File</key>
+			<string>slackPost.php</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Title</key>
+			<string>Slack</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://slack.com/</string>
+			<key>Name</key>
+			<string>Slack</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Post the text to a channel in Slack.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.slack</string>
+	<key>Extension Name</key>
+	<string>Slack</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>webhookurl</string>
+			<key>Option Label</key>
+			<string>Webhook URL</string>
+			<key>Option Type</key>
+			<string>string</string>
+			<key>Option Default Value</key>
+			<string></string>
+			<key>Option Description</key>
+			<string>Create an incoming webhook in Slack, and paste the URL here. (Type 'webhook' into Slackbot for help.)</string>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<dict>
+		<key>en</key>
+		<string>Configuration for Slack</string>
+	</dict>
+</dict>
+</plist>

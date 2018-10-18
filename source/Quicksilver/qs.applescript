@@ -1,0 +1,1 @@
+tell application id "com.blacktree.Quicksilver" to set selection to "{popclip text}"

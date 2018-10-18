@@ -27,7 +27,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Uses Dictionary.com to provide you with the correct pronunciation of the selected word. An alternative to "Say", for English language learners.</string>
+	<string>Uses Dictionary.com to provide you with an English pronunciation of the selected word. An alternative to "Say", for English language learners.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pronounce</string>
 	<key>Extension Name</key>

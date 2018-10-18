@@ -2,44 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Extension Identifier</key>
-	<string>com.ziquanwang.popclip.extension.highlight</string>
-	<key>Extension Name</key>
-	<string>Highlight</string>
-	<key>Extension Description</key>
-	<string>Highlight the selected text in Preview, Skim, Evernote and Scrivener.</string>
-	<key>Apps</key>
-	<array>
-		<dict>
-			<key>Bundle Identifier</key>
-			<string>net.sourceforge.skim-app.skim</string>
-			<key>Link</key>
-			<string>http://skim-app.sourceforge.net</string>
-			<key>Name</key>
-			<string>Skim</string>
-		</dict>
-		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.evernote.Evernote</string>
-			<key>Link</key>
-			<string>https://www.evernote.com/</string>
-			<key>Name</key>
-			<string>Evernote</string>
-		</dict>
-		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.literatureandlatte.scrivener2</string>
-			<key>Link</key>
-			<string>http://www.literatureandlatte.com/scrivener.php</string>
-			<key>Name</key>
-			<string>Scrivener</string>
-		</dict>
-	</array>
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Title</key>
-			<string>Highlight</string>
 			<key>Image File</key>
 			<string>hlite.png</string>
 			<key>Key Combo</key>
@@ -49,20 +14,17 @@
 				<key>modifiers</key>
 				<integer>1310720</integer>
 			</dict>
-			<key>Requirements</key>
-			<array>
-				<string>copy</string>
-			</array>
 			<key>Required Apps</key>
 			<array>
 				<string>com.apple.Preview</string>
 				<string>net.sourceforge.skim-app.skim</string>
 				<string>com.evernote.Evernote</string>
+				<string>com.readdle.PDFExpert-Mac</string>
 			</array>
-		</dict>
-		<dict>
 			<key>Title</key>
 			<string>Highlight</string>
+		</dict>
+		<dict>
 			<key>Image File</key>
 			<string>hlite.png</string>
 			<key>Key Combo</key>
@@ -72,15 +34,57 @@
 				<key>modifiers</key>
 				<real>1179648</real>
 			</dict>
-			<key>Requirements</key>
-			<array>
-				<string>copy</string>
-			</array>
 			<key>Required Apps</key>
 			<array>
 				<string>com.literatureandlatte.scrivener2</string>
+				<string>com.literatureandlatte.scrivener3</string>
+				<string>com.apple.iWork.Pages</string>
 			</array>
+			<key>Title</key>
+			<string>Highlight</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>L</string>
+				<key>modifiers</key>
+				<real>1179648</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.devon-technologies.thinkpro2</string>
+				<string>com.Alternote</string>
+			</array>
+			<key>Title</key>
+			<string>Highlight</string>
+		</dict>
+		<dict>
+			<key>Image File</key>
+			<string>hlite.png</string>
+			<key>Key Combo</key>
+			<dict>
+				<key>keyChar</key>
+				<string>1</string>
+				<key>modifiers</key>
+				<real>1703936</real>
+			</dict>
+			<key>Required Apps</key>
+			<array>
+				<string>com.smileonmymac.PDFpenPro</string>
+				<string>com.smileonmymac.PDFpen</string>
+			</array>
+			<key>Title</key>
+			<string>Highlight</string>
 		</dict>
 	</array>
+	<key>Extension Description</key>
+	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.highlight</string>
+	<key>Extension Name</key>
+	<string>Highlight</string>
 </dict>
 </plist>

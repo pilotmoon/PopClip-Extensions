@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>ttab.png</string>
+			<string>translate-tab.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,1900}$</string>
 			<key>Service Name</key>

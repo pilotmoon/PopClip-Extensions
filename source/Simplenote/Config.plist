@@ -10,7 +10,7 @@
 			<key>Script Interpreter</key>
 			<string>/bin/sh</string>
 			<key>Image File</key>
-			<string>simplenote-logo.png</string>
+			<string>simplenote.png</string>
 			<key>Long Running</key>
 			<false/>
 			<key>Title</key>

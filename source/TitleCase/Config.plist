@@ -8,7 +8,7 @@
 			<key>After</key>
 			<string>paste-result</string>
 			<key>Image File</key>
-			<string>capitalize.png</string>
+			<string>titlecaseT.png</string>
 			<key>Shell Script File</key>
 			<string>titlecase.sh</string>
 			<key>Title</key>
@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Capitalizes all words except for ‘the’, ‘in’, ‘of’ etc., according to American English title conventions.</string>
+	<string>Capitalizes words according to typical English titling conventions.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.title-case</string>
 	<key>Extension Name</key>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>copy-result</string>
+			<key>Image File</key>
+			<string>&gt;md.png</string>
+			<key>Shell Script File</key>
+			<string>html2md.sh</string>
+			<key>Title</key>
+			<string>Copy as Markdown</string>
+			<key>Pass HTML</key>
+			<true/>
+			<key>Requirements</key>
+			<array>
+				<string>html</string>
+			</array>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Copy web content as Markdown text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.copy-as-markdown</string>
+	<key>Extension Name</key>
+	<string>Copy Markdown</string>
+	<key>Extension Long Name</key>
+	<string>Copy as Markdown</string>
+</dict>
+</plist>

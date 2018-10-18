@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>yoink.png</string>
+			<key>Service Name</key>
+			<string>Add Selected Text to Yoink</string>
+			<key>Title</key>
+			<string>Yoink</string>
+			<key>Pass HTML</key>
+			<true/>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://eternalstorms.at/yoink/mac</string>
+			<key>Name</key>
+			<string>Yoink</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifier</key>
+			<string>at.EternalStorms.Yoink</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Add Selected Text to Yoink</string>
+	<key>Extension Identifier</key>
+	<string>at.EternalStorms.Yoink.PopClipExtension</string>
+	<key>Extension Name</key>
+	<string>Yoink</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+	<key>Required OS Version</key>
+	<string>10.7.3</string>
+	<key>Credits</key>
+	<dict>
+		<key>Name</key>
+		<string>Eternal Storms Software, Matthias Gansrigler</string>
+		<key>Link</key>
+		<string>https://eternalstorms.at</string>
+	</dict>
+</dict>
+</plist>

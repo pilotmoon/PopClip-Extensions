@@ -40,6 +40,8 @@
 				<string>amazon.ca</string>
 				<string>amazon.cn</string>
 				<string>amazon.com</string>
+				<string>amazon.com.au</string>
+				<string>amazon.com.br</string>
 				<string>amazon.co.jp</string>
 				<string>amazon.co.uk</string>
 				<string>amazon.de</string>
@@ -47,6 +49,7 @@
 				<string>amazon.fr</string>
 				<string>amazon.it</string>
 				<string>smile.amazon.com</string>
+				<string>smile.amazon.co.uk</string>
 			</array>
 		</dict>
 	</array>

@@ -11,22 +11,7 @@
 //  Copyright (c) 2014 Pilotmoon Software. All rights reserved.
 //
 
-// Service names (10.8.3):
-// com.apple.share.Twitter.post
-// com.apple.share.SinaWeibo.post
-// com.apple.share.Mail.compose
-// com.apple.share.Messages.compose
-// com.apple.share.AirDrop.send
-// com.apple.share.System.add-to-safari-reading-list
-// com.apple.share.System.add-to-iphoto
-// com.apple.share.System.add-to-aperture
-// com.apple.share.Facebook.post
-// com.apple.share.Twitter.set-profile-image
-// com.apple.share.System.set-desktop-image
-// com.apple.share.Video.upload-image-Flickr
-// com.apple.share.Video.upload-Vimeo
-// com.apple.share.Video.upload-Youku
-// com.apple.share.Video.upload-Tudo
+NSDictionary *_serviceNames=nil;
 
 #import "AppDelegate.h"
 
@@ -62,7 +47,7 @@
     NSArray *const args=[[NSProcessInfo processInfo] arguments];
     if ([args count]>3) {
         // return 2nd argument if available
-        return args[3];
+        return args[3];c
     }
     else {
         // get text from stdin
@@ -82,9 +67,24 @@
     NSString *text=[self text];
     NSString *dataType=[self dataType];
     NSString *serviceName=[self serviceName];
-//    NSString *text=@"chips tónite";
-//    NSString *dataType=@"text";
-//    NSString *serviceName=@"com.apple.share.Messages.compose";
+    
+    NSDictionary *lookup=@{@"message": NSSharingServiceNameComposeMessage,
+                           @"facebook": NSSharingServiceNamePostOnFacebook,
+                           @"linkedin": NSSharingServiceNamePostOnLinkedIn,
+                           @"sinaweibo": NSSharingServiceNamePostOnSinaWeibo,
+                           @"tencentweibo": NSSharingServiceNamePostOnTencentWeibo,
+                           @"twitter": NSSharingServiceNamePostOnTwitter,
+                           @"notes": @"com.apple.Notes.SharingExtension",
+                           };
+    
+    NSString *resolved=lookup[serviceName];
+    if (resolved) {
+        serviceName=resolved;
+        // otherwise use the raw string
+    }
+    //    NSString *text=@"chips tónite";
+    //    NSString *dataType=@"text";
+    //    NSString *serviceName=@"com.apple.share.Messages.compose";
     
     //NSLog(@"Text: %@", text);
     //NSLog(@"Data: %@", dataType);
@@ -102,9 +102,9 @@
         }
     }
     
-    if (data)
+    NSSharingService *service=[NSSharingService sharingServiceNamed:serviceName];
+    if (data&&service)
     {
-        NSSharingService *service=[NSSharingService sharingServiceNamed:serviceName];
         service.delegate=self;
         //NSLog(@"About to perform service with %@: %@", dataType, data);
         [service performWithItems:@[data]];

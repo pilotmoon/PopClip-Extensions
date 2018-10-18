@@ -14,28 +14,34 @@
 				<string>httpurl</string>
 			</array>
 			<key>Script Interpreter</key>
-			<string>/usr/bin/python</string>
+			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
-			<string>urlshortener.py</string>
+			<string>isgd.php</string>
 			<key>Title</key>
 			<string>Shorten Link</string>
 		</dict>
 	</array>
-	<key>Credits</key>
-	<array>
-		<dict>
-			<key>Link</key>
-			<string>http://hzlzh.io/</string>
-			<key>Name</key>
-			<string>hzlzh</string>
-		</dict>
-	</array>
 	<key>Extension Description</key>
-	<string>Turn a long URL into a much shorter one. Services available: goo.gl, is.gd, v.gd.</string>
+	<string>Shorten the selected URL using is.gd or v.gd.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urlshortener</string>
 	<key>Extension Name</key>
 	<string>Shorten Link</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://is.gd/</string>
+			<key>Name</key>
+			<string>is.gd</string>
+		</dict>
+		<dict>
+			<key>Link</key>
+			<string>https://v.gd/</string>
+			<key>Name</key>
+			<string>v.gd</string>
+		</dict>		
+	</array>
 	<key>Options</key>
 	<array>
 		<dict>
@@ -49,14 +55,11 @@
 			<key>Option Type</key>
 			<string>multiple</string>
 			<key>Option Values</key>
-			<array>
-				<string>goo.gl</string>
+			<array>				
 				<string>is.gd</string>
 				<string>v.gd</string>
 			</array>
 		</dict>
 	</array>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

@@ -7,7 +7,7 @@ parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
 $url = getenv('POPCLIP_TEXT');
 
 // prepare a call to links.json
-$service="/links.json";
+$service="/links";
 $method = 'POST';
 $contentType = 'text/plain';
 $time = time()*1000;

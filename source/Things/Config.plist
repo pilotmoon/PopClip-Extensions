@@ -29,12 +29,10 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new to-do in Things.</string>
+	<string>Create a new to-do in Things 2.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.things</string>
 	<key>Extension Name</key>
-	<string>Things</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<string>Things</string>	
 </dict>
 </plist>

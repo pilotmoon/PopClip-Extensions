@@ -46,7 +46,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Select all the text in the field, then invoke PopClip again. (Only appears in editable text fields.)</string>
+	<string>Select all the text in the field, then invoke PopClip again.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.select-all</string>
 	<key>Extension Name</key>

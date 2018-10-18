@@ -9,8 +9,8 @@
 			<string>Dash.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,160}$</string>
-			<key>URL</key>
-			<string>dash://{popclip text}</string>
+			<key>Shell Script File</key>
+			<string>dash.sh</string>
 			<key>Title</key>
 			<string>Dash</string>
 		</dict>
@@ -18,9 +18,13 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.kapeli.dash</string>
-			<key>Check Installed</key>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.kapeli.dash</string>
+				<string>com.kapeli.dashdoc</string>
+				<string>com.kapeli.dashbeta</string>
+			</array>
+            		<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
 			<string>http://kapeli.com/dash</string>
@@ -34,7 +38,5 @@
 	<string>com.pilotmoon.popclip.extension.dash</string>
 	<key>Extension Name</key>
 	<string>Dash</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

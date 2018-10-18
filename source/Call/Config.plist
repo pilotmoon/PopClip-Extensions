@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>phone.png</string>
 			<key>Regular Expression</key>
-			<string>(\+)?\(?\d{1,4}\)?(-|\s|\()?\(?\d{1,3}\)?(-|\s)?\(?\d{0,4}\)?(-|\s)?\d{2,3}?(-|\s)?\d{2,3}((-|\s)?\d{1,4})?((-|\s)\d{1,3})?\b|\b((\+)?\d{3}\.\d{3,4}\.\d{4})</string>
+			<string>[0-9\+\*\#][0-9\*\#\-\(\)\.\,\; ]+[0-9\*\#]</string>
 			<key>Title</key>
 			<string>Call</string>
 			<key>URL</key>
@@ -18,7 +18,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Call the selected phone number using your iPhone. (Requires OS X Yosemite and iOS 8.)</string>
+		<string>Call the selected phone number using your iPhone, or another call handler. (Set the default call handler in FaceTime preferences.)</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.call</string>

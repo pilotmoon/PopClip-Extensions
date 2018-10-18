@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Replace spaces between words with hyphens. For example, 'too good to be true' becomes 'too-good-to-be-true'.</string>
+	<string>Replace spaces between words with hyphens.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.hyphenate</string>
 	<key>Extension Name</key>

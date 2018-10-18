@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>things:add?title={popclip text}&amp;show-quick-entry=true</string>
+			<key>Image File</key>
+			<string>boxtick.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,500}$</string>
+			<key>Title</key>
+			<string>Things</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifier</key>
+			<string>com.culturedcode.ThingsMac</string>
+			<key>Link</key>
+			<string>http://culturedcode.com/things/</string>
+			<key>Name</key>
+			<string>Things 3</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new to-do in Things 3.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.things3</string>
+	<key>Extension Name</key>
+	<string>Things 3</string>
+</dict>
+</plist>

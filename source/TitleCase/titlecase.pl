@@ -1,34 +1,30 @@
 #!/usr/bin/perl
-# Copyright (c) 2008, John Gruber, Aristotle Pagaltzis {{{
+
+# 	This filter changes all words to Title Caps, and attempts to be clever
+#	about *un*capitalizing small words like a/an/the in the input.
 #
-# Permission is hereby granted, free of charge, to any person obtaining
-# a copy of this software and associated documentation files (the
-# "Software"), to deal in the Software without restriction, including
-# without limitation the rights to use, copy, modify, merge, publish,
-# distribute, sublicense, and/or sell copies of the Software, and to
-# permit persons to whom the Software is furnished to do so, subject to
-# the following conditions:
+#	The list of "small words" which are not capped comes from
+#	the New York Times Manual of Style, plus 'vs' and 'v'. 
 #
-# The above copyright notice and this permission notice shall be
-# included in all copies or substantial portions of the Software.
+#	10 May 2008
+#	Original version by John Gruber:
+#	http://daringfireball.net/2008/05/title_case
 #
-# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
-# CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
-# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-# SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-# }}}
+#	28 July 2008
+#	Re-written and much improved by Aristotle Pagaltzis:
+#	http://plasmasturm.org/code/titlecase/
+#
+#   Full change log at __END__.
+#
+#	License: http://www.opensource.org/licenses/mit-license.php
+#
+
 
 use strict;
 use warnings;
 use utf8;
 use open qw( :encoding(UTF-8) :std );
 
-my $opt_force = @ARGV && '-f' eq $ARGV[0];
-shift @ARGV if $opt_force;
-shift @ARGV if @ARGV && '--' eq $ARGV[0];
 
 my @small_words = qw( (?<!q&)a an and as at(?!&t) but by en for if in of on or the to v[.]? via vs[.]? );
 my $small_re = join '|', @small_words;
@@ -38,7 +34,7 @@ my $apos = qr/ (?: ['’] [[:lower:]]* )? /x;
 while ( <> ) {
 	s{\A\s+}{}, s{\s+\z}{};
 
-	$_ = lc $_ if $opt_force or not /[[:lower:]]/;
+	$_ = lc $_ if not /[[:lower:]]/;
 
 	s{
 		\b (_*) (?:
@@ -58,25 +54,49 @@ while ( <> ) {
 		: defined $4 ? "\u\L$4"   # capitalize word w/o internal caps
 		: $5                      # preserve other kinds of word
 		) . $6
-	}exgo;
+	}xeg;
 
 
-	# exceptions for small words: capitalize at start and end of title
+	# Exceptions for small words: capitalize at start and end of title
 	s{
 		(  \A [[:punct:]]*         # start of title...
 		|  [:.;?!][ ]+             # or of subsentence...
 		|  [ ]['"“‘(\[][ ]*     )  # or of inserted subphrase...
 		( $small_re ) \b           # ... followed by small word
-	}{$1\u\L$2}xigo;
+	}{$1\u\L$2}xig;
 
 	s{
 		\b ( $small_re )      # small word...
 		(?= [[:punct:]]* \Z   # ... at the end of the title...
 		|   ['"’”)\]] [ ] )   # ... or of an inserted subphrase?
-	}{\u\L$1}xigo;
+	}{\u\L$1}xig;
 
+	# Exceptions for small words in hyphenated compound words
+	## e.g. "in-flight" -> In-Flight
+	s{
+		\b
+		(?<! -)					# Negative lookbehind for a hyphen; we don't want to match man-in-the-middle but do want (in-flight)
+		( $small_re )
+		(?= -[[:alpha:]]+)		# lookahead for "-someword"
+	}{\u\L$1}xig;
 
-	print $_, "\n";
+	## # e.g. "Stand-in" -> "Stand-In" (Stand is already capped at this point)
+	s{
+		\b
+		(?<!…)					# Negative lookbehind for a hyphen; we don't want to match man-in-the-middle but do want (stand-in)
+		( [[:alpha:]]+- )		# $1 = first word and hyphen, should already be properly capped
+		( $small_re )           # ... followed by small word
+		(?!	- )					# Negative lookahead for another '-'
+	}{$1\u$2}xig;
+
+	print "$_";
 }
 
-# vim: ts=4 sts=4 sw=4 sr fdm=marker
+__END__
+
+Changes:
+
+Thu, 06 Nov 2014
+
+- Removed /o switch from substitutions; it's out-dated and described now as only "pretending" to optimize
+- Special cases for small words in two-word compounds, like "stand-in" and "in-flight" (but not "man-in-the-middle")

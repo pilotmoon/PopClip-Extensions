@@ -37,10 +37,11 @@
 			<key>Option Values</key>
 			<array>
 				<string>thesaurus.com</string>
+				<string>collinsdictionary.com</string>
 			</array>
 		</dict>
 	</array>
 	<key>Required Software Version</key>
-	<integer>1459</integer>
+	<integer>719</integer>
 </dict>
 </plist>

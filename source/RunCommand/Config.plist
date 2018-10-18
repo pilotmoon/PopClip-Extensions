@@ -6,24 +6,43 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>RunTerminalCommand.applescript</string>
+			<string>terminal.applescript</string>
 			<key>Image File</key>
 			<string>RTC.png</string>
 			<key>Title</key>
 			<string>Run Terminal Command</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-term=Terminal</string>
+			</array>			
 		</dict>
-	</array>
-	<key>Credits</key>
-	<array>
 		<dict>
-			<key>Link</key>
-			<string>https://twitter.com/smithjw/status/244757999665700864</string>
-			<key>Name</key>
-			<string>James Smith</string>
+			<key>AppleScript File</key>
+			<string>iterm2.applescript</string>
+			<key>Image File</key>
+			<string>RTC.png</string>
+			<key>Title</key>
+			<string>Run Terminal Command</string>
+				<key>Requirements</key>
+			<array>
+				<string>option-term=iTerm2</string>
+			</array>
+		</dict>
+		<dict>
+			<key>AppleScript File</key>
+			<string>iterm2-3.applescript</string>
+			<key>Image File</key>
+			<string>RTC.png</string>
+			<key>Title</key>
+			<string>Run Terminal Command</string>
+				<key>Requirements</key>
+			<array>
+				<string>option-term=iTerm2 v2.9+</string>
+			</array>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Run the selected text as a terminal command (be careful!). Supports both Terminal and iTerm2.</string>
+	<string>Run the selected text as a terminal command. Supports both Terminal and iTerm2. (Now updated for iTerm2 v2.9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.rtc</string>
 	<key>Extension Image File</key>
@@ -45,7 +64,8 @@
 			<key>Option Values</key>
 			<array>
 				<string>Terminal</string>
-				<string>iTerm2</string>
+				<string>iTerm2 v2.9+</string>				
+				<string>iTerm2</string>				
 			</array>
 		</dict>
 	</array>
