@@ -33,7 +33,7 @@
 	<key>Extension Name</key>
 	<string>Bubble Translate</string>
 	<key>Required OS Version</key>
-	<string>10.11</string>
+	<string>10.14</string>
 	<key>Version</key>
 	<integer>3</integer>
 </dict>
