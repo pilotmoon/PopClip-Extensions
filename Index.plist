@@ -75,6 +75,7 @@
 			<string>InstantTranslate</string>	
 			<string>TranslateTab</string>									
 			<string>MateTranslate</string>
+			<string>BubbleTranslate</string>
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
