@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>Drafts.png</string>
+			<key>Service Name</key>
+			<string>Send to Drafts</string>
+			<key>Title</key>
+			<string>Send to Drafts</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send selected text to Drafts.</string>
+	<key>Extension Identifier</key>
+	<string>net.ansont.popclip.extension.send-to-drafts</string>
+	<key>Extension Name</key>
+	<string>Drafts</string>
+	<key>Required OS Version</key>
+	<string>10.7</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>
