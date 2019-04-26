@@ -23,9 +23,9 @@
 				<string>com.agiletortoise.Drafts-OSX</string>
 			</array>
 			<key>Link</key>
-			<string>http://www.downieapp.com/</string>
+			<string>https://getdrafts.com/mac/</string>
 			<key>Name</key>
-			<string>Downie</string>
+			<string>Drafts</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
