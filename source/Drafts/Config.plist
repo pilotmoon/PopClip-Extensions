@@ -13,15 +13,26 @@
 			<string>Send to Drafts</string>
 		</dict>
 	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.agiletortoise.Drafts-OSX</string>
+			</array>
+			<key>Link</key>
+			<string>http://www.downieapp.com/</string>
+			<key>Name</key>
+			<string>Downie</string>
+		</dict>
+	</array>
 	<key>Extension Description</key>
-	<string>Send selected text to Drafts.</string>
+	<string>Send the selected text to Drafts.</string>
 	<key>Extension Identifier</key>
-	<string>net.ansont.popclip.extension.send-to-drafts</string>
+	<string>com.pilotmoon.popclip.extension.drafts</string>
 	<key>Extension Name</key>
 	<string>Drafts</string>
-	<key>Required OS Version</key>
-	<string>10.7</string>
-	<key>Version</key>
-	<integer>1</integer>
 </dict>
 </plist>
