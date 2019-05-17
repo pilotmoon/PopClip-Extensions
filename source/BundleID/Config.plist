@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>bundleid.php</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>BundleID</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Show the app's bundle ID.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.bundleid</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+		<string>BundleID</string>
+	</dict>
+</dict>
+</plist>
