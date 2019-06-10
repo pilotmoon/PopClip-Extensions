@@ -56,6 +56,7 @@
 			<key>Required Apps</key>
 			<array>
 				<string>com.devon-technologies.thinkpro2</string>
+				<string>com.devon-technologies.think3</string>
 				<string>com.Alternote</string>
 			</array>
 			<key>Title</key>
