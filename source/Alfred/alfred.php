@@ -3,7 +3,8 @@
 // select target app
 $alfred2bid='com.runningwithcrayons.Alfred-2';
 $alfred3bid='com.runningwithcrayons.Alfred-3';
-$bid=trim(force_string(`./SelectApp ${alfred3bid} ${alfred2bid}`));
+$alfred4bid='com.runningwithcrayons.Alfred';
+$bid=trim(force_string(`./SelectApp ${alfred4bid} ${alfred3bid} ${alfred2bid}`));
 
 if(strlen($bid)>0) {
 	// get the popclip text

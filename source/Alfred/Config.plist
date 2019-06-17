@@ -23,7 +23,8 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.runningwithcrayons.Alfred-2</string>	
-				<string>com.runningwithcrayons.Alfred-3</string>					
+				<string>com.runningwithcrayons.Alfred-3</string>			
+				<string>com.runningwithcrayons.Alfred</string>		
 			</array>			
 			<key>Check Installed</key>
 			<true/>
@@ -34,7 +35,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Activate Alfred with the selected text. (Requires Alfred 2 or later.)</string>
+	<string>Activate Alfred with the selected text. (Now updated for Alfred 4.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.alfred</string>
 	<key>Extension Name</key>
