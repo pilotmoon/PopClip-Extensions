@@ -29,7 +29,7 @@
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://alfredapp.com/</string>
+			<string>https://www.alfredapp.com</string>
 			<key>Name</key>
 			<string>Alfred</string>
 		</dict>
