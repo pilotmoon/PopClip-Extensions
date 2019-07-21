@@ -46,6 +46,13 @@
 				<string>『…』</string>
 				<string>„…“</string>
 				<string>‚…‘</string>
+				<string>`…`</string>
+				<string>*…*</string>
+				<string>**…**</string>
+				<string>~~…~~</string>
+				<string>~~…~~</string>
+				<string>++…++</string>
+				<string>==…==</string>
 			</array>
 		</dict>
 	</array>
