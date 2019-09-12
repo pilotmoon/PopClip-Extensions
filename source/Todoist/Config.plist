@@ -34,7 +34,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Add the selected text to your Todoist inbox. 12 Sep 2019: Please not this extension is not currently working. I need to update it.</string>
+		<string>Add the selected text to your Todoist inbox. 12 Sep 2019: Updated to fix login issue. Please download this latest version of the extension.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.todoist</string>
