@@ -6,39 +6,39 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>chromspin.png</string>
+			<string>brave.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurls</string>
 			</array>
 			<key>Shell Script File</key>
-			<string>open-in-chrome.sh</string>
+			<string>open-in-brave.sh</string>
 			<key>Title</key>
-			<string>Open in Chrome</string>
+			<string>Open in Brave</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
 		<dict>
 			<key>Check Installed</key>
-			<true/>
+			<true/> 
 			<key>Bundle Identifier</key>
-			<string>com.google.Chrome</string>
+			<string>com.brave.Browser</string>
 			<key>Link</key>
-			<string>http://www.google.com/chrome</string>
+			<string>https://brave.com/</string>
 			<key>Name</key>
-			<string>Google Chrome</string>
+			<string>Brave</string>
 		</dict>
 	</array>
 	<key>Blocked Apps</key>
 	<array>
-		<string>com.google.Chrome</string>
+		<string>com.brave.Browser</string>
 	</array>
 	<key>Extension Description</key>
-	<string>Open the link in Google Chrome.</string>
+	<string>Open the link in Brave.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
+	<string>com.pilotmoon.popclip.extension.open-in-brave</string>
 	<key>Extension Name</key>
-	<string>Open in Chrome</string>
+	<string>Open in Brave</string>	
 </dict>
 </plist>
