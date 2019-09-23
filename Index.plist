@@ -302,8 +302,7 @@
 		<array>
 			<string>OnlineDictionary</string>						
 			<string>Antidote</string>			
-			<string>Eudic</string>					
-			<string>Lingvo</string>
+			<string>Eudic</string>								
 		</array>
 		<key>Title</key>
 		<string>Dictionaries</string>
