@@ -4,9 +4,9 @@
 <dict>
 	<key>Actions</key>
 	<array>
-		<dict>
+		<dict>		
 			<key>Regular Expression</key>
-			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>
+			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>	
 			<key>Image File</key>
 			<string>ttick.png</string>
 			<key>Shell Script File</key>
@@ -24,7 +24,6 @@
 			<true/>
 			<key>Bundle Identifiers</key>
 			<array>
-				<string>com.hogbaysoftware.TaskPaper.mac</string>	
 				<string>com.hogbaysoftware.TaskPaper3</string>	
 				<string>com.hogbaysoftware.TaskPaper3.direct</string>
 				<string>com.hogbaysoftware.TaskPaper3-setapp</string>
@@ -32,11 +31,11 @@
 			<key>Link</key>
 			<string>https://www.taskpaper.com/</string>
 			<key>Name</key>
-			<string>TaskPaper</string>
+			<string>TaskPaper 3</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new task to an Inbox project in TaskPaper.</string>
+	<string>Add a new task to an Inbox project in TaskPaper 3. (8 Oct 2019: Updated to support macOS Catalina.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.taskpaper</string>
 	<key>Extension Name</key>
