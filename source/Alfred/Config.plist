@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Activate Alfred 4 with the selected text.</string>
+	<string>Activate Alfred 4 with the selected text. (8 Oct 2019: Updated to work with macOS Catalina.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.alfred</string>
 	<key>Extension Name</key>
