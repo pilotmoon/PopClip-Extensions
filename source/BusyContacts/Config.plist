@@ -19,6 +19,7 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.busymac.busycontacts</string>
+				<string>com.busymac.busycontacts-setapp</string>
 			</array>
 			<key>Check Installed</key>
 			<true/>
@@ -29,7 +30,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new contact in BusyContacts.</string>
+	<string>Create a new contact in BusyContacts. (16 Oct 2019: Updated to support Setapp edition.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.busycontacts</string>
 	<key>Extension Name</key>
