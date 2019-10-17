@@ -5,7 +5,8 @@ is not exposed for scripting. -NM *)
 
 -- activate Music app
 tell application "Music"
-	activate
+	reveal (some playlist whose special kind is Music)
+	activate		
 end tell
 
 -- poke it
@@ -14,7 +15,7 @@ tell application "System Events"
 		-- wait for application to be frontmost
 		repeat 100 times
 			if frontmost is true then
-				
+				delay 0.1
 				(* command-F to focus the search field.
 				unfortunately, if the searc field already has the focus, we
 				get the boop sound. *)
@@ -30,4 +31,3 @@ tell application "System Events"
 		end repeat
 	end tell
 end tell
-
