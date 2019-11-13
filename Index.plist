@@ -85,19 +85,20 @@
 		<array>
 			<string>Notes</string>
 			<string>MakeSticky</string>
+			<string>Bear</string>
+			<string>Curiota</string>
+			<string>DEVONthinkPro</string>
+			<string>Drafts</string>
+			<string>EagleFiler</string>
 			<string>Evernote</string>
 			<string>NotationalVelocity</string>
 			<string>nvALT</string>
-			<string>NotesTab</string>			
-			<string>Yojimbo</string>
-			<string>DEVONthinkPro</string>
-			<string>Notefile</string>
 			<string>NoteAway</string>					
+			<string>Notefile</string>
+			<string>NotesTab</string>						
 			<string>OneNote</string>
-			<string>Bear</string>
 			<string>Paper</string>
-			<string>Curiota</string>
-			<string>Drafts</string>
+			<string>Yojimbo</string>
 		</array>
 		<key>Title</key>
 		<string>Notes Apps</string>
