@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>fcal.png</string>
+			<key>Service Name</key>
+			<string>Send to Fantastical</string>
+			<key>Title</key>
+			<string>Fantastical</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.flexibits.fantastical2.mac</string>
+			</array>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://flexibits.com/fantastical</string>
+			<key>Name</key>
+			<string>Fantastical 3</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Use the text to create a calendar entry in Fantastical 3.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.fantastical</string>
+	<key>Extension Name</key>
+	<string>Fantastical 2</string>
+</dict>
+</plist>
