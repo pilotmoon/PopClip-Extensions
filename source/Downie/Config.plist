@@ -37,7 +37,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Download the video on the linked page using Downie.</string>
+	<string>Download the video on the linked page using Downie. (Now updated for Downie 4).</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.open-in-downie</string>
 	<key>Extension Name</key>
