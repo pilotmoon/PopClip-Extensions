@@ -3,8 +3,8 @@ require 'common.inc';
 parse_str(base64_decode(POPCLIP_DROPLR_ID));
 
 // authsecret contains the user's email and hashed password
-parse_str(base64_decode("cGFzc0hhc2g9MmE0MjlmN2M2ZTlkN2YxNzM2ZTc3NGU0ZDRmOTQyZmNkYTA1OGJiNCZ1c2VyRW1haWw9ZHJvcGxyJTQwcmVxci5uZXQ="));//getenv('POPCLIP_OPTION_AUTHSECRET')));
-$url = "http://xkcd.com/";//getenv('POPCLIP_TEXT');
+parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
+$url = getenv('POPCLIP_TEXT');
 
 // prepare a call to links.json
 $service="/links";
