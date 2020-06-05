@@ -1,4 +1,6 @@
 <?php
+require 'common.inc';
+
 $access = getenv('POPCLIP_OPTION_AUTHSECRET');
 $url = getenv('POPCLIP_TEXT');
 
@@ -16,8 +18,9 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $postjson);
 $response = curl_exec($ch);
 
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+err("bitly shorten code: " . $code);
 
-if ($code==200) {
+if ($code==200 || $code==201) { // 201 created
 	$json = json_decode($response);
 	$result = $json->link;
 	echo $result;
