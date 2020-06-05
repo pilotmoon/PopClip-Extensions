@@ -1,6 +1,6 @@
 <?php
-$access = "2f6e0da60e8fb5c2905c7f3fc88d6e31e0adbc65";//base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
-$url = "https://xkcd.com/";//etenv('POPCLIP_TEXT');
+$access = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
+$url = getenv('POPCLIP_TEXT');
 
 // execute request
 $ch = curl_init("https://api-ssl.bitly.com/v4/shorten");
