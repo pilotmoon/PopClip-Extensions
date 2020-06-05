@@ -38,7 +38,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Shorten the selected URL using Bitly. (Updated 7 May 2020 for Bitly API V4.)</string>
+		<string>Shorten the selected URL using Bitly. (Updated 5 Jun 2020 to fix bug (hardcoded to xkcd.com, d'oh).</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.bitly</string>
