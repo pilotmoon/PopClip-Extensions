@@ -23,7 +23,7 @@ else {
 	parse_str($final, $returned_params);
 	$returned_code=extract_parameter($returned_params, 'code');
 	if (strlen($returned_code)<1) {
-		echo("no code parameter");
+		err("no code parameter");
 		exit(2);
 	}
 
@@ -41,7 +41,8 @@ else {
 	$code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 	
 	if($code==200) {
-		echo base64_encode($response);
+		parse_str($response, $output);
+		echo $output['access_token'];
 		exit(0);
 	}
 	err("api call fail, code " . $code);

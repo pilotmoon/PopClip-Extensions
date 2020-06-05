@@ -1,5 +1,5 @@
 <?php
-$access = base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET'));
+$access = getenv('POPCLIP_OPTION_AUTHSECRET');
 $url = getenv('POPCLIP_TEXT');
 
 // execute request
