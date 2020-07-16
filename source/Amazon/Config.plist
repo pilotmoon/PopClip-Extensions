@@ -25,7 +25,7 @@
 	<array>
 		<dict>
 			<key>Option Default Value</key>
-			<string>amazon.com</string>
+			<string>www.amazon.com</string>
 			<key>Option Identifier</key>
 			<string>site</string>
 			<key>Option Label</key>
@@ -37,17 +37,17 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
-				<string>amazon.ca</string>
-				<string>amazon.cn</string>
-				<string>amazon.com</string>
-				<string>amazon.com.au</string>
-				<string>amazon.com.br</string>
-				<string>amazon.co.jp</string>
-				<string>amazon.co.uk</string>
-				<string>amazon.de</string>
-				<string>amazon.es</string>
-				<string>amazon.fr</string>
-				<string>amazon.it</string>
+				<string>www.amazon.ca</string>
+				<string>www.amazon.cn</string>
+				<string>www.amazon.com</string>
+				<string>www.amazon.com.au</string>
+				<string>www.amazon.com.br</string>
+				<string>www.amazon.co.jp</string>
+				<string>www.amazon.co.uk</string>
+				<string>www.amazon.de</string>
+				<string>www.amazon.es</string>
+				<string>www.amazon.fr</string>
+				<string>www.amazon.it</string>
 				<string>smile.amazon.com</string>
 				<string>smile.amazon.co.uk</string>
 			</array>
