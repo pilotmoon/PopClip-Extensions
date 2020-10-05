@@ -19,7 +19,7 @@
 	<array>
 		<dict>
 			<key>Bundle Identifier</key>
-			<string>com.junecloud.mac.Deliveries</string>
+			<string>com.junecloud.deliveries</string>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Track a package delivery using Deliveries.</string>
+	<string>Track a package delivery using Deliveries. (Updated 5 Oct 2020 for Deliveries 9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.deliveries</string>
 	<key>Extension Name</key>
