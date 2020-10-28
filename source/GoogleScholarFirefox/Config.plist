@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>ghat.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+			<key>Title</key>
+			<string>Google Scholar</string>
+			<key>Shell Script File</key>
+			<string>scholar.sh</string>			
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search Google Scholar with the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.google-scholar</string>
+	<key>Extension Name</key>
+	<string>Google Scholar</string>
+</dict>
+</plist>
