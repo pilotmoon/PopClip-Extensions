@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://chir.ag/projects/ntc/</string>
+			<key>Name</key>
+			<string>Chirag Mehta</string>
+		</dict>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/python3</string>
+			<key>Shell Script File</key>
+			<string>namecolor.py</string>
+			<key>Title</key>
+			<string>Name Color</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Shows the color name for the selected hexadecimal color code.</string>
+	<key>Regular Expression</key>
+	<string>^#?[a-fA-F0-9]{6}$|^#?[a-fA-F0-9]{3}$</string>
+	<key>Extension Name</key>
+	<string>Name Color</string>
+	<key>Extension Identifier</key>
+	<string>com.oxxie.popclipextensions.namecolor</string>
+</dict>
+</plist>
