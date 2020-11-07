@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/python3</string>
+			<key>Shell Script File</key>
+			<string>togglecase.py</string>
+			<key>Title</key>
+			<string>Toggle Case</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Toggle case of selected text.</string>
+	<key>Extension Name</key>
+	<string>Toggle Case</string>
+	<key>Extension Identifier</key>
+	<string>com.oxxie.popclipextensions.togglecase</string>
+</dict>
+</plist>
