@@ -223,7 +223,7 @@ These are the values supported by the `Before` and `After` fields.
 |`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, only copy it as in `copy-result`. If there is no text, or the script failed, shows an 'X'.|
 |`preview-result`|Copy the text returned from the script to the clipboard, and show the result as well (truncated to 100 characters). If the system Paste command is available, the preview text can be clicked to paste it. If there is no text, or the script failed, shows an 'X'.|
 |`show-result`|Show the text returned from the script. If there is no text, or the script failed, shows an 'X'.|
-|`show-status`|Show a tick or a 'X', depending on whether the script succeeded ort not.|
+|`show-status`|Show a tick or a 'X', depending on whether the script succeeded or not.|
 
 ### Option Dictionary
 
