@@ -38,7 +38,5 @@
 	<string>com.pilotmoon.popclip.extension.open-in-edge</string>
 	<key>Extension Name</key>
 	<string>Open in Edge</string>
-	<key>Version</key>
-	<integer>1</integer>
 </dict>
 </plist>
