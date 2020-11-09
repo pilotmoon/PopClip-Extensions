@@ -281,6 +281,7 @@
 			<string>OpenInFirefox</string>
 			<string>OpenInBrave</string>
 			<string>OpenInOpera</string>
+      <string>OpenInEdge</string>
 			<string>GetIP</string>
 		</array>
 		<key>Title</key>
