@@ -22,6 +22,8 @@
 			<string>namecolor.py</string>
 			<key>Title</key>
 			<string>Name Color</string>
+      <key>Image File</key>
+	    <string>ColorPicker.png</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
