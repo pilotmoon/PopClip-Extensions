@@ -32,5 +32,7 @@
 	<string>Name Color</string>
 	<key>Extension Identifier</key>
 	<string>com.oxxie.popclipextensions.namecolor</string>
+	<key>Extension Image File</key>
+	<string>ColorPicker.png</string>
 </dict>
 </plist>
