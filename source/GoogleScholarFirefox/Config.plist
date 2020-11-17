@@ -12,7 +12,9 @@
 			<key>Title</key>
 			<string>Google Scholar</string>
 			<key>Shell Script File</key>
-			<string>scholar.sh</string>			
+			<string>scholar.zsh</string>			
+      <key>Script Interpreter</key>
+			<string>/bin/zsh</string>			
 		</dict>
 	</array>
 	<key>Extension Description</key>
