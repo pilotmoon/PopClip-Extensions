@@ -90,7 +90,6 @@
 			<string>DEVONthink3</string>
 			<string>Drafts</string>
 			<string>EagleFiler</string>
-			<string>Evernote</string>
 			<string>NotationalVelocity</string>
 			<string>nvALT</string>
 			<string>NoteAway</string>					
@@ -272,7 +271,6 @@
 		<array>
 			<string>ReadingList</string>
 			<string>Pocket</string>
-			<string>Instapaper</string>			
 			<string>Pinboard</string>
 			<string>Leech</string>		
 			<string>Downie</string>
