@@ -2,3 +2,4 @@
 source/*.popclipextz
 .DS_Store
 *.pyc
+.nova/
