@@ -14,7 +14,7 @@
 	<key>Extension Description</key>
 	<string>Open a magnet link for the selected BitTorrent infohash.</string>
 	<key>Regular Expression</key>
-	<string>^[a-f0-9]{40}$</string>
+	<string>^[a-fA-F0-9]{40}$</string>
 	<key>Extension Name</key>
 	<string>Magnetize</string>
 	<key>Extension Identifier</key>
