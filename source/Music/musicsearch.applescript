@@ -1,12 +1,9 @@
-(* This is based on the original iTunesMusic script.
-But I had to remove the direct UI scripting since the search field
-is not exposed for scripting. -NM *)
-
+(* This works on Music 1.0.6.10 in Catalina. Will probably break when Apple changes something. Then, I'll get emails. Such is life. *)
 
 -- activate Music app
 tell application "Music"
 	reveal (some playlist whose special kind is Music)
-	activate		
+	activate
 end tell
 
 -- poke it
@@ -15,17 +12,14 @@ tell application "System Events"
 		-- wait for application to be frontmost
 		repeat 100 times
 			if frontmost is true then
-				delay 0.1
-				(* command-F to focus the search field.
-				unfortunately, if the searc field already has the focus, we
-				get the boop sound. *)
-				keystroke "f" using {command down}
-				-- paste our text into field using clipboard
-				set the clipboard to "{popclip text}"
-				keystroke "v" using {command down}
-				keystroke return
+				set musicWindow to first window whose subrole is "AXStandardWindow"
+				set searchField to text field 1 of UI element 1 of row 1 of outline 1 of scroll area 1 of splitter group 1 of musicWindow
+				if subrole of searchField is "AXSearchField" then
+					set focused to searchField
+					set value of searchField to "{popclip text}"
+					keystroke return
+				end if
 				exit repeat
-				
 			end if
 			delay 0.02
 		end repeat
