@@ -11,7 +11,13 @@ tell application "System Events"
 	tell process "Music"
 		repeat 100 times
 			if frontmost is true and number of windows is greater than 0 then
-				set searchField to text field 1 of UI element 1 of row 1 of outline 1 of scroll area 1 of splitter group 1 of (first window whose subrole is "AXStandardWindow")
+				set splitterGroup to splitter group 1 of (first window whose subrole is "AXStandardWindow")
+				if (count of scroll areas of splitterGroup) is greater than 0 and (count of outlines of scroll area 1 of splitterGroup) is greater than 0 then
+					set containerElement to outline 1 of scroll area 1 of splitterGroup -- catalina
+				else
+					set containerElement to outline 1 of splitterGroup -- big sur
+				end if
+				set searchField to text field 1 of UI element 1 of row 1 of containerElement
 				if subrole of searchField is "AXSearchField" then
 					tell searchField
 						set focused to true
