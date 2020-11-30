@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search the Music app.</string>
+	<string>Search in the Music app.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.music</string>
 	<key>Extension Name</key>
