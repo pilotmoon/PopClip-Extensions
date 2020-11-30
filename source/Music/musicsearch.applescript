@@ -21,6 +21,9 @@ tell application "System Events"
 				if subrole of searchField is "AXSearchField" then
 					tell searchField
 						set focused to true
+            if not focused then
+              keystroke "f" using command down
+            end if
 						set value to "{popclip text}"
 						keystroke return
 					end tell
