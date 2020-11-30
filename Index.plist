@@ -248,7 +248,7 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>iTunesMusic</string>
+      <string>Music</string>			
 			<string>Spotify</string>
 			<string>Discogs</string>
 		</array>
