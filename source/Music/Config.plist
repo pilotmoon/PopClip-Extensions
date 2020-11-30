@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search in the Music app.</string>
+	<string>Search in Music (macOS 10.15 and later).</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.music</string>
 	<key>Extension Name</key>
