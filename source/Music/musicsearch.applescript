@@ -9,15 +9,15 @@ end tell
 -- poke it
 tell application "System Events"
 	tell process "Music"
-		-- wait for application to be frontmost
 		repeat 100 times
-			if frontmost is true then
-				set musicWindow to first window whose subrole is "AXStandardWindow"
-				set searchField to text field 1 of UI element 1 of row 1 of outline 1 of scroll area 1 of splitter group 1 of musicWindow
+			if frontmost is true and number of windows is greater than 0 then
+				set searchField to text field 1 of UI element 1 of row 1 of outline 1 of scroll area 1 of splitter group 1 of (first window whose subrole is "AXStandardWindow")
 				if subrole of searchField is "AXSearchField" then
-					set focused to searchField
-					set value of searchField to "{popclip text}"
-					keystroke return
+					tell searchField
+						set focused to true
+						set value to "{popclip text}"
+						keystroke return
+					end tell
 				end if
 				exit repeat
 			end if
