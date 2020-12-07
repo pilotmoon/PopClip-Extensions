@@ -11,6 +11,10 @@
 			<string>Reminders.png</string>
 			<key>Title</key>
 			<string>Add to Reminders</string>
+      <key>Permissions</key>
+      <array>
+        <string>reminders</string>
+      </array>
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -19,7 +23,7 @@
 	<string>com.pilotmoon.popclip.extension.reminders</string>
 	<key>Extension Name</key>
 	<string>Reminders</string>
-	<key>Required OS Version</key>
-	<string>10.12</string>
+	<key>Required Software Version</key>
+	<string>3112</string>
 </dict>
 </plist>
