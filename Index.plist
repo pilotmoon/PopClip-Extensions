@@ -114,7 +114,8 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>OmniFocus</string>
+			<string>Reminders</string>
+      <string>OmniFocus</string>
 			<string>Things3</string>
 			<string>2Do</string>
 			<string>Doit</string>
