@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+    	<key>Regular Expression</key>
+			<string>(?s)^$</string>
+			<key>Requirements</key>
+			<array>
+				<string>paste</string>
+			</array>
+      <key>After</key>
+      <string>paste-result</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>datetime.php</string>
+			<key>Title</key>
+			<string>TS</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Paste the current date and time.</string>
+	<key>Extension Name</key>
+	<string>Timestamp</string>
+    <key>Extension Identifier</key>
+    <string>com.pilotmoon.popclip.extension.timestamp</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>date</string>
+			<key>Option Label</key>
+			<string>Date format</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>Y-m-d (2013-05-04)</string>
+				<string>Y/m/d (2013/05/04)</string>
+				<string>Ymd (20130504)</string>
+				<string>D/M/Y (4/5/2013)</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>time</string>
+			<key>Option Label</key>
+			<string>Time format</string>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>				
+        <string>H:i:s (12:15:01)</string>
+				<string>H:i (12:15)</string>
+        <string>None</string>
+			</array>
+		</dict>
+	</array>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>
