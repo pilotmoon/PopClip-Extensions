@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>After</key>
-			<string>paste-result</string>
+			<string>copy-result</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
