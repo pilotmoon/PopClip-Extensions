@@ -19,5 +19,7 @@
 	<string>Magnetize</string>
 	<key>Extension Identifier</key>
 	<string>com.oxxie.popclipextensions.magnetize</string>
+	<key>Extension Image File</key>
+	<string>magnet.png</string>
 </dict>
 </plist>
