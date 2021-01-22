@@ -71,8 +71,7 @@
 		<array>
 			<string>GoogleTranslate</string>
 			<string>BingTranslator</string>
-			<string>DeepLTranslator</string>
-			<string>InstantTranslate</string>	
+			<string>DeepLTranslator</string>			
 			<string>TranslateTab</string>									
 			<string>MateTranslate</string>
 			<string>BubbleTranslate3</string>
@@ -179,7 +178,6 @@
 			<string>Leap</string>			
 			<string>HoudahSpot</string>
 			<string>Tembo</string>
-			<string>TextExpander</string>
 			<string>Typinator</string>			
 			<string>TextSoap</string>	
 			<string>Parcel</string>		
