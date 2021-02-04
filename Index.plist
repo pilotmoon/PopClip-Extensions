@@ -69,11 +69,12 @@
 	<dict>
 		<key>Members</key>
 		<array>
+      <string>InstantTranslate</string>
 			<string>GoogleTranslate</string>
 			<string>BingTranslator</string>
 			<string>DeepLTranslator</string>			
-			<string>TranslateTab</string>									
 			<string>MateTranslate</string>
+      <string>TranslateTab</string>									
 			<string>BubbleTranslate3</string>
 		</array>
 		<key>Title</key>
