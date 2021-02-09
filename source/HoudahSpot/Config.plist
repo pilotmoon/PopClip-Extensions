@@ -18,8 +18,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.houdah.HoudahSpot4</string>
+			<key>Bundle Identifiers</key>
+      <array>
+			  <string>com.houdah.HoudahSpot4</string>
+        <string>com.houdah.HoudahSpot-setapp</string>
+      </array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
