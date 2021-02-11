@@ -10,14 +10,14 @@
 			<key>URL</key>
 			<string>https://developer.mozilla.org/search?q={popclip text}</string>
 			<key>Title</key>
-			<string>MDN Web Docs Search</string>
+			<string>MDN Web Docs</string>
 		</dict>
 	</array>
 	<key>Extension Identifier</key>
-	<string>de.trommelspeicher.popclip.extension.mdn-web-docs</string>
+	<string>com.pilotmoon.popclip.extension.mdn</string>
 	<key>Extension Name</key>
 	<string>MDN Web Docs</string>
 	<key>Extension Description</key>
-    <string>Open Mozilla Developer Network (MDN) Web Docs in a web browser with the selected text to search.</string>
+    <string>Search Mozilla Developer Network (MDN) Web Docs with the selected text.</string>
 </dict>
 </plist>
