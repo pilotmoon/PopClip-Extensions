@@ -11,8 +11,8 @@
 			<string>(?s)^.{1,200}$</string>
 			<key>Title</key>
 			<string>Rotten Tomatoes</string>
-			<key>URL</key>
-			<string>https://www.rottentomatoes.com/search/?search={popclip text}</string>
+			<key>Shell Script File</key>
+			<string>rotten.zsh</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
