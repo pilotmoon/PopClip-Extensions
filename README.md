@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*This documentation applies to PopClip 1.5.8 and later*
+*This documentation applies to PopClip 2020.12 and later*
 
 ## Introduction
 
@@ -296,6 +296,14 @@ Here is an example of an AppleScript file for use in an extension (this one is f
 Here is an example of an shell script for use in an extension (this one is for 'Say'):
 
     echo $POPCLIP_TEXT | say
+
+### Shell Script Testing
+
+While developing a script, you can test it from the command line by exporting the required variables. For example:
+
+    export POPCLIP_TEXT="my test text"
+    export POPCLIP_OPTION_FOO="foo"
+    ./myscript
 
 ### Script Returning Result
 

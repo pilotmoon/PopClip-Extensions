@@ -69,12 +69,12 @@
 	<dict>
 		<key>Members</key>
 		<array>
+      <string>InstantTranslate</string>
 			<string>GoogleTranslate</string>
 			<string>BingTranslator</string>
-			<string>DeepLTranslator</string>
-			<string>InstantTranslate</string>	
-			<string>TranslateTab</string>									
+			<string>DeepLTranslator</string>			
 			<string>MateTranslate</string>
+      <string>TranslateTab</string>									
 			<string>BubbleTranslate3</string>
 		</array>
 		<key>Title</key>
@@ -179,7 +179,6 @@
 			<string>Leap</string>			
 			<string>HoudahSpot</string>
 			<string>Tembo</string>
-			<string>TextExpander</string>
 			<string>Typinator</string>			
 			<string>TextSoap</string>	
 			<string>Parcel</string>		
