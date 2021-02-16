@@ -7,8 +7,14 @@ $token = getenv('POPCLIP_OPTION_ACCESSTOKEN');
 
 $payload = new stdClass();
 $payload->text = $text;
-$payload->source_url = $source_url;
-$payload->title = $title;
+
+if (strlen($source_url) > 0) {
+  $payload->source_url = $source_url;
+}
+
+if (strlen($source_url) > 0) {
+  $payload->title = $title;
+}
 
 $highlights = array($payload);
 
