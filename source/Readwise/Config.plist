@@ -41,7 +41,7 @@
 		<string>Save selected text as highlight in Readwise.</string>
 	</dict>
 	<key>Extension Identifier</key>
-	<string>com.papermoon.popclip.extension.readwise</string>
+	<string>com.pilotmoon.popclip.extension.readwise</string>
 	<key>Extension Name</key>
 	<dict>
 		<key>en</key>
@@ -61,6 +61,8 @@
 			<string>string</string>
 		</dict>
 	</array>
+  <key>Options Title</key>
+  <string>Get token from readwise.io/access_token</string>
 	<key>Required Software Version</key>
 	<integer>714</integer>
 </dict>
