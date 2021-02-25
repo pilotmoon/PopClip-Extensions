@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>ru.bartleby.BubbleTranslate3</string>
+			<key>Bundle Identifiers</key>
+      <array>
+			  <string>ru.bartleby.BubbleTranslate3</string>
+        <string>name.bartleby.Bubble-Translate</string>
+      </array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
