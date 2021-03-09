@@ -27,6 +27,7 @@
 			<string>Hyphenate</string>				
 			<string>Underscore</string>			
 			<string>RemoveSpaces</string>				
+      <string>Slugify</string>				
 			<string>FullHalfWidth</string>
 		</array>
 		<key>Title</key>
