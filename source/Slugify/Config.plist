@@ -7,21 +7,21 @@
 		<dict>
 			<key>After</key>
 			<string>paste-result</string>
+			<key>Image File</key>
+			<string>slug.png</string>
 			<key>Script Interpreter</key>
-			<string>/usr/local/bin/bash</string>
+			<string>/bin/bash</string>
 			<key>Shell Script File</key>
 			<string>slugify.sh</string>
 			<key>Title</key>
-			<string>GitHub Anchor Header Link id</string>
-			<key>Image File</key>
-			<string>link.png</string>
+			<string>Slugify</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Replace spaces between words with hyphens, remove anything that is not a letter, number, space or hyphen and downcase. For example, 'The Good, the Bad and the Ugly' becomes 'the-good-the-bad--the-ugly'.</string>
+	<string>Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.</string>
 	<key>Extension Identifier</key>
-	<string>com.wildcard.popclip.extension.githubSlugify</string>
+	<string>com.pilotmoon.popclip.extension.slugify</string>
 	<key>Extension Name</key>
-	<string>GitHub Markdown Anchor Link id Slug</string>
+	<string>Slugify</string>
 </dict>
 </plist>
