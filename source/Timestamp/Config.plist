@@ -18,7 +18,9 @@
 			<key>Shell Script File</key>
 			<string>datetime.php</string>
 			<key>Title</key>
-			<string>TS</string>
+			<string>Timestamp</string>
+      <key>Image File</key>
+      <string>clock.png</string> 
 		</dict>
 	</array>
 	<key>Extension Description</key>
@@ -38,10 +40,11 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
-				<string>Y-m-d (2013-05-04)</string>
-				<string>Y/m/d (2013/05/04)</string>
-				<string>Ymd (20130504)</string>
-				<string>D/M/Y (4/5/2013)</string>
+				<string>Y-m-d (2021-10-04)</string>
+				<string>Y/m/d (2021/10/04)</string>
+				<string>Ymd (20211004)</string>
+				<string>D/M/Y (4/10/2021)</string>
+        <string>M/D/Y (10/4/2021)</string>
 			</array>
 		</dict>
 		<dict>
