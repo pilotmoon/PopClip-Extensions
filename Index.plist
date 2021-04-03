@@ -325,13 +325,14 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>Calculate</string>
+      <string>Timestamp</string>		
+      <string>Calculate</string>
 			<string>Convert</string>
 			<string>Sort</string>
 			<string>Reverse</string>
 			<string>Shuffle</string>			
 			<string>Append</string>
-			<string>Swap</string>	
+			<string>Swap</string>	      
 		</array>
 		<key>Title</key>
 		<string>Useful Tools</string>
