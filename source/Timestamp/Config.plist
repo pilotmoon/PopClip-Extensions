@@ -43,8 +43,8 @@
 				<string>Y-m-d (2021-10-04)</string>
 				<string>Y/m/d (2021/10/04)</string>
 				<string>Ymd (20211004)</string>
-				<string>D/M/Y (4/10/2021)</string>
-        <string>M/D/Y (10/4/2021)</string>
+				<string>d/m/Y (4/10/2021)</string>
+        <string>m/d/Y (10/4/2021)</string>
 			</array>
 		</dict>
 		<dict>
