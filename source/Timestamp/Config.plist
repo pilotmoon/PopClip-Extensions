@@ -5,6 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>    	
+     	<key>Regular Expression</key>
+			<string>(?s)^$</string>
 			<key>Requirements</key>
 			<array>
 				<string>paste</string>
