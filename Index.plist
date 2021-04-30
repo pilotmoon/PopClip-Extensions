@@ -69,8 +69,7 @@
 	</dict>
 	<dict>
 		<key>Members</key>
-		<array>
-      <string>InstantTranslate</string>
+		<array>    
 			<string>GoogleTranslate</string>
 			<string>BingTranslator</string>
 			<string>DeepLTranslator</string>			
