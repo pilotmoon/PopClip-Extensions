@@ -55,7 +55,7 @@ Please be aware that PopClip extensions can contain arbitrary executable scripts
 
 ## Extra Debugging Output
 
-To help you when debugging Script extensions, PopClip can be configure to write script output and debug info to the console. To enable it, run this command in Terminal:
+To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to the console. To enable it, run this command in Terminal:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
@@ -135,7 +135,7 @@ Common reasons for malformed XML are:
 
 * Missing end tags
 * Mismatched start and end tags
-* Unescaped `&` characters (`&` must be endoded as `&amp;`)
+* Unescaped `&` characters (`&` must be encoded as `&amp;`)
 
 ### Config.plist Structure
 The `Config.plist` file has the following structure.
