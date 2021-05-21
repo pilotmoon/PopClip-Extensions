@@ -10,6 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^[^\n\r]{1,100}$</string>
 			<key>URL</key>
+			<!--<string>fafapp://find/?tpl={popclip option faf_template}&amp;inp={popclip text}</string>-->
 			<string>fafapp://find/?inp={popclip text}</string>
 			<key>Title</key>
 			<string>Find this file name with FAF</string>
@@ -22,6 +23,7 @@
 				<string>path</string>
 			</array>
 			<key>URL</key>
+			<!--<string>fafapp://find/?tpl={popclip option faf_template}&amp;loc={popclip text}</string>-->
 			<string>fafapp://find/?loc={popclip text}</string>
 			<key>Title</key>
 			<string>Search here with FAF</string>
@@ -74,7 +76,7 @@
 		<string>Lance une recherche Find Any File.</string>
 	</dict>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.FindAnyFile</string>
+	<string>org.tempel.pilotmoon.popclip.extension.FindAnyFile</string>
 	<key>Extension Name</key>
 	<string>FindAnyFile</string>
 </dict>
