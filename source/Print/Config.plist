@@ -11,6 +11,8 @@
 			<string>print.zsh</string>
 			<key>Title</key>
 			<string>Print</string>
+			<key>Image File</key>
+			<string>Printer.png</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
