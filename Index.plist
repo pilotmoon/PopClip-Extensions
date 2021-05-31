@@ -55,6 +55,7 @@
 		<key>Members</key>
 		<array>
 			<string>LargeType</string>			
+			<string>Print</string>			
 		</array>
 		<key>Title</key>
 		<string>Text Display</string>
