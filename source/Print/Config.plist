@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Script Interpreter</key>
+			<string>/bin/zsh</string>
+			<key>Shell Script File</key>
+			<string>print.zsh</string>
+			<key>Title</key>
+			<string>Print</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Print the selected text to the default printer.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.print</string>
+	<key>Extension Name</key>
+	<string>Print</string>
+</dict>
+</plist>
