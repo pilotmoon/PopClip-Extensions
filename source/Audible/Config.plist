@@ -20,7 +20,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.audible-search</string>
 	<key>Extension Name</key>
-	<string>Amazon</string>
+	<string>Audible</string>
 	<key>Options</key>
 	<array>
 		<dict>
