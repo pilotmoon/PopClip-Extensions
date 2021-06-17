@@ -22,6 +22,7 @@
 			<string>Lowercase</string>
 			<string>Capitalize</string>
 			<string>TitleCase</string>
+			<string>SentenceCase</string>
 			<string>Quotes</string>
 			<string>Brackets</string>
 			<string>Hyphenate</string>				
