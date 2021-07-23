@@ -150,8 +150,6 @@ The `Config.plist` file has the following structure.
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
 |`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
-|`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
-|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will pass the selected HTML text (if available) to the extension in the `POPCLIP_HTML` (shell scripts) and `{popclip html}` (AppleScript) fields. Default is `NO`. Leaving this set to `NO` PopClip does not have to process the HTML and this can be slightly faster.|
 |`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension.|
 |`Extension Long Name`|String or Dictionary|Optional|You can include a long version of the extension name here. Appears on the web site but not in the app.|
@@ -183,8 +181,6 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Regular Expression`|String|Optional|As above; this value overrides the value specified in the extension header.|
 |`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
 |`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 |`Restore Pasteboard`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
 
 
@@ -246,7 +242,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
 |`POPCLIP_URL_TITLES`|`{popclip url titles}`|Newline-separated list of titles for the urls in `POPCLIP_URLS` which PopClip detected in the selected text. If no title is available, the string will contain an empty line.|
-|`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
+|`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
