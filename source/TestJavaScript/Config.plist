@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>JavaScript File</key>
+			<string>test.js</string>
+			<key>JavaScript Function</key>
+			<string>test</string>
+			<key>Title</key>
+			<string>TestJS</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Test for JavaScript extensions.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.javascript.test-1</string>
+	<key>Extension Name</key>
+	<string>JS Test</string>
+</dict>
+</plist>
