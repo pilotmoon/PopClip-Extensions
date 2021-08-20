@@ -196,7 +196,7 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 
 ### Before and After keys
 
-These are the values supported by the `Before` and `After` fields.
+Thee `cut`, `copy`, `paste` and `paste-plain` keys can be used in the `Before` field. All the values can be used in the `After` field.
 
 |Value|Description|
 |-----|-----------|
@@ -204,8 +204,6 @@ These are the values supported by the `Before` and `After` fields.
 |`copy`|Perform system Copy command, as if user pressed ⌘C.|
 |`paste`|Perform system Paste command, as if user pressed ⌘V.|
 |`paste-plain`|Strip the system pasteboard down to plain text only, then perform system Paste command, as if user pressed ⌘V.|
-|`popclip-appear`|Makes PopClip invoke itself again. (This is used in the Select All extension).|
-|`copy-selection`|Copy the originally selected text as plain text. (This is used in the Swap extension.)|
 |`copy-result`|Copy the text returned from the script script to the clipboard. Displays "Copied" notification. If there is no text, or the script failed, shows an 'X'.|
 |`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, only copy it as in `copy-result`. If there is no text, or the script failed, shows an 'X'.|
 |`preview-result`|Copy the text returned from the script to the clipboard, and show the result as well (truncated to 100 characters). If the system Paste command is available, the preview text can be clicked to paste it. If there is no text, or the script failed, shows an 'X'.|
