@@ -1,8 +1,3 @@
-// require("./util.js");
-
-function test(inputString) {
-    return `hello ${inputString}`.normalize()
+function main(selection, context) {
+    return selection.text.normalize().toUpperCase()
 }
-
-print(test("boo"))
-

@@ -145,15 +145,7 @@ The `Config.plist` file has the following structure.
 |`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. Use your own prefix, ideally a reverse DNS-style prefix. For example `com.example.myextension`. Do not use the prefix `com.pilotmoon.` for your own extensions.|
 |`Extension Name`|String or Dictionary| Required |This is a display name that appears in the preferences list of extensions.|
 |`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
-|`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
-|`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `Apps` field.*|
-|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
-|`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
-|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
-|`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
-|`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension.|
-|`Extension Long Name`|String or Dictionary|Optional|You can include a long version of the extension name here. Appears on the web site but not in the app.|
-|`Credits`|Array|Optional|An array of dictionaries. Information about the creator(s) of the extension. See [Credits Dictionary](#credits-dictionary).|
+|`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`Apps`|Array|Optional|An array of dictionaries containing information about the apps or websites associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [Apps Dictionary](#apps-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
 |`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `701` for PopClip 1.4.5.|
@@ -162,11 +154,12 @@ The `Config.plist` file has the following structure.
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for this extension.`.|
 
 ### Action Dictionary
-Each action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified.
+The action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified. The other keys can also be placed at the top level of the config file, in which case they act as a fallback for all actions in the extension which don't supply their own value.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title. For extensions with icons, the title is displayed in the toolip when the user hovers over the action's button in PopClip.|
+|`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
 |`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
@@ -175,14 +168,14 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder. For example, `http://translate.google.com/#auto%7Cauto%7C{popclip text}`. Any `&` characters must be XML-encoded as `&amp;`.|
 |`Key Combo`|Dictionary|Required for Keypress actions|Specify the keypress which will be generated by PopClip. See [Key Code format](#key-code-format). Key presses are delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".|
 |`Before`|String|Optional|String to indicate an action PopClip should take *before* performing the main action. See [Before and After keys](#before-and-after-keys).|
-|`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After keys](#before-and-after-keys).|
-|`Blocked Apps`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Required Apps`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Regular Expression`|String|Optional|As above; this value overrides the value specified in the extension header.|
-|`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Restore Pasteboard`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-
+|`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After keys](#before-and-after-keys).
+|`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
+|`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `Apps` field.*|
+|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
+|`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
+|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
+|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture the HTML for the selection (if available) and pass it to the extension alongside the plain text. Default is `NO`.|
+|`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
 
 ### Requirements keys
 
@@ -238,27 +231,18 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 
 |Shell Script Variable|AppleScript Field|Description|
 |---------------------|-----------------|-----------|
-|`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
+|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
+|`POPCLIP_ACTION_IDENTIFIER`|`{popclip extension identifier}`|This identifier specified in the action's configuration, if any.|
+|`POPCLIP_TEXT`|`{popclip text}`|The selected plain text.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
+|`POPCLIP_HTML`|`{popclip html}`|The selected HTML, if available and if `Pass HTML` is specified in the action's configuration.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
-|`POPCLIP_URL_TITLES`|`{popclip url titles}`|Newline-separated list of titles for the urls in `POPCLIP_URLS` which PopClip detected in the selected text. If no title is available, the string will contain an empty line.|
-|`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
-|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
-|`POPCLIP_SPECIAL_BROWSER_TITLE`|`{popclip special browser title}`|The title of the web page, ONLY only if the user selected the URL in the address bar (i.e. this is likely the title of the corresponding web page to the URL). (Safari and Chrome only.)|
-|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
-|`POPCLIP_DECIMAL_SEPARATOR`|n/a|The decimal separator character according to the OS X system locale. For example: `.`|
-|`POPCLIP_GROUPING_SEPARATOR`|n/a|The number grouping (thousands separator) character according to the OS X system locale. For example: `,`|
+|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
+|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
-
-### Credits Dictionary
-
-|Key|Type|Required?|Description|
-|---|----|---------|-----------|
-|`Name`|String|Required|Name or identifier of the contributor. For example `John Smith`.|
-|`Link`|String|Optional|A link to the contributor's website or other URL. For example `http://johnsmith.com`|
 
 ### Apps Dictionary
 

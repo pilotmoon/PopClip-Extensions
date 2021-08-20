@@ -9,10 +9,20 @@
 			<string>preview-result</string>
 			<key>JavaScript File</key>
 			<string>test.js</string>
-			<key>JavaScript Function</key>
-			<string>test</string>
 			<key>Title</key>
-			<string>TestJS</string>
+			<string>TestJS1</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>2</string>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>JavaScript File</key>
+			<string>test.js</string>
+			<key>JavaScript Function</key>
+			<string>second</string>
+			<key>Title</key>
+			<string>TestJS2</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
