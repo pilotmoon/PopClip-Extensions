@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Shell Script File</key>
+			<string>null.sh</string>
+			<key>Title</key>
+			<string>TestSVG-star</string>
+			<key>Image File</key>
+			<string>star.svg</string>
+		</dict>
+				<dict>
+			<key>Shell Script File</key>
+			<string>null.sh</string>
+			<key>Title</key>
+			<string>TestSVG-insta</string>
+			<key>Image File</key>
+			<string>instagram.svg</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Test shell scripts.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.test-svg</string>
+	<key>Extension Name</key>
+	<string>Test SVG</string>
+</dict>
+</plist>
