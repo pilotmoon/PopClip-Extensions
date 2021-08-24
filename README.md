@@ -111,9 +111,11 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
 ### Icons
-Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published). Icons may be created in any graphics program; I use [Pixelmator](http://www.pixelmator.com/).
+Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published). 
 
-For best results, the icon should be a square PNG file at least 256x256 pixels in size. The image should consist of a black figure on a transparent background. You can use opacity to achieve 'shades of grey'.
+Icons should be either PNG or SVG files.
+
+When using a PNG, the icon should be a square at least 256x256 pixels in size. The image should consist of a black figure on a transparent background. You can use opacity to create shading.
 
 For example, here is the full-size icon file for 'Sort':
 
