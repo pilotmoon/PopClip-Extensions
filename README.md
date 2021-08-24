@@ -188,11 +188,11 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`copy`|The system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
 |`cut`|The system Cut command must be available.|
 |`paste`|The system Paste command must be available.|
-|`formatting`|The selected text control must support formatting.|
-|`httpurl`|Require the text to contain exactly one HTTP(S) URL; only the matching part will be passed to the action.|
+|`httpurl`|Require the text to contain exactly one HTTP(S) URL; the matching part will be passed to the action.|
 |`httpurls`|Require the text to contain one or more HTTP(S) URLs.|
-|`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
-|`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
+|`email`|Require the text to contain exactly one email address; the matching part will be passed to the action.|
+|`path`|Require the text to contain exactly one local file path; the matching part will be passed to the action.| 
+|`formatting`|The selected text control must support formatting.|
 |`html`|Selection must be HTML text (for example, text in a web page).|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
 
@@ -235,7 +235,8 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |---------------------|-----------------|-----------|
 |`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
 |`POPCLIP_ACTION_IDENTIFIER`|`{popclip extension identifier}`|This identifier specified in the action's configuration, if any.|
-|`POPCLIP_TEXT`|`{popclip text}`|The selected plain text.|
+|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
+|`POPCLIP_FULL_TEXT`|`{popclip text}`|The selected plain text in its entirety.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
 |`POPCLIP_HTML`|`{popclip html}`|The selected HTML, if available and if `Pass HTML` is specified in the action's configuration.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
