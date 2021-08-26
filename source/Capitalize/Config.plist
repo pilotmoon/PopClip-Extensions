@@ -23,7 +23,5 @@
 	<string>com.pilotmoon.popclip.extension.capitalize</string>
 	<key>Extension Name</key>
 	<string>Capitalize</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
