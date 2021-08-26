@@ -3,12 +3,12 @@ const starIcon = `svg:
 <polygon points="255 402.21 412.59 497.25 370.9 318.01 510 197.47 326.63 181.74 255 12.75 183.37 181.74 0 197.47 139.1 318.01 97.41 497.25"/>
 </svg>
 `
-var extension = {
+var Extension = {
     identifier: "com.pilotmoon.popclip.extension.test-js",
     name: "Test JS!",
     icon: "text:[hi!]",    
     code: (selection) => {
-        popclip.paste(selection.text?.normalize().toUpperCase());
+        popclip.paste(selection.text.normalize().toUpperCase());
     }
 }
 
