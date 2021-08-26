@@ -177,7 +177,6 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture the HTML for the selection (if available) and pass it to the extension alongside the plain text. Default is `NO`.|
-|`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
 
 ### Requirements keys
 
