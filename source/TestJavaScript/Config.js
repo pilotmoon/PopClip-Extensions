@@ -15,7 +15,14 @@ var Extension = {
         //popclip.paste(selection.text.toUpperCase())
         // /Users/phil
         // ~/Documents
+        // const rtf=`{\\rtf1\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\\f0\\pard
+        // This is some {\\b bold} text.\\par
+        // }`
+        // context.paste({
+        //     "public.rtf": rtf
+        // })
         console.log("Hello")
+        console.log(context.getBrowserUrl(), context.getBrowserTitle())
     },
     flags: {
         captureHtml: true,        
