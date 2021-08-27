@@ -5,11 +5,24 @@ const starIcon = `svg:
 `
 var Extension = {
     identifier: "com.pilotmoon.popclip.extension.test-js",
-    name: "Test JS!",
-    icon: "text:[hi!]",    
-    code: (selection) => {
-        popclip.paste(selection.text.normalize().toUpperCase());
-    }
+    name: "TestJS",
+    icon: starIcon,
+    code: (selection, context, options) => {
+        // spotify:jh8723423434
+        // nick@pilotmoon.com
+        // apple.com
+        // ~/Documents
+        //popclip.paste(selection.text.toUpperCase())
+        // /Users/phil
+        // ~/Documents
+        console.log("Hello")
+    },
+    flags: {
+        captureHtml: true,        
+    },
+    captureTypes: ["public.rtf", "com.apple.webarchive"],
+    options: [{identifier: "myoption", label: "My Option", type: "string"},
+    {identifier: "mybool",label: "Bool Option",type: "boolean"}],
 }
 
 //     populate: (selection, context, options) => {
