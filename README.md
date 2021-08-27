@@ -1,8 +1,8 @@
+**IMPORTANT NOTE (27 Aug 2021): AVOID USING PHP FOR NEW EXTENSIONS.** PHP is no longer shipped with macOS as of Monterey. Other scripting languages may well disappear in future too. I will be introducing a new extension format, based on JavaScript, in a PopClip soon. This will also allow some cool new  capabilities for extensions. Watch this space, and check the release notes on the [beta](https://pilotmoon.com/popclip/download) page, and also keep an eye on the [blog](https://pilotmoon.com/blog/).
+
 # PopClip Extensions
 
-*This documentation applies to PopClip 2020.12 (`3117`) and later.*
-
-**IMPORTANT NOTE (27 Aug 2021): AVOID USING PHP FOR NEW EXTENSIONS.** PHP is no longer shipped with macOS as of Monterey. Other scripting languages may well disappear in future too. I will be introducing a new extension format, based on JavaScript, in a PopClip soon. This will also allow some cool new  capabilities for extensions. Watch this space, and check the release notes on the [beta](https://pilotmoon.com/popclip/download) page, and also keep an eye on the [blog](https://pilotmoon.com/blog/).
+*Documentation updated 27 Aug 2021. Applicable from PopClip 2020.12 (`3117`) onwards.*
 
 ## Introduction
 

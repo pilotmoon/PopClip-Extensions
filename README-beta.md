@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*This documentation applies to PopClip [latest beta version](https://pilotmoon.com/popclip/download).*
+*This documentation is for the PopCLip [Beta Release](https://pilotmoon.com/popclip/download). It has been updated for PopClip Build 3317.*
 
 ## Introduction
 
