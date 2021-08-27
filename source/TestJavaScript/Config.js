@@ -3,7 +3,7 @@ const starIcon = `svg:
 <polygon points="255 402.21 412.59 497.25 370.9 318.01 510 197.47 326.63 181.74 255 12.75 183.37 181.74 0 197.47 139.1 318.01 97.41 497.25"/>
 </svg>
 `
-var Extension = {
+var extension = {
     identifier: "com.pilotmoon.popclip.extension.test-js",
     name: "TestJS",
     icon: starIcon,
@@ -22,12 +22,12 @@ var Extension = {
         //     "public.rtf": rtf
         // })
         console.log("Hello")
-        console.log(context.getBrowserUrl(), context.getBrowserTitle())
     },
     flags: {
-        captureHtml: true,        
+        captureHtml: true,
+        captureRtf: true, 
+        captureBrowserInfo: true,
     },
-    captureTypes: ["public.rtf", "com.apple.webarchive"],
     options: [{identifier: "myoption", label: "My Option", type: "string"},
     {identifier: "mybool",label: "Bool Option",type: "boolean"}],
 }

@@ -1,8 +1,9 @@
-var Extension = {
+// Experimental JavaScript format, subject to change.
+var extension = {
     identifier: "com.pilotmoon.popclip.extension.lowercase",
     name: "Lowercase",
     icon: "text:[[ab]]",
-    code: (selection, context) => {
-        context.paste(selection.text.toLowerCase())
+    code: (selection) => {
+        popclip.paste(selection.text.toLowerCase())
     }
 }
