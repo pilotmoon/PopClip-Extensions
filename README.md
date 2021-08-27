@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*This documentation applies to PopClip 2020.12 and later*
+*This documentation applies to PopClip 2020.12 (`3117`) and later.*
 
 ## Introduction
 
