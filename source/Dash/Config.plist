@@ -23,6 +23,7 @@
 				<string>com.kapeli.dash</string>
 				<string>com.kapeli.dashdoc</string>
 				<string>com.kapeli.dashbeta</string>
+				<string>com.kapeli.dash-setapp</string>
 			</array>
             		<key>Check Installed</key>
 			<true/>

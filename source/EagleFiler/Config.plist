@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>eagle.png</string>
+			<key>Service Name</key>
+			<string>EagleFiler: Import</string>
+			<key>Title</key>
+			<string>EagleFiler</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.c-command.EagleFiler</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://c-command.com/eaglefiler/</string>
+			<key>Name</key>
+			<string>EagleFiler</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Import the selected text into EagleFiler.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.eaglefiler</string>
+	<key>Extension Name</key>
+	<string>EagleFiler</string>	
+</dict>
+</plist>

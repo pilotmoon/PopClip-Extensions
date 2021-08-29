@@ -18,12 +18,15 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.houdah.HoudahSpot4</string>
+			<key>Bundle Identifiers</key>
+      <array>
+			  <string>com.houdah.HoudahSpot4</string>
+        <string>com.houdah.HoudahSpot-setapp</string>
+      </array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://www.houdah.com/houdahSpot</string>
+			<string>https://www.houdah.com/houdahSpot/</string>
 			<key>Name</key>
 			<string>HoudahSpot</string>
 		</dict>
@@ -32,7 +35,7 @@
 	<array>
 		<dict>
 			<key>Link</key>
-			<string>http://www.houdah.com/</string>
+			<string>https://www.houdah.com/</string>
 			<key>Name</key>
 			<string>Houdah Software s.à r.l.</string>
 		</dict>

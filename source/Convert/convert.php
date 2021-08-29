@@ -1,9 +1,9 @@
 <?php
 // regex for possible decimal separators
-define (ALL_SEPARATORS, '[\.,]');
+define ('ALL_SEPARATORS', '[\.,]');
 
 // get proper decimal separator for the locale
-define (DECIMAL_SEPARATOR, ifNull(getenv('POPCLIP_DECIMAL_SEPARATOR'),'.'));
+define ('DECIMAL_SEPARATOR', ifNull(getenv('POPCLIP_DECIMAL_SEPARATOR'),'.'));
 function ifNull($a, $b) {
 	return $a?$a:$b;
 }

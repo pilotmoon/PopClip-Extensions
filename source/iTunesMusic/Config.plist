@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Search Apple Music, iTunes Store or local library in iTunes.</string>
+	<string>Search Music in iTunes (macOS 10.14 and earlier).</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.itunes-music</string>
 	<key>Extension Name</key>

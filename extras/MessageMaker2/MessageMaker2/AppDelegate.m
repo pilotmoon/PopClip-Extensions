@@ -47,7 +47,7 @@ NSDictionary *_serviceNames=nil;
     NSArray *const args=[[NSProcessInfo processInfo] arguments];
     if ([args count]>3) {
         // return 2nd argument if available
-        return args[3];c
+        return args[3];
     }
     else {
         // get text from stdin

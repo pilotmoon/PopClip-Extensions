@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Service Name</key>
+			<string>DEVONthink Pro: Take Plain Note</string>
+			<key>Image File</key>
+			<string>DEVONthinkClip.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>copy</string>
+				<string>option-clip-enabled=1</string>
+			</array>
+			<key>Title</key>
+			<string>Clip to DEVONthink</string>
+		</dict>
+		<dict>
+			<key>Service Name</key>
+			<string>DEVONthink Pro: Lookup...</string>
+			<key>Image File</key>
+			<string>DEVONthinkSearch.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>copy</string>
+				<string>option-search-enabled=1</string>
+			</array>
+			<key>Title</key>
+			<string>Search in DEVONthink</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.devontechnologies.com/apps/devonthink</string>
+			<key>Name</key>
+			<string>DEVONthink 3</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Clip the selected text to your DEVONthink 3 inbox, or search your open databases for the text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.devonthink3</string>
+	<key>Extension Image File</key>
+	<string>DEVONthinkClip.png</string>
+	<key>Extension Name</key>
+	<string>DEVONthink 3</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>clip-enabled</string>
+			<key>Option Label</key>
+			<string>Clip to DEVONthink</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>search-enabled</string>
+			<key>Option Label</key>
+			<string>Search in DEVONthink</string>
+			<key>Option Type</key>
+			<string>boolean</string>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<string>Actions Available</string>
+	<key>Pass HTML</key>
+	<false/>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

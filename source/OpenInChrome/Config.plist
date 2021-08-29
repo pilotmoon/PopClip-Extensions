@@ -40,7 +40,5 @@
 	<string>com.pilotmoon.popclip.extension.open-in-chrome</string>
 	<key>Extension Name</key>
 	<string>Open in Chrome</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

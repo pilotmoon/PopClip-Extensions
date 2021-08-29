@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>JiraLogo.png</string>			
+			<key>Title</key>
+			<string>Jira</string>
+			<key>URL</key>
+			<string>https://{popclip option domain}.atlassian.net/browse/{popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for tickets on Jira Cloud.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.jira</string>
+	<key>Extension Name</key>
+	<string>Jira Cloud</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>domain</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Domain</string>
+			</dict>
+			<key>Option Type</key>
+			<string>string</string>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<dict>
+		<key>en</key>
+		<string>Specify your Jira site: &lt;domain&gt;.atlassian.net</string>
+	</dict>
+</dict>
+</plist>

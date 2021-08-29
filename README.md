@@ -1,6 +1,8 @@
+**IMPORTANT NOTE (27 Aug 2021): AVOID USING PHP FOR NEW EXTENSIONS.** PHP is no longer shipped with macOS as of Monterey. Other scripting languages may well disappear in future too. I will be introducing a new extension format, based on JavaScript, in a PopClip soon. This will also allow some cool new  capabilities for extensions. Watch this space, and check the release notes on the [beta](https://pilotmoon.com/popclip/download) page, and also keep an eye on the [blog](https://pilotmoon.com/blog/).
+
 # PopClip Extensions
 
-*Documentation for PopClip 1.5.8*
+*Documentation updated 27 Aug 2021. Applicable from PopClip 2020.12 (`3117`) onwards.*
 
 ## Introduction
 
@@ -16,7 +18,7 @@ All extension source files are published under the MIT License (see LICENSE) unl
 
 ## Credits
 
-All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are are shown in the readme file of each individual extension.
+All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are shown in the readme file of each individual extension.
 
 ## Contributing
 
@@ -55,7 +57,7 @@ Please be aware that PopClip extensions can contain arbitrary executable scripts
 
 ## Extra Debugging Output
 
-To help you when debugging Script extensions, PopClip can be configure to write script output and debug info to the console. To enable it, run this command in Terminal:
+To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to the console. To enable it, run this command in Terminal:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
@@ -135,7 +137,7 @@ Common reasons for malformed XML are:
 
 * Missing end tags
 * Mismatched start and end tags
-* Unescaped `&` characters (`&` must be endoded as `&amp;`)
+* Unescaped `&` characters (`&` must be encoded as `&amp;`)
 
 ### Config.plist Structure
 The `Config.plist` file has the following structure.
@@ -172,7 +174,7 @@ Each action dictionary has the following structure. Exactly **one** of `Service 
 |`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title. For extensions with icons, the title is displayed in the toolip when the user hovers over the action's button in PopClip.|
 |`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
-|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt`) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
+|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
 |`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. This will be passed as the parameter to `/bin/sh`. Within the script, use the environment variable `$POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
 |`Script Interpreter`|String|Optional|Specify the interpreter to use for the script specified in `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`.
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder. For example, `http://translate.google.com/#auto%7Cauto%7C{popclip text}`. Any `&` characters must be XML-encoded as `&amp;`.|
@@ -223,7 +225,7 @@ These are the values supported by the `Before` and `After` fields.
 |`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, only copy it as in `copy-result`. If there is no text, or the script failed, shows an 'X'.|
 |`preview-result`|Copy the text returned from the script to the clipboard, and show the result as well (truncated to 100 characters). If the system Paste command is available, the preview text can be clicked to paste it. If there is no text, or the script failed, shows an 'X'.|
 |`show-result`|Show the text returned from the script. If there is no text, or the script failed, shows an 'X'.|
-|`show-status`|Show a tick or a 'X', depending on whether the script succeeded ort not.|
+|`show-status`|Show a tick or a 'X', depending on whether the script succeeded or not.|
 
 ### Option Dictionary
 
@@ -234,7 +236,7 @@ Options are presented to the user in a preferences window and are saved by PopCl
 |`Option Identifier`|String|Required|Unique identifying string for this option. **It must be an all-lowercase string.** This field is used to pass the option to your script. (See [Script Fields](#script-fields).)|
 |`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box) or `multiple` (pop-up box with multiple choice options).|
 |`Option Label`|String or Dictionary|Required|Label to appear in the user interface for this option.|
-|`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specified the default value of the option.|
+|`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specifies the default value of the option.|
 |`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values to show in the pop-up button.|
 
 
@@ -297,6 +299,14 @@ Here is an example of an shell script for use in an extension (this one is for '
 
     echo $POPCLIP_TEXT | say
 
+### Shell Script Testing
+
+While developing a script, you can test it from the command line by exporting the required variables. For example:
+
+    export POPCLIP_TEXT="my test text"
+    export POPCLIP_OPTION_FOO="foo"
+    ./myscript
+
 ### Script Returning Result
 
 Scripts can return results if they specify one of the `*-result` or `show-status` keys in the Action's `After` field.
@@ -348,4 +358,3 @@ Table of modifier combinations:
 |⌥⇧⌘|1703936|
 |⌃⌥⌘|1835008|
 |⌃⌥⇧⌘|1966080|
-

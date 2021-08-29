@@ -3,7 +3,8 @@ require 'common.inc';
 
 $content=getenv('POPCLIP_TEXT');
 
-$api = "https://todoist.com/API/v7/items/add"; 
+$api = "https://todoist.com/api/v8/items/add"; 
+# docs: https://developer.todoist.com/sync/v8/#add-item
 $token = extract_parameter(json_decode(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')), TRUE), 'access_token');
 
 // execute request

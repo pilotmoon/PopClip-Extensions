@@ -24,8 +24,12 @@
 			<string>Yoink</string>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>at.EternalStorms.Yoink</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>at.EternalStorms.Yoink</string>
+				<string>at.EternalStorms.Yoink-setapp</string>
+				<string>at.EternalStorms.Yoink-demo</string>
+			</array>
 		</dict>
 	</array>
 	<key>Extension Description</key>

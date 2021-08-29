@@ -1,0 +1,1 @@
+Custom version of Google Scholar extension to always open it in Firefox - created for a customer.

@@ -7,7 +7,7 @@ parse_str(base64_decode(getenv('POPCLIP_OPTION_AUTHSECRET')));
 $url = getenv('POPCLIP_TEXT');
 
 // prepare a call to links.json
-$service="/links.json";
+$service="/links";
 $method = 'POST';
 $contentType = 'text/plain';
 $time = time()*1000;
@@ -30,7 +30,12 @@ $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($code==201) {
-	echo json_decode($response)->shortlink;
+	$json=json_decode($response);
+	$link = $json->shortlink;
+	if ($json->privacy == "PRIVATE") {
+		$link .= "/" . $json->password;
+	}
+	echo $link;	
 	exit(0); // success
 }  
 else if ($code==401) {

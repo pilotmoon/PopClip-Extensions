@@ -20,8 +20,11 @@
 		<dict>
 			<key>Check Installed</key>
 			<true/>
-			<key>Bundle Identifier</key>
-			<string>com.culturedcode.ThingsMac</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.culturedcode.ThingsMac</string>
+				<string>com.culturedcode.ThingsMac.beta</string>
+			</array>
 			<key>Link</key>
 			<string>http://culturedcode.com/things/</string>
 			<key>Name</key>

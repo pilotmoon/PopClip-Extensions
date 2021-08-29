@@ -8,7 +8,7 @@
 			<key>Image File</key>
 			<string>phone.png</string>
 			<key>Regular Expression</key>
-			<string>[0-9\+\*\#][0-9\*\#\-\(\)\. ]+[0-9\*\#]</string>
+			<string>[0-9\+\*\#][0-9\*\#\-\(\)\.\,\; ]+[0-9\*\#]</string>
 			<key>Title</key>
 			<string>Call</string>
 			<key>URL</key>

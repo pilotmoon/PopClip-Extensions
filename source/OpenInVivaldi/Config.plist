@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>vivaldi.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurls</string>
+			</array>
+			<key>Shell Script File</key>
+			<string>open-in-vivaldi.sh</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Open in Vivaldi</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifier</key>
+			<string>com.vivaldi.Vivaldi</string>
+			<key>Link</key>
+			<string>https://vivaldi.com/</string>
+			<key>Name</key>
+			<string>Vivaldi</string>
+		</dict>
+	</array>
+	<key>Blocked Apps</key>
+	<array>
+		<string>com.vivaldi.Vivaldi</string>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Open the link in Vivaldi.</string>		
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.open-in-vivaldi</string>
+	<key>Extension Name</key>
+	<string>Open in Vivaldi</string>
+</dict>
+</plist>

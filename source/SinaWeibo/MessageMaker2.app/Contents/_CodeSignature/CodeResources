@@ -5,14 +5,9 @@
 	<key>files</key>
 	<dict>
 		<key>Resources/Base.lproj/MainMenu.nib</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			S+u8MfBJysX2BOcmf3VOO0mHhJE=
-			</data>
-			<key>optional</key>
-			<true/>
-		</dict>
+		<data>
+		/GW9ojfZni/Yv6EI6teIR5IsqCY=
+		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
@@ -20,10 +15,12 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			S+u8MfBJysX2BOcmf3VOO0mHhJE=
+			/GW9ojfZni/Yv6EI6teIR5IsqCY=
 			</data>
-			<key>optional</key>
-			<true/>
+			<key>hash2</key>
+			<data>
+			phtjvruQZ/yb1ms+4qghup60SH0NbJa0mq2LiTp+USc=
+			</data>
 		</dict>
 	</dict>
 	<key>rules</key>
@@ -43,6 +40,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -102,6 +104,11 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
+		</dict>
+		<key>^Resources/Base\.lproj/</key>
+		<dict>
+			<key>weight</key>
+			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>

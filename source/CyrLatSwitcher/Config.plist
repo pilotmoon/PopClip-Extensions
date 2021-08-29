@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>cyr_lat_switcher.png</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Shell Script File</key>
+			<string>cyr_lat_switcher.php</string>
+			<key>Title</key>
+			<string>CyrLatSwitcher</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Siwtch from cyryllic to latin - 'Ghbdtn' becomes 'Привет', 'Руддщ' - 'Hello'.</string>
+	<key>Extension Identifier</key>
+	<string>com.my.popclip.extension.cyr_lat_switcher</string>
+	<key>Extension Name</key>
+	<string>CyrLatSwitcher</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>

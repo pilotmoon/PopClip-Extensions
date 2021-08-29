@@ -5,14 +5,12 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Shell Script File</key>
-			<string>alfred.php</string>
+			<key>AppleScript File</key>
+			<string>alfred.applescript</string>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>			
 			<key>Image File</key>
-			<string>bowler.png</string>
-			<key>Regular Expression</key>
-			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>
+			<string>bowler.png</string>			
 			<key>Title</key>
 			<string>Alfred</string>
 		</dict>
@@ -21,20 +19,19 @@
 	<array>
 		<dict>
 			<key>Bundle Identifiers</key>
-			<array>
-				<string>com.runningwithcrayons.Alfred-2</string>	
-				<string>com.runningwithcrayons.Alfred-3</string>					
+			<array>		
+				<string>com.runningwithcrayons.Alfred</string>		
 			</array>			
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
-			<string>http://alfredapp.com/</string>
+			<string>https://www.alfredapp.com</string>
 			<key>Name</key>
-			<string>Alfred</string>
+			<string>Alfred 4</string>
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Activate Alfred with the selected text. (Requires Alfred 2 or later.)</string>
+	<string>Activate Alfred 4 with the selected text. (8 Oct 2019: Updated to work with macOS Catalina.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.alfred</string>
 	<key>Extension Name</key>

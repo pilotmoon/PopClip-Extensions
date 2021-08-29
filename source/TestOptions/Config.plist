@@ -5,12 +5,14 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+      <key>After</key>
+			<string>paste-result</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,}$</string>
 			<key>Title</key>
-			<string>Nothing</string>
-			<key>URL</key>
-			<string>http://localhost/?one={popclip option one}&amp;two={popclip option two}&amp;three={popclip option three}&amp;four={popclip option four}&amp;five={popclip option five}&amp;user={popclip option user}&amp;pass={popclip option pass}</string>
+			<string>TestOptions</string>
+			<key>Shell Script File</key>
+			<string>test.zsh</string>
 		</dict>
 	</array>
 	<key>Extension Identifier</key>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>magnet:?xt=urn:btih:{popclip text}</string>
+			<key>Title</key>
+			<string>Magnetize</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Open a magnet link for the selected BitTorrent infohash.</string>
+	<key>Regular Expression</key>
+	<string>^[a-f0-9]{40}$</string>
+	<key>Extension Name</key>
+	<string>Magnetize</string>
+	<key>Extension Identifier</key>
+	<string>com.oxxie.popclipextensions.magnetize</string>
+</dict>
+</plist>

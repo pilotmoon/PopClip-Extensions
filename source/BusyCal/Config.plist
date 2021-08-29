@@ -19,6 +19,7 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.busymac.busycal3</string>
+				<string>com.busymac.busycal-setapp</string>
 			</array>
 			<key>Check Installed</key>
 			<true/>

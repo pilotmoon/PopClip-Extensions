@@ -7,7 +7,7 @@ $userEmail = getenv('POPCLIP_AUTH_USERNAME');
 $passHash = sha1(getenv('POPCLIP_AUTH_PASSWORD'));
 
 // prepare a call to /account.json, to verify credentials
-$service="/account.json";
+$service="/account";
 $method = 'GET';
 $contentType = '';
 $time = time()*1000;

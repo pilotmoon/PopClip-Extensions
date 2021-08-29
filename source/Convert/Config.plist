@@ -23,7 +23,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Convert between values in metric and US/imperial units. Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C.</string>
+	<string>Convert between values in metric and US/imperial units. Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C. (Updated 20 Oct 2020 to fix bug about 'Use of undefined constant'.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.convert</string>
 	<key>Extension Name</key>
