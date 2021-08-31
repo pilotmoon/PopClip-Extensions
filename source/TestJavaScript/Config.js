@@ -15,13 +15,20 @@ var extension = {
         //popclip.paste(selection.text.toUpperCase())
         // /Users/phil
         // ~/Documents
-        // const rtf=`{\\rtf1\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\\f0\\pard
-        // This is some {\\b bold} text.\\par
-        // }`
-        // context.paste({
-        //     "public.rtf": rtf
-        // })
-        console.log("Hello")
+        const rtf=`{\\rtf1\\ansi{\\fonttbl\\f0\\fswiss Helvetica;}\\f0\\pard
+        This is some {\\b bold} text.\\par
+        }`
+
+        console.log(console)
+        //popclip.paste({"public.rtf": rtf})
+        //popclip.copy()
+        //popclip.paste("hello worldy")
+        //popclip.preview("hello worldy 2")
+        //popclip.appear()
+        // log("fsdfd")
+        //return console
+        //popclip.copy(Util.htmlToMarkdown(Util.cleanHtml(selection.pasteboard["public.html"])));
+        popclip.copy(Util.markdownToHtml(selection.text));
     },
     flags: {
         captureHtml: true,
