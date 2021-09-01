@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*This documentation is for the PopCLip [Beta Release](https://pilotmoon.com/popclip/download). It has been updated for PopClip Build 3317.*
+*This documentation is for the PopCLip [Beta Release](https://pilotmoon.com/popclip/download).*
 
 ## Introduction
 
@@ -236,8 +236,10 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_ACTION_IDENTIFIER`|`{popclip extension identifier}`|This identifier specified in the action's configuration, if any.|
 |`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
 |`POPCLIP_FULL_TEXT`|`{popclip text}`|The selected plain text in its entirety.|
-|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
-|`POPCLIP_HTML`|`{popclip html}`|The selected HTML, if available and if `Pass HTML` is specified in the action's configuration.|
+|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text. For example, if the text is `a b` this field will contain `a%20b`.|
+|`POPCLIP_HTML`|`{popclip html}`|The HTML for the full selection, if available. `Pass HTML` must be specified in the action's configuration.|
+|`POPCLIP_CLEAN_HTML`|`{popclip clean html}`|A sanitized version of the HTML. All CSS is removed, potentially unsafe tags are removed and markup is corrected. `Pass HTML` must be specified in the action's configuration.|
+|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. `Pass HTML` must be specified in the action's configuration.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
