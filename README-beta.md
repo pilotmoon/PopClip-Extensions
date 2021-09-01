@@ -176,7 +176,7 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
 |`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
-|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture the HTML for the selection (if available) and pass it to the extension alongside the plain text. Default is `NO`.|
+|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
 ### Requirements keys
 
@@ -237,7 +237,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
 |`POPCLIP_FULL_TEXT`|`{popclip text}`|The selected plain text in its entirety.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text. For example, if the text is `a b` this field will contain `a%20b`.|
-|`POPCLIP_HTML`|`{popclip html}`|The HTML for the full selection, if available. `Pass HTML` must be specified in the action's configuration.|
+|`POPCLIP_HTML`|`{popclip html}`|The HTML for the full selection. `Pass HTML` must be specified in the action's configuration.|
 |`POPCLIP_CLEAN_HTML`|`{popclip clean html}`|A sanitized version of the HTML. All CSS is removed, potentially unsafe tags are removed and markup is corrected. `Pass HTML` must be specified in the action's configuration.|
 |`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. `Pass HTML` must be specified in the action's configuration.|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
