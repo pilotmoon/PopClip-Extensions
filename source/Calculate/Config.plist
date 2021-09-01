@@ -28,7 +28,7 @@
 		<key>en</key>
 		<string>Calculate</string>
 	</dict>
-	<key>Required Apps</key>
+	<key>Required Software Version</key>
 	<integer>701</integer>
 </dict>
 </plist>
