@@ -174,41 +174,39 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
 |`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `Apps` field.*|
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
-|`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
+|`Requirements`|Array|Optional|Array consisting of zero or more of the strings listed in [Requirements keys](#requirements-keys). All the requirements in the array must be satisfied. If omitted, the requirement `copy` is applied by default.|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
 |`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
 ### Requirements keys
 
-These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it. For example, `!paste` if you only want the action to appear when Paste is *not* available.
+These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it.
 
 |Value|Description|
 |-----|-----------|
-|`copy`|The system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
+|`copy`|Text must be selected, and the system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
 |`cut`|The system Cut command must be available.|
 |`paste`|The system Paste command must be available.|
-|`httpurl`|Require the text to contain exactly one HTTP(S) URL; the matching part will be passed to the action.|
-|`httpurls`|Require the text to contain one or more HTTP(S) URLs.|
-|`email`|Require the text to contain exactly one email address; the matching part will be passed to the action.|
-|`path`|Require the text to contain exactly one local file path; the matching part will be passed to the action.| 
+|`httpurl`|The text must contain exactly one web URL (http or https).|
+|`httpurls`|The text must contain one or more web URLs.|
+|`email`|The text must contain exactly one email address.|
+|`path`|The text must contain exactly one local file path, and it must exist on the local file system.| 
 |`formatting`|The selected text control must support formatting.|
-|`html`|Selection must be HTML text (for example, text in a web page).|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
 
 ### Before and After keys
 
-Thee `cut`, `copy`, `paste` and `paste-plain` keys can be used in the `Before` field. All the values can be used in the `After` field.
+Thee `cut`, `copy` and `paste` keys can be used in the `Before` field. All the values can be used in the `After` field.
 
 |Value|Description|
 |-----|-----------|
 |`cut`|Perform system Cut command, as if user pressed ⌘X.|
 |`copy`|Perform system Copy command, as if user pressed ⌘C.|
 |`paste`|Perform system Paste command, as if user pressed ⌘V.|
-|`paste-plain`|Strip the system pasteboard down to plain text only, then perform system Paste command, as if user pressed ⌘V.|
-|`copy-result`|Copy the text returned from the script script to the clipboard. Displays "Copied" notification. If there is no text, or the script failed, shows an 'X'.|
-|`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, only copy it as in `copy-result`. If there is no text, or the script failed, shows an 'X'.|
-|`preview-result`|Copy the text returned from the script to the clipboard, and show the result as well (truncated to 100 characters). If the system Paste command is available, the preview text can be clicked to paste it. If there is no text, or the script failed, shows an 'X'.|
-|`show-result`|Show the text returned from the script. If there is no text, or the script failed, shows an 'X'.|
+|`copy-result`|Copy the text returned from the script script to the clipboard. Displays "Copied" notification.|
+|`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, copy it as in `copy-result`.|
+|`preview-result`|Copy the result to the pasteboard and show the result to the user, truncated to 160 characters. If the system Paste command is available, the preview text can be clicked to paste it.|
+|`show-result`|Copy the result to the pasteboard and show it to the user, truncated to 160 characters. |
 |`show-status`|Show a tick or a 'X', depending on whether the script succeeded or not.|
 
 ### Option Dictionary
@@ -233,14 +231,14 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |Shell Script Variable|AppleScript Field|Description|
 |---------------------|-----------------|-----------|
 |`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
-|`POPCLIP_ACTION_IDENTIFIER`|`{popclip extension identifier}`|This identifier specified in the action's configuration, if any.|
+|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
 |`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
-|`POPCLIP_FULL_TEXT`|`{popclip text}`|The selected plain text in its entirety.|
-|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text. For example, if the text is `a b` this field will contain `a%20b`.|
-|`POPCLIP_HTML`|`{popclip html}`|The HTML for the full selection. `Pass HTML` must be specified in the action's configuration.|
-|`POPCLIP_CLEAN_HTML`|`{popclip clean html}`|A sanitized version of the HTML. All CSS is removed, potentially unsafe tags are removed and markup is corrected. `Pass HTML` must be specified in the action's configuration.|
-|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. `Pass HTML` must be specified in the action's configuration.|
-|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
+|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
+|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
+|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Pass HTML` must be specified.)|
+|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Pass HTML` must be specified.)|
+|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Pass HTML` must be specified.)|
+|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
@@ -287,15 +285,15 @@ While developing a script, you can test it from the command line by exporting th
 
 ### Script Returning Result
 
-Scripts can return results if they specify one of the `*-result` or `show-status` keys in the Action's `After` field.
+Scripts can return results if they specify one of the `*-result` keys in the Action's `After` field.
 
-Scripts should indicate success or failure as follows. If the script indicates a failure with settings, it will cause the extension's options window to appear (if it has one).
+Scripts should indicate success or failure as follows.
 
 |Result|Shell Script|AppleScript|
 |------|------------|-----------|
 |Success|Return status code `0`|Return without raising an error|
-|General failure|Return status code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
-|Failure with settings|Return status code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
+|General error. (PopClip will show an "X".)|Return status code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
+|Error with user's settings. (PopClip will show an "X" and pop up the extension's options UI.)|Return status code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
 
 Here is an example of a Ruby script that could be used in a shell script extension (with the `Script Interpreter` set to `/usr/bin/ruby`) and the `After` key set to `paste-result`. 
 
