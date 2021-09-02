@@ -111,15 +111,27 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
 ### Icons
-Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published). 
+Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
-Icons should be either PNG or SVG files.
+* `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format.
 
-When using a PNG, the icon should be a square at least 256x256 pixels in size. The image should consist of a black figure on a transparent background. You can use opacity to create shading.
+* `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
 
-For example, here is the full-size icon file for 'Sort':
+* `text:<text icon specifier>` instructs PopCLip to generate a text-based icon, as described below.
 
-![The 'Sort' icon (256x256 PNG file)](https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/Sort/sort.png?raw=true)
+PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
+
+Text based icons can up to three characters, on their own or within a square or circle. Examples:
+
+* `text:A` - the letter A on its own
+
+* `text:(1)` - the digit 1 in an outline circle
+
+* `text:((本))` - the character 本 in a filled circle
+
+* `text:[xyz]` - the characters xyz in an outline square
+
+* `text:[[!]]` - the character ! in a filled square
 
 ## Configuration Details
 
@@ -146,7 +158,7 @@ The `Config.plist` file has the following structure.
 |---|----|---------|-----------|
 |`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. Use your own prefix, ideally a reverse DNS-style prefix. For example `com.example.myextension`. Do not use the prefix `com.pilotmoon.` for your own extensions.|
 |`Extension Name`|String or Dictionary| Required |This is a display name that appears in the preferences list of extensions.|
-|`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
+|`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`Apps`|Array|Optional|An array of dictionaries containing information about the apps or websites associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [Apps Dictionary](#apps-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
@@ -162,7 +174,7 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |---|----|---------|-----------|
 |`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title. For extensions with icons, the title is displayed in the toolip when the user hovers over the action's button in PopClip.|
 |`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
-|`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
+|`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Title` will be displayed instead. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
 |`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. This will be passed as the parameter to the script interpreter. Within the script, use the environment variable `POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
