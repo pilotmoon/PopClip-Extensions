@@ -30,6 +30,8 @@
 			<string>mailto:{popclip option default}?body={popclip text}</string>
 		</dict>
 	</array>
+	<key>Extension Image File</key>
+	<string>envelope.png</string>
 	<key>Extension Description</key>
 	<string>Create a new mail message with the selected "to:" address, or with the selected text, in the default mail client.</string>
 	<key>Extension Identifier</key>
