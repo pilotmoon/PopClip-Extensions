@@ -13,7 +13,7 @@
 				<string>email</string>
 			</array>
 			<key>Title</key>
-			<string>New mail to address</string>
+			<string>New email to address</string>
 			<key>URL</key>
 			<string>mailto:{popclip text}</string>
 		</dict>
@@ -25,7 +25,7 @@
 				<string>option-enable-body=1</string>
 			</array>
 			<key>Title</key>
-			<string>New mail with text</string>
+			<string>New email with text</string>
 			<key>URL</key>
 			<string>mailto:{popclip option default}?body={popclip text}</string>
 		</dict>
@@ -50,7 +50,7 @@
 			<key>Option Identifier</key>
 			<string>enable-at</string>
 			<key>Option Label</key>
-			<string>New mail to address</string>
+			<string>New email to address</string>
 			<key>Option Type</key>
 			<string>boolean</string>
 			<key>Option Icon</key>
@@ -60,7 +60,7 @@
 			<key>Option Identifier</key>
 			<string>enable-body</string>
 			<key>Option Label</key>
-			<string>New mail with text</string>
+			<string>New email with text</string>
 			<key>Option Type</key>
 			<string>boolean</string>
 			<key>Option Icon</key>
