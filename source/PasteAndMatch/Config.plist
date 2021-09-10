@@ -71,7 +71,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Paste as plain text only, without formatting. (Appears as "Paste =".)</string>
+	<string>Paste as plain text only, without formatting.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pasteplain</string>
 	<key>Extension Long Name</key>
@@ -133,15 +133,10 @@
 		<key>zh-Hant</key>
 		<string>貼上 =</string>
 	</dict>
-	<key>Position</key>
-	<real>1.9099999999999999</real>
 	<key>Requirements</key>
 	<array>
 		<string>paste</string>
-		<string>formatting</string>
-		<string>formatted-text</string>
+		<string>formatting</string>		
 	</array>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

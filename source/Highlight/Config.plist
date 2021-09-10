@@ -82,7 +82,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert.</string>
+	<string>Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert only.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.highlight</string>
 	<key>Extension Name</key>
