@@ -3,6 +3,6 @@ define({
     name: "Uppercase",
     icon: "text:[[AB]]",
     code: (selection) => {
-        popclip.pasteText(selection.text.toUpperCase())
+        popclip.pasteText(selection.text.toUpperCase());
     }
 })
