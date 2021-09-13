@@ -6,8 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx browserify _Config.js > Config.js",
-    "buildugly": "npx browserify _Config.js | uglifyjs > Config.js",
-    "install": "npm run buildugly && open -a SignExt ."
+    "buildugly": "npx browserify _Config.js | npx uglifyjs > Config.js",    
+    "install": "pkg=../${PWD##*/}.popclipext; rsync -r . $pkg; open $pkg",
+    "go": "npm run build && npm run install",
+    "sign": "open -a SignExt .",
+    "gosign": "npm run build && npm run sign"
   },
   "author": "",
   "license": "ISC",

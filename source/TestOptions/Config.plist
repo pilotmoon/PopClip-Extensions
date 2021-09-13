@@ -63,6 +63,14 @@
 			</array>
 		</dict>
 		<dict>
+			<key>Option Identifier</key>
+			<string>headhing-1</string>
+			<key>Option Label</key>
+			<string>A heading</string>
+			<key>Option Type</key>
+			<string>heading</string>
+		</dict>
+		<dict>
 			<key>Option Default Value</key>
 			<true/>
 			<key>Option Identifier</key>
@@ -87,6 +95,16 @@
 			</dict>
 			<key>Option Type</key>
 			<string>boolean</string>
+			<key>Option Description</key>
+			<string>This is a description of the above option.</string>
+		</dict>
+		<dict>
+			<key>Option Identifier</key>
+			<string>heading-2</string>
+			<key>Option Label</key>
+			<string>Heading above inset</string>
+			<key>Option Type</key>
+			<string>heading</string>
 		</dict>
 		<dict>
 			<key>Option Identifier</key>
@@ -98,6 +116,8 @@
 			</dict>
 			<key>Option Type</key>
 			<string>string</string>
+			<key>Option Inset</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>Option Default Value</key>
@@ -113,8 +133,6 @@
 			<string>string</string>
 		</dict>
 		<dict>
-			<key>Option Default Value</key>
-			<string>blahs</string>
 			<key>Option Identifier</key>
 			<string>pass</string>
 			<key>Option Label</key>
@@ -124,12 +142,14 @@
 			</dict>
 			<key>Option Type</key>
 			<string>password</string>
+			<key>Option Description</key>
+			<string>This option has a description too.</string>
 		</dict>
 	</array>
-	<key>Options Title x</key>
+	<key>Options Title</key>
 	<dict>
 		<key>en</key>
-		<string>Here is my title.</string>
+		<string>Here is my title, it is quite ling. Will it wrap to several lines? I hope so!.</string>
 	</dict>
 	<key>Version</key>
 	<integer>2</integer>
