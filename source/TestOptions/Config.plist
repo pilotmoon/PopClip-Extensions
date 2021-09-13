@@ -15,6 +15,8 @@
 			<string>test.zsh</string>
 		</dict>
 	</array>
+	<key>Icon</key>
+	<string>symbol:car</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.test-options</string>
 	<key>Extension Name</key>
