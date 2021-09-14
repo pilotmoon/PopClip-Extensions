@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Extension Description</key>
-	<string>Make each selected word start with a capital letter, with other letters lowercase.</string>
+	<string>Make each sentence in the selection start with a capital letter, with other letters lowercase.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.capitalize</string>
+	<string>com.pilotmoon.popclip.extension.sentence-case</string>
 	<key>Extension Name</key>
-	<string>Capitalize</string>
+	<string>Sentence Case</string>
 	<key>Extension Image File</key>
-	<string>capitalize.png</string>
+	<string>sentence-case.png</string>
 	<key>Required Software Version</key>
 	<integer>3458</integer>
 </dict>

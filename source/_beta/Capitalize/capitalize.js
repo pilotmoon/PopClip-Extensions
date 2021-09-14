@@ -1,5 +1,5 @@
 // first letter uppercase, other lowercase
-function capitalizeWord(text) {    
+function capitalizeFirst(text) {    
     text = text.toLowerCase();
     return text.substr(0, 1).toUpperCase() + text.substr(1);
 }
@@ -8,14 +8,13 @@ function capitalizeWord(text) {
 function capitalizeAll(text) {    
     // regex to split into works. this is the same regex as the old Capitalize extension .... 
     // I'm not sure exactly why this regex...
-    const regex=/[^\s,.;:!\-–—\(\)\[\]\{\}"]+/ug; 
-    return text.replaceAll(regex, (match) => capitalizeWord(match));
+    const regex=/[^\s,.;:!\-–—\(\)\[\]\{\}"]+/g; 
+    return text.replaceAll(regex, (match) => capitalizeFirst(match));
 }
 
 if (typeof(define)!=='undefined') { // when running in popclip, export the function
     define(() => {
-        return (selection) => {
-            print('one', 'two', 'three');
+        return (selection) => {        
             popclip.pasteText(capitalizeAll(selection.text));
         }
     })
