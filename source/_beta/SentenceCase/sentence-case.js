@@ -1,17 +1,10 @@
-// first letter uppercase, other lowercase
-function capitalizeFirst(text) {    
-    print(text)
-    text = text.toLowerCase();
-    return text.substr(0, 1).toUpperCase() + text.substr(1);
-}
-
 function sentenceCase(text) {    
-    const regex=/(^\s*\p{L}{1}|[.?!]\s+\p{L}{1})/gum; // split into something approximating sentences
+    const regex=/(^\s*\p{L}{1}|[.?!]\s+\p{L}{1})/gu; // split into something approximating sentences
     text = text.toLowerCase();
     return text.replaceAll(regex, (match) => match.toUpperCase());
 }
 
-if (typeof(define)!=='undefined') { // when running in popclip, export the function
+if (typeof(define) !== 'undefined') { // when running in popclip, export the function
     define(() => {
         return (selection) => {
             popclip.pasteText(sentenceCase(selection.text));
@@ -29,7 +22,7 @@ else { // when running in jsc, perform tests
         
             ["Nick's   best dog's fur", "Nick's   best dog's fur"],
         ];
-        data.forEach((pair)=>{
+        data.forEach((pair) => {
             const [input, output]=pair;
             const result=sentenceCase(input);
             print(`${output===result?'pass  ':'fail *'} ${input} => ${result} (expected: ${output})`);
