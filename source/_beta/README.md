@@ -4,7 +4,7 @@ To be used used with [PopClip Beta](https://pilotmoon.com/popclip/download).
 
 Extension format still to be finalised. Very rough documentation follows....
 
-`Config.js` is the main "entry point". This is loaded and evaluated by PopClip. This script should invoke `define()`, passing an object to define the extension.
+`Config.js` is the main entry point" This is loaded and evaluated by PopClip. This script should invoke `define()`, passing an object to define the extension.
 
 Example, possibly the simplest extension:
 
