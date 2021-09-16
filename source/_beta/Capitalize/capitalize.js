@@ -5,7 +5,7 @@ function capitalizeWord(text) {
 
 function capitalizeAll(text) {    
     const regex=/(\p{L}+['’]\p{L}+|\p{L}+)/gu; // split into something approximating words
-    return text.replaceAll(regex, (match) => capitalizeWord(match));
+    return text.replace(regex, (match) => capitalizeWord(match));
 }
 
 if (typeof(define) !== 'undefined') { // when running in popclip, export the function

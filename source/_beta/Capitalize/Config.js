@@ -3,5 +3,4 @@ define({
     name: "Capitalize",
     icon: "text:[[Ab]]",    
     code: require('capitalize.js'),    
-    macosVersion: "10.15",
 });

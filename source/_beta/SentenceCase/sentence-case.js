@@ -1,7 +1,7 @@
 function sentenceCase(text) {    
     const regex=/(^\s*\p{L}{1}|[.?!]\s+\p{L}{1})/gu; // split into something approximating sentences
     text = text.toLowerCase();
-    return text.replaceAll(regex, (match) => match.toUpperCase());
+    return text.replace(regex, (match) => match.toUpperCase());
 }
 
 if (typeof(define) !== 'undefined') { // when running in popclip, export the function
