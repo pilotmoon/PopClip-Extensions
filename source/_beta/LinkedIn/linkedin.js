@@ -1,5 +1,5 @@
 function personName(string) {
-    // regex to match something like a name - First [middle] [middle] [middle] Last
+    // regex to match something like a name - (First [middle] [middle] [middle]) (Last)
     const regex=/^\s*([^\s]+(?:\s[^\s]+){0,3})(?:\s([^\s]+))\s*$/u;
     const result = regex.exec(string);
     if (result) {
@@ -7,12 +7,20 @@ function personName(string) {
     }
 }
 
-if (typeof(define) !== 'undefined') { // when running in jsc, perform tests
+if (typeof(define) !== 'undefined') { 
     define(() => {
-        return personName;
+        return (selection) => {        
+            const parts = personName(selection.text);
+            if (parts) { // only return an action if the regex matches
+                return () => {   
+                    const [first, last] = parts.map(encodeURIComponent);
+                    popclip.openUrl(`https://www.linkedin.com/pub/dir/?first=${first}+&last=${last}&search=Go`);
+                };
+            }
+        }
     });
 }
-else {
+else { // when running in jsc, perform tests
     function test() {
         const data = [
             ["John Smith", ["John","Smith"]],
