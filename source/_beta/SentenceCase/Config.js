@@ -3,5 +3,4 @@ define({
     name: "Sentence Case",
     icon: "text:[[S]]",
     action: require('sentence-case.js'),
-    popclipVersion: 3482,
 });

@@ -3,5 +3,4 @@ define({
     name: "Capitalize",
     icon: "text:[[Ab]]",    
     action: require('capitalize.js'),
-    popclipVersion: 3482,
 });

@@ -5,5 +5,4 @@ define({
     action: (selection) => {
         popclip.pasteText(selection.text.toLowerCase());
     },
-    popclipVersion: 3482,
 })

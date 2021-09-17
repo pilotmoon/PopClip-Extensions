@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Extension Description</key>
-	<string>Make the selected text all uppercase.</string>
+    <string>Search for the selected name on LinkedIn.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.uppercase</string>
+	<string>com.pilotmoon.popclip.extension.linkedin</string>
 	<key>Extension Name</key>
-	<string>Uppercase</string>
+	<string>LinkedIn</string>
 	<key>Extension Image File</key>
-	<string>uppercase.png</string>
+	<string>in.png</string>
 	<key>Required Software Version</key>
 	<integer>3484</integer>
 </dict>

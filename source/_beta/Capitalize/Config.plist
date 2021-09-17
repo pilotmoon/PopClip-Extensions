@@ -3,13 +3,13 @@
 <plist version="1.0">
 <dict>
 	<key>Extension Description</key>
-	<string>Make the selected text all uppercase.</string>
+	<string>Make the first letter of each word capital, with other letters lowercase.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.uppercase</string>
+	<string>com.pilotmoon.popclip.extension.capitalize</string>
 	<key>Extension Name</key>
-	<string>Uppercase</string>
+	<string>Capitalize</string>
 	<key>Extension Image File</key>
-	<string>uppercase.png</string>
+	<string>capitalize.png</string>
 	<key>Required Software Version</key>
 	<integer>3484</integer>
 </dict>
