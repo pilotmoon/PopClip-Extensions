@@ -11,5 +11,6 @@ define({
                 popclip.openUrl(`https://www.linkedin.com/pub/dir/?first=${first}+&last=${last}&search=Go`);
             };
         }
-    }
+    },
+    popclipVersion: 3482,
 });
