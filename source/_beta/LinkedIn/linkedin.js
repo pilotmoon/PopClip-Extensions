@@ -26,11 +26,12 @@ else { // when running in jsc, perform tests
             ["John Smith", ["John","Smith"]],
             ["John J Smith", ["John J","Smith"]],
             ["a b c d", ["a b c","d"]],
+            ["a", undefined],
         ];
         data.forEach((pair) => {
             const [input, output]=pair;
             const result=personName(input);
-            print(`${output.join()==result.join()?'pass  ':'fail *'} ${input} => ${result} (expected: ${output})`);
+            print(`${JSON.stringify(output)==JSON.stringify(result)?'pass  ':'fail *'} ${input} => ${result} (expected: ${output})`);
         });
     }
     test();
