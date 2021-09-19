@@ -3,7 +3,7 @@
 $current=trim(`export LANG=en_US.UTF-8; pbpaste`, "\r\n");
 $new=trim(getenv('POPCLIP_TEXT'), "\r\n");
 
-$opt=intval(getenv('POPCLIP_MODIFIER_FLAGS'))&524288;
+$opt=intval(getenv('POPCLIP_MODIFIER_FLAGS'))&655360; // shift or option
 if($opt) {
 	$result=escapeshellarg($new."\n".$current);
 }

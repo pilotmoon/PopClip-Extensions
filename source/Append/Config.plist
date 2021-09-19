@@ -2,37 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.append</string>
+	<key>Extension Name</key>
+	<string>Append</string>
+	<key>Extension Image File</key>
+	<string>plus.png</string>
+	<key>Extension Description</key>
+	<string>Append the selected text to the existing clipboard contents. If you hold down Shift (⇧), it will prepend instead.</string>
 	<key>Actions</key>
 	<array>
 		<dict>
 			<key>Image File</key>
 			<string>plus.png</string>
-			<key>Position</key>
-			<real>1.6000000000000001</real>
 			<key>Script Interpreter</key>
 			<string>/usr/bin/php</string>
 			<key>Shell Script File</key>
 			<string>copyplus.php</string>
 			<key>Title</key>
-			<dict>
-				<key>en</key>
-				<string>Append</string>
-			</dict>
+			<string>Append</string>
 		</dict>
-	</array>
-	<key>Extension Description</key>
-	<dict>
-		<key>en</key>
-		<string>Append the selected text to the existing clipboard contents. If you hold down ⌥, it will prepend instead.</string>
-	</dict>
-	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.append</string>
-	<key>Extension Name</key>
-	<dict>
-		<key>en</key>
-		<string>Append</string>
-	</dict>
-	<key>Version</key>
-	<integer>2</integer>
+	</array>	
 </dict>
 </plist>
