@@ -17,8 +17,10 @@
 			<string>underscore.png</string>
 		</dict>
 	</array>
+	<key>Extension Image File</key>
+	<string>underscore.png</string>
 	<key>Extension Description</key>
-	<string>Replace spaces between words with underscores.</string>
+	<string>Replace spaces between words with underscores, and vice versa.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.underscore</string>
 	<key>Extension Name</key>
