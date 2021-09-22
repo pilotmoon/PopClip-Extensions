@@ -10,9 +10,9 @@
 PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current, recommended fields. Main highlights:
 
 - PopClip now supports SVG image files as well as allowing you to specific an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text. Renamed the `Image File` field to `Icon`. 
-- PopClip now provides an HTML version for all text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML is generated from the selected RTF or plain text content.
+- PopClip now provides an HTML and a Markdown version for all text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML and Markdown is generated from the selected RTF or plain text content.
 - The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is also available in a new field `POPCLIP_RAW_HTML`.
-- PopClip now also provides a markdown version of the HTML in the `POPCLIP_MARKDOWN` field.
+- The markdown version is in the `POPCLIP_MARKDOWN` field.
 - Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
 - Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
 - Added `Option Value Labels` array so that the options list can show a (localizable) display name different to the value which is passed to the extension.
