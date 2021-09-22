@@ -5,29 +5,20 @@ define(() => {
     </svg>
     `;
     let hello = require('./hello.js');
-    return {
-        identifier: "com.pilotmoon.popclip.extension.test-js",
-        name: "TestJS",
+    return {        
         icon: starIcon,
-        flags: {
-            captureHtml: true,
-            captureRtf: true, 
-        },
-        populate: (selection, context, options) => {
+        actions: (selection, context, options) => {
             let actions = []
             if (selection.text) {
-                actions.push({
-                    name: "Brain",  // default to extension name?
-                    icon: "symbol:bag",   // default to extension icon?                
-                    code: () => {
-                        popclip.showText("brainy!");
-                    }
-                });
+                let bag = () => popclip.showText("brainy!");
+                bag.title = "Brainn";
+                bag.icon = "symbol:bag";
+                actions.push(bag);
                 actions.push({      
-                    name: "Hand",  // default to extension name?
+                    title: "Hand",  // default to extension name?
                     icon: "symbol:hand.raised",   // default to extension icon?                   
-                    code: () => {
-                        //popclip.showText("handy!");
+                    code: (selection) => {
+                        popclip.showText(selection.html);
                     },
                     flags: {
                         stayVisible: true,
