@@ -1,8 +1,30 @@
-**IMPORTANT NOTE (27 Aug 2021): AVOID USING PHP FOR NEW EXTENSIONS.** PHP is no longer shipped with macOS as of Monterey. Other scripting languages may well disappear in future too. I will be introducing a new extension format, based on JavaScript, in a PopClip soon. This will also allow some cool new  capabilities for extensions. Watch this space, and check the release notes on the [beta](https://pilotmoon.com/popclip/download) page, and also keep an eye on the [blog](https://pilotmoon.com/blog/).
+**IMPORTANT NOTE (22 Sep 2021): AVOID USING PHP FOR NEW EXTENSIONS.** PHP is no longer shipped with macOS as of Monterey. Other scripting languages may well disappear in future too. I will be introducing a new extension format, based on JavaScript, in a PopClip soon.
 
 # PopClip Extensions
 
-*Documentation updated 27 Aug 2021. Applicable from PopClip 2020.12 (`3117`) onwards.*
+*Document updated 22 Sep 2021. Applicable from PopClip 2021.9 (`3510`) onwards.*
+
+----
+## New in PopClip 2021.9
+
+PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current. Main highlights:
+
+- PopClip now supports SVG image files as well as allowing you to specific an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text. Renamed the `Image File` field to `Icon`. 
+- PopClip now provides an HTML version for all text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML is generated from the selected RTF or plain text content.
+- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is also available in a new field `POPCLIP_RAW_HTML`.
+- PopClip now also provides a markdown version of the HTML in the `POPCLIP_MARKDOWN` field.
+- Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
+- Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
+- Added `Option Value Labels` array so that the options list can show a (localizable) display name different to the value which is passed to the extension.
+- `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
+- Removed the `html` requirement since all seelction now come with HTML (as above).
+- Removed the `Preseve Image Color` option. PopClip now always converts the icon to monochrome.
+- Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard.
+- Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
+
+One more thing... there is also a brand new extension format based on JavaScript. Documentation still "to-do", watch this space!
+
+----
 
 ## Introduction
 
@@ -18,14 +40,15 @@ All extension source files are published under the MIT License (see LICENSE) unl
 
 ## Credits
 
-All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits are shown in the readme file of each individual extension.
+All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits may be included in a readme file with each individual extension.
 
 ## Contributing
 
-Thank you for contributing! Contributors, please note the following:
+Thank you for contributing! New extensions can be contributed by pull request, as a new folder in the `source` folder of this repo. Alternatively simply by zip up your extension and email it to me. Contributors, please note the following:
 
 * By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
-* I will choose which extensions to publish at my sole discretion, and I may make changes to any extension.
+* Submitting to the repo does not guarantee publication.
+* I may make changes to any extension submitted.
 * Don't worry about signing the extension. I will take care of that.
 
 ## Useful Links
@@ -37,15 +60,9 @@ Here are some external "how to" guides for creating extensions:
 - [Create Your Own Custom Extension for PopClip (Tuts+)](http://computers.tutsplus.com/tutorials/create-your-own-custom-extension-for-popclip--mac-50637)
 - [PopClip: Scripting Extensions (Tuts+)](http://computers.tutsplus.com/tutorials/popclip-scripting-extensions--mac-55842)
 
-## Disclaimer
-
-These instructions are designed to help a technically competent person to create their own PopClip extension. Please note that user-created extensions are not an officially supported part of PopClip. You need to be comfortable with creating and editing plist files, scripts, and so on. 
-
-I reserve the right to change or remove features in future versions of PopClip at any time.
-
 ## Extension Signing
 
-By default, PopClip will display a warning dialog when you try to install your own extension, because it is not digitally signed by Pilotmoon Software.
+By default, PopClip will display a warning dialog when you try to install your own extension, because it is not digitally signed.
 
 ![Example unsigned warning.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ext_warning.png)
 
@@ -53,11 +70,11 @@ If you find this gets annoying while you are testing your work, you can turn off
 
     defaults write com.pilotmoon.popclip LoadUnsignedExtensions -bool YES
 
-Please be aware that PopClip extensions can contain arbitrary executable scripts. Be careful about the extensions you create, and be wary about loading extensions you get from someone else. Proceed at your own risk.
+Please be aware that PopClip extensions can contain arbitrary executable code. Be careful about the extensions you create, and be wary about loading extensions you get from someone else.
 
 ## Extra Debugging Output
 
-To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to the console. To enable it, run this command in Terminal:
+To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
@@ -65,7 +82,7 @@ To help you when debugging Script extensions, PopClip can be configured to write
 
 ### Types of Actions
 
-There are five main kinds of actions supported by PopClip extensions.
+There are five kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
@@ -103,8 +120,7 @@ Here is an example package structure, using the 'Say' extension:
        speechicon.png               -- Icon file
 
 ### The Config.plist
-Every extension must contain a `Config.plist` file. This should be in Apple [Property List](https://en.wikipedia.org/wiki/Property_list) format. The plist contains information about the extension, and also defines one or more *actions*. You can generate a blank plist with Xcode or a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/
-). Alternatively, use one of the existing extensions as a basis and edit with a text editor
+Every extension must contain a `Config.plist` file. This should be a text file in Apple [Property List](https://en.wikipedia.org/wiki/Property_list) format. The plist contains information about the extension, and also defines one or more *actions*. You can edit plist files with a standard text editor, with Xcode, or with a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/).
 
 Example plist: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist).
 
@@ -113,13 +129,27 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
 ### Icons
-Extensions may include icons to represent actions. The icon is displayed in the PopClip popup itself, and also in the preferences window and on the web site (if published). Icons may be created in any graphics program; I use [Pixelmator](http://www.pixelmator.com/).
+Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
-For best results, the icon should be a square PNG file at least 256x256 pixels in size. The image should consist of a black figure on a transparent background. You can use opacity to achieve 'shades of grey'.
+* `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format.
 
-For example, here is the full-size icon file for 'Sort':
+* `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
 
-![The 'Sort' icon (256x256 PNG file)](https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/Sort/sort.png?raw=true)
+* `text:<text icon specifier>` instructs PopCLip to generate a text-based icon, as described below.
+
+PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
+
+Text based icons can up to three characters, on their own or within a square or circle. Examples:
+
+* `text:A` - the letter A on its own
+
+* `text:(1)` - the digit 1 in an outline circle
+
+* `text:((本))` - the character 本 in a filled circle
+
+* `text:[xyz]` - the characters xyz in an outline square
+
+* `text:[[!]]` - the character ! in a filled square
 
 ## Configuration Details
 
@@ -129,7 +159,7 @@ For example, here is the full-size icon file for 'Sort':
 
 ### "String or Dictionary" type
 
-Fields with the type "String or Dictionary" can take either a String or Dictionary value. If you supply a string value, that string is always used. Alternatively, you can supply a dictionary mapping language code (`en`, `fr`, etc.) to a string. PopClip will display the appropriate string for the user's preferred language if possible, with fallback to the `en` string. 
+Fields shown as "String or Dictionary" type are localizable strings. The field may be either a string or dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-Hans`, etc.) to a string. PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
 
 ### Plist Troubleshooting
 
@@ -146,85 +176,67 @@ The `Config.plist` file has the following structure.
 |---|----|---------|-----------|
 |`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. Use your own prefix, ideally a reverse DNS-style prefix. For example `com.example.myextension`. Do not use the prefix `com.pilotmoon.` for your own extensions.|
 |`Extension Name`|String or Dictionary| Required |This is a display name that appears in the preferences list of extensions.|
-|`Extension Image File`|String|Optional|File name of the icon to represent this extension in the preferences window. The icon file must be contained in the extension package. If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. See [Icons](#icons) for required icon format.|
-|`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
-|`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `Apps` field.*|
-|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. Furthermore, only the matching part of the text is used in the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs or email addresses. Use one of the `Requirements` keys `httpurl`, `httpurls` or `email` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
-|`Requirements`|Array|Optional|Array consisting of one or more of the strings listed in [Requirements keys](#requirements-keys). If this field is omitted, the default is `copy`.|
-|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
-|`Preserve Image Color`|Boolean|Optional|If `YES`, the image file will be draw in its original color, instead of in white.|
-|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will pass the selected HTML text (if available) to the extension in the `POPCLIP_HTML` (shell scripts) and `{popclip html}` (AppleScript) fields. Default is `NO`. Leaving this set to `NO` PopClip does not have to process the HTML and this can be slightly faster.|
-|`Long Running`|Boolean|Optional|Applies to AppleScript and Shell Script extension only. If `YES`, indicates that the script is expected to be long running. Set this if the script will normally take more than about 0.1 seconds to run, so PopClip knows to show the 'please wait' spinner. |
-|`Restore Pasteboard`|Boolean|Optional|Applies when using to `paste-after` and `preview-result`. If set `YES`, PopClip will restore the previous pasteboard contents after pasting the result. Default is `NO`.|
-|`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension.|
-|`Extension Long Name`|String or Dictionary|Optional|You can include a long version of the extension name here. Appears on the web site but not in the app.|
-|`Credits`|Array|Optional|An array of dictionaries. Information about the creator(s) of the extension. See [Credits Dictionary](#credits-dictionary).|
-|`Apps`|Array|Optional|An array of dictionaries containing information about the apps or websites associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [Apps Dictionary](#apps-dictionary).|
-|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed for this extension to work. For example `10.8.2`.|
-|`Required Software Version`|Number|Optional|Minimum bundle version number of PopClip needed for this extension to work. For example `701` for PopClip 1.4.5.|
+|`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
+|`App`|Dictionary|Optional|Information about the app or website associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info Dictionary](#app-dictionary).|
+|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2`.|
+|`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3510` for new extensions based on this document.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
-|`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for this extension.`.|
+|`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 
 ### Action Dictionary
-Each action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified.
+The action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified. The other keys can also be placed at the top level of the config file, in which case they act as a fallback for all actions in the extension which don't supply their own value.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Title`|String or Dictionary|Required|Format is as for `Extension Name` above. Note that every action must have a title. For extensions with icons, the title is displayed in the toolip when the user hovers over the action's button in PopClip.|
-|`Image File`|String|Optional| File name of the icon for this action in PopClip. The icon file must be contained in the extension package. If you omit this field, the `Title` will be displayed instead. See [Icons](#icons) for required icon format. |
+|`Title`|String or Dictionary|Required|Every action must have a title. The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip.|
+|`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
+|`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Title` will be displayed instead. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
-|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
-|`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. This will be passed as the parameter to `/bin/sh`. Within the script, use the environment variable `$POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
+|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopCLip will to replace the placeholders with the actual text before extecuting the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
+|`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. This will be passed as the parameter to the script interpreter. Within the script, use the environment variable `POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
 |`Script Interpreter`|String|Optional|Specify the interpreter to use for the script specified in `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`.
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder. For example, `http://translate.google.com/#auto%7Cauto%7C{popclip text}`. Any `&` characters must be XML-encoded as `&amp;`.|
 |`Key Combo`|Dictionary|Required for Keypress actions|Specify the keypress which will be generated by PopClip. See [Key Code format](#key-code-format). Key presses are delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".|
 |`Before`|String|Optional|String to indicate an action PopClip should take *before* performing the main action. See [Before and After keys](#before-and-after-keys).|
-|`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After keys](#before-and-after-keys).|
-|`Blocked Apps`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Required Apps`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Regular Expression`|String|Optional|As above; this value overrides the value specified in the extension header.|
-|`Requirements`|Array|Optional|As above; this value overrides the value specified in the extension header. |
-|`Stay Visible`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Preserve Image Color`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Pass HTML`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Restore Pasteboard`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-|`Long Running`|Boolean|Optional|As above; this value overrides the value specified in the extension header.|
-
+|`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After keys](#before-and-after-keys).
+|`Blocked Apps`|Array|Optional|Array of bundle identifiers strings (for example `com.apple.TextEdit`) of applications. The action will not appear when text is selected in the specified app(s).|
+|`Required Apps`|Array|Optional|Array of bundle identifiers strings of applications. If this field is present, the action will only appear when text is selected in the specified app(s). *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
+|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex. The matching part of the text is passed to the action. The default regex is `(?s)^.{1,}$` (note that `(?s)` turns on multi-line mode). *Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `Requirements` keys `httpurl`, `httpurls`, `email` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs. *|
+|`Requirements`|Array|Optional|Array consisting of zero or more of the strings listed in [Requirements keys](#requirements-keys). All the requirements in the array must be satisfied. If omitted, the requirement `copy` is applied by default.|
+|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. Default is `NO`.|
+|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
 ### Requirements keys
 
-These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it. For example, `!paste` if you only want the action to appear when Paste is *not* available.
+These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it.
 
 |Value|Description|
 |-----|-----------|
-|`copy`|The system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
+|`copy`|Text must be selected, and the system Copy command must be available (that is, the Copy item in the Edit menu must not be greyed out).|
 |`cut`|The system Cut command must be available.|
 |`paste`|The system Paste command must be available.|
+|`httpurl`|The text must contain exactly one web URL (http or https).|
+|`httpurls`|The text must contain one or more web URLs.|
+|`email`|The text must contain exactly one email address.|
+|`path`|The text must be a local file path, and it must exist on the local file system.| 
 |`formatting`|The selected text control must support formatting.|
-|`httpurl`|Require the text to contain exactly one HTTP(S) URL; only the matching part will be passed to the action.|
-|`httpurls`|Require the text to contain one or more HTTP(S) URLs.|
-|`email`|Require the text to contain exactly one email address; only the matching part will be passed to the action.|
-|`path`|Require the text to contain exactly one local file path; only the matching part will be passed to the action.| 
-|`html`|Selection must be HTML text (for example, text in a web page).|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
 
 ### Before and After keys
 
-These are the values supported by the `Before` and `After` fields.
+Thee `cut`, `copy` and `paste` keys can be used in the `Before` field. All the values can be used in the `After` field.
 
 |Value|Description|
 |-----|-----------|
 |`cut`|Perform system Cut command, as if user pressed ⌘X.|
 |`copy`|Perform system Copy command, as if user pressed ⌘C.|
 |`paste`|Perform system Paste command, as if user pressed ⌘V.|
-|`paste-plain`|Strip the system pasteboard down to plain text only, then perform system Paste command, as if user pressed ⌘V.|
-|`popclip-appear`|Makes PopClip invoke itself again. (This is used in the Select All extension).|
-|`copy-selection`|Copy the originally selected text as plain text. (This is used in the Swap extension.)|
-|`copy-result`|Copy the text returned from the script script to the clipboard. Displays "Copied" notification. If there is no text, or the script failed, shows an 'X'.|
-|`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, only copy it as in `copy-result`. If there is no text, or the script failed, shows an 'X'.|
-|`preview-result`|Copy the text returned from the script to the clipboard, and show the result as well (truncated to 100 characters). If the system Paste command is available, the preview text can be clicked to paste it. If there is no text, or the script failed, shows an 'X'.|
-|`show-result`|Show the text returned from the script. If there is no text, or the script failed, shows an 'X'.|
+|`copy-result`|Copy the text returned from the script script to the clipboard. Displays "Copied" notification.|
+|`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, copy it as in `copy-result`.|
+|`preview-result`|Copy the result to the pasteboard and show the result to the user, truncated to 160 characters. If the system Paste command is available, the preview text can be clicked to paste it.|
+|`show-result`|Copy the result to the pasteboard and show it to the user, truncated to 160 characters. |
 |`show-status`|Show a tick or a 'X', depending on whether the script succeeded or not.|
 
 ### Option Dictionary
@@ -236,8 +248,10 @@ Options are presented to the user in a preferences window and are saved by PopCl
 |`Option Identifier`|String|Required|Unique identifying string for this option. **It must be an all-lowercase string.** This field is used to pass the option to your script. (See [Script Fields](#script-fields).)|
 |`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box) or `multiple` (pop-up box with multiple choice options).|
 |`Option Label`|String or Dictionary|Required|Label to appear in the user interface for this option.|
+|`Option Description`|String or Dictionary|Optional|A longer description to appear in the options UI to describe this option.|
 |`Option Default Value`|String|Optional|For `string`, `boolean` and `multi` types, this field specifies the default value of the option.|
-|`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values to show in the pop-up button.|
+|`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
+|`Option Value Labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used in the PopClip options UI, not passed to the script. If ommitted, the option values themselves are shown.|
 
 
 ### Script Fields
@@ -246,39 +260,30 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 
 |Shell Script Variable|AppleScript Field|Description|
 |---------------------|-----------------|-----------|
-|`POPCLIP_TEXT`|`{popclip text}`|The selected text, without formatting.|
-|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the selected text. For example, if the selected text is `push / pull` this field will contain `push%20%2F%20pull`.|
-|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of URLs which PopClip detected in the selected text.|
-|`POPCLIP_URL_TITLES`|`{popclip url titles}`|Newline-separated list of titles for the urls in `POPCLIP_URLS` which PopClip detected in the selected text. If no title is available, the string will contain an empty line.|
-|`POPCLIP_HTML`|`{popclip html}`|The selected text in HTML format, if available. The `Pass HTML` field must be set to `YES` to receive this field.|
+|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
+|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
+|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
+|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
+|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
+|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Pass HTML` must be specified.)|
+|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Pass HTML` must be specified.)|
+|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Pass HTML` must be specified.)|
+|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
-|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Safari and Chrome only.)|
-|`POPCLIP_SPECIAL_BROWSER_TITLE`|`{popclip special browser title}`|The title of the web page, ONLY only if the user selected the URL in the address bar (i.e. this is likely the title of the corresponding web page to the URL). (Safari and Chrome only.)|
-|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Safari and Chrome only.)|
-|`POPCLIP_DECIMAL_SEPARATOR`|n/a|The decimal separator character according to the OS X system locale. For example: `.`|
-|`POPCLIP_GROUPING_SEPARATOR`|n/a|The number grouping (thousands separator) character according to the OS X system locale. For example: `,`|
+|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
+|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-### Credits Dictionary
-
-|Key|Type|Required?|Description|
-|---|----|---------|-----------|
-|`Name`|String|Required|Name or identifier of the contributor. For example `John Smith`.|
-|`Link`|String|Optional|A link to the contributor's website or other URL. For example `http://johnsmith.com`|
-
-### Apps Dictionary
+### App Info Dictionary
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Name`|String|Required|Name of the app which this extension interacts with. For example `Evernote` for an Evernote extension.|
-|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether the app given by `Bundle Identifier` is installed when the user tries to use the extension. If missing, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
-|`Link`|String|Required if `Check Installed` is `YES`|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
-|`Bundle Identifier`|String|Required if `Check Installed` is `YES`|Bundle identifier of the application. For example `com.evernote.Evernote`. Use this if the app has only one identifier.|
-|`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|All possible bundle identifiers of the application. Use this if an app has multiple variants, for example, Pro and Free variants, or if an app use a different bundle ID for the App Store version to the stand-alone version. Include all the possible bundle IDs as an array.|
-
-Only one of `Bundle Identifier` or `Bundle Identifiers` is required, not both.
+|`Link`|String|Required|Link to a website where the user can get the app referred to in `Name`. For example `http://evernote.com`.|
+|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
+|`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
 
 ## Additional Notes
 
@@ -297,6 +302,7 @@ Here is an example of an AppleScript file for use in an extension (this one is f
 ### Example Shell Script File
 Here is an example of an shell script for use in an extension (this one is for 'Say'):
 
+    !#/bin/sh
     echo $POPCLIP_TEXT | say
 
 ### Shell Script Testing
@@ -309,15 +315,15 @@ While developing a script, you can test it from the command line by exporting th
 
 ### Script Returning Result
 
-Scripts can return results if they specify one of the `*-result` or `show-status` keys in the Action's `After` field.
+Scripts can return results if they specify one of the `*-result` keys in the Action's `After` field.
 
-Scripts should indicate success or failure as follows. If the script indicates a failure with settings, it will cause the extension's options window to appear (if it has one).
+Scripts should indicate success or failure as follows.
 
 |Result|Shell Script|AppleScript|
 |------|------------|-----------|
 |Success|Return status code `0`|Return without raising an error|
-|General failure|Return status code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
-|Failure with settings|Return status code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
+|General error. (PopClip will show an "X".)|Return status code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
+|Error with user's settings. (PopClip will show an "X" and pop up the extension's options UI.)|Return status code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
 
 Here is an example of a Ruby script that could be used in a shell script extension (with the `Script Interpreter` set to `/usr/bin/ruby`) and the `After` key set to `paste-result`. 
 
@@ -358,3 +364,4 @@ Table of modifier combinations:
 |⌥⇧⌘|1703936|
 |⌃⌥⌘|1835008|
 |⌃⌥⇧⌘|1966080|
+
