@@ -7,7 +7,7 @@
 ----
 ## New in PopClip 2021.9
 
-PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current. Main highlights:
+PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current, recommended fields. Main highlights:
 
 - PopClip now supports SVG image files as well as allowing you to specific an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text. Renamed the `Image File` field to `Icon`. 
 - PopClip now provides an HTML version for all text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML is generated from the selected RTF or plain text content.
@@ -17,7 +17,7 @@ PopClip 2021.9 introduces several new fields and some other changes. Lots of the
 - Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
 - Added `Option Value Labels` array so that the options list can show a (localizable) display name different to the value which is passed to the extension.
 - `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
-- Removed the `html` requirement since all seelction now come with HTML (as above).
+- Removed the `html` requirement since all selections now come with HTML (as above).
 - Removed the `Preseve Image Color` option. PopClip now always converts the icon to monochrome.
 - Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard.
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
