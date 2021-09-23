@@ -11,6 +11,6 @@
 	<key>Required Software Version</key>
 	<integer>3510</integer>
 	<key>Extension Image File</key>
-	<string>onlineThesaurus.png</string>
+	<string>thesaurus.svg</string>
 </dict>
 </plist>
