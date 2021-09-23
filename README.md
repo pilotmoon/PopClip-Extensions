@@ -22,6 +22,8 @@ PopClip 2021.9 introduces several new fields and some other changes. Lots of the
 - Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard.
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
 
+I've also made the error checking on loading an extension more robust, so if you have something like a mis-named field or the wrong type, you'll get an more specific message about what the problem is.
+
 One more thing... there is also a brand new extension format based on JavaScript. Documentation still "to-do", watch this space!
 
 ----
