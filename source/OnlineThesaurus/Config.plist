@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Extension Description</key>
-	<string>Search for the selected word in an online thesaurus. Includes Thesaurus.com, Collins Dictionary Thesaurus and PowerThesaurus.</string>
+	<string>Search for the selected word in an online thesaurus. Includes Thesaurus.com, Collins, and PowerThesaurus.</string>
 	<key>Extension Name</key>
 	<string>Online Thesaurus</string>
     <key>Extension Identifier</key>
