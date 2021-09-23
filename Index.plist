@@ -305,7 +305,8 @@
 	<dict>
 		<key>Members</key>
 		<array>
-			<string>OnlineDictionary</string>						
+			<string>OnlineDictionary</string>	
+			<string>OnlineThesaurus</string>						
 			<string>Antidote</string>			
 			<string>Eudic</string>								
 		</array>

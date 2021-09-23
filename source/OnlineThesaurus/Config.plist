@@ -2,46 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Actions</key>
-	<array>
-		<dict>
-			<key>Image File</key>
-			<string>onlineThesaurus.png</string>
-			<key>Regular Expression</key>
-			<string>(?s)[\w ]{1,200}$</string>
-			<key>Script Interpreter</key>
-			<string>/usr/bin/php</string>
-			<key>Shell Script File</key>
-			<string>onlineThesaurus.php</string>
-			<key>Title</key>
-			<string>Online Thesaurus</string>
-		</dict>
-	</array>
 	<key>Extension Description</key>
-	<string>Search for the selected word in an online thesaurus.</string>
+	<string>Search for the selected word in an online thesaurus. Includes Thesaurus.com, Collins Dictionary Thesaurus and PowerThesaurus.</string>
 	<key>Extension Name</key>
 	<string>Online Thesaurus</string>
     <key>Extension Identifier</key>
     <string>com.pilotmoon.popclip.extension.online-thesaurus</string>
-	<key>Options</key>
-	<array>
-		<dict>
-			<key>Option Identifier</key>
-			<string>service</string>
-			<key>Option Label</key>
-			<string>Thesaurus Service</string>
-			<key>Option Type</key>
-			<string>multiple</string>
-			<key>Option Default Value</key>
-			<string>thesaurus.com</string>			
-			<key>Option Values</key>
-			<array>
-				<string>thesaurus.com</string>
-				<string>collinsdictionary.com</string>
-			</array>
-		</dict>
-	</array>
 	<key>Required Software Version</key>
-	<integer>719</integer>
+	<integer>3510</integer>
+	<key>Extension Image File</key>
+	<string>onlineThesaurus.png</string>
 </dict>
 </plist>
