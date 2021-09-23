@@ -10,7 +10,7 @@ define({
     options: [{
         identifier: "service",
         type: "multiple",
-        label: "Dictionary Service",
+        label: "Thesaurus Service",
         values: urls,
         valueLabels: names,
     }],
