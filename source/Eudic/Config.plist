@@ -54,7 +54,7 @@
 			<key>Check Installed</key>
 			<false/>
 			<key>Link</key>
-			<string>http://www.eudic.net/eudic/mac_dictionary.aspx</string>
+			<string>https://www.eudic.net/</string>
 			<key>Name</key>
 			<string>Eudic</string>
 		</dict>
