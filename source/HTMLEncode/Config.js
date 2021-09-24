@@ -9,7 +9,7 @@ if (typeof(define) !== 'undefined') {
             label: "Encoding Mode",
             type: "multiple",
             values: ["specialChars", "nonAsciiPrintable"],
-            valueLabels: ["HTML special characters only (<>&\"')", "All non-ASCII-printable characters", ]
+            valueLabels: ["HTML special characters only (<>&\"')", "All non-ASCII characters", ]
         }],
         actions: (selection) => {
             let actions = [];        
