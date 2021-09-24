@@ -38,7 +38,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Look up the selected text in Eudic, the Chinese-English dictionary.</string>
+	<string>Look up the selected text in Eudic, the Chinese-English dictionary. (Updated for PopClip 2021.9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.eudic</string>
 	<key>Extension Name</key>
