@@ -17,7 +17,7 @@ define({
                 icon: '[[%]]',
                 title: 'URL-decode',
                 code: (selection) => {
-                    popclip.pasteText(decodeURI(selection.text));
+                    popclip.pasteText(decodeURIComponent(selection.text));
                 }
             })
         }
