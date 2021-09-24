@@ -21,7 +21,7 @@
 			<key>Option Label</key>
 			<dict>
 				<key>en</key>
-				<string>EuDic Version</string>
+				<string>Eudic Version</string>
 			</dict>
 			<key>Option Type</key>
 			<string>multiple</string>
@@ -37,13 +37,13 @@
 	<key>Extension Description</key>
 	<string>Look up the selected text in Eudic, the Chinese-English dictionary.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon1.popclip.extension.eudic</string>
+	<string>com.pilotmoon.popclip.extension.eudic</string>
 	<key>Extension Name</key>
 	<string>Eudic</string>
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
+			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.eusoft.freeeudic</string>
 				<string>com.eusoft.eudic</string>				
