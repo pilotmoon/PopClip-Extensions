@@ -6,6 +6,7 @@
   "scripts": {
     "test": "npm run build && jsc Config.js",
     "build": "npx browserify _Config.js > Config.js",
+    "install": "npm run build && open -a SignExt .",
     "buildugly": "npx browserify _Config.js | npx uglifyjs > Config.js"
   },
   "author": "Nick Moore",

@@ -1,7 +1,15 @@
 // some info about HTML entities https://developer.mozilla.org/en-US/docs/Glossary/Entity
+// npm page for html-entities library https://www.npmjs.com/package/html-entities
 let entities = require('html-entities');
 if (typeof(define) !== 'undefined') {
     define({
+        options: [{
+            identifier: "mode",
+            label: "Encoding Mode",
+            type: "multiple",
+            values: ["specialChars", "nonAsciiPrintable"],
+            valueLabels: ["HTML special characters only (<>&\"')", "All non-ASCII-printable characters", ]
+        }],
         actions: (selection) => {
             let actions = [];        
 
@@ -10,8 +18,8 @@ if (typeof(define) !== 'undefined') {
                 actions.push({
                     icon: '[&;]',
                     title: 'HTML-encode',
-                    code: (selection) => {
-                        popclip.pasteText(entities.encode(selection.text));
+                    code: (selection, _context, options) => {
+                        popclip.pasteText(entities.encode(selection.text, {mode: options.mode}));
                     }
                 })
             }       
@@ -26,7 +34,7 @@ if (typeof(define) !== 'undefined') {
                     }
                 })
             }
-            
+
             return actions;
         }
     });
