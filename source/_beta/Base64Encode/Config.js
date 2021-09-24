@@ -18,9 +18,9 @@ define({
                 icon: '[[64]]',
                 title: 'Base64-decode',
                 code: (selection) => {
-                    // note this assumes UTF-8 encoding
+                    // note this assumes utf-8 encoding
                     let decoded=Util.base64Decode(selection.text);                    
-                    popclip.pasteText(decoded?decoded:"<Base64: Non-UTF8 result>");                    
+                    popclip.pasteText(decoded?decoded:"<Base64: Non-UTF-8 result>");                    
                 }
             })
         }
