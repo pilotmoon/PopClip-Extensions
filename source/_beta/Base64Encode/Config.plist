@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>	
+	<key>Options</key>
+	<array>
+		<dict>		
+			<key>Option Identifier</key>
+			<string>variant</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Base64 Variant</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>standard</string>
+				<string>urlsafe</string>
+			</array>
+			<key>Option Value Labels</key>
+			<array>
+				<string>Standard (+/)</string>
+				<string>URL Safe (-_)</string>
+			</array>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Encode or decode the selected text as Base64-encoded UTF-8. Supports standard (+/) and URL-safe (-_) Base64 variants.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.base64</string>
+	<key>Extension Name</key>
+	<string>Base64 Encode</string>
+	<key>Extension Image File</key>
+	<string>64.png</string>
+	<key>Required Software Version</key>
+	<integer>3510</integer>
+</dict>
+</plist>
