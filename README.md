@@ -132,18 +132,20 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 
 ![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
 
-### Icons
+## Icons
 Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
 * `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format.
 
 * `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
 
-* `text:<text icon specifier>` instructs PopCLip to generate a text-based icon, as described below.
+* `text:<text icon specifier>` instructs PopClip to generate a text-based icon, as described below.
 
 PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
 
-Text based icons can up to three characters, on their own or within a square or circle. Examples:
+### Test based icons
+
+Text based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
 
 * `text:A` - the letter A on its own
 
@@ -183,7 +185,7 @@ The `Config.plist` file has the following structure.
 |`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`App`|Dictionary|Optional|Information about the app or website associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info Dictionary](#app-dictionary).|
-|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2`.|
+|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
 |`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3510` for new extensions based on this document.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
@@ -198,7 +200,7 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
 |`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Title` will be displayed instead. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
-|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopCLip will to replace the placeholders with the actual text before extecuting the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
+|`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
 |`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. Within the script, use the environment variable `POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
 |`Script Interpreter`|String|Optional|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`. As an alternative to setting this field, you can make the script file executable (with `chmod +x`) and include a [shebang](https://en.wikipedia.org/wiki/Shebang_(Unix)) (for example `#!/usr/bin/perl`) at the top of the script.
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. You can also put options here, in the same format as for AppleScripts. The values will be URL-encoded by PopClip. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. Note that any `&` characters in the URL must be encoded as `&amp;` in the Config.plist.|
