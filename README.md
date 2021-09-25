@@ -143,9 +143,9 @@ Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few dif
 
 PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
 
-### Test based icons
+### Text-based icons
 
-Text based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
+Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
 
 * `text:A` - the letter A on its own
 
