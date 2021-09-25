@@ -49,9 +49,11 @@ All the extensions and documentation were created by Nick Moore, except where st
 Thank you for contributing! New extensions can be contributed by pull request, as a new folder in the `source` folder of this repo. Alternatively simply by zip up your extension and email it to me. Contributors, please note the following:
 
 * By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
-* Submitting to the repo does not guarantee publication.
+* Submitting to the repo does not guarantee publication on the website. (And if I don't publish your extension it doesn't mean your extension is bad, it just might be more technical or niche.)
 * I may make changes to any extension submitted.
 * Don't worry about signing the extension. I will take care of that.
+
+Also I'm aware that there is a years-old list of unmerged pull requests and I'm sorry about that. I'm trying to make sure to mergeany new ones as they come in. Again it's not a reflection on the quality of your submission, it's just that there is only one of me and I have only so much time and attention. Please ping me if I've ignored something and you'd like me to take a look.
 
 ## Useful Links
 
