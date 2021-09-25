@@ -135,7 +135,7 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 ## Icons
 Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
-* `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format.
+* `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com)] or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
 
 * `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified, and the extension will display the text title instead. You should probably specify an appropriate `Required OS Version` of when using a symbol icon.)
 
