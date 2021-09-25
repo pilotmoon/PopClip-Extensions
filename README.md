@@ -15,6 +15,7 @@ PopClip 2021.9 introduces several new fields and some other changes. Lots of the
 - Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
 - Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
 - Added `Option Value Labels` array so that the options list can show a display name different to option string value itself.
+- Added `Option Description` field to add more information in the UI about an option.
 - `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
 - Shell scripts with the executable bit set can optionally specify their interpreter with a shebang, instead of the `Script Interpreter` field.
 - Removed the `html` requirement since all selections now come with HTML (as above).
@@ -211,7 +212,7 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Required Apps`|Array|Optional|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `Requirements` keys `httpurl`, `httpurls`, `email` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
 |`Requirements`|Array|Optional|Array consisting of zero or more of the strings listed in [Requirements keys](#requirements-keys). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
-|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (And example of use is the Formatting extension.) Default is `NO`.|
+|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
 |`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
 ### Requirements keys
@@ -220,15 +221,15 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 
 |Value|Description|
 |-----|-----------|
-|`copy`|Text must be selected (1 or more characters).|
-|`cut`|Text must be selected and the system Cut command must be available.|
-|`paste`|The system Paste command must be available.|
+|`copy`|One or more characters of text must be selected. (The app's Copy command does not necessarily have to be available. It did in older versions of PopClip, hence the name.)
+|`cut`|Text must be selected and the app's Cut command must be available.|
+|`paste`|The app's Paste command must be available.|
 |`httpurl`|The text must contain exactly one web URL (http or https).|
 |`httpurls`|The text must contain one or more web URLs.|
 |`email`|The text must contain exactly one email address.|
 |`path`|The text must be a local file path, and it must exist on the local file system.| 
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
-|`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=1` would require an option named `fish` to be set on. This mechanism allows actions to be enabled and disabled via options.|
+|`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
 
 ### Before and After keys
 
@@ -237,24 +238,24 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |Value|Description|
 |-----|-----------|
 |`copy-result`|Copy the text returned from the script to the clipboard. Displays "Copied" notification.|
-|`paste-result`|If the system Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, copy it as in `copy-result`.|
-|`preview-result`|Copy the result to the pasteboard and show the result to the user, truncated to 160 characters. If the system Paste command is available, the preview text can be clicked to paste it.|
+|`paste-result`|If the app's Paste command is available, paste the text returned from the script, as well as copy it to the clipboard. Otherwise, copy it as in `copy-result`.|
+|`preview-result`|Copy the result to the pasteboard and show the result to the user, truncated to 160 characters. If the app's Paste command is available, the preview text can be clicked to paste it.|
 |`show-result`|Copy the result to the pasteboard and show it to the user, truncated to 160 characters. |
-|`show-status`|Show a tick or a 'X', depending on whether the script succeeded or not.|
-|`cut`|Perform system Cut command, as if user pressed ⌘X.|
-|`copy`|Perform system Copy command, as if user pressed ⌘C.|
-|`paste`|Perform system Paste command, as if user pressed ⌘V.|
+|`show-status`|Show a tick or an 'X', depending on whether the script succeeded or not.|
+|`cut`|Invoke app's Cut command, as if user pressed ⌘X.|
+|`copy`|Invoke app's Copy command, as if user pressed ⌘C.|
+|`paste`|Invoke app's Paste command, as if user pressed ⌘V.|
 
 ### Option Dictionary
 
-Options are presented to the user in a preferences window and are saved in PopClip's preferences on behalf of the extension. An option dictionary has the following structure. 
+Options are presented to the user in a preferences user interface window and are saved in PopClip's preferences on behalf of the extension. Options appear in the UI in the order they appear in the options array. An option dictionary has the following structure. 
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`Option Identifier`|String|Required|Identifying string for this option. This is passed to your script. The identifier will be downcased or upcased for AppleScript and Shell Script targets, respectively — see [Script Fields](#script-fields).|
 |`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
-|`Option Label`|String or Dictionary|Required|Label to appear in the user interface for this option.|
-|`Option Description`|String or Dictionary|Optional|A longer description to appear in the UI to describe this option.|
+|`Option Label`|String or Dictionary|Required|The label to appear in the UI for this option.|
+|`Option Description`|String or Dictionary|Optional|A longer description to appear in the UI to explain this option.|
 |`Option Default Value`|String|Optional|This field specifies the default value of the option. If ommitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
 |`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
 |`Option Value Labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If ommitted, the option values themselves are shown.|
