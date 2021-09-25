@@ -137,7 +137,7 @@ Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few dif
 
 * `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format.
 
-* `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
+* `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified, and the extension will display the text title instead. You should probably specify an appropriate `Required OS Version` of when using a symbol icon.)
 
 * `text:<text icon specifier>` instructs PopClip to generate a text-based icon, as described below.
 
