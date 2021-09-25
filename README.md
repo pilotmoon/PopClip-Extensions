@@ -2,7 +2,7 @@
 
 # PopClip Extensions
 
-*Document updated 22 Sep 2021. Applicable from PopClip 2021.9 (`3510`) onwards.*
+*Document updated 25 Sep 2021. Applicable from PopClip 2021.9 (`3510`) onwards.*
 
 ----
 ## New in PopClip 2021.9
