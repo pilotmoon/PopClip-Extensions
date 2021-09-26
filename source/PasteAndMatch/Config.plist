@@ -71,7 +71,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Paste as plain text only, without formatting.</string>
+	<string>Paste as plain text only, without formatting. (Updated for PopClip 2021.9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.pasteplain</string>
 	<key>Extension Long Name</key>
@@ -136,7 +136,6 @@
 	<key>Requirements</key>
 	<array>
 		<string>paste</string>
-		<string>formatting</string>		
 	</array>
 </dict>
 </plist>
