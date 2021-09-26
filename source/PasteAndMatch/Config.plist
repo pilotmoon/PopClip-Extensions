@@ -5,12 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Image File</key>
-			<string>paste-equal.png</string>
 			<key>Before</key>
 			<string>paste-plain</string>
-			<key>Regular Expression</key>
-			<string>(?s)^.*$</string>
 			<key>Shell Script File</key>
 			<string>null.sh</string>
 			<key>Title</key>
