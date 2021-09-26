@@ -5,6 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>Image File</key>
+			<string>paste-enter.png</string>
 			<key>Before</key>
 			<string>paste</string>
 			<key>Key Combo</key>
@@ -48,5 +50,7 @@
 	<array>
 		<string>paste</string>
 	</array>
+	<key>Extension Image File</key>
+	<string>paste-enter.png</string>
 </dict>
 </plist>

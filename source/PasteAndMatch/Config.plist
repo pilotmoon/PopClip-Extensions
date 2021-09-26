@@ -5,6 +5,8 @@
 	<key>Actions</key>
 	<array>
 		<dict>
+			<key>Image File</key>
+			<string>paste-equal.png</string>
 			<key>Before</key>
 			<string>paste-plain</string>
 			<key>Regular Expression</key>
@@ -137,5 +139,7 @@
 	<array>
 		<string>paste</string>
 	</array>
+	<key>Extension Image File</key>
+	<string>paste-equal.png</string>
 </dict>
 </plist>
