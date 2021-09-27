@@ -8,8 +8,9 @@ define({
     actions() {
         if (popclip.context.canPaste) {
             return {
-                icon: popclip.options.showIcon?undefined:null,
-                code () {
+                // `undefined` will fall back to the extension's icon; `null` sets no icon
+                icon: popclip.options.showIcon?undefined:null, 
+                code() {
                     if (popclip.modifierKeys & Util.Constant.MODIFIER_SHIFT) {
                         popclip.pastePlain();
                     }

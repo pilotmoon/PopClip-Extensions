@@ -5,11 +5,15 @@ define({
         type: "boolean",
         label: Util.localize("Show as Icon")
     }],
-    actions: (selection, context, options) => {
-        if (context.canPaste && context.hasFormatting) {
-            let action = () => popclip.pastePlain();
-            action.icon=options.showIcon?undefined:null;        
-            return action;            
+    actions() {
+        if (popclip.context.canPaste && popclip.context.hasFormatting) {
+            return {
+                // `undefined` will fall back to the extension's icon; `null` sets no icon
+                icon: popclip.options.showIcon?undefined:null,
+                code() {
+                    popclip.pastePlain()
+                }
+            }            
         }
     }
 });
