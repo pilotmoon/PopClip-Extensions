@@ -12,7 +12,7 @@ define({
                 icon: popclip.options.showIcon?undefined:null, 
                 code() {
                     if (popclip.modifierKeys & Util.Constant.MODIFIER_SHIFT) {
-                        popclip.pastePlain();
+                        popclip.pastePlain();        
                     }
                     else {
                         popclip.performPaste();

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "typedoc": "^0.22.4"
+  }
+}

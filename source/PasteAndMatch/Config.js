@@ -10,8 +10,8 @@ define({
             return {
                 // `undefined` will fall back to the extension's icon; `null` sets no icon
                 icon: popclip.options.showIcon?undefined:null,
-                code() {
-                    popclip.pastePlain()
+                code() {                
+                    popclip.pastePlain();
                 }
             }            
         }
