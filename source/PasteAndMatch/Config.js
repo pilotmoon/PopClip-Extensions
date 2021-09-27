@@ -1,15 +1,15 @@
 define({
+    name: `${Util.localize("Paste")} =`,
     options: [{
         identifier: "icon",
         type: "boolean",
-        label: "Show as Icon"        
+        label: Util.localize("Show as Icon")
     }],
     actions: (selection, context, options) => {
-        return {
-            icon: options.icon?undefined:null, // undefined means use fallback image, null mean use no image
-            code: () => {
-                popclip.pastePlain();
-            }
+        if (context.canPaste && context.hasFormatting) {
+            let action = () => popclip.pastePlain();
+            action.icon=options.icon?undefined:null;        
+            return action;            
         }
     }
 });

@@ -1,3 +1,7 @@
-{
-    "popclipVersion": 3526
+{  
+  "identifier" : "com.pilotmoon.popclip.extension.pasteplain",
+  "name" : "Paste and Match Style",
+  "icon" : "paste-equal.png",  
+  "description" : "Paste as plain text only, without formatting.",
+  "popclipVersion" : 3526
 }
