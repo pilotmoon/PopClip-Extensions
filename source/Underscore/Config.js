@@ -1,6 +1,9 @@
 let jsutils=require('utils.js');
 define({
-    action: (selection) => {
-        popclip.pasteText(jsutils.preserveEndSpace(selection.text, (text) => jsutils.replaceSpaces(text, '_')));
+    actions: (selection) => {
+        let result = jsutils.preserveEndSpace(selection.text, (text) => jsutils.replaceSpaces(text, '_'));
+        if (result !== selection.text) {
+            return () => popclip.pasteText(result);
+        }
     }
 });
