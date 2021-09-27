@@ -18,7 +18,7 @@
 			<key>Title</key>
 			<string>TestSVG-text</string>
 			<key>Icon</key>
-			<string>text:[[AB]]</string>
+			<string>text:(AB)</string>
 		</dict>
 									<dict>
 			<key>Shell Script File</key>
@@ -26,7 +26,7 @@
 			<key>Title</key>
 			<string>TestSVG-text</string>
 			<key>Icon</key>
-			<string>text:[[ab]]</string>
+			<string>text:((AB))</string>
 		</dict>
 									<dict>
 			<key>Shell Script File</key>
@@ -34,7 +34,7 @@
 			<key>Title</key>
 			<string>TestSVG-png</string>
 			<key>Icon</key>
-			<string>text:[[T]]</string>
+			<string>text:[Q]</string>
 		</dict>
 		<dict>
 			<key>Shell Script File</key>
