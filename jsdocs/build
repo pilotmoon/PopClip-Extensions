@@ -10,3 +10,5 @@
 
 # live mode:
 npx typedoc --watch
+
+#--externalPattern 'node_modules/**' --excludeExternals

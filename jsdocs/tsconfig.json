@@ -5,6 +5,6 @@
         "out": "./docs",
         "disableSources": true,
         "sort": ["alphabetical"],
-        "excludeNotDocumented": false,
+        "excludeExternals": true
     }
 }

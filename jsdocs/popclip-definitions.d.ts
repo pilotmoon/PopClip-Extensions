@@ -1,9 +1,4 @@
 /**
- * Print a string to the debug console.
- */
- declare function print(text: string) : void
-
-/**
  * `SelectionInterface` defines properties to access the selected text contents.
  */
  declare interface SelectionInterface {
@@ -88,6 +83,16 @@ declare var popclip : PopClipInterface
 declare interface UtilInterface {
 
     /**
+     * Print a string for debugging purposes. By default it not output anywhere,  but
+     * you can configure PopClip to output to the Console app by running the following command in Terminal:
+     * 
+     * `defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES`
+     * 
+     * Also available as a global function.
+     */
+    print(text: string) : void
+
+    /**
      * Localize an English string into the current user interface language, if possible.
      * This will work for strings which match an existing string in PopClip's user interface.
      * 
@@ -160,7 +165,7 @@ declare interface UtilInterface {
 }
 
 /** 
- * The global object `Util` acts as a container for various utility functions and constants.
+ * The global `Util` object acts as a container for various utility functions and constants.
  */
 declare var Util : UtilInterface
 
