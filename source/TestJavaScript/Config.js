@@ -19,7 +19,7 @@ util.define(() => {
                     title: "Hand",  // default to extension name?
                     icon: "symbol:hand.raised",   // default to extension icon?                   
                     code: (selection) => {
-                        popclip.showText(selection.html);
+                        popclip.openUrl("https://xkcd.com/", {app: "com.apple.Safari"});
                     },
                     flags: {
                         stayVisible: true,

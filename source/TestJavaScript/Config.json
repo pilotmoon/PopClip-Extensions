@@ -4,11 +4,5 @@
     "flags": {
         "captureHtml": true,
         "captureRtf": true
-    },
-    "app": {
-        "name": "Nonexist",
-        "link": "https://example.com",
-        "checkInstalled": true,
-        "bundleIdentifiers": ["nonexist"]
     }
 }
