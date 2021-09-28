@@ -8,7 +8,7 @@ define({
                 title: 'Base64-encode',
                 code: (selection, context, options) => {
                     // it encodes using utf-8
-                    popclip.pasteText(Util.base64Encode(selection.text, options.variant==='urlsafe'));
+                    popclip.pasteText(Util.base64Encode(selection.text, {urlSafe: options.variant==='url'}));
                 }
             })
         }
@@ -20,7 +20,7 @@ define({
                 code: (selection) => {
                     // note this assumes utf-8 encoding
                     let decoded=Util.base64Decode(selection.text);                    
-                    popclip.pasteText(decoded?decoded:"<Base64: Non-UTF-8 result>");                    
+                    popclip.pasteText(decoded?decoded:"<Base64: Non-UTF8 result>");                    
                 }
             })
         }
