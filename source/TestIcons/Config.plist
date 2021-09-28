@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+			<key>Preserve Image Color</key>
+			<true/>
 	<key>Actions</key>
 	<array>
 			<dict>
@@ -24,17 +26,21 @@
 			<key>Shell Script File</key>
 			<string>null.sh</string>
 			<key>Title</key>
-			<string>TestSVG-text</string>
+			<string>TestSVG-png</string>
 			<key>Icon</key>
-			<string>text:((AB))</string>
+			<string>rainbow.png</string>
+			<key>Preserve Image Color</key>
+			<true/>
 		</dict>
 									<dict>
 			<key>Shell Script File</key>
 			<string>null.sh</string>
 			<key>Title</key>
-			<string>TestSVG-png</string>
+			<string>TestSVG-svg</string>
 			<key>Icon</key>
-			<string>text:[Q]</string>
+			<string>instagram.svg</string>
+			<key>Preserve Image Color</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>Shell Script File</key>
