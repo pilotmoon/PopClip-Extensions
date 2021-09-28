@@ -1,40 +1,59 @@
 /**
- * `SelectionInterface` defines properties to access the selected text contents.
+ * SelectionInterface defines properties to access the selected text contents.
  */
  declare interface SelectionInterface {
 
  }
 
  /**
- * `ContextInterface` defines properties to access the context surrounding the selected text.
+ * ContextInterface defines properties to access the context surrounding the selected text.
  */
   declare interface ContextInterface {
 
 }
 
+/**
+ * Options for the [[pasteText]] and [[pasteItems]] methods.
+ */
+declare interface PasteOptions {
+    /**
+     * Whether to restore the original contents of the pasteboard after the paste 
+     * operation. Default is `false`.
+     */
+    restore?: boolean
+}
  /**
- * `PopClipInterface` defines the methods and properties of the global `popclip` object.
+ * PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
+ * 
+ * Methods in the **Action Methods** category are only available in the action function. If called from
+ * the population function, the method will throw an exception.
+ * 
  */
  declare interface PopClipInterface {
     /**
-    * A bit field representing the modifier keys held when the action was invoked in PopClip.
-    * Constants for the modifiers are given in [[Util]].[[Constant]].
+    * A bit field representing state of the modifier keys when the action was invoked in PopClip.
+    * 
+    * #### Notes
+    * 
+    * Constants for the modifiers are given in [[util]].[[constant]]. 
+    * 
+    * During the execution of the population function, the value of this property is always zero.
     * 
     * #### Example
     * 
     * ```javascript
     * // test for shift
-    * if (popclip.modifierKeys & Util.Constant.MODIFIER_SHIFT) {
+    * if (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) {
     *   ...
     * }
     * 
-    * // test for  shift OR option
-    * if (popclip.modifierKeys & Util.Constant.MODIFIER_SHIFT|Util.Constant.MODIFIER_OPTION) {
+    * // test for shift OR option
+    * let combo = util.constant.MODIFIER_SHIFT|util.constant.MODIFIER_OPTION;
+    * if (popclip.modifierKeys & combo) { 
     *   ...
     * }
     * 
     * // test for shift AND option
-    * let combo = Util.Constant.MODIFIER_SHIFT|Util.Constant.MODIFIER_OPTION;
     * if ((popclip.modifierKeys & combo) === combo) {
     *   ...
     * }
@@ -42,15 +61,61 @@
     */
     readonly modifierKeys: number
 
-    pasteText(text: string, restore?: boolean): void;
+    /**
+     * 
+     */
+    readonly selection: SelectionInterface
+
+    /**
+     * 
+     */
+    readonly context: ContextInterface
+
+    /**
+     * 
+     */
+    readonly options: object
+
+    /**
+     * If the target app's Paste command is available, this method places the given string on the pasteboard
+     * and then invokes the target app's Paste comand. If the `restore` flag is set in the options, it will
+     * then restore the original pasteboard contents.
+     * 
+     * If the target app's Paste command is not available, it behaves as [[copyText]] instead.
+     * 
+     * #### Example
+     * 
+     * ```js
+     * // place "Hello" on the clipboard and invoke Paste
+     * popclip.pasteText("Hello");
+     * // place "Hello", then restore the original pasteboard contents
+     * popclip.pasteText("Hello", {restore: true});
+     * ```
+     * @param text The plain text string to paste
+     * @param options Options for this method
+     * 
+     * @category Action
+     */
+    pasteText(text: string, options?: PasteOptions): void;
+
+
+    /**
+     * Places the given string on the pasteboard, and shows "Copied" notificaction to the user.
+     * @param text The plain text string to copy
+     * @category Action
+     */
     copyText(text: string): void;
 
     /**
-     * Simulate a key press by the user. The key press delivered at the current app level, not at the OS level. This means PopClip
+     * Simulate a key press by the user. 
+     * 
+     * #### Notes
+     * 
+     * The key press delivered at the current app level, not at the OS level. This means PopClip
      * is not able to trigger global keyboard shortcuts. For example, PopClip can trigger ⌘B for "bold" (or whatever it means in the
      * current app) but not ⌘Tab for "switch app".
      * 
-     * Some key code and modifier constants are available in [[Util]].[[Constant]].
+     * Some key code and modifier constants are available in [[util]].[[constant]].
      * 
      * [More key codes (StackOverflow)](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes)
      * 
@@ -58,28 +123,31 @@
      * 
      * ```js
      * // press the key combo ⌘B
-     * popclip.pressKey('B', Util.Constant.MODIFIER_COMMAND)
+     * popclip.pressKey('B', util.constant.MODIFIER_COMMAND);
      * // press the key combo ⌥⌘H
-     * popclip.pressKey('H', Util.Constant.MODIFIER_OPTION|Util.Constant.MODIFIER_COMMAND)
+     * popclip.pressKey('H', util.constant.MODIFIER_OPTION|util.constant.MODIFIER_COMMAND);
      * // press the return key
-     * popclip.pressKey(Util.Constant.KEY_RETURN)
+     * popclip.pressKey(util.constant.KEY_RETURN);
      * ```
      * 
      * @param key The key to press. When this parameter is a string, PopClip will look up the key code for the first character in the string,
      * mapped to the current keyboard layout. When this parameter is a number, PopClip will use that exact key code.
      *  
      * @param modifiers A bit mask specifiying the modifier keys, if any.
-     * 
+     * @category Action
      */
     pressKey(key: string | number, modifiers?: number): void
 }
 
 /**
- * The global `popclip` object encapsulates the user's current interaction with PopClip and provides methods
- * for the script to perform actions on behalf of the user.
+ * The global `popclip` object encapsulates the user's current interaction with PopClip, and provides methods
+ * for performing various actions. It implements [[PopClipInterface]].
  */
 declare var popclip : PopClipInterface
 
+/**
+* Interface definition for the global [[`util`]] object. Some of the methods are also available as global functions, where indicated.
+*/
 declare interface UtilInterface {
 
     /**
@@ -102,9 +170,9 @@ declare interface UtilInterface {
     localize(string: string): string
 
     /**
-     * The `Constant` property is a container for pre-defined constants.
+     * The `constant` property is a container for pre-defined constants.
      */
-    readonly Constant: {
+    readonly constant: {
         /**
          * Bit mask for the Shift (⇧) key.
          */
@@ -165,17 +233,26 @@ declare interface UtilInterface {
 }
 
 /** 
- * The global `Util` object acts as a container for various utility functions and constants.
+ * The global `util` object acts as a container for various utility functions and constants. It implements [[UtilInterface]].
  */
-declare var Util : UtilInterface
+declare var util : UtilInterface
 
 /**
- * `PasteboardInterface` defines a simplified interface to the macOS pasteboard.
+ * A simplified interface to the macOS pasteboard. Implemented by the global object, [[`pasteboard`]].
  */
 declare interface PasteboardInterface {
     /**
-     * Get and set the plain text content of the pasteboard. When placing text on the pasteboard this way, PopClip's "Copied" notification will not appear.
-     * (Typically, scripts should use [[popclip]].[[copyText]] instead, so that the user gets the "Copied" notification.) 
+     * Get and set the plain text content of the pasteboard. 
+     * 
+     * #### Notes
+     * This property corresponds with the pasteboard type `public.utf8-plain-text`. 
+     * 
+     * When placing text on the pasteboard this way, PopClip's "Copied" notification will not appear.
+     * (Typically, scripts should use [[copyText]] instead, so that the user gets the "Copied" notification.) 
+     * 
+     * The value of this property will always be a string. If there is no plain text value on the
+     * pasteboard, reading this property will give an empty string (`""`). 
+     * 
      * #### Example
      * ```js
      * let x = pasteboard.text;
@@ -186,6 +263,6 @@ declare interface PasteboardInterface {
 }
 
 /**
- * The global `pasteboard` object provides an interface to the current general pasteboard (i.e. the system clipboard).
+ * The global `pasteboard` object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements [[PasteboardInterface]].
  */
 declare var pasteboard: PasteboardInterface

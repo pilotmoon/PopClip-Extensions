@@ -5,7 +5,12 @@
 *This document applies to the latest [PopClip Beta](https://pilotmoon.com/popclip/download).*
 
 ----
-## New in PopClip 2021.9
+
+## Changes in beta
+
+- Brought back `Preserve Image Color` by popular demand.
+
+## Changes in PopClip 2021.9
 
 PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current, recommended fields. Main highlights:
 
@@ -19,7 +24,7 @@ PopClip 2021.9 introduces several new fields and some other changes. Lots of the
 - `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
 - Shell scripts with the executable bit set can optionally specify their interpreter with a shebang, instead of the `Script Interpreter` field.
 - Removed the `html` requirement since all selections now come with HTML (as above).
-- Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.
+- ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~
 - Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
 
