@@ -22,6 +22,18 @@ declare interface PasteOptions {
      */
     restore?: boolean
 }
+
+/**
+ * Options for the [[openUrl]] method.
+ */
+ declare interface OpenUrlOptions {
+    /**
+     * Bundle identifier of the app to open the URL with. For example `"com.google.Chrome"`.     
+     */
+    app?: string
+}
+
+
  /**
  * PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
  * 
@@ -94,7 +106,7 @@ declare interface PasteOptions {
      * @param text The plain text string to paste
      * @param options Options for this method
      * 
-     * @category Action
+     * @category Copy/Paste
      */
     pasteText(text: string, options?: PasteOptions): void;
 
@@ -102,7 +114,7 @@ declare interface PasteOptions {
     /**
      * Places the given string on the pasteboard, and shows "Copied" notificaction to the user.
      * @param text The plain text string to copy
-     * @category Action
+     * @category Copy/Paste
      */
     copyText(text: string): void;
 
@@ -137,6 +149,38 @@ declare interface PasteOptions {
      * @category Action
      */
     pressKey(key: string | number, modifiers?: number): void
+
+
+    /**
+     * Open a URL in an application.
+     * 
+     * #### Choice of app to open the URL
+     * 
+     * If a target application bundle identifier is specified via the `app` option, PopClip will ask that app to open the URL.
+     * 
+     * If no target app is specified:
+     * 
+     * * If the URL has the http or https scheme, and the current app is a browser, the the URL is opened in the current app.
+     * * Otherwise, PopClip asks macOS to open the URL in the most suitable app (which will be the default browser in the case of web URLs).
+     * 
+     * #### URL encoding
+     * 
+     * Any parameters etc. in the URL must be appropriately percent-encoded. JavaScript provides the
+     * [encodeURIComponent()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)
+     * function for this.
+     * 
+     * #### Example
+     * ```js
+     * popclip.openUrl("https://xkcd.com"); // open xckd.com in current/default browser
+     * popclip.openUrl("https://xkcd.com", {app: "com.brave.Browser"}); // open xkcd.com in Brave browser
+     * popclip.openUrl(`mailto:support@pilotmoon.com?subject=${encodeURIComponent("What's up?")}`); // open mailto link in the default mail application
+     * ```
+     * 
+     * @param url A well-formed URL
+     * @param options Options for this method
+     * @category Action
+     */
+    openUrl(url: string, options?: OpenUrlOptions): void
 }
 
 /**
