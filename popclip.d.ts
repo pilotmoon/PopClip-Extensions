@@ -1,49 +1,185 @@
 /* This is a TypeScript definitions file for PopClip's JavaScript interface for extensions. */
 
 /**
- * SelectionInterface defines properties to access the selected text contents.
+ * A type to represent a localizable string.
+ * 
+ * #### Notes
+ * 
+ * The value may be either a string or an object.
+ * If you supply a string, that string is used.
+ * If you supply an object mapping language codes to strings, PopClip will
+ * display the string for the user's preferred language if possible, with fallback to the `en` string.
+ * 
+ * #### Example
+ * ```js
+ * option.label = "Color" // just use this string
+ * option.label = { en: "Color", "en-GB": "Colour", fr: "Couleur", "zh-Hans": "颜色" }
  */
- declare interface SelectionInterface {
+declare type LocalizableString = string | object
 
+/**
+ * An action function is called when the user clicks the action button in PopClip.
+ * 
+ * TODO
+ */
+ declare type ActionFunction = (selection: SelectionInterface, context: ContextInterface, options: object, modifierKeys: number) => void
+
+ /**
+  * An action can be either the [[ActionFunction]] on its own, or an [[ActionDefinition]] object.
+  * 
+  * If you supply the function on its own, the title and icon will be the extension name and extension icon.
+  */
+ declare type Action = ActionDefinition | ActionFunction
+
+/**
+ * A population function is called by PopClip to obtain the actions to show in the popup.
+ * 
+ * TODO
+ * 
+ * @returns A single action or array of actions. May return `undefined` to define no actions.
+ */
+declare type PopulationFunction = (selection: SelectionInterface, context: ContextInterface, options: object) => undefined | Action | Action[]
+
+/**
+ * The main object defining a PopClip extension.
+ * 
+ * You create this in the Config.js and pass it to the [[define]] function.
+ * 
+ * Any omitted properties (apart from [[actions]]) fall back to the equivalent value in the Config.json file.
+ * 
+ * @category Extension Definition
+ */
+declare interface ExtensionDefinition {
+
+    /**
+     * A unique identifying string for this extension.
+     * 
+     * #### Notes
+     * 
+     * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
+     * 
+     * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
+     * 
+     * Do not use the `com.pilotmoon.` prefix for your own extension.
+     * 
+     * If omitted here, it must be defined in the Config.json file instead.
+     */
+    identifier?: string
+
+    /**
+     * The display name of this extension.
+     * 
+     * If omitted here, it must be defined in the Config.json file instead.
+     */
+    name?: LocalizableString
+
+    /**
+     * The extension's icon.
+     */
+    icon?: string
+
+    /**
+     * User-configurable options for this extension.    
+     */
+    options?: OptionDefinition[]
+
+    /**
+     * Defines the actions to go in the PopClip popup.
+     * 
+     * #### Notes
+     * 
+     * This can be an array or a function. If it is an array, the actions in the array are always used. If it
+     * is a function, PopClip calls the function while it is populating the popup, so you can dynamically generate the actions.
+     */
+    actions: Action[] | PopulationFunction
+}
+
+/**
+ * An an object you create to define single extension option.
+ * Options are defined in the [[options]] array of the extension object.
+ * 
+ * @category Extension Definition
+ */
+declare interface OptionDefinition {
+    /**
+     * An identifying string for this option. 
+     */
+    identifier: string
+
+    /**
+     * The kind of option, one of:
+     *  * `string`: a text box for free text entry,
+     *  * `boolean`: a check box,
+     *  * `multiple`: multiple-choice drop-down with predefined options,
+     *  * `password`: a password entry field (passwords are stored in user's keychain instead of preferences),
+     *  * `heading`: adds a heading in the user interface, but does not actually define an option
+     */
+    type: "string" | "boolean" | "multiple" | "password" | "heading"
+
+    /**
+     * The label for this option.
+     */
+    label: LocalizableString
+
+    /**
+     * The default value of the option. If ommitted, `string` options default to the empty string,
+     * `boolean` options default to true, and `multiple` options default to the top item in the list.
+     * A `password` field may not have a default value.
+     */
+    defaultValue?: string | boolean
+}
+
+/**
+ * An object you create to encapsulate an action's code together with an title and/or icon.
+ * 
+ * @category Extension Definition
+ */
+ declare interface ActionDefinition {
+     /**
+      *  The action's title. 
+      * 
+      *  If omitted, the extension's [[name]] will be used, if any.
+     */
+     title?: LocalizableString
+     
+     /** The action's icon. 
+      * 
+      * If omitted, the extension's icon will be used, if any.
+      */
+     icon?: string
+
+     /** The action's code. */
+     code: ActionFunction
  }
 
- /**
- * ContextInterface defines properties to access the context surrounding the selected text.
+/**
+ * SelectionInterface defines properties to access the selected text contents.
  */
-  declare interface ContextInterface {
-
+declare interface SelectionInterface {
+    /**
+     * The plain text selected by the user. If there is no selected text, perhaps because the user invoked PopClip by a long press,
+     * this will be the empty string.
+     */
+    text: string
 }
 
 /**
- * Options for the [[pasteText]] and [[pasteItems]] methods.
- */
-declare interface PasteOptions {
-    /**
-     * Whether to restore the original contents of the pasteboard after the paste 
-     * operation. Default is `false`.
-     */
-    restore?: boolean
+* ContextInterface defines properties to access the context surrounding the selected text.
+*/
+declare interface ContextInterface {
+
 }
+
+
 
 /**
- * Options for the [[openUrl]] method.
- */
- declare interface OpenUrlOptions {
-    /**
-     * Bundle identifier of the app to open the URL with. For example `"com.google.Chrome"`.     
-     */
-    app?: string
-}
-
-
- /**
- * PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
- * 
- * Methods in the **Action Methods** category are only available in the action function. If called from
- * the population function, the method will throw an exception.
- * 
- */
- declare interface PopClipInterface {
+* PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
+* 
+* Methods in the **Action Methods** category are only available in the action function. If called from
+* the population function, the method will throw an exception.
+* 
+*/
+declare interface PopClipInterface {
     /**
     * A bit field representing state of the modifier keys when the action was invoked in PopClip.
     * 
@@ -106,11 +242,17 @@ declare interface PasteOptions {
      * popclip.pasteText("Hello", {restore: true});
      * ```
      * @param text The plain text string to paste
-     * @param options Options for this method
+     * @param options
      * 
      * @category Copy/Paste
      */
-    pasteText(text: string, options?: PasteOptions): void;
+    pasteText(text: string, options?: {
+        /**
+         * Whether to restore the original contents of the pasteboard after the paste 
+         * operation. Default is `false`.
+         */
+        restore?: boolean
+    }): void;
 
 
     /**
@@ -156,14 +298,14 @@ declare interface PasteOptions {
     /**
      * Open a URL in an application.
      * 
-     * #### Choice of app to open the URL
+     * #### Choice of application
      * 
      * If a target application bundle identifier is specified via the `app` option, PopClip will ask that app to open the URL.
      * 
      * If no target app is specified:
      * 
-     * * If the URL has the http or https scheme, and the current app is a browser, the the URL is opened in the current app.
-     * * Otherwise, PopClip asks macOS to open the URL in the most suitable app (which will be the default browser in the case of web URLs).
+     * * If the URL has the http or https scheme, and the current app is a browser, the URL is opened in the current app.
+     * * Otherwise, PopClip asks macOS to open the URL in the default handler for that URL type.
      * 
      * #### URL encoding
      * 
@@ -179,17 +321,22 @@ declare interface PasteOptions {
      * ```
      * 
      * @param url A well-formed URL
-     * @param options Options for this method
+     * @param options
      * @category Action
      */
-    openUrl(url: string, options?: OpenUrlOptions): void
+    openUrl(url: string, options?: {
+        /**
+         * Bundle identifier of the app to open the URL with. For example `"com.google.Chrome"`.     
+         */
+        app?: string
+    }): void
 }
 
 /**
  * The global `popclip` object encapsulates the user's current interaction with PopClip, and provides methods
  * for performing various actions. It implements [[PopClipInterface]].
  */
-declare var popclip : PopClipInterface
+declare var popclip: PopClipInterface
 
 /**
 * Interface definition for the global [[`util`]] object. Some of the methods are also available as global functions, where indicated.
@@ -202,9 +349,8 @@ declare interface UtilInterface {
      * 
      * `defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES`
      * 
-     * Also available as a global function.
      */
-    print(text: string) : void
+    log(text: string): void
 
     /**
      * Localize an English string into the current user interface language, if possible.
@@ -222,66 +368,66 @@ declare interface UtilInterface {
         /**
          * Bit mask for the Shift (⇧) key.
          */
-        readonly MODIFIER_SHIFT:         131072
+        readonly MODIFIER_SHIFT: 131072
         /**
          * Bit mask for the Control (⌃) key.
          */
-        readonly MODIFIER_CONTROL:       262144
+        readonly MODIFIER_CONTROL: 262144
         /**
          * Bit mask for the Option (⌥) key.
          */
-        readonly MODIFIER_OPTION:        524288
+        readonly MODIFIER_OPTION: 524288
         /**
          * Bit mask for the Command (⌘) key.
          */
-        readonly MODIFIER_COMMAND:       1048576
+        readonly MODIFIER_COMMAND: 1048576
         /**
          * Key code for the Return (↵) key.
          */
-        readonly KEY_RETURN:             0X24
+        readonly KEY_RETURN: 0X24
         /**
          * Key code for the Tab (⇥) key.
          */
-        readonly KEY_TAB:                0X30
+        readonly KEY_TAB: 0X30
         /**
          * Key code for the space bar.
          */
-        readonly KEY_SPACE:              0X31
+        readonly KEY_SPACE: 0X31
         /**
          * Key code for the Delete (⌫) key.
          */
-        readonly KEY_DELETE:             0X33
+        readonly KEY_DELETE: 0X33
         /**
          * Key code for the Escape key.
          */
-        readonly KEY_ESCAPE:             0X35
+        readonly KEY_ESCAPE: 0X35
         /**
          * Key code for the Forward Delete (⌦) key.
          */
-        readonly KEY_FORWARDDELETE:      0X75
+        readonly KEY_FORWARDDELETE: 0X75
         /**
          * Key code for the Left Arrow key.
          */
-        readonly KEY_LEFTARROW:          0X7B
+        readonly KEY_LEFTARROW: 0X7B
         /**
          * Key code for the Right Arrow key.
          */
-        readonly KEY_RIGHTARROW:         0X7C
+        readonly KEY_RIGHTARROW: 0X7C
         /**
          * Key code for the Down Arrow key.
          */
-        readonly KEY_DOWNARROW:          0X7D
+        readonly KEY_DOWNARROW: 0X7D
         /**
          * Key code for the Up Arrow key.
          */
-        readonly KEY_UPARROW:            0X7E
+        readonly KEY_UPARROW: 0X7E
     }
 }
 
 /** 
  * The global `util` object acts as a container for various utility functions and constants. It implements [[UtilInterface]].
  */
-declare var util : UtilInterface
+declare var util: UtilInterface
 
 /**
  * A simplified interface to the macOS pasteboard. Implemented by the global object, [[`pasteboard`]].
@@ -312,3 +458,52 @@ declare interface PasteboardInterface {
  * The global `pasteboard` object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements [[PasteboardInterface]].
  */
 declare var pasteboard: PasteboardInterface
+
+/**
+ * Export an object for use by another file.
+ * 
+ * #### Notes
+ * 
+ * The _define_ function exports an arbitrary object, which other files can  import using [[require]].
+ *
+ * It should be called only once in any file; if it is called more than once, only the 
+ * final call will have any effect.
+ * 
+ * It is used in the extension's Config.js file to define the extension itself.
+ * 
+ * #### Example
+ * ```js
+ * // greetings.js
+ * function hello(name) {    
+ *   util.log("Hello, ${name}!");    
+ * })
+ * function goodbye(name) {    
+ *   util.log("Bye, ${name}!");    
+ * })
+ * // export these two functions. hey, we made a module!
+ * define({hello, goodbye});
+ * ``` 
+ *
+ * @param objectOrFactory Either the object to be defined, or a factory function which returns the object to be defined.
+ */
+ declare function define(objectOrFactory: object | (() => object)): void
+
+ /**
+  * Import an object from another file.
+  *  
+  * #### Example
+  * 
+  * ```js
+  * // load the functions from the greeting.js file
+  * const greetings = require('greetings.js');
+  * print(greetings.hello("PopClip")) // Hello, Popclip!
+  * 
+  * // alternative using destructuring assignment
+  * const {hello, goodbye} = require('greetings.js');
+  * print(goodbye("PopClip")) // Bye, Popclip!
+  * ``` 
+  * 
+  * @param file Path to the file, relative to the root folder of the extension.
+  * @return The imported object.
+  */
+ declare function require(file: string): object

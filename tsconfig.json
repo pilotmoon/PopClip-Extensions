@@ -1,11 +1,17 @@
 {
     "typedocOptions": {        
-        "entryPoints": "popclip.d.ts",
+        "entryPoints": "./popclip.d.ts",
         "name": "PopClip Extensions JavaScript Reference",    
         "out": "./jsdocs",
         "disableSources": true,
         "sort": ["alphabetical"],
         "excludeExternals": true,
         "readme": "README-js.md",
-    }
+    },
+    "compilerOptions": {            
+        "typeRoots": [
+            "./popclip.d.ts"
+        ],
+    },
+    "include": ["./source"]
 }

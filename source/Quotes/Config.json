@@ -1,0 +1,7 @@
+{
+  "description" : "Put quotation marks around the selected text, choosing from several styles. (Updated for PopClip 2021.9.)",
+  "identifier" : "com.pilotmoon.popclip.extension.quotes",
+  "name" : "Quotes",
+  "icon" : "quotes.png",
+  "popclipVersion" : 3510
+}
