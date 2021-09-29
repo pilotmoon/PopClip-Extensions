@@ -127,6 +127,11 @@ declare interface OptionDefinition {
      * A `password` field may not have a default value.
      */
     defaultValue?: string | boolean
+
+    /**
+     * An icon for this option. It is only displayed for boolean options, next to the check box.
+     */
+    icon?: string
 }
 
 /**
