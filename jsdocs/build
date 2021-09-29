@@ -1,6 +1,6 @@
 #!/bin/zsh
 # install with
 #     npm install -g typedoc
-typedoc
-#typedoc --watch
+npx typedoc
+#npx typedoc --watch
 open docs/index.html

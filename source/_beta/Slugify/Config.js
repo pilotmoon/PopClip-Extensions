@@ -3,7 +3,7 @@ define({
     identifier: "com.pilotmoon.popclip.extension.slugify",
     name: "Slugify",
     icon: "slug.png",
-    code: require('./_main.js')
+    action: require('./_main.js'),
 });
 },{"./_main.js":2}],2:[function(require,module,exports){
 const slug=require('voca/slugify');  
