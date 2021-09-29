@@ -78,7 +78,8 @@
 			<string>BubbleTranslate3</string>
 			<string>MateTranslate</string>
       		<string>Translatium</string>
-			<string>TranslateTab</string>															
+			<string>TranslateTab</string>	
+			<string>Reverso</string>															
 		</array>
 		<key>Title</key>
 		<string>Translation</string>
