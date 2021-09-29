@@ -3,4 +3,4 @@
 #     npm install -g typedoc
 npx typedoc
 #npx typedoc --watch
-open docs/index.html
+open ./jsdocs/index.html

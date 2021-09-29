@@ -1,3 +1,5 @@
+/* This is a TypeScript definitions file for PopClip's JavaScript interface for extensions. */
+
 /**
  * SelectionInterface defines properties to access the selected text contents.
  */

@@ -63,7 +63,7 @@ One more thing... there is also a brand new extension format based on JavaScript
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
 
-![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/example.png)
+![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/example.png)
 
 This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Plus bonus extensions not published on that page.
 
@@ -99,7 +99,7 @@ Here are some external "how to" guides for creating extensions:
 
 By default, PopClip will display a warning dialog when you try to install your own extension, because it is not digitally signed.
 
-![Example unsigned warning.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ext_warning.png)
+![Example unsigned warning.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/ext_warning.png)
 
 If you find this gets annoying while you are testing your work, you can turn off the warning. Run the following command at the Terminal, then Quit and restart PopClip:
 
@@ -157,11 +157,11 @@ Here is an example package structure, using the 'Say' extension:
 ### The Config.plist
 Every extension must contain a `Config.plist` file. This should be a text file in Apple [Property List](https://en.wikipedia.org/wiki/Property_list) format. The plist contains information about the extension, and also defines one or more *actions*. You can edit plist files with a standard text editor, with Xcode, or with a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/).
 
-Example plist: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ExampleConfig.plist).
+Example plist: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/ExampleConfig.plist).
 
 Here is an example plist for 'Translate Tab', as viewed in Xcode:
 
-![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs/ttplist.png)
+![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/ttplist.png)
 
 ## Icons
 Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:

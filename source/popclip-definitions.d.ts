@@ -1,1 +1,0 @@
-../jsdocs/popclip-definitions.d.ts
