@@ -16,35 +16,35 @@ const styles = [
     "‚…‘"
 ];
 
- // generate square outlined icon
+ // generate square icon
 function makeIcon(style: string) {
     return `[[${style[0]}${style[2]}]]`
 }
 
-define({
+function makeIdentifier(index: number) {
+    return `style-${index}`
+}
+
+let extension: ExtensionDefinition = {
     options: styles.map((style, index) => {
-        let option: OptionDefinition = {
-            identifier: `style-${index}`,
+        return {
+            identifier: makeIdentifier(index),
             label: style,
             type: "boolean",
             icon: makeIcon(style),
-            defaultValue: index?false:true
+            defaultValue: index>0?false:true
         }
-        return option;
     }),
     actions(selection, context, options) {
-        if (selection.text) {
-            const actions: Action[] = []
-            styles.forEach((style, index) => {
-                if (options[`style-${index}`]) {
-                    actions.push({
-                        title: styles[index],
-                        icon: makeIcon(style),
-                        code: (selection) => popclip.pasteText(style[0] + selection.text + style[2])
-                    })
-                }                
+        if (selection.text) {            
+            return styles.filter((style, index) => options[makeIdentifier(index)]).map((style, index) => {
+                return {
+                    title: styles[index],
+                    icon: makeIcon(style),
+                    code: (selection) => popclip.pasteText(style[0] + selection.text + style[2])
+                }            
             })
-            return actions
         }
     }
-} as ExtensionDefinition);
+}
+define(extension);

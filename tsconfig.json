@@ -8,7 +8,7 @@
         "excludeExternals": true,
         "readme": "README-js.md",
     },
-    "compilerOptions": {            
+    "compilerOptions": {                
         "typeRoots": [
             "./popclip.d.ts"
         ],
