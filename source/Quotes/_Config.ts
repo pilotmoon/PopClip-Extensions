@@ -34,7 +34,7 @@ define({
                     let after=style[2]
                     actions.push({
                         title: styles[index],
-                        icon: `[${before}${after}]`, // generate square outlined icon
+                        icon: `[[${before}${after}]]`, // generate square outlined icon
                         code: (selection) => popclip.pasteText(before + selection.text + after)
                     })
                 }                

@@ -32,7 +32,7 @@ define({
                     var after_1 = style[2];
                     actions_1.push({
                         title: styles[index],
-                        icon: "[" + before_1 + after_1 + "]",
+                        icon: "[[" + before_1 + after_1 + "]]",
                         code: function (selection) { return popclip.pasteText(before_1 + selection.text + after_1); }
                     });
                 }
