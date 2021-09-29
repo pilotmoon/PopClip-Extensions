@@ -16,12 +16,17 @@ const styles = [
     "‚…‘"
 ];
 
+function makeIcon(style: string) {
+    return `[[${style[0]}${style[2]}]]`
+}
+
 define({
     options: styles.map((style, index) => {
         return {
             identifier: `style-${index}`,
             label: style,
             type: "boolean",
+            icon: makeIcon(style), // generate square outlined icon
             defaultValue: index?false:true
         }
     }),
@@ -30,12 +35,10 @@ define({
             const actions: Action[] = []
             styles.forEach((style, index) => {
                 if (options[`style-${index}`]) {
-                    let before=style[0]
-                    let after=style[2]
                     actions.push({
                         title: styles[index],
-                        icon: `[[${before}${after}]]`, // generate square outlined icon
-                        code: (selection) => popclip.pasteText(before + selection.text + after)
+                        icon: makeIcon(style), // generate square outlined icon
+                        code: (selection) => popclip.pasteText(style[0] + selection.text + style[2])
                     })
                 }                
             })
