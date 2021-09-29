@@ -29,7 +29,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Send the selected text to Dropshelf.</string>
+	<string>Send the selected text to Dropshelf. (Updated for PopClip 2019.9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.dropshelf</string>
 	<key>Extension Name</key>

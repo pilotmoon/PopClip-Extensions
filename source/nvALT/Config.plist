@@ -36,7 +36,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a note in nvALT.</string>
+	<string>Create a note in nvALT. (Updated for PopClip 2019.9.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.nvalt</string>
 	<key>Extension Name</key>
