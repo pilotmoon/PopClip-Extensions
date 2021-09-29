@@ -1,14 +1,6 @@
 #!/bin/zsh
-#
-# This is inspired by the Drafts Script Reference:
-# https://github.com/agiletortoise/drafts-script-reference/
-# Hat-tip to Agile Tortoise.
-#
-
-# all the config is in tsconfig.json
-# npx typedoc
-
-# live mode:
-npx typedoc --watch
-
-#--externalPattern 'node_modules/**' --excludeExternals
+# install with
+#     npm install -g typedoc
+typedoc
+#typedoc --watch
+open docs/index.html
