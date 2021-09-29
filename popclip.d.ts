@@ -18,6 +18,36 @@
 declare type LocalizableString = string | object
 
 /**
+ * A string to declare an icon. Icons may be specified in a few different ways:
+ * 
+ * * **Image file:** A string with suffix `.png` or `.svg` matching the name of an image file in the extension package. Images must be in either PNG or SVG format.
+ * The icons should be square and monochrome, black, on a transparent background. You can use opacity to create shading.
+ * PNG icons should be at least 256x256 pixels in size. 
+ *
+ * * **SF Symbol:** A string of the form `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`.
+ * Symbols are available starting on macOS 11.0 and above, but some symbols require higher macOS versions, as indicated in the
+ * "Availability" panel in Apple's SF Symbols browser app.
+ * 
+ * * **Text icon:** A string of the form `text:<text icon specifier>` instructs PopClip to generate a text-based icon, as described below.
+ * 
+ * ### Text icons
+ * 
+ * Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
+ * 
+ * * `text:A` - the letter A on its own
+ * 
+ * * `text:(1)` - the digit 1 in an outline circle
+ * 
+ * * `text:((本))` - the character 本 in a filled circle
+ * 
+ * * `text:[xyz]` - the characters xyz in an outline square
+ * 
+ * * `text:[[!]]` - the character ! in a filled square
+ * 
+ */
+declare type IconString = string
+
+/**
  * An action function is called when the user clicks the action button in PopClip.
  * 
  * TODO
@@ -25,20 +55,11 @@ declare type LocalizableString = string | object
  declare type ActionFunction = (selection: SelectionInterface, context: ContextInterface, options: object, modifierKeys: number) => void
 
  /**
-  * An action can be either the [[ActionFunction]] on its own, or an [[ActionDefinition]] object.
+  * An action can be either an [[ActionFunction]] on its own, or an [[ActionDefinition]] object.
   * 
-  * If you supply the function on its own, the title and icon will be the extension name and extension icon.
+  * If you supply the function on its own, the action will take its name and icon from the extension name and extension icon.
   */
  declare type Action = ActionDefinition | ActionFunction
-
-/**
- * A population function is called by PopClip to obtain the actions to show in the popup.
- * 
- * TODO
- * 
- * @returns A single action or array of actions. May return `undefined` to define no actions.
- */
-declare type PopulationFunction = (selection: SelectionInterface, context: ContextInterface, options: object) => undefined | Action | Action[]
 
 /**
  * The main object defining a PopClip extension.
@@ -76,7 +97,7 @@ declare interface ExtensionDefinition {
     /**
      * The extension's icon.
      */
-    icon?: string
+    icon?: IconString
 
     /**
      * User-configurable options for this extension.    
@@ -84,14 +105,16 @@ declare interface ExtensionDefinition {
     options?: OptionDefinition[]
 
     /**
-     * Defines the actions to go in the PopClip popup.
+     * Define the actions to go in PopClip's popup.
      * 
      * #### Notes
      * 
-     * This can be an array or a function. If it is an array, the actions in the array are always used. If it
-     * is a function, PopClip calls the function while it is populating the popup, so you can dynamically generate the actions.
+     * This is called by PopClip when the user has either selected some text, or performed a long press to show PopClip with
+     * no selection. At this point, PopClip wants to show its popup and is asking the extension what actions to include.
+     * 
+     * @returns A single action or array of actions.
      */
-    actions: Action[] | PopulationFunction
+    actions: (selection: SelectionInterface, context: ContextInterface, options: object) => Action | Action[]
 }
 
 /**
@@ -131,7 +154,7 @@ declare interface OptionDefinition {
     /**
      * An icon for this option. It is only displayed for boolean options, next to the check box.
      */
-    icon?: string
+    icon?: IconString
 }
 
 /**
@@ -141,17 +164,20 @@ declare interface OptionDefinition {
  */
  declare interface ActionDefinition {
      /**
-      *  The action's title. 
+      * The action's title. The title is displayed in the action button if there is no icon.
+      * For extensions with icons, the title is displayed in the tooltip.
       * 
-      *  If omitted, the extension's [[name]] will be used, if any.
+      * If omitted, the extension's [[name]] will be used, if any.
      */
      title?: LocalizableString
      
-     /** The action's icon. 
+     /** 
+      * A string to define the action's icon - see [[IconString]].
       * 
-      * If omitted, the extension's icon will be used, if any.
+      * If undefined, the extension's icon will be used, if it has one.
+      * Set to `null` if you want tge action to have no icon.
       */
-     icon?: string
+     icon?: IconString
 
      /** The action's code. */
      code: ActionFunction
