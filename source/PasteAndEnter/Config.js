@@ -14,7 +14,7 @@ define({
                 icon: popclip.options['showIcon'] ? undefined : null,
                 code: function () {
                     if (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) {
-                        popclip.pastePlain();
+                        popclip.pasteText(pasteboard.text);
                     }
                     else {
                         popclip.performPaste();

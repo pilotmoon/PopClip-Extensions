@@ -351,11 +351,6 @@ declare interface PopClipInterface {
     copyText(text: string): void;
 
     /**
-     * Strips everything except plain text from the pasteboard, and then invokes [[performPaste]].
-     */
-    pastePlain(): void;
-
-    /**
      * Invokes the app's Paste command, as if the user pressed ⌘V.
      */
     performPaste(): void;
