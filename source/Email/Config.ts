@@ -6,7 +6,7 @@ define(() => {
             const emails=selection.data.emails;
             if (options["enable-at"] && emails.length > 0) {
                 result.push({
-                    title: emails.length==1?"New email to address":"New email to addresses",
+                    title: emails.length==1?`New email to ${emails[0]}`:`New email to ${emails.length} addresses`,
                     icon: "at.png",
                     code: function() {      
                         if (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) {
