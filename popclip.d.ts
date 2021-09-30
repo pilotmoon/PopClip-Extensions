@@ -55,7 +55,7 @@ declare type IconString = string
  * 
  * TODO
  */
- declare type ActionFunction = (selection: SelectionInterface, context: ContextInterface, options: object, modifierKeys: number) => void
+ declare type ActionFunction = (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface, modifierKeys: number) => void
 
  /**
   * An action can be either an [[ActionFunction]] on its own, or an [[ActionDefinition]] object.
@@ -117,7 +117,7 @@ declare interface ExtensionDefinition {
      * 
      * @returns A single action or array of actions.
      */
-    actions: (selection: SelectionInterface, context: ContextInterface, options: object) => Action | Action[]
+    actions: (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface) => Action | Action[]
 }
 
 /**
@@ -195,6 +195,16 @@ declare interface SelectionInterface {
      * this will be the empty string.
      */
     text: string
+
+    /**
+     * Data that PopClip detected in the selected text.
+     */
+    data: {
+        webUrls: string[],
+        otherUrls: string[],
+        emails: string[],
+        paths: string[]
+    }
 }
 
 /**
@@ -224,6 +234,11 @@ declare interface ContextInterface {
      */
     canCut: boolean
 }
+
+/**
+ * Options: a simple map of string to value.
+ */
+declare interface OptionsInterface { [identifier: string]: string | boolean; }
 
 /**
 * PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
@@ -277,7 +292,7 @@ declare interface PopClipInterface {
     /**
      * The current values of the options.
      */
-    readonly options: object
+    readonly options: OptionsInterface
 
     /**
      * If the target app's Paste command is available, this method places the given string on the pasteboard
