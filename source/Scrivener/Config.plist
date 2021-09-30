@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -7,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>scriv.png</string>			
+			<string>scriv.png</string>
 			<key>Service Name</key>
 			<string>Scrivener/Scrivener: Make New Clipping</string>
 			<key>Title</key>
@@ -20,8 +19,8 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.literatureandlatte.scrivener2</string>
-				<string>com.literatureandlatte.scrivener3</string>	
-			</array>			
+				<string>com.literatureandlatte.scrivener3</string>
+			</array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -32,12 +31,12 @@
 	</array>
 	<key>Extension Description</key>
 	<string>Make a new clipping in the currently open Scrivener document.</string>
-	<key>Note</key>
-    <string>Now updated for Scrivener 3.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.scrivener</string>
 	<key>Extension Name</key>
 	<string>Scrivener</string>
+	<key>Note</key>
+	<string>Now updated for Scrivener 3.</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>
