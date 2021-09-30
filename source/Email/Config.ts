@@ -1,5 +1,8 @@
 /// <reference path="../../popclip.d.ts" />
 define({
+    flags: {
+        captureHtml: true
+    },
     actions(selection, _context, options) {
         const result: ActionDefinition[] = []
         const emails=selection.data.emails;
