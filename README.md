@@ -30,7 +30,7 @@ For those of you wishing to continue to write your own extensions in self-instal
 
 ----
 
-## Changes in PopClip 2020.10
+## Changes in PopClip 2021.10
 
 - Executable shell scripts now have the `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
 - Brought back `Preserve Image Color`.
