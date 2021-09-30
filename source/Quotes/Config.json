@@ -3,5 +3,6 @@
   "identifier" : "com.pilotmoon.popclip.extension.quotes",
   "name" : "Quotes",
   "icon" : "quotes.png",
-  "popclipVersion" : 3510
+  "popclipVersion" : 3510,
+  "note" : "Updated for PopClip 2021.9"
 }
