@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-*This document applies to the latest [PopClip Beta](https://pilotmoon.com/popclip/download).*
+*This document applies to PopClip 2021.10 (3543).
 
 ----
 
@@ -217,7 +217,7 @@ The `Config.plist` file has the following structure.
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`App`|Dictionary|Optional|Information about the app or website associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info Dictionary](#app-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
-|`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3510` for new extensions based on this document.|
+|`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
 |`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
