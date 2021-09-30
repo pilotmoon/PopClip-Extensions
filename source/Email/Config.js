@@ -1,7 +1,7 @@
 /// <reference path="../../popclip.d.ts" />
 define(function () {
     var extension = {
-        actions: function (selection, _context, options) {
+        actions: function (selection, context, options) {
             var result = [];
             var emails = selection.data.emails;
             if (options["enable-at"] && emails.length > 0) {
@@ -25,7 +25,11 @@ define(function () {
                     title: "New email with text",
                     icon: "envelope.png",
                     code: function () {
-                        popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(selection.markdown));
+                        var body = selection.markdown;
+                        if (options["source"]) {
+                            body += "\n\n" + context.browserUrl;
+                        }
+                        popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(body));
                     },
                     flags: {
                         captureHtml: true

@@ -26,6 +26,12 @@
       "Option Identifier" : "default",
       "Option Label" : "Default Address",
       "Option Type" : "string"
+    },
+    {      
+      "Option Description" : "Includes the page URL if the text is selected from a web page.",
+      "Option Identifier" : "source",
+      "Option Label" : "Add source URL",
+      "Option Type" : "boolean"
     }
   ],
   "note": "Updated on 30 Sep 2021 to allow selecting multiple email addresses.",

@@ -248,6 +248,11 @@ declare interface ContextInterface {
      * This property is true iff text was selected and the app's Cut command is enabled.
      */
     canCut: boolean
+
+    browserUrl: string
+    browserTitle: string
+    appName: string
+    appIdentifier: string
 }
 
 /**
