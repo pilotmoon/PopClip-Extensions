@@ -1,9 +1,9 @@
 /// <reference path="../../popclip.d.ts" />
 define({
-    actions() {
+    actions(selection, _context, options) {
         const result: ActionDefinition[] = []
-        const emails=popclip.selection.data.emails;
-        if (popclip.options["enable-at"] && emails.length > 0) {
+        const emails=selection.data.emails;
+        if (options["enable-at"] && emails.length > 0) {
             result.push({
                 title: emails.length==1?"New email to address":"New email to addresses",
                 icon: "at.png",
@@ -19,15 +19,15 @@ define({
                 }
             });
         }
-        if (popclip.options["enable-body"] && popclip.selection.text) {
+        if (options["enable-body"] && selection.text) {
             result.push({
                 title: "New email with text",
                 icon: "envelope.png",
                 code: function() {
-                    popclip.openUrl("mailto:" + encodeURIComponent(popclip.options["default"]) + "?body=" + encodeURIComponent(popclip.selection.text))
+                    popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(selection.text))
                 }
             });
         }
         return result;
     }
-});
+} as ExtensionDefinition);
