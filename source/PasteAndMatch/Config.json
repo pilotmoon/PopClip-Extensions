@@ -4,5 +4,5 @@
   "icon" : "paste-equal.png",  
   "description" : "Paste as plain text only, without formatting.",
   "popclipVersion" : 3543,
-  "note": "Updated for PopClip 2021.10."
+  "note": "Updated for PopClip 2021.10 with option to show as icon."
 }
