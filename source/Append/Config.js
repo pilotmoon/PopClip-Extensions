@@ -2,7 +2,7 @@
 define(function () {
     var extension = {
         action: function (selection) {
-            const separator = (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) ? "" : "\n";
+            var separator = (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) ? "" : "\n";
             if (popclip.modifierKeys & (util.constant.MODIFIER_OPTION)) {
                 pasteboard.text = selection.text.trim() + separator + pasteboard.text.trim();
             }
