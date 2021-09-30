@@ -126,7 +126,13 @@ declare interface ExtensionDefinition {
      * 
      * @returns A single action or array of actions.
      */
-    actions: (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface) => Action | Action[]
+    actions?: (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface) => Action | Action[]
+
+    /**
+     * Alternative property to define a single action. When defined this way, the action is only used when there is
+     * at least one character of selected text.
+     */
+    action?: Action
 }
 
 /**
