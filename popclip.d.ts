@@ -64,6 +64,13 @@ declare type IconString = string
   */
  declare type Action = ActionDefinition | ActionFunction
 
+
+ declare interface ActionFlags {
+    captureHtml?: boolean,
+    captureRtf?: boolean,
+    stayVisible?: boolean,
+ }
+
 /**
  * The main object defining a PopClip extension.
  * 
@@ -106,6 +113,8 @@ declare interface ExtensionDefinition {
      * User-configurable options for this extension.    
      */
     options?: OptionDefinition[]
+
+    flags?: ActionFlags
 
     /**
      * Define the actions to go in PopClip's popup.
@@ -181,6 +190,8 @@ declare interface OptionDefinition {
       * Setting to `null` explicitly sets the action to have no icon.
       */
      icon?: IconString
+
+     flags?: ActionFlags
 
      /** The action's code. */
      code: ActionFunction
