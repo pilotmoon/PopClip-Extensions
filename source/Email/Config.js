@@ -24,7 +24,7 @@ define({
                 title: "New email with text",
                 icon: "envelope.png",
                 code: function () {
-                    popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(selection.text));
+                    popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(selection.markdown));
                 }
             });
         }

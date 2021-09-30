@@ -196,6 +196,10 @@ declare interface SelectionInterface {
      */
     text: string
 
+    html: string
+
+    markdown: string
+
     /**
      * Data that PopClip detected in the selected text.
      */
