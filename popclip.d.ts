@@ -18,7 +18,10 @@
 declare type LocalizableString = string | object
 
 /**
- * A string to declare an icon. Icons may be specified in a few different ways:
+ * A string to declare an icon. Used in [[ExtensionDefinition]] and [[ActionDefinition]].
+ * 
+ * 
+ * Icons may be specified in a few different ways:
  * 
  * * **Image file:** A string with suffix `.png` or `.svg` matching the name of an image file in the extension package. Images must be in either PNG or SVG format.
  * The icons should be square and monochrome, black, on a transparent background. You can use opacity to create shading.
@@ -95,7 +98,7 @@ declare interface ExtensionDefinition {
     name?: LocalizableString
 
     /**
-     * The extension's icon.
+     * The extension's icon. See [[IconString]].
      */
     icon?: IconString
 
@@ -152,7 +155,7 @@ declare interface OptionDefinition {
     defaultValue?: string | boolean
 
     /**
-     * An icon for this option. It is only displayed for boolean options, next to the check box.
+     * An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].
      */
     icon?: IconString
 }
@@ -172,10 +175,10 @@ declare interface OptionDefinition {
      title?: LocalizableString
      
      /** 
-      * A string to define the action's icon - see [[IconString]].
+      * A string to define the action's icon. See [[IconString]].
       * 
-      * If undefined, the extension's icon will be used, if it has one.
-      * Set to `null` if you want tge action to have no icon.
+      * If `undefined`, the extension's {@link ExtensionDefinition.icon | icon} will be used, if it has one.
+      * Setting to `null` explicitly sets the action to have no icon.
       */
      icon?: IconString
 
@@ -216,7 +219,7 @@ declare interface PopClipInterface {
     * 
     * #### Notes
     * 
-    * Constants for the modifiers are given in [[util]].[[constant]]. 
+    * Constants for the modifiers are given in {@link UtilInterface.constant | util.constant}. 
     * 
     * During the execution of the population function, the value of this property is always zero.
     * 
@@ -302,7 +305,7 @@ declare interface PopClipInterface {
      * is not able to trigger global keyboard shortcuts. For example, PopClip can trigger ⌘B for "bold" (or whatever it means in the
      * current app) but not ⌘Tab for "switch app".
      * 
-     * Some key code and modifier constants are available in [[util]].[[constant]].
+     * Some key code and modifier constants are available in {@link UtilInterface.constant | util.constant}.
      * 
      * [More key codes (StackOverflow)](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes)
      * 

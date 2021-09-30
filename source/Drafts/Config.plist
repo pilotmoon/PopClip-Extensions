@@ -69,7 +69,9 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Send the selected text to Drafts. (Updated 25 Sep 2021 for Drafts 28.0.)</string>
+	<string>Send the selected text to Drafts.</string>
+	<key>Note</key>
+	<string>Updated 25 Sep 2021 for Drafts 28.0.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.drafts</string>
 	<key>Extension Name</key>
