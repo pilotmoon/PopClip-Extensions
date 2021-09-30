@@ -30,7 +30,9 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Translate the text using Bubble Translate. (Updated 25 Feb 2021 for the latest Bubble Translate app.)</string>
+	<string>Translate the text using Bubble Translate.</string>
+	<key>Note</key>
+    <string>Updated 25 Feb 2021 for the latest Bubble Translate app.</string>
 	<key>Extension Identifier</key>
 	<string>ru.bubble-translate.pop-clip.translate</string>
 	<key>Extension Name</key>

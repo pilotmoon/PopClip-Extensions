@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a new iMessage. (16 Oct 2019: Update for compatibility with macOS Catalina.)</string>
+	<string>Create a new iMessage.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.messages</string>
 	<key>Extension Name</key>

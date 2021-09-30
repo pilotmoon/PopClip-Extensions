@@ -14,7 +14,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a new note, or append to an existing note, in the Notes app. (16 Oct 2019: Update for compatibility with macOS Catalina.)</string>
+	<string>Make a new note, or append to an existing note, in the Notes app.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.notes</string>
 	<key>Extension Name</key>

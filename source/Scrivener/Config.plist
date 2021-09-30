@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -30,7 +31,9 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a new clipping in the currently open Scrivener document. (Now updated for Scrivener 3.)</string>
+	<string>Make a new clipping in the currently open Scrivener document.</string>
+	<key>Note</key>
+    <string>Now updated for Scrivener 3.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.scrivener</string>
 	<key>Extension Name</key>

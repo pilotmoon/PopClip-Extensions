@@ -29,7 +29,9 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Track a package delivery using Deliveries. (Updated 5 Oct 2020 for Deliveries 9.)</string>
+	<string>Track a package delivery using Deliveries.</string>
+	<key>Note</key>
+    <string>Updated 5 Oct 2020 for Deliveries 9.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.deliveries</string>
 	<key>Extension Name</key>

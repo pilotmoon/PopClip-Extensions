@@ -38,8 +38,10 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Shorten the selected URL using Droplr. (Updated 11 May 2020 to support private drops.)</string>
+		<string>Shorten the selected URL using Droplr.</string>
 	</dict>
+	<key>Note</key>
+    <string>Not yet compatible with macOS 12.0 Beta.<a href="/blog/2021/09/15/popclip-macos-monterey">(More info)</a></string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.droplr</string>
 	<key>Extension Name</key>

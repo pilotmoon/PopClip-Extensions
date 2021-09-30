@@ -7,7 +7,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.tweetbot</string>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using Tweetbot. (Now updated to support Tweetbot 3.)</string>
+	<string>Compose a new tweet using Tweetbot.</string>
 	<key>Apps</key>
 	<array>
 		<dict>

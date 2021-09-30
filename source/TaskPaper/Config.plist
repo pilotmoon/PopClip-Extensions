@@ -35,7 +35,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new task to an Inbox project in TaskPaper 3. (8 Oct 2019: Updated to support macOS Catalina.)</string>
+	<string>Add a new task to an Inbox project in TaskPaper 3.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.taskpaper</string>
 	<key>Extension Name</key>
