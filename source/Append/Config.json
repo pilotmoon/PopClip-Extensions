@@ -2,6 +2,6 @@
   "identifier" : "com.pilotmoon.popclip.extension.append",
   "name" : "Append",
   "icon" : "plus.png",
-  "description" : "Append the selected text as a new line after to the existing clipboard contents. If you hold down Option (⌥), it will prepend instead. If you hold down Shift (⇧), it will do it without a newline.",
+  "description" : "Append the selected text as a new line after the existing clipboard contents. If you hold down Shift (⇧), it will prepend instead. If you hold down Option (⌥), it will do it without a newline.",
   "popclipVersion": 3543
 }

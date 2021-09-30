@@ -2,8 +2,8 @@
 define(function () {
     var extension = {
         action: function (selection) {
-            var separator = (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) ? "" : "\n";
-            if (popclip.modifierKeys & (util.constant.MODIFIER_OPTION)) {
+            var separator = (popclip.modifierKeys & util.constant.MODIFIER_OPTION) ? "" : "\n";
+            if (popclip.modifierKeys & (util.constant.MODIFIER_SHIFT)) {
                 pasteboard.text = selection.text.trim() + separator + pasteboard.text.trim();
             }
             else {
