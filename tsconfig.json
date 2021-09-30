@@ -12,6 +12,7 @@
         "typeRoots": [
             "./popclip.d.ts"
         ],
+        "target": "ES5"
     },
     "include": ["./source"]
 }
