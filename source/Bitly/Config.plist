@@ -41,7 +41,7 @@
 		<string>Shorten the selected URL using Bitly.</string>
 	</dict>
 	<key>Note</key>
-    <string>Not yet compatible with macOS 12.0 Beta.<a href="/blog/2021/09/15/popclip-macos-monterey">(More info)</a></string>
+    <string>Not yet compatible with macOS 12.0 Beta.&lt;a href=&quot;/blog/2021/09/15/popclip-macos-monterey&quot;&gt;(More info)&lt;/a&gt;</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.bitly</string>
 	<key>Extension Name</key>
