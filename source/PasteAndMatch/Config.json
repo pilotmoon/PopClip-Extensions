@@ -3,6 +3,6 @@
   "name" : "Paste and Match Style",
   "icon" : "paste-equal.png",  
   "description" : "Paste as plain text only, without formatting.",
-  "popclipVersion" : 3526,
-  "note": "Updated for PopClip 2021.9."
+  "popclipVersion" : 3543,
+  "note": "Updated for PopClip 2021.10."
 }

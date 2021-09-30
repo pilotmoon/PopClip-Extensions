@@ -1,1 +1,0 @@
-npx tsc _Config.ts --out Config.js

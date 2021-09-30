@@ -3,5 +3,6 @@
   "identifier" : "com.pilotmoon.popclip.extension.pasteandenter",
   "icon" : "paste-enter.png",
   "name" : "Paste and Enter",
-  "popclipVersion" : 3530
+  "popclipVersion" : 3543,
+  "note": "Updated for PopClip 2021.10."
 }

@@ -201,10 +201,29 @@ declare interface SelectionInterface {
 * ContextInterface defines properties to access the context surrounding the selected text.
 */
 declare interface ContextInterface {
+    /**
+     * Does the text area support formatting?
+     * 
+     * PopClip can't always detect whether the text area supports formatting or not, in which case
+     * it will err on the side of a false positive.
+     */
+    hasFormatting: boolean
 
+    /**
+     * This property is true iff the Paste command is enabled in the current app.
+     */
+    canPaste: boolean
+
+    /**
+     * This property is true iff text was selected.
+     */
+    canCopy: boolean
+
+    /**
+     * This property is true iff text was selected and the app's Cut command is enabled.
+     */
+    canCut: boolean
 }
-
-
 
 /**
 * PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
@@ -246,17 +265,17 @@ declare interface PopClipInterface {
     readonly modifierKeys: number
 
     /**
-     * 
+     * The current selection.
      */
     readonly selection: SelectionInterface
 
     /**
-     * 
+     * The current context around the selection.
      */
     readonly context: ContextInterface
 
     /**
-     * 
+     * The current values of the options.
      */
     readonly options: object
 
@@ -295,6 +314,16 @@ declare interface PopClipInterface {
      * @category Copy/Paste
      */
     copyText(text: string): void;
+
+    /**
+     * Strips everything except plain text from the pasteboard, and then invokes [[performPaste]].
+     */
+    pastePlain(): void;
+
+    /**
+     * Invokes the app's Paste command, as if the user pressed ⌘V.
+     */
+    performPaste(): void;
 
     /**
      * Simulate a key press by the user. 

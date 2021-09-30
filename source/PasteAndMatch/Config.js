@@ -1,19 +1,21 @@
+/// <reference path="../../popclip.d.ts" />
 define({
-    name: `${Util.localize("Paste")} =`,
+    name: util.localize("Paste") + " =",
     options: [{
-        identifier: "showIcon",
-        type: "boolean",
-        label: Util.localize("Show as Icon")
-    }],
-    actions() {
+            identifier: "showIcon",
+            type: "boolean",
+            label: util.localize("Show as Icon"),
+            defaultValue: false
+        }],
+    actions: function () {
         if (popclip.context.canPaste && popclip.context.hasFormatting) {
             return {
                 // `undefined` will fall back to the extension's icon; `null` sets no icon
-                icon: popclip.options.showIcon?undefined:null,
-                code() {                
+                icon: popclip.options['showIcon'] ? undefined : null,
+                code: function () {
                     popclip.pastePlain();
                 }
-            }            
+            };
         }
     }
 });
