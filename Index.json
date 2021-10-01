@@ -253,7 +253,8 @@
   {
     "Members" : [
       "Call",
-      "Skype"
+      "Skype",
+      "PhoneAmego"
     ],
     "Title" : "Phone Numbers"
   },
