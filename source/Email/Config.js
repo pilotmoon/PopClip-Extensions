@@ -11,11 +11,11 @@ define(function () {
                     code: function () {
                         if (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) {
                             // multiple recipients
-                            popclip.openUrl("mailto:" + emails.map(encodeURIComponent).join());
+                            popclip.openUrl("mailto:" + emails.join());
                         }
                         else {
                             // one email to each address
-                            emails.forEach(function (email) { return popclip.openUrl("mailto:" + encodeURIComponent(email)); });
+                            emails.forEach(function (email) { return popclip.openUrl("mailto:" + email); });
                         }
                     }
                 });
@@ -29,7 +29,7 @@ define(function () {
                         if (options["source"]) {
                             body += "\n\n" + context.browserUrl;
                         }
-                        popclip.openUrl("mailto:" + encodeURIComponent(options["default"]) + "?body=" + encodeURIComponent(body));
+                        popclip.openUrl("mailto:" + options["default"] + "?body=" + encodeURIComponent(body));
                     },
                     flags: {
                         captureHtml: true
