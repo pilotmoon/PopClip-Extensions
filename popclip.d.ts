@@ -460,6 +460,33 @@ declare interface UtilInterface {
      */
     localize(string: string): string
 
+    /*** 
+     * Encode a string as UTF-8 then Base-64 encode the result.
+     *      
+     * @param string The string to encode.
+     * @param options 
+     */
+    base64Encode(string: string, options?: {
+        /**
+         * Whether to encode using the URL-safe variant, with `-` and `_` substituted for `+` and `/`. Default is no.
+         */
+        urlSafe?: boolean,    
+        /**
+         * Whether to trim the `=`/`==` padding from the string. Default is no.
+         */
+        trimmed?: boolean
+    }): string
+
+    /**
+     * Decode a Base-64 string and interpret the result as a UTF-8 string.
+     * 
+     * Accepts both standard and URL-safe variants as input. Also accepts input with or without the `=`/`==` end padding.
+     * 
+     * @param string 
+     * @returns The decoded string, or undefined if the inout cannot be converted into a UTF-8 string.
+     */
+    base64Decode(string: string): string
+
     /**
      * The `constant` property is a container for pre-defined constants.
      */
