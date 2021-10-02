@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Description</key>
+	<string>Open HTML links in the selected text.</string>
+	<key>Extension Image File</key>
+	<string>link-box.svg</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extention.open-html-links</string>
+	<key>Extension Name</key>
+	<string>Open HTML Links</string>
+	<key>Required Software Version</key>
+	<integer>3543</integer>
+</dict>
+</plist>
