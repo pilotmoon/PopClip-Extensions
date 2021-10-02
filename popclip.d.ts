@@ -446,18 +446,21 @@ declare interface PopClip {
 declare var popclip: PopClip
 
 /**
-* Interface definition for the global [[`util`]] object. Some of the methods are also available as global functions, where indicated.
+* A container for various utility functions and constants [[`util`]] object.
 */
 declare interface Util {
 
     /**
-     * Print a string for debugging purposes. By default it not output anywhere,  but
+     * Output a string for debugging purposes. By default it is not output anywhere,  but
      * you can configure PopClip to output to the Console app by running the following command in Terminal:
      * 
      * `defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES`
      * 
+     * then Quit and restart PopClip.
+     * 
+     * @param message The string to output.
      */
-    log(text: string): void
+    log(message: string): void
 
     /**
      * Localize an English string into the current user interface language, if possible.
@@ -616,6 +619,7 @@ declare var pasteboard: Pasteboard
  * })
  * // export these two functions. hey, we made a module!
  * define({hello, goodbye});
+ * 
  * ``` 
  *
  * @param objectOrFactory Either the object to be defined, or a factory function which returns the object to be defined.
@@ -641,3 +645,8 @@ declare var pasteboard: Pasteboard
   * @return The imported object.
   */
  declare function require(file: string): object
+
+/**
+ * A synonym for {@link Util.log}.
+ */
+declare function print(message: string): object
