@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>raindropio.png</string>
+			<string>raindropio-logo.svg</string>
 			<key>Requirements</key>
 			<array>
 				<string>httpurl</string>
@@ -36,6 +36,6 @@
 	<key>Extension Name</key>
 	<string>Raindrop.io</string>
 	<key>Required Software Version</key>
-	<integer>693</integer>
+	<integer>3510</integer>
 </dict>
 </plist>
