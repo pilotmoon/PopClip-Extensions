@@ -54,7 +54,7 @@ declare type IconString = string
  * 
  * TODO
  */
- declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifierKeys: number) => void
+ declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifiers: Modifiers) => void
 
  /**
   * Either an [[ActionFunction]] on its own, or an [[Action]] object.
@@ -73,6 +73,13 @@ declare type IconString = string
     //captureRtf?: boolean,
     stayVisible?: boolean,
     //preserveColor?: boolean,
+ }
+
+ declare interface Modifiers {
+    shift: boolean,
+    control: boolean
+    option: boolean
+    command: boolean
  }
 
 /**
@@ -284,6 +291,7 @@ declare interface Options { [identifier: string]: string | boolean; }
 declare interface PopClip {
     /**
     * A bit field representing state of the modifier keys when the action was invoked in PopClip.
+    * TODO remove
     * 
     * #### Notes
     * 
@@ -312,6 +320,8 @@ declare interface PopClip {
     * ```
     */
     readonly modifierKeys: number
+
+    readonly modifiers: Modifiers
 
     /**
      * The current selection.
