@@ -29,7 +29,7 @@
 	<key>Extension Description</key>
 	<dict>
 		<key>en</key>
-		<string>Add URL as Bookmark in Raindrop.io.</string>
+		<string>Add a URL as bookmark in Raindrop.io.</string>
 	</dict>
 	<key>Extension Identifier</key>
 	<string>com.miller.popclip.extension.raindrop</string>
