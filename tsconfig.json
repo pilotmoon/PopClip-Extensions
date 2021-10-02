@@ -7,12 +7,13 @@
         "sort": ["alphabetical"],
         "excludeExternals": true,
         "readme": "README-js.md",
-    },
+    },    
     "compilerOptions": {                
         "typeRoots": [
             "./popclip.d.ts"
         ],
-        "target": "ES5"
+        "target": "ES5",
+        "lib": ["ES5"]
     },
     "include": ["./source"]
 }

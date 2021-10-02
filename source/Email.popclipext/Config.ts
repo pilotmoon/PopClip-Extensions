@@ -1,8 +1,8 @@
 /// <reference path="../../popclip.d.ts" />
 define(() => {
-    const extension: ExtensionDefinition = {        
+    const extension: Extension = {        
         actions(selection, context, options) {
-            const result: ActionDefinition[] = []
+            const result: Action[] = []
             const emails=selection.data.emails;
             if (options["enable-at"] && emails.length > 0) {
                 result.push({

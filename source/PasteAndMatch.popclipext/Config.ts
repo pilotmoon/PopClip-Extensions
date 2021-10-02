@@ -18,4 +18,4 @@ define({
             }            
         }
     }
-} as ExtensionDefinition);
+} as Extension);

@@ -18,8 +18,7 @@
 declare type LocalizableString = string | object
 
 /**
- * A string to declare an icon. Used in [[ExtensionDefinition]] and [[ActionDefinition]].
- * 
+ * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link Action.icon}.
  * 
  * Icons may be specified in a few different ways:
  * 
@@ -55,32 +54,37 @@ declare type IconString = string
  * 
  * TODO
  */
- declare type ActionFunction = (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface, modifierKeys: number) => void
+ declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifierKeys: number) => void
 
  /**
-  * An action can be either an [[ActionFunction]] on its own, or an [[ActionDefinition]] object.
+  * Either an [[ActionFunction]] on its own, or an [[Action]] object.
   * 
   * If you supply the function on its own, the action will take its name and icon from the extension name and extension icon.
   */
- declare type Action = ActionDefinition | ActionFunction
+ declare type ActionType = Action | ActionFunction
 
 
+/**
+ * ActionFlags is the type of the {@link Extension.flags} and {@link Action.flags} fields, defining certain boolean properties of an actions.
+ * @category Definition
+ */
  declare interface ActionFlags {
     captureHtml?: boolean,
-    captureRtf?: boolean,
+    //captureRtf?: boolean,
     stayVisible?: boolean,
+    //preserveColor?: boolean,
  }
 
 /**
- * The main object defining a PopClip extension.
+ * The Extension obiect defines the PopClip extension.
  * 
- * You create this in the Config.js and pass it to the [[define]] function.
+ * You create this in the Config.js and pass it to the [[define]] function (either or wrapped in a factory function).
  * 
  * Any omitted properties (apart from [[actions]]) fall back to the equivalent value in the Config.json file.
  * 
- * @category Extension Definition
+ * @category Definition
  */
-declare interface ExtensionDefinition {
+declare interface Extension {
 
     /**
      * A unique identifying string for this extension.
@@ -112,8 +116,11 @@ declare interface ExtensionDefinition {
     /**
      * User-configurable options for this extension.    
      */
-    options?: OptionDefinition[]
+    options?: Option[]
 
+    /**
+     * Flags set here will apply to all actions this extension defines.
+     */
     flags?: ActionFlags
 
     /**
@@ -126,22 +133,22 @@ declare interface ExtensionDefinition {
      * 
      * @returns A single action or array of actions.
      */
-    actions?: (selection: SelectionInterface, context: ContextInterface, options: OptionsInterface) => Action | Action[]
+    actions?: (selection: Selection, context: Context, options: Options) => ActionType | ActionType[]
 
     /**
      * Alternative property to define a single action. When defined this way, the action is only used when there is
      * at least one character of selected text.
      */
-    action?: Action
+    action?: ActionType
 }
 
 /**
- * An an object you create to define single extension option.
+ * Defines a single extension option.
  * Options are defined in the [[options]] array of the extension object.
  * 
- * @category Extension Definition
+ * @category Definition
  */
-declare interface OptionDefinition {
+declare interface Option {
     /**
      * An identifying string for this option. 
      */
@@ -178,9 +185,9 @@ declare interface OptionDefinition {
 /**
  * An object you create to encapsulate an action's code together with an title and/or icon.
  * 
- * @category Extension Definition
+ * @category Definition
  */
- declare interface ActionDefinition {
+ declare interface Action {
      /**
       * The action's title. The title is displayed in the action button if there is no icon.
       * For extensions with icons, the title is displayed in the tooltip.
@@ -192,7 +199,7 @@ declare interface OptionDefinition {
      /** 
       * A string to define the action's icon. See [[IconString]].
       * 
-      * If `undefined`, the extension's {@link ExtensionDefinition.icon | icon} will be used, if it has one.
+      * If `undefined`, the extension's {@link Extension.icon | icon} will be used, if it has one.
       * Setting to `null` explicitly sets the action to have no icon.
       */
      icon?: IconString
@@ -204,9 +211,9 @@ declare interface OptionDefinition {
  }
 
 /**
- * SelectionInterface defines properties to access the selected text contents.
+ * Selection defines properties to access the selected text contents.
  */
-declare interface SelectionInterface {
+declare interface Selection {
     /**
      * The plain text selected by the user. If there is no selected text, perhaps because the user invoked PopClip by a long press,
      * this will be the empty string.
@@ -229,9 +236,9 @@ declare interface SelectionInterface {
 }
 
 /**
-* ContextInterface defines properties to access the context surrounding the selected text.
+* Context defines properties to access the context surrounding the selected text.
 */
-declare interface ContextInterface {
+declare interface Context {
     /**
      * Does the text area support formatting?
      * 
@@ -262,24 +269,25 @@ declare interface ContextInterface {
 }
 
 /**
- * Options: a simple map of string to value.
+ * Represents the current values of the extension's option (that were defined in {@link Extension.options}.
+ * It maps option identifier strings to the current option value. See {@link PopClip.options}, {@link Extension.actions}, [[ActionFunction]].
  */
-declare interface OptionsInterface { [identifier: string]: string | boolean; }
+declare interface Options { [identifier: string]: string | boolean; }
 
 /**
-* PopClipInterface defines the methods and properties of the global [[`popclip`]] object.
+* PopClip defines the methods and properties of the global [[`popclip`]] object.
 * 
 * Methods in the **Action Methods** category are only available in the action function. If called from
 * the population function, the method will throw an exception.
 * 
 */
-declare interface PopClipInterface {
+declare interface PopClip {
     /**
     * A bit field representing state of the modifier keys when the action was invoked in PopClip.
     * 
     * #### Notes
     * 
-    * Constants for the modifiers are given in {@link UtilInterface.constant | util.constant}. 
+    * Constants for the modifiers are given in {@link Util.constant | util.constant}. 
     * 
     * During the execution of the population function, the value of this property is always zero.
     * 
@@ -308,17 +316,17 @@ declare interface PopClipInterface {
     /**
      * The current selection.
      */
-    readonly selection: SelectionInterface
+    readonly selection: Selection
 
     /**
      * The current context around the selection.
      */
-    readonly context: ContextInterface
+    readonly context: Context
 
     /**
      * The current values of the options.
      */
-    readonly options: OptionsInterface
+    readonly options: Options
 
     /**
      * If the target app's Paste command is available, this method places the given string on the pasteboard
@@ -370,7 +378,7 @@ declare interface PopClipInterface {
      * is not able to trigger global keyboard shortcuts. For example, PopClip can trigger ⌘B for "bold" (or whatever it means in the
      * current app) but not ⌘Tab for "switch app".
      * 
-     * Some key code and modifier constants are available in {@link UtilInterface.constant | util.constant}.
+     * Some key code and modifier constants are available in {@link Util.constant | util.constant}.
      * 
      * [More key codes (StackOverflow)](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes)
      * 
@@ -433,14 +441,14 @@ declare interface PopClipInterface {
 
 /**
  * The global `popclip` object encapsulates the user's current interaction with PopClip, and provides methods
- * for performing various actions. It implements [[PopClipInterface]].
+ * for performing various actions. It implements [[PopClip]].
  */
-declare var popclip: PopClipInterface
+declare var popclip: PopClip
 
 /**
 * Interface definition for the global [[`util`]] object. Some of the methods are also available as global functions, where indicated.
 */
-declare interface UtilInterface {
+declare interface Util {
 
     /**
      * Print a string for debugging purposes. By default it not output anywhere,  but
@@ -551,14 +559,14 @@ declare interface UtilInterface {
 }
 
 /** 
- * The global `util` object acts as a container for various utility functions and constants. It implements [[UtilInterface]].
+ * The global `util` object acts as a container for various utility functions and constants. It implements [[Util]].
  */
-declare var util: UtilInterface
+declare var util: Util
 
 /**
  * A simplified interface to the macOS pasteboard. Implemented by the global object, [[`pasteboard`]].
  */
-declare interface PasteboardInterface {
+declare interface Pasteboard {
     /**
      * Get and set the plain text content of the pasteboard. 
      * 
@@ -581,9 +589,9 @@ declare interface PasteboardInterface {
 }
 
 /**
- * The global `pasteboard` object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements [[PasteboardInterface]].
+ * The global `pasteboard` object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements [[Pasteboard]].
  */
-declare var pasteboard: PasteboardInterface
+declare var pasteboard: Pasteboard
 
 /**
  * Export an object for use by another file.

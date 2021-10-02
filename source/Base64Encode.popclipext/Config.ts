@@ -1,6 +1,6 @@
 /// <reference path="../../popclip.d.ts" />
 define(function() {    
-    let extension: ExtensionDefinition = {
+    let extension: Extension = {
         actions(selection, _context, options) {
             let actions = [];        
             if (selection.text) {            

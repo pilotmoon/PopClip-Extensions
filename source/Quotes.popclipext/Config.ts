@@ -25,7 +25,7 @@ define(function () {
         return `style-${index}`
     }
 
-    let extension: ExtensionDefinition = {
+    let extension: Extension = {
         options: styles.map((style, index) => {
             return {
                 identifier: makeIdentifier(index),
