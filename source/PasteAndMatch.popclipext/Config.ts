@@ -8,7 +8,7 @@ define({
         defaultValue: false
     }],
     actions() {
-        if (popclip.context.canPaste && popclip.context.hasFormatting) {
+        if (popclip.context.canPaste) {
             return {
                 // `undefined` will fall back to the extension's icon; `null` sets no icon
                 icon: popclip.options['showIcon']?undefined:null,
