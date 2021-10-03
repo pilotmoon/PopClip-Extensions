@@ -1,0 +1,8 @@
+#!/bin/zsh
+pushd ${0:a:h}/tests
+print "Browserifying..."
+npx browserify test_utils.js > test_utils.packed.js   
+
+print "Running tests..."
+/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Helpers/jsc test_utils.packed.js
+popd

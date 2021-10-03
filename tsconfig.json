@@ -10,10 +10,10 @@
     },    
     "compilerOptions": {                
         "typeRoots": [
-            "./popclip.d.ts"
+            "./popclip.d.ts",
         ],
         "target": "ES5",
         "lib": ["ES5"]
     },
-    "include": ["./source"]
+    "include": ["./source", "./lib"]
 }

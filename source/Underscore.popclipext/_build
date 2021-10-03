@@ -1,0 +1,2 @@
+#!/bin/zsh
+npx browserify _Config.js > Config.js
