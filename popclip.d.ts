@@ -655,8 +655,3 @@ declare var pasteboard: Pasteboard
   * @return The imported object.
   */
  declare function require(file: string): object
-
-/**
- * A synonym for {@link Util.log}.
- */
-declare function print(message: string): object
