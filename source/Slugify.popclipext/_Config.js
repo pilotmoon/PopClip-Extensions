@@ -4,9 +4,6 @@ exports.__esModule = true;
 var slugify = require("voca/slugify");
 define(function () {
     var extension = {
-        identifier: "com.pilotmoon.popclip.extension.slugify",
-        name: "Slugify",
-        icon: "slug.png",
         action: function (selection) {
             popclip.pasteText(slugify(selection.text, true));
         }
