@@ -1,15 +1,13 @@
-"use strict";
-exports.__esModule = true;
 /// <reference path="../../popclip.d.ts" />
-var slugify = require("voca/slugify");
+import slugify = require('voca/slugify');  
 define(function () {
-    var extension = {
+    const extension: Extension = {
         identifier: "com.pilotmoon.popclip.extension.slugify",
         name: "Slugify",
         icon: "slug.png",
-        action: function (selection) {
+        action(selection) {      
             popclip.pasteText(slugify(selection.text, true));
         }
-    };
-    return extension;
-});
+    }
+    return extension
+})

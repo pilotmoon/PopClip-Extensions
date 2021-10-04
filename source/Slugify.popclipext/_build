@@ -1,0 +1,3 @@
+#!/bin/zsh
+npx tsc _Config.ts
+npx browserify _Config.js | npx uglifyjs > Config.js
