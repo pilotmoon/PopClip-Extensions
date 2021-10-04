@@ -1,0 +1,8 @@
+{
+  "description" : "Put brackets around the selected text, choosing from (), [], {} and &lt;&gt;.",
+  "identifier" : "com.pilotmoon.popclip.extension.brackets",
+  "name" : "Brackets",
+  "icon" : "brackets-round.png",
+  "popclipVersion" : 3543,
+  "note" : "Updated for macOS 12.0 Beta."
+}

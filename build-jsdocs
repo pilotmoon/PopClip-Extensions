@@ -1,0 +1,4 @@
+#!/bin/zsh
+# Outputs JavaScript API documentation to jsdocs/ as per tsconfig.json
+# supply --watch as parameter 1 to use live mode
+npx typedoc $1 && open ./jsdocs/index.html
