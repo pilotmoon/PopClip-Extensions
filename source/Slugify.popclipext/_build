@@ -1,3 +1,5 @@
 #!/bin/zsh
+print "Compiling..."
 npx tsc _Config.ts
+print "Packing..."
 npx browserify _Config.js | npx uglifyjs > Config.js
