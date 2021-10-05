@@ -606,6 +606,8 @@ declare var pasteboard: Pasteboard
  */
  declare function print(...message: any[]): object
  
+
+
 /*
  * Export an object for use by another file.
  * 
@@ -633,25 +635,41 @@ declare var pasteboard: Pasteboard
  * ``` 
  * 
  * Partially implements AMD protocol.
+ * AMD spec: https://github.com/amdjs/amdjs-api/wiki/AMD
  */
- declare function define(factory: object | (() => object)): void
+declare function define(object: object): void
+declare function define(factory: () => object): void
+// Not till next popclip version
+// declare function define(dependencies: string[], factory: () => object): void
+// declare function define(id: string, factory: () => object): void
+// declare function define(id: string, dependencies: string[], factory: () => object): void
+
+    
 
  /**
-  * Import an object from another file.
-  *  
+  * Import an object from another file. 
+  * 
+  * #### Notes
+  * PopClip's `require()` implementation attempts to import from the following module formats:
+  * 
+  * * AMD modules, using `define(...)`.
+  * * Node/CommonJS modules, using `module.exports = ...` or `exports = ...`
+  * * TypeScript-compiled modules using `exports.default = ...`
+  * 
   * #### Example
   * 
   * ```js
   * // load the functions from the greeting.js file
-  * const greetings = require('greetings.js');
+  * const greetings = require('./greetings.js');
   * print(greetings.hello("PopClip")) // Hello, Popclip!
   * 
   * // alternative using destructuring assignment
-  * const {hello, goodbye} = require('greetings.js');
+  * const {hello, goodbye} = require('./greetings.js');
   * print(goodbye("PopClip")) // Bye, Popclip!
   * ``` 
   * 
-  * @param file Path to the file, relative to the root folder of the extension.
+  * @param file Path to the file to import. Paths beginning with `./` or `../` are resolved relative 
+  * to the the location of the current file. Otherwise, the path is resolved relative to the extensions's package root.
   * @return The imported object.
   */
  declare function require(file: string): object
