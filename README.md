@@ -1,6 +1,8 @@
 # PopClip Extensions
 
-*This document applies to PopClip 2021.10 (3543).
+This document applies to PopClip 2021.10 (3543).
+
+([Draft JavaScript extensions documentation](https://pilotmoon.github.io/PopClip-Extensions/))
 
 ----
 
