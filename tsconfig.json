@@ -2,7 +2,7 @@
     "typedocOptions": {        
         "entryPoints": "./popclip.d.ts",
         "name": "PopClip Extensions JavaScript Reference",    
-        "out": "./jsdocs",
+        "out": "./docs",
         "disableSources": true,
         "sort": ["alphabetical"],
         "excludeExternals": true,
