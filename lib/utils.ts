@@ -1,4 +1,3 @@
-/// <reference path="jsc.d.ts" />
 /*
  * My own mini library for handy functions.
  */

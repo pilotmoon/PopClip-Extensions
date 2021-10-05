@@ -461,18 +461,6 @@ declare var popclip: PopClip
 declare interface Util {
 
     /**
-     * Output a string for debugging purposes. By default it is not output anywhere,  but
-     * you can configure PopClip to output to the Console app by running the following command in Terminal:
-     * 
-     * `defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES`
-     * 
-     * then Quit and restart PopClip.
-     * 
-     * @param message The string to output.
-     */
-    log(message: string): void
-
-    /**
      * Localize an English string into the current user interface language, if possible.
      * This will work for strings which match an existing string in PopClip's user interface.
      * 
@@ -607,6 +595,18 @@ declare interface Pasteboard {
 declare var pasteboard: Pasteboard
 
 /**
+ * Output a string for debugging purposes. By default it is not output anywhere,  but
+ * you can configure PopClip to output to the Console app by running the following command in Terminal:
+ * 
+ * `defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES`
+ * 
+ * then Quit and restart PopClip.
+ * 
+ * @param message The string to output.
+ */
+ declare function print(message: string): object
+ 
+/*
  * Export an object for use by another file.
  * 
  * #### Notes
@@ -622,19 +622,19 @@ declare var pasteboard: Pasteboard
  * ```js
  * // greetings.js
  * function hello(name) {    
- *   util.log("Hello, ${name}!");    
+ *   print("Hello, ${name}!");    
  * })
  * function goodbye(name) {    
- *   util.log("Bye, ${name}!");    
+ *   print("Bye, ${name}!");    
  * })
  * // export these two functions. hey, we made a module!
  * define({hello, goodbye});
  * 
  * ``` 
- *
- * @param objectOrFactory Either the object to be defined, or a factory function which returns the object to be defined.
+ * 
+ * Partially implements AMD protocol.
  */
- declare function define(objectOrFactory: object | (() => object)): void
+ declare function define(factory: object | (() => object)): void
 
  /**
   * Import an object from another file.

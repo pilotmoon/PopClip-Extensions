@@ -7,6 +7,7 @@
         "sort": ["alphabetical"],
         "excludeExternals": true,
         "readme": "README-js.md",
+        "excludeNotDocumented": true
     },    
     "compilerOptions": {                
         "target": "ES5",
