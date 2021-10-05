@@ -75,10 +75,18 @@ declare type IconString = string
     //preserveColor?: boolean,
  }
 
+ /**
+  * Represents the state of the four modifier keys. The value is true when the key is held down.
+  * See {@link PopClip.modifiers}.
+  */
  declare interface Modifiers {
+    /** Shift (⇧) key state. */
     shift: boolean,
+    /** Control (⌃) key state. */
     control: boolean
+    /** Option (⌥) key state. */
     option: boolean
+    /** Command (⌘) key state. */
     command: boolean
  }
 
@@ -121,12 +129,13 @@ declare interface Extension {
     icon?: IconString
 
     /**
-     * User-configurable options for this extension.    
+     * Defines the user-configurable options for this extension.
      */
     options?: Option[]
 
     /**
-     * Flags set here will apply to all actions this extension defines.
+     * Flags set here will apply to this extension's actions, unless overidden in the action definition.
+     * See [[ActionFlags]].
      */
     flags?: ActionFlags
 
@@ -151,7 +160,6 @@ declare interface Extension {
 
 /**
  * Defines a single extension option.
- * Options are defined in the [[options]] array of the extension object.
  * 
  * @category Definition
  */
@@ -190,7 +198,7 @@ declare interface Option {
 }
 
 /**
- * An object you create to encapsulate an action's code together with an title and/or icon.
+ * Encapsulates an action's code, title, icon and other properties.
  * 
  * @category Definition
  */
@@ -199,18 +207,22 @@ declare interface Option {
       * The action's title. The title is displayed in the action button if there is no icon.
       * For extensions with icons, the title is displayed in the tooltip.
       * 
-      * If omitted, the extension's [[name]] will be used, if any.
+      * If no title is defined here, the extension's [[name]] will be used, if any.
      */
      title?: LocalizableString
      
      /** 
       * A string to define the action's icon. See [[IconString]].
       * 
-      * If `undefined`, the extension's {@link Extension.icon | icon} will be used, if it has one.
+      * If no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.
       * Setting to `null` explicitly sets the action to have no icon.
       */
      icon?: IconString
 
+     /**
+      * Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object
+      * is set, the value of {@link Extension.flags} is used instead, if any.
+      */
      flags?: ActionFlags
 
      /** The action's code. */
@@ -232,12 +244,17 @@ declare interface Selection {
     markdown: string
 
     /**
-     * Data that PopClip detected in the selected text.
+     * Data of various kinds, that PopClip detected in the selected text.
      */
     data: {
+        /** HTTP ot HTTPS urls. */
         webUrls: string[],
+        /** Other protocols or app urls e.g. ftp:, omnifocus:, craftdocs: etc. (PopClip has a pre-defined allowlist
+         * for these "other" URL schemes.) */
         otherUrls: string[],
+        /** Email addresses. */
         emails: string[],
+        /** A local file path. The file path must be for a directory or file that exists.*/
         paths: string[]
     }
 }
@@ -284,14 +301,13 @@ declare interface Options { [identifier: string]: string | boolean; }
 /**
 * PopClip defines the methods and properties of the global [[`popclip`]] object.
 * 
-* Methods in the **Action Methods** category are only available in the action function. If called from
-* the population function, the method will throw an exception.
+* Methods in the **Action Methods** category are only available in an action function. If called from
+* a population function, the method will throw an exception.
 * 
 */
 declare interface PopClip {
     /**
     * A bit field representing state of the modifier keys when the action was invoked in PopClip.
-    * TODO remove
     * 
     * #### Notes
     * 
@@ -321,6 +337,21 @@ declare interface PopClip {
     */
     readonly modifierKeys: number
 
+    /*
+     * (Beta feature)
+     * The state of the modifier keys when the action was invoked in PopClip.
+     * 
+     * #### Notes
+     * During the execution of the population function, all the modifiers will read as false.
+     * 
+     * #### Example
+     * ```js
+     * if (popclip.modifiers.shift) {
+     *   ...
+     * }
+     * ```
+     * 
+     */
     readonly modifiers: Modifiers
 
     /**
@@ -356,7 +387,7 @@ declare interface PopClip {
      * @param text The plain text string to paste
      * @param options
      * 
-     * @category Copy/Paste
+     * @category Action
      */
     pasteText(text: string, options?: {
         /**
@@ -370,12 +401,13 @@ declare interface PopClip {
     /**
      * Places the given string on the pasteboard, and shows "Copied" notificaction to the user.
      * @param text The plain text string to copy
-     * @category Copy/Paste
+     * @category Action
      */
     copyText(text: string): void;
 
     /**
-     * Invokes the app's Paste command, as if the user pressed ⌘V.
+     * Invokes the app's Paste command, as if the user pressed ⌘V, to paste whatever is already on the pasteboard.
+     * @category Action
      */
     performPaste(): void;
 
@@ -602,7 +634,15 @@ declare var pasteboard: Pasteboard
  * 
  * then Quit and restart PopClip.
  * 
- * @param message One or more values to output as strings. Multiple parameters will be printed separated by a space.
+ * #### Example
+ * ```js
+ * print("Hello, world!")
+ * // print: Hello, world!
+ * print(1, Math.PI, 2/3, ['a','b','c'])
+ * // print: 1 3.141592653589793 0.6666666666666666 a,b,c
+ * ```
+ * 
+ * @param message One or more values, which will be coerced to strings. Multiple parameters will be separated by a space.
  */
  declare function print(...message: any[]): object
  
