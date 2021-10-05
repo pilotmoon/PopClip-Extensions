@@ -74,9 +74,9 @@ you can configure PopClip to output to the Console app by running the following 
 </a>
 <p>PopClip&#39;s <code>require()</code> implementation attempts to import from the following module formats:</p>
 <ul>
-<li>AMD modules, using <code>define(...)</code>.</li>
-<li>Node/CommonJS modules, using <code>module.exports = ...</code> or <code>exports = ...</code></li>
-<li>TypeScript-compiled modules using <code>exports.default = ...</code></li>
+<li>AMD modules, which use <code>define(...)</code>.</li>
+<li>Node/CommonJS modules, which use <code>module.exports = ...</code> or <code>exports.name = ...</code></li>
+<li>TypeScript compiled modules, which use <code>exports.default = ...</code></li>
 </ul>
 
 <a href="#example" id="example" style="color: inherit; text-decoration: none;">

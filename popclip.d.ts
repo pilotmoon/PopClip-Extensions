@@ -652,9 +652,9 @@ declare function define(factory: () => object): void
   * #### Notes
   * PopClip's `require()` implementation attempts to import from the following module formats:
   * 
-  * * AMD modules, using `define(...)`.
-  * * Node/CommonJS modules, using `module.exports = ...` or `exports = ...`
-  * * TypeScript-compiled modules using `exports.default = ...`
+  * * AMD modules, which use `define(...)`.
+  * * Node/CommonJS modules, which use `module.exports = ...` or `exports.name = ...`
+  * * TypeScript compiled modules, which use `exports.default = ...`
   * 
   * #### Example
   * 
