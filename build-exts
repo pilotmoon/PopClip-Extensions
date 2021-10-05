@@ -1,5 +1,4 @@
 #!/bin/zsh
-# Compiles all the .ts files in the repo to .js, as per tsconfig.json
-# supply --watch as parameter 1 to use live mode
-npx tsc $1
+# Live compiles all the .ts files in the repo to .js, as per tsconfig.json
+npx tsc --watch
 

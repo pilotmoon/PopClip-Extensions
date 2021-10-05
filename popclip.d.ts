@@ -90,12 +90,58 @@ declare type IconString = string
     command: boolean
  }
 
+ /**
+  * * `text`: Requires at least one character of selected text.
+  * * `cut`: Requires the app's Cut command to be available.
+  * * `paste`: Requires the app's Paste command to be available.
+  */
+ declare type Requirement = 
+ | "text" | "copy" | "cut" | "paste" | "formatting" | "httpurl" | "httpurls" | "email" | "path"
+ | `option-${string}=${string}`
+
 /**
- * The Extension obiect defines the PopClip extension.
+ * The Extension object defines the PopClip extension.
  * 
- * You create this in the Config.js and pass it to the [[define]] function (either or wrapped in a factory function).
+ * You create this in Config.js and export it with `define()`.
  * 
- * Any omitted properties (apart from [[actions]]) fall back to the equivalent value in the Config.json file.
+ * Any properties omitted from the extension object in Config.js (apart from [[action]] and [[actions]])
+ * fall back to the equivalent value in the Config.json file, if it is present.
+ * 
+ * 
+ * #### Examples
+ * 
+ * *Simple extension* — The following Config.js defines a complete extension:
+ * 
+ * * Config.js
+ * ```js
+ *   define({
+ *     identifier: "com.example.my-extension",
+ *     name: "My Extension",
+ *     action: function(selection) { 
+ *       popclip.showText("Your text is: " + selection.text)
+ *     }
+ *   })
+ * ```
+ * 
+ * *Example with Config.json* — The previous example is equivalent to:
+ * 
+ * * Config.json:
+ * ```json
+ * {
+ *     "identifier": "com.example.my-extension",
+ *     "name": "My Extension",
+ * }
+ * ```
+ * 
+ * * Config.js:
+ * ```js
+ *   define({
+ *     action: function(selection) { 
+ *       popclip.showText("Your text is: " + selection.text)
+ *     }
+ *   })
+ * ```
+ * 
  * 
  * @category Definition
  */
@@ -140,20 +186,26 @@ declare interface Extension {
     flags?: ActionFlags
 
     /**
-     * Define the actions to go in PopClip's popup.
+     * Requirements set here will apply to all this extension's actions, unless overidden in the action definition.
+     * See [[Requirement]].
+     */
+    requirements?: Requirement[]
+
+    /**
+     * Define the actions to go in PopClip's popup. This can be an array or a function. 
      * 
-     * #### Notes
+     * * If it's an array, the supplied actions are used in the popup, subject to meeting the
+     * requirements and regex conditions. 
      * 
-     * This is called by PopClip when the user has either selected some text, or performed a long press to show PopClip with
-     * no selection. At this point, PopClip wants to show its popup and is asking the extension what actions to include.
+     * * If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.
+     * Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
      * 
      * @returns A single action or array of actions.
      */
-    actions?: (selection: Selection, context: Context, options: Options) => ActionType | ActionType[]
+    actions?: ActionType[] | ((selection: Selection, context: Context, options: Options) => ActionType | ActionType[])
 
     /**
-     * Alternative property to define a single action. When defined this way, the action is only used when there is
-     * at least one character of selected text.
+     * Simplified property to define a single action. 
      */
     action?: ActionType
 }
@@ -225,7 +277,22 @@ declare interface Option {
       */
      flags?: ActionFlags
 
-     /** The action's code. */
+     /**
+      * An array of conditions which must be met for this action to appear — see [[Requirement]].
+      * 
+      * #### Notes
+      * 
+      * If no array is specified, the action takes the value of [[Extension.requirements]].
+      * If no array is specified in the extension either, the default value is `["text"]`.
+      * An empty array can be used indicate no requirement (i.e. the action will always appear).
+      * 
+      * This property has no effect on dynamically generated actions.
+      */
+     requirements?: Requirement[]
+
+     /** 
+      * The action's code.
+      */
      code: ActionFunction
  }
 
