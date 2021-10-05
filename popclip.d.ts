@@ -602,9 +602,9 @@ declare var pasteboard: Pasteboard
  * 
  * then Quit and restart PopClip.
  * 
- * @param message The string to output.
+ * @param message One or more variables to output as strings. Multiple parameters will be printed separated by a space.
  */
- declare function print(message: string): object
+ declare function print(...message: any[]): object
  
 /*
  * Export an object for use by another file.
