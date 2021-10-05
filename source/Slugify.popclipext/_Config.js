@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 /// <reference path="../../popclip.d.ts" />
 var slugify = require("voca/slugify");
 define(function () {
