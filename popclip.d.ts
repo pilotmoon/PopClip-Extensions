@@ -50,6 +50,50 @@ declare type LocalizableString = string | object
 declare type IconString = string
 
 /**
+ * Represents the state of the four modifier keys. The value is true when the key is held down.
+ * See {@link PopClip.modifiers}.
+ */
+declare interface Modifiers {
+    /** Shift (⇧) key state. */
+    shift: boolean,
+    /** Control (⌃) key state. */
+    control: boolean
+    /** Option (⌥) key state. */
+    option: boolean
+    /** Command (⌘) key state. */
+    command: boolean
+}
+
+/**
+  * A requirement is specified in the {@link Action.requirements} array as a string.
+  * The possible strings are:
+  * 
+  * | Specifier     | Condition                                                  |
+  * |---------------|------------------------------------------------------------|
+  * |`text`|One or more characters of text must be selected. |
+  * |`cut`|Text must be selected and the app's Cut command must be available.|
+  * |`paste`|The app's Paste command must be available.|
+  * |`httpurl`|The text must contain exactly one web URL (http or https).|
+  * |`httpurls`|The text must contain one or more web URLs.|
+  * |`email`|The text must contain exactly one email address.|
+  * |`path`|The text must be a local file path, and it must exist on the local file system.| 
+  * |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
+  * |`option-foo=bar`|The current value of the option named `foo` must be equal to the string `bar`. (Boolean values match against strings `0` and `1`.)|
+  * 
+  * A requirement can also be **negated** by prefixing `!`, to specify that the requirement must _not_ be met.
+  *
+  * #### Example
+  * ```js
+  * ["paste", "!httpurls", "option-goFishing=1", "!app=com.apple.Safari"]
+  * ```
+  */
+ declare type Requirement = BaseRequirement | `!${BaseRequirement}`
+
+ declare type BaseRequirement = 
+ | "text" | "copy" | "cut" | "paste" | "formatting" | "httpurl" | "httpurls" | "email" | "path"
+ | `option-${string}=${string}`
+
+/**
  * An action function is called when the user clicks the action button in PopClip.
  * 
  * TODO
@@ -76,28 +120,106 @@ declare type IconString = string
  }
 
  /**
-  * Represents the state of the four modifier keys. The value is true when the key is held down.
-  * See {@link PopClip.modifiers}.
-  */
- declare interface Modifiers {
-    /** Shift (⇧) key state. */
-    shift: boolean,
-    /** Control (⌃) key state. */
-    control: boolean
-    /** Option (⌥) key state. */
-    option: boolean
-    /** Command (⌘) key state. */
-    command: boolean
- }
+ * Encapsulates an action's code, title, icon and other properties.
+ * 
+ * @category Definition
+ */
+  declare interface Action {
+    /**
+     * The action's title. The title is displayed in the action button if there is no icon.
+     * For extensions with icons, the title is displayed in the tooltip.
+     * 
+     * If no title is defined here, the extension's [[name]] will be used, if any.
+    */
+    title?: LocalizableString
+    
+    /** 
+     * A string to define the action's icon. See [[IconString]].
+     * 
+     * If no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.
+     * Setting to `null` explicitly sets the action to have no icon.
+     */
+    icon?: IconString
 
- /**
-  * * `text`: Requires at least one character of selected text.
-  * * `cut`: Requires the app's Cut command to be available.
-  * * `paste`: Requires the app's Paste command to be available.
-  */
- declare type Requirement = 
- | "text" | "copy" | "cut" | "paste" | "formatting" | "httpurl" | "httpurls" | "email" | "path"
- | `option-${string}=${string}`
+    /**
+     * Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object
+     * is set, the value of {@link Extension.flags} is used instead, if any.
+     */
+    flags?: ActionFlags
+
+    /**
+     * An array of conditions which must be met for this action to appear — see [[Requirement]].
+     * 
+     * * If no array is specified here, the action takes the value of [[Extension.requirements]].
+     * * If no array is specified there either, the action takes the default value `["text"]`. 
+     * 
+     * #### Notes          
+     * 
+     * When multiple conditions are specified, all of them must be satisfied.
+     * 
+     * An empty array (`[]`) indicates no requirements at all, meaning the action will always appear.
+     * 
+     * This property has no effect on dynamically generated actions.
+     * 
+     * #### Alternatives
+     * 
+     * Instead of using requirements keys, extensions can dynamically generate their
+     * actions using a function instead. See {@link Extension.actions}.
+     */
+    requirements?: Requirement[]
+
+    /**
+     * Array of bundle identifiers for which the extension should appear. The action will only
+     * appear if PopCLip is used in one of the specified apps.
+     */
+    requiredApps?: string[]
+
+    /**
+     * Array of bundle identifiers for which the extension should not appear. The action will not
+     * appear if PopCLip is used in any of the specified apps.
+     */
+    excludedApps?: string[]
+
+    /**
+     * A regular expression to decide whether this action appears in the popup. 
+     * 
+     * * If no regex is specified here, the action takes the value of [[Extension.regex]].
+     * * If no array is specified there either, the action will match any input.
+     * 
+     * #### Notes
+     * 
+     * You should express the value as a
+     * [JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+     * (or object), not as a string. 
+     * 
+     * If the regex matches the selected text, the action will be shown in the popup and
+     * the first occurrence of the matched text is accessible later via {@link Selection.matchedText | matchedText}.
+     * 
+     * If there is no match, the action is excluded from the popup.
+     *
+     * The regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.
+     * 
+     * This property has no effect on dynamically generated actions.
+     * 
+     * #### Alternatives
+     * 
+     * Instead of using a regex, extensions can dynamically generate their
+     * actions using a function instead. See {@link Extension.actions}.
+     * 
+     * #### Example
+     * ```js
+     * regex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag
+     *                  // Matches abc, ABC, Abc, etc.
+     * ```
+
+     */
+    regex?: RegExp
+
+    /** 
+     * The action's code.
+     */
+    code: ActionFunction
+}
 
 /**
  * The Extension object defines the PopClip extension.
@@ -186,10 +308,29 @@ declare interface Extension {
     flags?: ActionFlags
 
     /**
-     * Requirements set here will apply to all this extension's actions, unless overidden in the action definition.
-     * See [[Requirement]].
+     * A requirements array set here will apply to all this extension's actions, unless overidden in the action definition.
+     * See [[Action.requirements]].
      */
     requirements?: Requirement[]
+
+
+    /**
+     * An apps array set here will apply to all this extension's actions, unless overidden in the action definition.
+     * See [[Action.requiredApps]].
+     */
+    requiredApps?: string[]
+
+    /**
+     * A regex set here will apply to all this extension's actions, unless overidden in the action definition.
+     * See [[Action.excludedApps]].
+     */
+    excludedApps?: string[]
+
+    /**
+     * A regex set here will apply to all this extension's actions, unless overidden in the action definition.
+     * See [[Action.regex]].
+     */
+    regex?: RegExp
 
     /**
      * Define the actions to go in PopClip's popup. This can be an array or a function. 
@@ -200,6 +341,9 @@ declare interface Extension {
      * * If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.
      * Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
      * 
+     * @param selection: The current selected text.
+     * @param context: The current context.
+     * @param context: The current option values.
      * @returns A single action or array of actions.
      */
     actions?: ActionType[] | ((selection: Selection, context: Context, options: Options) => ActionType | ActionType[])
@@ -250,53 +394,6 @@ declare interface Option {
 }
 
 /**
- * Encapsulates an action's code, title, icon and other properties.
- * 
- * @category Definition
- */
- declare interface Action {
-     /**
-      * The action's title. The title is displayed in the action button if there is no icon.
-      * For extensions with icons, the title is displayed in the tooltip.
-      * 
-      * If no title is defined here, the extension's [[name]] will be used, if any.
-     */
-     title?: LocalizableString
-     
-     /** 
-      * A string to define the action's icon. See [[IconString]].
-      * 
-      * If no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.
-      * Setting to `null` explicitly sets the action to have no icon.
-      */
-     icon?: IconString
-
-     /**
-      * Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object
-      * is set, the value of {@link Extension.flags} is used instead, if any.
-      */
-     flags?: ActionFlags
-
-     /**
-      * An array of conditions which must be met for this action to appear — see [[Requirement]].
-      * 
-      * #### Notes
-      * 
-      * If no array is specified, the action takes the value of [[Extension.requirements]].
-      * If no array is specified in the extension either, the default value is `["text"]`.
-      * An empty array can be used indicate no requirement (i.e. the action will always appear).
-      * 
-      * This property has no effect on dynamically generated actions.
-      */
-     requirements?: Requirement[]
-
-     /** 
-      * The action's code.
-      */
-     code: ActionFunction
- }
-
-/**
  * Selection defines properties to access the selected text contents.
  */
 declare interface Selection {
@@ -306,10 +403,39 @@ declare interface Selection {
      */
     text: string
 
+    /**
+     * If the action specified {@link Action.requirements | requirements} or a {@link Action.regex | regex} to match the input, this will be the matching part of the text.
+     * Otherwise, it will be the same string as [[text]].
+     */
+    matchedText: string
+
+
+    /*
+     * If the action specified a {@link Action.regex | regex} to match the input, this will be the full result of the the match.
+     * 
+     * You can use this to access any capture groups from the regex.
+     * The value is a return value from JavaScript's [RegExp.prototype.exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) method.
+     * 
+     * #### Example
+     * ```js
+     * // text: "apple", regex: /.(.)/
+     * selection.regexResult[0] // "ap" (full match)
+     * selection.regexResult[1] // "p" (capture group 1)
+     * ```
+     */
+    regexResult: any
+
+    /**
+     * HTML. (docs todo)
+     */
     html: string
 
+    /**
+     * Markdown. (docs todo)
+     */
     markdown: string
 
+    
     /**
      * Data of various kinds, that PopClip detected in the selected text.
      */
@@ -477,6 +603,21 @@ declare interface PopClip {
      * @category Action
      */
     performPaste(): void;
+
+    /**
+     * Display text inside PopClip's popup, with option to make the display a clickable button to
+     * paste the text.
+     * @param text The text to display. It will be truncated to 160 characters when shown.
+     * @param options 
+     */
+    showText(text: string, options?: {
+        /**
+         * If `true`, and the app's Paste command is available, the displayed text will be in a cickable button,
+         * which clicked, pastes the full text.
+         */
+        // preview?: boolean TODO
+        pastable?: boolean
+    }): void
 
     /**
      * Simulate a key press by the user. 
@@ -713,8 +854,6 @@ declare var pasteboard: Pasteboard
  */
  declare function print(...message: any[]): object
  
-
-
 /*
  * Export an object for use by another file.
  * 
@@ -746,11 +885,19 @@ declare var pasteboard: Pasteboard
  */
 declare function define(object: object): void
 declare function define(factory: () => object): void
-// Not till next popclip version
 // declare function define(dependencies: string[], factory: () => object): void
 // declare function define(id: string, factory: () => object): void
 // declare function define(id: string, dependencies: string[], factory: () => object): void
+// TODO
 
+/**
+ * Function called from Config.js to define the extension.
+ * @param extension The extension object to pass to PopClip.
+ */
+// TODO - next popclip ver declare function defineExtension(extension: Extension): void
+/* note that internally, `defineExtension` is just a synonym for `define`, but it's nice to have
+ * this simple version for cleaner type checking and it's easier to explain in the docs.
+ */
     
 
  /**

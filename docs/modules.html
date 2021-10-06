@@ -52,12 +52,60 @@ display the string for the user&#39;s preferred language if possible, with fallb
 </a>
 <pre><code class="language-js"><span class="hl-0">option</span><span class="hl-1">.</span><span class="hl-0">label</span><span class="hl-1"> = </span><span class="hl-2">&quot;Color&quot;</span><span class="hl-1"> </span><span class="hl-3">// just use this string</span><br/><span class="hl-0">option</span><span class="hl-1">.</span><span class="hl-0">label</span><span class="hl-1"> = { </span><span class="hl-0">en:</span><span class="hl-1"> </span><span class="hl-2">&quot;Color&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;en-GB&quot;</span><span class="hl-0">:</span><span class="hl-1"> </span><span class="hl-2">&quot;Colour&quot;</span><span class="hl-1">, </span><span class="hl-0">fr:</span><span class="hl-1"> </span><span class="hl-2">&quot;Couleur&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;zh-Hans&quot;</span><span class="hl-0">:</span><span class="hl-1"> </span><span class="hl-2">&quot;颜色&quot;</span><span class="hl-1"> }</span>
 </code></pre>
-</div></div></section><section class="tsd-panel tsd-member tsd-kind-type-alias"><a name="Requirement" class="tsd-anchor"></a><h3>Requirement</h3><div class="tsd-signature tsd-kind-icon">Requirement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;text&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;copy&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;cut&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;paste&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;formatting&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;httpurl&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;httpurls&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;email&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;path&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">`</span><span class="tsd-signature-type">option-</span><span class="tsd-signature-symbol">${</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">}</span><span class="tsd-signature-type">=</span><span class="tsd-signature-symbol">${</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">`</span></div><aside class="tsd-sources"></aside><div class="tsd-comment tsd-typography"><div class="lead">
-<ul>
-<li><code>text</code>: Requires at least one character of selected text.</li>
-<li><code>cut</code>: Requires the app&#39;s Cut command to be available.</li>
-<li><code>paste</code>: Requires the app&#39;s Paste command to be available.</li>
-</ul>
+</div></div></section><section class="tsd-panel tsd-member tsd-kind-type-alias"><a name="Requirement" class="tsd-anchor"></a><h3>Requirement</h3><div class="tsd-signature tsd-kind-icon">Requirement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">BaseRequirement</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-symbol">`</span><span class="tsd-signature-type">!</span><span class="tsd-signature-symbol">${</span><span class="tsd-signature-type">BaseRequirement</span><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">`</span></div><aside class="tsd-sources"></aside><div class="tsd-comment tsd-typography"><div class="lead">
+<p>A requirement is specified in the <a href="interfaces/Action.html#requirements">Action.requirements</a> array as a string.
+The possible strings are:</p>
+</div><div><table>
+<thead>
+<tr>
+<th>Specifier</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>text</code></td>
+<td>One or more characters of text must be selected.</td>
+</tr>
+<tr>
+<td><code>cut</code></td>
+<td>Text must be selected and the app&#39;s Cut command must be available.</td>
+</tr>
+<tr>
+<td><code>paste</code></td>
+<td>The app&#39;s Paste command must be available.</td>
+</tr>
+<tr>
+<td><code>httpurl</code></td>
+<td>The text must contain exactly one web URL (http or https).</td>
+</tr>
+<tr>
+<td><code>httpurls</code></td>
+<td>The text must contain one or more web URLs.</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>The text must contain exactly one email address.</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td>The text must be a local file path, and it must exist on the local file system.</td>
+</tr>
+<tr>
+<td><code>formatting</code></td>
+<td>The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)</td>
+</tr>
+<tr>
+<td><code>option-foo=bar</code></td>
+<td>The current value of the option named <code>foo</code> must be equal to the string <code>bar</code>. (Boolean values match against strings <code>0</code> and <code>1</code>.)</td>
+</tr>
+</tbody></table>
+<p>A requirement can also be <strong>negated</strong> by prefixing <code>!</code>, to specify that the requirement must <em>not</em> be met.</p>
+
+<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+  <h4>Example</h4>
+</a>
+<pre><code class="language-js"><span class="hl-1">[</span><span class="hl-2">&quot;paste&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;!httpurls&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;option-goFishing=1&quot;</span><span class="hl-1">, </span><span class="hl-2">&quot;!app=com.apple.Safari&quot;</span><span class="hl-1">]</span>
+</code></pre>
 </div></div></section></section><section class="tsd-panel-group tsd-member-group "><h2>Variables</h2><section class="tsd-panel tsd-member tsd-kind-variable"><a name="pasteboard" class="tsd-anchor"></a><h3>pasteboard</h3><div class="tsd-signature tsd-kind-icon">pasteboard<span class="tsd-signature-symbol">:</span> <a href="interfaces/Pasteboard.html" class="tsd-signature-type" data-tsd-kind="Interface">Pasteboard</a></div><aside class="tsd-sources"></aside><div class="tsd-comment tsd-typography"><div class="lead">
 <p>The global <code>pasteboard</code> object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements <a href="interfaces/Pasteboard.html">Pasteboard</a>.</p>
 </div></div></section><section class="tsd-panel tsd-member tsd-kind-variable"><a name="popclip" class="tsd-anchor"></a><h3>popclip</h3><div class="tsd-signature tsd-kind-icon">popclip<span class="tsd-signature-symbol">:</span> <a href="interfaces/PopClip.html" class="tsd-signature-type" data-tsd-kind="Interface">PopClip</a></div><aside class="tsd-sources"></aside><div class="tsd-comment tsd-typography"><div class="lead">
