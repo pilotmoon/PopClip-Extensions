@@ -98,7 +98,7 @@ declare interface Modifiers {
  * 
  * TODO
  */
- declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifiers: Modifiers) => void
+ declare type ActionFunction = (selection: Selection, context: Context, options: Options) => void
 
  /**
   * Either an [[ActionFunction]] on its own, or an [[Action]] object.

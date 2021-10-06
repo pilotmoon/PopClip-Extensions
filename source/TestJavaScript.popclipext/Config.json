@@ -4,5 +4,6 @@
     "flags": {
         "captureHtml": true,
         "captureRtf": true
-    }
+    },
+    "popclipVersion": 3543
 }
