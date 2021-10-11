@@ -4,6 +4,7 @@ set -eu
 mkdir -p temp
 echo "--ignore canvas" > temp/cmds
 count=2
+here=${0:a:h}
 
 list=($*)
 for name in $list; do
@@ -11,7 +12,7 @@ for name in $list; do
     print "Shimming..."
     print "module.exports=require(\"$name\")" > temp/$name.shim.js
     print "Browserifying..."
-    cat temp/cmds | xargs -n $count npx browserify --standalone $name -e temp/$name.shim.js -o temp/$name.packed.js
+    cat temp/cmds | NODE_PATH=$here/../lib xargs -n $count npx browserify --standalone $name -e temp/$name.shim.js -o temp/$name.packed.js
     print "Uglifying..."
     cat temp/$name.packed.js | npx uglifyjs > temp/$name.ugly.js
     print "Compressing..."
@@ -23,5 +24,5 @@ for name in $list; do
     count=$((count+2))
     echo "-x $name" >> temp/cmds
 done
-rm -r temp
+#rm -r temp
 
