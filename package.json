@@ -6,6 +6,7 @@
     "uglify-js": "^3.14.2"
   },
   "dependencies": {
+    "@types/voca": "^1.4.1",
     "html-entities": "^2.3.2",
     "linkedom": "^0.12.1",
     "sanitize-html": "^2.5.1",

@@ -3,3 +3,4 @@ source/*.popclipextz
 *.pyc
 .nova/
 node_modules/
+temp/
