@@ -1,0 +1,8 @@
+{
+    "files.exclude": {	
+        "**/*.js": {"when": "$(basename).ts"}
+    },
+    "search.exclude": {
+        "*.popclipextz": true
+    }
+}
