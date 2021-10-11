@@ -1,9 +1,9 @@
 {
     "typedocOptions": {        
-        "entryPoints": "./popclip.d.ts",
+        "entryPoints": ["./popclip.d.ts"],
         "name": "PopClip Extensions JavaScript Reference",    
         "out": "./docs",
-        "disableSources": true,
+        "disableSources": false,
         "sort": ["alphabetical"],
         "excludeExternals": true,
         "readme": "README-js.md",
@@ -12,6 +12,9 @@
     "compilerOptions": {                
         "target": "ES5",
         "lib": ["ES5"],
+        "skipLibCheck": true,
+        "module": "commonjs",
+        "moduleResolution": "node"
     },
     "include": ["./source", "./lib"]
 }

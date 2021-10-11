@@ -4,22 +4,25 @@ define(() => {
     <polygon points="255 402.21 412.59 497.25 370.9 318.01 510 197.47 326.63 181.74 255 12.75 183.37 181.74 0 197.47 139.1 318.01 97.41 497.25"/>
     </svg>
     `;
-    let hello = require('./hello.js');
+    
     return {        
         icon: starIcon,
         actions: (selection, context, options) => {
             let actions = []
-            util.print("Hello!!");    
-            if (selection.text) {
+            print("Hello!!");    
+            if (selection.text) {        
                 let bag = () => popclip.showText(selection.html);
-                bag.title = "Brainn";
+                bag.title = "Brainn!!!";
                 bag.icon = "symbol:bag";
                 actions.push(bag);
-                actions.push({      
+                actions.push({                                    
                     title: "Hand",  // default to extension name?
                     icon: "symbol:hand.raised",   // default to extension icon?                   
                     code: (selection) => {
-                        popclip.showText(selection.markdown)
+                        let hello = require('hello');   
+                        let cj = require('./Config.json');   
+                        let turndown = require('turndown');   
+                        popclip.showText(cj["boo!"] + hello.hello())
                     },
 
                 });
