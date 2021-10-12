@@ -9,25 +9,20 @@
  * Make characters alternately upper/lower case, with optional randomness sprinkled in.
  */
 function alternatingCase (string: string, options?: {randomness?: boolean}): string {
-  function skip (): number {
-    if (options?.randomness !== true) {
-      return 0
-    } else {
-      const x = Math.random()
-      if (x < 0.8) return 2
-      if (x < 0.9) return 3
-      return 1
-    }
+  function rnd (): number {
+    return options?.randomness === true ? Math.random() : 0
   }
   function start (): number {
-    if (options?.randomness !== true) {
-      return 0
-    } else {
-      return Math.random() < 0.5 ? 0 : 1
-    }
+    return rnd() < 0.5 ? 0 : 1
+  }
+  function step (): number {
+    const x = rnd()
+    if (x < 0.8) return 2
+    if (x < 0.9) return 3
+    return 1
   }
   const characters = string.toLowerCase().split('')
-  for (let item = start(); item < characters.length; item += skip()) {
+  for (let item = start(); item < characters.length; item += step()) {
     characters[item] = characters[item].toUpperCase()
   }
   return characters.join('')
