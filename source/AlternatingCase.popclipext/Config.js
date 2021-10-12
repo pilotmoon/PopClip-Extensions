@@ -5,21 +5,32 @@
  * @module AlternatingCase
  */
 /**
- * Make characters alternately upper/lower case, with optional randomness.
- *
- * When randomness is enabled, the case of the starting letter is chosen with a 50% split.
- * Then 20% of the time, two lowercase letters are outputted instead of one.
+ * Make characters alternately upper/lower case, with optional randomness sprinkled in.
  */
 function alternatingCase(string, options) {
-    /**
-    * Random between 0 an 1, but only if randomness option is on. Otherwise always 0.
-    */
-    function rnd() {
-        return (options === null || options === void 0 ? void 0 : options.randomness) === true ? Math.random() : 0;
+    function skip() {
+        if ((options === null || options === void 0 ? void 0 : options.randomness) !== true) {
+            return 0;
+        }
+        else {
+            var x = Math.random();
+            if (x < 0.8)
+                return 2;
+            if (x < 0.9)
+                return 3;
+            return 1;
+        }
+    }
+    function start() {
+        if ((options === null || options === void 0 ? void 0 : options.randomness) !== true) {
+            return 0;
+        }
+        else {
+            return Math.random() < 0.5 ? 0 : 1;
+        }
     }
     var characters = string.toLowerCase().split('');
-    var length = characters.length;
-    for (var item = rnd() < 0.5 ? 0 : 1; item < length; item += (rnd() < 0.8 ? 2 : 3)) {
+    for (var item = start(); item < characters.length; item += skip()) {
         characters[item] = characters[item].toUpperCase();
     }
     return characters.join('');

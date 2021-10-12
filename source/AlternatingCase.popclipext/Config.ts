@@ -1,26 +1,33 @@
 /**
- * "alTerNaTinG CaSe" ExTeNsiOn foR PoPclIp, fOr aLl yoUr MeMiNg nEeDs.
- * iCoN: sPoNgE By BeN DaViS FrOm tHe nOuN PrOjEcT
+ * "aLtErNatInG CasE" eXtEnsIoN fOr pOpcLiP, FoR AlL YoUr mEmING NeeDS.
+ * iCoN: sPonGe bY BeN dAvIs fRoM ThE NoUn pRoJeCt
  * @author Nick Moore
  * @module AlternatingCase
  */
 
 /**
- * Make characters alternately upper/lower case, with optional randomness.
- *
- * When randomness is enabled, the case of the starting letter is chosen with 50% split.
- * Then 20% of the time, two lowercase letters are outputted instead of one.
+ * Make characters alternately upper/lower case, with optional randomness sprinkled in.
  */
 function alternatingCase (string: string, options?: {randomness?: boolean}): string {
-  /**
-  * Random between 0 an 1, but only if randomness option is on. Otherwise always 0.
-  */
-  function rnd (): number {
-    return options?.randomness === true ? Math.random() : 0
+  function skip (): number {
+    if (options?.randomness !== true) {
+      return 0
+    } else {
+      const x = Math.random()
+      if (x < 0.8) return 2
+      if (x < 0.9) return 3
+      return 1
+    }
+  }
+  function start (): number {
+    if (options?.randomness !== true) {
+      return 0
+    } else {
+      return Math.random() < 0.5 ? 0 : 1
+    }
   }
   const characters = string.toLowerCase().split('')
-  const length = characters.length
-  for (let item = rnd() < 0.5 ? 0 : 1; item < length; item += (rnd() < 0.8 ? 2 : 3)) {
+  for (let item = start(); item < characters.length; item += skip()) {
     characters[item] = characters[item].toUpperCase()
   }
   return characters.join('')
