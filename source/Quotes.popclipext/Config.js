@@ -1,19 +1,19 @@
-/// <reference path="../../popclip.d.ts" />
 define(function () {
     // the possible quotes styles
     var styles = [
-        "“…”",
-        "‘…’",
-        "\"\u2026\"",
+        '“…”',
+        '‘…’',
+        '"…"',
         "'…'",
-        "«…»",
-        "‹…›",
-        "»…«",
-        "›…‹",
-        "「…」",
-        "『…』",
-        "„…“",
-        "‚…‘"
+        '`…`',
+        '«…»',
+        '‹…›',
+        '»…«',
+        '›…‹',
+        '「…」',
+        '『…』',
+        '„…“',
+        '‚…‘'
     ];
     // generate square icon
     function makeIcon(style) {
@@ -27,13 +27,13 @@ define(function () {
             return {
                 identifier: makeIdentifier(index),
                 label: style,
-                type: "boolean",
+                type: 'boolean',
                 icon: makeIcon(style),
-                defaultValue: index > 0 ? false : true
+                defaultValue: !(index > 0)
             };
         }),
         actions: function (selection, context, options) {
-            if (selection.text) {
+            if (selection.text.length > 0) {
                 return styles.filter(function (style, index) { return options[makeIdentifier(index)]; }).map(function (style, index) {
                     return {
                         title: styles[index],
