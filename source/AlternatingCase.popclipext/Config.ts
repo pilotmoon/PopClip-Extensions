@@ -7,6 +7,9 @@
 
 /**
  * Make characters alternately upper/lower case, with optional randomness.
+ *
+ * When randomness is enabled, the case of the starting letter is chosen with 50% split.
+ * Then 20% of the time, two lowercase letters are outputted instead of one.
  */
 function alternatingCase (string: string, options?: {randomness?: boolean}): string {
   /**
