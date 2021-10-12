@@ -1,7 +1,7 @@
 /// <reference path="../../popclip.d.ts" />
 /**
  * "Alternating Case" extension for PopClip, for all your meming needs.
- * Icon: [derp](https://thenounproject.com/localdomain/collection/memes/?i=105262), from the Noun Project (Public Domain).
+ * Icon: sponge by Ben Davis from the Noun Project
  * @author Nick Moore
  * @module AlternatingCase
  */
