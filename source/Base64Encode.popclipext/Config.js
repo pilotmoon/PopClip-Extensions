@@ -1,9 +1,8 @@
-/// <reference path="../../popclip.d.ts" />
 define(function () {
     var extension = {
         actions: function (selection, _context, options) {
             var actions = [];
-            if (selection.text) {
+            if (selection.text.length > 0) {
                 actions.push({
                     icon: '[64]',
                     title: 'Base64-encode',
@@ -15,14 +14,14 @@ define(function () {
                     }
                 });
             }
-            if (/^[A-Za-z0-9+_\-\/]+=?=?$/.test(selection.text)) {
+            if (/^[A-Za-z0-9+_\-/]+=?=?$/.test(selection.text)) {
                 // this looks like base64-encoded text, so offer the decode function
                 actions.push({
                     icon: '[[64]]',
                     title: 'Base64-decode',
                     code: function () {
                         var decoded = util.base64Decode(selection.text);
-                        popclip.pasteText(decoded ? decoded : "<Base64: Non-UTF8 result>");
+                        popclip.pasteText(decoded !== null && decoded !== void 0 ? decoded : '<Base64: Non-UTF8 result>');
                     }
                 });
             }

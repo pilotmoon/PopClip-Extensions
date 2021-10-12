@@ -4,5 +4,7 @@
     },
     "search.exclude": {
         "*.popclipextz": true
-    }
+    },
+    "standard.validate": ["typescript"],
+    "standard.engine": "ts-standard"
 }

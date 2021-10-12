@@ -9,12 +9,18 @@
         "readme": "README-js.md",
         "excludeNotDocumented": true
     },    
-    "compilerOptions": {                
+    "compilerOptions": {         
+        "strictNullChecks": true,       
         "target": "ES5",
         "lib": ["ES5"],
         "skipLibCheck": true,
         "module": "commonjs",
         "moduleResolution": "node"
     },
-    "include": ["./source", "./lib"]
+    "include": ["popclip.d.ts", "./source", "./lib"],
+    "ts-standard": {
+        "ignore": [
+        "**/*.js"        
+        ]
+    }
 }

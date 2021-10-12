@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "browserify": "^17.0.0",
+    "ts-standard": "^10.0.0",
     "typedoc": "^0.22.4",
     "typescript": "^4.4.3",
     "uglify-js": "^3.14.2"
