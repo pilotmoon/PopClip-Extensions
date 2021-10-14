@@ -1,26 +1,36 @@
 {
-    "typedocOptions": {        
-        "entryPoints": ["./popclip.d.ts"],
-        "name": "PopClip Extensions JavaScript Reference",    
+    "typedocOptions": {
+        "entryPoints": [
+            "./popclip.d.ts"
+        ],
+        "name": "PopClip Extensions JavaScript Reference",
         "out": "./docs",
         "disableSources": false,
-        "sort": ["alphabetical"],
+        "sort": [
+            "alphabetical"
+        ],
         "excludeExternals": true,
         "readme": "README-js.md",
         "excludeNotDocumented": true
-    },    
-    "compilerOptions": {         
-        "strictNullChecks": true,       
-        "target": "ES5",
-        "lib": ["ES5"],
+    },
+    "compilerOptions": {
+        "strictNullChecks": true,
+        "target": "es5",
+        "lib": [
+            "es2015"
+        ],
         "skipLibCheck": true,
         "module": "commonjs",
         "moduleResolution": "node"
     },
-    "include": ["popclip.d.ts", "./source", "./lib"],
+    "include": [
+        "popclip.d.ts",
+        "./lib",
+        "./source"        
+    ],
     "ts-standard": {
         "ignore": [
-        "**/*.js"        
+            "**/*.js"
         ]
     }
 }

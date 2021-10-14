@@ -1,10 +1,18 @@
 {
-    "files.exclude": {	
-        "**/*.js": {"when": "$(basename).ts"}
+    "files.exclude": {
+        "**/*.js": {
+            "when": "$(basename).ts"
+        }
     },
     "search.exclude": {
         "*.popclipextz": true
     },
-    "standard.validate": ["typescript"],
-    "standard.engine": "ts-standard"
+    "standard.validate": [
+        "typescript"
+    ],
+    "standard.engine": "ts-standard",
+    "typescript.inlayHints.parameterNames.enabled": "all",
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.preferences.quoteStyle": "single",
 }

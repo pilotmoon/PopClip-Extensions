@@ -1,4 +1,56 @@
-/* This is a TypeScript definitions file for PopClip's JavaScript interface for extensions. */
+/*
+This is a TypeScript definitions file for PopClip's JavaScript interface.
+This file lets TypeScript-aware editors provide auto-complete and
+syntax checking for both JavaScript and TypeScript code.
+*/
+
+/**
+ * An object mapping language codes to strings. See [[LocalizableString]].
+ *
+ * #### Notes
+ *
+ * An `en` string is required, as the default fallback, and it should usually
+ * contain a string in US English. _(That's the macOS default,
+ * as a Brit this of course pains me! -Nick)_
+ *
+ * The predefined languages in this interface definition are the ones that
+ * PopClip currently ships with translations for.
+ * But you can include other languages too.
+ * For example you can include `en-GB` or `en-CA` string to have different
+ * regional spellings.
+ */
+declare interface StringTable {
+  /** English (US) language string. */
+  en: string
+  /** Danish language string. */
+  da?: string
+  /** German language string. */
+  de?: string
+  /** Spanish language string. */
+  es?: string
+  /** French language string. */
+  fr?: string
+  /** Italian language string. */
+  it?: string
+  /** Japanese language string. */
+  ja?: string
+  /** Korean language string. */
+  ko?: string
+  /** Dutch language string. */
+  nl?: string
+  /** Brazilian Portuguese language string. */
+  'pt-BR'?: string
+  /** Russian language string. */
+  ru?: string
+  /** Vietnamese language string. */
+  vi?: string
+  /** Simplified Chinese language string. */
+  'zh-Hans'?: string
+  /** Traditional Chinese language string. */
+  'zh-Hant'?: string
+  /** Any other strings. */
+  [code: string]: string
+}
 
 /**
  * A type to represent a localizable string.
@@ -7,7 +59,7 @@
  *
  * The value may be either a string or an object.
  * If you supply a string, that string is used.
- * If you supply an object mapping language codes to strings, PopClip will
+ * If you supply a [[StringTable]] object, PopClip will
  * display the string for the user's preferred language if possible, with fallback to the `en` string.
  *
  * #### Example
@@ -15,7 +67,7 @@
  * option.label = "Color" // just use this string
  * option.label = { en: "Color", "en-GB": "Colour", fr: "Couleur", "zh-Hans": "颜色" }
  */
-declare type LocalizableString = string | object
+declare type LocalizableString = string | StringTable
 
 /**
  * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link Action.icon}.
@@ -71,7 +123,8 @@ declare interface Modifiers {
   * | Specifier     | Condition                                                  |
   * |---------------|------------------------------------------------------------|
   * |`text`|One or more characters of text must be selected. |
-  * |`cut`|Text must be selected and the app's Cut command must be available.|
+  * |`copy`| A synonym for `text`, for backwards compatibility.|
+  * |`cut`| Text must be selected and the app's Cut command must be available.|
   * |`paste`|The app's Paste command must be available.|
   * |`httpurl`|The text must contain exactly one web URL (http or https).|
   * |`httpurls`|The text must contain one or more web URLs.|
@@ -87,11 +140,12 @@ declare interface Modifiers {
   * ["paste", "!httpurls", "option-goFishing=1", "!app=com.apple.Safari"]
   * ```
   */
- declare type Requirement = BaseRequirement | `!${BaseRequirement}`
-
- declare type BaseRequirement =
+ declare type Requirement =
  | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'httpurl' | 'httpurls' | 'email' | 'path'
  | `option-${string}=${string}`
+
+ /** Negated form of [[Requirement]]. */
+ declare type NegatedRequirement = `!${Requirement}`
 
 /**
  * An action function is called when the user clicks the action button in PopClip.
@@ -108,14 +162,39 @@ declare interface Modifiers {
  declare type ActionType = Action | ActionFunction
 
 /**
- * ActionFlags is the type of the {@link Extension.flags} and {@link Action.flags} fields, defining certain boolean properties of an actions.
+ * Used in the {@link Extension.flags} and {@link Action.flags} to define certain boolean properties of actions.
  * @category Definition
  */
 declare interface ActionFlags {
+  /**
+   * Whether PopClip will capture HTML and Markdown content for the selection. Default is no.
+   *
+   * #### Notes
+   * The HTML can be accessed in the [[Selection.html]] property, and the Markdown
+   * can be accessed in the [[Selection.markdown]] property.
+   *
+   * If the selection is not HTML-backed, PopClip will generate HTML from any available RTF or plain text
+   * content.
+   */
   captureHtml?: boolean
-  // captureRtf?: boolean,
+  /**
+   * Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.
+   *
+   * #### Notes
+   * Captured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.
+   */
+  captureRtf?: boolean
+  /** Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
+   *
+   * #### Notes
+   * An example of this in use is the Formatting extension.
+   */
   stayVisible?: boolean
-  // preserveColor?: boolean,
+
+  /**
+   * Whether the action's icon should be displayed in its orignal color rather than monochrome.
+   */
+  preserveColor?: boolean
 }
 
 /**
@@ -138,7 +217,7 @@ declare interface Action {
      * If no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.
      * Setting to `null` explicitly sets the action to have no icon.
      */
-  icon?: IconString
+  icon?: IconString | null
 
   /**
      * Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object
@@ -162,20 +241,30 @@ declare interface Action {
      *
      * #### Alternatives
      *
-     * Instead of using requirements keys, extensions can dynamically generate their
+     * Instead of using `requirements`, extensions can dynamically generate their
      * actions using a function instead. See {@link Extension.actions}.
      */
-  requirements?: Requirement[]
+  requirements?: Array<Requirement | NegatedRequirement>
 
   /**
      * Array of bundle identifiers for which the extension should appear. The action will only
      * appear if PopCLip is used in one of the specified apps.
+     *
+     * #### Alternatives
+     *
+     * Instead of using `requiredApps`, extensions can dynamically generate their
+     * actions using a function instead. See {@link Extension.actions}.
      */
   requiredApps?: string[]
 
   /**
      * Array of bundle identifiers for which the extension should not appear. The action will not
      * appear if PopCLip is used in any of the specified apps.
+     *
+     #### Alternatives
+     *
+     * Instead of using `excludedApps`, extensions can dynamically generate their
+     * actions using a function instead. See {@link Extension.actions}.
      */
   excludedApps?: string[]
 
@@ -293,7 +382,7 @@ declare interface Extension {
   /**
      * The extension's icon. See [[IconString]].
      */
-  icon?: IconString
+  icon?: IconString | null
 
   /**
      * Defines the user-configurable options for this extension.
@@ -310,7 +399,7 @@ declare interface Extension {
      * A requirements array set here will apply to all this extension's actions, unless overidden in the action definition.
      * See [[Action.requirements]].
      */
-  requirements?: Requirement[]
+  requirements?: Array<Requirement | NegatedRequirement>
 
   /**
      * An apps array set here will apply to all this extension's actions, unless overidden in the action definition.
@@ -846,7 +935,7 @@ declare var pasteboard: Pasteboard
  *
  * @param message One or more values, which will be coerced to strings. Multiple parameters will be separated by a space.
  */
-declare function print (...message: any[]): void
+declare function print (...items: any[]): void
 
 /*
  * Export an object for use by another file.
