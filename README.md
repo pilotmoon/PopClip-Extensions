@@ -32,35 +32,6 @@ For those of you wishing to continue to write your own extensions in self-instal
 
 ----
 
-## Changes in PopClip 2021.10
-
-- Executable shell scripts now have the `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
-- Brought back `Preserve Image Color`.
-
-## Changes in PopClip 2021.9
-
-PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current, recommended fields. Main highlights:
-
-- PopClip now supports SVG image files as well as allowing you to specifiy an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text. Renamed the `Image File` field to `Icon`. 
-- PopClip now provides an HTML and a Markdown version for all text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML and Markdown is generated from the selected RTF or plain text content.
-- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is also available in a new field `POPCLIP_RAW_HTML`. The markdownified HTML is in the new `POPCLIP_MARKDOWN` field.
-- Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
-- Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
-- Added `Option Value Labels` array so that the options list can show a display name different to option string value itself.
-- Added `Option Description` field to add more information in the UI about an option.
-- `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
-- Shell scripts with the executable bit set can optionally specify their interpreter with a hashbang, instead of the `Script Interpreter` field.
-- Removed the `html` requirement since all selections now come with HTML (as above).
-- ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~
-- Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.
-- Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
-
-I've also made the error checking when loading an extension more robust, so errors such as incorrect field types will now be caught. And you'll get an more specific message about what the problem is.
-
-One more thing... there is also a brand new extension format based on JavaScript. Documentation still "to-do", watch this space!
-
-----
-
 ## Introduction
 
 PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
