@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the PopClip extensions programming interface will be documented in this file.
+All notable changes to PopClip's extensions programming interface will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
