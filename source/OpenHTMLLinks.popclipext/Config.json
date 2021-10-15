@@ -1,7 +1,7 @@
 {
-  "Extension Description" : "Open HTML links in the selected text.",
+  "Extension Description" : "Open any links in the selected HTML.",
   "Extension Identifier" : "com.pilotmoon.popclip.extention.open-html-links",
   "Extension Image File" : "link-box.svg",
   "Extension Name" : "Open HTML Links",
-  "Required Software Version" : 3596
+  "Required Software Version" : 3624
 }
