@@ -10,12 +10,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Added
 
-- Executable shell scripts now have the `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
+- Executable shell scripts now have the user's `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
 - Brought back `Preserve Image Color`.
 
 ## 2021.9
-
-PopClip 2021.9 introduces several new fields and some other changes. Lots of these changes come from your feedback, so thanks for those of you who have got in touch. Everything should be backward compatible, so where I have made any changes PopClip still accepts old format too. This document only shows the current, recommended fields. Main highlights:
 
 ### Added
 
@@ -26,15 +24,18 @@ PopClip 2021.9 introduces several new fields and some other changes. Lots of the
 - Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
 - Added `Option Value Labels` array so that the options list can show a display name different to option string value itself.
 - Added `Option Description` field to add more information in the UI about an option.
-- `Apps` array is now a single `App` dictionary (since it turns out we hardly ever need to specify more than one app).
+- Added `App` dictionary field `Apps` to specify a single app (since it turns out we hardly ever need to specify more than one app).
 - Shell scripts with the executable bit set can optionally specify their interpreter with a hashbang, instead of the `Script Interpreter` field.
 
 ### Removed
+
 - Removed the `html` requirement since all selections now come with HTML (as above).
 - ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~
 - Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
 
-I've also made the error checking when loading an extension more robust, so errors such as incorrect field types will now be caught. And you'll get an more specific message about what the problem is.
+### Changed
+
+- The error checking when loading an extension is more robust, so errors such as incorrect field types will now be caught. And you'll get an more specific message about what the problem is.
 
 One more thing... there is also a brand new extension format based on JavaScript. Documentation still "to-do", watch this space!
