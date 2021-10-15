@@ -19,7 +19,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 - PopClip now supports SVG image files as well as allowing you to specifiy an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text.
 - PopClip now provides an HTML and a Markdown version for _all_ text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML and Markdown is generated from the selected RTF or plain text content.
-- Added `POPCLIP_MARKDOWN` field to contain the markdowified HTML.
+- Added `POPCLIP_MARKDOWN` field to contain the markdownified HTML.
 - Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
 - Added `POPCLIP_FULL_TEXT` field. This is always contains the full selected text in cases where `POPCLIP_TEXT` only contains the part of text matched by regex or requirement.
 - Added `Option Value Labels` array so that the options list can show a display name different to option string value itself.
@@ -35,7 +35,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Changed
 
-- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is also available in a new field `POPCLIP_RAW_HTML`
+- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is still available in a new field `POPCLIP_RAW_HTML`
 - Renamed the `Image File` and `Extension Image File` fields to `Icon` and `Extension Icon`, resectively. (The old names will also still work but are no londer documented.)
 - Added `App` dictionary field to specify a single app (since it turns out we hardly ever need to specify more than one app). (`Apps` array will still work but is no londer documented.)
 - The error checking when loading an extension is more robust, so errors such as incorrect field types will now be caught. And you'll get an more specific message about what the problem is.
