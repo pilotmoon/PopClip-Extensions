@@ -15,7 +15,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Deprecated
 
-- The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. (Note that the script must have its executeble bit set for this to work.)
+- The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. A hashbang using `env`, for example `#!/usr/bin/env perl`, is recommend. This will find the scripting runtime executable in the user's `PATH`. Note that when using a hashbang, the script must also have its executable mode bit set (e.g. with `chmod +`).
 
 ## 2021.9 (3510) — 22 Sep 2021
 
