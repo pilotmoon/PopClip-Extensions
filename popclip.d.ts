@@ -704,6 +704,24 @@ declare interface PopClip {
   }) => void
 
   /**
+   * PopClip will show a checkmark symbol to indicate success.
+   */
+  showSuccess: () => void
+
+  /**
+   * PopClip will show an "X" symbol to indicate failure.
+   */
+  showFailure: () => void
+
+  /**
+   * PopClip will open the settings UI for this extension.
+   *
+   * #### Notes
+   * If the extension has no settings, this method does nothing.
+   */
+  showSettings: () => void
+
+  /**
      * Simulate a key press by the user.
      *
      * #### Notes
@@ -1022,3 +1040,31 @@ declare function defineExtension (extension: Extension): void
   * @return The imported object.
   */
 declare function require (file: string): object
+
+/* Globals */
+
+/**
+ * Call a function after a specified time interval.
+ *
+ * #### Notes
+ *
+ * This is PopClip's own implementation of the standard
+ * [setTimeout](http://developer.mozilla.org/en-US/docs/Web/API/SetTimeout) function,
+ * as found in browsers.
+ * Ordinarily you shouldn't need to use this. It is is mainly included for
+ * compatibility with libraries that might need it.
+ *
+ * @param callback A function to be called after the timer expires.
+ * @param timeout Timeout in milliseconds. If this parameter is omitted, a value of 0 is used,
+ * @param args Additional arguments to be passed to the callback function.
+ * @returns Numeric identifier for the timer which can be passed to [[clearTimeout]] to cancel it.
+ * @category Timer
+ */
+declare function setTimeout (callback: (...args?: any) => void, timeout?: number, ...args?: any): number
+
+/**
+ * Cancels a timeout prevouly created with [[setTimeout]].
+ * @param timeoutId Identifier of the timeout to cancel.
+ * @category Timer
+ */
+declare function clearTimeout (timeoutId: number): void
