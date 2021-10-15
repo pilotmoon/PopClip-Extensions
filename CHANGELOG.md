@@ -13,6 +13,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - Executable shell scripts now have the user's `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
 - Brought back `Preserve Image Color`.
 
+### Deprecated
+
+- The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. (Note that the script must have its executeble bit set for this to work.)
+
 ## 2021.9
 
 ### Added
