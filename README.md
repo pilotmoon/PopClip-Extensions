@@ -1,36 +1,8 @@
 # PopClip Extensions
 
-This document applies to PopClip 2021.10 (3543).
+This document applies to PopClip 2021.10 (3543). (See [Changelog](CHANGELOG.md)])
 
 <!-- ([Draft JavaScript extensions documentation](https://pilotmoon.github.io/PopClip-Extensions/)) -->
-
-----
-
-## Changes to script extensions for Monterey
-
-### The changes
-
-PopClip can now execute scripts that specify their interpreter with a [hashbang](https://scriptingosx.com/2017/10/on-the-shebang/). Previously, an executable path had to be hard-coded in the `Script Interpreter` field.
-
-The user's `PATH` is also now added to the script variables. This lets you use `env` in the hashbang, for example `#!/usr/bin/env php`, so that the scripting runtime's path doesn't have to be hard coded.
-
-When using scripts like this, you also need to make sure the script itself is executable. You can do this with the command `chmod +x <filename>`.
-
-### Background info
-
-Apple officially announced their intention to remove pre-installed scripting languages from macOS in 2019, with the following note in the [macOS Catalina release notes](https://developer.apple.com/documentation/macos-release-notes/macos-catalina-10_15-release-notes):
-
-> Scripting language runtimes such as Python, Ruby, and Perl are included in macOS for compatibility with legacy software. Future versions of macOS won’t include scripting language runtimes by default, and might require you to install additional packages. If your software depends on scripting languages, it’s recommended that you bundle the runtime within the app.
-
-Now fast-forward to 2021, and PHP has been removed in macOS Monterey. The other languages remain for now. The removal of `/usr/bin/php` affects many of the official PopClip extensions, and maybe some of your own extensions too.
-
-Thankfully, installing scripting languages yourself is straightforward, especially with tools like homebrew. However whilst this is great for power users, this isn't a good solution for the non-technical user.
-
-Assuming the other languages will eventually be removed too, my plan has been to add JavaScript as a scripting language to PopClip, hosted within PopClip itself. This will be the main scripting language for new official extensions. The JS work is going well — I am still finalising the implementation and will release the documentation when it is ready.
-
-For those of you wishing to continue to write your own extensions in self-installed scripting languages such as PHP, Perl, Ruby and Python, I made the above change.
-
-----
 
 ## Introduction
 
@@ -205,8 +177,8 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 |`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Title` will be displayed instead. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
-|`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. Within the script, use the shell variable `POPCLIP_TEXT` to access the selected text. Other variables are also available: see [Script Fields](#script-fields). The current working directory will be set to the package directory. See also [Example Shell Script File](#example-shell-script-file).|
-|`Script Interpreter`|String|Optional|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`. As an alternative to setting this field, you can make the script file executable (with `chmod +x`) and include a [hashbang](https://scriptingosx.com/2017/10/on-the-shebang/) (for example `#!/usr/bin/env perl`) at the top of the script. I recommend using `env` in the hashbang to avoid to hardcoding the path.
+|`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you must _(1)_ set the script's executable mode bit using shell command `chmod +x <filename>`; and _(2)_ specify the script interpreter at the top of the file using a hashbang line such as `#/usr/bin/env ruby`. (Using `env` instead of a hard coded path is strongly recommended.) Within the script, access variables as described in [Script Fields](#script-fields). The current working directory will be set to the package directory. See [Example Shell Script File](#example-shell-script-file).|
+|`Script Interpreter`|String|Optional|~~Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh` but you could use, for example, `/usr/bin/ruby`.~~ **Deprecated** - use hashbang instead.
 |`URL`|String|Required for URL actions|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. You can also put options here, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. The values will be URL-encoded by PopClip. Note that any `&` characters in the URL must be encoded as `&amp;` in the Config.plist.|
 |`Key Combo`|Dictionary|Required for Keypress actions|Specify the keypress which will be generated by PopClip. See [Key Code format](#key-code-format). Key presses are delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".|
 |`Before`|String|Optional|String to indicate an action PopClip should take *before* performing the main action. See [Before and After keys](#before-and-after-keys).|

@@ -6,14 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## 2021.10 
+## 2021.10 (3543) - 30 Sep 2021
 
 ### Added
 
 - Executable shell scripts now have the user's `PATH` set in the script variables, so they can now use hashbang with `env` such as `#!/usr/bin/env perl` to avoid having to hard code the path.
 - Brought back `Preserve Image Color`.
 
-## 2021.9
+### Deprecated
+
+- The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. (Note that the script must have its executeble bit set for this to work.)
+
+## 2021.9 (3510) — 22 Sep 2021
 
 ### Added
 
