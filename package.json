@@ -12,6 +12,7 @@
     "html-entities": "^2.3.2",
     "linkedom": "^0.12.1",
     "sanitize-html": "^2.5.1",
+    "superagent": "^6.1.0",
     "turndown": "^7.1.1",
     "voca": "^1.4.0"
   }
