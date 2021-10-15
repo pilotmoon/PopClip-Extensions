@@ -29,7 +29,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Removed
 
 - Removed the `html` requirement since all selections now come with HTML (as above).
-- ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~ _Restored in 2021.11._
+- ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~ _Restored in 2021.10._
 - Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
 
