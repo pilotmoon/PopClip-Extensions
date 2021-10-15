@@ -35,9 +35,9 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Changed
 
-- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is still available in a new field `POPCLIP_RAW_HTML`
-- Renamed the `Image File` and `Extension Image File` fields to `Icon` and `Extension Icon`, resectively. (The old names will also still work but are no londer documented.)
-- Added `App` dictionary field to specify a single app (since it turns out we hardly ever need to specify more than one app). (`Apps` array will still work but is no londer documented.)
+- The `POPCLIP_HTML` field is now sanitized to remove CSS, potentially unsafe tags, and to fix invalid markup. The unsanitized HTML is still available in a new field `POPCLIP_RAW_HTML`.
+- Renamed the `Image File` and `Extension Image File` fields to `Icon` and `Extension Icon`, respectively. (The old names will also still work but are no longer documented.)
+- Added `App` dictionary field to specify a single app (since it turns out we hardly ever need to specify more than one app). (`Apps` array will still work but is no longer documented.)
 - The error checking when loading an extension is more robust, so errors such as incorrect field types will now be caught. And you'll get an more specific message about what the problem is.
 
 One more thing... there is also a brand new extension format based on JavaScript. Documentation still "to-do", watch this space!
