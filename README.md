@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-This document applies to PopClip 2021.10 (3543). (See [Changelog](CHANGELOG.md)])
+This document applies to PopClip 2021.10 (3543). See also: [Changelog](CHANGELOG.md)
 
 <!-- ([Draft JavaScript extensions documentation](https://pilotmoon.github.io/PopClip-Extensions/)) -->
 
