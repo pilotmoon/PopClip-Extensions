@@ -2,6 +2,8 @@
 
 This document applies to PopClip 2021.10 (3543). See also: [Changelog](CHANGELOG.md)
 
+Entries marked **BETA** apply to the current [PopClip beta](https://pilotmoon.com/popclip/download).
+
 <!-- ([Draft JavaScript extensions documentation](https://pilotmoon.github.io/PopClip-Extensions/)) -->
 
 ## Introduction
@@ -158,16 +160,18 @@ The `Config.plist` file has the following structure.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Extension Identifier`|String| Required |Provide a string which uniquely identifies this extension. Use your own prefix, ideally a reverse DNS-style prefix. For example `com.example.myextension`. Do not use the prefix `com.pilotmoon.` for your own extensions.|
 |`Extension Name`|String or Dictionary| Required |This is a display name that appears in the preferences list of extensions.|
+|`Extension Identifier`|String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
 |`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`App`|Dictionary|Optional|Information about the app or website associated with this extension. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info Dictionary](#app-dictionary).|
 |`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
 |`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
-|`Actions`|Array|Required|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
+|`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
+
+**BETA**: If `Actions` is omitted, PopClip will look at the top level of the plist for an action definition. This simplifies adding a single-action extension.
 
 ### Action Dictionary
 The action dictionary has the following structure. Exactly **one** of `Service Name`, `AppleScript File`, `Shell Script File`, `URL` or `Key Combo` should be specified. The other keys can also be placed at the top level of the config file, in which case they act as a fallback for all actions in the extension which don't supply their own value.

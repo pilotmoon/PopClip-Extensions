@@ -6,7 +6,29 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## v2021.10 (3543) — 30 Sep 2021
+## [Unreleased (beta)](https://pilotmoon.com/popclip/download)
+
+### Added
+
+- An extension with a single action can specify its action entirely at the top level of the Config.plist, without using an `Actions` array.
+- Extensions can use a JSON confg file, `Config.json`, instead of `Config.plist`. All the same field names can be used as for the plist. (There is also an alternative set of field names, which are more "JavaScript-like", which I still need to doument.) Shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.)
+- The `Extention Identifier` can be omitted. If so, popclip will internally generate an identifier from the package name.
+
+### Notes
+
+My hope is that that the above changes, plus the other changes already introduced in v2021.9 and v2021.10, mean that the barrier to entry for users creating their own extensions is much lower. For example, the following `Config.json` file now fully specifies a Search extension, including an icon:
+
+```json
+{
+    "Extension Name": "Example",
+    "Extension Icon": "(Ex)",
+    "URL": "http://example.com/blah/{popclip text}"
+}
+```
+
+...which could be typed out in TextEdit and wrapped into an extension using Finder.
+
+## 2021.10 (3543) — 30 Sep 2021
 
 ### Added
 
@@ -22,7 +44,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 - The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. A hashbang using `env`, for example `#!/usr/bin/env perl`, is recommend. This will find the scripting runtime executable in the user's `PATH`. Note that when using a hashbang, the script must also have its executable mode bit set (e.g. with `chmod +`).
 
-## v2021.9 (3510) — 22 Sep 2021
+## 2021.9 (3510) — 22 Sep 2021
 
 ### Added
 
