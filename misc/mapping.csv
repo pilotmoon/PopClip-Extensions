@@ -1,0 +1,54 @@
+old,new
+Extension Name,name
+Extension Identifier,identifier
+Extension Icon,icon
+Extension Image File,icon
+Extension Description,description
+Apps,apps
+App,app
+Required OS Version,macosVersion
+Required Software Version,popclipVersion
+Actions,actions
+Options,options
+Options Title,optionsTitle
+Options Script File,optionsScriptFile
+Options Script Interpreter,optionsScriptInterpreter
+Option Identifier,identifier
+Option Type,type
+Option Label,label
+Option Description,description
+Option Values,values
+Option Value Labels,valueLabels
+Option Default Value,defaultValue
+Option Icon,icon
+Option Hidden,hidden
+Option Inset,inset
+Name,name
+Link,link
+Check Installed,checkInstalled
+Bundle Identifiers,bundleIdentifiers
+Requirements,requirements
+Required Apps,requiredApps
+Blocked Apps,blockedApps
+Excluded Apps,excludedApps
+Regular Expression*,regex*
+Pass HTML,captureHtml
+Pass RTF,captureRtf
+Stay Visible,stayVisible
+Preserve Image Color,preserveColor
+Title,title
+Identifier,identifier
+Image File,icon
+Icon,icon            
+Before,before
+After,after
+Permissions,permissions
+URL,url
+Service Name,serviceName
+Key Combo,keyCombo
+AppleScript File,appleScriptFile
+Shell Script File,shellScriptFile
+Script Interpreter,scriptInterpreter
+keyChar,keyChar
+keyCode,keyCode
+modifiers,modifiers
