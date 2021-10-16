@@ -1,54 +1,54 @@
 old,new
-Extension Name,name
-Extension Identifier,identifier
-Extension Icon,icon
-Extension Image File,icon
-Extension Description,description
-Apps,apps
-App,app
-Required OS Version,macosVersion
-Required Software Version,popclipVersion
 Actions,actions
-Options,options
-Options Title,optionsTitle
-Options Script File,optionsScriptFile
-Options Script Interpreter,optionsScriptInterpreter
-Option Identifier,identifier
-Option Type,type
-Option Label,label
-Option Description,description
-Option Values,values
-Option Value Labels,valueLabels
-Option Default Value,defaultValue
-Option Icon,icon
-Option Hidden,hidden
-Option Inset,inset
-Name,name
-Link,link
-Check Installed,checkInstalled
-Bundle Identifiers,bundleIdentifiers
-Requirements,requirements
-Required Apps,requiredApps
+After,after
+App,app
+AppleScript File,appleScriptFile
+Apps,apps
+Before,before
 Blocked Apps,blockedApps
+Bundle Identifiers,bundleIdentifiers
+Check Installed,checkInstalled
 Excluded Apps,excludedApps
-Regular Expression,regex
-Pass HTML,captureHtml
-Pass RTF,captureRtf
-Stay Visible,stayVisible
-Preserve Image Color,preserveColor
-Title,title
+Extension Description,description
+Extension Icon,icon
+Extension Identifier,identifier
+Extension Image File,icon
+Extension Name,name
+Icon,icon            
 Identifier,identifier
 Image File,icon
-Icon,icon            
-Before,before
-After,after
-Permissions,permissions
-URL,url
-Service Name,serviceName
 Key Combo,keyCombo
-AppleScript File,appleScriptFile
-Shell Script File,shellScriptFile
-Script Interpreter,scriptInterpreter
 keyChar,keyChar
 keyCode,keyCode
+Link,link
 modifiers,modifiers
+Name,name
+Option Default Value,defaultValue
+Option Description,description
+Option Hidden,hidden
+Option Icon,icon
+Option Identifier,identifier
+Option Inset,inset
+Option Label,label
+Option Type,type
+Option Value Labels,valueLabels
+Option Values,values
+Options Script File,optionsScriptFile
+Options Script Interpreter,optionsScriptInterpreter
+Options Title,optionsTitle
+Options,options
+Pass HTML,captureHtml
+Pass RTF,captureRtf
+Permissions,permissions
+Preserve Image Color,preserveColor
+Regular Expression,regex
+Required Apps,requiredApps
+Required OS Version,macosVersion
+Required Software Version,popclipVersion
+Requirements,requirements
+Script Interpreter,scriptInterpreter
+Service Name,serviceName
+Shell Script File,shellScriptFile
+Stay Visible,stayVisible
+Title,title
+URL,url
