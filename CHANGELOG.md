@@ -11,7 +11,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Added
 
 - An extension with a single action can specify its action entirely at the top level of the Config.plist, without using an `Actions` array.
-- Extensions can use a JSON confg file, `Config.json`, instead of `Config.plist`. All the same field names can be used as for the plist. (There is also an alternative set of field names, which are more "JavaScript-like", which I still need to doument.) Shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.)
+- Extensions can use a JSON confg file, `Config.json`, instead of `Config.plist`. All the same field names can be used as for the plist. (There is also an alternative set of field names, which are more "JavaScript-like", which are listed [here](/misc/mapping.csv).) Shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.)
 - The `Extention Identifier` can be omitted. If so, popclip will internally generate an identifier from the package name.
 
 ### Notes
