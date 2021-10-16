@@ -148,11 +148,14 @@ declare interface Modifiers {
  declare type NegatedRequirement = `!${Requirement}`
 
 /**
- * An action function is called when the user clicks the action button in PopClip.
- *
- * TODO
+ * The action function is called when the user clicks the action button in PopClip. This is where
+ * the extension does its main work.
+ * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
+ * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
+ * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
+ * @param modifiers Modifier keys held down when the action was invoked. (Same object as [[PopClip.modifiers]].)
  */
- declare type ActionFunction = (selection: Selection, context: Context, options: Options) => void
+ declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifiers: Modifiers) => void
 
  /**
   * Either an [[ActionFunction]] on its own, or an [[Action]] object.
@@ -552,11 +555,11 @@ declare interface Selection {
 }
 
 /**
-* Context defines properties to access the context surrounding the selected text.
+*  Properties relating the context surrounding the selected text.
 */
 declare interface Context {
   /**
-     * Does the text area support formatting?
+     * Indicates whether the text area supports formatting.
      *
      * PopClip can't always detect whether the text area supports formatting or not, in which case
      * it will err on the side of a false positive.
@@ -564,23 +567,38 @@ declare interface Context {
   hasFormatting: boolean
 
   /**
-     * This property is true iff the Paste command is enabled in the current app.
-     */
+    * This property is true iff the Paste command is enabled in the current app.
+    */
   canPaste: boolean
 
   /**
-     * This property is true iff text was selected.
-     */
+    * This property is true iff text was selected.
+    */
   canCopy: boolean
 
   /**
-     * This property is true iff text was selected and the app's Cut command is enabled.
-     */
+    * This property is true iff text was selected and the app's Cut command is enabled.
+    */
   canCut: boolean
 
+  /**
+   * If the current app is a compatible browser, this will be the page URL.
+   */
   browserUrl: string
+
+  /**
+   * If the current app is a compatible browser, this will be the page title.
+   */
   browserTitle: string
+
+  /**
+   * The name of the current app, for example `Drafts`.
+   */
   appName: string
+
+  /**
+   * The bundle identitifier of the current app, for example `com.agiletortoise.Drafts-OSX`.
+   */
   appIdentifier: string
 }
 
@@ -709,12 +727,11 @@ declare interface PopClip {
      * @param options
      */
   showText: (text: string, options?: {
-    /**
-         * If `true`, and the app's Paste command is available, the displayed text will be in a cickable button,
-         * which clicked, pastes the full text.
-         */
-    // preview?: boolean TODO
-    pastable?: boolean
+  /**
+   * If `true`, and the app's Paste command is available, the displayed text will be in a cickable button,
+   * which clicked, pastes the full text.
+   */
+    preview?: boolean
   }) => void
 
   /**
