@@ -111,27 +111,29 @@ Here is an example plist for 'Translate Tab', as viewed in Xcode:
 ## Icons
 Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
-* `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com)] or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
+* **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com)] or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
 
-* `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified, and the extension will display the text title instead. You should probably specify an appropriate `Required OS Version` of when using a symbol icon.)
+* **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified, and the extension will display the text title instead. You should probably specify an appropriate `Required OS Version` of when using a symbol icon.)
 
-* `text:<text icon specifier>` instructs PopClip to generate a text-based icon, as described below.
+* **As SVG source code:** `svg:<svg code>` let you specify an image file as svg source code directly in the field. (Although in most cases it's probably a better idea to simply use a separate SVG file.)
+
+* **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below).
 
 PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
 
 ### Text-based icons
 
-Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
+Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text.
 
-* `text:A` - the letter A on its own
+| Style            | Example | Format (`T` be any 1 to 3 characters) | Result                                                               |
+| ---------------- | ------- | ------------------------------------- | -------------------------------------------------------------------- |
+| No decoration    | `A`     | `T` or `-T-`                          | <img src="docs-assets/texticons/a.png" width="1em" height="1em">     |
+| Circle (outline) | `(2)`   | `(T)`                                 | <img src="docs-assets/texticons/(1).png" width="1em" height="1em">   |
+| Circle (filled)  | `((本))` | `((T))`                               | <img src="docs-assets/texticons/((本)).png" width="1em" height="1em"> |
+| Square (outline) | `[xyz]` | `[T]`                                 | <img src="docs-assets/texticons/[xyz].png" width="1em" height="1em"> |
+| Square (filled)  | `[[!]]` | `[[T]]`                               | <img src="docs-assets/texticons/[[!]].png" width="1em" height="1em"> |
 
-* `text:(1)` - the digit 1 in an outline circle
-
-* `text:((本))` - the character 本 in a filled circle
-
-* `text:[xyz]` - the characters xyz in an outline square
-
-* `text:[[!]]` - the character ! in a filled square
+All the above formats may also be used with the prefix `text:`.
 
 ## Configuration Details
 
@@ -172,9 +174,9 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Title`|String or Dictionary|Required|Every action must have a title. The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip.|
+|`Title`|String or Dictionary|Optional|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the `Extension Name` as its title.|
+|`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Extension Icon` will be displayed instead. If there is no extension icon, the `Title` will be displayed instead of an icon.|
 |`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
-|`Icon`|String|Optional| See [Icons](#icons). If you omit this field, the `Title` will be displayed instead. |
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
 |`Shell Script File`|String|Required for Shell Script actions|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you must _(1)_ set the script's executable mode bit using shell command `chmod +x <filename>`; and _(2)_ specify the script interpreter at the top of the file using a hashbang line such as `#/usr/bin/env ruby`. (Using `env` instead of a hard coded path is strongly recommended.) Within the script, access variables as described in [Script Fields](#script-fields). The current working directory will be set to the package directory. See [Example Shell Script File](#example-shell-script-file).|

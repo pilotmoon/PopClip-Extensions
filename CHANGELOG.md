@@ -13,6 +13,11 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - Executable shell scripts now have the user's `PATH` set in the script variables.
 - Brought back `Preserve Image Color`.
 
+### Changed
+
+- The action title may now be omitted. If so, the action takes the extension name as its title.
+- Similarly, the action icon now defaults to the extension icon, if there is one.
+
 ### Deprecated
 
 - The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. A hashbang using `env`, for example `#!/usr/bin/env perl`, is recommend. This will find the scripting runtime executable in the user's `PATH`. Note that when using a hashbang, the script must also have its executable mode bit set (e.g. with `chmod +`).
