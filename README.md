@@ -127,11 +127,11 @@ Text-based icons can up to three characters, on their own or within an enclosing
 
 | Style            | Example | Format (`T` be any 1 to 3 characters) | Result                                                               |
 | ---------------- | ------- | ------------------------------------- | -------------------------------------------------------------------- |
-| No decoration    | `A`     | `T` or `-T-`                          | <img src="docs-assets/texticons/a.png" width="1em" height="1em">     |
-| Circle (outline) | `(2)`   | `(T)`                                 | <img src="docs-assets/texticons/(1).png" width="1em" height="1em">   |
-| Circle (filled)  | `((本))` | `((T))`                               | <img src="docs-assets/texticons/((本)).png" width="1em" height="1em"> |
-| Square (outline) | `[xyz]` | `[T]`                                 | <img src="docs-assets/texticons/[xyz].png" width="1em" height="1em"> |
-| Square (filled)  | `[[!]]` | `[[T]]`                               | <img src="docs-assets/texticons/[[!]].png" width="1em" height="1em"> |
+| No decoration    | `A`     | `T` or `-T-`                          | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="1em" height="1em">     |
+| Circle (outline) | `(2)`   | `(T)`                                 | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="1em" height="1em">   |
+| Circle (filled)  | `((本))` | `((T))`                               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png.png" width="1em" height="1em"> |
+| Square (outline) | `[xyz]` | `[T]`                                 | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png.png" width="1em" height="1em"> |
+| Square (filled)  | `[[!]]` | `[[T]]`                               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png.png" width="1em" height="1em"> |
 
 All the above formats may also be used with the prefix `text:`.
 
