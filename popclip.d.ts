@@ -448,35 +448,46 @@ declare interface Extension {
  */
 declare interface Option {
   /**
-     * An identifying string for this option.
-     */
+   * An identifying string for this option.
+   */
   identifier: string
 
   /**
-     * The kind of option, one of:
-     *  * `string`: a text box for free text entry,
-     *  * `boolean`: a check box,
-     *  * `multiple`: multiple-choice drop-down with predefined options,
-     *  * `password`: a password entry field (passwords are stored in user's keychain instead of preferences),
-     *  * `heading`: adds a heading in the user interface, but does not actually define an option
-     */
+   * The kind of option, one of:
+   *  * `string`: a text box for free text entry,
+   *  * `boolean`: a check box,
+   *  * `multiple`: multiple-choice drop-down with predefined options,
+   *  * `password`: a password entry field (passwords are stored in user's keychain instead of preferences),
+   *  * `heading`: adds a heading in the user interface, but does not actually define an option
+   */
   type: 'string' | 'boolean' | 'multiple' | 'password' | 'heading'
 
   /**
-     * The label for this option.
-     */
+   * The label for this option.
+   */
   label: LocalizableString
 
   /**
-     * The default value of the option. If ommitted, `string` options default to the empty string,
-     * `boolean` options default to true, and `multiple` options default to the top item in the list.
-     * A `password` field may not have a default value.
-     */
+   * The default value of the option. If ommitted, `string` options default to the empty string,
+   * `boolean` options default to true, and `multiple` options default to the top item in the list.
+   * A `password` field may not have a default value.
+   */
   defaultValue?: string | boolean
 
   /**
-     * An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].
-     */
+   * The possible values for a `multiple` option.
+   */
+  values?: string[]
+
+  /**
+   * Display names corresponding to the entries in the [[values]] array. These are shown in the option UI.
+   * If ommitted, the raw value strings are shown instead.
+   */
+  valueLabels?: LocalizableString[]
+
+  /**
+   * An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].
+   */
   icon?: IconString
 }
 
