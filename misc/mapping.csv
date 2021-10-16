@@ -31,7 +31,7 @@ Requirements,requirements
 Required Apps,requiredApps
 Blocked Apps,blockedApps
 Excluded Apps,excludedApps
-Regular Expression*,regex*
+Regular Expression,regex
 Pass HTML,captureHtml
 Pass RTF,captureRtf
 Stay Visible,stayVisible
