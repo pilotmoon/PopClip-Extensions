@@ -123,17 +123,17 @@ PNG and SVG icons should be square and monochrome. The image should be black, on
 
 ### Text-based icons
 
-Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text.
+Text-based icons can up to three characters, on their own or within an enclosing shape. The text is rendered in SF Pro, the macOS default UI font. The enclosing shape is specified using different kinds of brackets around the text, as follows (where `T` represents any 1 to 3 characters):
 
-| Style            | Example | Format (`T` be any 1 to 3 characters) | Result                                                               |
-| ---------------- | ------- | ------------------------------------- | -------------------------------------------------------------------- |
-| No decoration    | `A`     | `T` or `-T-`                          | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
-| Circle (outline) | `(2)`   | `(T)`                                 | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="20" height="20">   |
-| Circle (filled)  | `((本))` | `((T))`                               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
-| Square (outline) | `[xyz]` | `[T]`                                 | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
-| Square (filled)  | `[[!]]` | `[[T]]`                               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
+| Style            | Format       | Example | Result                                                                                                                                   |
+| ---------------- | ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| No decoration    | `T` or `-T-` | `A`     | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
+| Circle (outline) | `(T)`        | `(2)`   | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="20" height="20">   |
+| Circle (filled)  | `((T))`      | `((本))` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
+| Square (outline) | `[T]`        | `[xyz]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
+| Square (filled)  | `[[T]]`      | `[[!]]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
 
-All the above formats may also be used with the prefix `text:`.
+The text specifier also be used with the prefix `text:`, e.g. `text:[X]`.
 
 ## Configuration Details
 
