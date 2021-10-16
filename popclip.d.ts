@@ -259,7 +259,7 @@ declare interface Action {
 
   /**
      * Array of bundle identifiers for which the extension should not appear. The action will not
-     * appear if PopCLip is used in any of the specified apps.
+     * appear if PopClip is used in any of the specified apps.
      *
      #### Alternatives
      *
@@ -272,13 +272,16 @@ declare interface Action {
      * A regular expression to decide whether this action appears in the popup.
      *
      * * If no regex is specified here, the action takes the value of [[Extension.regex]].
-     * * If no array is specified there either, the action will match any input.
+     * * If no regex is specified there either, the action will match any input.
      *
      * #### Notes
      *
-     * You should express the value as a
+     * You may express the value either as a
      * [JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-     * (or object), not as a string.
+     * (or otherwise constructed `RegExp` object), or as a string.
+     *
+     * * If you supply a `RegExp` it will be evaluated in the JavaScript engine.
+     * * If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).
      *
      * If the regex matches the selected text, the action will be shown in the popup and
      * the first occurrence of the matched text is accessible later via {@link Selection.matchedText | matchedText}.
@@ -301,7 +304,7 @@ declare interface Action {
      * ```
 
      */
-  regex?: RegExp
+  regex?: RegExp | string
 
   /**
      * The action's code.
