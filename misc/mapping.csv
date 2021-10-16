@@ -1,11 +1,11 @@
-old,new
+original,new
 Actions,actions
 After,after
 App,app
 AppleScript File,appleScriptFile
 Apps,apps
 Before,before
-Blocked Apps,blockedApps
+Blocked Apps,excludedApps
 Bundle Identifiers,bundleIdentifiers
 Check Installed,checkInstalled
 Excluded Apps,excludedApps
