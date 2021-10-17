@@ -16,7 +16,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Changed
 
-- The `Extension Identifier` and/or `Extension Name` are now optional. If omitted, popclip will generate a name from the .popclipext package name.
+- The `Extension Identifier` and/or `Extension Name` are now optional. If either is omitted, popclip will generate one from the .popclipext package name.
 - An extension with a single action can specify its action entirely at the top level of the Config.plist, without using an `Actions` array.
 
 ### Notes
@@ -25,8 +25,8 @@ My hope is that that the above changes, plus the other changes already introduce
 
 ```yaml
 name: Example Search
-icon: (Ex)
-url: http://example.com/blah/{popclip text}
+icon: text:(Ex)
+url: http://example.com/blah/***
 ```
 
 ## 2021.10 (3543) — 30 Sep 2021
