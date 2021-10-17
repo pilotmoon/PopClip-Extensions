@@ -364,25 +364,26 @@ declare interface Action {
 declare interface Extension {
 
   /**
-     * A unique identifying string for this extension.
-     *
-     * #### Notes
-     *
-     * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
-     *
-     * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
-     *
-     * Do not use the `com.pilotmoon.` prefix for your own extension.
-     *
-     * If omitted here, it must be defined in the Config.json file instead.
-     */
+    * A unique identifying string for this extension.
+    *
+    * #### Notes
+    *
+    * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
+    *
+    * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
+    *
+    * Do not use the `com.pilotmoon.` prefix for your own extension.
+    *
+    * If omitted, the identifier is taken from the Config.json file, or else auto-generated from the package name.
+    *
+    */
   identifier?: string
 
   /**
-     * The display name of this extension.
-     *
-     * If omitted here, it must be defined in the Config.json file instead.
-     */
+   * The display name of this extension.
+   *
+   * If omitted, the name is taken from the Config.json file, or else auto-generated from the package name.
+   */
   name?: LocalizableString
 
   /**
