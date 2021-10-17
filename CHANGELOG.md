@@ -6,11 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## [Unreleased (beta)](https://pilotmoon.com/popclip/download)
+## Unreleased or [Beta](https://pilotmoon.com/popclip/download)
 
 ### Added
 
-- Extensions can use a JSON config file, `Config.json`, instead of `Config.plist`. All the same field names can be used as for the plist, and there is also an new set of field names, which are more "JavaScript-like", listed [here](/misc/mapping.csv). You can use either name for any field. Shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.)
+- Extensions can choose to use either a JSON (`Config.json`) or YAML (`Config.yaml`) config file, instead of a `Config.plist`. They all use the same field names and logical structure.
+- There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
+- The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
 
 ### Changed
 
@@ -19,17 +21,13 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Notes
 
-My hope is that that the above changes, plus the other changes already introduced in v2021.9 and v2021.10, mean that the barrier to entry for users creating their own extensions is much lower. For example, the following `Config.json` file now fully specifies a Search extension, including an icon:
+My hope is that that the above changes, plus the other changes already introduced in v2021.9 and v2021.10, mean that the barrier to entry for users creating their own extensions is much lower. For example, the following `Config.yaml` file is all you need to create a Search extension, including an icon:
 
-```json
-{
-    "Extension Name": "Example",
-    "Extension Icon": "(Ex)",
-    "URL": "http://example.com/blah/{popclip text}"
-}
+```yaml
+name: Example Search
+icon: (Ex)
+url: http://example.com/blah/{popclip text}
 ```
-
-...which could be typed out in TextEdit and wrapped into an extension using Finder.
 
 ## 2021.10 (3543) — 30 Sep 2021
 

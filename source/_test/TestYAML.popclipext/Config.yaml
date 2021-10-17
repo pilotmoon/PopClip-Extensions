@@ -1,0 +1,4 @@
+# yaml is allowed comments
+name: Example 2
+icon: text:(E2)
+url: http://example.com/blah/***
