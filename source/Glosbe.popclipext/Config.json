@@ -2,7 +2,7 @@
     "popclipVersion": 3543,
     "name": "Glosbe",
     "identifier": "com.pilotmoon.popclip.extension.glosbe",
-    "description": "Look up the selected text on Glosbe global dictionary website.",
+    "description": "Look up the selected text using Glosbe, the global dictionary website.",
     "app": {
         "name": "Glosbe",
         "link": "https://glosbe.com/"
