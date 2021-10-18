@@ -15,4 +15,13 @@
     "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
     "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
     "typescript.preferences.quoteStyle": "single",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "Config.json"
+            ],
+            "url": "./ExtensionSchema.json"
+        }
+    ]
+    
 }
