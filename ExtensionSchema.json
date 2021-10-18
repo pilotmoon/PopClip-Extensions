@@ -4,6 +4,10 @@
         "Action": {
             "description": "Encapsulates an action's code, title, icon and other properties.",
             "properties": {
+                "app": {
+                    "$ref": "#/definitions/AssociatedApp",
+                    "description": "Declares the application or website associated with this action, if any."
+                },
                 "code": {
                     "description": "The action's code.",
                     "type": "object"
@@ -123,6 +127,31 @@
             },
             "type": "object"
         },
+        "AssociatedApp": {
+            "description": "Declares information about an app or website that this extension interacts with.",
+            "properties": {
+                "bundleIdentifiers": {
+                    "description": "List of possible bundle identifiers of this app.\n\nPopCLip uses this list when checking for the presence of the app. Include here all application variants\nthat work with this extension. In the simplest case there may\nbe just one bundle ID, but an app may have alternative bundle IDs such as for free/pro variants,\nan App Store version, a stand-alone version, a Setapp version, and so on.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "checkInstalled": {
+                    "description": "Indicates whether PopClip should check for the presence of the app on the computer. If not found,\nPopCLip will display a message prompting the user to install the app. Default is no. Not applicable for websites.",
+                    "type": "boolean"
+                },
+                "link": {
+                    "description": "Web page where user can obtain the app, e.g. \"https://www.literatureandlatte.com/scrivener\".\n\nPopClip will link to this page if the \"missing app\" dialog is shown. The link is also used\nthis in the online extension listing.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Name of the app. Fo example \"Scrivener\"",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
         "Option": {
             "description": "Defines a single extension option.",
             "properties": {
@@ -132,6 +161,17 @@
                         "string",
                         "boolean"
                     ]
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/StringTable"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "An optional longer explanantion of this option, to be shown in the UI."
                 },
                 "icon": {
                     "description": "An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].",
@@ -150,7 +190,7 @@
                             "type": "string"
                         }
                     ],
-                    "description": "The label for this option."
+                    "description": "A short label for this option."
                 },
                 "type": {
                     "description": "The kind of option, one of:\n * `string`: a text box for free text entry,\n * `boolean`: a check box,\n * `multiple`: multiple-choice drop-down with predefined options,\n * `password`: a password entry field (passwords are stored in user's keychain instead of preferences),\n * `heading`: adds a heading in the user interface, but does not actually define an option",
@@ -322,6 +362,10 @@
                 }
             ],
             "description": "Define the actions to go in PopClip's popup. This can be an array or a function.\n\n* If it's an array, the supplied actions are used in the popup, subject to meeting the\nrequirements and regex conditions.\n\n* If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.\nSetting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show."
+        },
+        "app": {
+            "$ref": "#/definitions/AssociatedApp",
+            "description": "An associated app set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.app]]."
         },
         "excludedApps": {
             "description": "A regex set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.excludedApps]].",

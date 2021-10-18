@@ -148,6 +148,38 @@ declare interface Modifiers {
  declare type NegatedRequirement = `!${Requirement}`
 
 /**
+ * Declares information about an app or website that this extension interacts with.
+ */
+declare interface AssociatedApp {
+  /** Name of the app. Fo example "Scrivener" */
+  name: string
+
+  /**
+   * Web page where user can obtain the app, e.g. "https://www.literatureandlatte.com/scrivener".
+   *
+   * PopClip will link to this page if the "missing app" dialog is shown. The link is also used
+   * this in the online extension listing.
+   */
+  link: string
+
+  /**
+   * Indicates whether PopClip should check for the presence of the app on the computer. If not found,
+   * PopCLip will display a message prompting the user to install the app. Default is no. Not applicable for websites.
+   */
+  checkInstalled?: boolean
+
+  /**
+   * List of possible bundle identifiers of this app.
+   *
+   * PopCLip uses this list when checking for the presence of the app. Include here all application variants
+   * that work with this extension. In the simplest case there may
+   * be just one bundle ID, but an app may have alternative bundle IDs such as for free/pro variants,
+   * an App Store version, a stand-alone version, a Setapp version, and so on.
+   */
+  bundleIdentifiers?: string[]
+}
+
+/**
  * The action function is called when the user clicks the action button in PopClip. This is where
  * the extension does its main work.
  * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
@@ -310,6 +342,11 @@ declare interface Action {
   regex?: RegExp | string
 
   /**
+   * Declares the application or website associated with this action, if any.
+   */
+  app?: AssociatedApp
+
+  /**
      * The action's code.
      */
   code: ActionFunction
@@ -427,6 +464,12 @@ declare interface Extension {
   regex?: RegExp
 
   /**
+   * An associated app set here will apply to all this extension's actions, unless overidden in the action definition.
+   * See [[Action.app]].
+   */
+  app?: AssociatedApp
+
+  /**
      * Define the actions to go in PopClip's popup. This can be an array or a function.
      *
      * * If it's an array, the supplied actions are used in the popup, subject to meeting the
@@ -470,9 +513,14 @@ declare interface Option {
   type: 'string' | 'boolean' | 'multiple' | 'password' | 'heading'
 
   /**
-   * The label for this option.
+   * A short label for this option.
    */
   label: LocalizableString
+
+  /**
+   * An optional longer explanantion of this option, to be shown in the UI.
+   */
+  description?: LocalizableString
 
   /**
    * The default value of the option. If ommitted, `string` options default to the empty string,

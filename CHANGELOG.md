@@ -17,7 +17,9 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Changed
 
 - The `Extension Identifier` and/or `Extension Name` are now optional. If either is omitted, popclip will generate one from the .popclipext package name.
-- An extension with a single action can specify its action entirely at the top level of the Config.plist, without using an `Actions` array.
+- An action's `Title` may now be omitted. If so, the action takes the extension name as its title.
+- Similarly, the action `Icon` now defaults to the extension icon, if there is one.
+- An extension with a single action may specify its action either as a dictionary called `Action`, or simply at the top level of the Config file. Extensions with more than one action should continue to use use an `Actions` array.
 
 ### Notes
 
@@ -38,8 +40,7 @@ url: http://example.com/blah/***
 
 ### Changed
 
-- The action title may now be omitted. If so, the action takes the extension name as its title.
-- Similarly, the action icon now defaults to the extension icon, if there is one.
+- The `App` specifier can now be set on individual actions as well as at the root level.
 
 ### Deprecated
 
