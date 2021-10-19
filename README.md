@@ -160,7 +160,7 @@ The `Config.plist` file has the following structure.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Extension Name`|String or Dictionary| Required |This is a display name that appears in the preferences list of extensions.|
+|`Extension Name`|String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
 |`Extension Identifier`|String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
 |`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
@@ -178,8 +178,8 @@ The action dictionary has the following structure. Exactly **one** of `Service N
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Title`|String or Dictionary|Optional|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the `Extension Name` as its title.|
-|`Icon`|String|Optional| The icon to show on the action button. See [Icons](#icons) for the icon specification format. If you omit this field, the `Extension Icon` will be displayed, if there is one. Otherwise the `Title` will be displayed in the button. To explicitly specify a text button when there is an extension icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).
+|`Title`|String or Dictionary|Required (**BETA**: Optional)|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the `Extension Name` as its title.|
+|`Icon`|String|Optional| The icon to show on the action button. See [Icons](#icons) for the icon specification format. _**BETA**: If you omit this field, the `Extension Icon` will be displayed, if there is one. Otherwise the `Title` will be displayed in the button. To explicitly specify a text button when there is an extension icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML)._
 |`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
 |`Service Name`|String|Required for Service actions|Exact name of the OS X service to call (as shown in the Services menu). For example, `Make Sticky`.|
 |`AppleScript File`|String|Required for AppleScript actions|The name of the AppleScript file to use. The file must exist in the extension's package. The script must be a plain text file (save as `.applescript`, not `.scpt` - **PLEASE NOTE .scpt is a different file format and will not work!**) and it must be saved using UTF-8 encoding. Within the script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields). See also [Example AppleScript File](#example-applescript-file).|
