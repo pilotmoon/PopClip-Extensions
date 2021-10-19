@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## Unreleased or [Beta](https://pilotmoon.com/popclip/download)
+## [In Beta](https://pilotmoon.com/popclip/download)
 
 ### Added
 
@@ -31,7 +31,7 @@ As the cherry on top of that, PopClip now has a new built in action for installi
 ```
 # popclip extension to search Emojipedia
 name: Emojipedia
-icon: text:{{☺}}
+icon: text:{{E}}
 url: https://emojipedia.org/search/?q=***
 ```
 
