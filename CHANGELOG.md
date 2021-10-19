@@ -10,9 +10,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Added
 
-- Extensions can choose to use either a JSON (`Config.json`) or YAML (`Config.yaml`) config file, instead of a `Config.plist`. They all use the same field names and logical structure.
+- PopClip will now load either JSON (`Config.json`) or YAML (`Config.yaml`) as an alternative to an XML Property List (`Config.plist`) for the extension config file. The same field names are used in each of the three formats, and they each define the same logical structure. The choice of format is just a matter of which you prefer. (I'm currently leaning towards YAML for the best readability.)
 - There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
+- The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
 
 ### Changed
 
@@ -21,15 +22,22 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - Similarly, the action `Icon` now defaults to the extension icon, if there is one.
 - An extension with a single action may specify its action either as a dictionary called `Action`, or simply at the top level of the Config file. Extensions with more than one action should continue to use use an `Actions` array.
 
-### Notes
+### Note
 
-My hope is that that the above changes, plus the other changes already introduced in v2021.9 and v2021.10, mean that the barrier to entry for users creating their own extensions is much lower. For example, the following `Config.yaml` file is all you need to create a Search extension, including an icon:
+My goal with these recent changes is to drastically lower the barrier of entry for users creating their own extensions. The changes mean that extensions can now be defined with fewer fields and less structure.
 
-```yaml
-name: Example Search
-icon: text:(Ex)
-url: http://example.com/blah/***
+As the cherry on top of that, PopClip now has a new built in action for installing extensions from selected text. It activates when you select text starting with `# popclip` followed by a YAML extension definition. The extension must be a URL, Service or Key Press extension. Here is an example:
+
 ```
+# popclip extension to search Emojipedia
+name: Emojipedia
+icon: text:{{☺}}
+url: https://emojipedia.org/search/?q=***
+```
+
+This means simple extensions can be shared simply by plain text in emails, on websites etc. Extensions shared this way don't also show an unsigned extension warning. 
+
+There is limit of 1000 characters for this. (If you are doing anything requiring more than that, you should probably be creating a packaged extension.)
 
 ## 2021.10 (3543) — 30 Sep 2021
 

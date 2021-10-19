@@ -134,6 +134,8 @@ Text-based icons can up to three characters, on their own or within an enclosing
 | Circle (filled)  | `((T))`      | `((本))` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
 | Square (outline) | `[T]`        | `[xyz]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
 | Square (filled)  | `[[T]]`      | `[[!]]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
+| **BETA** Search (outline) | `{T}`        | `[Ex]` |  |
+| **BETA** Search (filled)  | `{{T}}`      | `[[?]]` |  |
 
 The text specifier also be used with the prefix `text:`, e.g. `text:[X]`.
 
