@@ -139,103 +139,42 @@ Text-based icons can up to three characters, on their own or within an enclosing
 
 The text specifier also be used with the prefix `text:`, e.g. `text:[X]`.
 
-## Config.plist Structure
+## The Config File Structure
 
-#### General 
-* All key names are case sensitive.
-* Make sure that you set each field the correct type. A common error is to enter a number as a string type.
-
-#### "String or Dictionary" type
+### About "String or Dictionary" type
 
 Fields shown as "String or Dictionary" type are localizable strings. The field may be either a string or dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-Hans`, etc.) to a string. PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
 
-#### Plist Troubleshooting
+### Troubleshooting
 
-Common reasons for malformed XML are:
+Make sure that you set each field the correct type. A common error is to enter a number as a string type.
+
+Common reasons for malformed XML in plists are:
 
 * Missing end tags
 * Mismatched start and end tags
 * Unescaped `&` characters (`&` must be encoded as `&amp;`)
 
-### Extension Properties
+## Extension Properties
 
 Thge following fields are used at the top level of the configuration to define properties of the extension itself.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Extension Name` _(**BETA:** `Name`)_|String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
-|`Extension Icon` _(**BETA:** `Icon`)_|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
-|`Extension Identifier` _(**BETA:** `Identifier`)_|String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
+|`Extension Name` |String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
+|`Extension Icon` |String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`Extension Identifier` |String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`Required OS Version` _(**BETA:** `MacOS Version`)_|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
 |`Required Software Version` _(**BETA:** `PopClip Version`)_|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
-|`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
+|`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Options](#options).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 |`Action`|Dictionary|Optional|A dictionary defining a single action for this extension.|
 |`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension.|
 
 **BETA**: If neither `Actions` not `Action` is defined, PopClip will look at the top level of the plist for an action definition.
 
-### Service Action
-
-A service action is defned by the presence of a `Service Name` string. 
-
-|Key|Type|Description|
-|---|----|-----------|
-|`Service Name`|String|The name of the macOS service to call. The name is as shown in the Services menu, for example `Add to Deliveries`.|
-
-In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
-
-### Open URL Action
-
-An Open URL action is defned by the presence of a `URL` string. 
-
-|Key|Type|Description|
-|---|----|-----------|
-|`URL`|String|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. The inserted string will be automatically URL-encoded by PopClip. |
-
-You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. 
-
-The string `***` will also work as a shorthand for `{popclip text}`.
-
-You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropate application given the user's current context.
-
-Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
-
-
-### Keypress Action
-
-A Keypress action is defned by the presence of a `Key Combo` dictionary. 
-
-|Key|Type|Description|
-|---|----|-----------|
-|`Key Combo`|Dictionary|The keypress that PopClip should generate. See [Key Code format](#key-code-format).|
-
-The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
-
-### AppleScript Action
-
-An AppleScript action is defined by the presence of either an `AppleScript File` string or and `AppleScript` string, as follows.
-
-|Key|Type|Description|
-|---|----|-----------|
-|`AppleScript File`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**) |
-|`AppleScript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
-
-Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
-
-You can return a value from the script and have PopClip act uopn it by definein an `After` key.   See also [Example AppleScript File](#example-applescript-file).
-
-### Shell Script Action
-
-An Shell Script action is defined by the presence of a `Shell Script File` string, with an optional `Script Interpreter`.
-
-|Key|Type|Required?|Description|
-|---|----|-----|------|
-|`Shell Script File`|String|Required|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you may define a `Script Interpreter`, or specify one using a hashbang line at the top of the file. (An example hashbang is `#/usr/bin/env ruby`. When using a hashbang, the script mush have its executable bit set.)|
-|`Script Interpreter`|String|Optional|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby` _(**BETA**), or the name of a tool on its own, for example `ruby`. PopClip will look for the tool in the `PATH` of the user's default shell._|
-
-The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act uopn it by definein an `After` key. See [Example Shell Script File](#example-shell-script-file). 
+## Action Properties
 
 ### Common Action Properties
 
@@ -252,9 +191,73 @@ The following fields define properties common to all actions.
 |`Blocked Apps` _(**BETA**: `Excluded Apps`)_|Array|Optional|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
 |`Required Apps`|Array|Optional|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `Requirements` keys `httpurl`, `httpurls`, `email` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
-|`App`|Dictionary|Optional|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info](#app-info).|
+|`App`|Dictionary|Optional|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App](#app).|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
 |`Capture HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
+
+
+### Service Action Properties
+
+A service action is defned by the presence of a `Service Name` string. 
+
+|Key|Type|Description|
+|---|----|-----------|
+|`Service Name`|String|The name of the macOS service to call. The name is as shown in the Services menu, for example `Add to Deliveries`.|
+
+In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
+
+### URL Action Properties
+
+An URL action is defned by the presence of a `URL` string. 
+
+|Key|Type|Description|
+|---|----|-----------|
+|`URL`|String|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. The inserted string will be automatically URL-encoded by PopClip. |
+
+You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. 
+
+The string `***` will also work as a shorthand for `{popclip text}`.
+
+You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropate application given the user's current context.
+
+Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
+
+
+### Keypress Action Properties
+
+A Keypress action is defned by the presence of a `Key Combo` dictionary. 
+
+|Key|Type|Description|
+|---|----|-----------|
+|`Key Combo`|Dictionary|The keypress that PopClip should generate. See [Key Code format](#key-code-format).|
+
+The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
+
+### AppleScript Action Properties
+
+An AppleScript action is defined by the presence of either an `AppleScript File` string or and `AppleScript` string, as follows.
+
+|Key|Type|Description|
+|---|----|-----------|
+|`AppleScript File`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**) |
+|`AppleScript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
+
+Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
+
+You can return a value from the script and have PopClip act uopn it by definein an `After` key.   See also [Example AppleScript File](#example-applescript-file).
+
+### Shell Script Action Properties
+
+An Shell Script action is defined by the presence of a `Shell Script File` string, with an optional `Script Interpreter`.
+
+|Key|Type|Required?|Description|
+|---|----|-----|------|
+|`Shell Script File`|String|Required|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you may define a `Script Interpreter`, or specify one using a hashbang line at the top of the file. (An example hashbang is `#/usr/bin/env ruby`. When using a hashbang, the script mush have its executable bit set.)|
+|`Script Interpreter`|String|Optional|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby` _(**BETA**), or the name of a tool on its own, for example `ruby`. PopClip will look for the tool in the `PATH` of the user's default shell._|
+
+The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act uopn it by definein an `After` key. See [Example Shell Script File](#example-shell-script-file). 
+
+## Meanings of Fields
 
 ### Requirements
 
@@ -289,7 +292,7 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |`popclip-appear`|Trigger PopClip to appear again with the current selection. (This is used by the Select All extension.)|
 |`copy-selection`|Place the original selected text to the clipboard. (This is used by the Swap extension.)|
 
-### App Info
+### App
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
@@ -298,7 +301,7 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
 |`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
 
-## Option Definition
+### Options
 
 Options are presented to the user in a preferences user interface window and are saved in PopClip's preferences on behalf of the extension. Options appear in the UI in the order they appear in the `Options` array. An option dictionary has the following structure. 
 
@@ -313,7 +316,9 @@ Options are presented to the user in a preferences user interface window and are
 |`Option Value Labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If ommitted, the option values themselves are shown.|
 |`Option Inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
 
-## Script Fields
+## Using Scripts
+
+### Script Fields
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
@@ -335,25 +340,42 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-## Additional Notes
-
 ### Example AppleScript File
 
-**Important: AppleScript files must be in UTF-8 plain text format. (Save as 'text' format in AppleScript editor.)**
+**Important: AppleScript files must be in plain text format. Save as .applescript, not .scpt.**
 
-Here is an example of an AppleScript file for use in an extension (this one is for sending to Evernote):
+Here is an example of an AppleScript file (this one is for the 'TextEdit' extension):
 
-    tell application "Evernote"
-    	activate
-    	set theNote to create note with text "{popclip text}"
-    	open note window with theNote
-    end tell
+```applescript
+tell application "TextEdit"
+	activate
+	set theDocument to make new document
+	set text of theDocument to "{popclip text}"
+end tell
+```
 
-### Example Shell Script File
-Here is an example of an shell script for use in an extension (this one is for 'Say'):
+### Example Shell Script Files
 
-    #!/bin/sh
-    echo $POPCLIP_TEXT | say
+Here is an example of an extension shell script (this one is for 'Say'):
+
+``` sh
+#!/bin/sh
+echo $POPCLIP_TEXT | say  # pipe text to 'say' command
+```
+
+A shell script can return a string back to PopClip via to stdout. For example:
+
+```sh
+#!/bin/sh
+echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
+```
+A ruby example:
+
+```ruby
+#!/usr/bin/env ruby
+input=ENV['POPCLIP_TEXT']
+print input.upcase  # make the text ALL CAPS
+```
 
 ### Shell Script Testing
 
@@ -363,27 +385,18 @@ While developing a script, you can test it from the command line by exporting th
     export POPCLIP_OPTION_FOO="foo"
     ./myscript
 
-### Script Returning Result
+### Indicating Errors
 
-Scripts can return results if they specify one of the `*-result` keys in the Action's `After` field.
-
-Scripts may indicate success or failure as follows.
+Scripts may indicate success or failure as follows:
 
 |Result|Shell Script|AppleScript|
 |------|------------|-----------|
-|Success|Exit code `0`|Return without raising an error|
-|General error. (PopClip will show an "X".)|Exit code `1`|Raise error with code `501`. Example AppleScript: `error "any text" number 501`.|
-|Error with user's settings. (PopClip will show an "X" and pop up the extension's options UI.)|Exit code `2`|Raise error with code `502`. Example AppleScript: `error "any text" number 502`.|
+|Success|Exit code `0`|Return without raising an error.|
+|General error. (PopClip will show an "X".)|Exit code `1`|Raise error with code `501`. (Example AppleScript: `error "any text" number 501`.)|
+|Error with user's settings. (PopClip will show an "X" and pop up the extension's options UI.)|Exit code `2`|Raise error with code `502`. (Example AppleScript: `error "any text" number 502`.)|
 
-Here is an example of a Ruby script that could be used in a shell script extension and the `After` key set to `paste-result`. 
-
-    #!/usr/bin/env ruby
-    input=ENV['POPCLIP_TEXT']
-    # make the text ALL CAPS
-    print input.upcase 
-
-### Key Code format
-Key presses should be expressed as a dictionary with the following keys:
+## Key Code format
+Key presses are expressed as a dictionary, as follows:
 
 |Key|Type|Required?|Description|
 |---|----|------|----|
