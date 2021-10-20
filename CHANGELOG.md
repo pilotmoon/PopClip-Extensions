@@ -14,6 +14,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
 - The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
+- The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 
 ### Changed
 
@@ -54,7 +55,7 @@ There is limit of 1000 characters for this. (If you are doing anything requiring
 
 ### Deprecated
 
-- The `Script Interpreter` field is deprecated; instead, specify the interpreter with a hashbang at the top of the script. A hashbang using `env`, for example `#!/usr/bin/env perl`, is recommend. This will find the scripting runtime executable in the user's `PATH`. Note that when using a hashbang, the script must also have its executable mode bit set (e.g. with `chmod +`).
+- ~~The `Script Interpreter` field is deprecated.~~ _Reverted - see later changes to this field._
 
 ## 2021.9 (3510) — 22 Sep 2021
 
