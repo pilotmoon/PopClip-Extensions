@@ -802,6 +802,11 @@ declare interface PopClip {
   showSettings: () => void
 
   /**
+   * Trigger PopClip to appear again with the current selection.
+   */
+  appear: () => void
+
+  /**
      * Simulate a key press by the user.
      *
      * #### Notes
