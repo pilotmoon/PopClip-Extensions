@@ -180,7 +180,7 @@ declare interface AssociatedApp {
 }
 
 /**
- * The action function is called when the user clicks the action button in PopClip. This is where
+ * An action function is called when the user clicks the action button in PopClip. This is where
  * the extension does its main work.
  * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
@@ -195,6 +195,15 @@ declare interface AssociatedApp {
   * If you supply the function on its own, the action will take its name and icon from the extension name and extension icon.
   */
  declare type ActionType = Action | ActionFunction
+
+/**
+ * A population function dynamically generates the actions for the extension. See [[Extension.actions]].
+ * @param selection The current selected text.
+ * @param context The current context.
+ * @param options The current option values.
+ * @returns A single action, an array of actions.
+ */
+ declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => ActionType | ActionType[] | undefined
 
 /**
  * Used in the {@link Extension.flags} and {@link Action.flags} to define certain boolean properties of actions.
@@ -477,13 +486,8 @@ declare interface Extension {
      *
      * * If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.
      * Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
-     *
-     * @param selection: The current selected text.
-     * @param context: The current context.
-     * @param context: The current option values.
-     * @returns A single action or array of actions.
      */
-  actions?: ActionType[] | ((selection: Selection, context: Context, options: Options) => ActionType | ActionType[] | undefined)
+  actions?: ActionType[] | PopulationFunction
 
   /**
      * Simplified property to define a single action.
