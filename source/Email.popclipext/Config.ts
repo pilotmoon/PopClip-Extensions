@@ -1,5 +1,5 @@
 export const actions: PopulationFunction = (selection, context, options) => {
-  const result: Action[] = []
+  const result: ActionObject[] = []
   const emails = selection.data.emails
   if (options['enable-at'] as boolean && emails.length > 0) {
     result.push({
