@@ -197,13 +197,13 @@ An Open URL action is defned by the presence of a `URL` string.
 |---|----|-----------|
 |`URL`|String|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. The inserted string will be automatically URL-encoded by PopClip. |
 
-Som notes on the Open URL action:
+You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. 
 
-* You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. 
-* PopClip will try to open URLs in the most appropate application given the user's current context.
-* You can open any type of URL, not just web URLs.
-* You can also use `***` as an alternative placeholder instead of `{popclip text}`.
-* Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
+The string `***` will also work as a shorthand for `{popclip text}`.
+
+You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropate application given the user's current context.
+
+Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
 
 
 #### Keypress Action
