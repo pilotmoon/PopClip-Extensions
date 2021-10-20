@@ -30,7 +30,7 @@
 	<array>
 		<dict>
 			<key>Link</key>
-			<string>http://pinboard.in/</string>
+			<string>https://pinboard.in/</string>
 			<key>Name</key>
 			<string>Pinboard</string>
 		</dict>
@@ -72,8 +72,6 @@
 			<string>password</string>
 		</dict>
 	</array>
-	<key>Options </key>
-	<string></string>
 	<key>Options Script File</key>
 	<string>pinboardAuth.php</string>
 	<key>Options Script Interpreter</key>
