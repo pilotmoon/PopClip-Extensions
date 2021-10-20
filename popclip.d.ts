@@ -461,7 +461,7 @@ declare interface Extension {
      * A regex set here will apply to all this extension's actions, unless overidden in the action definition.
      * See [[Action.regex]].
      */
-  regex?: RegExp
+  regex?: RegExp | string
 
   /**
    * An associated app set here will apply to all this extension's actions, unless overidden in the action definition.
