@@ -262,6 +262,7 @@ Options are presented to the user in a preferences user interface window and are
 |`Option Default Value`|String|Optional|This field specifies the default value of the option. If ommitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
 |`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
 |`Option Value Labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If ommitted, the option values themselves are shown.|
+|`Option Inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
 
 ## Script Fields
 
