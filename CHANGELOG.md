@@ -21,6 +21,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - An action's `Title` may now be omitted. If so, the action takes the extension name as its title.
 - Similarly, the action `Icon` now defaults to the extension icon, if there is one.
 - An extension with a single action may specify its action either as a dictionary called `Action`, or simply at the top level of the Config file. Extensions with more than one action should continue to use use an `Actions` array.
+- Renamed `Blocked Apps` to `Excluded Apps` (the old name will still work).
 
 ### Note
 
