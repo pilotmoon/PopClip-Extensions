@@ -171,15 +171,12 @@ Thge following fields are used at the top level of the configuration to define p
 |`Required Software Version` _(**BETA:** `PopClip Version`)_|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
-|`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
+|`Action`|Dictionary|Optional|A dictionary defining a single action for this extension.|
+|`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension.|
 
 **BETA**: If neither `Actions` not `Action` is defined, PopClip will look at the top level of the plist for an action definition.
 
-### Defining Actions
-
-The action type is specified by including of *one* of the following five fields. This can be done _(**BETA** at the top level of the configuration, or within an `Action` dictionary or)_ within the `Actions` dictionary.
-
-#### Service Action
+### Service Action
 
 A service action is defned by the presence of a `Service Name` string. 
 
@@ -189,7 +186,7 @@ A service action is defned by the presence of a `Service Name` string.
 
 In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
 
-#### Open URL Action
+### Open URL Action
 
 An Open URL action is defned by the presence of a `URL` string. 
 
@@ -206,7 +203,7 @@ You can open any type of URL, not just web URLs. PopClip will try to open URLs i
 Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
 
 
-#### Keypress Action
+### Keypress Action
 
 A Keypress action is defned by the presence of a `Key Combo` dictionary. 
 
@@ -216,7 +213,7 @@ A Keypress action is defned by the presence of a `Key Combo` dictionary.
 
 The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
 
-#### AppleScript Action
+### AppleScript Action
 
 An AppleScript action is defined by the presence of either an `AppleScript File` string or and `AppleScript` string, as follows.
 
@@ -229,9 +226,7 @@ Within the AppleScript, use `"{popclip text}"` as the placeholder for the select
 
 You can return a value from the script and have PopClip act uopn it by definein an `After` key.   See also [Example AppleScript File](#example-applescript-file).
 
-
-
-#### Shell Script Action
+### Shell Script Action
 
 An Shell Script action is defined by the presence of a `Shell Script File` string, with an optional `Script Interpreter`.
 
@@ -242,9 +237,9 @@ An Shell Script action is defined by the presence of a `Shell Script File` strin
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act uopn it by definein an `After` key. See [Example Shell Script File](#example-shell-script-file). 
 
-### Action Properties
+### Common Action Properties
 
-The following fields define properties of actions. They can appear at the top level of the configuration, in which case they will apply to all actions in the extension, or within an _(**BETA**`Action` or)_ `Actions` dictionary, in which case they will apply only to that specific action. 
+The following fields define properties common to all actions. 
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
@@ -261,7 +256,7 @@ The following fields define properties of actions. They can appear at the top le
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
 |`Capture HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
-#### Requirements
+### Requirements
 
 These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it.
 
@@ -277,7 +272,7 @@ These are the values supported by the `Requirements` field. Additionally, you ca
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
 
-#### Before and After
+### Before and After
 
 The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the values can be used in the `After` field.
 
@@ -294,7 +289,7 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |`popclip-appear`|Trigger PopClip to appear again with the current selection. (This is used by the Select All extension.)|
 |`copy-selection`|Place the original selected text to the clipboard. (This is used by the Swap extension.)|
 
-#### App Info
+### App Info
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
@@ -303,7 +298,7 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
 |`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
 
-### Option Definition
+## Option Definition
 
 Options are presented to the user in a preferences user interface window and are saved in PopClip's preferences on behalf of the extension. Options appear in the UI in the order they appear in the `Options` array. An option dictionary has the following structure. 
 
