@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## [In Beta](https://pilotmoon.com/popclip/download)
+## Unreleased / [In Beta](https://pilotmoon.com/popclip/download)
 
 ### Added
 
@@ -17,11 +17,12 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Changed
 
-- The `Extension Identifier` and/or `Extension Name` are now optional. If either is omitted, popclip will generate one from the .popclipext package name.
-- An action's `Title` may now be omitted. If so, the action takes the extension name as its title.
-- Similarly, the action `Icon` now defaults to the extension icon, if there is one.
-- An extension with a single action may specify its action either as a dictionary called `Action`, or simply at the top level of the Config file. Extensions with more than one action should continue to use use an `Actions` array.
-- Renamed `Blocked Apps` to `Excluded Apps` (the old name will still work).
+- Removed the `Extension ...` and `Option ...` prefixes from field names (e.g. `Extension Name` is now just `Name`). The old names will continue to work.
+- The extension's `Identifier` and/or `Name` are now optional. If either is omitted, popclip will generate one from the .popclipext package name.
+- An action's `Title` is now optional. If omitted, the action takes the extension's name as its title.
+- An action's `Icon` is now optional. If omitted, the action takes the extension's icon (if any) as its icon.
+- The `Actions` array is now optional. An extension with a single action may now be specified at the top level of the config file, without a separate action dictionary.
+- Renamed `Blocked Apps` to `Excluded Apps`, `Regular Expression` to `Regex`, `Pass HTML` to `Capture HTML`, `Required Software Version` to `PopClip Version`, and `Required OS Version` to `MacOS Version`. The old names will continue to work.
 
 ### Note
 

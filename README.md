@@ -163,15 +163,14 @@ Thge following fields are used at the top level of the configuration to define p
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Extension Name`|String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
-|`Extension Identifier`|String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
-|`Extension Icon`|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`Extension Name` _(**BETA:** `Name`)_|String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
+|`Extension Icon` _(**BETA:** `Icon`)_|String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`Extension Identifier` _(**BETA:** `Identifier`)_|String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
 |`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
-|`Required OS Version`|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
-|`Required Software Version`|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
+|`Required OS Version` _(**BETA:** `MacOS Version`)_|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
+|`Required Software Version` _(**BETA:** `PopClip Version`)_|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
 |`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Option Dictionary](#option-dictionary).|
 |`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
-|`Action` **BETA**|Dictionary|Optional|Dictionary defining a single action for this extension. See [Action Dictionary](#action-dictionary).|
 |`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension. See [Action Dictionary](#action-dictionary).|
 
 **BETA**: If neither `Actions` not `Action` is defined, PopClip will look at the top level of the plist for an action definition.
@@ -195,9 +194,9 @@ The following fields define properties of actions. They can appear at the top le
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Title`|String or Dictionary|Required (**BETA**: Optional)|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the `Extension Name` as its title.|
-|`Icon`|String|Optional| The icon to show on the action button. See [Icons](#icons) for the icon specification format. _**BETA**: If you omit this field, the `Extension Icon` will be displayed, if there is one. Otherwise the `Title` will be displayed in the button. To explicitly specify a text button when there is an extension icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML)._
-|`Identifier`|String|Optional|A string which will be passed along in the script fields. There is no required format. The purpose of this field is to allow the script to identify which action called it, in the case that multiple actions use the same script.|
+|`Title`|String or Dictionary|Required (**BETA**: Optional)|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
+|`Icon`|String|Optional| The icon to show on the action button. See [Icons](#icons) for the icon specification format. _**BETA**: To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML)._
+|`Identifier`|String|Optional|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
 |`Requirements`|Array|Optional|Array consisting of zero or more of the strings listed in [Requirements](#requirements). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
 |`Before`|String|Optional|String to indicate an action PopClip should take *before* performing the main action. See [Before and After](#before-and-after-keys).|
 |`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After](#before-and-after-keys).
@@ -206,7 +205,7 @@ The following fields define properties of actions. They can appear at the top le
 |`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `Requirements` keys `httpurl`, `httpurls`, `email` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
 |`App`|Dictionary|Optional|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App Info](#app-info).|
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
-|`Pass HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
+|`Capture HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
 #### Requirements
 
@@ -273,9 +272,9 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
 |`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
 |`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
-|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Pass HTML` must be specified.)|
-|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Pass HTML` must be specified.)|
-|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Pass HTML` must be specified.)|
+|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Capture HTML` must be specified.)|
+|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
+|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
 |`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
 |`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
