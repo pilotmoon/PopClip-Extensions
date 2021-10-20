@@ -70,7 +70,7 @@ declare interface StringTable {
 declare type LocalizableString = string | StringTable
 
 /**
- * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link Action.icon}.
+ * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link ActionObject.icon}.
  *
  * Icons may be specified in a few different ways:
  *
@@ -117,7 +117,7 @@ declare interface Modifiers {
 }
 
 /**
-  * A requirement is specified in the {@link Action.requirements} array as a string.
+  * A requirement is specified in the {@link ActionObject.requirements} array as a string.
   * The possible strings are:
   *
   * | Specifier     | Condition                                                  |
@@ -190,11 +190,11 @@ declare interface AssociatedApp {
  declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifiers: Modifiers) => void
 
  /**
-  * Either an [[ActionFunction]] on its own, or an [[Action]] object.
+  * Either an [[ActionFunction]] on its own, or an [[ActionObject]].
   *
   * If you supply the function on its own, the action will take its name and icon from the extension name and extension icon.
   */
- declare type ActionType = Action | ActionFunction
+ declare type Action = ActionObject | ActionFunction
 
 /**
  * A population function dynamically generates the actions for the extension. See [[Extension.actions]].
@@ -203,10 +203,10 @@ declare interface AssociatedApp {
  * @param options The current option values.
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => ActionType | ActionType[] | undefined
+ declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action | Action[] | undefined
 
 /**
- * Used in the {@link Extension.flags} and {@link Action.flags} to define certain boolean properties of actions.
+ * Used in the {@link Extension.flags} and {@link ActionObject.flags} to define certain boolean properties of actions.
  * @category Definition
  */
 declare interface ActionFlags {
@@ -246,7 +246,7 @@ declare interface ActionFlags {
  *
  * @category Definition
  */
-declare interface Action {
+declare interface ActionObject {
   /**
      * The action's title. The title is displayed in the action button if there is no icon.
      * For extensions with icons, the title is displayed in the tooltip.
@@ -487,12 +487,12 @@ declare interface Extension {
      * * If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.
      * Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
      */
-  actions?: ActionType[] | PopulationFunction
+  actions?: Action[] | PopulationFunction
 
   /**
      * Simplified property to define a single action.
      */
-  action?: ActionType
+  action?: Action
 }
 
 /**
@@ -561,7 +561,7 @@ declare interface Selection {
   text: string
 
   /**
-     * If the action specified {@link Action.requirements | requirements} or a {@link Action.regex | regex} to match the input, this will be the matching part of the text.
+     * If the action specified {@link ActionObject.requirements | requirements} or a {@link ActionObject.regex | regex} to match the input, this will be the matching part of the text.
      * Otherwise, it will be the same string as [[text]].
      */
   matchedText: string
