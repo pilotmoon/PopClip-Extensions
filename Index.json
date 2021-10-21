@@ -23,7 +23,7 @@
       "Underscore",
       "RemoveSpaces",
       "Slugify",
-      "AlternatingText",
+      "AlternatingCase",
       "FullHalfWidth"
     ],
     "Title" : "Text Transformation"
