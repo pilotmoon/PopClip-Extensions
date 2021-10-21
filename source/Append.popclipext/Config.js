@@ -1,9 +1,8 @@
-/// <reference path="../../popclip.d.ts" />
 define(function () {
     var extension = {
         action: function (selection) {
-            var separator = (popclip.modifierKeys & util.constant.MODIFIER_OPTION) ? "" : "\n";
-            if (popclip.modifierKeys & (util.constant.MODIFIER_SHIFT)) {
+            var separator = (popclip.modifierKeys & util.constant.MODIFIER_OPTION) !== 0 ? '' : '\n';
+            if ((popclip.modifierKeys & util.constant.MODIFIER_SHIFT) !== 0) {
                 pasteboard.text = selection.text.trim() + separator + pasteboard.text.trim();
             }
             else {
