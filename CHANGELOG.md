@@ -10,6 +10,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Added
 
+- Added a Shortcut action type, to run a named Shortcut on macOS 12.0.
 - PopClip will now load either JSON (`Config.json`) or YAML (`Config.yaml`) as an alternative to an XML Property List (`Config.plist`) for the extension config file. The same field names are used in each of the three formats, and they each define the same logical structure. The choice of format is just a matter of which you prefer. (I'm currently leaning towards YAML for the best readability.)
 - There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.

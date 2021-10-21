@@ -64,11 +64,12 @@ To help you when debugging Script extensions, PopClip can be configured to write
 
 ### Types of Actions
 
-There are five kinds of actions supported by PopClip extensions.
+There are six kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|Service|Invoke a Mac OS X Service, passing the selected text.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)| 
+|**BETA** Shortcut|Send the selected text to a macOS Shortcut. (Requires on macOS 12.0 Monterey.)| - | 
+|Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)| 
 |AppleScript|Run an AppleScript, with the selected text embedded.|[BBEdit](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit)|
 |Shell Script|Run a shell script, with the selected text passed as a shell variable.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
 |URL|Open an HTTP URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
@@ -195,6 +196,15 @@ The following fields define properties common to all actions.
 |`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
 |`Capture HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
 
+### Shortcut Action Properties
+
+A shortcut action is defned by the presence of a `Shortcut Name` string. 
+
+|Key|Type|Description|
+|---|----|-----------|
+|`Shortcut Name`|String|The name of the macOS Shortcut to call. The name is whatever it is called in the Shortcuts app.|
+
+The selected text will be sent as input to the service, and any text returned by the shortcut will be available to the `After` actions.
 
 ### Service Action Properties
 
