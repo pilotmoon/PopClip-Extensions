@@ -56,227 +56,210 @@ defineExtension({
     //     label: 'useless'
     //   }
     // ],
-    actions: function (selection, context, options) {
-        var result = [];
-        print('Hello!!');
-        if (selection.text.length > 0) {
-            result.push({
-                title: 'Show Success',
-                icon: 'symbol:checkmark',
-                code: function (selection) {
+    actions: [
+        {
+            title: 'Show Success',
+            icon: 'symbol:checkmark',
+            code: function (selection) {
+                popclip.showSuccess();
+            }
+        }, {
+            title: 'Show Success Async',
+            icon: 'symbol:checkmark.circle',
+            code: function (selection) {
+                setTimeout(function () {
                     popclip.showSuccess();
-                }
-            });
-            result.push({
-                title: 'Show Success Async',
-                icon: 'symbol:checkmark.circle',
-                code: function (selection) {
-                    setTimeout(function () {
-                        popclip.showSuccess();
-                    }, 1000);
-                }
-            });
-            result.push({
-                title: 'Timer 5s',
-                icon: 'text:(5s)',
-                code: function (selection) {
-                    setTimeout(function () {
-                        print('5s timer fired');
-                    }, 5000);
-                }
-            });
-            result.push({
-                title: 'HTTP',
-                icon: 'symbol:hand.raised',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                }, 1000);
+            }
+        }, {
+            title: 'Timer 5s',
+            icon: 'text:(5s)',
+            code: function (selection) {
+                setTimeout(function () {
+                    print('5s timer fired');
+                }, 5000);
+            }
+        }, {
+            title: 'HTTP',
+            icon: 'symbol:hand.raised',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'Large File',
-                icon: 'symbol:bus.fill',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a, _b;
-                        return __generator(this, function (_c) {
-                            switch (_c.label) {
-                                case 0:
-                                    _b = (_a = popclip).showText;
-                                    return [4 /*yield*/, axios_1.default.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')];
-                                case 1:
-                                    _b.apply(_a, [(_c.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'Large File',
+            icon: 'symbol:bus.fill',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a, _b;
+                    return __generator(this, function (_c) {
+                        switch (_c.label) {
+                            case 0:
+                                _b = (_a = popclip).showText;
+                                return [4 /*yield*/, axios_1.default.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')];
+                            case 1:
+                                _b.apply(_a, [(_c.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'Large File with timeout',
-                icon: 'symbol:clock',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a, _b;
-                        return __generator(this, function (_c) {
-                            switch (_c.label) {
-                                case 0:
-                                    // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
-                                    _b = (_a = popclip).showText;
-                                    return [4 /*yield*/, axios_1.default.get('https://10.255.255.1/')];
-                                case 1:
-                                    // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
-                                    _b.apply(_a, [(_c.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'Large File with timeout',
+            icon: 'symbol:clock',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a, _b;
+                    return __generator(this, function (_c) {
+                        switch (_c.label) {
+                            case 0:
+                                // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
+                                _b = (_a = popclip).showText;
+                                return [4 /*yield*/, axios_1.default.get('https://10.255.255.1/')];
+                            case 1:
+                                // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
+                                _b.apply(_a, [(_c.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'Example.com',
-                icon: 'symbol:seal',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.get('https://example.com/')];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'Example.com',
+            icon: 'symbol:seal',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.get('https://example.com/')];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'Example.com 404',
-                icon: 'symbol:nosign',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.get('https://example.com/sdkfjhdkjf')];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'Example.com 404',
+            icon: 'symbol:nosign',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.get('https://example.com/sdkfjhdkjf')];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: '301 Redirect',
-                icon: 'symbol:arrowshape.bounce.right',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.get('https://pilotmoon.com/link/popclip')];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: '301 Redirect',
+            icon: 'symbol:arrowshape.bounce.right',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.get('https://pilotmoon.com/link/popclip')];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'JSON',
-                icon: 'symbol:number',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.get('https://dog.ceo/api/breeds/image/random')];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'JSON',
+            icon: 'symbol:number',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.get('https://dog.ceo/api/breeds/image/random')];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'Settings',
-                icon: 'symbol:gear',
-                code: function (selection) {
-                    popclip.showSettings();
-                }
-            });
-            result.push({
-                title: 'POST JSON',
-                icon: 'symbol:signpost.right',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var info, _a;
-                        return __generator(this, function (_b) {
-                            switch (_b.label) {
-                                case 0:
-                                    info = {
-                                        name: 'zzzzz',
-                                        job: 'ZZ66'
-                                    };
-                                    _a = print;
-                                    return [4 /*yield*/, axios_1.default.post('https://reqres.in/api/users', info)];
-                                case 1:
-                                    _a.apply(void 0, [(_b.sent()).statusText]);
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'Settings',
+            icon: 'symbol:gear',
+            code: function (selection) {
+                popclip.showSettings();
+            }
+        }, {
+            title: 'POST JSON',
+            icon: 'symbol:signpost.right',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var info, _a;
+                    return __generator(this, function (_b) {
+                        switch (_b.label) {
+                            case 0:
+                                info = {
+                                    name: 'zzzzz',
+                                    job: 'ZZ66'
+                                };
+                                _a = print;
+                                return [4 /*yield*/, axios_1.default.post('https://reqres.in/api/users', info)];
+                            case 1:
+                                _a.apply(void 0, [(_b.sent()).statusText]);
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
-            result.push({
-                title: 'POST superagent',
-                icon: 'symbol:signpost.left',
-                code: function (selection) {
-                    return __awaiter(this, void 0, void 0, function () {
-                        var info, res;
-                        return __generator(this, function (_a) {
-                            switch (_a.label) {
-                                case 0:
-                                    info = {
-                                        name: 'yyyyy',
-                                        job: 'QY77'
-                                    };
-                                    return [4 /*yield*/, superagent.post('https://reqres.in/api/users').send(info)];
-                                case 1:
-                                    res = _a.sent();
-                                    print(res);
-                                    print({ myFunc: function () { } });
-                                    return [2 /*return*/];
-                            }
-                        });
+                });
+            }
+        }, {
+            title: 'POST superagent',
+            icon: 'symbol:signpost.left',
+            code: function (selection) {
+                return __awaiter(this, void 0, void 0, function () {
+                    var info, res;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                info = {
+                                    name: 'yyyyy',
+                                    job: 'QY77'
+                                };
+                                return [4 /*yield*/, superagent.post('https://reqres.in/api/users').send(info)];
+                            case 1:
+                                res = _a.sent();
+                                print(res);
+                                print({ myFunc: function () { } });
+                                return [2 /*return*/];
+                        }
                     });
-                }
-            });
+                });
+            }
         }
-        return result;
-    }
+    ]
 });
 // var xhr = new XMLHttpRequest()
 // xhr.onreadystatechange = function handleLoad () {

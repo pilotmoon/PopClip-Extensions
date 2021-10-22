@@ -23,119 +23,102 @@ defineExtension({
   //     label: 'useless'
   //   }
   // ],
-  actions: (selection, context, options) => {
-    const result: Action[] = []
-    print('Hello!!')
-    if (selection.text.length > 0) {
-      result.push({
-        title: 'Show Success',
-        icon: 'symbol:checkmark',
-        code (selection) {
+  actions: [
+    {
+      title: 'Show Success',
+      icon: 'symbol:checkmark',
+      code (selection) {
+        popclip.showSuccess()
+      }
+    }, {
+      title: 'Show Success Async',
+      icon: 'symbol:checkmark.circle',
+      code (selection) {
+        setTimeout(() => {
           popclip.showSuccess()
+        }, 1000)
+      }
+    }, {
+      title: 'Timer 5s',
+      icon: 'text:(5s)',
+      code (selection) {
+        setTimeout(() => {
+          print('5s timer fired')
+        }, 5000)
+      }
+    }, {
+      title: 'HTTP',
+      icon: 'symbol:hand.raised',
+      async code (selection) {
+        print((await axios.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
+      }
+    }, {
+      title: 'Large File',
+      icon: 'symbol:bus.fill',
+      async code (selection) {
+        popclip.showText((await axios.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
+      }
+    }, {
+      title: 'Large File with timeout',
+      icon: 'symbol:clock',
+      async code (selection) {
+        // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
+        popclip.showText((await axios.get('https://10.255.255.1/')).statusText)
+      }
+    }, {
+      title: 'Example.com',
+      icon: 'symbol:seal',
+      async code (selection) {
+        print((await axios.get('https://example.com/')).statusText)
+      }
+    }, {
+      title: 'Example.com 404',
+      icon: 'symbol:nosign',
+      async code (selection) {
+        print((await axios.get('https://example.com/sdkfjhdkjf')).statusText)
+      }
+    }, {
+      title: '301 Redirect',
+      icon: 'symbol:arrowshape.bounce.right',
+      async code (selection) {
+        print((await axios.get('https://pilotmoon.com/link/popclip')).statusText)
+      }
+    }, {
+      title: 'JSON',
+      icon: 'symbol:number',
+      async code (selection) {
+        print((await axios.get('https://dog.ceo/api/breeds/image/random')).statusText)
+      }
+    }, {
+      title: 'Settings',
+      icon: 'symbol:gear',
+      code (selection) {
+        popclip.showSettings()
+      }
+    }, {
+      title: 'POST JSON',
+      icon: 'symbol:signpost.right',
+      async code (selection) {
+        const info = {
+          name: 'zzzzz',
+          job: 'ZZ66'
         }
-      })
-      result.push({
-        title: 'Show Success Async',
-        icon: 'symbol:checkmark.circle',
-        code (selection) {
-          setTimeout(() => {
-            popclip.showSuccess()
-          }, 1000)
+        print((await axios.post('https://reqres.in/api/users', info)).statusText)
+      }
+    }, {
+      title: 'POST superagent',
+      icon: 'symbol:signpost.left',
+      async code (selection) {
+        const info = {
+          name: 'yyyyy',
+          job: 'QY77'
         }
-      })
-      result.push({
-        title: 'Timer 5s',
-        icon: 'text:(5s)',
-        code (selection) {
-          setTimeout(() => {
-            print('5s timer fired')
-          }, 5000)
-        }
-      })
-      result.push({
-        title: 'HTTP',
-        icon: 'symbol:hand.raised',
-        async code (selection) {
-          print((await axios.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
-        }
-      })
-      result.push({
-        title: 'Large File',
-        icon: 'symbol:bus.fill',
-        async code (selection) {
-          popclip.showText((await axios.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
-        }
-      })
-      result.push({
-        title: 'Large File with timeout',
-        icon: 'symbol:clock',
-        async code (selection) {
-          // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
-          popclip.showText((await axios.get('https://10.255.255.1/')).statusText)
-        }
-      })
-      result.push({
-        title: 'Example.com',
-        icon: 'symbol:seal',
-        async code (selection) {
-          print((await axios.get('https://example.com/')).statusText)
-        }
-      })
-      result.push({
-        title: 'Example.com 404',
-        icon: 'symbol:nosign',
-        async code (selection) {
-          print((await axios.get('https://example.com/sdkfjhdkjf')).statusText)
-        }
-      })
-      result.push({
-        title: '301 Redirect',
-        icon: 'symbol:arrowshape.bounce.right',
-        async code (selection) {
-          print((await axios.get('https://pilotmoon.com/link/popclip')).statusText)
-        }
-      })
-      result.push({
-        title: 'JSON',
-        icon: 'symbol:number',
-        async code (selection) {
-          print((await axios.get('https://dog.ceo/api/breeds/image/random')).statusText)
-        }
-      })
-      result.push({
-        title: 'Settings',
-        icon: 'symbol:gear',
-        code (selection) {
-          popclip.showSettings()
-        }
-      })
-      result.push({
-        title: 'POST JSON',
-        icon: 'symbol:signpost.right',
-        async code (selection) {
-          const info = {
-            name: 'zzzzz',
-            job: 'ZZ66'
-          }
-          print((await axios.post('https://reqres.in/api/users', info)).statusText)
-        }
-      })
-      result.push({
-        title: 'POST superagent',
-        icon: 'symbol:signpost.left',
-        async code (selection) {
-          const info = {
-            name: 'yyyyy',
-            job: 'QY77'
-          }
-          const res = await superagent.post('https://reqres.in/api/users').send(info)
-          print(res)
-          print({ myFunc: () => {} })
-        }
-      })
+        const res = await superagent.post('https://reqres.in/api/users').send(info)
+        print(res)
+        print({ myFunc: () => {} })
+      }
     }
-    return result
-  }
+  ]
 })
 
 // var xhr = new XMLHttpRequest()
