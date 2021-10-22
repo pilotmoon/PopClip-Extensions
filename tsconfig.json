@@ -24,7 +24,7 @@
         "moduleResolution": "node"
     },
     "include": [
-        "popclip.d.ts",
+        "./popclip.d.ts",
         "./lib",
         "./source"        
     ],

@@ -1017,6 +1017,11 @@ declare interface Pasteboard {
      * ```
      */
   text: string
+
+  /**
+   * Get and set the content of the pasteboard, of the specified types
+   */
+  content: {'public.utf8-plain-text'?: string, 'public.html'?: string, 'public.rtf'?: string}
 }
 
 /**
