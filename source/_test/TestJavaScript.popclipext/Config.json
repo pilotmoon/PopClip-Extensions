@@ -6,5 +6,5 @@
         "captureRtf": true
     },
     "popclipVersion": 3704,
-    "entitlements" : ["n"]
+    "entitlements" : ["network"]
 }

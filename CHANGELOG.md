@@ -17,6 +17,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
+- Allow key combos to be specified as a text string, for example "command+option+T". (TODO: docs)
 
 ### Changed
 
