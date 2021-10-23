@@ -205,7 +205,34 @@ declare interface AssociatedApp {
  */
  declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action[] | Action | null
 
-declare type AuthCallback = (string: string) => string | null
+/**
+ * Function signature of the authentication callback function.
+ * @param parameters Parameters received via the external callback.
+ * @returns Final authentication string to save in keychain.
+ */
+declare type AuthCallback = (parameters: {[string]: string}) => string | null
+
+/**
+ * Object returned by [[Extension.auth]] when there is an authentication callback step.
+ */
+declare interface AuthRequest {
+  /** URL to open for user authentication */
+  url: string
+  /** Callback function which will be called */
+  callback: AuthCallback
+}
+
+// credentials & extension information, used in auth function
+declare interface AuthInfo {
+  /** Value of `username` option (will be empty string if none defined) */
+  username: string
+  /** Value of `password` option (will be empty string if none defined) */
+  password: string
+  /** Extension name */
+  name: string
+  /** Extension identifier */
+  identifier: string
+}
 
 /**
  * Function signature of the [[Extension.auth]] method.
@@ -217,10 +244,10 @@ declare type AuthCallback = (string: string) => string | null
  *
  * If failed the action should either throw an exception or return undefined.
  *
- * @param options The current values of the extension options.
- * @returns Authentication string,  callback function, or null.
+ * @param info Credentials from options, and extension info
+ * @returns Authentication string, or authentication
  */
-declare type AuthFuncton = (options: Options) => AuthCallback | string | null
+declare type AuthFuncton = (info: AuthInfo) => Promise<(AuthRequest | string | null)> | AuthRequest | string | null
 
 /**
  * Used in the {@link Extension.flags} and {@link ActionObject.flags} to define certain boolean properties of actions.
@@ -945,6 +972,11 @@ declare interface Util {
      */
   base64Decode: (string: string) => string | undefined
 
+  /* for generating appropriate url for sending service callbacks to. todo docs. example:
+  https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2
+  */
+  generateCallbackServerUrl: (expectedParameters: string[], identitfier: string, name: string) => string
+
   /**
      * The `constant` property is a container for pre-defined constants.
      */
@@ -1181,3 +1213,8 @@ declare function setTimeout (callback: (...args?: any) => void, timeout?: number
  * @category Timer
  */
 declare function clearTimeout (timeoutId: number): void
+
+/* for library compatibility (implemented as util.base64Encode with no options) */
+declare function btoa (string: string): string
+/* for library compatibility (imeplemented as util.base64Decode) */
+declare function atob (string: string): string

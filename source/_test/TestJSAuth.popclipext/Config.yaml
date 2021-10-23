@@ -1,0 +1,7 @@
+popclip version: 3704
+identifier: com.pilotmoon.popclip.extension.test-js-auth
+name: TestJSAuth
+requirements: [httpurl]
+entitlements: [network]
+after: show-status
+module: pinboard.js
