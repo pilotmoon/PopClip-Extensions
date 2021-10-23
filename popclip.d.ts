@@ -210,25 +210,20 @@ declare interface AssociatedApp {
  * @param parameters Parameters received via the external callback.
  * @returns Final authentication string to save in keychain.
  */
-declare type AuthCallback = (parameters: {[string]: string}) => string | null
+declare type AuthCallback = (params: {[string]: string}) => string | null
 
 /**
- * Object returned by [[Extension.auth]] when there is an authentication callback step.
+ * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
-declare interface AuthRequest {
-  /** URL to open for user authentication */
-  url: string
-  /** Callback function which will be called */
-  callback: AuthCallback
-}
+declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<string>
 
-// credentials & extension information, used in auth function
+// credentials used in auth function
 declare interface AuthInfo {
   /** Value of `username` option (will be empty string if none defined) */
   username: string
   /** Value of `password` option (will be empty string if none defined) */
   password: string
-  /** Extension name */
+  /** Extension display name */
   name: string
   /** Extension identifier */
   identifier: string
@@ -236,18 +231,8 @@ declare interface AuthInfo {
 
 /**
  * Function signature of the [[Extension.auth]] method.
- *
- * If authentication is complete, the function should return a string value to be stored in the user's keychain and
- * later passed to action functions of this extension. This would usually be an authentication token of some kind.
- *
- * If there is a callback step involved, the function should return a [[AuthCallback]],
- *
- * If failed the action should either throw an exception or return undefined.
- *
- * @param info Credentials from options, and extension info
- * @returns Authentication string, or authentication
  */
-declare type AuthFuncton = (info: AuthInfo) => Promise<(AuthRequest | string | null)> | AuthRequest | string | null
+declare type AuthFunction = (info: AuthInfo, flow: AuthFlowFunction) => Promise<string>
 
 /**
  * Used in the {@link Extension.flags} and {@link ActionObject.flags} to define certain boolean properties of actions.
@@ -486,7 +471,7 @@ declare interface Extension {
      */
   options?: Option[]
 
-  auth?: AuthFuncton
+  auth?: AuthFunction
 
   /**
      * Flags set here will apply to this extension's actions, unless overidden in the action definition.
@@ -966,16 +951,20 @@ declare interface Util {
      * Decode a Base-64 string and interpret the result as a UTF-8 string.
      *
      * Accepts both standard and URL-safe variants as input. Also accepts input with or without the `=`/`==` end padding.
+     * Throws an error if the input cannot be decoded as a UTF-8 string.
      *
      * @param string
-     * @returns The decoded string, or undefined if the input cannot be converted into a UTF-8 string.
+     * @returns The decoded string
      */
-  base64Decode: (string: string) => string | undefined
+  base64Decode: (string: string) => string
+
+  /** Build a URL from a base URL and additional query parameters */
+  buildQueryUrl: (baseUrl: string, params: {[string]: string | undefined}) => string
 
   /* for generating appropriate url for sending service callbacks to. todo docs. example:
   https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2
   */
-  generateCallbackServerUrl: (expectedParameters: string[], identitfier: string, name: string) => string
+  authRedirectUrl: (expectedParameters: string[]) => string
 
   /**
      * The `constant` property is a container for pre-defined constants.
@@ -1098,7 +1087,7 @@ declare var pasteboard: Pasteboard
  *
  * @param message One or more values, which will be coerced to strings. Multiple parameters will be separated by a space.
  */
-declare function print (...items: any[]): void
+declare function print (...args: any[]): void
 
 /*
  * Export an object for use by another file.

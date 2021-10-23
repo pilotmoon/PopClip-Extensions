@@ -1,0 +1,6 @@
+popclip version: 3704
+identifier: com.pilotmoon.popclip.extension.bitly
+name: Bitly
+requirements: [httpurl]
+entitlements: [network]
+module: bitly.js

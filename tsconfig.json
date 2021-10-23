@@ -21,7 +21,8 @@
         ],
         "skipLibCheck": true,
         "module": "commonjs",
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "resolveJsonModule": true
     },
     "include": [
         "./popclip.d.ts",
