@@ -36,46 +36,46 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.options = exports.auth = exports.action = void 0;
 // reimplementation of Pinboard ext (as basic test)
-var axios_1 = require("axios");
-// options
-var options = [
-    { identifier: 'username', type: 'string', label: util.localize('Username') },
-    { identifier: 'password', type: 'password', label: util.localize('Password') }
-];
 // docs: https://pinboard.in/api/
 //       https://axios-http.com/docs/req_config
+var axios_1 = require("axios");
 var pinboard = axios_1.default.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } });
-// log in to pinboard
-var pinboardAuth = function (info) { return __awaiter(void 0, void 0, void 0, function () {
+// add url to pinboard
+// uses page title as description if page url matches selected url
+var action = function (selection, context, options) { return __awaiter(void 0, void 0, void 0, function () {
+    var url, description, token;
+    return __generator(this, function (_a) {
+        switch (_a.label) {
+            case 0:
+                url = selection.data.webUrls[0];
+                description = context.browserUrl === url ? context.browserTitle : '';
+                token = options.username + ":" + options.authsecret;
+                return [4 /*yield*/, pinboard.get('posts/add', { params: { url: url, description: description, auth_token: token } })];
+            case 1:
+                _a.sent();
+                popclip.showSuccess();
+                return [2 /*return*/];
+        }
+    });
+}); };
+exports.action = action;
+// retreive user's api token using basic http authentication
+var auth = function (info) { return __awaiter(void 0, void 0, void 0, function () {
     var response;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, pinboard.get('user/api_token', {
-                    auth: { username: info.username, password: info.password }
-                })];
+            case 0: return [4 /*yield*/, pinboard.get('user/api_token', { auth: info })];
             case 1:
                 response = _a.sent();
                 return [2 /*return*/, response.data.result];
         }
     });
 }); };
-// add url to pinboard
-var pinboardAdd = function (selection, context, options) { return __awaiter(void 0, void 0, void 0, function () {
-    var url, description;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
-            case 0:
-                print('options', options);
-                url = selection.data.webUrls[0];
-                description = context.browserUrl === url ? context.browserTitle : undefined;
-                return [4 /*yield*/, pinboard.get('posts/add', {
-                        params: { url: url, description: description, auth_token: options.authsecret }
-                    })];
-            case 1:
-                _a.sent();
-                return [2 /*return*/];
-        }
-    });
-}); };
-defineExtension({ options: options, auth: pinboardAuth, action: pinboardAdd });
+exports.auth = auth;
+// options
+exports.options = [
+    { identifier: 'username', type: 'string', label: util.localize('Username') },
+    { identifier: 'password', type: 'password', label: util.localize('Password') }
+];
