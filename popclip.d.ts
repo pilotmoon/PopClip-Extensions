@@ -203,7 +203,24 @@ declare interface AssociatedApp {
  * @param options The current option values.
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action | Action[] | undefined
+ declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action[] | Action | null
+
+declare type AuthCallback = (string: string) => string | null
+
+/**
+ * Function signature of the [[Extension.auth]] method.
+ *
+ * If authentication is complete, the function should return a string value to be stored in the user's keychain and
+ * later passed to action functions of this extension. This would usually be an authentication token of some kind.
+ *
+ * If there is a callback step involved, the function should return a [[AuthCallback]],
+ *
+ * If failed the action should either throw an exception or return undefined.
+ *
+ * @param options The current values of the extension options.
+ * @returns Authentication string,  callback function, or null.
+ */
+declare type AuthFuncton = (options: Options) => AuthCallback | string | null
 
 /**
  * Used in the {@link Extension.flags} and {@link ActionObject.flags} to define certain boolean properties of actions.
@@ -441,6 +458,8 @@ declare interface Extension {
      * Defines the user-configurable options for this extension.
      */
   options?: Option[]
+
+  auth?: AuthFuncton
 
   /**
      * Flags set here will apply to this extension's actions, unless overidden in the action definition.

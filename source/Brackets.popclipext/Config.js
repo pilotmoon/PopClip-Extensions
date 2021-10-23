@@ -1,13 +1,12 @@
-/// <reference path="../../popclip.d.ts" />
 define(function () {
     var styles = [
-        "(round)",
-        "[square]",
-        "{curly}",
-        "<angle>",
+        '(round)',
+        '[square]',
+        '{curly}',
+        '<angle>'
     ];
     function makeIcon(index) {
-        return ["brackets-round.png", "brackets-square.png", "brackets-curly.png", "brackets-angle.png"][index];
+        return ['brackets-round.png', 'brackets-square.png', 'brackets-curly.png', 'brackets-angle.png'][index];
     }
     function makeIdentifier(index) {
         return "style-" + index;
@@ -17,22 +16,23 @@ define(function () {
             return {
                 identifier: makeIdentifier(index),
                 label: style,
-                type: "boolean",
+                type: 'boolean',
                 icon: makeIcon(index),
-                defaultValue: index > 0 ? false : true
+                defaultValue: !(index > 0)
             };
         }),
         actions: function (selection, context, options) {
-            if (selection.text) {
-                return styles.map(function (style, index) {
+            if (selection.text.length > 0) {
+                return styles.filter(function (style, index) { return options[makeIdentifier(index)]; }).map(function (style, index) {
                     return {
-                        title: style,
+                        title: styles[index],
                         icon: makeIcon(index),
-                        code: function (selection) {
-                            popclip.pasteText(style[0] + selection.text + style[style.length - 1]);
-                        }
+                        code: function (selection) { return popclip.pasteText(style[0] + selection.text + style[2]); }
                     };
-                }).filter(function (style, index) { return options[makeIdentifier(index)]; });
+                });
+            }
+            else {
+                return null;
             }
         }
     };

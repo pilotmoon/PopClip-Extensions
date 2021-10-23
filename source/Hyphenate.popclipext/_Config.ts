@@ -1,13 +1,14 @@
-/// <reference path="../../popclip.d.ts" />
-import utils = require('../../lib/utils');
+import utils = require('../../lib/utils')
 define(() => {
-    let extension: Extension = {
-        actions: (selection) => {
-            let result = utils.preserveEndSpace(selection.text, (text) => utils.replaceSpaces(text, '-'));
-            if (result !== selection.text) {
-                return () => popclip.pasteText(result);
-            }
-        }
+  const extension: Extension = {
+    actions: (selection) => {
+      const result = utils.preserveEndSpace(selection.text, (text) => utils.replaceSpaces(text, '-'))
+      if (result !== selection.text) {
+        return () => popclip.pasteText(result)
+      } else {
+        return null
+      }
     }
-    return extension;
-});
+  }
+  return extension
+})
