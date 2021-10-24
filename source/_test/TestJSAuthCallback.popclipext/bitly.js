@@ -42,7 +42,6 @@ exports.auth = exports.action = void 0;
 var axios_1 = require("axios");
 var client_json_1 = require("./client.json");
 var bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
-var _a = JSON.parse(util.base64Decode(client_json_1.client)), client_id = _a.client_id, client_secret = _a.client_secret;
 // shorten URL with bitly
 var action = function (selection, context, options) { return __awaiter(void 0, void 0, void 0, function () {
     var access_token, response;
@@ -50,9 +49,9 @@ var action = function (selection, context, options) { return __awaiter(void 0, v
         switch (_a.label) {
             case 0:
                 access_token = options.authsecret;
-                return [4 /*yield*/, bitly.post('v4/shorten', { long_url: selection.data.webUrls[0] }, {
-                        headers: { Authorization: "Bearer " + access_token }
-                    })];
+                return [4 /*yield*/, bitly.post('v4/shorten', {
+                        long_url: selection.data.webUrls[0]
+                    }, { headers: { Authorization: "Bearer " + access_token } })];
             case 1:
                 response = _a.sent();
                 popclip.pasteText(response.data.link);
@@ -64,17 +63,23 @@ var action = function (selection, context, options) { return __awaiter(void 0, v
 exports.action = action;
 // sign in using authorization flow
 var auth = function (info, flow) { return __awaiter(void 0, void 0, void 0, function () {
-    var redirect_uri, code, response;
-    return __generator(this, function (_a) {
-        switch (_a.label) {
+    var _a, client_id, client_secret, redirect_uri, code, response;
+    return __generator(this, function (_b) {
+        switch (_b.label) {
             case 0:
+                _a = JSON.parse(util.base64Decode(client_json_1.client)), client_id = _a.client_id, client_secret = _a.client_secret;
                 redirect_uri = util.authRedirectUrl(['code']);
                 return [4 /*yield*/, flow('https://bitly.com/oauth/authorize', { client_id: client_id, redirect_uri: redirect_uri })];
             case 1:
-                code = (_a.sent()).code;
-                return [4 /*yield*/, bitly.post('oauth/access_token', util.buildQuery({ client_id: client_id, client_secret: client_secret, redirect_uri: redirect_uri, code: code }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })];
+                code = (_b.sent()).code;
+                return [4 /*yield*/, bitly.post('oauth/access_token', util.buildQuery({
+                        client_id: client_id,
+                        client_secret: client_secret,
+                        redirect_uri: redirect_uri,
+                        code: code
+                    }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })];
             case 2:
-                response = _a.sent();
+                response = _b.sent();
                 return [2 /*return*/, response.data.access_token];
         }
     });
