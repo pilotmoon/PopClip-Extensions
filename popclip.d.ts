@@ -206,13 +206,6 @@ declare interface AssociatedApp {
  declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action[] | Action | null
 
 /**
- * Function signature of the authentication callback function.
- * @param parameters Parameters received via the external callback.
- * @returns Final authentication string to save in keychain.
- */
-declare type AuthCallback = (params: {[string]: string}) => string | null
-
-/**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
 declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<any>
@@ -471,6 +464,11 @@ declare interface Extension {
      */
   options?: Option[]
 
+  /**
+   * If you define this function then PopClip will display a 'sign in' button in the options UI. When the use clicks Sign In,
+   *
+   * If the sign in needs a username and password, you'll also need to define `username` and `password` options. PopClip will then pass the values
+   * of those options in the info parameter. */
   auth?: AuthFunction
 
   /**
