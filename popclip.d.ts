@@ -215,7 +215,7 @@ declare type AuthCallback = (params: {[string]: string}) => string | null
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
-declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<string>
+declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<any>
 
 // credentials used in auth function
 declare interface AuthInfo {
@@ -959,9 +959,15 @@ declare interface Util {
   base64Decode: (string: string) => string
 
   /** Build a URL from a base URL and additional query parameters */
-  buildQueryUrl: (baseUrl: string, params: {[string]: string | undefined}) => string
+  buildQueryUrl: (baseUrl: string, params: {[string]: string}) => string
 
-  /* for generating appropriate url for sending service callbacks to. todo docs. example:
+  /** Build a query from params object */
+  buildQuery: (params: {[string]: string}) => string
+
+  /** Parse a query into params object */
+  parseQuery: (query: string) => any
+
+  /* For generating appropriate url on pilotmoon website for auth flow. Docs TODO. Example:
   https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2
   */
   authRedirectUrl: (expectedParameters: string[]) => string

@@ -15,7 +15,7 @@ export const action: ActionFunction = async (selection, context, options) => {
 }
 
 // retreive user's api token using basic http authentication
-export const auth: AuthFuncton = async (info) => {
+export const auth: AuthFunction = async (info) => {
   const response = await pinboard.get('user/api_token', { auth: info })
   return (response.data as any).result
 }
