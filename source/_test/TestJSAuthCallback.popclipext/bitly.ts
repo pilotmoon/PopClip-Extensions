@@ -3,14 +3,12 @@
 import axios from 'axios'
 import { client } from './client.json'
 
-// the bitly api endpoint
+// bitly endpoint
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
-// gather string constants
+// string constants
 const { client_id, client_secret } = util.clarify(client)
 const redirect_uri = util.authRedirectUrl(['code'])
-
-print('cid', client_id)
 
 // the extension object
 const extension: Extension = {}
