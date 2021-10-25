@@ -2,13 +2,8 @@
 // reimplementation of Bitly ext (as callback auth test)
 import axios from 'axios'
 import { client } from './client.json'
-
-// bitly endpoint
-const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
-
-// string constants
 const { client_id, client_secret } = util.clarify(client)
-const redirect_uri = util.authRedirectUrl(['code'])
+const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
 // the extension object
 const extension: Extension = {}
@@ -25,6 +20,7 @@ extension.action = async (selection, context, options) => {
 
 // sign in to bitly using authorization flow
 extension.auth = async (info, flow) => {
+  const redirect_uri = info.redirect
   const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri })
   const response = await bitly.post('oauth/access_token', util.buildQuery({
     client_id, client_secret, redirect_uri, code

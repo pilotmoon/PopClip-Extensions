@@ -13,11 +13,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // reimplementation of Bitly ext (as callback auth test)
 const axios_1 = require("axios");
 const client_json_1 = require("./client.json");
-// bitly endpoint
-const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
-// string constants
 const { client_id, client_secret } = util.clarify(client_json_1.client);
-const redirect_uri = util.authRedirectUrl(['code']);
+const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
 // the extension object
 const extension = {};
 // shorten URL with bitly
@@ -31,6 +28,7 @@ extension.action = (selection, context, options) => __awaiter(void 0, void 0, vo
 });
 // sign in to bitly using authorization flow
 extension.auth = (info, flow) => __awaiter(void 0, void 0, void 0, function* () {
+    const redirect_uri = info.redirect;
     const { code } = yield flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
     const response = yield bitly.post('oauth/access_token', util.buildQuery({
         client_id, client_secret, redirect_uri, code

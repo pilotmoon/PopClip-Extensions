@@ -216,6 +216,11 @@ declare interface AuthInfo {
   username: string
   /** Value of `password` option (will be empty string if none defined) */
   password: string
+  /** An appropriate value to use as the redirection URL in authorization flows for this extension.
+   * Example output:
+   * `popclip://callback?popclip_ext_id=com.pilotmoon.popclip.extension.todoist`
+   */
+  redirect: string
   /** Extension display name */
   name: string
   /** Extension identifier */
@@ -967,22 +972,10 @@ declare interface Util {
   /** Parse a query into params object */
   parseQuery: (query: string) => any
 
-  /** Generates an appropriate redirection url on the PopClip website for use in
-   * authorization flows. The page will re-route the returned parameters back to the PopClip app.
+  /** Decipher a JSON object that has been lightly obscured to prevent constants such as
+   * API keys appearing in plaintext in the source files.
    *
-   * Example output:
-   * `https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2`
-   *
-   * Please contact Nick Moore before distributing any an extension that uses this function.
-   * @paramm expectedParameters Array of returned parameter names expected to be found in the query.
-   */
-  authRedirectUrl: (expectedParameters: string[]) => string
-
-  /** Decipher a JSON object that has been obscured to prevent constants like
-  API keys appearing in plaintext in the source files.
-
-  This function will ROT13 cipher the text, apply Base64 decoding, and parse
-  the result as JSON. */
+   * This function will ROT13 decipher the text, apply Base64 decoding, and parse the result as JSON. */
   clarify: (obscuredString: string) => any
 
   /**
