@@ -14,8 +14,7 @@ extension.action = async (selection, context, options) => {
   const response = await bitly.post('v4/shorten', {
     long_url: selection.data.webUrls[0]
   }, { headers: { Authorization: `Bearer ${access_token}` } })
-  popclip.pasteText((response.data as any).link)
-  popclip.showSuccess()
+  return (response.data as any).link
 }
 
 // sign in to bitly using authorization flow

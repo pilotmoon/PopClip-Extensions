@@ -11,7 +11,6 @@ export const action: ActionFunction = async (selection, context, options) => {
   const description = context.browserUrl === url ? context.browserTitle : ''
   const token = `${options.username as string}:${options.authsecret as string}`
   await pinboard.get('posts/add', { params: { url, description, auth_token: token } })
-  popclip.showSuccess()
 }
 
 // retreive user's api token using basic http authentication

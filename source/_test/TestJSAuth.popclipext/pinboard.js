@@ -22,7 +22,6 @@ const action = (selection, context, options) => __awaiter(void 0, void 0, void 0
     const description = context.browserUrl === url ? context.browserTitle : '';
     const token = `${options.username}:${options.authsecret}`;
     yield pinboard.get('posts/add', { params: { url, description, auth_token: token } });
-    popclip.showSuccess();
 });
 exports.action = action;
 // retreive user's api token using basic http authentication

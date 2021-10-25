@@ -23,8 +23,7 @@ extension.action = (selection, context, options) => __awaiter(void 0, void 0, vo
     const response = yield bitly.post('v4/shorten', {
         long_url: selection.data.webUrls[0]
     }, { headers: { Authorization: `Bearer ${access_token}` } });
-    popclip.pasteText(response.data.link);
-    popclip.showSuccess();
+    return response.data.link;
 });
 // sign in to bitly using authorization flow
 extension.auth = (info, flow) => __awaiter(void 0, void 0, void 0, function* () {

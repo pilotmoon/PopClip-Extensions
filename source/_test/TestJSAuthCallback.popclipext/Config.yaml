@@ -3,4 +3,5 @@ identifier: com.pilotmoon.popclip.extension.bitly
 name: Bitly
 requirements: [httpurl]
 entitlements: [network]
+after: paste-result
 module: bitly.js
