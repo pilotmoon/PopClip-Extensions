@@ -688,7 +688,9 @@ declare interface Context {
  * Represents the current values of the extension's option (that were defined in {@link Extension.options}.
  * It maps option identifier strings to the current option value. See {@link PopClip.options}, {@link Extension.actions}, [[ActionFunction]].
  */
-declare interface Options { [identifier: string]: string | boolean }
+declare interface Options {
+  [identifier: string]: string | boolean
+}
 
 /**
 * PopClip defines the methods and properties of the global [[`popclip`]] object.
@@ -965,10 +967,23 @@ declare interface Util {
   /** Parse a query into params object */
   parseQuery: (query: string) => any
 
-  /* For generating appropriate url on pilotmoon website for auth flow. Docs TODO. Example:
-  https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2
-  */
+  /** Generates an appropriate redirection url on the PopClip website for use in
+   * authorization flows. The page will re-route the returned parameters back to the PopClip app.
+   *
+   * Example output:
+   * `https://pilotmoon.com/popclip_extension_callback?callback_ext_id=com.pilotmoon.popclip.extension.todoist&callback_ext_name=Todoist&callback_expect=eyJxIjpbImNvZGUiLCJzdGF0ZSJdfQ&code=59672f67a71232648137d9061e03f800f174a7b1&state=Gt3iDeux3c2`
+   *
+   * Please contact Nick Moore before distributing any an extension that uses this function.
+   * @paramm expectedParameters Array of returned parameter names expected to be found in the query.
+   */
   authRedirectUrl: (expectedParameters: string[]) => string
+
+  /** Decipher a JSON object that has been obscured to prevent constants like
+  API keys appearing in plaintext in the source files.
+
+  This function will ROT13 cipher the text, apply Base64 decoding, and parse
+  the result as JSON. */
+  clarify: (obscuredString: string) => any
 
   /**
      * The `constant` property is a container for pre-defined constants.

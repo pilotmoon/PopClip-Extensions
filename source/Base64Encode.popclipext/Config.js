@@ -1,12 +1,12 @@
 define(function () {
-    var extension = {
-        actions: function (selection, _context, options) {
-            var actions = [];
+    const extension = {
+        actions(selection, _context, options) {
+            const actions = [];
             if (selection.text.length > 0) {
                 actions.push({
                     icon: '[64]',
                     title: 'Base64-encode',
-                    code: function () {
+                    code() {
                         popclip.pasteText(util.base64Encode(selection.text, {
                             urlSafe: options.variant === 'url',
                             trimmed: options.trim === true
@@ -19,8 +19,8 @@ define(function () {
                 actions.push({
                     icon: '[[64]]',
                     title: 'Base64-decode',
-                    code: function () {
-                        var decoded = util.base64Decode(selection.text);
+                    code() {
+                        const decoded = util.base64Decode(selection.text);
                         popclip.pasteText(decoded !== null && decoded !== void 0 ? decoded : '<Base64: Non-UTF8 result>');
                     }
                 });

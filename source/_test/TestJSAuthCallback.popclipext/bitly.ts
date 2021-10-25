@@ -2,10 +2,21 @@
 // reimplementation of Bitly ext (as callback auth test)
 import axios from 'axios'
 import { client } from './client.json'
+
+// the bitly api endpoint
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
+// gather string constants
+const { client_id, client_secret } = util.clarify(client)
+const redirect_uri = util.authRedirectUrl(['code'])
+
+print('cid', client_id)
+
+// the extension object
+const extension: Extension = {}
+
 // shorten URL with bitly
-export const action: ActionFunction = async (selection, context, options) => {
+extension.action = async (selection, context, options) => {
   const access_token = options.authsecret as string
   const response = await bitly.post('v4/shorten', {
     long_url: selection.data.webUrls[0]
@@ -14,13 +25,13 @@ export const action: ActionFunction = async (selection, context, options) => {
   popclip.showSuccess()
 }
 
-// sign in using authorization flow
-export const auth: AuthFunction = async (info, flow) => {
-  const { client_id, client_secret } = JSON.parse(util.base64Decode(client))
-  const redirect_uri = util.authRedirectUrl(['code'])
+// sign in to bitly using authorization flow
+extension.auth = async (info, flow) => {
   const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri })
   const response = await bitly.post('oauth/access_token', util.buildQuery({
     client_id, client_secret, redirect_uri, code
   }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
   return (response.data as any).access_token
 }
+
+module.exports = extension

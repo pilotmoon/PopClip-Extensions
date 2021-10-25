@@ -15,21 +15,21 @@ function alternatingCase(string, options) {
         return rnd() < 0.5 ? 0 : 1;
     }
     function step() {
-        var x = rnd();
+        const x = rnd();
         if (x < 0.8)
             return 2;
         if (x < 0.9)
             return 3;
         return 1;
     }
-    var characters = string.toLowerCase().split('');
-    for (var item = start(); item < characters.length; item += step()) {
+    const characters = string.toLowerCase().split('');
+    for (let item = start(); item < characters.length; item += step()) {
         characters[item] = characters[item].toUpperCase();
     }
     return characters.join('');
 }
 define({
-    action: function (selection, context, options) {
+    action(selection, context, options) {
         popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness }));
     },
     options: [

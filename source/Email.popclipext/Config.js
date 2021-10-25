@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
-var actions = function (selection, context, options) {
-    var result = [];
-    var emails = selection.data.emails;
+const actions = (selection, context, options) => {
+    const result = [];
+    const emails = selection.data.emails;
     if (options['enable-at'] && emails.length > 0) {
         result.push({
-            title: emails.length === 1 ? "New email to " + emails[0] : "New email to " + emails.length + " addresses",
+            title: emails.length === 1 ? `New email to ${emails[0]}` : `New email to ${emails.length} addresses`,
             icon: 'at.png',
             code: function () {
                 if ((popclip.modifierKeys & util.constant.MODIFIER_SHIFT) !== 0) {
@@ -15,7 +15,7 @@ var actions = function (selection, context, options) {
                 }
                 else {
                     // one email to each address
-                    emails.forEach(function (email) { return popclip.openUrl('mailto:' + email); });
+                    emails.forEach((email) => popclip.openUrl('mailto:' + email));
                 }
             }
         });
@@ -25,7 +25,7 @@ var actions = function (selection, context, options) {
             title: 'New email with text',
             icon: 'envelope.png',
             code: function () {
-                var body = selection.markdown;
+                let body = selection.markdown;
                 if (options.source) {
                     body += '\n\n' + context.browserUrl;
                 }
