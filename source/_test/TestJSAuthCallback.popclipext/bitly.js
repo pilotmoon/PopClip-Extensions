@@ -18,17 +18,27 @@ const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', he
 // the extension object
 const extension = {};
 // shorten URL with bitly
-extension.action = (selection, context, options) => __awaiter(void 0, void 0, void 0, function* () {
-    const access_token = options.authsecret;
-    const response = yield bitly.post('v4/shorten', {
-        long_url: selection.data.webUrls[0]
-    }, { headers: { Authorization: `Bearer ${access_token}` } });
-    return response.data.link;
-});
+extension.action = {
+    code(selection, context, options) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const access_token = options.authsecret;
+            const response = yield bitly.post('v4/shorten', {
+                long_url: selection.data.webUrls[0]
+            }, { headers: { Authorization: `Bearer ${access_token}` } });
+            return response.data.link;
+        });
+    },
+    requirements: ['weburl'],
+    after: 'paste-result'
+};
 // sign in to bitly using authorization flow
 extension.auth = (info, flow) => __awaiter(void 0, void 0, void 0, function* () {
+    const i = setInterval(() => {
+        print('annoying');
+    }, 500);
     const redirect_uri = info.redirect;
     const { code } = yield flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
+    clearInterval(i);
     const response = yield bitly.post('oauth/access_token', util.buildQuery({
         client_id, client_secret, redirect_uri, code
     }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });

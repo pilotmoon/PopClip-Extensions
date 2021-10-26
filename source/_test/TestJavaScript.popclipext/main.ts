@@ -44,8 +44,10 @@ defineExtension({
       code (selection) {
         setTimeout(() => {
           print('5s timer fired')
+          return 'my string 456'
         }, 5000)
-      }
+      },
+      after: 'show-result'
     }, {
       title: 'HTTP',
       icon: 'symbol:hand.raised',
