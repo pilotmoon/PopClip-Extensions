@@ -17,7 +17,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
-- Allow key combos to be specified as a text string, for example "command+option+T". (TODO: docs)
+- Allow key combos to be specified as a text string, for example "command option T". (Docs todo.)
+- Added ar requirement `emails` to specify one or more email addresses.
 
 ### Changed
 
@@ -27,6 +28,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - An action's `Icon` is now optional. If omitted, the action takes the extension's icon (if any) as its icon.
 - The `Actions` array is now optional. An extension with a single action may now be specified at the top level of the config file, without a separate action dictionary.
 - Renamed `Blocked Apps` to `Excluded Apps`, `Regular Expression` to `Regex`, `Pass HTML` to `Capture HTML`, `Required Software Version` to `PopClip Version`, and `Required OS Version` to `MacOS Version`. The old names will continue to work.
+- Renamed the requirements `htpurl` and `httpurls` to `weburl` and `weburls`.
+- Changed the text icon specification format. (Docs todo.)
 
 ### Note
 

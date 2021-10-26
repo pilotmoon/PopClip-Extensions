@@ -126,26 +126,37 @@ declare interface Modifiers {
   * |`copy`| A synonym for `text`, for backwards compatibility.|
   * |`cut`| Text must be selected and the app's Cut command must be available.|
   * |`paste`|The app's Paste command must be available.|
-  * |`httpurl`|The text must contain exactly one web URL (http or https).|
-  * |`httpurls`|The text must contain one or more web URLs.|
-  * |`email`|The text must contain exactly one email address.|
-  * |`path`|The text must be a local file path, and it must exist on the local file system.|
   * |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
+  * |`weburl`|The text must contain exactly one web URL (http or https).|
+  * |`weburls`|The text must contain one or more web URLs (http or https).|
+  * |`email`|The text must contain exactly one email address.|
+  * |`emails`|The text must contain one or email addresses.|
+  * |`path`|The text must be a local file path, and it must exist on the local file system.|
   * |`option-foo=bar`|The current value of the option named `foo` must be equal to the string `bar`. (Boolean values match against strings `0` and `1`.)|
   *
   * A requirement can also be **negated** by prefixing `!`, to specify that the requirement must _not_ be met.
   *
   * #### Example
   * ```js
-  * ["paste", "!httpurls", "option-goFishing=1", "!app=com.apple.Safari"]
+  * ["paste", "!weburls", "option-goFishing=1"]
   * ```
   */
  declare type Requirement =
- | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'httpurl' | 'httpurls' | 'email' | 'path'
+ | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'weburl' | 'weburls' | 'email' | 'emails' | 'path'
  | `option-${string}=${string}`
 
  /** Negated form of [[Requirement]]. */
  declare type NegatedRequirement = `!${Requirement}`
+
+ /**
+  * Strings which can be used to specify the [[before]] action.
+  */
+ declare type BeforeStep = 'cut' | 'copy' | 'paste' | 'paste-plain' | 'popclip-appear' | 'show-status'
+
+ /**
+  * Strings which can be used to specify the [[after]] action.
+  */
+ declare type AfterStep = BeforeStep | 'copy-result' | 'paste-result' | 'show-result' | 'preview-result'
 
 /**
  * Declares information about an app or website that this extension interacts with.
@@ -309,11 +320,6 @@ declare interface ActionObject {
      * An empty array (`[]`) indicates no requirements at all, meaning the action will always appear.
      *
      * This property has no effect on dynamically generated actions.
-     *
-     * #### Alternatives
-     *
-     * Instead of using `requirements`, extensions can dynamically generate their
-     * actions using a function instead. See {@link Extension.actions}.
      */
   requirements?: Array<Requirement | NegatedRequirement>
 
@@ -321,10 +327,7 @@ declare interface ActionObject {
      * Array of bundle identifiers for which the extension should appear. The action will only
      * appear if PopCLip is used in one of the specified apps.
      *
-     * #### Alternatives
-     *
-     * Instead of using `requiredApps`, extensions can dynamically generate their
-     * actions using a function instead. See {@link Extension.actions}.
+     * This property has no effect on dynamically generated actions.
      */
   requiredApps?: string[]
 
@@ -332,10 +335,7 @@ declare interface ActionObject {
      * Array of bundle identifiers for which the extension should not appear. The action will not
      * appear if PopClip is used in any of the specified apps.
      *
-     #### Alternatives
-     *
-     * Instead of using `excludedApps`, extensions can dynamically generate their
-     * actions using a function instead. See {@link Extension.actions}.
+     * This property has no effect on dynamically generated actions.
      */
   excludedApps?: string[]
 
@@ -363,11 +363,6 @@ declare interface ActionObject {
      *
      * This property has no effect on dynamically generated actions.
      *
-     * #### Alternatives
-     *
-     * Instead of using a regex, extensions can dynamically generate their
-     * actions using a function instead. See {@link Extension.actions}.
-     *
      * #### Example
      * ```js
      * regex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag
@@ -381,6 +376,16 @@ declare interface ActionObject {
    * Declares the application or website associated with this action, if any.
    */
   app?: AssociatedApp
+
+  /**
+   * An optional step to peform before the main action.
+   */
+  before?: BeforeStep
+
+  /**
+   * An optional step to peform after the main action.
+   */
+  after?: AfterStep
 
   /**
      * The action's code.
@@ -511,6 +516,18 @@ declare interface Extension {
    * See [[Action.app]].
    */
   app?: AssociatedApp
+
+  /**
+   * A before step set here will apply to all this extension's actions, unless overidden in the action definition.
+   * See [[Action.before]].
+   */
+  before?: BeforeStep
+
+  /**
+   * An after step set here will apply to all this extension's actions, unless overidden in the action definition.
+   * See [[Action.after]].
+   */
+  after?: AfterStep
 
   /**
      * Define the actions to go in PopClip's popup. This can be an array or a function.
@@ -692,9 +709,13 @@ declare interface Context {
 /**
  * Represents the current values of the extension's option (that were defined in {@link Extension.options}.
  * It maps option identifier strings to the current option value. See {@link PopClip.options}, {@link Extension.actions}, [[ActionFunction]].
+ *
+ * The `authsecret` property has the special behaviour of thorowing an `Error` with the message 'Not signed in' if it is accessed while either
+ * undefined or holding an empty string.
  */
 declare interface Options {
-  [identifier: string]: string | boolean
+  readonly authsecret: string
+  readonly [identifier: string]: string | boolean
 }
 
 /**
