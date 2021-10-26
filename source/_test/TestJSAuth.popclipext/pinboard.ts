@@ -2,21 +2,20 @@
 // docs: https://pinboard.in/api/
 //       https://axios-http.com/docs/req_config
 import axios from 'axios'
-const pinboard = axios.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } })
+const p = axios.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } })
 
 // add url to pinboard
 // uses page title as description if page url matches selected url
 export const action: ActionFunction = async (selection, context, options) => {
+  const token = `${options.username as string}:${options.authsecret}`
   const url = selection.data.webUrls[0]
   const description = context.browserUrl === url ? context.browserTitle : ''
-  const token = `${options.username as string}:${options.authsecret as string}`
-  await pinboard.get('posts/add', { params: { url, description, auth_token: token } })
+  await p.get('posts/add', { params: { url, description, auth_token: token } })
 }
 
 // retreive user's api token using basic http authentication
 export const auth: AuthFunction = async (info) => {
-  const response = await pinboard.get('user/api_token', { auth: info })
-  return (response.data as any).result
+  return (await p.get('user/api_token', { auth: info }) as any).data.result
 }
 
 // options

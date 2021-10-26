@@ -656,6 +656,11 @@ declare interface Selection {
     /** A local file path. The file path must be for a directory or file that exists. */
     paths: string[]
   }
+
+  /**
+   * Raw selection contents indexed by UTI.
+   */
+  rawContent: {'public.utf8-plain-text'?: string, 'public.html'?: string, 'public.rtf'?: string}
 }
 
 /**
