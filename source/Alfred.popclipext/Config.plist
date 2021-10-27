@@ -6,9 +6,7 @@
 	<array>
 		<dict>
 			<key>AppleScript File</key>
-			<string>alfred.applescript</string>
-			<key>Script Interpreter</key>
-			<string>/usr/bin/php</string>			
+			<string>alfred.applescript</string>	
 			<key>Image File</key>
 			<string>bowler.png</string>			
 			<key>Title</key>
