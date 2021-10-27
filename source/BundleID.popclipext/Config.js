@@ -1,10 +1,10 @@
 define({
-    actions: (_selection, context) => {
-        if (context.appIdentifier) {
+    actions() {
+        if (popclip.context.appIdentifier) {
             return [{
-                title: context.appIdentifier,
-                code: () => {
-                    popclip.copyText(context.appIdentifier);
+                title: popclip.context.appIdentifier,
+                code() {
+                    popclip.copyText(popclip.context.appIdentifier);
                 }
             }];
         }            

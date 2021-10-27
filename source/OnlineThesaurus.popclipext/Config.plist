@@ -9,7 +9,7 @@
     <key>Extension Identifier</key>
     <string>com.pilotmoon.popclip.extension.online-thesaurus</string>
 	<key>Required Software Version</key>
-	<integer>3510</integer>
+	<integer>3749</integer>
 	<key>Extension Image File</key>
 	<string>thesaurus.svg</string>
 </dict>

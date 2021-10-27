@@ -21,7 +21,7 @@ define(function () {
         defaultValue: !(index > 0)
       }
     }),
-    actions (selection, context, options) {
+    actions (selection, options) {
       if (selection.text.length > 0) {
         return styles.filter((style, index) => options[makeIdentifier(index)]).map((style, index) => {
           return {

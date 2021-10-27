@@ -1,4 +1,4 @@
-popclip version: 3704
+popclip version: 3749
 identifier: com.pilotmoon.popclip.extension.test-js-auth
 name: TestJSAuth
 requirements: [httpurl]

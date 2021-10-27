@@ -29,7 +29,7 @@ function alternatingCase (string: string, options?: {randomness?: boolean}): str
 }
 
 define({
-  action (selection, context, options) {
+  action (selection, options) {
     popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness }))
   },
   options: [

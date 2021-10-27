@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
-const actions = (selection, context, options) => {
+const actions = (selection, options, context) => {
     const result = [];
     const emails = selection.data.emails;
     if (options['enable-at'] && emails.length > 0) {

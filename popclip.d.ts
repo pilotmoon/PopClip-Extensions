@@ -194,11 +194,10 @@ declare interface AssociatedApp {
  * An action function is called when the user clicks the action button in PopClip. This is where
  * the extension does its main work.
  * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
- * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
- * @param modifiers Modifier keys held down when the action was invoked. (Same object as [[PopClip.modifiers]].)
+ * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  */
- declare type ActionFunction = (selection: Selection, context: Context, options: Options, modifiers: Modifiers) => void
+ declare type ActionFunction = (selection: Selection, options: Options, context: Context) => void
 
  /**
   * Either an [[ActionFunction]] on its own, or an [[ActionObject]].
@@ -209,12 +208,12 @@ declare interface AssociatedApp {
 
 /**
  * A population function dynamically generates the actions for the extension. See [[Extension.actions]].
- * @param selection The current selected text.
- * @param context The current context.
- * @param options The current option values.
+ * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
+ * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
+ * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (selection: Selection, context: Context, options: Options) => Action[] | Action | null
+ declare type PopulationFunction = (selection: Selection, options: Options, context: Context) => Action[] | Action | null
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off

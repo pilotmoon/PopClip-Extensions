@@ -1,4 +1,4 @@
-popclip version: 3704
+popclip version: 3749
 name: Bitly
 identifier: com.pilotmoon.popclip.extension.bitly
 entitlements: [network]

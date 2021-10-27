@@ -12,7 +12,7 @@ defineExtension({
     actions: [{
             icon: '[&;]',
             title: 'HTML-encode',
-            code: (selection, _context, options) => {
+            code: (selection, options) => {
                 popclip.pasteText(entities.encode(selection.text, { mode: options.mode }));
             }
         }, {

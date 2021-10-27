@@ -1,6 +1,6 @@
 define(function () {
     const extension = {
-        actions(selection, _context, options) {
+        actions(selection, options) {
             const actions = [];
             if (selection.text.length > 0) {
                 actions.push({

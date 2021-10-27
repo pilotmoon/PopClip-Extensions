@@ -14,7 +14,7 @@ define({
         values: urls,
         valueLabels: names,
     }],
-    action: (selection, _context, options) => {
+    action: (selection, options) => {
         popclip.openUrl(options.service.replace('***', encodeURIComponent(selection.text.toLowerCase())));
     }
 });
