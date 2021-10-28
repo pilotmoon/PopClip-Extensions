@@ -193,11 +193,11 @@ declare interface AssociatedApp {
 /**
  * An action function is called when the user clicks the action button in PopClip. This is where
  * the extension does its main work.
- * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
+ * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
  * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  */
- declare type ActionFunction = (selection: Selection, options: Options, context: Context) => void
+ declare type ActionFunction = (input: Input, options: Options, context: Context) => void
 
  /**
   * Either an [[ActionFunction]] on its own, or an [[ActionObject]].
@@ -208,12 +208,12 @@ declare interface AssociatedApp {
 
 /**
  * A population function dynamically generates the actions for the extension. See [[Extension.actions]].
- * @param selection The selected text and related properties. (Same object as [[PopClip.selection]].)
+ * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
  * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (selection: Selection, options: Options, context: Context) => Action[] | Action | null
+ declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | null
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
@@ -354,7 +354,7 @@ declare interface ActionObject {
      * * If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).
      *
      * If the regex matches the selected text, the action will be shown in the popup and
-     * the first occurrence of the matched text is accessible later via {@link Selection.matchedText | matchedText}.
+     * the first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.
      *
      * If there is no match, the action is excluded from the popup.
      *
@@ -600,10 +600,15 @@ declare interface Option {
   icon?: IconString
 }
 
+/** An array of strings with an addiontal `ranges` property defining the source of the data in the orignal string. */
+declare interface MatchedData extends Array<string> {
+  ranges: {location: number, length: number}
+}
+
 /**
- * Selection defines properties to access the selected text contents.
+ * Input defines properties to access the input text contents.
  */
-declare interface Selection {
+declare interface Input {
   /**
      * The plain text selected by the user. If there is no selected text, perhaps because the user invoked PopClip by a long press,
      * this will be the empty string.
@@ -651,14 +656,14 @@ declare interface Selection {
      */
   data: {
     /** HTTP ot HTTPS urls. */
-    urls: string[]
+    urls: MatchedData
     /** Other protocols or app urls e.g. ftp:, omnifocus:, craftdocs: etc. (PopClip has a pre-defined allowlist
          * for these "other" URL schemes.) */
-    nonHttpUrls: string[]
+    nonHttpUrls: MatchedData
     /** Email addresses. */
-    emails: string[]
+    emails: MatchedData
     /** A local file path. The file path must be for a directory or file that exists. */
-    paths: string[]
+    paths: MatchedData
   }
 
   /**
@@ -786,7 +791,7 @@ declare interface PopClip {
   /**
      * The current selection.
      */
-  readonly selection: Selection
+  readonly input: Input
 
   /**
      * The current context around the selection.
