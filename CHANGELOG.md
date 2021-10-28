@@ -10,7 +10,6 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Added
 
-- Added a Shortcut action type, to run a named Shortcut on macOS 12.0.
 - PopClip will now load either JSON (`Config.json`) or YAML (`Config.yaml`) as an alternative to an XML Property List (`Config.plist`) for the extension config file. The same field names are used in each of the three formats, and they each define the same logical structure. The choice of format is just a matter of which you prefer. (I'm currently leaning towards YAML for the best readability.)
 - There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
@@ -19,6 +18,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
 - Allow key combos to be specified as a text string, for example "command option T". (Docs todo.)
 - Added ar requirement `emails` to specify one or more email addresses.
+- Added `POPCLIP_EMAILS` and `POPCLIP_PATHS` fields.
+- Added a Shortcut action type, to run a named Shortcut on macOS 12.0.
 
 ### Changed
 
@@ -28,7 +29,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - An action's `Icon` is now optional. If omitted, the action takes the extension's icon (if any) as its icon.
 - The `Actions` array is now optional. An extension with a single action may now be specified at the top level of the config file, without a separate action dictionary.
 - Renamed `Blocked Apps` to `Excluded Apps`, `Regular Expression` to `Regex`, `Pass HTML` to `Capture HTML`, `Required Software Version` to `PopClip Version`, and `Required OS Version` to `MacOS Version`. The old names will continue to work.
-- Renamed the requirements `htpurl` and `httpurls` to `weburl` and `weburls`.
+- Renamed the requirements `httpurl` and `httpurls` to `url` and `urls`.
+- Wwhen URLs without a scheme prefix are detected in text, PopClip now defaults to https instead of http.
 - Changed the text icon specification format. (Docs todo.)
 
 ### Note

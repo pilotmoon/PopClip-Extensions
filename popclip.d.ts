@@ -142,7 +142,7 @@ declare interface Modifiers {
   * ```
   */
  declare type Requirement =
- | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'weburl' | 'weburls' | 'email' | 'emails' | 'path'
+ | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'url' | 'urls' | 'email' | 'emails' | 'path'
  | `option-${string}=${string}`
 
  /** Negated form of [[Requirement]]. */
@@ -642,14 +642,19 @@ declare interface Selection {
   markdown: string
 
   /**
+     * RTF. (docs todo)
+     */
+  rtf: string
+
+  /**
      * Data of various kinds, that PopClip detected in the selected text.
      */
   data: {
     /** HTTP ot HTTPS urls. */
-    webUrls: string[]
+    urls: string[]
     /** Other protocols or app urls e.g. ftp:, omnifocus:, craftdocs: etc. (PopClip has a pre-defined allowlist
          * for these "other" URL schemes.) */
-    otherUrls: string[]
+    nonHttpUrls: string[]
     /** Email addresses. */
     emails: string[]
     /** A local file path. The file path must be for a directory or file that exists. */
@@ -657,7 +662,7 @@ declare interface Selection {
   }
 
   /**
-   * Raw selection contents indexed by UTI.
+   * Unprocessed selection contents indexed by UTI.
    */
   rawContent: {'public.utf8-plain-text'?: string, 'public.html'?: string, 'public.rtf'?: string}
 }
