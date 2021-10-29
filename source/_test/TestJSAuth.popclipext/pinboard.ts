@@ -8,7 +8,7 @@ const p = axios.create({ baseURL: 'https://api.pinboard.in/v1/', params: { forma
 // uses page title as description if page url matches selected url
 export const action: ActionFunction = async (selection, options, context) => {
   const token = `${options.username as string}:${options.authsecret}`
-  const url = selection.data.webUrls[0]
+  const url = selection.data.urls[0]
   const description = context.browserUrl === url ? context.browserTitle : ''
   await p.get('posts/add', { params: { url, description, auth_token: token } })
 }

@@ -10,14 +10,14 @@ const extension: Extension = {}
 
 // shorten URL with bitly
 extension.action = {
-  async code (selection, options) {
+  async code (input, options) {
     const access_token = options.authsecret
     const response = await bitly.post('v4/shorten', {
-      long_url: selection.data.webUrls[0]
+      long_url: input.matchedText
     }, { headers: { Authorization: `Bearer ${access_token}` } })
     return (response.data as any).link
   },
-  requirements: ['weburl'],
+  requirements: ['url'],
   after: 'paste-result'
 }
 

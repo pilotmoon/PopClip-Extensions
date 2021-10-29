@@ -19,16 +19,16 @@ const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', he
 const extension = {};
 // shorten URL with bitly
 extension.action = {
-    code(selection, options) {
+    code(input, options) {
         return __awaiter(this, void 0, void 0, function* () {
             const access_token = options.authsecret;
             const response = yield bitly.post('v4/shorten', {
-                long_url: selection.data.webUrls[0]
+                long_url: input.matchedText
             }, { headers: { Authorization: `Bearer ${access_token}` } });
             return response.data.link;
         });
     },
-    requirements: ['weburl'],
+    requirements: ['url'],
     after: 'paste-result'
 };
 // sign in to bitly using authorization flow

@@ -25,15 +25,31 @@ defineExtension({
   // ],
   actions: [
     {
+      title: 'Data',
+      icon: '((D))',
+      code (selection) {
+        print(selection.data)
+        print(selection.data.paths)
+        print(selection.data.paths.ranges)
+      }
+    },
+    {
+      title: 'RTF',
+      icon: 'RTF',
+      flags: { captureRtf: true },
+      code (selection) {
+        print(selection.rtf)
+      }
+    }, {
       title: 'Show Success',
       icon: 'symbol:checkmark',
-      code (selection) {
+      code () {
         popclip.showSuccess()
       }
     }, {
       title: 'Show Success Async',
       icon: 'symbol:checkmark.circle',
-      code (selection) {
+      code () {
         setTimeout(() => {
           popclip.showSuccess()
         }, 1000)
@@ -46,6 +62,15 @@ defineExtension({
           print('5s timer fired')
           return 'my string 456'
         }, 5000)
+      },
+      after: 'show-result'
+    }, {
+      title: 'Interval',
+      icon: '(int)',
+      code (selection) {
+        setInterval(() => {
+          print('100ms timer fired')
+        }, 1)
       },
       after: 'show-result'
     }, {

@@ -19,7 +19,7 @@ const p = axios_1.default.create({ baseURL: 'https://api.pinboard.in/v1/', param
 // uses page title as description if page url matches selected url
 const action = (selection, options, context) => __awaiter(void 0, void 0, void 0, function* () {
     const token = `${options.username}:${options.authsecret}`;
-    const url = selection.data.webUrls[0];
+    const url = selection.data.urls[0];
     const description = context.browserUrl === url ? context.browserTitle : '';
     yield p.get('posts/add', { params: { url, description, auth_token: token } });
 });
