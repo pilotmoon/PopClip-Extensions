@@ -70,7 +70,7 @@ declare interface StringTable {
 declare type LocalizableString = string | StringTable
 
 /**
- * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link ActionObject.icon}.
+ * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link Action.icon}.
  *
  * Icons may be specified in a few different ways:
  *
@@ -117,7 +117,7 @@ declare interface Modifiers {
 }
 
 /**
-  * A requirement is specified in the {@link ActionObject.requirements} array as a string.
+  * A requirement is specified in the {@link Action.requirements} array as a string.
   * The possible strings are:
   *
   * | Specifier     | Condition                                                  |
@@ -191,22 +191,6 @@ declare interface AssociatedApp {
 }
 
 /**
- * An action function is called when the user clicks the action button in PopClip. This is where
- * the extension does its main work.
- * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
- * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
- * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
- */
- declare type ActionFunction = (input: Input, options: Options, context: Context) => void
-
- /**
-  * Either an [[ActionFunction]] on its own, or an [[ActionObject]].
-  *
-  * If you supply the function on its own, the action will take its name and icon from the extension name and extension icon.
-  */
- declare type Action = ActionObject | ActionFunction
-
-/**
  * A population function dynamically generates the actions for the extension. See [[Extension.actions]].
  * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
  * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
@@ -243,7 +227,7 @@ declare interface AuthInfo {
 declare type AuthFunction = (info: AuthInfo, flow: AuthFlowFunction) => Promise<string>
 
 /**
- * Used in the {@link Extension.flags} and {@link ActionObject.flags} to define certain boolean properties of actions.
+ * Boolean flags that define certain properties of actions.
  * @category Definition
  */
 declare interface ActionFlags {
@@ -258,6 +242,7 @@ declare interface ActionFlags {
    * content.
    */
   captureHtml?: boolean
+
   /**
    * Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.
    *
@@ -265,6 +250,7 @@ declare interface ActionFlags {
    * Captured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.
    */
   captureRtf?: boolean
+
   /** Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
    *
    * #### Notes
@@ -279,16 +265,32 @@ declare interface ActionFlags {
 }
 
 /**
- * Encapsulates an action's code, title, icon and other properties.
- *
- * @category Definition
+ * Properties common to ActionObject, ActionFunction and Extension
  */
-declare interface ActionObject {
+declare interface ActionProperties extends ActionFlags {
+
+  /**
+    * A unique identifying string.
+    *
+    * #### Notes
+    *
+    * An identifier for an action can be any string of your choosing.
+    *
+    * An identifier for the extension itself, if provided, should ideally be globally unique.
+    *
+    * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
+    *
+    * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
+    *
+    * Do not use the `com.pilotmoon.` prefix for your own extension.
+    */
+  identifier?: string
+
   /**
      * The action's title. The title is displayed in the action button if there is no icon.
      * For extensions with icons, the title is displayed in the tooltip.
      *
-     * If no title is defined here, the extension's [[name]] will be used, if any.
+     * If no title is defined here, the extension's [`[name]] will be used, if any.
     */
   title?: LocalizableString
 
@@ -301,96 +303,113 @@ declare interface ActionObject {
   icon?: IconString | null
 
   /**
-     * Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object
-     * is set, the value of {@link Extension.flags} is used instead, if any.
-     */
-  flags?: ActionFlags
-
-  /**
-     * An array of conditions which must be met for this action to appear — see [[Requirement]].
-     *
-     * * If no array is specified here, the action takes the value of [[Extension.requirements]].
-     * * If no array is specified there either, the action takes the default value `["text"]`.
-     *
-     * #### Notes
-     *
-     * When multiple conditions are specified, all of them must be satisfied.
-     *
-     * An empty array (`[]`) indicates no requirements at all, meaning the action will always appear.
-     *
-     * This property has no effect on dynamically generated actions.
-     */
+    * An array of conditions which must be met for this action to appear — see [[Requirement]].
+    *
+    * * If no array is specified here, the action takes the value of [[Extension.requirements]].
+    * * If no array is specified there either, the action takes the default value `["text"]`.
+    *
+    * #### Notes
+    *
+    * When multiple conditions are specified, all of them must be satisfied.
+    *
+    * An empty array (`[]`) indicates no requirements at all, meaning the action will always appear.
+    *
+    * This property has no effect on dynamically generated actions.
+    */
   requirements?: Array<Requirement | NegatedRequirement>
 
   /**
-     * Array of bundle identifiers for which the extension should appear. The action will only
-     * appear if PopCLip is used in one of the specified apps.
-     *
-     * This property has no effect on dynamically generated actions.
-     */
+    * Array of bundle identifiers for which the extension should appear. The action will only
+    * appear if PopCLip is used in one of the specified apps.
+    *
+    * This property has no effect on dynamically generated actions.
+    */
   requiredApps?: string[]
 
   /**
-     * Array of bundle identifiers for which the extension should not appear. The action will not
-     * appear if PopClip is used in any of the specified apps.
-     *
-     * This property has no effect on dynamically generated actions.
-     */
+    * Array of bundle identifiers for which the extension should not appear. The action will not
+    * appear if PopClip is used in any of the specified apps.
+    *
+    * This property has no effect on dynamically generated actions.
+    */
   excludedApps?: string[]
 
   /**
-     * A regular expression to decide whether this action appears in the popup.
-     *
-     * * If no regex is specified here, the action takes the value of [[Extension.regex]].
-     * * If no regex is specified there either, the action will match any input.
-     *
-     * #### Notes
-     *
-     * You may express the value either as a
-     * [JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-     * (or otherwise constructed `RegExp` object), or as a string.
-     *
-     * * If you supply a `RegExp` it will be evaluated in the JavaScript engine.
-     * * If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).
-     *
-     * If the regex matches the selected text, the action will be shown in the popup and
-     * the first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.
-     *
-     * If there is no match, the action is excluded from the popup.
-     *
-     * The regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.
-     *
-     * This property has no effect on dynamically generated actions.
-     *
-     * #### Example
-     * ```js
-     * regex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag
-     *                  // Matches abc, ABC, Abc, etc.
-     * ```
-
-     */
+    * A regular expression to decide whether this action appears in the popup.
+    *
+    * * If no regex is specified here, the action takes the value of [[Extension.regex]].
+    * * If no regex is specified there either, the action will match any input.
+    *
+    * #### Notes
+    *
+    * You may express the value either as a
+    * [JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+    * (or otherwise constructed `RegExp` object), or as a string.
+    *
+    * * If you supply a `RegExp` it will be evaluated in the JavaScript engine.
+    * * If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).
+    *
+    * If the regex matches the selected text, the action will be shown in the popup and
+    * the first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.
+    *
+    * If there is no match, the action is excluded from the popup.
+    *
+    * The regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.
+    *
+    * This property has no effect on dynamically generated actions.
+    *
+    * #### Example
+    * ```js
+    * regex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag
+    *                  // Matches abc, ABC, Abc, etc.
+    * ```
+    */
   regex?: RegExp | string
 
   /**
-   * Declares the application or website associated with this action, if any.
-   */
+  * Declares the application or website associated with this action, if any.
+  */
   app?: AssociatedApp
 
   /**
-   * An optional step to peform before the main action.
-   */
+  * An optional step to peform before the main action.
+  */
   before?: BeforeStep
 
   /**
-   * An optional step to peform after the main action.
-   */
+  * An optional step to peform after the main action.
+  */
   after?: AfterStep
-
-  /**
-     * The action's code.
-     */
-  code: ActionFunction
 }
+
+/**
+ * A calable object, with additional properties to define its title, icon and other properties.
+ *
+ * @category Definition
+ */
+declare interface ActionFunction extends ActionProperties {
+  /**
+    * An action function is called when the user clicks the action button in PopClip. This is where
+    * the extension does its main work.
+    * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
+    * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
+    * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
+    */
+  (input: Input, options: Options, context: Context): void
+}
+
+/**
+ * An alternative way to define as an action, as a non-callable object with a `code` member.
+ */
+declare interface ActionObject extends ActionProperties {
+  /** Same function signature as [[ActionFunction]] */
+  code: (input: Input, options: Options, context: Context) => void
+}
+
+/**
+ * An action can be defined using either the callable object or non-callable object form.
+ */
+declare type Action = ActionFunction | ActionObject
 
 /**
  * The Extension object defines the PopClip extension.
@@ -438,23 +457,7 @@ declare interface ActionObject {
  *
  * @category Definition
  */
-declare interface Extension {
-
-  /**
-    * A unique identifying string for this extension.
-    *
-    * #### Notes
-    *
-    * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
-    *
-    * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
-    *
-    * Do not use the `com.pilotmoon.` prefix for your own extension.
-    *
-    * If omitted, the identifier is taken from the Config.json file, or else auto-generated from the package name.
-    *
-    */
-  identifier?: string
+declare interface Extension extends ActionProperties {
 
   /**
    * The display name of this extension.
@@ -462,11 +465,6 @@ declare interface Extension {
    * If omitted, the name is taken from the Config.json file, or else auto-generated from the package name.
    */
   name?: LocalizableString
-
-  /**
-     * The extension's icon. See [[IconString]].
-     */
-  icon?: IconString | null
 
   /**
      * Defines the user-configurable options for this extension.
@@ -479,54 +477,6 @@ declare interface Extension {
    * If the sign in needs a username and password, you'll also need to define `username` and `password` options. PopClip will then pass the values
    * of those options in the info parameter. */
   auth?: AuthFunction
-
-  /**
-     * Flags set here will apply to this extension's actions, unless overidden in the action definition.
-     * See [[ActionFlags]].
-     */
-  flags?: ActionFlags
-
-  /**
-     * A requirements array set here will apply to all this extension's actions, unless overidden in the action definition.
-     * See [[Action.requirements]].
-     */
-  requirements?: Array<Requirement | NegatedRequirement>
-
-  /**
-     * An apps array set here will apply to all this extension's actions, unless overidden in the action definition.
-     * See [[Action.requiredApps]].
-     */
-  requiredApps?: string[]
-
-  /**
-     * A regex set here will apply to all this extension's actions, unless overidden in the action definition.
-     * See [[Action.excludedApps]].
-     */
-  excludedApps?: string[]
-
-  /**
-     * A regex set here will apply to all this extension's actions, unless overidden in the action definition.
-     * See [[Action.regex]].
-     */
-  regex?: RegExp | string
-
-  /**
-   * An associated app set here will apply to all this extension's actions, unless overidden in the action definition.
-   * See [[Action.app]].
-   */
-  app?: AssociatedApp
-
-  /**
-   * A before step set here will apply to all this extension's actions, unless overidden in the action definition.
-   * See [[Action.before]].
-   */
-  before?: BeforeStep
-
-  /**
-   * An after step set here will apply to all this extension's actions, unless overidden in the action definition.
-   * See [[Action.after]].
-   */
-  after?: AfterStep
 
   /**
      * Define the actions to go in PopClip's popup. This can be an array or a function.
@@ -616,7 +566,7 @@ declare interface Input {
   text: string
 
   /**
-     * If the action specified {@link ActionObject.requirements | requirements} or a {@link ActionObject.regex | regex} to match the input, this will be the matching part of the text.
+     * If the action specified {@link Action.requirements | requirements} or a {@link Action.regex | regex} to match the input, this will be the matching part of the text.
      * Otherwise, it will be the same string as [[text]].
      */
   matchedText: string

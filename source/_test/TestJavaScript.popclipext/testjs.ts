@@ -6,7 +6,21 @@ const starIcon = `svg:
 <polygon points="255 402.21 412.59 497.25 370.9 318.01 510 197.47 326.63 181.74 255 12.75 183.37 181.74 0 197.47 139.1 318.01 97.41 497.25"/>
 </svg>
 `
+
+const testAction: Action = {
+  code: () => {
+    return 'coderan'
+  }
+}
+
+function x (selection): void {
+  popclip.showText(this.identifier)
+}
+
+testAction.after = 'show-result'
+
 defineExtension({
+  title: 'fallbacktitle',
   icon: starIcon,
   name: {
     en: 'Test the JS plz',
@@ -24,10 +38,16 @@ defineExtension({
   //   }
   // ],
   actions: [
+    testAction,
+    {
+      identifier: 'my magic identifier',
+      // not title example
+      code: x
+    },
     {
       title: 'Data',
       icon: '((D))',
-      code (selection) {
+      code: (selection) => {
         print(selection.data)
         print(selection.data.paths)
         print(selection.data.paths.ranges)
@@ -36,7 +56,7 @@ defineExtension({
     {
       title: 'RTF',
       icon: 'RTF',
-      flags: { captureRtf: true },
+      captureRtf: true,
       code (selection) {
         print(selection.rtf)
       }

@@ -1,5 +1,5 @@
 export const actions: PopulationFunction = (selection, options, context) => {
-  const result: ActionObject[] = []
+  const result: Action[] = []
   const emails = selection.data.emails
   if (options['enable-at'] as boolean && emails.length > 0) {
     result.push({
@@ -27,9 +27,7 @@ export const actions: PopulationFunction = (selection, options, context) => {
         }
         popclip.openUrl('mailto:' + (options.default as string) + '?body=' + encodeURIComponent(body))
       },
-      flags: {
-        captureHtml: true
-      }
+      captureHtml: true
     })
   }
   return result

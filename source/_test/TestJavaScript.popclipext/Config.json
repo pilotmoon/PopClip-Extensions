@@ -6,5 +6,6 @@
         "captureRtf": true
     },
     "popclipVersion": 3704,
-    "entitlements" : ["network"]
+    "entitlements" : ["network"],
+    "module": "testjs.js"
 }

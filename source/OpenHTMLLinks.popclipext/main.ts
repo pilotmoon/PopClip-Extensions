@@ -16,7 +16,5 @@ defineExtension({
       })
     }
   },
-  flags: {
-    captureHtml: true
-  }
+  captureHtml: true
 })

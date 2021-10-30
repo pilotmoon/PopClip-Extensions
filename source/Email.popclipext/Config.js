@@ -31,9 +31,7 @@ const actions = (selection, options, context) => {
                 }
                 popclip.openUrl('mailto:' + options.default + '?body=' + encodeURIComponent(body));
             },
-            flags: {
-                captureHtml: true
-            }
+            captureHtml: true
         });
     }
     return result;
