@@ -1,27 +1,55 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "definitions": {
-        "Action": {
-            "description": "Encapsulates an action's code, title, icon and other properties.",
+        "ActionFunction": {
+            "description": "A calable object, with additional properties to define its title, icon and other properties.",
             "properties": {
+                "after": {
+                    "description": "An optional step to peform after the main action.",
+                    "enum": [
+                        "copy",
+                        "copy-result",
+                        "cut",
+                        "paste",
+                        "paste-plain",
+                        "paste-result",
+                        "popclip-appear",
+                        "preview-result",
+                        "show-result",
+                        "show-status"
+                    ],
+                    "type": "string"
+                },
                 "app": {
                     "$ref": "#/definitions/AssociatedApp",
                     "description": "Declares the application or website associated with this action, if any."
                 },
-                "code": {
-                    "description": "The action's code.",
-                    "type": "object"
+                "before": {
+                    "description": "An optional step to peform before the main action.",
+                    "enum": [
+                        "copy",
+                        "cut",
+                        "paste",
+                        "paste-plain",
+                        "popclip-appear",
+                        "show-status"
+                    ],
+                    "type": "string"
+                },
+                "captureHtml": {
+                    "description": "Whether PopClip will capture HTML and Markdown content for the selection. Default is no.\n\n#### Notes\nThe HTML can be accessed in the [[Selection.html]] property, and the Markdown\ncan be accessed in the [[Selection.markdown]] property.\n\nIf the selection is not HTML-backed, PopClip will generate HTML from any available RTF or plain text\ncontent.",
+                    "type": "boolean"
+                },
+                "captureRtf": {
+                    "description": "Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.\n\n#### Notes\nCaptured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.",
+                    "type": "boolean"
                 },
                 "excludedApps": {
-                    "description": "Array of bundle identifiers for which the extension should not appear. The action will not\nappear if PopClip is used in any of the specified apps.\n\n#### Alternatives\n\nInstead of using `excludedApps`, extensions can dynamically generate their\nactions using a function instead. See {@link Extension.actions}.",
+                    "description": "Array of bundle identifiers for which the extension should not appear. The action will not\nappear if PopClip is used in any of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
-                },
-                "flags": {
-                    "$ref": "#/definitions/ActionFlags",
-                    "description": "Flags control aspects of this action's behaviour - see [[ActionFlags]]. If not flags object\nis set, the value of {@link Extension.flags} is used instead, if any."
                 },
                 "icon": {
                     "description": "A string to define the action's icon. See [[IconString]].\n\nIf no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.\nSetting to `null` explicitly sets the action to have no icon.",
@@ -29,6 +57,14 @@
                         "null",
                         "string"
                     ]
+                },
+                "identifier": {
+                    "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
+                    "type": "string"
+                },
+                "preserveColor": {
+                    "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
+                    "type": "boolean"
                 },
                 "regex": {
                     "anyOf": [
@@ -39,17 +75,17 @@
                             "type": "string"
                         }
                     ],
-                    "description": "A regular expression to decide whether this action appears in the popup.\n\n* If no regex is specified here, the action takes the value of [[Extension.regex]].\n* If no regex is specified there either, the action will match any input.\n\n#### Notes\n\nYou may express the value either as a\n[JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)\n(or otherwise constructed `RegExp` object), or as a string.\n\n* If you supply a `RegExp` it will be evaluated in the JavaScript engine.\n* If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).\n\nIf the regex matches the selected text, the action will be shown in the popup and\nthe first occurrence of the matched text is accessible later via {@link Selection.matchedText | matchedText}.\n\nIf there is no match, the action is excluded from the popup.\n\nThe regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.\n\nThis property has no effect on dynamically generated actions.\n\n#### Alternatives\n\nInstead of using a regex, extensions can dynamically generate their\nactions using a function instead. See {@link Extension.actions}.\n\n#### Example\n```js\nregex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag\n                 // Matches abc, ABC, Abc, etc.\n```"
+                    "description": "A regular expression to decide whether this action appears in the popup.\n\n* If no regex is specified here, the action takes the value of [[Extension.regex]].\n* If no regex is specified there either, the action will match any input.\n\n#### Notes\n\nYou may express the value either as a\n[JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)\n(or otherwise constructed `RegExp` object), or as a string.\n\n* If you supply a `RegExp` it will be evaluated in the JavaScript engine.\n* If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).\n\nIf the regex matches the selected text, the action will be shown in the popup and\nthe first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.\n\nIf there is no match, the action is excluded from the popup.\n\nThe regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.\n\nThis property has no effect on dynamically generated actions.\n\n#### Example\n```js\nregex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag\n                 // Matches abc, ABC, Abc, etc.\n```"
                 },
                 "requiredApps": {
-                    "description": "Array of bundle identifiers for which the extension should appear. The action will only\nappear if PopCLip is used in one of the specified apps.\n\n#### Alternatives\n\nInstead of using `requiredApps`, extensions can dynamically generate their\nactions using a function instead. See {@link Extension.actions}.",
+                    "description": "Array of bundle identifiers for which the extension should appear. The action will only\nappear if PopCLip is used in one of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
                     "items": {
                         "type": "string"
                     },
                     "type": "array"
                 },
                 "requirements": {
-                    "description": "An array of conditions which must be met for this action to appear — see [[Requirement]].\n\n* If no array is specified here, the action takes the value of [[Extension.requirements]].\n* If no array is specified there either, the action takes the default value `[\"text\"]`.\n\n#### Notes\n\nWhen multiple conditions are specified, all of them must be satisfied.\n\nAn empty array (`[]`) indicates no requirements at all, meaning the action will always appear.\n\nThis property has no effect on dynamically generated actions.\n\n#### Alternatives\n\nInstead of using `requirements`, extensions can dynamically generate their\nactions using a function instead. See {@link Extension.actions}.",
+                    "description": "An array of conditions which must be met for this action to appear — see [[Requirement]].\n\n* If no array is specified here, the action takes the value of [[Extension.requirements]].\n* If no array is specified there either, the action takes the default value `[\"text\"]`.\n\n#### Notes\n\nWhen multiple conditions are specified, all of them must be satisfied.\n\nAn empty array (`[]`) indicates no requirements at all, meaning the action will always appear.\n\nThis property has no effect on dynamically generated actions.",
                     "items": {
                         "anyOf": [
                             {
@@ -69,27 +105,33 @@
                                     "!copy",
                                     "!cut",
                                     "!email",
+                                    "!emails",
                                     "!formatting",
-                                    "!httpurl",
-                                    "!httpurls",
                                     "!paste",
                                     "!path",
                                     "!text",
+                                    "!url",
+                                    "!urls",
                                     "copy",
                                     "cut",
                                     "email",
+                                    "emails",
                                     "formatting",
-                                    "httpurl",
-                                    "httpurls",
                                     "paste",
                                     "path",
-                                    "text"
+                                    "text",
+                                    "url",
+                                    "urls"
                                 ],
                                 "type": "string"
                             }
                         ]
                     },
                     "type": "array"
+                },
+                "stayVisible": {
+                    "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
+                    "type": "boolean"
                 },
                 "title": {
                     "anyOf": [
@@ -100,14 +142,46 @@
                             "type": "string"
                         }
                     ],
-                    "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [[name]] will be used, if any."
+                    "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
                 }
             },
             "type": "object"
         },
-        "ActionFlags": {
-            "description": "Used in the {@link Extension.flags} and {@link Action.flags} to define certain boolean properties of actions.",
+        "ActionObject": {
+            "description": "An alternative way to define as an action, as a non-callable object with a `code` member.",
             "properties": {
+                "after": {
+                    "description": "An optional step to peform after the main action.",
+                    "enum": [
+                        "copy",
+                        "copy-result",
+                        "cut",
+                        "paste",
+                        "paste-plain",
+                        "paste-result",
+                        "popclip-appear",
+                        "preview-result",
+                        "show-result",
+                        "show-status"
+                    ],
+                    "type": "string"
+                },
+                "app": {
+                    "$ref": "#/definitions/AssociatedApp",
+                    "description": "Declares the application or website associated with this action, if any."
+                },
+                "before": {
+                    "description": "An optional step to peform before the main action.",
+                    "enum": [
+                        "copy",
+                        "cut",
+                        "paste",
+                        "paste-plain",
+                        "popclip-appear",
+                        "show-status"
+                    ],
+                    "type": "string"
+                },
                 "captureHtml": {
                     "description": "Whether PopClip will capture HTML and Markdown content for the selection. Default is no.\n\n#### Notes\nThe HTML can be accessed in the [[Selection.html]] property, and the Markdown\ncan be accessed in the [[Selection.markdown]] property.\n\nIf the selection is not HTML-backed, PopClip will generate HTML from any available RTF or plain text\ncontent.",
                     "type": "boolean"
@@ -116,13 +190,109 @@
                     "description": "Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.\n\n#### Notes\nCaptured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.",
                     "type": "boolean"
                 },
+                "code": {
+                    "description": "Same function signature as [[ActionFunction]]",
+                    "type": "object"
+                },
+                "excludedApps": {
+                    "description": "Array of bundle identifiers for which the extension should not appear. The action will not\nappear if PopClip is used in any of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "icon": {
+                    "description": "A string to define the action's icon. See [[IconString]].\n\nIf no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.\nSetting to `null` explicitly sets the action to have no icon.",
+                    "type": [
+                        "null",
+                        "string"
+                    ]
+                },
+                "identifier": {
+                    "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
+                    "type": "string"
+                },
                 "preserveColor": {
                     "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
                     "type": "boolean"
                 },
+                "regex": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/RegExp"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "A regular expression to decide whether this action appears in the popup.\n\n* If no regex is specified here, the action takes the value of [[Extension.regex]].\n* If no regex is specified there either, the action will match any input.\n\n#### Notes\n\nYou may express the value either as a\n[JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)\n(or otherwise constructed `RegExp` object), or as a string.\n\n* If you supply a `RegExp` it will be evaluated in the JavaScript engine.\n* If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).\n\nIf the regex matches the selected text, the action will be shown in the popup and\nthe first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.\n\nIf there is no match, the action is excluded from the popup.\n\nThe regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.\n\nThis property has no effect on dynamically generated actions.\n\n#### Example\n```js\nregex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag\n                 // Matches abc, ABC, Abc, etc.\n```"
+                },
+                "requiredApps": {
+                    "description": "Array of bundle identifiers for which the extension should appear. The action will only\nappear if PopCLip is used in one of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "requirements": {
+                    "description": "An array of conditions which must be met for this action to appear — see [[Requirement]].\n\n* If no array is specified here, the action takes the value of [[Extension.requirements]].\n* If no array is specified there either, the action takes the default value `[\"text\"]`.\n\n#### Notes\n\nWhen multiple conditions are specified, all of them must be satisfied.\n\nAn empty array (`[]`) indicates no requirements at all, meaning the action will always appear.\n\nThis property has no effect on dynamically generated actions.",
+                    "items": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "enum": [
+                                    "!copy",
+                                    "!cut",
+                                    "!email",
+                                    "!emails",
+                                    "!formatting",
+                                    "!paste",
+                                    "!path",
+                                    "!text",
+                                    "!url",
+                                    "!urls",
+                                    "copy",
+                                    "cut",
+                                    "email",
+                                    "emails",
+                                    "formatting",
+                                    "paste",
+                                    "path",
+                                    "text",
+                                    "url",
+                                    "urls"
+                                ],
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
                 "stayVisible": {
                     "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
                     "type": "boolean"
+                },
+                "title": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/definitions/StringTable"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
                 }
             },
             "type": "object"
@@ -331,11 +501,10 @@
         "action": {
             "anyOf": [
                 {
-                    "description": "The action function is called when the user clicks the action button in PopClip. This is where\nthe extension does its main work.",
-                    "type": "object"
+                    "$ref": "#/definitions/ActionFunction"
                 },
                 {
-                    "$ref": "#/definitions/Action"
+                    "$ref": "#/definitions/ActionObject"
                 }
             ],
             "description": "Simplified property to define a single action."
@@ -343,50 +512,86 @@
         "actions": {
             "anyOf": [
                 {
+                    "description": "A population function dynamically generates the actions for the extension. See [[Extension.actions]].",
+                    "type": "object"
+                },
+                {
                     "items": {
                         "anyOf": [
                             {
-                                "description": "The action function is called when the user clicks the action button in PopClip. This is where\nthe extension does its main work.",
-                                "type": "object"
+                                "$ref": "#/definitions/ActionFunction"
                             },
                             {
-                                "$ref": "#/definitions/Action"
+                                "$ref": "#/definitions/ActionObject"
                             }
                         ],
-                        "description": "Either an [[ActionFunction]] on its own, or an [[Action]] object.\n\nIf you supply the function on its own, the action will take its name and icon from the extension name and extension icon."
+                        "description": "An action can be defined using either the callable object or non-callable object form."
                     },
                     "type": "array"
-                },
-                {
-                    "type": "object"
                 }
             ],
             "description": "Define the actions to go in PopClip's popup. This can be an array or a function.\n\n* If it's an array, the supplied actions are used in the popup, subject to meeting the\nrequirements and regex conditions.\n\n* If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.\nSetting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show."
         },
+        "after": {
+            "description": "An optional step to peform after the main action.",
+            "enum": [
+                "copy",
+                "copy-result",
+                "cut",
+                "paste",
+                "paste-plain",
+                "paste-result",
+                "popclip-appear",
+                "preview-result",
+                "show-result",
+                "show-status"
+            ],
+            "type": "string"
+        },
         "app": {
             "$ref": "#/definitions/AssociatedApp",
-            "description": "An associated app set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.app]]."
+            "description": "Declares the application or website associated with this action, if any."
+        },
+        "auth": {
+            "description": "Function signature of the [[Extension.auth]] method.",
+            "type": "object"
+        },
+        "before": {
+            "description": "An optional step to peform before the main action.",
+            "enum": [
+                "copy",
+                "cut",
+                "paste",
+                "paste-plain",
+                "popclip-appear",
+                "show-status"
+            ],
+            "type": "string"
+        },
+        "captureHtml": {
+            "description": "Whether PopClip will capture HTML and Markdown content for the selection. Default is no.\n\n#### Notes\nThe HTML can be accessed in the [[Selection.html]] property, and the Markdown\ncan be accessed in the [[Selection.markdown]] property.\n\nIf the selection is not HTML-backed, PopClip will generate HTML from any available RTF or plain text\ncontent.",
+            "type": "boolean"
+        },
+        "captureRtf": {
+            "description": "Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.\n\n#### Notes\nCaptured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.",
+            "type": "boolean"
         },
         "excludedApps": {
-            "description": "A regex set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.excludedApps]].",
+            "description": "Array of bundle identifiers for which the extension should not appear. The action will not\nappear if PopClip is used in any of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
             "items": {
                 "type": "string"
             },
             "type": "array"
         },
-        "flags": {
-            "$ref": "#/definitions/ActionFlags",
-            "description": "Flags set here will apply to this extension's actions, unless overidden in the action definition.\nSee [[ActionFlags]]."
-        },
         "icon": {
-            "description": "The extension's icon. See [[IconString]].",
+            "description": "A string to define the action's icon. See [[IconString]].\n\nIf no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.\nSetting to `null` explicitly sets the action to have no icon.",
             "type": [
                 "null",
                 "string"
             ]
         },
         "identifier": {
-            "description": "A unique identifying string for this extension.\n\n#### Notes\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.\n\nIf omitted, the identifier is taken from the Config.json file, or else auto-generated from the package name.",
+            "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
             "type": "string"
         },
         "name": {
@@ -407,19 +612,30 @@
             },
             "type": "array"
         },
+        "preserveColor": {
+            "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
+            "type": "boolean"
+        },
         "regex": {
-            "$ref": "#/definitions/RegExp",
-            "description": "A regex set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.regex]]."
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/RegExp"
+                },
+                {
+                    "type": "string"
+                }
+            ],
+            "description": "A regular expression to decide whether this action appears in the popup.\n\n* If no regex is specified here, the action takes the value of [[Extension.regex]].\n* If no regex is specified there either, the action will match any input.\n\n#### Notes\n\nYou may express the value either as a\n[JavaScript regular expression literal](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)\n(or otherwise constructed `RegExp` object), or as a string.\n\n* If you supply a `RegExp` it will be evaluated in the JavaScript engine.\n* If you supply a string it will be evaluated by macOS natively using the `NSRegularExpression` API (same as for 'classic' PopClip extensions).\n\nIf the regex matches the selected text, the action will be shown in the popup and\nthe first occurrence of the matched text is accessible later via {@link Input.matchedText | matchedText}.\n\nIf there is no match, the action is excluded from the popup.\n\nThe regex's `lastIndex` is reset before and after each invocation, so the `g` (global) and `y` (sticky) flags have no effect.\n\nThis property has no effect on dynamically generated actions.\n\n#### Example\n```js\nregex = /abc/i   // Example regex 'abc' with 'i' (case insensitive) flag\n                 // Matches abc, ABC, Abc, etc.\n```"
         },
         "requiredApps": {
-            "description": "An apps array set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.requiredApps]].",
+            "description": "Array of bundle identifiers for which the extension should appear. The action will only\nappear if PopCLip is used in one of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
             "items": {
                 "type": "string"
             },
             "type": "array"
         },
         "requirements": {
-            "description": "A requirements array set here will apply to all this extension's actions, unless overidden in the action definition.\nSee [[Action.requirements]].",
+            "description": "An array of conditions which must be met for this action to appear — see [[Requirement]].\n\n* If no array is specified here, the action takes the value of [[Extension.requirements]].\n* If no array is specified there either, the action takes the default value `[\"text\"]`.\n\n#### Notes\n\nWhen multiple conditions are specified, all of them must be satisfied.\n\nAn empty array (`[]`) indicates no requirements at all, meaning the action will always appear.\n\nThis property has no effect on dynamically generated actions.",
             "items": {
                 "anyOf": [
                     {
@@ -439,27 +655,44 @@
                             "!copy",
                             "!cut",
                             "!email",
+                            "!emails",
                             "!formatting",
-                            "!httpurl",
-                            "!httpurls",
                             "!paste",
                             "!path",
                             "!text",
+                            "!url",
+                            "!urls",
                             "copy",
                             "cut",
                             "email",
+                            "emails",
                             "formatting",
-                            "httpurl",
-                            "httpurls",
                             "paste",
                             "path",
-                            "text"
+                            "text",
+                            "url",
+                            "urls"
                         ],
                         "type": "string"
                     }
                 ]
             },
             "type": "array"
+        },
+        "stayVisible": {
+            "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
+            "type": "boolean"
+        },
+        "title": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/StringTable"
+                },
+                {
+                    "type": "string"
+                }
+            ],
+            "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
         }
     },
     "type": "object"

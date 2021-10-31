@@ -5,15 +5,20 @@ exports.auth = exports.action = void 0;
 // reimplementation of Bitly ext (as callback auth test)
 const axios_1 = require("axios");
 const client_json_1 = require("./client.json");
+const replace_1 = require("./replace");
 const { client_id, client_secret } = util.clarify(client_json_1.client);
 const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
-// shorten URL with bitly
-const action = async (input, options) => {
-    const access_token = options.authsecret;
-    const response = await bitly.post('v4/shorten', {
-        long_url: input.matchedText
-    }, { headers: { Authorization: `Bearer ${access_token}` } });
-    return response.data.link;
+// replace all matched urls with thier shortened equivalents
+const action = async (input) => {
+    const access_token = popclip.options.authsecret;
+    const shortUrls = [];
+    for (const url of input.data.urls) {
+        const response = await bitly.post('v4/shorten', { long_url: url }, {
+            headers: { Authorization: `Bearer ${access_token}` }
+        });
+        shortUrls.push(response.data.link);
+    }
+    return (0, replace_1.replaceRanges)(input.text, input.data.urls.ranges, (_, index) => shortUrls[index]);
 };
 exports.action = action;
 // sign in to bitly using authorization flow

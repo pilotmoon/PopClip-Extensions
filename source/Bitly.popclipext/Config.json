@@ -1,0 +1,19 @@
+{
+  "popclip version": 3785,
+  "name": "Bitly",
+  "icon": "bitly-icon.svg",
+  "identifier": "com.pilotmoon.popclip.extension.bitly",
+  "entitlements": [
+    "network"
+  ],
+  "requirements": [
+    "urls"
+  ],
+  "after": "paste-result",
+  "module": "bitly.js",
+  "description": "Shorten the selected URL using Bitly.",
+  "app": {
+    "name": "Bitly",
+    "link": "http://bitly.com/"
+  }
+}

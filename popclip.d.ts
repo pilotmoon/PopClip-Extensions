@@ -550,9 +550,14 @@ declare interface Option {
   icon?: IconString
 }
 
+/** Represents a generic range, as a location and length */
+declare interface Range {
+  location: number
+  length: number
+}
 /** An array of strings with an addiontal `ranges` property defining the source of the data in the orignal string. */
-declare interface MatchedData extends Array<string> {
-  ranges: {location: number, length: number}
+declare interface RangedStrings extends Array<string> {
+  ranges: Range[]
 }
 
 /**
@@ -606,14 +611,14 @@ declare interface Input {
      */
   data: {
     /** HTTP ot HTTPS urls. */
-    urls: MatchedData
+    urls: RangedStrings
     /** Other protocols or app urls e.g. ftp:, omnifocus:, craftdocs: etc. (PopClip has a pre-defined allowlist
          * for these "other" URL schemes.) */
-    nonHttpUrls: MatchedData
+    nonHttpUrls: RangedStrings
     /** Email addresses. */
-    emails: MatchedData
+    emails: RangedStrings
     /** A local file path. The file path must be for a directory or file that exists. */
-    paths: MatchedData
+    paths: RangedStrings
   }
 
   /**
