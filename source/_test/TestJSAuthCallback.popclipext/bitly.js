@@ -1,13 +1,4 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable @typescript-eslint/naming-convention */
 // reimplementation of Bitly ext (as callback auth test)
@@ -19,29 +10,27 @@ const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', he
 const extension = {};
 // shorten URL with bitly
 extension.action = {
-    code(input, options) {
-        return __awaiter(this, void 0, void 0, function* () {
-            const access_token = options.authsecret;
-            const response = yield bitly.post('v4/shorten', {
-                long_url: input.matchedText
-            }, { headers: { Authorization: `Bearer ${access_token}` } });
-            return response.data.link;
-        });
+    async code(input, options) {
+        const access_token = options.authsecret;
+        const response = await bitly.post('v4/shorten', {
+            long_url: input.matchedText
+        }, { headers: { Authorization: `Bearer ${access_token}` } });
+        return response.data.link;
     },
     requirements: ['url'],
     after: 'paste-result'
 };
 // sign in to bitly using authorization flow
-extension.auth = (info, flow) => __awaiter(void 0, void 0, void 0, function* () {
+extension.auth = async (info, flow) => {
     const i = setInterval(() => {
         print('annoying');
     }, 500);
     const redirect_uri = info.redirect;
-    const { code } = yield flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
+    const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
     clearInterval(i);
-    const response = yield bitly.post('oauth/access_token', util.buildQuery({
+    const response = await bitly.post('oauth/access_token', util.buildQuery({
         client_id, client_secret, redirect_uri, code
     }), { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } });
     return response.data.access_token;
-});
+};
 module.exports = extension;

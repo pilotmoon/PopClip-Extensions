@@ -19,6 +19,9 @@ function x (selection): void {
 
 testAction.after = 'show-result'
 
+const f = popclip.input?.text
+print(f)
+
 defineExtension({
   title: 'fallbacktitle',
   icon: starIcon,
