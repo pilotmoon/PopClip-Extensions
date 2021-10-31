@@ -6,7 +6,7 @@ import { replaceRangesAsync } from './@popclip/replace'
 const { client_id, client_secret } = util.clarify(client)
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
-// bitly short url generator
+// generator: yield short urls from the input array of long urls
 async function * shorten (urls: string[]): AsyncGenerator<string> {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
   for (const long_url of urls) {
@@ -24,8 +24,8 @@ export const action: Action = async (input) => {
 export const auth: AuthFunction = async (info, flow) => {
   const redirect_uri = info.redirect
   const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri })
-  const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
   const data = util.buildQuery({ client_id, client_secret, redirect_uri, code })
+  const headers = { 'Content-Type': 'application/x-www-form-urlencoded' }
   const response = await bitly.post('oauth/access_token', data, { headers })
   return (response.data as any).access_token
 }

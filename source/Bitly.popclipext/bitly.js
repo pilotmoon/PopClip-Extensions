@@ -20,7 +20,7 @@ const client_json_1 = require("./client.json");
 const replace_1 = require("./@popclip/replace");
 const { client_id, client_secret } = util.clarify(client_json_1.client);
 const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
-// bitly short url generator
+// generator: yield short urls from the input array of long urls
 function shorten(urls) {
     return __asyncGenerator(this, arguments, function* shorten_1() {
         const headers = { Authorization: `Bearer ${popclip.options.authsecret}` };
@@ -39,8 +39,8 @@ exports.action = action;
 const auth = async (info, flow) => {
     const redirect_uri = info.redirect;
     const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
-    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
     const data = util.buildQuery({ client_id, client_secret, redirect_uri, code });
+    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
     const response = await bitly.post('oauth/access_token', data, { headers });
     return response.data.access_token;
 };

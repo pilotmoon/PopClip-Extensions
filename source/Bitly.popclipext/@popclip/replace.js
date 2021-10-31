@@ -11,7 +11,7 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.replaceRangesAsync = void 0;
+exports.replaceRanges = exports.replaceRangesAsync = void 0;
 // generator: yield the `ranges.length + 1` sections of text before, in between and after the given ranges
 function* textBetweenRanges(text, ranges) {
     let pos = 0;
@@ -21,7 +21,7 @@ function* textBetweenRanges(text, ranges) {
     }
     yield text.substring(pos, text.length);
 }
-// replace sections in a string with given replacements
+// replace sections in a string with given replacements (async version)
 const replaceRangesAsync = async (text, ranges, replacements) => {
     var e_1, _a;
     const between = textBetweenRanges(text, ranges);
@@ -42,3 +42,13 @@ const replaceRangesAsync = async (text, ranges, replacements) => {
     return result;
 };
 exports.replaceRangesAsync = replaceRangesAsync;
+// replace sections in a string with given replacements (sync version)
+const replaceRanges = (text, ranges, replacements) => {
+    const between = textBetweenRanges(text, ranges);
+    let result = between.next().value;
+    for (const item of replacements) {
+        result += item + between.next().value;
+    }
+    return result;
+};
+exports.replaceRanges = replaceRanges;
