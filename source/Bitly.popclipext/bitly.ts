@@ -2,7 +2,7 @@
 // reimplementation of Bitly ext (as callback auth test)
 import axios from 'axios'
 import { client } from './client.json'
-import { replaceRanges } from './replace'
+import { replaceRanges } from './@popclip/replace'
 const { client_id, client_secret } = util.clarify(client)
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 

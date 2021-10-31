@@ -5,7 +5,7 @@ exports.auth = exports.action = void 0;
 // reimplementation of Bitly ext (as callback auth test)
 const axios_1 = require("axios");
 const client_json_1 = require("./client.json");
-const replace_1 = require("./replace");
+const replace_1 = require("./@popclip/replace");
 const { client_id, client_secret } = util.clarify(client_json_1.client);
 const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
 // replace all matched urls with thier shortened equivalents
