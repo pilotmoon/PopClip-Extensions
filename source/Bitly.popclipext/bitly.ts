@@ -9,8 +9,10 @@ const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { A
 // generator: yield short urls from the input array of long urls
 async function * shorten (urls: string[]): AsyncGenerator<string> {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-  for (const long_url of urls) {
-    const response = await bitly.post('v4/shorten', { long_url }, { headers })
+  const responses = await Promise.all(urls.map(async (long_url) => {
+    return await bitly.post('v4/shorten', { long_url }, { headers })
+  }))
+  for (const response of responses) {
     yield (response.data as any).link
   }
 }

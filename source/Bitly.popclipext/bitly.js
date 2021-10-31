@@ -24,8 +24,10 @@ const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', he
 function shorten(urls) {
     return __asyncGenerator(this, arguments, function* shorten_1() {
         const headers = { Authorization: `Bearer ${popclip.options.authsecret}` };
-        for (const long_url of urls) {
-            const response = yield __await(bitly.post('v4/shorten', { long_url }, { headers }));
+        const responses = yield __await(Promise.all(urls.map(async (long_url) => {
+            return await bitly.post('v4/shorten', { long_url }, { headers });
+        })));
+        for (const response of responses) {
             yield yield __await(response.data.link);
         }
     });
