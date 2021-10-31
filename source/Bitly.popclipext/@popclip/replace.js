@@ -3,34 +3,42 @@
  * Utility module for ranged text replacement.
  * @module replace
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.replaceRanges = void 0;
-/**
- * Construct array of the text sections in between the defined ranges
- * @param ranges The text
- * @param length Array of ranges within the text bounds.
- * @return Array of `ranges.length + 1` strings between the ranges.
- */
-function betweenRanges(text, ranges) {
-    const result = [];
-    let pos = 0;
-    ranges.forEach((range, idx) => {
-        result.push(text.substring(pos, range.location)); // push section before range
-        pos = range.location + range.length;
-    });
-    result.push(text.substring(pos, text.length)); // ass on final section to end
-    return result;
-}
-/**
- * Replace sections in a string with supplied replacements.
- * @param text The string in which to replace sections.
- * @param replacements The ranges where they should be replaced in the text.
- * @param transform
- */
-const replaceRanges = (text, ranges, transform) => {
-    const between = betweenRanges(text, ranges);
-    return ranges.reduce((prev, cur, idx) => {
-        return prev + transform(text.substring(cur.location, cur.location + cur.length), idx) + between[idx + 1];
-    }, between[0]);
+var __asyncValues = (this && this.__asyncValues) || function (o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
-exports.replaceRanges = replaceRanges;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.replaceRangesAsync = void 0;
+// generator: yield the `ranges.length + 1` sections of text before, in between and after the given ranges
+function* textBetweenRanges(text, ranges) {
+    let pos = 0;
+    for (const range of ranges) {
+        yield text.substring(pos, range.location);
+        pos = range.location + range.length;
+    }
+    yield text.substring(pos, text.length);
+}
+// replace sections in a string with given replacements
+const replaceRangesAsync = async (text, ranges, replacements) => {
+    var e_1, _a;
+    const between = textBetweenRanges(text, ranges);
+    let result = between.next().value;
+    try {
+        for (var replacements_1 = __asyncValues(replacements), replacements_1_1; replacements_1_1 = await replacements_1.next(), !replacements_1_1.done;) {
+            const item = replacements_1_1.value;
+            result += item + between.next().value;
+        }
+    }
+    catch (e_1_1) { e_1 = { error: e_1_1 }; }
+    finally {
+        try {
+            if (replacements_1_1 && !replacements_1_1.done && (_a = replacements_1.return)) await _a.call(replacements_1);
+        }
+        finally { if (e_1) throw e_1.error; }
+    }
+    return result;
+};
+exports.replaceRangesAsync = replaceRangesAsync;
