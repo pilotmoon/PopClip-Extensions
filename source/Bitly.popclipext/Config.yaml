@@ -1,0 +1,10 @@
+popclip version: 3785
+name: Bitly
+icon: bitly-logo.svg
+identifier: com.pilotmoon.popclip.extension.bitly
+entitlements: [network]
+module: bitly.js
+description: Shorten the selected URL using Bitly.
+app:
+  name: Bitly
+  link: http://bitly.com/ 
