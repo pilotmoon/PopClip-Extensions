@@ -35,7 +35,7 @@ The SVG icon is from [BrandEPS](https://brandeps.com/icon/B/Bitly-01).
 
 * Updated to fix login failure.
 
-### v4 — 31 Oct 2021
+### v4 — 1 Nov 2021
 
 * Rewritten using PopClip's JavaScript API, for compatibility with macOS Monterey.
 * Now shortens all URLs detected in the text, instead of just one.
