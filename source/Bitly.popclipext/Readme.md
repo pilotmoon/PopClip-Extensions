@@ -1,8 +1,10 @@
 # Bitly
 
-A PopClip extension to shorten a URL using [Bitly](https://bitly.com/).
+A PopClip extension to shorten URLs using [Bitly](https://bitly.com/).
 
-The extension defines a single action called "Bitly", which is enabled when the input contains one or more web URLs. The action shortens all the detected URLs using the logged-in Bitly account, and outputs the resulting text. (If the text is not editable, or Shift is held on the keyboard, PopClip will copy the result to the clipboard instead.)
+The extension defines a single action called "Bitly", which is enabled when the input contains one or more web URLs. The action shortens all the detected URLs using the logged-in Bitly account, and outputs the result to be pasted or copied.
+
+If you try to shorten an already-shortened Bitly link, you'll get an error.
 
 ### Requirements
 
