@@ -12,7 +12,7 @@
   ],
   "after": "paste-result",
   "module": "bitly.js",
-  "description": "Shorten the selected URL using Bitly.",
+  "description": "Shorten URLs in the text using Bitly.",
   "app": {
     "name": "Bitly",
     "link": "http://bitly.com/"
