@@ -6,18 +6,31 @@ import { replaceRangesAsync } from './@popclip/replace'
 
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
-// generator: yield short urls from the input array of long urls
-async function * shorten (urls: string[]): AsyncGenerator<string> {
+// shorten urls sequentially from the input array of long urls
+// async function * shorten (urls: Iterable<string>): AsyncIterable<string> {
+//   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
+//   for (const long_url of urls) {
+//     const response = await bitly.post('v4/shorten', { long_url }, { headers })
+//     yield (response.data as any).link
+//   }
+// }
+
+// alternate generator that does all the API calls simultanously and skips dupes
+async function * shortenSimultaneously (urls: Iterable<string>): AsyncIterable<string> {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-  for (const long_url of urls) {
+  const lookup = new Map<string, string>()
+  await Promise.all(Array.from(new Set(urls), async (long_url) => {
     const response = await bitly.post('v4/shorten', { long_url }, { headers })
-    yield (response.data as any).link
+    lookup.set(long_url, (response.data as any).link)
+  }))
+  for (const url of urls) {
+    yield lookup.get(url) as string
   }
 }
 
-// replace all matched urls with their shortened equivalents
+// replace all matched urls with their shortened equivalents, calling duplicates only once
 export const action: Action = async (input) => {
-  return await replaceRangesAsync(input.text, input.data.urls.ranges, shorten(input.data.urls))
+  return await replaceRangesAsync(input.text, input.data.urls.ranges, shortenSimultaneously(input.data.urls))
 }
 
 // sign in to bitly using authorization flow
