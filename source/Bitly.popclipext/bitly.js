@@ -14,36 +14,32 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
-// reimplementation of Bitly ext (as callback auth test)
 const axios_1 = require("axios");
 const client_json_1 = require("./client.json");
 const replace_1 = require("./@popclip/replace");
+// bitly api endpoint
 const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
-// shorten urls sequentially from the input array of long urls
-// async function * shorten (urls: Iterable<string>): AsyncIterable<string> {
-//   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-//   for (const long_url of urls) {
-//     const response = await bitly.post('v4/shorten', { long_url }, { headers })
-//     yield (response.data as any).link
-//   }
-// }
-// alternate generator that does all the API calls simultanously and skips dupes
-function shortenSimultaneously(urls) {
-    return __asyncGenerator(this, arguments, function* shortenSimultaneously_1() {
+// asynchronous generator which yields the shortened form of all the supplied urls
+function shortened(urls) {
+    return __asyncGenerator(this, arguments, function* shortened_1() {
         const headers = { Authorization: `Bearer ${popclip.options.authsecret}` };
-        const lookup = new Map();
-        yield __await(Promise.all(Array.from(new Set(urls), async (long_url) => {
-            const response = await bitly.post('v4/shorten', { long_url }, { headers });
-            lookup.set(long_url, response.data.link);
-        })));
+        const table = new Map();
+        const deduped = new Set(urls); // exclude any duplicate URLs
+        // issue all the api calls, saving the results in the table
+        yield __await(Promise.all(Array.from(deduped, async (long_url) => {
+            table.set(long_url, await bitly.post('v4/shorten', { long_url }, { headers }));
+        }))
+        // yield the shortened form of each url in the text
+        );
+        // yield the shortened form of each url in the text
         for (const url of urls) {
-            yield yield __await(lookup.get(url));
+            yield yield __await(table.get(url).data.link);
         }
     });
 }
 // replace all matched urls with their shortened equivalents, calling duplicates only once
 const action = async (input) => {
-    return await (0, replace_1.replaceRangesAsync)(input.text, input.data.urls.ranges, shortenSimultaneously(input.data.urls));
+    return await (0, replace_1.replaceRangesAsync)(input.text, input.data.urls.ranges, shortened(input.data.urls));
 };
 exports.action = action;
 // sign in to bitly using authorization flow

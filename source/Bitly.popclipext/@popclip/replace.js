@@ -12,7 +12,12 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.replaceRanges = exports.replaceRangesAsync = void 0;
-// generator: yield the `ranges.length + 1` sections of text before, in between and after the given ranges
+/**
+ * A generator which yields the sections of a string *not* contained within the given ranges.
+ * @param text The string to divide up.
+ * @param ranges Array of ranges. Must all be contained within the `text`, in ascending order, and non-overlapping.
+ * @returns A generator which will yield the `ranges.length + 1` sections of text before, in between and after the given ranges.
+ */
 function* textBetweenRanges(text, ranges) {
     let pos = 0;
     for (const range of ranges) {
@@ -21,7 +26,7 @@ function* textBetweenRanges(text, ranges) {
     }
     yield text.substring(pos, text.length);
 }
-// replace sections in a string with given replacements (async version)
+/** Asynchronous version of `replaceRanges`. */
 const replaceRangesAsync = async (text, ranges, replacements) => {
     var e_1, _a;
     const between = textBetweenRanges(text, ranges);
@@ -42,7 +47,12 @@ const replaceRangesAsync = async (text, ranges, replacements) => {
     return result;
 };
 exports.replaceRangesAsync = replaceRangesAsync;
-// replace sections in a string with given replacements (sync version)
+/** Replace sections in a string with given replacements
+ * @param text String on which to perform the operation.
+ * @param ranges Array of ranges in to replace. Must all be contained within the `text`, in ascending order, and non-overlapping.
+ * @param replacements The replacement values, corresponding to `ranges`.
+ * @return The modified string.
+ */
 const replaceRanges = (text, ranges, replacements) => {
     const between = textBetweenRanges(text, ranges);
     let result = between.next().value;
