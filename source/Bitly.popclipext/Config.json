@@ -1,6 +1,5 @@
 {
   "popclipVersion": 3785,
-  "macosVersion": "10.14.6",
   "name": "Bitly",
   "icon": "bitly-icon.svg",
   "identifier": "com.pilotmoon.popclip.extension.bitly",
