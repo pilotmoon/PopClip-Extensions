@@ -15,7 +15,7 @@
     },
     "compilerOptions": {
         "strictNullChecks": true,
-        "target": "es2017",
+        "target": "es2018",
         "lib": [
             "es2015"
         ],
