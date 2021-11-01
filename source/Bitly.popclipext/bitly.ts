@@ -7,12 +7,12 @@ import { replaceRangesAsync } from './@popclip/replace'
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
 // asynchronous generator which yields the shortened form of all the supplied urls
-async function * shorten (urls: Iterable<string>): AsyncIterable<string> {
+async function * shortened (urls: Iterable<string>): AsyncIterable<string> {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
   const table = new Map()
   const deduped = new Set(urls) // exclude any duplicate URLs
 
-  // issue all the API calls, saving the results in the table
+  // issue all the api calls, saving the results in the table
   await Promise.all(Array.from(deduped, async (long_url) => {
     table.set(long_url, await bitly.post('v4/shorten', { long_url }, { headers }))
   }))
@@ -25,7 +25,7 @@ async function * shorten (urls: Iterable<string>): AsyncIterable<string> {
 
 // replace all matched urls with their shortened equivalents, calling duplicates only once
 export const action: Action = async (input) => {
-  return await replaceRangesAsync(input.text, input.data.urls.ranges, shorten(input.data.urls))
+  return await replaceRangesAsync(input.text, input.data.urls.ranges, shortened(input.data.urls))
 }
 
 // sign in to bitly using authorization flow

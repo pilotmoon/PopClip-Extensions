@@ -4,11 +4,10 @@
  */
 
 /**
- * A generator which yields the secions of a string *not* contained within the given ranges.
+ * A generator which yields the sections of a string *not* contained within the given ranges.
  * @param text The string to divide up.
  * @param ranges Array of ranges. Must all be contained within the `text`, in ascending order, and non-overlapping.
  * @returns A generator which will yield the `ranges.length + 1` sections of text before, in between and after the given ranges.
-/**
  */
 function * textBetweenRanges (text: string, ranges: Range[]): Generator<string> {
   let pos = 0
