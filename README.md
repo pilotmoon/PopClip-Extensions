@@ -188,20 +188,20 @@ Icons may be specified in the `icon` fields in a few different ways:
 
 - **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified. Therefore, you should specify an appropriate `macos version` when using a symbol icon.)
 
-- **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below)
+- **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below).
 
 PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size.
 
 ### Text-based icons
 
-Text-based icons can up to three characters, on their own or within an enclosing shape. They are specified by space separated keywords followed by the characters to draw.
+Text-based icons can up to three characters, on their own or within an enclosing shape. They are specified by space-separated keywords followed by the characters to draw.
 
 The following keywords define an enclosing shape (only one of these should be included):
 
 | Keyword      | Effect                                                                                                                          |
 | ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
 | `text`       | Draw the text on its own, without a shape. This is the default if no shape keyword is specified.                                |
-| `square`     | Encloses text in round cornered square.                                                                                         |
+| `square`     | Encloses text in a round-cornered square.                                                                                         |
 | `circle`     | Encloses text in a circle.                                                                                                      |
 | `search`     | Encloses text in a magnifying glass shape.                                                                                      |
 
