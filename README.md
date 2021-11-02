@@ -297,7 +297,7 @@ The name is as shown in the Services menu, for example `Add to Deliveries`. In s
 
 ### URL action properties
 
-An URL action is defined by the presence of a `url` field.
+A URL action is defined by the presence of a `url` field. You can open any type of URL, not just web URLs.
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -305,11 +305,7 @@ An URL action is defined by the presence of a `url` field.
 
 You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`.
 
-The string `***` will also work as a shorthand for `{popclip text}`.
-
-You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropriate application given the user's current context.
-
-Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
+The string `***` will work as a shorthand for `{popclip text}`.
 
 ### Key Press action properties
 
@@ -363,6 +359,7 @@ These are the values supported by the `requirements` array. Additionally, you ca
 |`url`|The text must contain exactly one web URL (http or https).|
 |`urls`|The text must contain one or more web URLs (https or https).|
 |`email`|The text must contain exactly one email address.|
+|`emails`|The text must contain one or more email addresses.|
 |`path`|The text must be a local file path, and it must exist on the local file system.|
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
@@ -392,7 +389,7 @@ The `app` field is a dictionary with the following stricture:
 |---|----|---------|-----------|
 |`name`|String|Required|Name of the app which this extension interacts with. For example `Evernote` for an Evernote extension.|
 |`link`|String|Required|Link to a website where the user can get the app referred to in `Name`. For example `https://evernote.com/`.|
-|`check installed`|Boolean|If `true`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `false`.|
+|`check installed`|Boolean|Optional|If `true`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `false`.|
 |`bundle identifiers`|Array|Required if `check installed` is `true`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
 
 ### The `options` array
@@ -404,11 +401,11 @@ Options are presented to the user in a preferences user interface window and are
 |`identifier`|String|Required|Identifying string for this option. This is passed to your script. The identifier will be downcased or upcased for AppleScript and Shell Script targets, respectively — see [Script Fields](#script-fields).|
 |`type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
 |`label`|Localizable String|Required|The label to appear in the UI for this option.|
-|`description`|Localizable String|A longer description to appear in the UI to explain this option.|
-|`default value`|String|This field specifies the default value of the option. If omitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
+|`description`|Localizable String|Optional|A longer description to appear in the UI to explain this option.|
+|`default value`|String|Optional|This field specifies the default value of the option. If omitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
 |`values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
-|`value labels`|Array|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If omitted, the option values themselves are shown.|
-|`inset`|Boolean|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
+|`value labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If omitted, the option values themselves are shown.|
+|`inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
 
 ## Using Scripts
 
