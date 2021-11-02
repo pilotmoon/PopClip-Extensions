@@ -25,9 +25,8 @@ This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG
     - [Examples of symbols and text-based icons](#examples-of-symbols-and-text-based-icons)
   - [The Config file structure](#the-config-file-structure)
     - [About the "Localizable String" type](#about-the-localizable-string-type)
-  - [Extension properties](#extension-properties)
-  - [Action properties](#action-properties)
-    - [Common action properties](#common-action-properties)
+    - [Extension properties](#extension-properties)
+    - [Action properties](#action-properties)
     - [Shortcut action properties](#shortcut-action-properties)
     - [Service action properties](#service-action-properties)
     - [URL action properties](#url-action-properties)
@@ -113,11 +112,11 @@ There are seven kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|Shortcut|Send the selected text to a macOS Shortcut. (Requires macOS 12.0 Monterey.)| - |
+|Shortcut|Send the selected text to a macOS Shortcut. (Requires macOS 12.0 Monterey.)| TODO |
 |Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)|
 |URL|Open a URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
 |Key Press|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
-|JavaScript|Run a JavaScript script.|-|
+|JavaScript|Run a JavaScript script.| TODO |
 |AppleScript|Run an AppleScript script.|[BBEdit](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit)|
 |Shell Script|Run a shell script.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
 
@@ -238,7 +237,7 @@ As a handy tool, the extension [IconPreview.popclipextz](https://github.com/pilo
 
 Fields shown as "Localizable String" may be either a string or a dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-hans`, etc.) to a string, PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
 
-## Extension properties
+### Extension properties
 
 Thg following fields are used at the top level of the configuration to define properties of the extension itself. All fields are optional.
 
@@ -257,9 +256,7 @@ Thg following fields are used at the top level of the configuration to define pr
 
 If neither `actions` nor `action` is defined, PopClip will look at the top level of the plist for an action definition.
 
-## Action properties
-
-### Common action properties
+### Action properties
 
 The following fields define properties common to all actions. All fields are optional.
 
@@ -294,9 +291,9 @@ A service action is defined by the presence of a `service name` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`service name`|String|The name of the macOS service to call. The name is as shown in the Services menu, for example `Add to Deliveries`.|
+|`service name`|String|The name of the macOS service to call. |
 
-In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
+The name is as shown in the Services menu, for example `Add to Deliveries`. In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
 
 ### URL action properties
 
