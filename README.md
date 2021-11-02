@@ -1,39 +1,81 @@
 # PopClip Extensions
 
-This document applies to PopClip 2021.10 (3543). See also: [Changelog](CHANGELOG.md)
+This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG.md)
 
-Entries marked **BETA** apply to the current [PopClip beta](https://pilotmoon.com/popclip/download).
+## Table of Contents
 
-<!-- ([Draft JavaScript extensions documentation](https://pilotmoon.github.io/PopClip-Extensions/)) -->
+- [PopClip Extensions](#popclip-extensions)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+    - [License](#license)
+    - [Credits](#credits)
+    - [Contributing](#contributing)
+    - [Useful Links](#useful-links)
+    - [Extension Signing](#extension-signing)
+    - [Extra Debugging Output](#extra-debugging-output)
+  - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
+    - [Types of Actions](#types-of-actions)
+    - [Filtering](#filtering)
+    - [About .popclipextz files](#about-popclipextz-files)
+    - [The .popclipext package](#the-popclipext-package)
+    - [The Config file](#the-config-file)
+    - [Field names](#field-names)
+  - [Icons](#icons)
+    - [Text-based icons](#text-based-icons)
+  - [The Config file structure](#the-config-file-structure)
+    - [About the "Localizable String" type](#about-the-localizable-string-type)
+  - [Extension properties](#extension-properties)
+  - [Action properties](#action-properties)
+    - [Common action properties](#common-action-properties)
+    - [Shortcut action properties](#shortcut-action-properties)
+    - [Service action properties](#service-action-properties)
+    - [URL action properties](#url-action-properties)
+    - [Key Press action properties](#key-press-action-properties)
+    - [JavaScript action properties](#javascript-action-properties)
+    - [AppleScript action properties](#applescript-action-properties)
+    - [Shell Script action properties](#shell-script-action-properties)
+  - [Meanings of particular fields](#meanings-of-particular-fields)
+    - [The `requirements` array](#the-requirements-array)
+    - [The `before` and `after` strings](#the-before-and-after-strings)
+    - [The `app` dictionary](#the-app-dictionary)
+    - [The `options` array](#the-options-array)
+  - [Using Scripts](#using-scripts)
+    - [Script Fields](#script-fields)
+    - [Example AppleScript File](#example-applescript-file)
+    - [Example Shell Script Files](#example-shell-script-files)
+    - [Shell Script Testing](#shell-script-testing)
+    - [Indicating Errors](#indicating-errors)
+  - [Key Combo format](#key-combo-format)
+    - [Key code string format](#key-code-string-format)
+    - [Key code dictionary format](#key-code-dictionary-format)
+  - [Field name mapping](#field-name-mapping)
 
 ## Introduction
 
-PopClip extensions add extra actions to [PopClip](http://pilotmoon.com/popclip). 
+PopClip Extensions add extra actions to [PopClip](http://pilotmoon.com/popclip).
 
 ![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/example.png)
 
 This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Plus bonus extensions not published on that page.
 
-## License
+### License
 
-All extension source files are published under the MIT License (see LICENSE) unless noted otherwise in the readme files of individual extensions.
+All extension source files are published under the MIT License (see [LICENSE.txt](/LICENSE.txt)) unless noted otherwise in the readme files of individual extensions.
 
-## Credits
+### Credits
 
-All the extensions and documentation were created by Nick Moore, except where stated. Contributor credits may be included in a readme file with each individual extension.
+All the extensions and documentation were created by Nick Moore, except where stated. Individual extension credits are included in a readme file with the extension.
 
-## Contributing
+### Contributing
 
 Thank you for contributing! New extensions can be contributed by pull request, as a new folder in the `source` folder of this repo. Alternatively simply by zip up your extension and email it to me. Contributors, please note the following:
 
-* By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
-* Submitting to the repo does not guarantee publication on the website. (And if I don't publish your extension there it doesn't mean your extension is bad. I curate that list for the general audience and your extension just might be more technical or niche.)
-* I may make changes to any extension submitted.
-* Don't worry about signing the extension, I will take care of that.
+- By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
+- Submitting to the repo does not guarantee publication on the website. (And if I don't publish your extension there it doesn't mean your extension is bad. I curate that list for the general audience and your extension just might be more technical or niche.)
+- I may make changes to any extension submitted.
+- Don't worry about signing the extension, I will take care of that.
 
-Also I'm aware that there is a years-old list of unmerged pull requests and I'm sorry about that. I'm trying to make sure to merge any new ones as they come in. Again, it's not a reflection on the quality of your submission, it's just that there is only one of me. Please ping me if I've ignored something and you'd like me to take a look.
-
-## Useful Links
+### Useful Links
 
 For an easy way to create certain types of extension with no coding necessary, check out Brett Terpstra's [PopMaker](http://brettterpstra.com/2014/05/12/popmaker-popclip-extension-generator/) app.
 
@@ -42,7 +84,7 @@ Here are some external "how to" guides for creating extensions:
 - [Create Your Own Custom Extension for PopClip (Tuts+)](http://computers.tutsplus.com/tutorials/create-your-own-custom-extension-for-popclip--mac-50637)
 - [PopClip: Scripting Extensions (Tuts+)](http://computers.tutsplus.com/tutorials/popclip-scripting-extensions--mac-55842)
 
-## Extension Signing
+### Extension Signing
 
 By default, PopClip will display a warning dialog when you try to install your own extension, because it is not digitally signed.
 
@@ -54,45 +96,49 @@ If you find this gets annoying while you are testing your work, you can turn off
 
 Please be aware that PopClip extensions can contain arbitrary executable code. Be careful about the extensions you create, and be wary about loading extensions you get from someone else.
 
-## Extra Debugging Output
+### Extra Debugging Output
 
 To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
-## General Overview
+## Anatomy of a PopClip Extension
+
+***A note on "module-based" extensions:** PopClip 2021.11 supports a new kind of extension that I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This document focuses on "classic" extensions, and not module based extensions. Documentation for module-based extensions is still being prepared.*
 
 ### Types of Actions
 
-There are six kinds of actions supported by PopClip extensions.
+There are seven kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|**BETA** Shortcut|Send the selected text to a macOS Shortcut. (Requires on macOS 12.0 Monterey.)| - | 
-|Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)| 
-|AppleScript|Run an AppleScript, with the selected text embedded.|[BBEdit](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit)|
-|Shell Script|Run a shell script, with the selected text passed as a shell variable.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
-|URL|Open an HTTP URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
-|Keypress|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
-
+|Shortcut|Send the selected text to a macOS Shortcut. (Requires on macOS 12.0 Monterey.)| - |
+|Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)|
+|URL|Open a URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
+|Key Press|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
+|JavaScript|Run a JavaScript script.|-|
+|AppleScript|Run an AppleScript script.|[BBEdit](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit)|
+|Shell Script|Run a shell script.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
 
 ### Filtering
-All extensions have access to the following filtering mechanisms, to help prevent them appearing when they are not useful:
 
-* Filter by matching a regular expression.
-* Filter by application (either include or exclude).
-* Filter by whether cut, copy or paste is available.
-* Filter by whether the text contains a URL, email address or file path.
+Extensions have access to the following filtering mechanisms, to help prevent actions appearing when they are not useful:
 
-## Anatomy of a PopClip Extension
+- Filter by matching a regular expression.
+- Filter by application (either include or exclude).
+- Filter by whether cut, copy or paste is available.
+- Filter by whether the text contains a URL, email address or file path.
+- Filter by the current value of the extensions's options.
 
 ### About .popclipextz files
+
 For distribution on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page, extensions are zipped and renamed with the extension `.popclipextz`. You can examine an existing PopClip extension by renaming it with a `.zip` extension and unzipping it, to reveal a `.popclipext` package.
 
 ### The .popclipext package
-A PopClip extension consists of a property list called `Config.plist`, plus (optional) additional files such as the icon and any required scripts, all contained in a directory whose name ends with `.popclipext`. Such a directory will be treated as a package by Mac OS X. To view the contents of a package, right click it in Finder and choose 'Show Package Contents'.
 
-If you double-click a `.popclipext` package, PopClip will attempt to load and install it. PopClip stores its installed extensions in `~/Library/Application Support/PopClip/Extensions/`. 
+A PopClip extension consists of a configuration file called either `Config.json`, `Config.yaml` or `Config.plist`, plus (optional) additional files such as icons and scripts, all contained in a directory whose name ends with `.popclipext`. Such a directory will be treated as a package by Mac OS X. To view the contents of a package, right click it in Finder and choose 'Show Package Contents'.
+
+If you double-click a `.popclipext` package, PopClip will attempt to load and install it. PopClip stores its installed extensions in `~/Library/Application Support/PopClip/Extensions/`.
 
 Here is an example package structure, using the 'Say' extension:
 
@@ -102,192 +148,223 @@ Here is an example package structure, using the 'Say' extension:
        say.sh                       -- Script file
        speechicon.png               -- Icon file
 
-### The Config.plist
-Every extension must contain a `Config.plist` file. This should be a text file in Apple [Property List](https://en.wikipedia.org/wiki/Property_list) format. The plist contains information about the extension, and also defines one or more *actions*. You can edit plist files with a standard text editor, with Xcode, or with a dedicated plist editor such as [PlistEdit Pro](http://www.fatcatsoftware.com/plisteditpro/).
+### The Config file
 
-Example plist: [ExampleConfig.plist](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/ExampleConfig.plist).
+Every extension must contain a Config file, in either JSON, YAML or plist format.
 
-Here is an example plist for 'Translate Tab', as viewed in Xcode:
+| Format | File Name      | Description                                                                |
+| ------ | -------------- | -------------------------------------------------------------------------- |
+| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format.                |
+| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org) format.                             |
+| plist  | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list). |
 
-![Example plist, for 'Translate Tab'.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/ttplist.png)
+The Config file must define a single dictionary at its root, which defines the extension. Although the three formats are different, they all can be used to define a dictionary mapping
+string keys to values. The values can be strings, numbers, booleans, arrays or other dictionaries. (In this documentation the term 'field' is used to refer to a key/value pair in a dictionary.)
+
+The choice of format does not affect the extension functionality in any way, so you can choose whichever format you prefer to work with. (Plist was the original config file format for PopClip extensions for many years, and the JSON and YAML formats were added later.)
+
+### Field names
+
+Field names in this document are given in a lowercase form with words separated by spaces, such as `required apps`. However, PopClip will treat field names in any of the following formats as equivalent:
+
+- Lowercase with spaces: e.g. `required apps`
+- Mixed case with spaces: e.g. `Required Apps` (this is the original naming format prior to PopClip 2021.11)
+- Camel case:  e.g. `requiredApps`
+- Pascal case:  e.g. `RequiredApps`
+- Snake case:  e.g. `required_apps`
+- Kebab case:  e.g. `required-apps`
+- Constant case:  e.g. `REQUIRED_APPS`
+
+Rules for transformation are as defined by [case-anything](https://github.com/mesqueeb/case-anything), which PopClip uses.
+
+Older versions of PopClip used different names for some fields. Where there is a new name, the old name is also still accepted. A table of old and new is given in [Field name mapping](#field-name-mapping).
 
 ## Icons
-Icons may be specified in the `Icon` and/or `Extension Icon` fields in a few different ways:
 
-* **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com)] or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
+Icons may be specified in the `icon` fields in a few different ways:
 
-* **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified, and the extension will display the text title instead. You should probably specify an appropriate `Required OS Version` of when using a symbol icon.)
+- **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com)] or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
 
-* **As SVG source code:** `svg:<svg code>` let you specify an image file as svg source code directly in the field. (Although in most cases it's probably a better idea to simply use a separate SVG file.)
+- **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified. Therefore, you should specify an appropriate `macos version` when using a symbol icon.)
 
-* **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below).
+- **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below)
 
-PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size. 
+PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size.
 
 ### Text-based icons
 
-Text-based icons can up to three characters, on their own or within an enclosing shape. The text is rendered in SF Pro, the macOS default UI font. The enclosing shape is specified using different kinds of brackets around the text, as follows (where `T` represents any 1 to 3 characters):
+Text-based icons can up to three characters, on their own or within an enclosing shape. They are specified by space separated keywords followed by the characters to draw.
 
-| Style            | Format       | Example | Result                                                                                                                                   |
-| ---------------- | ------------ | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| No decoration    | `T` or `-T-` | `A`     | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
-| Circle (outline) | `(T)`        | `(2)`   | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="20" height="20">   |
-| Circle (filled)  | `((T))`      | `((本))` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
-| Square (outline) | `[T]`        | `[xyz]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
-| Square (filled)  | `[[T]]`      | `[[!]]` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
-| **BETA** Search (outline) | `{T}`        | `[Ex]` |  |
-| **BETA** Search (filled)  | `{{T}}`      | `[[?]]` |  |
+The following keywords define an enclosing shape (only one of these should be included):
 
-The text specifier also be used with the prefix `text:`, e.g. `text:[X]`.
+| Keyword      | Effect                                                                                                                          |
+| ------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| `text`       | Draw the text on its own, without a shape. This is the default if no shape keyword is specified.                                |
+| `square`     | Encloses text in round cornered square.                                                                                         |
+| `circle`     | Encloses text in a circle.                                                                                                      |
+| `search`     | Encloses text in a magnifying glass shape.                                                                                      |
 
-## The Config File Structure
+The following keywords modify the way the text is drawn:
 
-### About "String or Dictionary" type
+| Keyword      | Effect                                                                                                                                                   |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `filled`     | Specifies a solid filled shape (default is an outline shape).                                                                                            |
+| `monospaced` | Specifies that the text be drawn in a monospaced font (default is variable-width font). Punctuation characters often render better in a monospaced font. |
 
-Fields shown as "String or Dictionary" type are localizable strings. The field may be either a string or dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-Hans`, etc.) to a string. PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
+Examples:
 
-### Troubleshooting
+| Example                       | Icon Generated                                                                                                                       |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `A` or `text A`               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
+| `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="20" height="20">   |
+| `circle filled 本`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
+| `square xyz`                  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
+| `square filled !`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
+| `search E`                    | TODO                                                                                                                                     |
+| `search filled ?`             | TODO                                                                                                                                     |
+| `square filled monospaced ""` | TODO                                                                                                                                     |
 
-Make sure that you set each field the correct type. A common error is to enter a number as a string type.
+## The Config file structure
 
-Common reasons for malformed XML in plists are:
+### About the "Localizable String" type
 
-* Missing end tags
-* Mismatched start and end tags
-* Unescaped `&` characters (`&` must be encoded as `&amp;`)
+Fields shown as "Localizable String" may be either a string or a dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-hans`, etc.) to a string. PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
 
-## Extension Properties
+## Extension properties
 
-Thge following fields are used at the top level of the configuration to define properties of the extension itself.
-
-|Key|Type|Required?|Description|
-|---|----|---------|-----------|
-|`Extension Name` |String or Dictionary| Required (_**BETA**: Optional_) | This is a display name that appears in the preferences list of extensions. (_**BETA**: If omitted, a name is generated automatically from the .popclipext package name.)|
-|`Extension Icon` |String|Optional|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
-|`Extension Identifier` |String| Required (_**BETA**: Optional_) |You must (_**BETA**: may_) provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.) _**BETA:** If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead._|
-|`Extension Description`|String or Dictionary|Optional|A short, human readable description of this extension. Appears on the web site but not in the app.|
-|`Required OS Version` _(**BETA:** `MacOS Version`)_|String|Optional|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
-|`Required Software Version` _(**BETA:** `PopClip Version`)_|Integer|Optional|Minimum version number of PopClip needed by this extension. This is the numeric version as shown in brackes in PopClip's about pane. I recommend using `3543` for new extensions based on this document.|
-|`Options`|Array|Optional|Array of dictionaries defining the options for this extension, if any. See [Options](#options).|
-|`Options Title`|String or Dictionary|Optional|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
-|`Action`|Dictionary|Optional|A dictionary defining a single action for this extension.|
-|`Actions`|Array|Optional|Array of dictionaries defining the actions for this extension.|
-
-**BETA**: If neither `Actions` not `Action` is defined, PopClip will look at the top level of the plist for an action definition.
-
-## Action Properties
-
-### Common Action Properties
-
-The following fields define properties common to all actions. 
-
-|Key|Type|Required?|Description|
-|---|----|---------|-----------|
-|`Title`|String or Dictionary|Required (**BETA**: Optional)|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
-|`Icon`|String|Optional| The icon to show on the action button. See [Icons](#icons) for the icon specification format. _**BETA**: To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML)._
-|`Identifier`|String|Optional|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
-|`Requirements`|Array|Optional|Array consisting of zero or more of the strings listed in [Requirements](#requirements). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
-|`Before`|String|Optional|String to indicate an action PopClip should take *before* performing the main action. See [Before and After](#before-and-after-keys).|
-|`After`|String|Optional|String to indicate an action PopClip should take *after* performing the main action. See [Before and After](#before-and-after-keys).
-|`Blocked Apps` _(**BETA**: `Excluded Apps`)_|Array|Optional|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
-|`Required Apps`|Array|Optional|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
-|`Regular Expression`|String|Optional|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `Requirements` keys `httpurl`, `httpurls`, `email` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
-|`App`|Dictionary|Optional|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [App](#app).|
-|`Stay Visible`|Boolean|Optional|If `YES`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `NO`.|
-|`Capture HTML`|Boolean|Optional|If `YES`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `NO`.|
-
-### Shortcut Action Properties
-
-A shortcut action is defned by the presence of a `Shortcut Name` string. 
+Thg following fields are used at the top level of the configuration to define properties of the extension itself. All fields are optional.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`Shortcut Name`|String|The name of the macOS Shortcut to call. The name is whatever it is called in the Shortcuts app.|
+|`name` |Localizable String| This is a display name that appears in the preferences list of extensions. If omitted, a name is generated automatically from the `.popclipext` package name.|
+|`icon` |String|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`identifier` |String| You may provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.)If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead.|
+|`description`|Localizable String|A short, human readable description of this extension. Appears on the web site but not in the app.|
+|`macos version` |String|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
+|`popclip version` |Integer|Minimum PopClip version required. This is the build number, as shown in brackets in the about pane. You should specify `3785` for new extensions based on this document.|
+|`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
+|`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
+|`action`|Dictionary|A dictionary defining a single action for this extension.|
+|`actions`|Array|Array of dictionaries defining the actions for this extension.|
+
+If neither `actions` nor `action` is defined, PopClip will look at the top level of the plist for an action definition.
+
+## Action properties
+
+### Common action properties
+
+The following fields define properties common to all actions. All fields are optional.
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`title`|Localizable String|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
+|`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
+|`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
+|`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
+|`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [Before and After](#the-before-and-after-strings).|
+|`after`|String|String to indicate an action PopClip should take *after* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).
+|`excluded apps`|Array|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
+|`required apps`|Array|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
+|`regex`|String|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `requirements` keys `url`, `urls`, `email`, `emails` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
+|`app`|Dictionary|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [The `app` dictionary](#the-app-dictionary).|
+|`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
+|`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
+
+### Shortcut action properties
+
+A shortcut action is defined by the presence of a `shortcut name` field. Shortcut actions are only available on macOS 12.0 and above.
+
+|Key|Type|Description|
+|---|----|-----------|
+|`shortcut name`|String|The name of the macOS Shortcut to call. The name is whatever it is called in the Shortcuts app.|
 
 The selected text will be sent as input to the service, and any text returned by the shortcut will be available to the `After` actions.
 
-### Service Action Properties
+### Service action properties
 
-A service action is defned by the presence of a `Service Name` string. 
+A service action is defined by the presence of a `service name` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`Service Name`|String|The name of the macOS service to call. The name is as shown in the Services menu, for example `Add to Deliveries`.|
+|`service name`|String|The name of the macOS service to call. The name is as shown in the Services menu, for example `Add to Deliveries`.|
 
 In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
 
-### URL Action Properties
+### URL action properties
 
-An URL action is defned by the presence of a `URL` string. 
+An URL action is defined by the presence of a `url` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`URL`|String|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. The inserted string will be automatically URL-encoded by PopClip. |
+|`url`|String|The URL to open when the user clicks the action. Use `{popclip text}` as placeholder for the selected text. The inserted string will be automatically URL-encoded by PopClip. |
 
-You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`. 
+You can also put options in the URL, in the same format as for AppleScripts. For example, `http://translate.google.com/#auto%7C{popclip option language}%7C{popclip text}`.
 
 The string `***` will also work as a shorthand for `{popclip text}`.
 
-You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropate application given the user's current context.
+You can open any type of URL, not just web URLs. PopClip will try to open URLs in the most appropriate application given the user's current context.
 
 Note that if using a `Config.plist`, any `&` characters in the URL must be XML-encoded as `&amp;`.
 
+### Key Press action properties
 
-### Keypress Action Properties
-
-A Keypress action is defned by the presence of a `Key Combo` dictionary. 
+A Key Press action is defined by the presence of a `key combo` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`Key Combo`|Dictionary|The keypress that PopClip should generate. See [Key Code format](#key-code-format).|
+|`key combo`|String or Dictionary|The key combination that PopClip should press. See [Key Combo format](#key-combo-format).|
 
 The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
 
-### AppleScript Action Properties
+### JavaScript action properties
 
-An AppleScript action is defined by the presence of either an `AppleScript File` string or and `AppleScript` string, as follows.
+TODO
+
+### AppleScript action properties
+
+An AppleScript action is defined by the presence of either an `applescript file` field or and `applescript` field, as follows.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`AppleScript File`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**) |
-|`AppleScript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
+|`applescript file`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**) |
+|`applescript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
 
 Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
 
-You can return a value from the script and have PopClip act uopn it by definein an `After` key.   See also [Example AppleScript File](#example-applescript-file).
+You can return a value from the script and have PopClip act upon it by defining an `after` key. See also [Example AppleScript File](#example-applescript-file).
 
-### Shell Script Action Properties
+### Shell Script action properties
 
-An Shell Script action is defined by the presence of a `Shell Script File` string, with an optional `Script Interpreter`.
+An Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field.
 
-|Key|Type|Required?|Description|
-|---|----|-----|------|
-|`Shell Script File`|String|Required|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you may define a `Script Interpreter`, or specify one using a hashbang line at the top of the file. (An example hashbang is `#/usr/bin/env ruby`. When using a hashbang, the script mush have its executable bit set.)|
-|`Script Interpreter`|String|Optional|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby` _(**BETA**), or the name of a tool on its own, for example `ruby`. PopClip will look for the tool in the `PATH` of the user's default shell._|
+|Key|Type|Description|
+|---|----|-----|
+|`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you may define a `script interpreter`.|
+|`script interpreter`|String (optional)|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby`, or an executable name on its own such as `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell.|
 
-The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act uopn it by definein an `After` key. See [Example Shell Script File](#example-shell-script-file). 
+The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
 
-## Meanings of Fields
+## Meanings of particular fields
 
-### Requirements
+### The `requirements` array
 
-These are the values supported by the `Requirements` field. Additionally, you can prefix any requirement with `!` to negate it.
+These are the values supported by the `requirements` array. Additionally, you can prefix any requirement with `!` to negate it.
 
 |Value|Description|
 |-----|-----------|
 |`copy`|One or more characters of text must be selected. (The app's Copy command does not necessarily have to be available. It did in older versions of PopClip, hence the name.)
 |`cut`|Text must be selected and the app's Cut command must be available.|
 |`paste`|The app's Paste command must be available.|
-|`httpurl`|The text must contain exactly one web URL (http or https).|
-|`httpurls`|The text must contain one or more web URLs.|
+|`url`|The text must contain exactly one web URL (http or https).|
+|`urls`|The text must contain one or more web URLs (https or https).|
 |`email`|The text must contain exactly one email address.|
-|`path`|The text must be a local file path, and it must exist on the local file system.| 
+|`path`|The text must be a local file path, and it must exist on the local file system.|
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
 
-### Before and After
+### The `before` and `after` strings
 
-The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the values can be used in the `After` field.
+The `cut`, `copy` and `paste` keys can be used as the `before` string. All the values can be used as the `after` string.
 
 |Value|Description|
 |-----|-----------|
@@ -302,29 +379,31 @@ The `cut`, `copy` and `paste` keys can be used in the `Before` field. All the va
 |`popclip-appear`|Trigger PopClip to appear again with the current selection. (This is used by the Select All extension.)|
 |`copy-selection`|Place the original selected text to the clipboard. (This is used by the Swap extension.)|
 
-### App
+### The `app` dictionary
+
+The `app` field is a dictionary with the following stricture:
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Name`|String|Required|Name of the app which this extension interacts with. For example `Evernote` for an Evernote extension.|
-|`Link`|String|Required|Link to a website where the user can get the app referred to in `Name`. For example `https://evernote.com/`.|
-|`Check Installed`|Boolean|Optional|If `YES`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `NO`.|
-|`Bundle Identifiers`|Array|Required if `Check Installed` is `YES`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
+|`name`|String|Required|Name of the app which this extension interacts with. For example `Evernote` for an Evernote extension.|
+|`link`|String|Required|Link to a website where the user can get the app referred to in `Name`. For example `https://evernote.com/`.|
+|`check installed`|Boolean|If `true`, PopClip will check whether an app with one of the given `Bundle Identifiers` is installed when the user tries to use the extension. None is found, PopClip will show a message and a link to the website given in `Link`. Default is `false`.|
+|`bundle identifiers`|Array|Required if `check installed` is `true`|Array of bundle identifiers for this app, including all application variants that work with this extension. In the simplest case there may be just one bundle ID. An app may have alternative bundle IDs for free/pro variants, an App Store version, a stand-alone version, a Setapp version, and so on. Include all the possible bundle IDs that the user might encounter.|
 
-### Options
+### The `options` array
 
-Options are presented to the user in a preferences user interface window and are saved in PopClip's preferences on behalf of the extension. Options appear in the UI in the order they appear in the `Options` array. An option dictionary has the following structure. 
+Options are presented to the user in a preferences user interface window and are saved in PopClip's preferences on behalf of the extension. Options appear in the UI in the order they appear in the `options` array. An option dictionary has the following structure.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
-|`Option Identifier`|String|Required|Identifying string for this option. This is passed to your script. The identifier will be downcased or upcased for AppleScript and Shell Script targets, respectively — see [Script Fields](#script-fields).|
-|`Option Type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
-|`Option Label`|String or Dictionary|Required|The label to appear in the UI for this option.|
-|`Option Description`|String or Dictionary|Optional|A longer description to appear in the UI to explain this option.|
-|`Option Default Value`|String|Optional|This field specifies the default value of the option. If ommitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
-|`Option Values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
-|`Option Value Labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If ommitted, the option values themselves are shown.|
-|`Option Inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
+|`identifier`|String|Required|Identifying string for this option. This is passed to your script. The identifier will be downcased or upcased for AppleScript and Shell Script targets, respectively — see [Script Fields](#script-fields).|
+|`type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
+|`label`|Localizable String|Required|The label to appear in the UI for this option.|
+|`description`|Localizable String|A longer description to appear in the UI to explain this option.|
+|`default value`|String|This field specifies the default value of the option. If omitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|
+|`values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
+|`value labels`|Array|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If omitted, the option values themselves are shown.|
+|`inset`|Boolean|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
 
 ## Using Scripts
 
@@ -358,9 +437,9 @@ Here is an example of an AppleScript file (this one is for the 'TextEdit' extens
 
 ```applescript
 tell application "TextEdit"
-	activate
-	set theDocument to make new document
-	set text of theDocument to "{popclip text}"
+ activate
+ set theDocument to make new document
+ set text of theDocument to "{popclip text}"
 end tell
 ```
 
@@ -379,6 +458,7 @@ A shell script can return a string back to PopClip via to stdout. For example:
 #!/bin/sh
 echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
 ```
+
 A ruby example:
 
 ```ruby
@@ -399,20 +479,42 @@ While developing a script, you can test it from the command line by exporting th
 
 Scripts may indicate success or failure as follows:
 
-|Result|Shell Script|AppleScript|
-|------|------------|-----------|
-|Success|Exit code `0`|Return without raising an error.|
-|General error. (PopClip will show an "X".)|Exit code `1`|Raise error with code `501`. (Example AppleScript: `error "any text" number 501`.)|
-|Error with user's settings. (PopClip will show an "X" and pop up the extension's options UI.)|Exit code `2`|Raise error with code `502`. (Example AppleScript: `error "any text" number 502`.)|
+|Result|JavaScript|Shell Script|AppleScript|
+|------|------------|-----------|----------|
+|Success|Complete without throwing error.|Exit code `0`|Complete throwing raising error.|
+|General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with code `501`. (Example: `error "message" number 501`.)|
+|Error with user's settings, or not signed in. (PopClip will show an "X" and pop up the extension's options UI.)|Throw error with specific message 'Not signed in'. (Example: `throw new Error('Not signed in')`.)| Exit code `2`|Throw error with code `502`. (Example: `error "message" number 502`.)|
 
-## Key Code format
-Key presses are expressed as a dictionary, as follows:
+## Key Combo format
+
+Key presses may be expressed in either of two ways.
+
+### Key code string format
+
+The string format is a convenient human-readable format that can specify a key character and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by a single character to press.
+
+For example: `option shift .` or `command B`
+
+The key code string is not case sensitive. (Key character will automatically be converted to uppercase).
+
+The modifiers are specified with the following keywords:
+
+| Modifier    | Keyword             |
+| ----------- | ------------------- |
+| Command (⌘) | `command` or `cmd`  |
+| Option (⌥)  | `option` or `opt`   |
+| Control (⌃) | `control` or `ctrl` |
+| Shift (⇧)   | `shift`             |
+
+### Key code dictionary format
+
+The dictionary format is also able to specify modifiers plus a key character or key code.
 
 |Key|Type|Required?|Description|
 |---|----|------|----|
-|`keyChar`|String|(see note below) |Character key to press. For example `A`.|
-|`keyCode`|Number|(see note below) |Virtual key code for key to press. For example, the delete key is `51`. For help finding the code see [this StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes).|
-|`modifiers`|Number|Required|Bitmask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
+|`key char`|String|(see note below) |Character key to press. For example `A`. Letter keys should be given ing upper case.|
+|`key code`|Number|(see note below) |Virtual key code for key to press. For example, the delete key is `51`. For help finding the code see [this StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes).|
+|`modifiers`|Number|Required|Bit mask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
 
 Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
 
@@ -436,3 +538,26 @@ Table of modifier combinations:
 |⌥⇧⌘|1703936|
 |⌃⌥⌘|1835008|
 |⌃⌥⇧⌘|1966080|
+
+## Field name mapping
+
+Some field names were different in older versions of PopClip. Other have alternative allowable forms to avoid confusion when expressed camel case, e.g. `appleScriptFile` is mapped to `applescriptFile`.
+
+PopClip applies the following mapping to field names loaded from the config file:
+
+| Old/Alternative name      | Canonical name   |
+| ------------------------- | ---------------- |
+| image file                | icon             |
+| required software version | popclip version  |
+| pop clip version          | popclip version  |
+| required os version       | macos version    |
+| mac os version            | macos version    |
+| pass html                 | capture html     |
+| blocked apps              | excluded apps    |
+| regular expression        | regex            |
+| apple script file         | applescript file |
+| apple script              | applescript      |
+| java script file          | javascript file  |
+| java script               | javascript       |
+
+Also, if the field name has the prefix `extension` or `option`, it is removed.

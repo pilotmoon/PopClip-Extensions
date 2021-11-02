@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## Unreleased / [In Beta](https://pilotmoon.com/popclip/download)
+## PopClip 2021.11 (3785)
 
 ### Added
 
@@ -17,9 +17,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
 - Allow key combos to be specified as a text string, for example "command option T". (Docs todo.)
-- Added ar requirement `emails` to specify one or more email addresses.
+- Added an `emails` requirement to specify one or more email addresses.
 - Added `POPCLIP_EMAILS` and `POPCLIP_PATHS` fields.
-- Added a Shortcut action type, to run a named Shortcut on macOS 12.0.
+- Added Shortcut action type, to run a named Shortcut on macOS 12.0.
+- Added JavaScript action type.
 
 ### Changed
 
@@ -42,7 +43,7 @@ As the cherry on top of that, PopClip now has a new built in action for installi
 ```
 # popclip extension to search Emojipedia
 name: Emojipedia
-icon: text:{{E}}
+icon: search filled E
 url: https://emojipedia.org/search/?q=***
 ```
 

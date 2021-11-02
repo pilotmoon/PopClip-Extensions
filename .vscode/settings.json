@@ -22,6 +22,33 @@
             ],
             "url": "./ExtensionSchema.json"
         }
+    ],
+    "cSpell.words": [
+        "applescript",
+        "downcased",
+        "Evernote",
+        "hashbang",
+        "keychain",
+        "Localizable",
+        "monospaced",
+        "myextension",
+        "myscript",
+        "pilotmoon",
+        "plists",
+        "popclip",
+        "popclipext",
+        "popclipextz",
+        "regexes",
+        "runtimes",
+        "scpt",
+        "Setapp",
+        "Terpstra's",
+        "unsanitized",
+        "upcase",
+        "upcased"
+    ],
+    "cSpell.ignoreWords": [
+        "speechicon"
     ]
     
 }
