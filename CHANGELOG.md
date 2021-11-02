@@ -13,7 +13,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - PopClip will now load either JSON (`Config.json`) or YAML (`Config.yaml`) as an alternative to an XML Property List (`Config.plist`) for the extension config file. The same field names are used in each of the three formats, and they each define the same logical structure. The choice of format is just a matter of which you prefer. (I'm currently leaning towards YAML for the best readability.)
 - Field names for use in the Config files are now defined in a spaced lowercase form such as `applescript file`. However, PopClip will accept field names in all common forms including the original "spaced capitalized" form (e.g. `AppleScript File`) and camel case (e.g. `applescriptFile`).
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
-- The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
+- The text-based icon format has a new "magnifying glass" style, intended for search extensions.
+- The text-base icon specification format has changed since 2021.10 (see README).
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
 - Allow key combos to be specified as a text string, for example "command option T". (Docs todo.)
@@ -70,7 +71,7 @@ There is limit of 1000 characters for this. (If you are doing anything requiring
 
 ### Added
 
-- PopClip now supports SVG image files as well as allowing you to specifiy an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text.
+- PopClip now supports SVG image files as well as allowing you to specify an image as a SF Symbols identifier or to generate an icon from up to 3 letters of text.
 - PopClip now provides an HTML and a Markdown version for _all_ text selections, when `Pass HTML` is set. When the content is not HTML backed, the HTML and Markdown is generated from the selected RTF or plain text content.
 - Added `POPCLIP_MARKDOWN` field to contain the markdownified HTML.
 - Added `POPCLIP_ACTION_IDENTIFIER` field. This is passed to the action script allowing you to use the same script for multiple actions.
