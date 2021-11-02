@@ -216,19 +216,19 @@ Examples:
 | Example                       | Icon Generated                                                                                                                       |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `A` or `text A`               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
-| `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/(1).png" width="20" height="20">   |
-| `circle filled 本`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/((本)).png" width="20" height="20"> |
-| `square xyz`                  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[xyz].png" width="20" height="20"> |
-| `square filled !`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/[[!]].png" width="20" height="20"> |
-| `search E`                    | TODO                                                                                                                                     |
-| `search filled ?`             | TODO                                                                                                                                     |
-| `square filled monospaced ""` | TODO                                                                                                                                     |
+| `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_1.png" width="20" height="20">   |
+| `circle filled 本`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_filled_本.png" width="20" height="20"> |
+| `square xyz`                  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_xyz.png" width="20" height="20"> |
+| `square filled !`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_!.png" width="20" height="20"> |
+| `square filled monospaced ()` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_monospaced_().png" width="20" height="20"> |
+| `search E`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_E.png" width="20" height="20">   |
+| `search filled £`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_filled-£.png" width="20" height="20">|
 
 ## The Config file structure
 
 ### About the "Localizable String" type
 
-Fields shown as "Localizable String" may be either a string or a dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-hans`, etc.) to a string. PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
+Fields shown as "Localizable String" may be either a string or a dictionary. If you supply a string, that string is always used. If you supply a dictionary mapping language codes (`en`, `fr`, `zh-hans`, etc.) to a string, PopClip will display the string for the user's preferred language if possible, with fallback to the `en` string.
 
 ## Extension properties
 
@@ -278,7 +278,7 @@ A shortcut action is defined by the presence of a `shortcut name` field. Shortcu
 |---|----|-----------|
 |`shortcut name`|String|The name of the macOS Shortcut to call. The name is whatever it is called in the Shortcuts app.|
 
-The selected text will be sent as input to the service, and any text returned by the shortcut will be available to the `After` actions.
+The selected text will be sent as input to the service, and any text returned by the shortcut will be available to the `after` action.
 
 ### Service action properties
 
@@ -541,7 +541,7 @@ Table of modifier combinations:
 
 ## Field name mapping
 
-Some field names were different in older versions of PopClip. Other have alternative allowable forms to avoid confusion when expressed camel case, e.g. `appleScriptFile` is mapped to `applescriptFile`.
+Some field names were different in older versions of PopClip. Others have alternative allowable forms to avoid confusion when expressed camel case, e.g. `appleScriptFile` is mapped to `applescriptFile`.
 
 PopClip applies the following mapping to field names loaded from the config file:
 
