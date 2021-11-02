@@ -22,7 +22,7 @@ This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG
     - [Field names](#field-names)
   - [Icons](#icons)
     - [Text-based icons](#text-based-icons)
-    - [Previewing text-based and symbols icons](#previewing-text-based-and-symbols-icons)
+    - [Examples of symbols and text-based icons](#examples-of-symbols-and-text-based-icons)
   - [The Config file structure](#the-config-file-structure)
     - [About the "Localizable String" type](#about-the-localizable-string-type)
   - [Extension properties](#extension-properties)
@@ -212,22 +212,25 @@ The following keywords modify the way the text is drawn:
 | `filled`     | Specifies a solid filled shape (default is an outline shape).                                                                                            |
 | `monospaced` | Specifies that the text be drawn in a monospaced font (default is variable-width font). Punctuation characters often render better in a monospaced font. |
 
-Examples:
+### Examples of symbols and text-based icons
 
-| Text String                   | Icon Generated                                                                                                                       |
-| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `A` or `text A`               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
-| `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_1.png" width="20" height="20">   |
-| `circle filled 本`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_filled_本.png" width="20" height="20"> |
-| `square xyz`                  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_xyz.png" width="20" height="20"> |
-| `square filled !`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_!.png" width="20" height="20"> |
+| Text String                   | Icon Generated                                                                                                                                                 |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `symbol:flame`                | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/symbol-flame.png" width="20" height="20">                |
+| `symbol:hand.raised`          | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/symbol-hand.raised.png" width="20" height="20">          |
+| `symbol:signpost.right`       | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/symbol-signpost.right.png" width="20" height="20">       |
+| `A` or `text A`               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">                           |
+| `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_1.png" width="20" height="20">                    |
+| `circle filled 本`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_filled_本.png" width="20" height="20">             |
+| `square xyz`                  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_xyz.png" width="20" height="20">                  |
+| `square filled !`             | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_!.png" width="20" height="20">             |
 | `square filled monospaced ()` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_monospaced_().png" width="20" height="20"> |
-| `search E`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_E.png" width="20" height="20">   |
-| `search filled monospaced £`  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_filled_monospaced_£.png" width="20" height="20">|
+| `search E`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_E.png" width="20" height="20">                    |
+| `search filled monospaced £`  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_filled_monospaced_£.png" width="20" height="20">  |
 
-### Previewing text-based and symbols icons
+As a handy tool, the extension [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz?raw=true) in this repo will display the icon for a text string you select.
 
-The extension [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz?raw=true) in this repo will display the icon for a text string you select.
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/iconpreview.gif" width="200"> 
 
 ## The Config file structure
 
