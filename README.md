@@ -227,7 +227,7 @@ Examples:
 
 ### Previewing text-based and symbols icons
 
-The [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz) will display the icon for a text string you select.
+The [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz) extension will display the icon for a text string you select.
 
 ## The Config file structure
 
