@@ -16,8 +16,8 @@ This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
     - [Types of Actions](#types-of-actions)
     - [Filtering](#filtering)
-    - [About .popclipextz files](#about-popclipextz-files)
     - [The .popclipext package](#the-popclipext-package)
+    - [About .popclipextz files](#about-popclipextz-files)
     - [The Config file](#the-config-file)
     - [Field names](#field-names)
   - [Icons](#icons)
@@ -113,7 +113,7 @@ There are seven kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|Shortcut|Send the selected text to a macOS Shortcut. (Requires on macOS 12.0 Monterey.)| - |
+|Shortcut|Send the selected text to a macOS Shortcut. (Requires macOS 12.0 Monterey.)| - |
 |Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)|
 |URL|Open a URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
 |Key Press|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
@@ -129,11 +129,7 @@ Extensions have access to the following filtering mechanisms, to help prevent ac
 - Filter by application (either include or exclude).
 - Filter by whether cut, copy or paste is available.
 - Filter by whether the text contains a URL, email address or file path.
-- Filter by the current value of the extensions's options.
-
-### About .popclipextz files
-
-For distribution on the [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page, extensions are zipped and renamed with the extension `.popclipextz`. You can examine an existing PopClip extension by renaming it with a `.zip` extension and unzipping it, to reveal a `.popclipext` package.
+- Filter by the current values of the extensions's options.
 
 ### The .popclipext package
 
@@ -141,13 +137,17 @@ A PopClip extension consists of a configuration file called either `Config.json`
 
 If you double-click a `.popclipext` package, PopClip will attempt to load and install it. PopClip stores its installed extensions in `~/Library/Application Support/PopClip/Extensions/`.
 
-Here is an example package structure, using the 'Say' extension:
+Here is an example package structure, the 'Say' extension:
 
     Say.popclipext                  -- Containing folder
        _Signature.plist             -- Signature (official Pilotmoon extensions only)
        Config.plist                 -- Main configuration file
        say.sh                       -- Script file
        speechicon.png               -- Icon file
+
+### About .popclipextz files
+
+For distribution, an extension package folder may be zipped and renamed with the extension `.popclipextz`. You can examine an existing PopClip extension by renaming it with a `.zip` extension and unzipping it, to reveal a `.popclipext` package.
 
 ### The Config file
 
