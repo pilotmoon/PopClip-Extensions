@@ -266,7 +266,7 @@ The following fields define properties common to all actions. All fields are opt
 |`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
 |`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
 |`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
-|`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [Before and After](#the-before-and-after-strings).|
+|`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).|
 |`after`|String|String to indicate an action PopClip should take *after* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).
 |`excluded apps`|Array|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
 |`required apps`|Array|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
