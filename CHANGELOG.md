@@ -11,7 +11,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Added
 
 - PopClip will now load either JSON (`Config.json`) or YAML (`Config.yaml`) as an alternative to an XML Property List (`Config.plist`) for the extension config file. The same field names are used in each of the three formats, and they each define the same logical structure. The choice of format is just a matter of which you prefer. (I'm currently leaning towards YAML for the best readability.)
-- There is a new set of alternative field names for use in the Config files, which are more JavaScript-like in naming convention. They are listed [here](/misc/mapping.csv). You can use either name for any field, in any of the Config file formats. The shell command: `plutil -convert json -r -o Config.json Config.plist` will convert automatically from plist to JSON.
+- Field names for use in the Config files are now defined in a spaced lowercase form such as `applescript file`. However, PopClip will accept field names in all common forms including the original "spaced capitalized" form (e.g. `AppleScript File`) and camel case (e.g. `applescriptFile`).
 - The `URL` field for Search extensions will now accept `***` in addition to `{popclip text}` as the placeholder.
 - The text-based icon format has a new "magnifying glass" style, intended for search extensions. The markup is `{T}` for outline style and `{{T}}` for filled style.
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
@@ -31,7 +31,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - The `Actions` array is now optional. An extension with a single action may now be specified at the top level of the config file, without a separate action dictionary.
 - Renamed `Blocked Apps` to `Excluded Apps`, `Regular Expression` to `Regex`, `Pass HTML` to `Capture HTML`, `Required Software Version` to `PopClip Version`, and `Required OS Version` to `MacOS Version`. The old names will continue to work.
 - Renamed the requirements `httpurl` and `httpurls` to `url` and `urls`.
-- Wwhen URLs without a scheme prefix are detected in text, PopClip now defaults to https instead of http.
+- When URLs without a scheme prefix are detected in text, PopClip now defaults to https instead of http.
 - Changed the text icon specification format. (Docs todo.)
 
 ### Note
