@@ -17,7 +17,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - The text-base icon specification format has changed since 2021.10 (see README).
 - The `Script Interpreter` can now be specified as a bare executable name (e.g. `perl`), and PopClip will locate the tool in the `PATH` of the user's default shell.
 - Added a new field called `AppleScript`, allowing AppleScripts to be specified as a verbatim text string in the config file (rather than as a separate file via `AppleScript File`).
-- Allow key combos to be specified as a text string, for example "command option T". (Docs todo.)
+- Allow key combos to be specified as a text string, for example `command option T`.
 - Added an `emails` requirement to specify one or more email addresses.
 - Added `POPCLIP_EMAILS` and `POPCLIP_PATHS` fields.
 - Added Shortcut action type, to run a named Shortcut on macOS 12.0.

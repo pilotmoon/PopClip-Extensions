@@ -22,6 +22,7 @@ This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG
     - [Field names](#field-names)
   - [Icons](#icons)
     - [Text-based icons](#text-based-icons)
+    - [Previewing text-based and symbols icons](#previewing-text-based-and-symbols-icons)
   - [The Config file structure](#the-config-file-structure)
     - [About the "Localizable String" type](#about-the-localizable-string-type)
   - [Extension properties](#extension-properties)
@@ -213,7 +214,7 @@ The following keywords modify the way the text is drawn:
 
 Examples:
 
-| Example                       | Icon Generated                                                                                                                       |
+| Text String                   | Icon Generated                                                                                                                       |
 | ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | `A` or `text A`               | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/A.png" width="20" height="20">     |
 | `circle 1`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/circle_1.png" width="20" height="20">   |
@@ -223,6 +224,10 @@ Examples:
 | `square filled monospaced ()` | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/square_filled_monospaced_().png" width="20" height="20"> |
 | `search E`                    | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_E.png" width="20" height="20">   |
 | `search filled monospaced £`  | <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/texticons/search_filled_monospaced_£.png" width="20" height="20">|
+
+### Previewing text-based and symbols icons
+
+The [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz) will display the icon for a text string you select.
 
 ## The Config file structure
 
