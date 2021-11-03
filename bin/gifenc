@@ -11,4 +11,4 @@ palette="/tmp/palette.png"
 # ffmpeg -v warning -i $1 -vf "$filters,palettegen" -y $palette
 # ffmpeg -v warning -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse"  -y $2
 
-ffmpeg -i $1 -vf "fps=15,scale=320:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $2
+ffmpeg -i $1 -vf "fps=15,scale=640:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $2
