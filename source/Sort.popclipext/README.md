@@ -24,7 +24,7 @@ with options `{numeric: true, sensitivity: 'base'}`.
 
 ### v3 - 1 Nov 2021
 
-* Reimplemented in JavaScript.
+* Re-implemented in JavaScript.
 
 ### v2 - 17 Dec 2015
 
