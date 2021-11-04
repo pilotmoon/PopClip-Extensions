@@ -10,7 +10,7 @@ The result will be shown as the action's button title. Click the button to paste
 
 This is not a "scientific" converter, rather it attempts to parse the input as it might be encountered in ordinary writing, recipes, etc. Examples:
 
-*  `5 km`, `5km`, `5k`, `5K`, `5kms`, `5 kilometres`, `5 kilometers`,  all give the result `3.1 miles`.
+* `5 km`, `5km`, `5k`, `5K`, `5 kilometres`, `5 kilometers`,  all give the result `3.1 miles`.
 
 * `2in`, `2"` and `2 inches` all give `5.1 cm`.
 
