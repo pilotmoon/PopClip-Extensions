@@ -47,7 +47,7 @@ This is a direct port of my original PHP code to TypeScript. I did look to see i
 
 ## Changelog
 
-### v3 - fNov 4, 202
+### v3 - 4 Nov 2021
 
 * Updated for macOS Monterey, rewritten in TypeScript.
 * Now displays the output in the button title itself.
