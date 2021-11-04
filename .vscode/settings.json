@@ -25,15 +25,17 @@
     ],
     "cSpell.words": [
         "applescript",
+        "authsecret",
+        "centimetres",
+        "deduped",
         "downcased",
         "Evernote",
         "hashbang",
         "keychain",
+        "kilometres",
         "Localizable",
         "markdownified",
         "monospaced",
-        "myextension",
-        "myscript",
         "pilotmoon",
         "plists",
         "popclip",
@@ -44,12 +46,15 @@
         "scpt",
         "Setapp",
         "Terpstra's",
+        "typedoc",
         "unsanitized",
         "upcase",
         "upcased"
     ],
     "cSpell.ignoreWords": [
-        "speechicon"
+        "speechicon",
+        "myextension",
+        "myscript"
     ]
     
 }

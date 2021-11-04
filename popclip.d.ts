@@ -395,7 +395,7 @@ declare interface ActionFunction extends ActionProperties {
     * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
     * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
     */
-  (input: Input, options: Options, context: Context): void
+  (input: Input, options: Options, context: Context): unknown
 }
 
 /**
@@ -403,7 +403,7 @@ declare interface ActionFunction extends ActionProperties {
  */
 declare interface ActionObject extends ActionProperties {
   /** Same function signature as [[ActionFunction]] */
-  code: (input: Input, options: Options, context: Context) => void
+  code: (input: Input, options: Options, context: Context) => unknown
 }
 
 /**
@@ -589,7 +589,7 @@ declare interface Input {
      * selection.regexResult[1] // "p" (capture group 1)
      * ```
      */
-  regexResult: any
+  regexResult?: any
 
   /**
      * HTML. (docs todo)

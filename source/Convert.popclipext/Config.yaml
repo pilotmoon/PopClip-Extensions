@@ -1,0 +1,11 @@
+PopClip Version: 3785
+Identifier: com.pilotmoon.popclip.extension.convert
+Name: Convert
+Icon: scales.png
+Module: convert.js
+Entitlements: [dynamic]
+Description: >-
+  Convert quantities in metric units to US/imperial units, and vice-versa.
+  Supports lb↔kg, oz↔g, miles↔km, feet/yards↔m, inches↔cm, °F↔°C.
+Note: >-
+  3 Nov 2021: Updated for macOS Monterey. Requires PopClip 2021.11.
