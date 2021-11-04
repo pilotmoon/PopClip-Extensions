@@ -21,7 +21,7 @@ The output will attempt to match the number of decimal places of the input, so `
 Accepts either `,` or `.` as the decimal separator in the input. The output decimal separator
 will be according to the current system locale.
 
-Does not accept numbers with thousdands separators in the input. (This would ne a nice improvement.)
+Does not accept numbers with thousands separators in the input. (This would ne a nice improvement.)
 
 Wikipedia links:
 
