@@ -16,7 +16,7 @@ This is not a "scientific" converter, rather it attempts to parse the input as i
 
 * `80F`, `80 °F` and `80 fahrenheit` all give `26.7 °C`.
 
-The output will attempt to match the number of decimal places of the input, so `5.000km` will putput `3.107 miles`. (However, the output will always have at least one decimal place.)
+The output will attempt to match the number of decimal places of the input, so `5.000km` will output `3.107 miles`. (However, the output will always have at least one decimal place.)
 
 Accepts either `,` or `.` as the decimal separator in the input. The output decimal separator
 will be according to the current system locale.
@@ -37,13 +37,17 @@ This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 
 Nick Moore
 
+### Requirements
+
+Requires PopClip 2021.11.
+
 ### Notes
 
 This is a direct port of my original PHP code to TypeScript. I did look to see if there were any JavaScript libraries that did a similar thing, and I didn't find any that replicated the behavior in quite the same way.
 
 ## Changelog
 
-### v3 - ?
+### v3 - fNov 4, 202
 
 * Updated for macOS Monterey, rewritten in TypeScript.
 * Now displays the output in the button title itself.
