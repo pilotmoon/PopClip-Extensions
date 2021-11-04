@@ -1,0 +1,10 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.sort",
+  "name": "Sort",  
+  "icon": "sort.png",
+  "regex": "\\R",
+  "javascript file": "sort.js",
+  "description": "Sort the selected lines alphabetically.",
+  "note": "1 Nov 2021: Updated for macOS Monterey. Requires PopClip 2021.11."
+}

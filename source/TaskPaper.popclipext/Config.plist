@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>		
+			<key>Regular Expression</key>
+			<string>(?s)^[\n\r]*[^\n\r]{1,300}[\n\r]*$</string>	
+			<key>Image File</key>
+			<string>ttick.png</string>
+			<key>Shell Script File</key>
+			<string>tp.php</string>
+			<key>Script Interpreter</key>
+			<string>/usr/bin/php</string>
+			<key>Title</key>
+			<string>TaskPaper</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.hogbaysoftware.TaskPaper3</string>	
+				<string>com.hogbaysoftware.TaskPaper3.direct</string>
+				<string>com.hogbaysoftware.TaskPaper3-setapp</string>
+			</array>			
+			<key>Link</key>
+			<string>https://www.taskpaper.com/</string>
+			<key>Name</key>
+			<string>TaskPaper 3</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Add a new task to an Inbox project in TaskPaper 3.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.taskpaper</string>
+	<key>Extension Name</key>
+	<string>TaskPaper</string>
+</dict>
+</plist>

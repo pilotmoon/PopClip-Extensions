@@ -1,0 +1,47 @@
+original,new
+Action,action
+Actions,actions
+After,after
+App,app
+AppleScript File,applescriptFile
+Apps,apps
+Before,before
+Bundle Identifiers,bundleIdentifiers
+Capture HTML,captureHtml
+Capture RTF,captureRtf
+Check Installed,checkInstalled
+Default Value,defaultValue
+Description,description
+Excluded Apps,excludedApps
+Hidden,hidden
+Icon,icon            
+Identifier,identifier
+Image File,icon
+Inset,inset
+Key Combo,keyCombo
+keyChar,keyChar
+keyCode,keyCode
+Label,label
+Link,link
+MacOS Version,macosVersion
+modifiers,modifiers
+Name,name
+Options Script File,optionsScriptFile
+Options Script Interpreter,optionsScriptInterpreter
+Options Title,optionsTitle
+Options,options
+Permissions,permissions
+PopClip Version,popclipVersion
+Preserve Image Color,preserveImageColor
+Regex,regex
+Required Apps,requiredApps
+Requirements,requirements
+Script Interpreter,scriptInterpreter
+Service Name,serviceName
+Shell Script File,shellScriptFile
+Stay Visible,stayVisible
+Title,title
+Type,type
+URL,url
+Value Labels,valueLabels
+Values,values

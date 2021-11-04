@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>bubble-translate-icon.png</string>
+			<key>Service Name</key>
+			<string>Translate with Bubble Translate 3</string>
+			<key>Title</key>
+			<string>Bubble Translate</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+      <array>
+			  <string>ru.bartleby.BubbleTranslate3</string>
+        <string>name.bartleby.Bubble-Translate</string>
+      </array>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.bubble-translate.ru/</string>
+			<key>Name</key>
+			<string>Bubble Translate</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Translate the text using Bubble Translate.</string>
+	<key>Note</key>
+    <string>Updated 25 Feb 2021 for the latest Bubble Translate app.</string>
+	<key>Extension Identifier</key>
+	<string>ru.bubble-translate.pop-clip.translate</string>
+	<key>Extension Name</key>
+	<string>Bubble Translate</string>
+	<key>Required OS Version</key>
+	<string>10.14</string>
+</dict>
+</plist>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>alfred.applescript</string>	
+			<key>Image File</key>
+			<string>bowler.png</string>			
+			<key>Title</key>
+			<string>Alfred</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>		
+				<string>com.runningwithcrayons.Alfred</string>		
+			</array>			
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.alfredapp.com</string>
+			<key>Name</key>
+			<string>Alfred 4</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Activate Alfred 4 with the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.alfred</string>
+	<key>Extension Name</key>
+	<string>Alfred</string>
+</dict>
+</plist>

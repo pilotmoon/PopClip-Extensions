@@ -1,0 +1,13 @@
+diff --git a/node_modules/axios/lib/adapters/xhr.js b/node_modules/axios/lib/adapters/xhr.js
+index 77246f8..bc77b34 100644
+--- a/node_modules/axios/lib/adapters/xhr.js
++++ b/node_modules/axios/lib/adapters/xhr.js
+@@ -36,7 +36,7 @@ module.exports = function xhrAdapter(config) {
+     // HTTP basic authentication
+     if (config.auth) {
+       var username = config.auth.username || '';
+-      var password = config.auth.password ? unescape(encodeURIComponent(config.auth.password)) : '';
++      var password = config.auth.password || '';
+       requestHeaders.Authorization = 'Basic ' + btoa(username + ':' + password);
+     }
+ 

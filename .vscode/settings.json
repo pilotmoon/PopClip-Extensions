@@ -1,0 +1,55 @@
+{
+    "files.exclude": {
+        "**/*.js": {
+            "when": "$(basename).ts"
+        }
+    },
+    "search.exclude": {
+        "*.popclipextz": true
+    },
+    "standard.validate": [
+        "typescript"
+    ],
+    "standard.engine": "ts-standard",
+    "typescript.inlayHints.parameterNames.enabled": "none",
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+    "typescript.preferences.quoteStyle": "single",
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "Config.json"
+            ],
+            "url": "./ExtensionSchema.json"
+        }
+    ],
+    "cSpell.words": [
+        "applescript",
+        "downcased",
+        "Evernote",
+        "hashbang",
+        "keychain",
+        "Localizable",
+        "markdownified",
+        "monospaced",
+        "myextension",
+        "myscript",
+        "pilotmoon",
+        "plists",
+        "popclip",
+        "popclipext",
+        "popclipextz",
+        "regexes",
+        "runtimes",
+        "scpt",
+        "Setapp",
+        "Terpstra's",
+        "unsanitized",
+        "upcase",
+        "upcased"
+    ],
+    "cSpell.ignoreWords": [
+        "speechicon"
+    ]
+    
+}

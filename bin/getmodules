@@ -1,0 +1,28 @@
+#!/bin/zsh
+set -eu
+
+mkdir -p temp
+echo "--ignore canvas" > temp/cmds
+count=2
+here=${0:a:h}
+
+list=($*)
+for name in $list; do
+    print "*" $name
+    print "Shimming..."
+    print "module.exports=require(\"$name\")" > temp/$name.shim.js
+    print "Browserifying..."
+    cat temp/cmds | NODE_PATH=$here/../lib xargs -n $count npx browserify --standalone $name -e temp/$name.shim.js -o temp/$name.packed.js
+    print "Uglifying..."
+    cat temp/$name.packed.js | npx uglifyjs > temp/$name.ugly.js
+    print "Compressing..."
+    lzfse -encode -i temp/$name.ugly.js > temp/$name.js.lzfse
+    print "Copying..."
+    cp temp/$name.js.lzfse $name.js.lzfse
+    print "Done"
+    print 
+    count=$((count+2))
+    echo "-x $name" >> temp/cmds
+done
+rm -r temp
+

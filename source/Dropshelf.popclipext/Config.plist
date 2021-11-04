@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Service Name</key>
+			<string>Send to Dropshelf</string>
+			<key>Title</key>
+			<string>Dropshelf</string>
+			<key>Image File</key>
+			<string>dropshelf.png</string>
+			<key>Pass HTML</key>
+			<true/>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>com.pilotmoon.Dropshelf</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://pilotmoon.com/dropshelf/</string>
+			<key>Name</key>
+			<string>Dropshelf</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send the selected text to Dropshelf. (Updated for PopClip 2019.9.)</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.dropshelf</string>
+	<key>Extension Name</key>
+	<string>Dropshelf</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

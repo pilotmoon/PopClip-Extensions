@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>Drafts.png</string>
+			<key>Service Name</key>
+			<string>Capture to Drafts</string>
+			<key>Title</key>
+			<string>Send to Drafts</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-mode=direct</string>
+			</array>
+		</dict>
+			<dict>
+			<key>Image File</key>
+			<string>Drafts.png</string>
+			<key>Service Name</key>
+			<string>Capture to Drafts with Options</string>
+			<key>Title</key>
+			<string>Send to Drafts</string>
+			<key>Requirements</key>
+			<array>
+				<string>option-mode=panel</string>
+			</array>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>		
+			<key>Option Identifier</key>
+			<string>mode</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Capture Mode</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>direct</string>
+				<string>panel</string>
+			</array>
+			<key>Option Value Labels</key>
+			<array>
+				<string>Directly to Inbox</string>
+				<string>Using Capture Panel</string>
+			</array>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.agiletortoise.Drafts-OSX</string>
+			</array>
+			<key>Link</key>
+			<string>https://getdrafts.com/</string>
+			<key>Name</key>
+			<string>Drafts</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Send the selected text to Drafts.</string>
+	<key>Note</key>
+	<string>Updated 25 Sep 2021 for Drafts 28.0.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.drafts</string>
+	<key>Extension Name</key>
+	<string>Drafts</string>
+</dict>
+</plist>

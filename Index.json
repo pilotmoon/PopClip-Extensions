@@ -1,0 +1,300 @@
+[
+  {
+    "Members" : [
+      "PasteAndMatch",
+      "PasteAndEnter",
+      "Delete",
+      "SelectAll",
+      "Highlight"
+    ],
+    "Title" : "Text Editing"
+  },
+  {
+    "Members" : [
+      "Formatting",
+      "Uppercase",
+      "Lowercase",
+      "Capitalize",
+      "TitleCase",
+      "SentenceCase",
+      "Quotes",
+      "Brackets",
+      "Hyphenate",
+      "Underscore",
+      "RemoveSpaces",
+      "Slugify",
+      "AlternatingCase",
+      "FullHalfWidth"
+    ],
+    "Title" : "Text Transformation"
+  },
+  {
+    "Members" : [
+      "MarkdownToHTML",
+      "CopyAsMarkdown"
+    ],
+    "Title" : "Markdown"
+  },
+  {
+    "Members" : [
+      "CharCount",
+      "WordCount"
+    ],
+    "Title" : "Text Statistics"
+  },
+  {
+    "Members" : [
+      "LargeType",
+      "Print"
+    ],
+    "Title" : "Text Display"
+  },
+  {
+    "Members" : [
+      "Say"
+    ],
+    "Title" : "Text-to-speech"
+  },
+  {
+    "Members" : [
+      "GoogleTranslate",
+      "BingTranslator",
+      "DeepLTranslator",
+      "BubbleTranslate3",
+      "MateTranslate",
+      "Translatium",
+      "TranslateTab",
+      "Reverso",
+      "Glosbe"
+    ],
+    "Title" : "Translation"
+  },
+  {
+    "Members" : [
+      "Notes",
+      "MakeSticky",
+      "Bear",
+      "Curiota",
+      "DEVONthink3",
+      "Drafts",
+      "EagleFiler",
+      "nvALT",
+      "NoteAway",
+      "Notefile",
+      "NotesTab",
+      "OneNote",
+      "Paper",
+      "Tot",
+      "Yojimbo"
+    ],
+    "Title" : "Notes Apps"
+  },
+  {
+    "Members" : [
+      "Scrivener",
+      "Ulysses"
+    ],
+    "Title" : "Writing Apps"
+  },
+  {
+    "Members" : [
+      "Reminders",
+      "OmniFocus",
+      "Things3",
+      "2Do",
+      "Doit",
+      "TaskPaper",
+      "Todo",
+      "Due",
+      "Wunderlist",
+      "TheHitList",
+      "Todoist",
+      "TickTick"
+    ],
+    "Title" : "To-Do Apps"
+  },
+  {
+    "Members" : [
+      "Fantastical2",
+      "Fantastical3",
+      "BusyCal"
+    ],
+    "Title" : "Calendar Apps"
+  },
+  {
+    "Members" : [
+      "Cardhop",
+      "BusyContacts"
+    ],
+    "Title" : "Contacts Apps"
+  },
+  {
+    "Members" : [
+      "Unclutter",
+      "Yoink",
+      "Dropshelf"
+    ],
+    "Title" : "Drag & Drop Utilities"
+  },
+  {
+    "Members" : [
+      "Alfred",
+      "LaunchBar",
+      "Quicksilver"
+    ],
+    "Title" : "Launcher Utilities"
+  },
+  {
+    "Members" : [
+      "TextEdit",
+      "Email",
+      "Messages",
+      "Maps",
+      "Leap",
+      "HoudahSpot",
+      "Tembo",
+      "Typinator",
+      "TextSoap",
+      "Parcel",
+      "Deliveries",
+      "Slack",
+      "DayOne",
+      "FindAnyFile"
+    ],
+    "Title" : "Other Apps"
+  },
+  {
+    "Members" : [
+      "GoogleSearch",
+      "Baidu",
+      "Bing",
+      "Ecosia",
+      "YahooSearch",
+      "YahooJapanSearch",
+      "DuckDuckGo",
+      "StartPage",
+      "Yandex",
+      "Naver"
+    ],
+    "Title" : "Web Search"
+  },
+  {
+    "Members" : [
+      "Wikipedia",
+      "GoogleImages",
+      "GoogleMaps",
+      "GoogleScholar",
+      "TwitterSearch",
+      "Amazon",
+      "Audible",
+      "CamelCamelCamel",
+      "Ebay",
+      "Etsy",
+      "IMDb",
+      "RottenTomatoes",
+      "Goodreads",
+      "YouTube",
+      "DOI",
+      "PubMed",
+      "WorldCat",
+      "UrbanDictionary",
+      "WolframAlpha",
+      "Douban",
+      "Taobao",
+      "JD"
+    ],
+    "Title" : "Other Searches"
+  },
+  {
+    "Members" : [
+      "Twitterrific",
+      "Tweetbot",
+      "YoruFukurou",
+      "Buffer",
+      "LinkedIn"
+    ],
+    "Title" : "Social Networking"
+  },
+  {
+    "Members" : [
+      "Music",
+      "iTunesMusic",
+      "Spotify",
+      "Discogs"
+    ],
+    "Title" : "Music"
+  },
+  {
+    "Members" : [
+      "ShortenLink",
+      "Bitly",
+      "Droplr",
+      "ShortMenu"
+    ],
+    "Title" : "Link Shortening"
+  },
+  {
+    "Members" : [
+      "ReadingList",
+      "Pocket",
+      "Pinboard",
+      "Readwise",
+      "RaindropIO",
+      "Leech",
+      "Downie",
+      "OpenInSafari",
+      "OpenInChrome",
+      "OpenInFirefox",
+      "OpenInBrave",
+      "OpenInOpera",
+      "OpenInEdge",
+      "OpenInVivaldi",
+      "GetIP"
+    ],
+    "Title" : "Work with URLs"
+  },
+  {
+    "Members" : [
+      "Call",
+      "Skype",
+      "PhoneAmego"
+    ],
+    "Title" : "Phone Numbers"
+  },
+  {
+    "Members" : [
+      "OnlineDictionary",
+      "OnlineThesaurus",
+      "Antidote",
+      "Eudic"
+    ],
+    "Title" : "Dictionaries"
+  },
+  {
+    "Members" : [
+      "Dash",
+      "Quiver",
+      "SnippetsLab",
+      "RunCommand",
+      "BBEdit",
+      "URLEncode",
+      "HTMLEncode",
+      "Base64Encode",
+      "UnixTime"
+    ],
+    "Title" : "For Developers"
+  },
+  {
+    "Members" : [
+      "Timestamp",
+      "Calculate",
+      "Convert",
+      "Sort",
+      "Reverse",
+      "Shuffle",
+      "Append",
+      "Swap"
+    ],
+    "Title" : "Useful Tools"
+  }
+]

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Description</key>
+	<string>Show the bundle identifier of the app.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.bundleid</string>
+	<key>Extension Name</key>
+	<string>Bundle ID</string>
+	<key>Required Software Version</key>
+	<integer>3510</integer>
+</dict>
+</plist>

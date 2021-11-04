@@ -1,0 +1,7 @@
+{
+  "Extension Description" : "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
+  "Extension Identifier" : "com.pilotmoon.popclip.extension.slugify",
+  "Extension Image File" : "slug.png",
+  "Extension Name" : "Slugify",
+  "Required Software Version" : 3543
+}

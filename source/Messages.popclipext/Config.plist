@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>nowait</string>
+			<key>Image File</key>
+			<string>message.png</string>
+			<key>Shell Script File</key>
+			<string>message.sh</string>
+			<key>Title</key>
+			<string>New iMessage</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a new iMessage.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.messages</string>
+	<key>Extension Name</key>
+	<string>Messages</string>
+	<key>Required OS Version</key>
+	<string>10.8</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

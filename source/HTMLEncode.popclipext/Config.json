@@ -1,0 +1,7 @@
+{
+  "Extension Description" : "HTML-encode or decode the selected text.",
+  "Extension Identifier" : "com.pilotmoon.popclip.extension.htmlencode",
+  "Extension Image File" : "entities.png",
+  "Extension Name" : "HTML Encode",
+  "Required Software Version" : 3749
+}
