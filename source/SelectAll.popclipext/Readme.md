@@ -4,8 +4,6 @@ Presses ⌘A, which in most apps will select all text, then re-triggers PopClip 
 
 (To show PopClip for no selection, hold down the mouse button.)
 
-<img src="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/SelectAll.popclipext/SelectAll-demo.gif" width="320px">
-
 ## About
 
 This is an extension for [PopClip](https://pilotmoon.com/popclip/).
@@ -22,7 +20,7 @@ Requires PopClip 2021.11.
 
 ### v2 - 5 Nov 2021
 
-* Improved logic so it appears in the PopClip bar more consistently.
+* Improved code to appear and work more consistently.
 * Refreshed icon.
 
 ### v1 - 8 Jan 2013
