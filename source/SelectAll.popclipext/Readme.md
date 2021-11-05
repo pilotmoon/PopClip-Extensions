@@ -4,7 +4,7 @@ Presses ⌘A, which in most apps will select all text, then re-triggers PopClip 
 
 (To show PopClip for no selection, hold down the mouse button.)
 
-<img src="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/SelectAll/SelectAll-demo.gif" width="320px">
+<img src="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/SelectAll.popclipext/SelectAll-demo.gif" width="320px">
 
 ## About
 
