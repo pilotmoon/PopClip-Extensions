@@ -1,0 +1,11 @@
+{
+  "popclipVersion" : 2785,
+  "identifier" : "com.pilotmoon.popclip.extension.select-all",
+  "name" : "Select All",  
+  "icon" : "select-all.svg",  
+  "requirements": [],
+  "keyCombo" : "command A",
+  "after" : "popclip-appear",    
+  "description" : "Select all the text in the field, then invoke PopClip again.",  
+  "note": "5 Nov 2021: Updated with refreshed icon for PopClip 2021.11."
+}

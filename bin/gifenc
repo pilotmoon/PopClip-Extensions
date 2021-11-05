@@ -4,11 +4,10 @@
 # usage: gifenc source_video dest_gif
 # https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-#quality
 
-palette="/tmp/palette.png"
 
-#filters="fps=15,scale=360"
-
-# ffmpeg -v warning -i $1 -vf "$filters,palettegen" -y $palette
-# ffmpeg -v warning -i $1 -i $palette -lavfi "$filters [x]; [x][1:v] paletteuse"  -y $2
-
-ffmpeg -i $1 -vf "fps=15,scale=640:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 $2
+for file in *.mp4; do
+  gif=${file:r}.gif
+  print "converting $file to $gif..."
+  palette="/tmp/palette.png"
+  ffmpeg -i ${file} -vf "fps=15,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 ${gif}
+done
