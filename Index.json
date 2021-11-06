@@ -279,7 +279,7 @@
       "BBEdit",
       "URLEncode",
       "HTMLEncode",
-      "Base64Encode",
+      "Base64",
       "UnixTime"
     ],
     "Title" : "For Developers"
