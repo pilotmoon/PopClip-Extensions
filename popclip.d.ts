@@ -793,11 +793,22 @@ declare interface PopClip {
      */
   copyText: (text: string) => void
 
+  // included for compatibility with old extensions
+  performPaste: () => void
+
   /**
-     * Invokes the app's Paste command, as if the user pressed ⌘V, to paste whatever is already on the pasteboard.
+     * (BETA) Invokes a command in the target app.
+     * @param command Either `cut`, `copy` or `paste`.
+     * @param options Options for the command
      * @category Action
      */
-  performPaste: () => void
+  performCommand: (command: 'cut'|'copy'|'paste', options?: {
+    /** Transformation to apply to the pasteboard contents. (Default: `none`)
+     * * `none`: regular pasteboard operation
+     * * `plain`: strips away everything but plain text
+     */
+    transform?: 'none'|'plain'
+  }) => void
 
   /**
      * Display text inside PopClip's popup, with option to make the display a clickable button to
