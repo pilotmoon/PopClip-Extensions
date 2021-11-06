@@ -1,5 +1,4 @@
 const encode: Action = {
-  requirements: ['text'],
   icon: 'square filled 64',
   title: 'Base64 Encode',
   code: (input, options) => {
@@ -13,7 +12,7 @@ const encode: Action = {
 const decode: Action = {
   regex: /^[A-Za-z0-9+_\-/]+=?=?$/,
   icon: 'square 64',
-  title: 'Base64 Eecode',
+  title: 'Base64 Decode',
   code (input) {
     popclip.pasteText(util.base64Decode(input.text))
   }

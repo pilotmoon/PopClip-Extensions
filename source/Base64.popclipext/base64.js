@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
 const encode = {
-    requirements: ['text'],
     icon: 'square filled 64',
     title: 'Base64 Encode',
     code: (input, options) => {
@@ -15,7 +14,7 @@ const encode = {
 const decode = {
     regex: /^[A-Za-z0-9+_\-/]+=?=?$/,
     icon: 'square 64',
-    title: 'Base64 Eecode',
+    title: 'Base64 Decode',
     code(input) {
         popclip.pasteText(util.base64Decode(input.text));
     }
