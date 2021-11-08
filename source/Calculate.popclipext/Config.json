@@ -5,5 +5,5 @@
   "icon": "calc.png",
   "module": "calculate.js",
   "after": "paste-result",
-  "description": "Evaluate the text as a matehmatical expression."
+  "description": "Evaluate the text as a mathematical expression."
 }
