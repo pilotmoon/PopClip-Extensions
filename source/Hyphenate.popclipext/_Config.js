@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const utils = require("../../lib/utils");
+const utils = require("../../lib/pcx-utils");
 define(() => {
     const extension = {
         actions: (selection) => {

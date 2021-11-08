@@ -1,4 +1,4 @@
-import utils = require('../../lib/utils')
+import utils = require('../../lib/pcx-utils')
 define(() => {
   const extension: Extension = {
     actions: (selection) => {

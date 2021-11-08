@@ -1,0 +1,15 @@
+{
+  "name": "pcx-dev",
+  "version": "0.0.1",
+  "description": "PopClip Extension dev tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nick Moore",
+  "license": "ISC",
+  "private": true,
+  "bin": {
+    "pcxconvert": "./convert.js"
+  }
+}
