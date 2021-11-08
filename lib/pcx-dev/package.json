@@ -4,12 +4,15 @@
   "description": "PopClip Extension dev tools",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "plutil -convert json ./testdata/Config.plist -o - | node convert.js"
   },
   "author": "Nick Moore",
   "license": "ISC",
   "private": true,
   "bin": {
     "pcxconvert": "./convert.js"
+  },
+  "devDependencies": {
+    "case-anything": "^1.1.3"
   }
 }

@@ -1,2 +1,2 @@
 #!/bin/zsh
-plutil -convert json -r Config.plist -o - | ${0:a:h}/../lib/pcx-dev/convert.js
+plutil -convert json Config.plist -o - | ${0:a:h}/../lib/pcx-dev/convert.js > Config.json
