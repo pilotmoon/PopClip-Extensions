@@ -15,10 +15,9 @@ Examples with simple arithmetic:
 It can also support quite complex expressions, as supported by [mathjs](https://mathjs.org/):
 
 * `155 miles * 18% in km` = `44.9006976 km`
-* `sin(pi/2)` → `1`
 * `sqrt(4)` → `2`
+* `sin(pi/2)` → `1`
 * `4(2 + 3i)` → `8 + 12i`
-* `100 years in days` → `36525 days`
 * `a = 2; b = 3; 2a + b` → `7`
 
 If the input text ends with an `=` character, the result will be appended to the input instead of replacing it. For example:
