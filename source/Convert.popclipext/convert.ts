@@ -96,7 +96,7 @@ function convert (input: string): string | null {
 export const actions: PopulationFunction = (input) => {
   const result = convert(input.text)
   if (result === null) {
-    return null
+    return
   }
   const action: Action = () => result
   action.title = result

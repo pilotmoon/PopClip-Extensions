@@ -90,7 +90,7 @@ function convert(input) {
 const actions = (input) => {
     const result = convert(input.text);
     if (result === null) {
-        return null;
+        return;
     }
     const action = () => result;
     action.title = result;

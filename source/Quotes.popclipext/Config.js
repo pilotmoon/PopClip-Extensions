@@ -42,9 +42,6 @@ define(function () {
                     };
                 });
             }
-            else {
-                return null;
-            }
         }
     };
     return extension;

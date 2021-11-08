@@ -5,8 +5,6 @@ define(() => {
       const result = utils.preserveEndSpace(selection.text, (text) => utils.replaceSpaces(text, '_'))
       if (result !== selection.text) {
         return () => popclip.pasteText(result)
-      } else {
-        return null
       }
     }
   }

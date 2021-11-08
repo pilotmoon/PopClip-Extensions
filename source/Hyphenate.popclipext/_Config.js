@@ -8,9 +8,6 @@ define(() => {
             if (result !== selection.text) {
                 return () => popclip.pasteText(result);
             }
-            else {
-                return null;
-            }
         }
     };
     return extension;

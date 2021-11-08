@@ -44,8 +44,6 @@ define(function () {
             code: (selection) => popclip.pasteText(style[0] + selection.text + style[2])
           }
         })
-      } else {
-        return null
       }
     }
   }
