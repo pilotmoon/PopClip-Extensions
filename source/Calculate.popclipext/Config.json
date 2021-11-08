@@ -3,10 +3,7 @@
   "identifier": "com.pilotmoon.popclip.extension.calculate",
   "name": "Calculate",
   "icon": "calc.png",
-  "title": "Calculate",
-  "regex": "^\\s*[0-9x\\,\\.\\-\\+\\*\\/\\(\\)][0-9x\\,\\.\\-\\+\\*\\/\\(\\)\\s]+[0-9x\\,\\.\\-\\+\\*\\/\\(\\)]\\s*=?\\s*$",
-  "shell script file": "calculate.php",
-  "script interpreter": "php",
+  "module": "calculate.js",
   "after": "paste-result",
-  "description": "Perform arithmetic. For example, the text '1+2' becomes '3'. Include '=' to put the result at the end; for example '14/4=' becomes '14/4=3.5'."
+  "description": "Evaluate the text as a matehmatical expression."
 }

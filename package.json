@@ -13,6 +13,7 @@
     "axios": "^0.23.0",
     "html-entities": "^2.3.2",
     "linkedom": "^0.12.1",
+    "mathjs": "^10.0.0",
     "sanitize-html": "^2.5.1",
     "superagent": "^6.1.0",
     "turndown": "^7.1.1",

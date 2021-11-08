@@ -197,7 +197,7 @@ declare interface AssociatedApp {
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | null
+ declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | undefined
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
