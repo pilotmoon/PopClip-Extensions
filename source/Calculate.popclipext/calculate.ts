@@ -9,7 +9,6 @@ export const actions: PopulationFunction = (selection) => {
   if (endsWithEquals) {
     text = text.substring(0, text.length - 1)
   }
-  // first try simplifying
   let result = evaluate(text)
   if (result === undefined || typeof result === 'function') {
     return

@@ -12,7 +12,6 @@ const actions = (selection) => {
     if (endsWithEquals) {
         text = text.substring(0, text.length - 1);
     }
-    // first try simplifying
     let result = (0, mathjs_1.evaluate)(text);
     if (result === undefined || typeof result === 'function') {
         return;
