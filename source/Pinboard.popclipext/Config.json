@@ -1,0 +1,19 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.pinboard",
+  "name": "Pinboard",
+  "icon": "pinboard.png",
+  "requirements": [
+    "url"
+  ],
+  "entitlements": [
+    "network"
+  ],
+  "module": "pinboard.js",
+  "after": "show-status",
+  "app": {
+    "link": "https://pinboard.in/",
+    "name": "Pinboard"
+  },
+  "description": "Bookmark the URL using Pinboard."
+}
