@@ -1,0 +1,10 @@
+{
+    "popclip version": 3785,
+    "name": "Comma List",
+    "description": "Split a comma-separated list into sepatate lines, and vice versa.    ",
+    "identifier": "com.pilotmoon.popclip.extension.comma-list",
+    "module": "comma-list.js",
+    "entitlements": [
+        "dynamic"
+    ]
+}
