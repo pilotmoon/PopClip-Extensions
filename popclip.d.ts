@@ -400,10 +400,11 @@ declare interface ActionFunction extends ActionProperties {
 
 /**
  * An alternative way to define as an action, as a non-callable object with a `code` member.
+ * If code is omitted, displays as disabled title/icon only.
  */
 declare interface ActionObject extends ActionProperties {
   /** Same function signature as [[ActionFunction]] */
-  code: (input: Input, options: Options, context: Context) => unknown
+  code?: (input: Input, options: Options, context: Context) => unknown
 }
 
 /**

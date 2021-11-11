@@ -1,0 +1,10 @@
+{
+    "popclip version": 3785,
+    "name": "Line Count",
+    "description": "Display the number of lines in the selected text.",
+    "identifier": "com.pilotmoon.popclip.extension.linecount",
+    "module": "linecount.js",
+    "entitlements": [
+        "dynamic"
+    ]
+}
