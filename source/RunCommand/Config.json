@@ -6,8 +6,6 @@
   "title": "Run Terminal Command",
   "actions": [
     {
-      "icon": "RTC.png",
-      "title": "Run Terminal Command",
       "requirements": [
         "text",
         "option-term=Terminal"
@@ -15,8 +13,6 @@
       "applescript file": "terminal.applescript"
     },
     {
-      "icon": "RTC.png",
-      "title": "Run Terminal Command",
       "requirements": [
         "text",
         "option-term=iTerm2"
@@ -24,7 +20,6 @@
       "applescript file": "iterm2.applescript"
     },
     {
-
       "requirements": [
         "text",
         "option-term=iTerm2 v2.9+"
