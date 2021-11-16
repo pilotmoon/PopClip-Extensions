@@ -1,0 +1,24 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.readwise",
+  "name": "Readwise",
+  "icon": "readwise-logo.svg",
+  "after": "show-status",
+  "app": {
+    "link": "https://readwise.io/",
+    "name": "Readwise"
+  },
+  "entitlements": [
+    "network"
+  ],
+  "module": "readwise.js",
+  "options": [
+    {
+      "label": "Access Token",
+      "identifier": "password",
+      "type": "password",
+      "description": "Get access token from readwise.io/access_token"
+    }
+  ],
+  "description": "Save the selected text as as highlight in Readwise."
+}
