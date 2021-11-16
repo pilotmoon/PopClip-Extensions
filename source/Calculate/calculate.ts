@@ -1,6 +1,8 @@
 import { evaluate, format, typeOf } from 'mathjs'
+
 export const actions: PopulationFunction = (selection) => {
-  print('calculate actions')
+  // const separator = util.localeInfo.decimalSeparator
+
   if (selection.text.length > 1000) { // limit input size
     return
   }
@@ -9,6 +11,10 @@ export const actions: PopulationFunction = (selection) => {
   if (endsWithEquals) {
     text = text.substring(0, text.length - 1)
   }
+
+  // replace locale decimal separator with .
+  // text = text.replace(separator, '.')
+
   let result = evaluate(text)
   if (result === undefined || typeof result === 'function' || typeof result === 'string') {
     return
@@ -22,6 +28,10 @@ export const actions: PopulationFunction = (selection) => {
   if (resultString.length > maxLength) {
     resultString = resultString.substring(0, maxLength) + '…'
   }
+
+  // replace . with local decimal separator
+  // resultString = resultString.replace('.', separator)
+
   return {
     title: resultString,
     icon: null,

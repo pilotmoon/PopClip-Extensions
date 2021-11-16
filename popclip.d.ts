@@ -937,6 +937,16 @@ declare interface Util {
      */
   localize: (string: string) => string
 
+  localeInfo: {
+    localeIdentifier: string
+    regionCode: string
+    languageCode: string
+    decimalSeparator: string
+    groupingSeparator: string
+    currencyCode: string
+    currencySymbol: string
+  }
+
   /**
      * Encode a string as UTF-8 then Base-64 encode the result.
      *
