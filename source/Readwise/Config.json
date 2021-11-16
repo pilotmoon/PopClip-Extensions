@@ -20,5 +20,5 @@
       "description": "Get access token from readwise.io/access_token"
     }
   ],
-  "description": "Save the selected text as as highlight in Readwise."
+  "description": "Save the selected text as a highlight in Readwise."
 }
