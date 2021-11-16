@@ -10,8 +10,7 @@ export const action: Action = async (input, options, context) => {
   if (context.browserTitle.length > 0) {
     payload.title = context.browserTitle
   }
-  const response = await readwise.post('highlights/', { highlights: [payload] }, { headers: { Authorization: token(options.authsecret) } })
-  print(response)
+  await readwise.post('highlights/', { highlights: [payload] }, { headers: { Authorization: token(options.authsecret) } })
 }
 
 export const auth: AuthFunction = async (info) => {
