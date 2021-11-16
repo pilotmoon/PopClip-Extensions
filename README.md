@@ -120,7 +120,7 @@ url: https://emojipedia.org/search/?q=***
 
 When you select the above text, PopClip will offer an "Install Extension" action. Clicking it will install the above extension directly, without any need for config files or a .popclipext folder. 
 
-If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install wihtout the usual "unsigned extension" prompt.
+If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install without the usual "unsigned extension" prompt.
 
 The format of a snippet is a simply a regular PopClip extension config in YAML format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be used. Extension snippets can be a maximum of 1000 characters.
 
