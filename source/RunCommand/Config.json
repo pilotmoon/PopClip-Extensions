@@ -1,0 +1,48 @@
+{
+  "popclipV version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.rtc",
+  "name": "Terminal",
+  "icon": "RTC.png",
+  "title": "Run Terminal Command",
+  "actions": [
+    {
+      "icon": "RTC.png",
+      "title": "Run Terminal Command",
+      "requirements": [
+        "text",
+        "option-term=Terminal"
+      ],
+      "applescript file": "terminal.applescript"
+    },
+    {
+      "icon": "RTC.png",
+      "title": "Run Terminal Command",
+      "requirements": [
+        "text",
+        "option-term=iTerm2"
+      ],
+      "applescript file": "iterm2.applescript"
+    },
+    {
+
+      "requirements": [
+        "text",
+        "option-term=iTerm2 v2.9+"
+      ],
+      "applescript file": "iterm2-3.applescript"
+    }
+  ],
+  "options": [
+    {
+      "label": "Terminal Emulator",
+      "type": "multiple",
+      "values": [
+        "Terminal",
+        "iTerm2 v2.9+",
+        "iTerm2"
+      ],
+      "identifier": "term"
+    }
+  ],
+  "description": "Run the selected text as a terminal command. Supports both Terminal and iTerm2. (Now updated for iTerm2 v2.9.)"
+}
