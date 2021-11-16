@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string>StartPage</string>
 			<key>URL</key>
-			<string>https://startpage.com/sp/search?query={popclip text}</string>
+			<string>https://www.startpage.com/sp/search?query={popclip text}</string>
 		</dict>
 	</array>
 	<key>Apps</key>
