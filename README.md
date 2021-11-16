@@ -15,6 +15,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Useful Links](#useful-links)
     - [Extension Signing](#extension-signing)
     - [Extra Debugging Output](#extra-debugging-output)
+  - [Extension Snippets](#extension-snippets)
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
     - [Types of Actions](#types-of-actions)
     - [Filtering](#filtering)
@@ -103,6 +104,59 @@ Please be aware that PopClip extensions can contain arbitrary executable code. B
 To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
+
+## Extension Snippets
+
+PopClip 2021.11 supports a new, simplified way to create and share simple extensions called "Extension Snippets".
+
+Here is an example extension snippet:
+
+```yaml
+# popclip extension to search Emojipedia
+name: Emojipedia
+icon: search filled E
+url: https://emojipedia.org/search/?q=***
+```
+
+When you select the above text, PopClip will offer an "Install Extension" action. Clicking it will install the above extension directly, without any need for config files or a .popclipext folder. 
+
+If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install wihtout the usual "unsigned extension" prompt.
+
+The format of a snippet is a simply a regular PopClip extension config in YAML format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be used. Extension snippets can be a maximum of 1000 characters.
+
+An AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
+
+```yaml
+# popclip
+name: LaunchBar
+icon: LB
+applescript: |
+  tell application "LaunchBar"
+    set selection to "{popclip text}"
+  end tell
+```
+
+A JavaScript example:
+
+```yaml
+# popclip
+name: Markdown Bold
+icon: circle filled B
+javascript: popclip.pasteText('**' + popclip.input.text + '**')
+```
+
+A Key Combo example:
+
+```yaml
+# popclip
+name: Paste and Enter
+icon: square monospaced ↵
+requirements: [paste]
+before: paste
+key combo:
+  key code: 0x24
+  modifiers: 0
+```
 
 ## Anatomy of a PopClip Extension
 
@@ -329,7 +383,7 @@ An AppleScript action is defined by the presence of either an `applescript file`
 
 |Key|Type|Description|
 |---|----|-----------|
-|`applescript file`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**) |
+|`applescript file`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**)  
 |`applescript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
 
 Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
