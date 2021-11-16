@@ -15,7 +15,6 @@ export const action: Action = async (input, options, context) => {
 }
 
 export const auth: AuthFunction = async (info) => {
-  print('pw', info.password)
   const response = await readwise.get('auth/', { headers: { Authorization: token(info.password) } })
   if (response.status !== 204) {
     throw new Error('Not logged in')
