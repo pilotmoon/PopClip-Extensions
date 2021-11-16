@@ -10,14 +10,18 @@ export const actions: PopulationFunction = (selection) => {
     text = text.substring(0, text.length - 1)
   }
   let result = evaluate(text)
-  if (result === undefined || typeof result === 'function') {
+  if (result === undefined || typeof result === 'function' || typeof result === 'string') {
     return
   }
   if (typeOf(result) === 'ResultSet') {
     const resultArray = result.valueOf()
     result = resultArray[resultArray.length - 1] // take final entry of resultset
   }
-  const resultString = format(result, { notation: 'fixed' })
+  let resultString = format(result, { notation: 'fixed' })
+  const maxLength = 40
+  if (resultString.length > maxLength) {
+    resultString = resultString.substring(0, maxLength) + '…'
+  }
   return {
     title: resultString,
     icon: null,
