@@ -41,6 +41,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
       - [Error handling and debugging](#error-handling-and-debugging)
       - [Asynchronous operations](#asynchronous-operations)
       - [Network access from JavaScript](#network-access-from-javascript)
+      - [Async/await](#asyncawait)
       - [TypeScript](#typescript)
       - [JavaScript reference](#javascript-reference)
   - [Meanings of particular fields](#meanings-of-particular-fields)
@@ -492,7 +493,7 @@ PopClip's JavaScript engine is Apple's [JavaScriptCore](https://developer.apple.
 
 #### Error handling and debugging
 
-In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shaking-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
+In general you don't need to worry too much about catching and handling errors. If the script throws an error, PopClip simply shows the shaking-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
 
 #### Asynchronous operations
 
@@ -532,11 +533,14 @@ requirements: [url]
 entitlements: [network]
 javascript: |
   const axios = require('axios')
-  const response = await axios.get(popclip.input.data.urls[0]) // throws error for non-2xx status codes
-  popclip.copyText(response.data)
+  const response = await axios.get(popclip.input.data.urls[0]) // throws for non-2xx status
+  return response.data
+after: copy-result
 ```
 
-The axios library is promise-based, and you'll notice that the above example uses the `await` keyword. That's possible because PopClip runs the JS code as an `async` function, allowing you to use top-level await to get nice clean code like the above.
+#### Async/await
+
+The axios library is promise-based, and you'll notice that the above example uses the `await` keyword. That's possible because, internally, PopClip runs the JS code wrapped as an `async` function, and resolves any returned promises itself, allowing you to use `await` to get nice clean code like the above.
 
 #### TypeScript
 
