@@ -477,7 +477,7 @@ The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Languag
 
 #### Error handling and debugging
 
-In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in (Debug output)[#debug-output].
+In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
 
 #### Network access from JavaScript
 
