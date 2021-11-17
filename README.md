@@ -38,6 +38,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
       - [Error handling and debugging](#error-handling-and-debugging)
+      - [Asynchronous operations](#asynchronous-operations)
       - [Network access from JavaScript](#network-access-from-javascript)
       - [TypeScript](#typescript)
   - [Meanings of particular fields](#meanings-of-particular-fields)
@@ -479,6 +480,12 @@ The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Languag
 
 In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
 
+#### Asynchronous operations
+
+Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of XMLHttpRequest or setTimeout, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. In such a case the returned value from the script (if any) is the return value of the last function to complete.
+
+During asynchronous operations, clicking PopClip's spinner will cancel all current operations.
+
 #### Network access from JavaScript
 
 PopClip provides its own implementation of XMLHttpRequest. To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
@@ -498,6 +505,8 @@ javascript: |
   const response = await axios.get(popclip.input.data.urls[0])
   popclip.copyText(response.data)
 ```
+
+The axios library is promise-based, and you'll notice that the above example uses the `await` keyword. That's possible because PopClip runs the JS code as an `async` function, allowing you to use top-level await to get nice clean code like the above.
 
 #### TypeScript
 
