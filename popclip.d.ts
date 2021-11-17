@@ -696,7 +696,7 @@ declare interface Options {
 *
 */
 declare interface PopClip {
-  /**
+  /*
     * A bit field representing state of the modifier keys when the action was invoked in PopClip.
     *
     * #### Notes
@@ -727,8 +727,7 @@ declare interface PopClip {
     */
   readonly modifierKeys: number
 
-  /*
-     * (Beta feature)
+  /**
      * The state of the modifier keys when the action was invoked in PopClip.
      *
      * #### Notes
