@@ -12,7 +12,6 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [License](#license)
     - [Credits](#credits)
     - [Contributing](#contributing)
-    - [Useful Links](#useful-links)
     - [Extension Signing](#extension-signing)
     - [Extra Debugging Output](#extra-debugging-output)
   - [Extension Snippets](#extension-snippets)
@@ -77,15 +76,6 @@ Thank you for contributing! New extensions can be contributed by pull request, a
 - Submitting to the repo does not guarantee publication on the website. (And if I don't publish your extension there it doesn't mean your extension is bad. I curate that list for the general audience and your extension just might be more technical or niche.)
 - I may make changes to any extension submitted.
 - Don't worry about signing the extension, I will take care of that.
-
-### Useful Links
-
-For an easy way to create certain types of extension with no coding necessary, check out Brett Terpstra's [PopMaker](http://brettterpstra.com/2014/05/12/popmaker-popclip-extension-generator/) app.
-
-Here are some external "how to" guides for creating extensions:
-
-- [Create Your Own Custom Extension for PopClip (Tuts+)](http://computers.tutsplus.com/tutorials/create-your-own-custom-extension-for-popclip--mac-50637)
-- [PopClip: Scripting Extensions (Tuts+)](http://computers.tutsplus.com/tutorials/popclip-scripting-extensions--mac-55842)
 
 ### Extension Signing
 
