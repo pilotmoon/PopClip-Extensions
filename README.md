@@ -15,6 +15,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Extension Signing](#extension-signing)
     - [Extra Debugging Output](#extra-debugging-output)
   - [Extension Snippets](#extension-snippets)
+    - [Extension Snippets Examples](#extension-snippets-examples)
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
     - [Types of Actions](#types-of-actions)
     - [Filtering](#filtering)
@@ -116,32 +117,47 @@ If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (wit
 
 Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
 
-The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be used. Extension snippets can be a maximum of 1000 characters.
+The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be included.
 
-An AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
+Extension snippets can be a maximum of 1000 characters.
+
+### Extension Snippets Examples
+
+A Shortcuts example:
 
 ```yaml
-# popclip
-name: LaunchBar
-icon: LB
-applescript: |
-  tell application "LaunchBar"
-    set selection to "{popclip text}"
-  end tell
+# popclip shortcuts example
+name: Run My Shortcut
+icon: symbol:moon.stars # Apple SF Symbols
+macos version: '12.0' # shortcuts only work on Monterey and above!
+shortcut name: My Shortcut Name
 ```
 
 An AppleScript example, running a shell script:
 
 ```yaml
-# popclip
+# popclip shellscript nested in an applescript 
 name: Say
 applescript: do shell script "say '{popclip text}'"
+```
+
+A multi-line AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
+
+```yaml
+# popclip launchbar example
+name: LaunchBar
+icon: LB
+applescript: | # pipe charactyer begins a multi-line string
+  tell application "LaunchBar"
+    set selection to "{popclip text}"
+  end tell
+# the above lines are indented with two spaces. no tabs allowed in YAML!
 ```
 
 A JavaScript example:
 
 ```yaml
-# popclip
+# popclip js example
 name: Markdown Bold
 icon: circle filled B
 javascript: popclip.pasteText('**' + popclip.input.text + '**')
@@ -155,17 +171,17 @@ name: Keypress Example
 key combo: command option J
 ```
 
-A Key Combo example with a raw key code:
+A more complex Key Combo example with a raw key code and using some more fields:
 
 ```yaml
-# popclip
+# popclip extension snippet - more complex example
 name: Paste and Enter
 icon: square monospaced ↵
 requirements: [paste]
 before: paste
 key combo:
-  key code: 0x24
-  modifiers: 0
+  key code: 0x24 # see https://bit.ly/3wSkQ9I
+  modifiers: 0 # `modifiers` is required even if zero
 ```
 
 ## Anatomy of a PopClip Extension
