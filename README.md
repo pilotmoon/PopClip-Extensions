@@ -485,6 +485,20 @@ PopClip provides its own implementation of XMLHttpRequest. To use it, you need t
 
 PopClip is also bundled with a few libraries from npm, including the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XMLHttpRequest!
 
+Here's a (rather handy!) example extension snippet that downloads a selected URL's contents as text, and copies it to the clipboard:
+
+```yaml
+# popclip JS network example
+name: Download Text
+icon: symbol:square.and.arrow.down.fill
+requirements: [url]
+entitlements: [network]
+javascript: |
+  const axios = require('axios')
+  const response = await axios.get(popclip.input.data.urls[0])
+  popclip.copyText(response.data)
+```
+
 #### TypeScript
 
 When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code.
