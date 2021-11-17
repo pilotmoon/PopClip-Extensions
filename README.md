@@ -37,7 +37,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [AppleScript action properties](#applescript-action-properties)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
-    - [Error handling and debugging](#error-handling-and-debugging)
+      - [Error handling and debugging](#error-handling-and-debugging)
       - [Network access from JavaScript](#network-access-from-javascript)
       - [TypeScript](#typescript)
   - [Meanings of particular fields](#meanings-of-particular-fields)
@@ -453,7 +453,7 @@ A JavaScript action is defined by the presence of either a `javascript file` fie
 |Key|Type|Description|
 |---|----|-----------|
 |`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
-|`javascript`|String|A text string to run as an JavaScript. For example: `popclip.showText('Hello world!')`|
+|`javascript`|String|A text string to run as a JavaScript. For example: `popclip.showText('Hello world!')`|
 
 PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement.
 
@@ -475,7 +475,7 @@ Here is a quick reference for some commonly needed stuff:
 
 The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Language features depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6 and scripts can assume it is safe to use all ES2015/ES6 language features and core libraries. Newer language features may be available on higher versions of macOS.
 
-### Error handling and debugging
+#### Error handling and debugging
 
 In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in (Debug output)[#debug-output].
 
