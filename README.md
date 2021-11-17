@@ -488,7 +488,7 @@ Here is a quick reference for some commonly needed stuff:
 
 #### The JavaScript Engine
 
-PopClip's JavaScript engine is Apple's [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore), which is part of macOS. The available language features and core libraries depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6, and scripts can assume it is safe to use all features marked as "Safari 10.1" and below in MDN ([example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#browser_compatibility))), which corresponds to ES2017 specification. Newer language features may be available on higher versions of macOS.
+PopClip's JavaScript engine is Apple's [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore), which is part of macOS. The available language features and core libraries depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6, and scripts can assume it is safe to use all features marked as "Safari 10.1" and below in MDN ([example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#browser_compatibility)), which corresponds to ES2017 specification. Newer language features may be available on higher versions of macOS.
 
 #### Error handling and debugging
 
