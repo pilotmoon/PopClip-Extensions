@@ -508,13 +508,16 @@ During asynchronous operations, clicking PopClip's spinner will cancel all curre
 
 #### Network access from JavaScript
 
-PopClip provides its own implementation of XMLHttpRequest. To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
+PopClip provides its own implementation of XMLHttpRequest (XHR). To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
 
-PopClip is also bundled with a few libraries from npm, including the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XMLHttpRequest!
+PopClip is also bundled with the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XHR!
 
-Due to macOS's App Transport Security, PopClip can only access https URLs. Attempting to access http URLs results in a network error from XMLHttpRequest.
+Some limitations to be aware of:
 
-Here's an example extension snippet that downloads a selected URL's contents as text, and copies it to the clipboard:
+- Due to macOS's App Transport Security, PopClip can only access https URLs. Attempting to access http URLs results in a network error from XHR.
+- PopClip's implementation of XHR currently can only download text MIME types. Binary data will fail.
+
+Here's an example extension snippet that downloads a selected URL's contents, and copies it to the clipboard:
 
 ```yaml
 # popclip JS network example
@@ -524,7 +527,7 @@ requirements: [url]
 entitlements: [network]
 javascript: |
   const axios = require('axios')
-  const response = await axios.get(popclip.input.data.urls[0])
+  const response = await axios.get(popclip.input.data.urls[0]) // throws error for non-2xx status codes
   popclip.copyText(response.data)
 ```
 
