@@ -117,7 +117,7 @@ In the absence of an explicit `identifier` field, the extension is identified by
 
 If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install without the usual "unsigned extension" prompt. AppleScript snippets will still give the unsigned warning.
 
-Regular Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
+Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
 
 The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (with or without a space, not case sensitive).
 
