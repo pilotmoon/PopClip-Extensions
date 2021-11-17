@@ -487,7 +487,7 @@ The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Languag
 
 #### Error handling and debugging
 
-In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
+In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shaking-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
 
 #### Asynchronous operations
 
@@ -512,7 +512,9 @@ PopClip provides its own implementation of XMLHttpRequest. To use it, you need t
 
 PopClip is also bundled with a few libraries from npm, including the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XMLHttpRequest!
 
-Here's a (rather handy!) example extension snippet that downloads a selected URL's contents as text, and copies it to the clipboard:
+Due to macOS's App Transport Security, PopClip can only access https URLs. Attempting to access http URLs results in a network error from XMLHttpRequest.
+
+Here's an example extension snippet that downloads a selected URL's contents as text, and copies it to the clipboard:
 
 ```yaml
 # popclip JS network example
@@ -530,7 +532,7 @@ The axios library is promise-based, and you'll notice that the above example use
 
 #### TypeScript
 
-When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts).
+When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts). The TypeScript configuration is in [tsconfig.yaml](/tsconfig.yaml).
 
 #### JavaScript reference
 
