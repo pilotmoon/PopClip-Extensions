@@ -37,6 +37,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [AppleScript action properties](#applescript-action-properties)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
+      - [The JavaScript Engine](#the-javascript-engine)
       - [Error handling and debugging](#error-handling-and-debugging)
       - [Asynchronous operations](#asynchronous-operations)
       - [Network access from JavaScript](#network-access-from-javascript)
@@ -485,7 +486,9 @@ Here is a quick reference for some commonly needed stuff:
 - [`popclip.pressKey()`](https://pilotmoon.github.io/PopClip-Extensions/interfaces/PopClip.html#pressKey) - presses a key combo, similar to a key press extension
 - `print()` - global debug printing function
 
-The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Language features depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6 and scripts can assume it is safe to use all features marked as "Safari 10.1" and below in MDN ([example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#browser_compatibility))). This seems to correspond to ES2017. Newer language features may be available on higher versions of macOS.
+#### The JavaScript Engine
+
+PopClip's JavaScript engine is Apple's [JavaScriptCore](https://developer.apple.com/documentation/javascriptcore), which is part of macOS. The available language features and core libraries depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6, and scripts can assume it is safe to use all features marked as "Safari 10.1" and below in MDN ([example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function#browser_compatibility))), which corresponds to ES2017 specification. Newer language features may be available on higher versions of macOS.
 
 #### Error handling and debugging
 
