@@ -182,6 +182,15 @@ name: Keypress Example
 key combo: command option J
 ```
 
+A Service example:
+
+```yaml
+# popclip
+name: Make Sticky
+service name: Make Sticky
+```
+
+
 A more complex Key Combo example with a raw key code and using some more fields:
 
 ```yaml
