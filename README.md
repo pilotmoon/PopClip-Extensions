@@ -443,7 +443,7 @@ A JavaScript action is defined by the presence of either a `javascript file` fie
 |Key|Type|Description|
 |---|----|-----------|
 |`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
-|`javascript`|String|A text string to run as an AppleScript. For example: `popclip.showText('Hello world!')`|
+|`javascript`|String|A text string to run as an JavaScript. For example: `popclip.showText('Hello world!')`|
 
 PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement.
 
@@ -451,11 +451,13 @@ JS scripts have access to a PopClip API, principally via the properties and meth
 
 Here is a quick reference for some commonly needed stuff:
 
-- `popclip.input.text` - the selected text
+- `popclip.input.text` - the full selected text
+- `popclip.input.matchedText` - the part of the text matching the requirement or regex
 - `popclip.input.html` - the html backing the selection (needs `captureHtml` field set)
 - `popclip.input.markdown` - the markdownified html (needs `captureHtml` field set)
 - `popclip.input.data.urls` - array of detected web URLs (similar to `POPCLIP_URLS` in shell scripts)
-- `popclip.context.browserUrl` and `popclip.context.browseTitle` - the selected text
+- `popclip.context.browserUrl` and `popclip.context.browserTitle` - hopefully self-explanatory
+- `popclip.modifiers.command`, `popclip.modifiers.option`, `popclip.modifiers.shift`, `popclip.modifiers.control` - booleans for modifier keys pressed
 - `popclip.pasteText('string')` - paste the string (similar to `paste-result`)
 - `popclip.copyText('string')` - copy the string (similar to `copy-result`)
 - `popclip.showText('string')` - show the string (similar to `show-result`)
