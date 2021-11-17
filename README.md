@@ -46,6 +46,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
       - [JavaScript reference](#javascript-reference)
   - [Meanings of particular fields](#meanings-of-particular-fields)
     - [The `requirements` array](#the-requirements-array)
+      - [Note on side effect of requirements field](#note-on-side-effect-of-requirements-field)
     - [The `before` and `after` strings](#the-before-and-after-strings)
     - [The `app` dictionary](#the-app-dictionary)
     - [The `options` array](#the-options-array)
@@ -569,6 +570,18 @@ These are the values supported by the `requirements` array. Additionally, you ca
 |`path`|The text must be a local file path, and it must exist on the local file system.|
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
+
+#### Note on side effect of requirements field
+
+When using a `url`, `email` or `path` requirement, the text passed to the action will be modified.
+
+- For `url` requirement, only the matching URL will be passed, and it will be expanded to its full form, with `https://` prepended if no scheme is specified. For example, if the selected text is `go to apple.com`, the text passed to the action will be `https://apple.com`.
+- For `email` requirement, the only the matching email address will be passed to the action.
+- For `path` requirement, only the matching path will be passed to the action, and it will be standardized form with `~` and `..` expanded. For example `~/Documents` will be passed as `/Users/username/Documents`.
+
+Shell Scripts and AppleScripts can still access the original text in the `POPCLIP_FULL_TEXT` and `{popclip full text}` fields.
+
+JavaScript actions will find the modified text as `popclip.input.matchedText` and the full text as `popclip.input.text`.
 
 ### The `before` and `after` strings
 
