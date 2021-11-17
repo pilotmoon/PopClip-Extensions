@@ -484,6 +484,19 @@ In general you don't need to worry to much about catching and handling errors. I
 
 Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of XMLHttpRequest or setTimeout, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. In such a case the returned value from the script (if any) is the return value of the last function to complete.
 
+Example: 
+
+```yaml
+# popclip async example
+name: Async Test
+javascript: | 
+  setTimeout(() => { 
+    return 'bar'
+  }, 1000) // 1 second delay
+  return 'foo'
+after: show-result # result shown will be 'bar', not 'foo'
+```
+
 During asynchronous operations, clicking PopClip's spinner will cancel all current operations.
 
 #### Network access from JavaScript
