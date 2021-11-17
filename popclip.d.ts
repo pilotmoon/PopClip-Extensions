@@ -204,7 +204,7 @@ declare interface AssociatedApp {
  */
 declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<any>
 
-// credentials used in auth function
+/** Credentials used in auth function */
 declare interface AuthInfo {
   /** Value of `username` option (will be empty string if none defined) */
   username: string

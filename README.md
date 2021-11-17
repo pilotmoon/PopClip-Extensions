@@ -117,7 +117,7 @@ The format of a snippet is a simply a regular PopClip extension config in [YAML]
 
 All features of regular extensions can be used, with the limitation that additional files (such as icon files or scripts) cannot be included. Extension snippets can be a maximum of 1000 characters.
 
-If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install without the usual "unsigned extension" prompt. AppleScript snippets will still give the unsigned warning.
+If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet will install without the usual "unsigned extension" prompt. AppleScript snippets, and JavaScript snippets with the network entitlement, will still give the unsigned warning.
 
 Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
 
