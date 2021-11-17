@@ -13,7 +13,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Credits](#credits)
     - [Contributing](#contributing)
     - [Extension Signing](#extension-signing)
-    - [Extra Debugging Output](#extra-debugging-output)
+    - [Debug Output](#debug-output)
   - [Extension Snippets](#extension-snippets)
     - [Extension Snippets Examples](#extension-snippets-examples)
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
@@ -90,9 +90,11 @@ If you find this gets annoying while you are testing your work, you can turn off
 
 Please be aware that PopClip extensions can contain arbitrary executable code. Be careful about the extensions you create, and be wary about loading extensions you get from someone else.
 
-### Extra Debugging Output
+(PopClip will never load unsigned extensions whose identifier has a `com.pilotmoon.` prefix, which is reserved for 'official' extensions. When basing your own extension off such an extension, you will need to change the identifier.)
 
-To help you when debugging Script extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal:
+### Debug Output
+
+To help you when creating extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal, then Quit and restart PopClip:
 
     defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
@@ -115,11 +117,9 @@ In the absence of an explicit `identifier` field, the extension is identified by
 
 If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install without the usual "unsigned extension" prompt. AppleScript snippets will still give the unsigned warning.
 
-Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
+Regular Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
 
-The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be included.
-
-Extension snippets can be a maximum of 1000 characters.
+The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (with or without a space, not case sensitive). All features of regular extensions can be used, with the limitation that no additional files (such as icon files or scripts) can be included Extension snippets can be a maximum of 1000 characters.
 
 ### Extension Snippets Examples
 
@@ -144,23 +144,28 @@ applescript: do shell script "say '{popclip text}'"
 A multi-line AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
 
 ```yaml
-# popclip launchbar example
+# PopClip LaunchBar example
 name: LaunchBar
 icon: LB
-applescript: | # pipe charactyer begins a multi-line string
+applescript: | # pipe character begins a multi-line string
   tell application "LaunchBar"
     set selection to "{popclip text}"
   end tell
 # the above lines are indented with two spaces. no tabs allowed in YAML!
 ```
 
-A JavaScript example:
+A JavaScript example, including multiple actions:
 
 ```yaml
-# popclip js example
-name: Markdown Bold
-icon: circle filled B
-javascript: popclip.pasteText('**' + popclip.input.text + '**')
+# popclip js + multi action example
+name: Markdown Formatting
+actions:
+- title: Markdown Bold # note: actions have a `title`, not a `name`
+  icon: circle filled B
+  javascript: popclip.pasteText('**' + popclip.input.text + '**')
+- title: Markdown Italic
+  icon: circle filled I
+  javascript: popclip.pasteText('*' + popclip.input.text + '*')  
 ```
 
 A Key Combo example:
@@ -194,7 +199,7 @@ There are seven kinds of actions supported by PopClip extensions.
 
 | Action Type | Description | Example |
 |------|-------------|---------|
-|Shortcut|Send the selected text to a macOS Shortcut. (Requires macOS 12.0 Monterey.)| TODO |
+|Shortcut|Send the selected text to a macOS Shortcut. (Requires macOS 12.0 Monterey.)| See snippets above. |
 |Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)|
 |URL|Open a URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
 |Key Press|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
@@ -321,7 +326,7 @@ Fields shown as "Localizable String" may be either a string or a dictionary. If 
 
 ### Extension properties
 
-Thg following fields are used at the top level of the configuration to define properties of the extension itself. All fields are optional.
+The following fields are used at the top level of the configuration to define properties of the extension itself. All fields are optional.
 
 |Key|Type|Description|
 |---|----|-----------|
