@@ -37,6 +37,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [AppleScript action properties](#applescript-action-properties)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
+    - [Error handling and debugging](#error-handling-and-debugging)
       - [Network access from JavaScript](#network-access-from-javascript)
       - [TypeScript](#typescript)
   - [Meanings of particular fields](#meanings-of-particular-fields)
@@ -163,6 +164,7 @@ A JavaScript example, including multiple actions:
 ```yaml
 # popclip js + multi action example
 name: Markdown Formatting
+requirements: [text, paste]
 actions:
 - title: Markdown Bold # note: actions have a `title`, not a `name`
   icon: circle filled B
@@ -194,8 +196,6 @@ key combo:
 ```
 
 ## Anatomy of a PopClip Extension
-
-***A note on "module-based" extensions:** PopClip 2021.11 supports a new kind of extension that I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This document focuses on "classic" extensions, and not module based extensions. Documentation for module-based extensions is still being prepared.*
 
 ### Types of Actions
 
@@ -433,10 +433,11 @@ An Shell Script action is defined by the presence of a `shell script file` field
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
 
-
 ### JavaScript action properties
 
 *Note: JavaScript extensions are brand new and it will take me some time to document everything fully. The following gives the basics. Please bear with me!*
+
+***A note on "module-based" extensions:** PopClip 2021.11 supports a new kind of extension that I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This document focuses on "classic" extensions, and not module based extensions. Documentation for module-based extensions is still being prepared.*
 
 A JavaScript action is defined by the presence of either a `javascript file` field or a `javascript` field, as follows.
 
@@ -464,6 +465,10 @@ Here is a quick reference for some commonly needed stuff:
 - `print()` - global debug printing function
 
 The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Language features depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6 and scripts can assume it is safe to use all ES2015/ES6 language features and core libraries. Newer language features may be available on higher versions of macOS.
+
+### Error handling and debugging
+
+In general you don't need to worry to much about catching and handling errors. If the script throws an error, PopClip simply shows the shakey-'X'. Debug output can be viewed in the console as described in (Debug output)[#debug-output].
 
 #### Network access from JavaScript
 
