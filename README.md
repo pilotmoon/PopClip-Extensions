@@ -34,9 +34,11 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Service action properties](#service-action-properties)
     - [URL action properties](#url-action-properties)
     - [Key Press action properties](#key-press-action-properties)
-    - [JavaScript action properties](#javascript-action-properties)
     - [AppleScript action properties](#applescript-action-properties)
     - [Shell Script action properties](#shell-script-action-properties)
+    - [JavaScript action properties](#javascript-action-properties)
+      - [Network access from JavaScript](#network-access-from-javascript)
+      - [TypeScript](#typescript)
   - [Meanings of particular fields](#meanings-of-particular-fields)
     - [The `requirements` array](#the-requirements-array)
     - [The `before` and `after` strings](#the-before-and-after-strings)
@@ -340,6 +342,7 @@ The following fields are used at the top level of the configuration to define pr
 |`popclip version` |Integer|Minimum PopClip version required. This is the build number, as shown in brackets in the about pane. You should specify `3785` for new extensions based on this document.|
 |`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
 |`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
+|`entitlements`|Array|Only applies to JavaScript extensions. The possible values are `network` (allows use of XMLHttpRequest) and `dynamic` (allows dynamically generated actions).|
 |`action`|Dictionary|A dictionary defining a single action for this extension.|
 |`actions`|Array|Array of dictionaries defining the actions for this extension.|
 
@@ -406,13 +409,9 @@ A Key Press action is defined by the presence of a `key combo` field.
 
 The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
 
-### JavaScript action properties
-
-TODO
-
 ### AppleScript action properties
 
-An AppleScript action is defined by the presence of either an `applescript file` field or and `applescript` field, as follows.
+An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows.
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -433,6 +432,46 @@ An Shell Script action is defined by the presence of a `shell script file` field
 |`script interpreter`|String (optional)|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby`, or an executable name on its own such as `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell.|
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
+
+
+### JavaScript action properties
+
+*Note: JavaScript extensions are brand new and it will take me some time to document everything fully. The following gives the basics. Please bear with me!*
+
+A JavaScript action is defined by the presence of either a `javascript file` field or a `javascript` field, as follows.
+
+|Key|Type|Description|
+|---|----|-----------|
+|`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
+|`javascript`|String|A text string to run as an AppleScript. For example: `popclip.showText('Hello world!')`|
+
+PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement.
+
+JS scripts have access to a PopClip API, principally via the properties and methods of the `popclip` global object. There is draft documentation here: [PopClip Extensions JavaScript Reference](https://pilotmoon.github.io/PopClip-Extensions/).
+
+Here is a quick reference for some commonly needed stuff:
+
+- `popclip.input.text` - the selected text
+- `popclip.input.html` - the html backing the selection (needs `captureHtml` field set)
+- `popclip.input.markdown` - the markdownified html (needs `captureHtml` field set)
+- `popclip.input.data.urls` - array of detected web URLs (similar to `POPCLIP_URLS` in shell scripts)
+- `popclip.context.browserUrl` and `popclip.context.browseTitle` - the selected text
+- `popclip.pasteText('string')` - paste the string (similar to `paste-result`)
+- `popclip.copyText('string')` - copy the string (similar to `copy-result`)
+- `popclip.showText('string')` - show the string (similar to `show-result`)
+- `print()` - global debug printing function
+
+The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Language features depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6 and scripts can assume it is safe to use all ES2015/ES6 language features and core libraries. Newer language features may be available on higher versions of macOS.
+
+#### Network access from JavaScript
+
+PopClip provides its own implementation of XMLHttpRequest. To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
+
+PopClip is also bundled with a few libraries from npm, including the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XMLHttpRequest!
+
+#### TypeScript
+
+When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code.
 
 ## Meanings of particular fields
 
