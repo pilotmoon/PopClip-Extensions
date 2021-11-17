@@ -446,7 +446,7 @@ The the current working directory will be set to the package directory. Within t
 
 *Note: JavaScript extensions are brand new and it will take me some time to document everything fully. The following gives the basics. Please bear with me!*
 
-***A note on "module-based" extensions:** PopClip 2021.11 supports a new kind of extension that I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This document focuses on "classic" extensions, and not module based extensions. Documentation for module-based extensions is still being prepared.*
+***A note on "module-based" extensions:** There is a further kind of extension I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This section describes how JavaScript fits in to the "classic" extension structure, which is the easiest to explain and to use for simple tasks.*
 
 A JavaScript action is defined by the presence of either a `javascript file` field or a `javascript` field, as follows.
 
