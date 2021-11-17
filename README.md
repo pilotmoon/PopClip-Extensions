@@ -563,11 +563,11 @@ These are the values supported by the `requirements` array. Additionally, you ca
 |`copy`|Synonym for `text` (for backward compatibility).|
 |`cut`|Text must be selected and the app's Cut command must be available.|
 |`paste`|The app's Paste command must be available.|
-|`url`|The text must contain exactly one web URL (http or https).|
+|`url`|The text must contain exactly one web URL (http or https). *(see side effects below)*|
 |`urls`|The text must contain one or more web URLs (https or https).|
-|`email`|The text must contain exactly one email address.|
+|`email`|The text must contain exactly one email address. *(see side effects below)*|
 |`emails`|The text must contain one or more email addresses.|
-|`path`|The text must be a local file path, and it must exist on the local file system.|
+|`path`|The text must be a local file path, and it must exist on the local file system. *(see side effects below)*|
 |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
 |`option-*=#`|The option named `*` must be equal to the string `#`. For example `option-fish=shark` would require an option named `fish` to be set to the value `shark`. This mechanism allows actions to be enabled and disabled via options.|
 
@@ -579,9 +579,7 @@ When using a `url`, `email` or `path` requirement, the text passed to the action
 - For `email` requirement, the only the matching email address will be passed to the action.
 - For `path` requirement, only the matching path will be passed to the action, and it will be standardized form with `~` and `..` expanded. For example `~/Documents` will be passed as `/Users/username/Documents`.
 
-Shell Scripts and AppleScripts can still access the original text in the `POPCLIP_FULL_TEXT` and `{popclip full text}` fields.
-
-JavaScript actions will find the modified text as `popclip.input.matchedText` and the full text as `popclip.input.text`.
+Shell Scripts and AppleScripts can still access the original text in the `POPCLIP_FULL_TEXT` and `{popclip full text}` fields. JavaScript actions will find the modified text as `popclip.input.matchedText` and the full text as `popclip.input.text`.
 
 ### The `before` and `after` strings
 
