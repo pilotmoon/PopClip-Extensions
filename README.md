@@ -41,6 +41,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
       - [Asynchronous operations](#asynchronous-operations)
       - [Network access from JavaScript](#network-access-from-javascript)
       - [TypeScript](#typescript)
+      - [JavaScript reference](#javascript-reference)
   - [Meanings of particular fields](#meanings-of-particular-fields)
     - [The `requirements` array](#the-requirements-array)
     - [The `before` and `after` strings](#the-before-and-after-strings)
@@ -456,7 +457,15 @@ A JavaScript action is defined by the presence of either a `javascript file` fie
 |`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
 |`javascript`|String|A text string to run as a JavaScript. For example: `popclip.showText('Hello world!')`|
 
-PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement.
+PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement. A quick example:
+
+```yaml
+# popclip (this is exactly how the published Uppercase extension works)
+name: Uppercase
+icon: square filled AB
+javascript: return popclip.input.text.toUpperCase()
+after: paste-result
+```
 
 JS scripts have access to a PopClip API, principally via the properties and methods of the `popclip` global object. There is draft documentation here: [PopClip Extensions JavaScript Reference](https://pilotmoon.github.io/PopClip-Extensions/).
 
@@ -521,7 +530,11 @@ The axios library is promise-based, and you'll notice that the above example use
 
 #### TypeScript
 
-When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code.
+When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts).
+
+#### JavaScript reference
+
+There are loads of JavaScript references out there, but the one I use and recommend is [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
 
 ## Meanings of particular fields
 
