@@ -119,7 +119,9 @@ If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (wit
 
 Regular Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
 
-The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (with or without a space, not case sensitive). All features of regular extensions can be used, with the limitation that no additional files (such as icon files or scripts) can be included Extension snippets can be a maximum of 1000 characters.
+The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (with or without a space, not case sensitive).
+
+All features of regular extensions can be used, with the limitation that additional files (such as icon files or scripts) cannot be included. Extension snippets can be a maximum of 1000 characters.
 
 ### Extension Snippets Examples
 
