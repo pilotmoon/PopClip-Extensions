@@ -579,6 +579,8 @@ When using a `url`, `email` or `path` requirement, the text passed to the action
 - For `email` requirement, the only the matching email address will be passed to the action.
 - For `path` requirement, only the matching path will be passed to the action, and it will be standardized form with `~` and `..` expanded. For example `~/Documents` will be passed as `/Users/username/Documents`.
 
+In all three cases, actions can assume that their input is a valid web URL, email address or path.
+
 Shell Scripts and AppleScripts can still access the original text in the `POPCLIP_FULL_TEXT` and `{popclip full text}` fields. JavaScript actions will find the modified text as `popclip.input.matchedText` and the full text as `popclip.input.text`.
 
 ### The `before` and `after` strings
