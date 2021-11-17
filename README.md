@@ -118,11 +118,15 @@ icon: search filled E
 url: https://emojipedia.org/search/?q=***
 ```
 
-When you select the above text, PopClip will offer an "Install Extension" action. Clicking it will install the above extension directly, without any need for config files or a .popclipext folder. 
+When you select the above text, PopClip will offer an "Install Extension" action. Clicking it will install the above extension directly, without any need for config files or a .popclipext folder.
 
-If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install wihtout the usual "unsigned extension" prompt.
+In the absence of an explicit `identifier` field, the extension is identified by its `name`. Installing another extension with the same name (or identifier) will overwrite an existing one.
 
-The format of a snippet is a simply a regular PopClip extension config in YAML format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be used. Extension snippets can be a maximum of 1000 characters.
+If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet install without the usual "unsigned extension" prompt. AppleScript snippets will still give the unsigned warning.
+
+Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
+
+The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (or `#popclip`). All features of regular extensions can be used, with the limitation that no additonal files (such as icon files or scripts) can be used. Extension snippets can be a maximum of 1000 characters.
 
 An AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
 
@@ -136,6 +140,14 @@ applescript: |
   end tell
 ```
 
+An AppleScript example, running a shell script:
+
+```yaml
+# popclip
+name: Say
+applescript: do shell script "say '{popclip text}'"
+```
+
 A JavaScript example:
 
 ```yaml
@@ -146,6 +158,14 @@ javascript: popclip.pasteText('**' + popclip.input.text + '**')
 ```
 
 A Key Combo example:
+
+```yaml
+# popclip
+name: Keypress Example
+key combo: command option J
+```
+
+A Key Combo example with a raw key code:
 
 ```yaml
 # popclip
@@ -210,8 +230,8 @@ Every extension must contain a Config file, in either JSON, YAML or plist format
 
 | Format | File Name      | Description                                                                |
 | ------ | -------------- | -------------------------------------------------------------------------- |
-| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format.                |
-| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org) format.                             |
+| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format. ([quickref](https://quickref.me/json))               |
+| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org)  format. ([quickref](https://quickref.me/yaml)) | 
 | plist  | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list). |
 
 The Config file must define a single dictionary at its root, which defines the extension. Although the three formats are different, they all can be used to define a dictionary mapping
