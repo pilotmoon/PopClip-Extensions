@@ -467,7 +467,7 @@ javascript: return popclip.input.text.toUpperCase()
 after: paste-result
 ```
 
-JS scripts have access to a PopClip API, principally via the properties and methods of the `popclip` global object. There is draft documentation here: [PopClip Extensions JavaScript Reference](https://pilotmoon.github.io/PopClip-Extensions/).
+JS scripts have access to PopClip's state and can perform actions, via the properties and methods of the `popclip` global object. There is draft documentation here: [PopClip Extensions JavaScript Reference](https://pilotmoon.github.io/PopClip-Extensions/).
 
 Here is a quick reference for some commonly needed stuff:
 
@@ -481,6 +481,8 @@ Here is a quick reference for some commonly needed stuff:
 - `popclip.pasteText('string')` - paste the string (similar to `paste-result`)
 - `popclip.copyText('string')` - copy the string (similar to `copy-result`)
 - `popclip.showText('string')` - show the string (similar to `show-result`)
+- [`popclip.openUrl()`](https://pilotmoon.github.io/PopClip-Extensions/interfaces/PopClip.html#openUrl) - open a URL, similar to a URL extension
+- [`popclip.pressKey()`](https://pilotmoon.github.io/PopClip-Extensions/interfaces/PopClip.html#pressKey) - presses a key combo, similar to a key press extension
 - `print()` - global debug printing function
 
 The JavaScript engine is Apple's JavaScriptCore, which is part of macOS. Language features depend on which version of macOS PopClip is running on. The minimum requirement for PopClip is currently macOS 10.13.6 and scripts can assume it is safe to use all ES2015/ES6 language features and core libraries. Newer language features may be available on higher versions of macOS.
