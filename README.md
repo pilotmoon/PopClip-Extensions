@@ -370,7 +370,7 @@ The following fields define properties common to all actions. All fields are opt
 |`title`|Localizable String|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
 |`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
 |`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
-|`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `copy` is applied by default.|
+|`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `text` is applied by default.|
 |`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).|
 |`after`|String|String to indicate an action PopClip should take *after* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).
 |`excluded apps`|Array|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
@@ -558,7 +558,8 @@ These are the values supported by the `requirements` array. Additionally, you ca
 
 |Value|Description|
 |-----|-----------|
-|`copy`|One or more characters of text must be selected. (The app's Copy command does not necessarily have to be available. It did in older versions of PopClip, hence the name.)
+|`text`|One or more characters of text must be selected.|
+|`copy`|Synonym for `text` (for backward compatibility).|
 |`cut`|Text must be selected and the app's Cut command must be available.|
 |`paste`|The app's Paste command must be available.|
 |`url`|The text must contain exactly one web URL (http or https).|
