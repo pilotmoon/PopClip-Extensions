@@ -17,5 +17,6 @@
       "url": "nvalt://make/?txt={popclip text}"
     }
   ],
-  "description": "Create a note in nvALT."
+  "description": "Create a note in nvALT.",
+  "note": "18 Nov 2021: Minor update to tidy code."
 }
