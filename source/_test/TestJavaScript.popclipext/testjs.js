@@ -163,6 +163,18 @@ defineExtension({
                 print(res);
                 print({ myFunc: () => { } });
             }
+        }, {
+            title: 'POST Blob',
+            async code(selection) {
+                const a = new Blob(['test blob']);
+                print((await axios_1.default.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText);
+            }
+        }, {
+            title: 'POST ArrayBuffer',
+            async code(selection) {
+                const a = new Int8Array([21, 31]);
+                print((await axios_1.default.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText);
+            }
         }
     ]
 });

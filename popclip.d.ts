@@ -1230,3 +1230,5 @@ declare function clearTimeout (timeoutId: number): void
 declare function btoa (string: string): string
 /* for library compatibility (imeplemented as util.base64Decode) */
 declare function atob (string: string): string
+// Blob is included via a
+declare const Blob: any
