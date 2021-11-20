@@ -18,7 +18,7 @@ for name in $list; do
     print "Compressing..."
     lzfse -encode -i temp/$name.ugly.js > temp/$name.js.lzfse
     print "Copying..."
-    cp temp/$name.js.lzfse $name.js.lzfse
+    cp temp/$name.packed.js $name.js
     print "Done"
     print 
     count=$((count+2))

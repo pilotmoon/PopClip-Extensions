@@ -1,5 +1,4 @@
 "use strict";
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = require("axios");
 const superagent = require("superagent");
@@ -17,8 +16,8 @@ function x(selection) {
     popclip.showText(this.identifier);
 }
 testAction.after = 'show-result';
-const f = (_a = popclip.input) === null || _a === void 0 ? void 0 : _a.text;
-print(f);
+// const f = popclip.input?.text
+// print(f)
 defineExtension({
     title: 'fallbacktitle',
     icon: starIcon,

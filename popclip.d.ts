@@ -202,7 +202,7 @@ declare interface AssociatedApp {
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
-declare type AuthFlowFunction = (url: string, params: {[string]: string | undefined}) => Promise<any>
+declare type AuthFlowFunction = (url: string, params?: {[string]: string | undefined}) => Promise<any>
 
 /** Credentials used in auth function */
 declare interface AuthInfo {
