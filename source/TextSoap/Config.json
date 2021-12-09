@@ -1,0 +1,31 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.textsoap",
+  "name": "TextSoap",
+  "icon": "icon.png",
+  "applescript file": "clean-text.applescript",
+  "after": "paste-result",
+  "app": {
+    "name": "TextSoap",
+    "link": "http://www.unmarked.com/textsoap/"
+  },
+  "description": "Clean up the text using TextSoap.",
+  "note": "Updated 9 Dec 2021 for TextSoap 9.",
+  "options": [
+    {
+    "identifier": "appname",
+    "type": "multiple",
+    "label": "Edition",
+    "values": [
+      "textsoap8Agent.app",
+      "textsoap9",
+      "textsoap"
+    ],
+    "defaultValue": "textsoap9",
+    "valueLabels": [
+      "TextSoap 8 stand-alone edition",
+      "TextSoap 9 stand-alone edition",
+      "TextSoap Setapp edition"
+    ]
+    }
+  ]
+}
