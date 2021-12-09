@@ -8,6 +8,6 @@
     "name": "TextSoap",
     "link": "http://www.unmarked.com/textsoap/"
   },
-  "description": "Clean up the text using TextSoap. Important: Requires installing <a href=\"https://textsoap.com/mac/textsoap_agent.html\"TextSoap Agent</a>.",
+  "description": "Clean up the text using TextSoap. Important: Requires installing <a href=\"https://textsoap.com/mac/textsoap_agent.html\">TextSoap Agent</a>.",
   "note": "Updated 9 Dec 2021 for TextSoap 9."
 }
