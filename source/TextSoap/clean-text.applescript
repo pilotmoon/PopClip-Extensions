@@ -1,5 +1,5 @@
 on run argv
-	tell application "{popclip option appname}"
+	tell application "textsoapAgent.app"
 		-- Choose a cleaner from the list
 		set cleanerTitle to pickCleaner
 		-- If the user canceled, do nothing
