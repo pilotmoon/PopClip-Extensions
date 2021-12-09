@@ -1,17 +1,21 @@
 /*
-Where does the the `evernote-api.js` file come from?
-It is the npm module `evernote`, that has been packed using browserify and minified.
+Where does the the `evernote.js` come from?
+It is the npm module `evernote`, that has been packed using browserify.
 I installed the npm module using `npm install evernote` then wrapped it up
-using `./bin/getmodules evernote` (tool in this repo). Then I renamed with -api suffix.
+using `./bin/getmodules evernote` (tool in this repo).
 -Nick
 */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Client } from 'evernote'
+import { Client } from './evernote.js'
+import { parseHTML } from 'linkedom'
+
+const htmlparser2: any = require('htmlparser2')
+const render: any = require('dom-serializer')
 
 // this keeps oauth module happy
 globalThis.location = { protocol: 'https:' }
 
-// sign in to evernote
+// sign in to evernote using its delightfully byzantine oauth system
 export const auth: AuthFunction = async (info, flow) => await new Promise(function (resolve, reject) {
   const client = new Client({
     consumerKey: 'nim305',
@@ -32,11 +36,17 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
 
 export const action: ActionFunction = async (input, options) => {
   // oauthAccessToken is the token you need;
-  var authenticatedClient = new Client({
-    token: options.authsecret,
-    sandbox: true
-  })
-  var noteStore = authenticatedClient.getNoteStore()
-  const notebooks = await noteStore.listNotebooks()
-  print(notebooks) // the user's notebooks!
+  // var authenticatedClient = new Client({
+  //   token: options.authsecret,
+  //   sandbox: true
+  // })
+
+  // const { document } = parseHTML(input.html)
+  // const xhtml = document.toString()
+  const dom = htmlparser2.parseDocument(input.html)
+  const xhtml = render(dom, { xmlMode: true })
+  print('xhtml', xhtml)
+  // var noteStore = authenticatedClient.getNoteStore()
+  // const notebooks = await noteStore.listNotebooks()
+  // print('notebooks', notebooks) // the user's notebooks!
 }
