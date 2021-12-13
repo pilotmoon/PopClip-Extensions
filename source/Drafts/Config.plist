@@ -14,6 +14,7 @@
 			<key>Requirements</key>
 			<array>
 				<string>option-mode=direct</string>
+				<string>copy</string>
 			</array>
 		</dict>
 			<dict>
@@ -26,6 +27,7 @@
 			<key>Requirements</key>
 			<array>
 				<string>option-mode=panel</string>
+				<string>copy</string>
 			</array>
 		</dict>
 	</array>
@@ -71,7 +73,7 @@
 	<key>Extension Description</key>
 	<string>Send the selected text to Drafts.</string>
 	<key>Note</key>
-	<string>Updated 25 Sep 2021 for Drafts 28.0.</string>
+	<string>Updated 13 Dec 2021 to fix appearing in Paste menu.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.drafts</string>
 	<key>Extension Name</key>
