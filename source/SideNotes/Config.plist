@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript</key>
+			<string>  tell application &quot;SideNotes&quot;
+    create note text &quot;{popclip text}&quot;
+  end tell</string>
+			<key>Image File</key>
+			<string>sn.png</string>
+			<key>Title</key>
+			<string>SideNotes</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.apptorium.SideNotes</string>
+				<string>com.apptorium.SideNotes-paddle</string>
+				<string>com.apptorium.SideNotes-setapp</string>
+			</array>
+			<key>Link</key>
+			<string>https://www.apptorium.com/sidenotes</string>
+			<key>Name</key>
+			<string>SideNotes</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a note in SideNotes.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.sidenotes</string>
+	<key>Extension Name</key>
+	<string>SideNotes</string>
+	<key>Required Software Version</key>
+	<integer>3785</integer>
+</dict>
+</plist>
