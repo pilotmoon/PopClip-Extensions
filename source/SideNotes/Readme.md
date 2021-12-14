@@ -1,4 +1,4 @@
-# Sidenotes
+# SideNotes
 
 Send the selected text to [SideNotes](https://www.apptorium.com/sidenotes).
 
@@ -13,8 +13,6 @@ This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 ### Requirements
 
 Requires PopClip 2021.11.
-
-### Notes
 
 ## Changelog
 
