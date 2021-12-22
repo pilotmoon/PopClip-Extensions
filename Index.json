@@ -38,7 +38,8 @@
   {
     "Members" : [
       "CharCount",
-      "WordCount"
+      "WordCount",
+      "LineCount"
     ],
     "Title" : "Text Statistics"
   },
