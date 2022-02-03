@@ -1,0 +1,10 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.copy-as-markdown",
+  "name": "Copy as Markdown",
+  "icon": ">md.png",
+  "capture html": true,
+  "javascript": "return popclip.input.markdown",
+  "after": "copy-result",
+  "long name": "Copy as Markdown",
+  "description": "Copy web content as Markdown."
+}
