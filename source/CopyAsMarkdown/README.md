@@ -2,7 +2,7 @@
 
 Copy web page content as Markdown source code. Also works on plain text and RTF content.
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CopyAsMarkdown.popclipext/CopyAsMarkdown-demo.gif" width="320px">
+<img src="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/CopyAsMarkdown/CopyAsMarkdown-demo.gif?raw=true" width="320px">
 
 ## About
 
