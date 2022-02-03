@@ -7,5 +7,6 @@
   "javascript": "return popclip.input.markdown",
   "after": "copy-result",
   "long name": "Copy as Markdown",
-  "description": "Copy web content as Markdown."
+  "description": "Copy web content as Markdown.",
+  "note": "Updated 3 Feb 2022 for compatibility with macOS 12.3."
 }
