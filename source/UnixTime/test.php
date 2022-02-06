@@ -1,7 +1,7 @@
 <?php
 include 'unixtime.php';
 $testData=array(
-	"1535438729", "2018-08-28T06:45:29+00:00",
+	"1535438729", "2018-08-28 06:45:29 UTC",
 	);
 $fail=FALSE;
 for ($i=0; $i<count($testData); $i+=2) {
