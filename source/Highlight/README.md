@@ -7,17 +7,20 @@ This extension is a replacement for the PreviewHighlight extension. The intentio
 ## List of currently supported apps, by keyboard shortcut
 
 ### ⌃⌘H
-Preview
-PDF Expert
-Skim
-Evernote
+- Preview
+- PDF Expert
+- Skim
+- Evernote
+- Obsidian
 
 ### ⇧⌘H
-Pages
-Scrivener
+- Pages
+- Scrivener
+- Logseq
 
 ### ⇧⌘L
-Alternote
-DevonThink
+- Alternote
+- DevonThink
 
+8 Feb 2022: Added support for Obsidian and Logseq
 4 Jan 2018: Added support for Scrivener 3

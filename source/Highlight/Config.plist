@@ -20,6 +20,7 @@
 				<string>net.sourceforge.skim-app.skim</string>
 				<string>com.evernote.Evernote</string>
 				<string>com.readdle.PDFExpert-Mac</string>
+				<string>md.obsidian</string>
 			</array>
 			<key>Title</key>
 			<string>Highlight</string>
@@ -39,6 +40,7 @@
 				<string>com.literatureandlatte.scrivener2</string>
 				<string>com.literatureandlatte.scrivener3</string>
 				<string>com.apple.iWork.Pages</string>
+				<string>com.electron.logseq</string>
 			</array>
 			<key>Title</key>
 			<string>Highlight</string>
