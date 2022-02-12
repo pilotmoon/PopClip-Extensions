@@ -10,7 +10,7 @@
 			<key>Pass HTML</key>
 			<true/>
 			<key>Shell Script File</key>
-			<string>testsh.sh</string>
+			<string>generate.sh</string>
 			<key>Stoppable</key>
 			<false/>
 			<key>Title</key>
