@@ -1,1 +1,0 @@
-Popclip extension for convert selected Color Hex Codes to Decimal.
