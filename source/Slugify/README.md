@@ -1,6 +1,6 @@
 # Slugify
 
-Formerly know as GitHubMarkdownAnchorId. Contributed by @qildcard.
+Formerly know as GitHubMarkdownAnchorId. Contributed by @wildcard.
 JS version added later by Nick using voca module.
 
 ## Slug icon attribution
