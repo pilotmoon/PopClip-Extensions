@@ -18,7 +18,9 @@ for name in $list; do
     print "Compressing..."
     lzfse -encode -i temp/$name.ugly.js > temp/$name.js.lzfse
     print "Copying..."
+    # copy both unprocessed and compressed minified versions
     cp temp/$name.packed.js $name.js
+    cp temp/$name.js.lzfse .
     print "Done"
     print 
     count=$((count+2))
