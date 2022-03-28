@@ -2,7 +2,7 @@
 // https://dev.evernote.com/doc/articles/creating_notes.php
 import sanitizeHtml = require ('sanitize-html')
 import htmlparser2 = require('htmlparser2')
-import render = require('./dom-serializer')
+import render = require('./dom-serializer.js')
 import { allowedTags } from './enml.json'
 
 // clean HTML suitable for use as ENML

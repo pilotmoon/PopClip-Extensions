@@ -5,7 +5,7 @@ exports.renderEnml = exports.renderXhtml = exports.cleanHtml = void 0;
 // https://dev.evernote.com/doc/articles/creating_notes.php
 const sanitizeHtml = require("sanitize-html");
 const htmlparser2 = require("htmlparser2");
-const render = require("./dom-serializer");
+const render = require("./dom-serializer.js");
 const enml_json_1 = require("./enml.json");
 // clean HTML suitable for use as ENML
 const cleanHtml = (dirty) => {
@@ -16,7 +16,7 @@ const cleanHtml = (dirty) => {
             img: ['src', 'alt', 'title', 'width', 'height']
         },
         exclusiveFilter: function (frame) {
-            return frame.tag === 'a' && frame.text.trim().length === 0; // remove empty links (often anchors)
+            return frame.tag === 'a' && frame.text.trim().length === 0 && frame.mediaChildren.length === 0 // remove empty links (often anchors)
         }
     });
 };
