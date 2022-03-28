@@ -63,6 +63,6 @@ try:
                                            from_lang='',
                                            to_lang=LANG_CODES[os.environ['POPCLIP_OPTION_DESTLANG']])
 
-    print translation.encode('utf-8')
+    print(translation)
 except Exception as e:
     exit(1)

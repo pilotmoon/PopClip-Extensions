@@ -10,7 +10,7 @@
 			<key>Image File</key>
 			<string>itrans.png</string>
 			<key>Script Interpreter</key>
-			<string>/usr/bin/python</string>
+			<string>/usr/local/bin/python3</string>
 			<key>Shell Script File</key>
 			<string>main.py</string>
 			<key>Title</key>
