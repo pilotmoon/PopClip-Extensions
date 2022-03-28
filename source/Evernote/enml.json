@@ -62,5 +62,19 @@
         "ul",
         "var",
         "xmp"
-    ]
+    ],
+    "allowedAttributes": {
+        "a": [
+            "href",
+            "name",
+            "target"
+        ],
+        "img": [
+            "src",
+            "alt",
+            "title",
+            "width",
+            "height"
+        ]
+    }
 }

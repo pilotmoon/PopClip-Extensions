@@ -1,20 +1,20 @@
-// Utility for rendering HTML as XHTML or ENML
-// https://dev.evernote.com/doc/articles/creating_notes.php
-import sanitizeHtml = require ('sanitize-html')
-import htmlparser2 = require('htmlparser2')
-import render = require('./dom-serializer.js')
-import { allowedTags } from './enml.json'
+// Utility for rendering HTML as ENML (Evernote Markup Language),
+// Evernote's rather fussy markup language for notes. It's XHTML (not HTML)
+// with a couple of extra tags and a restriction on which tags can attributes can be used.
+// The allowed list of tags and attributes  is given in enml.json.
+// https://dev.evernote.com/doc/articles/enml.php
+import sanitizeHtml = require ('@popclip/sanitize-html.js')
+import htmlparser2 = require('@popclip/htmlparser2.js')
+import render = require('@popclip/dom-serializer.js')
+import { allowedTags, allowedAttributes } from './enml.json'
 
-// clean HTML suitable for use as ENML
+// clean HTML by removing disallowed tags and attributes
 export const cleanHtml = (dirty: string): string => {
   return sanitizeHtml(dirty, {
     allowedTags: allowedTags,
-    allowedAttributes: {
-      a: ['href', 'name', 'target'],
-      img: ['src', 'alt', 'title', 'width', 'height']
-    },
+    allowedAttributes: allowedAttributes,
     exclusiveFilter: function (frame) {
-      return frame.tag === 'a' && frame.text.trim().length === 0 // remove empty links (often anchors)
+      return frame.tag === 'a' && frame.text.trim().length === 0 // also remove empty links (usually anchors)
     }
   })
 }
