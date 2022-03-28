@@ -9,16 +9,17 @@ using `./bin/getmodules evernote` (tool in this repo).
 -Nick
 */
 /* eslint-disable @typescript-eslint/naming-convention */
-const evernote_js_1 = require("./evernote.js");
-const htmlparser2 = require('htmlparser2');
-const render = require('dom-serializer');
+const evernote_1 = require("./evernote");
+const enml_1 = require("./enml");
+const consumer_json_1 = require("./consumer.json");
+const { consumerKey, consumerSecret } = util.clarify(consumer_json_1.consumer);
 // this keeps oauth module happy
 globalThis.location = { protocol: 'https:' };
 // sign in to evernote using its delightfully byzantine oauth system
 const auth = async (info, flow) => await new Promise(function (resolve, reject) {
-    const client = new evernote_js_1.Client({
-        consumerKey: 'nim305',
-        consumerSecret: '96a67259133b5fd1',
+    const client = new evernote_1.Client({
+        consumerKey,
+        consumerSecret,
         sandbox: true // change to false when you are ready to switch to production
     });
     client.getRequestToken(info.redirect, async function (_, oauthToken, oauthTokenSecret) {
@@ -33,19 +34,37 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
     });
 });
 exports.auth = auth;
-const action = async (input, options) => {
-    // oauthAccessToken is the token you need;
-    // var authenticatedClient = new Client({
-    //   token: options.authsecret,
-    //   sandbox: true
-    // })
-    // const { document } = parseHTML(input.html)
-    // const xhtml = document.toString()
-    const dom = htmlparser2.parseDocument(input.html);
-    const xhtml = render(dom, { xmlMode: true });
-    print('xhtml', xhtml);
-    // var noteStore = authenticatedClient.getNoteStore()
-    // const notebooks = await noteStore.listNotebooks()
-    // print('notebooks', notebooks) // the user's notebooks!
+const action = async (input, options, context) => {
+    print('input.html', input.html);
+    const enml = (0, enml_1.renderEnml)(input.html);
+    print('enml', enml);
+    // create note data
+    const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note';
+    const note = {
+        title,
+        content: enml,
+        attributes: {
+            sourceApplication: 'PopClip'
+        }
+        // tagNames: [
+        //   'popclip test tag', 'anoTher'
+        // ]
+    };
+    if (context.browserUrl.length > 0) {
+        note.attributes.sourceURL = context.browserUrl;
+    }
+    try {
+        const authenticatedClient = new evernote_1.Client({
+            token: options.authsecret,
+            sandbox: true
+        });
+        const noteStore = authenticatedClient.getNoteStore();
+        const status = await noteStore.createNote(note);
+        print('status', status);
+    }
+    catch (e) {
+        throw new Error('Evernote API error: ' + JSON.stringify(e));
+    }
+    popclip.showSuccess();
 };
 exports.action = action;
