@@ -7,15 +7,10 @@ import os
 import subprocess
 from time import time
 
-def tidy(text):
-    return subprocess.check_output(['/usr/bin/php', 'tidy.php', text])
-
 title = os.environ['POPCLIP_BROWSER_TITLE']
 html = os.environ['POPCLIP_HTML']
-text = os.environ['POPCLIP_TEXT']
 url = os.environ['POPCLIP_BROWSER_URL']
 path = os.environ['POPCLIP_OPTION_LIBRARY']
-style = os.environ['POPCLIP_OPTION_STYLE']
 name = str(uuid.uuid1()).upper()
 
 path = os.path.expanduser(path)
@@ -23,25 +18,14 @@ path = os.path.expanduser(path)
 if not os.path.exists(path):
     raise SystemExit(2)
 
-body = text.replace("\n", "<br />")\
-           .replace("\t", "    ")\
-           .replace("  ", "&nbsp;&nbsp;")
-
-if style == "Clean":
-    note = tidy(html or body)
-elif style == "Original":
-    note = html or body
-else:
-    note = text
-
 cells = []
 
 if not title:
-    title = text.replace("\n", " ")[:text.find(' ', 35)] + "..."
+    title = html.replace("\n", " ")[:html.find(' ', 35)] + "..."
 
 cells.append({
     "type": "text",
-    "data": note
+    "data": html
 })
 
 if url:
@@ -67,8 +51,8 @@ newpath = path + '/Inbox.qvnotebook/' + name + '.qvnote'
 
 if not os.path.exists(newpath): os.makedirs(newpath)
 
-with open(newpath + "/content.json", 'wb') as f:
+with open(newpath + "/content.json", 'w') as f:
     json.dump(content, f, sort_keys=True, indent=2)
 
-with open(newpath + "/meta.json", 'wb') as f:
+with open(newpath + "/meta.json", 'w') as f:
     json.dump(meta, f, sort_keys=True, indent=2)

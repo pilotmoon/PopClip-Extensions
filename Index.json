@@ -274,8 +274,9 @@
   },
   {
     "Members" : [
-      "Dash",
+      "Dash",    
       "SnippetsLab",
+      "Quiver",
       "RunCommand",
       "BBEdit",
       "URLEncode",
