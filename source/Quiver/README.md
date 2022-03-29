@@ -1,28 +1,34 @@
-Quiver
-===
-[Quiver](http://happenapps.com/#quiver) extension for PopClip.
+# Quiver
 
-* [PopClip](http://pilotmoon.com/popclip/)
-* [PopClip Extensions Developer Documentation](http://pilotmoon.com/popclip/extensions/extensions-docs.html)
-* [quiver: Specification](https://github.com/HappenApps/Quiver/wiki/Quiver-Data-Format)
+Send the selected text to [Quiver](https://yliansoft.com/#quiver), the programmer's notebook.
 
-## Download
-[Quiver.popclipextz](https://bitbucket.org/rusnazarov/quiver-popclip/downloads/Quiver.popclipextz)
+## About
 
-## Credit
-Extension created by @[rnazarov](https://twitter.com/rnazarov 'Contact me on Twitter')
+This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 
-## Change History
+### Author
 
-### 24 Feb 2016
+Originally created by @[rnazarov](https://twitter.com/rnazarov 'Contact rnazarov on Twitter').
 
-Original extension [published on BitBucket](https://bitbucket.org/rusnazarov/quiver-popclip/src).
+### Requirements
 
-### 2 Dec 2016
+Requires PopClip 2021.11.
 
-Minor changes by Nick Moore in preparation for publication at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
+### Notes
 
-- Added descriptive text to options.
-- Removed Plain Text style option, for simplicity of user choice.
-- Added some metadata to Config.plist.
-- Changed extension identifier and signed for distribution.
+## Changelog
+
+### v3 — 29 Mar 2022
+
+* Ported to Python 3 for compatibility with macOS Monterey 12.3.
+* Removed the dependency on PHP.
+* Also removed the Clean/Original option since PopClip's HTML handling is now always cleaned.
+
+### v2 — 2 Dec 2016
+
+* Minor changes by Nick Moore in preparation for publication at PopCLip website.
+
+### v1 — 24 Feb 2016
+
+* Initial release.
+* Original extension [published on BitBucket](https://bitbucket.org/rusnazarov/quiver-popclip/src).
