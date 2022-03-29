@@ -2,6 +2,8 @@
 
 Send the selected text to [Quiver](https://yliansoft.com/#quiver), the programmer's notebook.
 
+Download: [Quiver.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Quiver.popclipextz)
+
 ## About
 
 This is an extension for [PopClip](https://pilotmoon.com/popclip/).
@@ -15,6 +17,8 @@ Originally created by @[rnazarov](https://twitter.com/rnazarov 'Contact rnazarov
 Requires PopClip 2021.11.
 
 ### Notes
+
+* [Quiver Data Format](https://github.com/HappenApps/Quiver/wiki/Quiver-Data-Format)
 
 ## Changelog
 
