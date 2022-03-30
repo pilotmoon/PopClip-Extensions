@@ -4,6 +4,8 @@ Add the selected text to your [Todoist](https://todoist.com/) inbox.
 
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Todoist.popclipext/Todoist-demo.gif" width="320px">
 
+Download: [Todoist.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Todoist.popclipextz)
+
 ## About
 
 This is an extension for [PopClip](https://pilotmoon.com/popclip/).
