@@ -946,6 +946,13 @@ declare interface Util {
     currencySymbol: string
   }
 
+  timeZoneInfo: {
+    identifier: string
+    abbreviation: string
+    secondsOffset: number
+    daylightSaving: boolean
+  }
+
   /**
      * Encode a string as UTF-8 then Base-64 encode the result.
      *

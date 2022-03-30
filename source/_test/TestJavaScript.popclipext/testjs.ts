@@ -57,6 +57,22 @@ defineExtension({
       }
     },
     {
+      title: 'TimeZone',
+      icon: 'TZ',
+      requirements: [],
+      code (selection) {
+        popclip.pasteText(JSON.stringify(util.timeZoneInfo))
+      }
+    },
+    {
+      title: 'Locale',
+      icon: 'Loc',
+      requirements: [],
+      code (selection) {
+        popclip.pasteText(JSON.stringify(util.localeInfo))
+      }
+    },
+    {
       title: 'RTF',
       icon: 'RTF',
       captureRtf: true,
