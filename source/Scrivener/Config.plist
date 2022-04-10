@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>scriv.png</string>			
+			<string>scriv.png</string>
 			<key>Service Name</key>
 			<string>Scrivener/Scrivener: Make New Clipping</string>
 			<key>Title</key>
@@ -19,8 +19,8 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.literatureandlatte.scrivener2</string>
-				<string>com.literatureandlatte.scrivener3</string>	
-			</array>			
+				<string>com.literatureandlatte.scrivener3</string>
+			</array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>
@@ -30,11 +30,13 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Make a new clipping in the currently open Scrivener document. (Now updated for Scrivener 3.)</string>
+	<string>Make a new clipping in the currently open Scrivener document.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.scrivener</string>
 	<key>Extension Name</key>
 	<string>Scrivener</string>
+	<key>Note</key>
+	<string>Now updated for Scrivener 3.</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 </dict>

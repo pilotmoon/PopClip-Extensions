@@ -23,6 +23,8 @@
 	</array>
 	<key>Extension Description</key>
 	<string>Shorten the selected URL using is.gd or v.gd.</string>
+	<key>Note</key>
+    <string>Not yet compatible with macOS 12.0 Beta.&lt;a href=&quot;/blog/2021/09/15/popclip-macos-monterey&quot;&gt;(More info)&lt;/a&gt;</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.urlshortener</string>
 	<key>Extension Name</key>

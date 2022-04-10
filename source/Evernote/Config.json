@@ -1,0 +1,16 @@
+{
+  "popclip version": 3824,
+  "identifier": "com.pilotmoon.popclip.extension.evernote",
+  "name": "Evernote",
+  "icon": "evernote-logo.svg",
+  "capture html": true,
+  "module": "evernote-ext.js",
+  "entitlements": [
+    "network"
+  ],
+  "app": {    
+    "name": "Evernote",
+    "link": "https://evernote.com/"
+  },
+  "description": "Send the text to Evernote."
+}

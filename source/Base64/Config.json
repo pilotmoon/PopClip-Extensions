@@ -1,0 +1,29 @@
+{
+  "identifier" : "com.pilotmoon.popclip.extension.base64",
+  "name" : "Base64",
+  "icon" : "64.png",
+  "module": "base64.js",
+  "description" : "Encode or decode the selected text as Base64-encoded UTF-8. Supports standard (+\/) and URL-safe (-_) Base64 variants.",
+  "note": "Updated for macOS 12.0 Monterey.",
+  "options" : [
+    {
+      "identifier" : "variant",
+      "label": "Base64 Variant",
+      "type": "multiple",
+      "valueLabels": [
+        "Standard (+\/)",
+        "URL Safe (-_)"
+      ],
+      "values": [
+        "standard",
+        "url"
+      ]
+    },
+    {
+      "identifier" : "trim",
+      "label": "Trim `=` padding",
+      "type": "boolean"      
+    }
+  ],
+  "popclipVersion" : 3785
+}

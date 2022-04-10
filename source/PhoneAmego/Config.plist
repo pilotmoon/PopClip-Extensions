@@ -41,7 +41,5 @@
 	<string>com.pilotmoon.popclip.extension.PhoneAmego</string>
 	<key>Extension Name</key>
 	<string>Phone Amego</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

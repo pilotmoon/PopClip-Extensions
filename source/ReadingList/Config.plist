@@ -20,7 +20,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Save the URL to your Safari Reading List.</string>
+	<string>Save the URL to your Safari Reading List. (16 Oct 2019: Update for compatibility with macOS Catalina.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.safari-reading-list</string>
 	<key>Extension Name</key>

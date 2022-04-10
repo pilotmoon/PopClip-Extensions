@@ -40,7 +40,9 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Create a Typinator expansion with the selected text. (Requires Typinator v5.8 or newer.)</string>
+	<string>Create a Typinator expansion with the selected text.</string>
+	<key>Note</key>
+    <string>Requires Typinator v5.8 or newer.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.typinator</string>
 	<key>Extension Name</key>

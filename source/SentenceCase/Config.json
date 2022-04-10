@@ -1,0 +1,16 @@
+{
+  "Actions" : [
+    {
+      "After" : "paste-result",
+      "Image File" : "sentence-case.png",
+      "Script Interpreter" : "\/usr\/bin\/php",
+      "Shell Script File" : "sentence-case.php",
+      "Title" : "Sentence Case"
+    }
+  ],
+  "Extension Description" : "Start each selected sentence with a capital letter.",
+  "Extension Identifier" : "com.pilotmoon.popclip.extension.sentence-case",
+  "Extension Name" : "Sentence Case",
+  "Note": "Updated for macOS 12.0 Monterey.",
+  "popclipVersion" : 3543
+}

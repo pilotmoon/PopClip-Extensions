@@ -1,0 +1,17 @@
+{
+  "popclip version": 3783,
+  "identifier": "com.pilotmoon.popclip.extension.todoist",
+  "name": "Todoist",
+  "icon": "todoist-2016.png",
+  "module": "todoist.js",
+  "after": "show-status",
+  "entitlements": [
+    "network"
+  ],
+  "app": {
+    "link": "https://todoist.com/",
+    "name": "Todoist"
+  },
+  "note": "Updated for macOS 12.",
+  "description": "Add the selected text to your Todoist inbox."
+}

@@ -15,6 +15,8 @@
 		<key>fr</key>
 		<string>Ouvre votre texte dans Antidote.</string>
 	</dict>
+	<key>Note</key>
+	<string>Updated for PopClip 2021.9.</string>
 	<key>Actions</key>
 	<array>
 		<dict>
@@ -29,10 +31,6 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string></string>
-			<key>Check Installed</key>
-			<false/>
 			<key>Link</key>
 			<string>http://www.antidote.info/antidote/</string>
 			<key>Name</key>

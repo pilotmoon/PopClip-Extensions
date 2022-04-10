@@ -1,4 +1,6 @@
-*.popclipext
 source/*.popclipextz
 .DS_Store
 *.pyc
+.nova/
+node_modules/
+temp/

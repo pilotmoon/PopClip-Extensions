@@ -16,8 +16,11 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string>com.floschliep.Short-Menu</string>
+			<key>Bundle Identifiers</key>
+      <array>
+        <string>com.floschliep.Short-Menu-setapp</string>
+			  <string>com.floschliep.Short-Menu</string>
+      </array>
 			<key>Check Installed</key>
 			<true/>
 			<key>Link</key>

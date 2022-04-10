@@ -1,0 +1,1 @@
+print $POPCLIP_TEXT

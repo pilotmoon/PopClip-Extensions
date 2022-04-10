@@ -30,7 +30,12 @@ $response = curl_exec($ch);
 $code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
 if ($code==201) {
-	echo json_decode($response)->shortlink;
+	$json=json_decode($response);
+	$link = $json->shortlink;
+	if ($json->privacy == "PRIVATE") {
+		$link .= "/" . $json->password;
+	}
+	echo $link;	
 	exit(0); // success
 }  
 else if ($code==401) {

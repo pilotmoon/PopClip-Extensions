@@ -1,0 +1,50 @@
+{
+    "mapping": {
+        "image file": "icon",
+        "required software version": "popclip version",
+        "pop clip version": "popclip version",
+        "required os version": "macos version",
+        "mac os version": "macos version",
+        "pass html": "capture html",
+        "blocked apps": "excluded apps",
+        "regular expression": "regex",
+        "apple script file": "applescript file",
+        "apple script": "applescript",
+        "java script file": "javascript file",
+        "java script": "javascript"
+    },
+    "prefixes": [
+        "extension ",
+        "option "
+    ],
+    "actionKeys": [
+        "icon",
+        "preserve color",
+        "requirements",
+        "required apps",
+        "excluded apps",
+        "regex",
+        "before",
+        "capture html",
+        "capture rtf",                
+        "url",
+        "service name",
+        "key combo",
+        "applescript file",
+        "shell script file",
+        "script interpreter",
+        "after",
+        "stay visible"
+    ],
+    "otherKeysBefore": [
+        "popclip version",
+        "macos version",
+        "identifier",
+        "name",
+        "icon",
+        "title"
+    ],
+    "otherKeysAfter": [
+        "app"        
+    ]
+}

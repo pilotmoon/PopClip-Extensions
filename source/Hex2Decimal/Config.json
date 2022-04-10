@@ -1,0 +1,13 @@
+{
+	"name": "Hex2Decimal",
+	"title": "H2D",
+	"identifier": "com.7dot9.tools.hex2decimal",
+	"description": "Convert selected hex color codes to decimal",
+	"action" : {
+		"regex": "^#?(?:[0-9a-fA-F]{3,4}){1,2}$",
+		"shell_script_file": "h2d.py",
+		"script_interpreter": "/usr/bin/python2.7",
+		"after": "copy-result"
+	},
+	"popclipVersion" : 3785
+}

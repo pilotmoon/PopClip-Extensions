@@ -19,6 +19,7 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.busymac.busycontacts</string>
+				<string>com.busymac.busycontacts-setapp</string>
 			</array>
 			<key>Check Installed</key>
 			<true/>

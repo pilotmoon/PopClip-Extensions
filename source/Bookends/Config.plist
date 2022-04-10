@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>bookends.png</string>
+			<key>AppleScript File</key>
+			<string>bookends.applescript</string>
+			<key>Title</key>
+			<string>Bookends</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Bookends</string>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.sonnysoftware.bookends</string>
+				<string>com.sonnysoftware.bookends2</string>
+			</array>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.sonnysoftware.com</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Add selected DOI, PMID, ISBN, or JSTOR stable URL to open library. If ⌘ is held, then search library for selected text and create new group with references returned.</string>
+	<key>Credits</key>
+	<array>
+		<key>Name</key>
+		<string>Zachary Verleyen-Hope</string>
+	</array>
+	<key>Extension Identifier</key>
+	<string>popclip.extension.bookends</string>
+	<key>Extension Name</key>
+	<string>Bookends</string>
+	<key>Required Software Version</key>
+	<integer>1459</integer>
+</dict>
+</plist>

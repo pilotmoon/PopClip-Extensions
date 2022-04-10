@@ -19,6 +19,7 @@
 			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.renfei.SnippetsLab</string>
+        <string>com.renfei.snippetslab-setapp</string>
 			</array>
 			<key>Check Installed</key>
 			<true/>
@@ -40,7 +41,7 @@
 	<key>Extension Description</key>
 	<string>Create a code snippet in SnippetsLab.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.SnippetsLab</string>
+  <string>com.pilotmoon.popclip.extension.SnippetsLab</string>
 	<key>Extension Name</key>
 	<string>SnippetsLab</string>
 </dict>

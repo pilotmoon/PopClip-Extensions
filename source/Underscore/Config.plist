@@ -2,26 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Actions</key>
-	<array>
-		<dict>
-			<key>After</key>
-			<string>paste-result</string>
-			<key>Script Interpreter</key>
-			<string>/usr/bin/php</string>
-			<key>Shell Script File</key>
-			<string>underscore.php</string>
-			<key>Title</key>
-			<string>Underscore</string>
-			<key>Image File</key>
-			<string>underscore.png</string>
-		</dict>
-	</array>
+	<key>Extension Image File</key>
+	<string>underscore.png</string>
 	<key>Extension Description</key>
-	<string>Replace spaces between words with underscores.</string>
+	<string>Replace spaces between words with underscores, and vice versa.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.underscore</string>
 	<key>Extension Name</key>
 	<string>Underscore</string>
+	<key>Required Software Version</key>
+	<integer>3510</integer>
 </dict>
 </plist>

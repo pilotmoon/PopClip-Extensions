@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Compose a new tweet using the OS X Twitter service.</string>
+	<string>Compose a new tweet using the OS X Twitter service. (16 Oct 2019: Update for compatibility with macOS Catalina.)</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.tweet-osx</string>
 	<key>Extension Name</key>

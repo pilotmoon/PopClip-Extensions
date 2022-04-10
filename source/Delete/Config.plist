@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Version</key>
-	<integer>2</integer>
 	<key>Extension Name</key>
 	<dict>
 		<key>en</key>
@@ -17,8 +15,6 @@
 	<string>com.pilotmoon.popclip.extension.delete</string>
 	<key>Extension Image File</key>
 	<string>delete.png</string>
-	<key>Position</key>
-	<real>1.1</real>
 	<key>Actions</key>
 	<array>
 		<dict>

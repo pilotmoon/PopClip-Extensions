@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>AppleScript File</key>
+			<string>GoldenDict.applescript</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Regular Expression</key>
+			<string>^.{1,50}$</string>
+			<key>Title</key>
+			<string>GoldenDict</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifier</key>
+			<string>org.goldendict</string>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://github.com/goldendict/goldendict/wiki/Early-Access-Builds-for-Mac-OS-X</string>
+			<key>Name</key>
+			<string>GoldenDict</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Look up the selected text in GoldenDict.</string>
+	<key>Extension Identifier</key>
+	<string>org.goldendict</string>
+	<key>Extension Name</key>
+	<string>GoldenDict</string>
+</dict>
+</plist>

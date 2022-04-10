@@ -1,0 +1,39 @@
+{
+  "Extension Description" : "Create a new mail message with the selected \"to:\" address, or with the selected text, in the default mail client.",
+  "Extension Identifier" : "com.pilotmoon.popclip.extension.generic-mail",
+  "Extension Image File" : "envelope.png",
+  "Extension Name" : "Email",
+  "Options" : [
+    {
+      "Option Identifier" : "actions-heading",
+      "Option Label" : "Actions",
+      "Option Type" : "heading"
+    },
+    {
+      "Option Icon" : "at.png",
+      "Option Identifier" : "enable-at",
+      "Option Label" : "New email to address",
+      "Option Type" : "boolean"
+    },
+    {
+      "Option Icon" : "envelope.png",
+      "Option Identifier" : "enable-body",
+      "Option Label" : "New email with text",
+      "Option Type" : "boolean"
+    },
+    {
+      "Option Description" : "The default \"to:\" address for new emails. (Or leave blank.)",
+      "Option Identifier" : "default",
+      "Option Label" : "Default Address",
+      "Option Type" : "string"
+    },
+    {      
+      "Option Description" : "Includes the page URL if the text is selected from a web page.",
+      "Option Identifier" : "source",
+      "Option Label" : "Add source URL",
+      "Option Type" : "boolean"
+    }
+  ],
+  "note": "Updated on 30 Sep 2021 to allow selecting multiple email addresses.",
+  "popclipVersion": 3749
+}

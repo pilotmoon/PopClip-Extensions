@@ -1,0 +1,13 @@
+#!/bin/zsh
+# make a movie into a gif
+# hint: brew install ffmpeg
+# usage: gifenc source_video dest_gif
+# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-#quality
+
+
+for file in *.mp4; do
+  gif=${file:r}.gif
+  print "converting $file to $gif..."
+  palette="/tmp/palette.png"
+  ffmpeg -i ${file} -vf "fps=15,scale=720:-1:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse" -loop 0 ${gif}
+done
