@@ -1,0 +1,7 @@
+{
+    "identifier": "com.pilotmoonunsignedtest.popclip.extension.test-rtf",
+    "name": "TestRTF",
+    "popclipVersion": 3825,    
+    "module": "testrtf.js",
+    "captureRtf": true
+}

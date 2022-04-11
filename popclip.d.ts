@@ -625,7 +625,7 @@ declare interface Input {
   /**
    * Unprocessed selection contents indexed by UTI.
    */
-  rawContent: {'public.utf8-plain-text'?: string, 'public.html'?: string, 'public.rtf'?: string}
+  content: PasteboardContent
 }
 
 /**
@@ -778,13 +778,12 @@ declare interface PopClip {
      *
      * @category Action
      */
-  pasteText: (text: string, options?: {
-    /**
-         * Whether to restore the original contents of the pasteboard after the paste
-         * operation. Default is `false`.
-         */
-    restore?: boolean
-  }) => void
+  pasteText: (text: string, options?: PasteOptions) => void
+
+  /**
+   * Paste arbitrary pasteboard content.
+   */
+  pasteContent: (content: PasteboardContent, options?: PasteOptions) => void
 
   /**
      * Places the given string on the pasteboard, and shows "Copied" notificaction to the user.
@@ -792,6 +791,11 @@ declare interface PopClip {
      * @category Action
      */
   copyText: (text: string) => void
+
+  /**
+   * Copy arbitrary pasteboard content.
+   */
+  copyContent: (content: PasteboardContent) => void
 
   // included for compatibility with old extensions
   performPaste: () => void
@@ -922,6 +926,15 @@ declare interface PopClip {
  */
 declare var popclip: PopClip
 
+// experimental rich text class
+declare class RichString {
+  constructor (source: string, options?: {format?: 'rtf'|'html'});
+  readonly rtf: string
+  readonly html: string
+  font: object
+  applyFont: (font: object) => void
+}
+
 /**
 * A container for various utility functions and constants [[`util`]] object.
 */
@@ -952,6 +965,8 @@ declare interface Util {
     secondsOffset: number
     daylightSaving: boolean
   }
+
+  htmlToRtf: (html: string) => string | undefined
 
   /**
      * Encode a string as UTF-8 then Base-64 encode the result.
@@ -1065,6 +1080,24 @@ declare interface Util {
 declare var util: Util
 
 /**
+ * Represents the raw pasteboard content, indexed by UTI. Supports string data only.
+ */
+declare interface PasteboardContent {
+  'public.utf8-plain-text'?: string
+  'public.html'?: string
+  'public.rtf'?: string
+  [string: string]
+}
+
+declare interface PasteOptions {
+  /**
+       * Whether to restore the original contents of the pasteboard after the paste
+       * operation. Default is `false`.
+       */
+  restore?: boolean
+}
+
+/**
  * A simplified interface to the macOS pasteboard. Implemented by the global object, [[`pasteboard`]].
  */
 declare interface Pasteboard {
@@ -1091,7 +1124,7 @@ declare interface Pasteboard {
   /**
    * Get and set the content of the pasteboard, of the specified types
    */
-  content: {'public.utf8-plain-text'?: string, 'public.html'?: string, 'public.rtf'?: string}
+  content: PasteboardContent
 }
 
 /**
