@@ -37,6 +37,7 @@
 			<string>multiple</string>
 			<key>Option Values</key>
 			<array>
+				<string>www.audible.ca</string>
 				<string>www.audible.com</string>								
 				<string>www.audible.com.au</string>				
 				<string>www.audible.co.jp</string>
