@@ -928,7 +928,7 @@ declare var popclip: PopClip
 
 // experimental rich text class
 declare class RichString {
-  constructor (source: string, options?: {format?: 'rtf'|'html'});
+  constructor (source: string, options?: {format?: 'rtf'|'html'|'markdown', baseFont?: object, paragraphSeparation?: 'newlines'|'spacing'});
   readonly rtf: string
   readonly html: string
   font: object

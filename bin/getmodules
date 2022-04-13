@@ -20,7 +20,7 @@ for name in $list; do
     print "Copying..."
     # copy both unprocessed and compressed minified versions
     cp temp/$name.packed.js $name.js
-    cp temp/$name.js.lzfse .
+    # cp temp/$name.js.lzfse .
     print "Done"
     print 
     count=$((count+2))

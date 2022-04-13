@@ -14,7 +14,8 @@ export const action: ActionFunction = (input, options, context) => {
     sourceOptions.baseFont = new RichString(input.content['public.html'], { format: 'html' })?.font // TODO test if undefined
   }
   const rs = new RichString(input.text, sourceOptions)
-  const content = { 'public.rtf': rs.rtf, 'public.html': rs.html }
+  // const content = { 'public.rtf': rs.rtf, 'public.html': rs.html }
+  const content = { 'public.rtf': rs.rtf }
   if (context.hasFormatting) {
     popclip.pasteContent(content)
   } else {
