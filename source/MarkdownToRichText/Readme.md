@@ -21,7 +21,10 @@ The **Paragraph Separation** option determines how paragraphs are separated in t
 
 ### Limitations
 
-Not all markdown features are supported - notably `----` to produce a horizontal separator is not currently supported.
+Not all markdown features are currently supported:
+
+* `----` to produce a horizontal separator will not work
+* HTML tags mixed into the Markdown will not be processed
 
 ### TODO
 
