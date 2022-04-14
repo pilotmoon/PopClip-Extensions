@@ -35,7 +35,7 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
             });
         }
         else {
-            reject(new Error('bad oauthToken or oauthTokenSecret'));
+            reject(new Error('bad requestToken or requestTokenSecret'));
         }
     });
 });

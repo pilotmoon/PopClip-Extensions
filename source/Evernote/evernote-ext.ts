@@ -33,7 +33,7 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
         }
       })
     } else {
-      reject(new Error('bad oauthToken or oauthTokenSecret'))
+      reject(new Error('bad requestToken or requestTokenSecret'))
     }
   })
 })
