@@ -1,6 +1,6 @@
 # Extension Name
 
-Send the text to Evernote.
+Send the text to Evernote. Captures current web page title and URL, if available. Notes are saved to your default notebook.
 
 <!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext.popclipext/Ext-demo.gif" width="320px"> -->
 
@@ -14,7 +14,10 @@ Nick Moore
 
 ### Requirements
 
-Requires PopClip 2021.11.
+Requires:
+
+* an Evernote account
+* PopClip Build 3835
 
 ### Notes
 
@@ -27,7 +30,7 @@ Icon from [svgrepo](https://www.svgrepo.com/svg/24585/evernote) (CC0).
 
 ## Changelog
 
-### v3 - 19 Nov 2021
+### (prerelease) 14 Apr 2022
 
 * Rewritten to use the Evernote API directly, instead of AppleScript. (AppleScript is no longer supported in Evernote 10.)
 

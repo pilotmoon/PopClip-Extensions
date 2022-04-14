@@ -20,7 +20,7 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
     const client = new evernote_js_1.Client({
         consumerKey,
         consumerSecret,
-        sandbox: true // change to false when you are ready to switch to production
+        sandbox: false
     });
     client.getRequestToken(info.redirect, async function (_, oauthToken, oauthTokenSecret) {
         if (typeof oauthToken === 'string' && oauthToken.length > 0) {
@@ -35,28 +35,18 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
 });
 exports.auth = auth;
 const action = async (input, options, context) => {
-    print('input.html', input.html);
-    const enml = (0, enml_js_1.renderEnml)(input.html);
-    print('enml', enml);
+    const content = (0, enml_js_1.renderEnml)(input.html);
     // create note data
     const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note';
-    const note = {
-        title,
-        content: enml,
-        attributes: {
-            sourceApplication: 'PopClip'
-        }
-        // tagNames: [
-        //   'popclip test tag', 'anoTher'
-        // ]
-    };
+    const attributes = { sourceApplication: 'PopClip' };
     if (context.browserUrl.length > 0) {
-        note.attributes.sourceURL = context.browserUrl;
+        attributes.sourceURL = context.browserUrl;
     }
+    const note = { title, content, attributes };
     try {
         const authenticatedClient = new evernote_js_1.Client({
             token: options.authsecret,
-            sandbox: true
+            sandbox: false
         });
         const noteStore = authenticatedClient.getNoteStore();
         const status = await noteStore.createNote(note);

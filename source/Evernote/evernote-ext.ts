@@ -20,7 +20,7 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
   const client = new Client({
     consumerKey,
     consumerSecret,
-    sandbox: true // change to false when you are ready to switch to production
+    sandbox: false
   })
   client.getRequestToken(info.redirect, async function (_, oauthToken, oauthTokenSecret) {
     if (typeof oauthToken === 'string' && oauthToken.length > 0) {
@@ -35,30 +35,19 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
 })
 
 export const action: ActionFunction = async (input, options, context) => {
-  print('input.html', input.html)
-  const enml = renderEnml(input.html)
-  print('enml', enml)
+  const content = renderEnml(input.html)
 
   // create note data
   const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note'
-  const note: any = {
-    title,
-    content: enml,
-    attributes: {
-      sourceApplication: 'PopClip'
-    }
-    // tagNames: [
-    //   'popclip test tag', 'anoTher'
-    // ]
-  }
+  const attributes: any = { sourceApplication: 'PopClip' }
   if (context.browserUrl.length > 0) {
-    note.attributes.sourceURL = context.browserUrl
+    attributes.sourceURL = context.browserUrl
   }
-
+  const note = { title, content, attributes }
   try {
     const authenticatedClient = new Client({
       token: options.authsecret,
-      sandbox: true
+      sandbox: false
     })
     const noteStore = authenticatedClient.getNoteStore()
     const status = await noteStore.createNote(note)
