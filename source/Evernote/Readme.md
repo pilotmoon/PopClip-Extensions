@@ -1,8 +1,6 @@
 # Extension Name
 
-Send the text to Evernote. Captures current web page title and URL, if available. Notes are saved to your default notebook.
-
-<!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext.popclipext/Ext-demo.gif" width="320px"> -->
+Send the text to Evernote. Captures current web page title and URL, if available. Notes are saved directly to the Evernote servers, to your default notebook.
 
 ## About
 

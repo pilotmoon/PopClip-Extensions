@@ -42,7 +42,6 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
 exports.auth = auth;
 const action = async (input, options, context) => {
     const content = (0, enml_js_1.renderEnml)(input.html);
-    // create note data
     const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note';
     const attributes = { sourceApplication: 'PopClip' };
     if (context.browserUrl.length > 0) {

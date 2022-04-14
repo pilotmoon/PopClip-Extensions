@@ -40,8 +40,6 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
 
 export const action: ActionFunction = async (input, options, context) => {
   const content = renderEnml(input.html)
-
-  // create note data
   const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note'
   const attributes: any = { sourceApplication: 'PopClip' }
   if (context.browserUrl.length > 0) {
