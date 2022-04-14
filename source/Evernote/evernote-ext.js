@@ -22,10 +22,10 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
         consumerSecret,
         sandbox: false
     });
-    client.getRequestToken(info.redirect, async function (_, oauthToken, oauthTokenSecret) {
-        if (typeof oauthToken === 'string' && oauthToken.length > 0) {
-            const { oauth_verifier } = await flow(client.getAuthorizeUrl(oauthToken));
-            client.getAccessToken(oauthToken, oauthTokenSecret, oauth_verifier, function (_, accessToken) {
+    client.getRequestToken(info.redirect, async function (_, requestToken, requestTokenSecret) {
+        if (typeof requestToken === 'string' && requestToken.length > 0 && typeof requestTokenSecret === 'string' && requestTokenSecret.length > 0) {
+            const { oauth_verifier } = await flow(client.getAuthorizeUrl(requestToken));
+            client.getAccessToken(requestToken, requestTokenSecret, oauth_verifier, function (_, accessToken) {
                 if (typeof accessToken === 'string' && accessToken.length > 0) {
                     resolve(accessToken);
                 }
@@ -35,7 +35,7 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
             });
         }
         else {
-            reject(new Error('bad oauthToken'));
+            reject(new Error('bad oauthToken or oauthTokenSecret'));
         }
     });
 });
