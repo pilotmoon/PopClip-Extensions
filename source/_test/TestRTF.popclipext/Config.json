@@ -1,19 +1,7 @@
 {
-    "identifier": "com.pilotmoon.popclip.extension.markdown-to-rtf",
-    "name": "Markdown to Rich Text",
-    "description": "Convert Markdown source to Rich Text.",
-    "popclipVersion": 3834,
-    "macosVersion": "12.0",    
+    "identifier": "com.pilotmoon.popclip.extension.test-rtf",
+    "name": "TestRTF",
+    "popclipVersion": 3835,
     "module": "testrtf.js",
-    "captureRtf": true,
-    "captureHtml": true,
-    "options": [
-        {
-            "identifier": "paras",
-            "type": "multiple",
-            "label": "Paragraph Separation",
-            "values": ["spacing", "newlines"],
-            "valueLabels": ["Spacing", "Blank Line"]
-        }
-    ]
+    "captureRtf": true
 }
