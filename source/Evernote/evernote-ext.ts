@@ -25,11 +25,15 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
   client.getRequestToken(info.redirect, async function (_, oauthToken, oauthTokenSecret) {
     if (typeof oauthToken === 'string' && oauthToken.length > 0) {
       const { oauth_verifier } = await flow(client.getAuthorizeUrl(oauthToken))
-      client.getAccessToken(oauthToken, oauthTokenSecret, oauth_verifier, function (_, oauthToken) {
-        if (typeof oauthToken === 'string' && oauthToken.length > 0) {
-          resolve(oauthToken)
+      client.getAccessToken(oauthToken, oauthTokenSecret, oauth_verifier, function (_, accessToken) {
+        if (typeof accessToken === 'string' && accessToken.length > 0) {
+          resolve(accessToken)
+        } else {
+          reject(new Error('bad accessToken'))
         }
       })
+    } else {
+      reject(new Error('bad oauthToken'))
     }
   })
 })
