@@ -28,7 +28,7 @@ Icon from [svgrepo](https://www.svgrepo.com/svg/24585/evernote) (CC0).
 
 ## Changelog
 
-### (prerelease) 14 Apr 2022
+### v3 - 14 Apr 2022
 
 * Rewritten to use the Evernote API directly, instead of AppleScript. (AppleScript is no longer supported in Evernote 10.)
 
