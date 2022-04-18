@@ -9,8 +9,7 @@ const timeStamp = (dateObj, options) => {
     if ((options === null || options === void 0 ? void 0 : options.format) === 'iso8601') {
         return dateObj.toISOString();
     }
-    else {
-        const localeSpecifier = (options === null || options === void 0 ? void 0 : options.format) === 'intl' ? ['zu'] : [];
+    else if ((options === null || options === void 0 ? void 0 : options.format) === 'intl') {
         const timeSpecifier = (options === null || options === void 0 ? void 0 : options.includeTime) === false ? undefined : '2-digit';
         const timeZoneSpecifier = (options === null || options === void 0 ? void 0 : options.includeTimeZone) === false ? undefined : 'short';
         const tfOptions = {
@@ -22,7 +21,14 @@ const timeStamp = (dateObj, options) => {
             second: timeSpecifier,
             timeZoneName: timeZoneSpecifier
         };
-        return new Intl.DateTimeFormat(localeSpecifier, tfOptions).format(dateObj);
+        return new Intl.DateTimeFormat(['zu'], tfOptions).format(dateObj);
+    }
+    else {
+        const tfOptions = {
+            dateStyle: 'medium',
+            timeStyle: (options === null || options === void 0 ? void 0 : options.includeTime) === false ? undefined : ((options === null || options === void 0 ? void 0 : options.includeTimeZone) === false ? 'medium' : 'long')
+        };
+        return new Intl.DateTimeFormat([], tfOptions).format(dateObj);
     }
 };
 exports.options = (() => {

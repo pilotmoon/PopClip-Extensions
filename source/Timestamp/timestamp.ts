@@ -5,8 +5,7 @@ export const action: ActionFunction = (input, options) => {
 const timeStamp = (dateObj: Date, options?: any): string => {
   if (options?.format === 'iso8601') {
     return dateObj.toISOString()
-  } else {
-    const localeSpecifier = options?.format === 'intl' ? ['zu'] : []
+  } else if (options?.format === 'intl') {
     const timeSpecifier = options?.includeTime === false ? undefined : '2-digit'
     const timeZoneSpecifier = options?.includeTimeZone === false ? undefined : 'short'
     const tfOptions: Intl.DateTimeFormatOptions = {
@@ -18,7 +17,13 @@ const timeStamp = (dateObj: Date, options?: any): string => {
       second: timeSpecifier,
       timeZoneName: timeZoneSpecifier
     }
-    return new Intl.DateTimeFormat(localeSpecifier, tfOptions).format(dateObj)
+    return new Intl.DateTimeFormat(['zu'], tfOptions).format(dateObj)
+  } else {
+    const tfOptions: Intl.DateTimeFormatOptions = {
+      dateStyle: 'medium',
+      timeStyle: options?.includeTime === false ? undefined : (options?.includeTimeZone === false ? 'medium' : 'long')
+    }
+    return new Intl.DateTimeFormat([], tfOptions).format(dateObj)
   }
 }
 
