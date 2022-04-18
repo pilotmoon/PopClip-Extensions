@@ -1,4 +1,7 @@
-const { LOCALES, TIMEZONES } = require("./constants")
+// const { LOCALES, TIMEZONES } = require("./constants")
+// NM: remove the additional constants list
+const LOCALES = new Map();
+const TIMEZONES = new Map();
 
 const defaultTimezone = ["UTC", "Coordinated Universal Time"];
 // This is Zulu; there isn't really an ISO locale. But it gets us YYYY-MM-DD HH:MM:SS
@@ -61,7 +64,7 @@ module.exports = {
 	options: [
 		{
 			identifier: 'locale',
-			label: 'Locale',
+			label: 'Date & Time Format',
 			type: 'multiple',
 			values: [defaultLocale[0], systemSetting[0]].concat(Array.from(LOCALES.keys())),
 			valueLabels: [defaultLocale[1], systemSetting[1]].concat(Array.from(LOCALES.values()))
