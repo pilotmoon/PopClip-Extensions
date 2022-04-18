@@ -10,40 +10,5 @@
   "module": "timestamp.js",
   "after": "paste-result",
   "description": "Paste the current date and time.",
-  "options": [
-    {
-      "label": "Date format",
-      "type": "multiple",
-      "valueLabels": [
-        "2021-10-04",
-        "2021/10/04",
-        "20211004",
-        "4/10/2021",
-        "10/4/2021"
-      ],
-      "values": [
-        "Y-m-d",
-        "Y/m/d",
-        "Ymd",
-        "d/m/Y",
-        "m/d/Y"
-      ],
-      "identifier": "date"
-    },
-    {
-      "label": "Time format",
-      "type": "multiple",
-      "values": [
-        "H:i:s",
-        "H:i",
-        ""
-      ],
-      "valueLabels": [
-        "12:15:01",
-        "12:15",
-        "None"
-      ],
-      "identifier": "time"
-    }
-  ]
+  "note": "Updated for macOS 12 Monterey"
 }
