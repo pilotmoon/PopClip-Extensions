@@ -6,7 +6,6 @@
   "requirements": [
     "paste"
   ],
-  "regex": "(?s)^$",
   "module": "timestamp.js",
   "after": "paste-result",
   "description": "Paste the current date and time.",
