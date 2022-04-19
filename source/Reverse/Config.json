@@ -5,5 +5,5 @@
   "regex": "(?s)^(.+)[\\r\\n](.+)$",
   "javascript file": "reverse.js",
   "description": "Reverse the order of the selected lines.",
-  "popclipVersion": 3783
+  "popclipVersion": 3785
 }

@@ -1,0 +1,9 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.shuffle",
+  "name": "Shuffle",
+  "icon": "Shuffle.png",
+  "regex": "(?s)^(.+)[\\r\\n](.+)$",
+  "javascript file": "shuffle.js",
+  "description": "Randomize the order of the selected lines."
+}
