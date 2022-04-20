@@ -16,3 +16,5 @@ Further updated with server-issued credentials 22 Apr 2015.
 ----
 
 April 30 2021: Furently not working- some kind of SSL error. Not a quick fix. Removed from index.
+
+20 Apr 2022: Update for python3, thanks to [harrtho](https://github.com/harrtho).

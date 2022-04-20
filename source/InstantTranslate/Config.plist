@@ -19,6 +19,8 @@
 			<string>(?s)^.{1,200}$</string>
 		</dict>
 	</array>
+	<key>Note</key>
+	<string>20 Apr 2022: Updated for macOS 12.3.</string>
 	<key>Extension Description</key>
 	<string>Translate the selected word or short phrase instantly within PopClip. Powered by Microsoft Translator.</string>
 	<key>Extension Identifier</key>
