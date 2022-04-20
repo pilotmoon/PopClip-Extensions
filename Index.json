@@ -58,6 +58,7 @@
   },
   {
     "Members" : [
+      "InstantTranslate",
       "GoogleTranslate",
       "BingTranslator",
       "DeepLTranslator",
