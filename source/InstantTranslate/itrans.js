@@ -25,9 +25,9 @@ exports.action = action;
 exports.options = (() => {
     const codes = [];
     const names = [];
-    for (const [key, value] of Object.entries(langs_json_1.langs)) {
-        names.push(key);
-        codes.push(value);
+    for (const [key, value] of Object.entries(langs_json_1.translation)) {
+        names.push(value.nativeName);
+        codes.push(key);
     }
     return [
         {

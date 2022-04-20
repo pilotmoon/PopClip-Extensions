@@ -1,5 +1,5 @@
 import axios from 'axios' // TODO @popclip/axios
-import { langs } from './langs.json'
+import { translation } from './langs.json'
 import { access } from './access.json'
 
 // the translation endpoint
@@ -25,9 +25,9 @@ export const action: ActionFunction = async (input, options) => {
 export const options: Option[] = (() => {
   const codes: string[] = []
   const names: string[] = []
-  for (const [key, value] of Object.entries(langs)) {
-    names.push(key)
-    codes.push(value)
+  for (const [key, value] of Object.entries(translation)) {
+    names.push((value as any).nativeName)
+    codes.push(key)
   }
   return [
     {
