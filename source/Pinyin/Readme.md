@@ -1,5 +1,7 @@
 # Pinyin
 
+Download: [Pinyin.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Pinyin.popclipextz)
+
 Display Chinese words as [pinyin](https://en.wikipedia.org/wiki/Pinyin).
 
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Pinyin.popclipext/Pinyin-demo.gif" width="320px">
