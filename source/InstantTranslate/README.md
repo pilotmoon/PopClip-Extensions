@@ -17,6 +17,5 @@ April 30 2021: Furently not working- some kind of SSL error. Not a quick fix. Re
 
 20 Apr 2022: Further update, rewriting in JavaScript. Also ports to the Translation API V3 (was using V2). Improves response time by skipping the credentials access step and using the key directly instead of exchanging it for access token.
 
-20 Apr 2022 Increased language list
-To fetch latest: `curl https://api.cognitive.microsofttranslator.com/languages\?api-version\=3.0\&scope\=translation > langs.json`
+20 Apr 2022 Increased language list to latest supported
 
