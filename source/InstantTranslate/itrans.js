@@ -21,25 +21,10 @@ const action = async (input, options) => {
     return await translate(input.text, options.destlang);
 };
 exports.action = action;
-// the extension options; construct the options values from the json file
+// the dynamically generated extension options
 exports.options = (() => {
-    const codes = [];
-    const names = [];
-    const entries = Object.entries(langs_json_1.translation);
-    entries.sort(([k1, v1], [k2, v2]) => {
-        return v1.name.localeCompare(v2.name);
-    });
-    for (const [key, value] of entries) {
-        if (value.name === value.nativeName) {
-            names.push(`${value.name}`);
-        }
-        else {
-            names.push(`${value.name} / ${value.nativeName}`);
-        }
-        codes.push(key);
-    }
-    return [
-        {
+    const { names, codes } = languageList();
+    return [{
             identifier: 'destlang',
             label: {
                 en: 'Destination Language',
@@ -50,6 +35,24 @@ exports.options = (() => {
             valueLabels: names,
             values: codes,
             defaultValue: 'en'
-        }
-    ];
+        }];
 })();
+// build the language list from the json file
+// To fetch latest: `curl https://api.cognitive.microsofttranslator.com/languages\?api-version\=3.0\&scope\=translation > langs.json`
+function languageList() {
+    const result = { codes: [], names: [] };
+    const entries = Object.entries(langs_json_1.translation);
+    entries.sort(([k1, v1], [k2, v2]) => {
+        return v1.name.localeCompare(v2.name);
+    });
+    for (const [key, value] of entries) {
+        if (value.name === value.nativeName) {
+            result.names.push(`${value.name}`);
+        }
+        else {
+            result.names.push(`${value.name} / ${value.nativeName}`);
+        }
+        result.codes.push(key);
+    }
+    return result;
+}

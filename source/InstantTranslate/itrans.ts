@@ -21,34 +21,38 @@ export const action: ActionFunction = async (input, options) => {
   return await translate(input.text, options.destlang as string)
 }
 
-// the extension options; construct the options values from the json file
+// the dynamically generated extension options
 export const options: Option[] = (() => {
-  const codes: string[] = []
-  const names: string[] = []
+  const { names, codes } = languageList()
+  return [{
+    identifier: 'destlang',
+    label: {
+      en: 'Destination Language',
+      'zh-Hans': '翻译为',
+      'zh-Hant': '轉換為'
+    },
+    type: 'multiple',
+    valueLabels: names,
+    values: codes,
+    defaultValue: 'en'
+  }]
+})()
+
+// build the language list from the json file
+// To fetch latest: `curl https://api.cognitive.microsofttranslator.com/languages\?api-version\=3.0\&scope\=translation > langs.json`
+function languageList (): { names: string[], codes: string[] } {
+  const result = { codes: [] as string[], names: [] as string[] }
   const entries = Object.entries(translation)
   entries.sort(([k1, v1], [k2, v2]) => {
     return v1.name.localeCompare(v2.name)
   })
   for (const [key, value] of entries) {
     if (value.name === value.nativeName) {
-      names.push(`${value.name}`)
+      result.names.push(`${value.name}`)
     } else {
-      names.push(`${value.name} / ${value.nativeName}`)
+      result.names.push(`${value.name} / ${value.nativeName}`)
     }
-    codes.push(key)
+    result.codes.push(key)
   }
-  return [
-    {
-      identifier: 'destlang',
-      label: {
-        en: 'Destination Language',
-        'zh-Hans': '翻译为',
-        'zh-Hant': '轉換為'
-      },
-      type: 'multiple',
-      valueLabels: names,
-      values: codes,
-      defaultValue: 'en'
-    }
-  ]
-})()
+  return result
+}
