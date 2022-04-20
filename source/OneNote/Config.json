@@ -1,0 +1,18 @@
+{
+  "popclip version": 3837,
+  "identifier": "com.pilotmoon.popclip.extension.onenote",
+  "name": "OneNote",
+  "icon": "onenote.png",
+  "capture html": true,
+  "module": "onenote.js",
+  "entitlements": [
+    "network"
+  ],
+  "after": "show-status",
+  "app": {
+    "link": "https://www.onenote.com/",
+    "name": "OneNote"
+  },
+  "description": "Send the text to OneNote, as a new page the 'Quick Notes' section of the default notebook.",
+  "note": "20 Apr 2022: Updated for macOS 12 Monterey"
+}
