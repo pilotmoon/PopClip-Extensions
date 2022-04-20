@@ -8,5 +8,6 @@
     "icon": "拼",
     "identifier": "com.pilotmoon.popclip.extension.pinyin",
     "javascript file": "pinyin.js",
-    "after": "show-result"
+    "after": "show-result",
+    "description": "Display Chinese characters as pinyin."
 }
