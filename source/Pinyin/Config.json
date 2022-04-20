@@ -7,6 +7,6 @@
     },
     "icon": "拼",
     "identifier": "com.pilotmoon.popclip.extension.pinyin",
-    "module": "pinyin.js",
+    "javascript file": "pinyin.js",
     "after": "show-result"
 }

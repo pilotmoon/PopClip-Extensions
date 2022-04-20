@@ -2,7 +2,7 @@
 
 Display Chinese words as [pinyin](https://en.wikipedia.org/wiki/Pinyin).
 
-<!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext.popclipext/Ext-demo.gif" width="320px"> -->
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Pinyin.popclipext/Pinyin-demo.gif" width="320px">
 
 ## About
 
@@ -19,6 +19,10 @@ Requires PopClip 2021.11
 ### Notes
 
 ## Changelog
+
+### v2 - 20 Apr 2022
+
+* Updated code from dofy original repo
 
 ### v1 - 2 Feb 2022
 
