@@ -25,8 +25,16 @@ export const action: ActionFunction = async (input, options) => {
 export const options: Option[] = (() => {
   const codes: string[] = []
   const names: string[] = []
-  for (const [key, value] of Object.entries(translation)) {
-    names.push((value as any).nativeName)
+  const entries = Object.entries(translation)
+  entries.sort(([k1, v1], [k2, v2]) => {
+    return v1.name.localeCompare(v2.name)
+  })
+  for (const [key, value] of entries) {
+    if (value.name === value.nativeName) {
+      names.push(`${value.name}`)
+    } else {
+      names.push(`${value.name} / ${value.nativeName}`)
+    }
     codes.push(key)
   }
   return [

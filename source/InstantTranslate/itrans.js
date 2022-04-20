@@ -25,8 +25,17 @@ exports.action = action;
 exports.options = (() => {
     const codes = [];
     const names = [];
-    for (const [key, value] of Object.entries(langs_json_1.translation)) {
-        names.push(value.nativeName);
+    const entries = Object.entries(langs_json_1.translation);
+    entries.sort(([k1, v1], [k2, v2]) => {
+        return v1.name.localeCompare(v2.name);
+    });
+    for (const [key, value] of entries) {
+        if (value.name === value.nativeName) {
+            names.push(`${value.name}`);
+        }
+        else {
+            names.push(`${value.name} / ${value.nativeName}`);
+        }
         codes.push(key);
     }
     return [
