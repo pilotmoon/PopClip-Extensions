@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '@popclip/axios'
 const readwise = axios.create({ baseURL: 'https://readwise.io/api/v2/' })
 
 export const action: Action = async (input, options, context) => {

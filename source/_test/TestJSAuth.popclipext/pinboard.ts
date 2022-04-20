@@ -1,7 +1,7 @@
 // reimplementation of Pinboard ext (as basic test)
 // docs: https://pinboard.in/api/
 //       https://axios-http.com/docs/req_config
-import axios from 'axios'
+import axios from '@popclip/axios'
 const p = axios.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } })
 
 // add url to pinboard

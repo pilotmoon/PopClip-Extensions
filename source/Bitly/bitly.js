@@ -14,9 +14,9 @@ var __asyncGenerator = (this && this.__asyncGenerator) || function (thisArg, _ar
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
-const axios_1 = require("axios");
+const axios_1 = require("@popclip/axios");
 const client_json_1 = require("./client.json");
-const replace_1 = require("./@popclip/replace");
+const replace_1 = require("./replace");
 // bitly api endpoint
 const bitly = axios_1.default.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } });
 // asynchronous generator which yields the shortened form of all the supplied urls
@@ -44,12 +44,10 @@ const action = async (input) => {
 exports.action = action;
 // sign in to bitly using authorization flow
 const auth = async (info, flow) => {
-    const redirect_uri = info.redirect;
+    const redirect_uri = 'popclip://callback?popclip_ext_id=' + info.identifier; // old style callback is registered with bitly
     const { client_id, client_secret } = util.clarify(client_json_1.client);
     const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
-    const data = util.buildQuery({ client_id, client_secret, redirect_uri, code });
-    const headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
-    const response = await bitly.post('oauth/access_token', data, { headers });
+    const response = await bitly.post('oauth/access_token', util.buildQuery({ client_id, client_secret, redirect_uri, code }));
     return response.data.access_token;
 };
 exports.auth = auth;

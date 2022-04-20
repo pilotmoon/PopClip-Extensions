@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from '@popclip/axios'
 import superagent = require('superagent')
 
 const starIcon = `svg:

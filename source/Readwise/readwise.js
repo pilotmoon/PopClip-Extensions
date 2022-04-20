@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
-const axios_1 = require("axios");
+const axios_1 = require("@popclip/axios");
 const readwise = axios_1.default.create({ baseURL: 'https://readwise.io/api/v2/' });
 const action = async (input, options, context) => {
     const payload = { text: input.text };

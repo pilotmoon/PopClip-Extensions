@@ -5,7 +5,7 @@
         "captureHtml": true,
         "captureRtf": true
     },
-    "popclipVersion": 3704,
+    "popclipVersion": 3836,
     "entitlements" : ["network"],
     "module": "testjs.js"
 }

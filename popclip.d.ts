@@ -212,7 +212,7 @@ declare interface AuthInfo {
   password: string
   /** An appropriate value to use as the redirection URL in authorization flows for this extension.
    * Example output:
-   * `popclip://callback?popclip_ext_id=com.pilotmoon.popclip.extension.todoist`
+   * `popclip://callback/com.pilotmoon.popclip.extension.todoist`
    */
   redirect: string
   /** Extension display name */

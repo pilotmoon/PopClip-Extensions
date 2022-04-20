@@ -5,7 +5,7 @@ exports.options = exports.auth = exports.action = void 0;
  * PopClip Extension for Pinboard
  * API docs: https://pinboard.in/api/
  */
-const axios_1 = require("axios");
+const axios_1 = require("@popclip/axios");
 const p = axios_1.default.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } });
 // add url to pinboard
 // uses page title as description if page url matches selected url
