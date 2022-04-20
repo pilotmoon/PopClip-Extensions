@@ -1,0 +1,14 @@
+{
+  "identifier": "com.popclip.extension.instant-translate",
+  "popclip version": 3785,
+  "name": "Instant Translate",
+  "icon": "itrans.png",
+  "regex": "(?s)^.{1,200}$",
+  "module": "itrans.js",
+  "entitlements": [
+    "network"
+  ],
+  "after": "preview-result",
+  "note": "20 Apr 2022: Updated for macOS 12.3.",
+  "description": "Translate the selected word or short phrase instantly within PopClip. Powered by Microsoft Translator."
+}
