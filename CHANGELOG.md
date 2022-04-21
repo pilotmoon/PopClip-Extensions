@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
+## PopClip Beta
+
+- Brought back the `restore pasteboard` field for actions.
+
 ## PopClip 2021.11 (3785)
 
 ### Added
@@ -84,7 +88,7 @@ There is limit of 1000 characters for this. (If you are doing anything requiring
 
 - Removed the `html` requirement since all selections now come with HTML (as above).
 - ~~Removed the `Preserve Image Color` option. PopClip now always converts the icon to monochrome.~~ _Restored in 2021.10._
-- Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.
+- ~~Removed the `Restore Pasteboard` option. PopClip now always restores the pasteboard, unless using the `*-result` keys.~~
 - Removed the `Long Running` option. All extensions are now assumed to be potentially long running.
 
 ### Changed
