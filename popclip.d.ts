@@ -598,6 +598,11 @@ declare interface Input {
   html: string
 
   /**
+   * XHTML. (docs todo)
+   */
+  xhtml: string
+
+  /**
      * Markdown. (docs todo)
      */
   markdown: string
