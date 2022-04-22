@@ -56,10 +56,11 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Example Shell Script Files](#example-shell-script-files)
     - [Shell Script Testing](#shell-script-testing)
     - [Indicating Errors](#indicating-errors)
-  - [Key Combo format](#key-combo-format)
-    - [Key code string format](#key-code-string-format)
-    - [Key code dictionary format](#key-code-dictionary-format)
-    - [Virtual key codes](#virtual-key-codes)
+  - [Key Combo Format](#key-combo-format)
+    - [Key Combo Number Format](#key-combo-number-format)
+    - [Key Combo String Format](#key-combo-string-format)
+    - [Key Combo Dictionary Format](#key-combo-dictionary-format)
+    - [Modifier combinations](#modifier-combinations)
   - [Field name mapping](#field-name-mapping)
 
 ## Introduction
@@ -196,7 +197,6 @@ name: Make Sticky
 service name: Make Sticky
 ```
 
-
 A more complex Key Combo example with a raw key code and using some more fields:
 
 ```yaml
@@ -205,9 +205,7 @@ name: Paste and Enter
 icon: square monospaced ↵
 requirements: [paste]
 before: paste
-key combo:
-  key code: 0x24 # see https://bit.ly/3wSkQ9I
-  modifiers: 0 # `modifiers` is required even if zero
+key combo: 0x24 # see https://bit.ly/3wSkQ9I
 ```
 
 ## Anatomy of a PopClip Extension
@@ -422,7 +420,7 @@ A Key Press action is defined by the presence of a `key combo` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`key combo`|String, Dictionary or Array|The key combination, or sequence of key combinations, that PopClip should press. See [Key Combo format](#key-combo-format).|
+|`key combo`|Number, String, Dictionary or Array|The key combination, or sequence of key combinations, that PopClip should press. See [Key Combo format](#key-combo-format).|
 
 PopClip will simulate a key press as if they were pressed by the user. If an array is given, the PopCLip will press all of the key combos in the array in sequence.
 
@@ -709,32 +707,33 @@ Scripts may indicate success or failure as follows:
 |General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with code `501`. (Example: `error "message" number 501`.)|
 |Error with user's settings, or not signed in. (PopClip will show an "X" and pop up the extension's options UI.)|Throw error with specific message 'Not signed in'. (Example: `throw new Error('Not signed in')`.)| Exit code `2`|Throw error with code `502`. (Example: `error "message" number 502`.)|
 
-## Key Combo format
-
-Key presses may be expressed either as a string or a dictionary.
-
-### Key code string format
+## Key Combo Format
 
 _(This section contains documentation for a beta version of PopClip.)_
 
-The string format is a convenient human-readable format that can specify a key character and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press.
+Key presses may be expressed either as a number, a string, or a dictionary.
+
+### Key Combo Number Format
+
+When just a number is given, it is interpreted as a *Mac virtual key code*. the corresponding key is pressed directly, with no modifiers.
+[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) gives virtual key codes for all the keys.
+
+### Key Combo String Format
+
+The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
 
 Some examples:
-*  `option shift .` - _Holds option, shift and presses the dot key._
-*  `command B`
-*  `command space`
-*  `f1` _- The F1 key on its own with no modifiers_
-*  `A` _- The 'A' key on its own with no modifiers_
-*  `option 0x4b` _- 0x4b is the  numeric code for 'Keypad Divide'_
-
-The key code string is not case sensitive. (Key characters will automatically be converted to uppercase).
+*  `command b` or `command B`- _Hold command, and press 'b' key_
+*  `option shift .` - _Hold option and shift, and press the dot key_
+*  `command space` - _Hold command, and press space bar_
+*  `f1` - _The F1 key on its own with no modifiers_
+*  `option 0x4b` - _0x4b is the  numeric code for 'Keypad Divide'_
 
 The **key** is specified in one of the following ways:
 
 * **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
 * **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
-* **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`). 
-[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) gives virtual key codes for all the keys.
+* **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
 
 The **modifiers** are specified with the following keywords:
 
@@ -746,7 +745,7 @@ The **modifiers** are specified with the following keywords:
 | Shift (⇧)   | `shift` or `⇧`
  |
 
-### Key code dictionary format
+### Key Combo Dictionary Format
 
 The dictionary format is also able to specify modifiers plus a key character or key code.
 
@@ -758,8 +757,7 @@ The dictionary format is also able to specify modifiers plus a key character or 
 
 Note: Either `keyChar` or `keyCode` is required. Not both.
 
-### Virtual key codes
-
+### Modifier combinations
 
 Table of modifier combinations:
 

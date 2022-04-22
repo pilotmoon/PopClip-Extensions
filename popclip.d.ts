@@ -879,7 +879,7 @@ declare interface PopClip {
      * Some key code and modifier constants are available in {@link Util.constant | util.constant}.
      *
      * @param key The key to press. When this parameter is a string, PopClip will interpret it as in
-     * [Key Code String Format](https://github.com/pilotmoon/PopClip-Extensions#key-code-string-format).
+     * [Key Combo String Format](https://github.com/pilotmoon/PopClip-Extensions#key-combo-string-format).
      * When this parameter is a number, PopClip will use that exact key code.
      *
      * @param modifiers An optional bit mask specifiying additional modifier keys, if any.
