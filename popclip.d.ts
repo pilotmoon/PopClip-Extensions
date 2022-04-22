@@ -857,33 +857,32 @@ declare interface PopClip {
   appear: () => void
 
   /**
-     * Simulate a key press by the user.
+     * Simulate a key press by the user. (Note - ability to use key string format applies to an unreleased PopClip beta)
      *
-     * #### Notes
-     *
-     * The key press delivered at the current app level, not at the OS level. This means PopClip
-     * is not able to trigger global keyboard shortcuts. For example, PopClip can trigger ⌘B for "bold" (or whatever it means in the
-     * current app) but not ⌘Tab for "switch app".
-     *
-     * Some key code and modifier constants are available in {@link Util.constant | util.constant}.
-     *
-     * [More key codes (StackOverflow)](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes)
-     *
-     * #### Example
+     * #### Examples
      *
      * ```js
      * // press the key combo ⌘B
-     * popclip.pressKey('B', util.constant.MODIFIER_COMMAND);
+     * popclip.pressKey('command B');
      * // press the key combo ⌥⌘H
-     * popclip.pressKey('H', util.constant.MODIFIER_OPTION|util.constant.MODIFIER_COMMAND);
+     * popclip.pressKey('option command H');
      * // press the return key
-     * popclip.pressKey(util.constant.KEY_RETURN);
+     * popclip.pressKey('return');
+     * popclip.pressKey(util.constant.KEY_RETURN); // equivalent
+     * * // press option and the page down key
+     * popclip.pressKey('option 0x79');
+     * popclip.pressKey(0x79, util.constant.MODIFIER_OPTION); // equivalent
      * ```
      *
-     * @param key The key to press. When this parameter is a string, PopClip will look up the key code for the first character in the string,
-     * mapped to the current keyboard layout. When this parameter is a number, PopClip will use that exact key code.
+     * #### Notes
      *
-     * @param modifiers A bit mask specifiying the modifier keys, if any.
+     * Some key code and modifier constants are available in {@link Util.constant | util.constant}.
+     *
+     * @param key The key to press. When this parameter is a string, PopClip will interpret it as in
+     * [Key Code String Format](https://github.com/pilotmoon/PopClip-Extensions#key-code-string-format).
+     * When this parameter is a number, PopClip will use that exact key code.
+     *
+     * @param modifiers An optional bit mask specifiying additional modifier keys, if any.
      * @category Action
      */
   pressKey: (key: string | number, modifiers?: number) => void
@@ -1056,10 +1055,6 @@ declare interface Util {
          * Key code for the Escape key.
          */
     readonly KEY_ESCAPE: 0X35
-    /**
-         * Key code for the Forward Delete (⌦) key.
-         */
-    readonly KEY_FORWARDDELETE: 0X75
     /**
          * Key code for the Left Arrow key.
          */

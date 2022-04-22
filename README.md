@@ -59,6 +59,7 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
   - [Key Combo format](#key-combo-format)
     - [Key code string format](#key-code-string-format)
     - [Key code dictionary format](#key-code-dictionary-format)
+    - [Virtual key codes](#virtual-key-codes)
   - [Field name mapping](#field-name-mapping)
 
 ## Introduction
@@ -179,7 +180,7 @@ actions:
   javascript: popclip.pasteText('*' + popclip.input.text + '*')  
 ```
 
-A Key Combo example:
+A Key Press example:
 
 ```yaml
 # popclip
@@ -421,9 +422,9 @@ A Key Press action is defined by the presence of a `key combo` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`key combo`|String or Dictionary|The key combination that PopClip should press. See [Key Combo format](#key-combo-format).|
+|`key combo`|String, Dictionary or Array|The key combination, or sequence of key combinations, that PopClip should press. See [Key Combo format](#key-combo-format).|
 
-The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
+PopClip will simulate a key press as if they were pressed by the user. If an array is given, the PopCLip will press all of the key combos in the array in sequence.
 
 ### AppleScript action properties
 
@@ -710,24 +711,40 @@ Scripts may indicate success or failure as follows:
 
 ## Key Combo format
 
-Key presses may be expressed in either of two ways.
+Key presses may be expressed either as a string or a dictionary.
 
 ### Key code string format
 
-The string format is a convenient human-readable format that can specify a key character and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by a single character to press.
+_(This section contains documentation for a beta version of PopClip.)_
 
-For example: `option shift .` or `command B`
+The string format is a convenient human-readable format that can specify a key character and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press.
 
-The key code string is not case sensitive. (Key character will automatically be converted to uppercase).
+Some examples:
+*  `option shift .` - _Holds option, shift and presses the dot key._
+*  `command B`
+*  `command space`
+*  `f1` _- The F1 key on its own with no modifiers_
+*  `A` _- The 'A' key on its own with no modifiers_
+*  `option 0x4b` _- 0x4b is the  numeric code for 'Keypad Divide'_
 
-The modifiers are specified with the following keywords:
+The key code string is not case sensitive. (Key characters will automatically be converted to uppercase).
+
+The **key** is specified in one of the following ways:
+
+* **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
+* **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
+* **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`). 
+[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) gives virtual key codes for all the keys.
+
+The **modifiers** are specified with the following keywords:
 
 | Modifier    | Keyword             |
 | ----------- | ------------------- |
-| Command (⌘) | `command` or `cmd`  |
-| Option (⌥)  | `option` or `opt`   |
-| Control (⌃) | `control` or `ctrl` |
-| Shift (⇧)   | `shift`             |
+| Command (⌘) | `command` or `⌘` |
+| Option (⌥)  | `option` or `⌥` |
+| Control (⌃) | `control` or `^` |
+| Shift (⇧)   | `shift` or `⇧`
+ |
 
 ### Key code dictionary format
 
@@ -735,11 +752,14 @@ The dictionary format is also able to specify modifiers plus a key character or 
 
 |Key|Type|Required?|Description|
 |---|----|------|----|
-|`key char`|String|(see note below) |Character key to press. For example `A`. Letter keys should be given ing upper case.|
-|`key code`|Number|(see note below) |Virtual key code for key to press. For example, the delete key is `51`. For help finding the code see [this StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes).|
+|`key char`|String|(see note below)|Character key to press. For example `A`. Letter keys should be given in upper case.|
+|`key code`|Number|(see note below)|Virtual key code for key to press. For example, the delete key is `51`. |
 |`modifiers`|Number|Required|Bit mask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
 
-Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
+Note: Either `keyChar` or `keyCode` is required. Not both.
+
+### Virtual key codes
+
 
 Table of modifier combinations:
 
