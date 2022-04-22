@@ -9,6 +9,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ## PopClip Beta
 
 - Brought back the `restore pasteboard` field for actions.
+- Added a promise-based global function `sleep` to the JavaScript environment. (e.g. `await sleep(1000)`)
 
 ## PopClip 2021.11 (3785)
 

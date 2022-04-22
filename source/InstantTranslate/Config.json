@@ -1,6 +1,6 @@
 {
   "identifier": "com.popclip.extension.instant-translate",
-  "popclip version": 3785,
+  "popclip version": 3844,
   "name": "Instant Translate",
   "icon": "itrans.png",
   "regex": "(?s)^.{1,200}$",
