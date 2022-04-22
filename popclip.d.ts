@@ -1271,6 +1271,13 @@ declare function setTimeout (callback: (...args?: any) => void, timeout?: number
  */
 declare function clearTimeout (timeoutId: number): void
 
+/**
+ * Global promise-based sleep function. Included as a more convenient alternative
+ * to [[setTimeout]] for performing simple delays. Call as `await sleep(1000)`.
+ * @param durationMilliseconds How long to sleep in milliseconds
+ */
+declare function sleep (durationMilliseconds: number): Promise<void>
+
 /* for library compatibility (implemented as util.base64Encode with no options) */
 declare function btoa (string: string): string
 /* for library compatibility (imeplemented as util.base64Decode) */
