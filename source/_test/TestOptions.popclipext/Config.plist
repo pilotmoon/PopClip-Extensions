@@ -13,6 +13,8 @@
 			<string>TestOptions</string>
 			<key>Shell Script File</key>
 			<string>test.zsh</string>
+			<key>Script Interpreter</key>
+			<string>/bin/zsh</string>
 		</dict>
 	</array>
 	<key>Icon</key>
