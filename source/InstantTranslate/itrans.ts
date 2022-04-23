@@ -13,7 +13,7 @@ const endpoint = axios.create({
 // translate using MS Translation api
 async function translate (Text: string, to: string): Promise<string> {
   const response = await endpoint.post('translate', [{ Text }], { params: { to } })
-  return (response.data as any[])[0].translations[0].text
+  return response.data[0].translations[0].text
 }
 
 // our action

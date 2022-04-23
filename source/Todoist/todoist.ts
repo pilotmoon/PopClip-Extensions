@@ -15,5 +15,5 @@ export const auth: AuthFunction = async (info, flow) => {
   const { client_id, client_secret } = util.clarify(client)
   const { code } = await flow('https://todoist.com/oauth/authorize', { client_id, scope: 'data:read_write' })
   const response = await axios.post('https://todoist.com/oauth/access_token', { client_id, client_secret, code })
-  return (response.data as any).access_token
+  return response.data.access_token
 }

@@ -1,8 +1,8 @@
 /* eslint-disable */
 // TypeScript Version: 3.0
-// NM: copied from axios package 0.23.0
+// NM: copied from axios package 0.26.1
 
-export type AxiosRequestHeaders = Record<string, string>;
+export type AxiosRequestHeaders = Record<string, string | number | boolean>;
 
 export type AxiosResponseHeaders = Record<string, string> & {
   "set-cookie"?: string[]
@@ -17,7 +17,7 @@ export interface AxiosResponseTransformer {
 }
 
 export interface AxiosAdapter {
-  (config: AxiosRequestConfig): AxiosPromise<any>;
+  (config: AxiosRequestConfig): AxiosPromise;
 }
 
 export interface AxiosBasicCredentials {
@@ -55,6 +55,20 @@ export type ResponseType =
   | 'text'
   | 'stream';
 
+  export type responseEncoding =
+  | 'ascii' | 'ASCII'
+  | 'ansi' | 'ANSI'
+  | 'binary' | 'BINARY'
+  | 'base64' | 'BASE64'
+  | 'base64url' | 'BASE64URL'
+  | 'hex' | 'HEX'
+  | 'latin1' | 'LATIN1'
+  | 'ucs-2' | 'UCS-2'
+  | 'ucs2' | 'UCS2'
+  | 'utf-8' | 'UTF-8'
+  | 'utf8' | 'UTF8'
+  | 'utf16le' | 'UTF16LE';
+
 export interface TransitionalOptions {
   silentJSONParsing?: boolean;
   forcedJSONParsing?: boolean;
@@ -77,6 +91,7 @@ export interface AxiosRequestConfig<D = any> {
   adapter?: AxiosAdapter;
   auth?: AxiosBasicCredentials;
   responseType?: ResponseType;
+  responseEncoding?: responseEncoding | string;
   xsrfCookieName?: string;
   xsrfHeaderName?: string;
   onUploadProgress?: (progressEvent: any) => void;
@@ -114,7 +129,7 @@ export interface AxiosDefaults<D = any> extends Omit<AxiosRequestConfig<D>, 'hea
   headers: HeadersDefaults;
 }
 
-export interface AxiosResponse<T = unknown, D = any>  {
+export interface AxiosResponse<T = any, D = any>  {
   data: T;
   status: number;
   statusText: string;
@@ -123,7 +138,7 @@ export interface AxiosResponse<T = unknown, D = any>  {
   request?: any;
 }
 
-export interface AxiosError<T = unknown, D = any> extends Error {
+export interface AxiosError<T = any, D = any> extends Error {
   config: AxiosRequestConfig<D>;
   code?: string;
   request?: any;
@@ -132,7 +147,7 @@ export interface AxiosError<T = unknown, D = any> extends Error {
   toJSON: () => object;
 }
 
-export interface AxiosPromise<T = unknown> extends Promise<AxiosResponse<T>> {
+export interface AxiosPromise<T = any> extends Promise<AxiosResponse<T>> {
 }
 
 export interface CancelStatic {
@@ -140,7 +155,7 @@ export interface CancelStatic {
 }
 
 export interface Cancel {
-  message: string;
+  message: string | undefined;
 }
 
 export interface Canceler {
@@ -176,14 +191,14 @@ export class Axios {
     response: AxiosInterceptorManager<AxiosResponse>;
   };
   getUri(config?: AxiosRequestConfig): string;
-  request<T = unknown, R = AxiosResponse<T>, D = any>(config: AxiosRequestConfig<D>): Promise<R>;
-  get<T = unknown, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
-  delete<T = unknown, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
-  head<T = unknown, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
-  options<T = unknown, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
-  post<T = unknown, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
-  put<T = unknown, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
-  patch<T = unknown, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
+  request<T = any, R = AxiosResponse<T>, D = any>(config: AxiosRequestConfig<D>): Promise<R>;
+  get<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
+  delete<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
+  head<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
+  options<T = any, R = AxiosResponse<T>, D = any>(url: string, config?: AxiosRequestConfig<D>): Promise<R>;
+  post<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
+  put<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
+  patch<T = any, R = AxiosResponse<T>, D = any>(url: string, data?: D, config?: AxiosRequestConfig<D>): Promise<R>;
 }
 
 export interface AxiosInstance extends Axios {

@@ -15,7 +15,7 @@ export const auth: AuthFunction = async (info, flow) => {
   const response = await oauth_endpoint.post('token', util.buildQuery(
     { client_id, redirect_uri, scope, code, grant_type: 'authorization_code' }
   ))
-  return (response.data as any).refresh_token
+  return response.data.refresh_token
 }
 
 const refresh_access = async (refresh_token: string): Promise<string> => {
@@ -23,7 +23,7 @@ const refresh_access = async (refresh_token: string): Promise<string> => {
   const response = await oauth_endpoint.post('token', util.buildQuery(
     { client_id, refresh_token, grant_type: 'refresh_token' }
   ))
-  return (response.data as any).access_token
+  return response.data.access_token
 }
 
 // actually post the content

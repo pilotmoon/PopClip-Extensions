@@ -36,5 +36,5 @@ export const auth: AuthFunction = async (info, flow) => {
   const response = await bitly.post('oauth/access_token', util.buildQuery(
     { client_id, client_secret, redirect_uri, code }
   ))
-  return (response.data as any).access_token
+  return response.data.access_token
 }
