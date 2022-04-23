@@ -704,7 +704,7 @@ Scripts may indicate success or failure as follows:
 |Result|JavaScript|Shell Script|AppleScript|
 |------|------------|-----------|----------|
 |Success|Complete without throwing error.|Exit code `0`|Complete without throwing error.|
-|General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with code `501`. (Example: `error "message" number 501`.)|
+|General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with any code. (Example: `error "message" number 501`.)|
 |Error with user's settings, or not signed in. (PopClip will show an "X" and pop up the extension's options UI.)|Throw error with specific message 'Not signed in'. (Example: `throw new Error('Not signed in')`.)| Exit code `2`|Throw error with code `502`. (Example: `error "message" number 502`.)|
 
 ## Key Combo Format
