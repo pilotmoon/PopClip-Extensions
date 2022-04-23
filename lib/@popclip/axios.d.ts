@@ -1,6 +1,5 @@
 /* eslint-disable */
 // TypeScript Version: 3.0
-// NM: copied from axios package 0.26.1
 
 export type AxiosRequestHeaders = Record<string, string | number | boolean>;
 
