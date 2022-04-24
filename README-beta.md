@@ -399,7 +399,7 @@ The following fields define properties common to all actions. All fields are opt
 
 In a Shortcut action, PopClip will invoke a [Shortcut](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) by name. Shortcuts are only available on macOS 12.0 and above.
 
-A shortcut action is defined by the presence of a `shortcut name` field.
+A shortcut action is defined by the presence of a `shortcut name` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -411,7 +411,7 @@ The selected text will be sent as input to the service, and any text returned by
 
 In a Service action, PopClip will invoke a named macOS System Service, passing it the selected text.
 
-A service action is defined by the presence of a `service name` field.
+A service action is defined by the presence of a `service name` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -423,7 +423,7 @@ The name is as shown in the Services menu, for example `Add to Deliveries`. In s
 
 In a URL action, PopClip will open a URL in the default browser (or if the current app is a known browser, in the current app). PopClip can open any type of URL, not just web URLs.
 
-A URL action is defined by the presence of a `url` field.
+A URL action is defined by the presence of a `url` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -437,7 +437,7 @@ The string `***` will work as a shorthand for `{popclip text}`.
 
 In a Key Press action, PopClip will simulate a key press, or sequence of presses, as if it was performed by the user.
 
-A Key Press action is defined by the presence of a `key combo` field.
+A Key Press action is defined by the presence of a `key combo` field, as follows:
 
 | Key         | Type   | Description                                                                                                                                      |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -547,7 +547,7 @@ Note that when using a compiled script, these can be be 'JavaScript for Automati
 
 ### Shell Script actions
 
-An Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field.
+An Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----|
@@ -600,7 +600,7 @@ export POPCLIP_OPTION_FOO="foo"
 
 ***A note on "module-based" extensions:** There is a further kind of extension I am calling a module-based extension. In a module-based extension, the extension itself is defined by a JavaScript module. This allows greater flexibility and customization of the extension, at the cost of being more complex to explain and to use. This section describes how JavaScript fits in to the "classic" extension structure, which is the easiest to explain and to use for simple tasks.*
 
-A JavaScript action is defined by the presence of either a `javascript file` field or a `javascript` field, as follows.
+A JavaScript action is defined by the presence of either a `javascript file` field or a `javascript` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
