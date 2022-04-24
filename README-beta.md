@@ -641,7 +641,9 @@ In general you don't need to worry too much about catching and handling errors. 
 
 #### Asynchronous operations and async/await
 
-Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of `XMLHttpRequest` and `setTimeout`, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. In such a case the returned value from the script (if any) is the return value of the last function to complete. For example:
+Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of `XMLHttpRequest` and `setTimeout`, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. During asynchronous operations, clicking PopClip's spinner will cancel all current operations.
+
+The returned value from the script (if any) is the return value of the last function to complete. For example:
 
 ```yaml
 # popclip setTimeout example
@@ -665,8 +667,6 @@ javascript: |
   await sleep(5000) // 5 second delay
   popclip.showText('Boo!')
 ```
-
-During asynchronous operations, clicking PopClip's spinner will cancel all current operations.
 
 #### Network access from JavaScript
 
