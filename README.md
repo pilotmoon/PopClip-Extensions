@@ -36,8 +36,10 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [Key Press action properties](#key-press-action-properties)
     - [AppleScript action properties](#applescript-action-properties)
       - [Handler invocation](#handler-invocation)
-    - [Example AppleScript file with placeholder string](#example-applescript-file-with-placeholder-string)
-      - [Example of calling an AppleScript with a handler invocation](#example-of-calling-an-applescript-with-a-handler-invocation)
+      - [Example plain text AppleScript file with placeholder strings](#example-plain-text-applescript-file-with-placeholder-strings)
+      - [Example of calling an AppleScript handler with parameters](#example-of-calling-an-applescript-handler-with-parameters)
+      - [AppleScript return values and errors](#applescript-return-values-and-errors)
+      - [Using JXA Scripts](#using-jxa-scripts)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
       - [The JavaScript Engine](#the-javascript-engine)
@@ -442,38 +444,36 @@ An AppleScript action is defined by the presence of either an `applescript file`
 |---|----|-----------|
 |`file`|String|File name, of an `.applescript` or `.scpt` file.|
 |`handler`|String|Name of a handler within the file to call.|
-|`parameters`|Array|Array of strings specifying values to pass as parameters to the handler. Thes are the same as defined in [Script Fields](#script-fields), but omitting the `popclip ` prefix. (See example below.)|
+|`parameters`|Array|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields).|
 
-PopClip can execute an AppleScript supplied either as **plain text script** (`.applescript` file) or **compiled script** (`.scpt` file).
+PopClip can execute an AppleScript supplied either as a **plain text script** (`.applescript` file), or as a **compiled script** (`.scpt` file created in the Script Editor app).
 
-Within a plain text script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
+#### Example plain text AppleScript with placeholder strings
 
-Within a compiled script, you cannot use placeholder strings. Instead, you need to put your code in a handler and pass values to it.
+Within a plain text script, you may use `{popclip text}` as a placeholder for the selected text. PopClip will replace the placeholder with the actual text before executing the script. Other placeholders are also available; see [Script Fields](#script-fields).
 
-You can return a value from the script and have PopClip act upon it by defining an `after` key.
-
-### Example AppleScript file with placeholder string
-
-Here is an example of a plain text `.applescript` file (this one is for the 'TextEdit' extension), using a placeholder string.
+Here is an example `.applescript` file with placeholder strings:
 
 ```applescript
 tell application "TextEdit"
  activate
  set theDocument to make new document
- set text of theDocument to ("{popclip text}\nClipped from {popclip browser url})
+ set text of theDocument to ("{popclip text} - Clipped from {popclip browser url}")
 end tell
 ```
 
-#### Example of calling an AppleScript with a handler invocation
+#### Example of calling an AppleScript handler with parameters
 
-Here is a same thing, this time wrapped in a handler named 'newDocument' that takes one parameter. (This method is the only way to pass parameters to a precompiled `.scpt` file.)
+Within a compiled script (`.scpt`), you cannot use placeholder strings. Instead, you need to put your code in a handler  and pass values to it.
+
+Here is a same example as above, but this time wrapped in a handler named 'newDocument' that takes two parameters.
 
 ```applescript
-on newDocument(theText, theUrl)
+on newDocument(theText, theUrl) --this is a handler
   tell application "TextEdit"
     activate
     set theDocument to make new document
-    set text of theDocument to (theText & "\nClipped from " & theUrl)
+    set text of theDocument to (theText & " - Clipped from " & theUrl)
   end tell
 end go
 ```
@@ -487,6 +487,16 @@ applescript:
   handler: newDocument
   parameters: [text, browser url]
 ```
+
+The number and order of parameters in the Config file must match exactly what the handler expects to receive.
+
+#### AppleScript return values and errors
+
+You can return a string from the script and have PopClip act upon it by defining an `after` key. To return errors, see [Indicating Errors](#indicating-errors).
+
+#### Using JXA Scripts
+
+Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts.
 
 ### Shell Script action properties
 
@@ -684,23 +694,23 @@ Options are presented to the user in a preferences user interface window and are
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
-|Shell Script Variable|AppleScript Field|Description|
-|---------------------|-----------------|-----------|
-|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
-|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
-|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
-|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
-|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
-|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Capture HTML` must be specified.)|
-|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
-|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
-|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
-|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
-|`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
-|`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
-|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
-|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
-|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
+|Field Name|Shell Script Variable|AppleScript Field|Description|
+|----|---------------------|-----------------|-----------|
+|`extension identifier`|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
+|`action identifier`|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
+|`text`|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
+|`full text`|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
+|`urlencoded text`|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
+|`html`|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Capture HTML` must be specified.)|
+|`raw html`|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
+|`markdown`|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
+|`urls`|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
+|`modifier flags`|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
+|`bundle identifier`|`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
+|`app name`|`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
+|`browser title`|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
+|`browser url`|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
+|`option *`|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
 
 ### Example Shell Script Files
