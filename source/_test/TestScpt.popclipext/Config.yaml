@@ -1,7 +1,8 @@
 name: Test Scpt
-applescript file: Test.scpt
-applescript parameters: [text, option bbB]
-applescript handler: oi
+applescript:
+  file: Test.scpt  
+  handler: oi
+  parameters: [text, option bbB]
 after: show-result
 options: 
 - identifier: aaa

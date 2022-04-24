@@ -35,6 +35,9 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [URL action properties](#url-action-properties)
     - [Key Press action properties](#key-press-action-properties)
     - [AppleScript action properties](#applescript-action-properties)
+      - [Handler invocation](#handler-invocation)
+    - [Example AppleScript file with placeholder string](#example-applescript-file-with-placeholder-string)
+      - [Example of calling an AppleScript with a handler invocation](#example-of-calling-an-applescript-with-a-handler-invocation)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
       - [The JavaScript Engine](#the-javascript-engine)
@@ -52,7 +55,6 @@ NEW: Check the [**Extensions Development**](https://forum.popclip.app/c/dev/12) 
     - [The `options` array](#the-options-array)
   - [Using Scripts](#using-scripts)
     - [Script Fields](#script-fields)
-    - [Example AppleScript File](#example-applescript-file)
     - [Example Shell Script Files](#example-shell-script-files)
     - [Shell Script Testing](#shell-script-testing)
     - [Indicating Errors](#indicating-errors)
@@ -426,16 +428,65 @@ PopClip will simulate a key press as if they were pressed by the user. If an arr
 
 ### AppleScript action properties
 
-An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows.
+An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
-|`applescript file`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**)  
-|`applescript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
+|`applescript file`|String|File name, of an `.applescript` or `.scpt` file to run.
+|`applescript`|String|A text string to interpret directly as AppleScript source.|
+|`applescript`|Dictionary|Three fields defining a [handler invocation](#applescript-handler-invocation), as below.|
 
-Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
+#### Handler invocation
 
-You can return a value from the script and have PopClip act upon it by defining an `after` key. See also [Example AppleScript File](#example-applescript-file).
+|Key|Type|Description|
+|---|----|-----------|
+|`file`|String|File name, of an `.applescript` or `.scpt` file.|
+|`handler`|String|Name of a handler within the file to call.|
+|`parameters`|Array|Array of strings specifying values to pass as parameters to the handler. Thes are the same as defined in [Script Fields](#script-fields), but omitting the `popclip ` prefix. (See example below.)|
+
+PopClip can execute an AppleScript supplied either as **plain text script** (`.applescript` file) or **compiled script** (`.scpt` file).
+
+Within a plain text script, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
+
+Within a compiled script, you cannot use placeholder strings. Instead, you need to put your code in a handler and pass values to it.
+
+You can return a value from the script and have PopClip act upon it by defining an `after` key.
+
+### Example AppleScript file with placeholder string
+
+Here is an example of a plain text `.applescript` file (this one is for the 'TextEdit' extension), using a placeholder string.
+
+```applescript
+tell application "TextEdit"
+ activate
+ set theDocument to make new document
+ set text of theDocument to ("{popclip text}\nClipped from {popclip browser url})
+end tell
+```
+
+#### Example of calling an AppleScript with a handler invocation
+
+Here is a same thing, this time wrapped in a handler named 'newDocument' that takes one parameter. (This method is the only way to pass parameters to a precompiled `.scpt` file.)
+
+```applescript
+on newDocument(theText, theUrl)
+  tell application "TextEdit"
+    activate
+    set theDocument to make new document
+    set text of theDocument to (theText & "\nClipped from " & theUrl)
+  end tell
+end go
+```
+
+And the `Config.yaml` file to call this might be:
+
+```yaml
+name: TextEdit Clip
+applescript:
+  file: example.scpt
+  handler: newDocument
+  parameters: [text, browser url]
+```
 
 ### Shell Script action properties
 
@@ -651,19 +702,6 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-### Example AppleScript File
-
-**Important: AppleScript files must be in plain text format. Save as .applescript, not .scpt.**
-
-Here is an example of an AppleScript file (this one is for the 'TextEdit' extension):
-
-```applescript
-tell application "TextEdit"
- activate
- set theDocument to make new document
- set text of theDocument to "{popclip text}"
-end tell
-```
 
 ### Example Shell Script Files
 
