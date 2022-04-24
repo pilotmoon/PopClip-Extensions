@@ -36,26 +36,29 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [About the "Localizable String" type](#about-the-localizable-string-type)
     - [Extension properties](#extension-properties)
     - [Action properties](#action-properties)
-    - [Shortcut action properties](#shortcut-action-properties)
-    - [Service action properties](#service-action-properties)
-    - [URL action properties](#url-action-properties)
-    - [Key Press action properties](#key-press-action-properties)
-    - [AppleScript action properties](#applescript-action-properties)
+    - [Shortcut actions](#shortcut-actions)
+    - [Service actions](#service-actions)
+    - [URL actions](#url-actions)
+    - [Key Press actions](#key-press-actions)
+      - [Key Combo String Format](#key-combo-string-format)
+      - [Virtual Key Codes](#virtual-key-codes)
+    - [AppleScript actions](#applescript-actions)
       - [Handler invocation](#handler-invocation)
       - [Example plain text AppleScript with placeholder strings](#example-plain-text-applescript-with-placeholder-strings)
       - [Example of calling an AppleScript handler with parameters](#example-of-calling-an-applescript-handler-with-parameters)
-      - [AppleScript return values and errors](#applescript-return-values-and-errors)
       - [Using JXA Scripts](#using-jxa-scripts)
-    - [Shell Script action properties](#shell-script-action-properties)
-    - [JavaScript action properties](#javascript-action-properties)
+    - [Shell Script actions](#shell-script-actions)
+      - [Example Shell Script Files](#example-shell-script-files)
+      - [Shell Script Testing](#shell-script-testing)
+    - [JavaScript actions](#javascript-actions)
       - [The JavaScript Engine](#the-javascript-engine)
       - [Error handling and debugging](#error-handling-and-debugging)
       - [Asynchronous operations](#asynchronous-operations)
       - [Network access from JavaScript](#network-access-from-javascript)
       - [Async/await](#asyncawait)
-      - [TypeScript](#typescript)
+      - [About TypeScript and .ts files](#about-typescript-and-ts-files)
+      - [JavaScript testing](#javascript-testing)
       - [JavaScript language reference](#javascript-language-reference)
-      - [Test Harness](#test-harness)
   - [Meanings of particular fields](#meanings-of-particular-fields)
     - [The `requirements` array](#the-requirements-array)
       - [Note on side effect of requirements field](#note-on-side-effect-of-requirements-field)
@@ -64,14 +67,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The `options` array](#the-options-array)
   - [Using Scripts](#using-scripts)
     - [Script Fields](#script-fields)
-    - [Example Shell Script Files](#example-shell-script-files)
-    - [Shell Script Testing](#shell-script-testing)
     - [Indicating Errors](#indicating-errors)
-  - [Key Combo Format](#key-combo-format)
-    - [Key Combo Number Format](#key-combo-number-format)
-    - [Key Combo String Format](#key-combo-string-format)
-    - [Key Combo Dictionary Format](#key-combo-dictionary-format)
-    - [Modifier combinations](#modifier-combinations)
   - [Field name mapping](#field-name-mapping)
 
 ## Introduction
@@ -399,9 +395,11 @@ The following fields define properties common to all actions. All fields are opt
 |`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
 
-### Shortcut action properties
+### Shortcut actions
 
-A shortcut action is defined by the presence of a `shortcut name` field. Shortcut actions are only available on macOS 12.0 and above.
+In a Shortcut action, PopClip will invoke a [Shortcut](https://support.apple.com/en-gb/guide/shortcuts-mac/apdf22b0444c/mac) by name. Shortcuts are only available on macOS 12.0 and above.
+
+A shortcut action is defined by the presence of a `shortcut name` field.
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -409,7 +407,9 @@ A shortcut action is defined by the presence of a `shortcut name` field. Shortcu
 
 The selected text will be sent as input to the service, and any text returned by the shortcut will be available to the `after` action.
 
-### Service action properties
+### Service actions
+
+In a Service action, PopClip will invoke a named macOS System Service, passing it the selected text.
 
 A service action is defined by the presence of a `service name` field.
 
@@ -419,9 +419,11 @@ A service action is defined by the presence of a `service name` field.
 
 The name is as shown in the Services menu, for example `Add to Deliveries`. In some cases, you may need to look into the Info.plist of the application to find the name defined in there under `NSServices` → `NSMenuItem`. An example of this is the `Make New Sticky Note` service which must be called as `Make Sticky`.
 
-### URL action properties
+### URL actions
 
-A URL action is defined by the presence of a `url` field. You can open any type of URL, not just web URLs.
+In a URL action, PopClip will open a URL in the default browser (or if the current app is a known browser, in the current app). PopClip can open any type of URL, not just web URLs.
+
+A URL action is defined by the presence of a `url` field.
 
 |Key|Type|Description|
 |---|----|-----------|
@@ -431,17 +433,50 @@ You can also put options in the URL, in the same format as for AppleScripts. For
 
 The string `***` will work as a shorthand for `{popclip text}`.
 
-### Key Press action properties
+### Key Press actions
+
+In a Key Press action, PopClip will simulate a key press, or sequence of presses, as if it was performed by the user.
 
 A Key Press action is defined by the presence of a `key combo` field.
 
-|Key|Type|Description|
-|---|----|-----------|
-|`key combo`|Number, String, Dictionary or Array|The key combination, or sequence of key combinations, that PopClip should press. See [Key Combo format](#key-combo-format).|
+| Key         | Type   | Description                                                                                                                                      |
+| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `key combo` | Number | When just a number is given, it is interpreted as a *Mac virtual key code*. PopCLip will press the key with no modifiers.                        |
+| `key combo` | String | The key combination to press, in [Key Combo String Format](#key-combo-string-format).                                                            |
+| `key combo` | Array  | Instead of a single key combo, you can supply array of them. PopClip will press all of the key combos in sequence, with a 100ms delay in between. |
 
-PopClip will simulate a key press as if they were pressed by the user. If an array is given, the PopCLip will press all of the key combos in the array in sequence.
+#### Key Combo String Format
 
-### AppleScript action properties
+The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
+
+Some examples:
+
+- `command b` or `command B`- *Hold command, and press 'b' key*
+- `option shift .` - *Hold option and shift, and press the dot key*
+- `command space` - *Hold command, and press space bar*
+- `f1` - *The F1 key on its own with no modifiers*
+- `option 0x4b` - *0x4b is the  numeric code for 'Keypad Divide'*
+
+The **key** is specified in one of the following ways:
+
+- **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
+- **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
+- **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
+
+The **modifiers** are specified with the following keywords:
+
+| Modifier    | Keyword          |
+| ----------- | ---------------- |
+| Command (⌘) | `command` or `⌘` |
+| Option (⌥)  | `option` or `⌥`  |
+| Control (⌃) | `control` or `^` |
+| Shift (⇧)   | `shift` or `⇧`   |
+
+#### Virtual Key Codes
+
+[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) will help you find the virtual key codes for all the keys.
+
+### AppleScript actions
 
 An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows:
 
@@ -457,9 +492,11 @@ An AppleScript action is defined by the presence of either an `applescript file`
 |---|----|-----------|
 |`file`|String|File name, of an `.applescript` or `.scpt` file.|
 |`handler`|String|Name of a handler within the file to call.|
-|`parameters`|Array|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields).|
+|`parameters`|Array|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive.|
 
 PopClip can execute an AppleScript supplied either as a **plain text script** (`.applescript` file), or as a **compiled script** (`.scpt` file created in the Script Editor app).
+
+You can return a string from the script (simple `return "foo"`), and PopClip will act upon it if you have defined an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
 
 #### Example plain text AppleScript with placeholder strings
 
@@ -491,27 +528,24 @@ on newDocument(theText, theUrl) --this is a handler
 end go
 ```
 
-And the `Config.yaml` file to call this might be:
+And a `Config.json` file to call this might be:
 
-```yaml
-name: TextEdit Clip
-applescript:
-  file: example.scpt
-  handler: newDocument
-  parameters: [text, browser url]
+```json
+{
+  "name": "TextEdit Clip",
+  "applescript": {
+    "file": "example.scpt",
+    "handler": "newDocument",
+    "parameters": ["text", "browser url"]
+  }
+}
 ```
-
-The number and order of parameters in the Config file must match exactly what the handler expects to receive.
-
-#### AppleScript return values and errors
-
-You can return a string from the script and have PopClip act upon it by defining an `after` key. To return errors, see [Indicating Errors](#indicating-errors).
 
 #### Using JXA Scripts
 
 Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts.
 
-### Shell Script action properties
+### Shell Script actions
 
 An Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field.
 
@@ -522,7 +556,45 @@ An Shell Script action is defined by the presence of a `shell script file` field
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
 
-### JavaScript action properties
+You can output a string to the standard output, and PopClip will act upon it if you have defined an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
+
+#### Example Shell Script Files
+
+Here is an example of an extension shell script (this one is for 'Say'):
+
+```sh
+#!/bin/sh
+echo $POPCLIP_TEXT | say  # pipe text to 'say' command
+```
+
+A shell script can return a string back to PopClip via stdout. For example:
+
+```sh
+#!/bin/sh
+echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
+```
+
+A ruby example:
+
+```ruby
+#!/usr/bin/env ruby
+input=ENV['POPCLIP_TEXT']
+print input.upcase  # make the text ALL CAPS
+```
+
+#### Shell Script Testing
+
+While developing a script, you can test it from the command line by exporting the required variables. For example:
+
+```shell-script
+export POPCLIP_TEXT="my test text"
+export POPCLIP_OPTION_FOO="foo"
+./myscript
+```
+
+*See also [Using Scripts](#using-scripts) below.*
+
+### JavaScript actions
 
 *Note: JavaScript extensions are brand new and it will take me some time to document everything fully. The following gives the basics. Please bear with me!*
 
@@ -535,7 +607,7 @@ A JavaScript action is defined by the presence of either a `javascript file` fie
 |`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
 |`javascript`|String|A text string to run as a JavaScript. For example: `popclip.showText('Hello world!')`|
 
-PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement. A quick example:
+PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement. A quick example (Config.yaml):
 
 ```yaml
 # popclip (this is exactly how the published Uppercase extension works)
@@ -618,19 +690,28 @@ after: copy-result
 
 The axios library is promise-based, and you'll notice that the above example uses the `await` keyword. That's possible because, internally, PopClip runs the JS code wrapped as an `async` function, and resolves any returned promises itself, allowing you to use `await` to get nice clean code like the above.
 
-#### TypeScript
+#### About TypeScript and .ts files
 
 When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts). The TypeScript configuration I use is in [tsconfig.json](/tsconfig.json).
+
+#### JavaScript testing
+
+PopClip has a 'test harness' mode, which runs JavaScript files in the PopClip environment from the command line. It is useful for running unit tests of
+your code in PopClip's environment, with the same libraries, globals etc. It is activated by calling PopClip's executable (inside the PopCLip.app package) with the parameter `runjs` followed by the file name to run.
+
+```shell-script
+/Application/PopClip.app/Contents/MacOS/PopClip runjs test.js
+```
+
+Some notes:
+
+- When running in the test harness, the `popclip` global is not available.
+- Scripts can output strings with the global `print()` function (not `console.log()`).
+- Scripts running in the test harness always have the network access entitlement.
 
 #### JavaScript language reference
 
 There are loads of JavaScript language references out there, but the one I use and recommend is [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
-
-#### Test Harness
-
-PopClip has a 'test harness' mode, as way to run JavaScript in the PopClip environment. it is run from the command line like this:
-
-`/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
 
 ## Meanings of particular fields
 
@@ -713,7 +794,7 @@ Options are presented to the user in a preferences user interface window and are
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
-|Field Name|Shell Script Variable|AppleScript Field|Description|
+|Field Name|Shell Script Variable|AppleScript Placeholder|Description|
 |----|---------------------|-----------------|-----------|
 |`extension identifier`|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
 |`action identifier`|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
@@ -731,40 +812,6 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`browser url`|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`option *`|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-### Example Shell Script Files
-
-Here is an example of an extension shell script (this one is for 'Say'):
-
-``` sh
-#!/bin/sh
-echo $POPCLIP_TEXT | say  # pipe text to 'say' command
-```
-
-A shell script can return a string back to PopClip via to stdout. For example:
-
-```sh
-#!/bin/sh
-echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
-```
-
-A ruby example:
-
-```ruby
-#!/usr/bin/env ruby
-input=ENV['POPCLIP_TEXT']
-print input.upcase  # make the text ALL CAPS
-```
-
-### Shell Script Testing
-
-While developing a script, you can test it from the command line by exporting the required variables. For example:
-
-```shell-script
-export POPCLIP_TEXT="my test text"
-export POPCLIP_OPTION_FOO="foo"
-./myscript
-```
-
 ### Indicating Errors
 
 Scripts may indicate success or failure as follows:
@@ -774,78 +821,6 @@ Scripts may indicate success or failure as follows:
 |Success|Complete without throwing error.|Exit code `0`|Complete without throwing error.|
 |General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with any code. (Example: `error "message" number 501`.)|
 |Error with user's settings, or not signed in. (PopClip will show an "X" and pop up the extension's options UI.)|Throw error with specific message 'Not signed in'. (Example: `throw new Error('Not signed in')`.)| Exit code `2`|Throw error with code `502`. (Example: `error "message" number 502`.)|
-
-## Key Combo Format
-
-Key presses may be expressed either as a number, a string, or a dictionary.
-
-### Key Combo Number Format
-
-When just a number is given, it is interpreted as a *Mac virtual key code*. the corresponding key is pressed directly, with no modifiers.
-[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) gives virtual key codes for all the keys.
-
-### Key Combo String Format
-
-The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
-
-Some examples:
-
-- `command b` or `command B`- *Hold command, and press 'b' key*
-- `option shift .` - *Hold option and shift, and press the dot key*
-- `command space` - *Hold command, and press space bar*
-- `f1` - *The F1 key on its own with no modifiers*
-- `option 0x4b` - *0x4b is the  numeric code for 'Keypad Divide'*
-
-The **key** is specified in one of the following ways:
-
-- **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
-- **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
-- **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
-
-The **modifiers** are specified with the following keywords:
-
-| Modifier    | Keyword             |
-| ----------- | ------------------- |
-| Command (⌘) | `command` or `⌘` |
-| Option (⌥)  | `option` or `⌥` |
-| Control (⌃) | `control` or `^` |
-| Shift (⇧)   | `shift` or `⇧`
- |
-
-### Key Combo Dictionary Format
-
-The dictionary format is also able to specify modifiers plus a key character or key code.
-
-|Key|Type|Required?|Description|
-|---|----|------|----|
-|`key char`|String|(see note below)|Character key to press. For example `A`. Letter keys should be given in upper case.|
-|`key code`|Number|(see note below)|Virtual key code for key to press. For example, the delete key is `51`. |
-|`modifiers`|Number|Required|Bit mask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
-
-Note: Either `keyChar` or `keyCode` is required. Not both.
-
-### Modifier combinations
-
-Table of modifier combinations:
-
-|Keys|Value|
-|----|-----|
-|none|0|
-|⇧|131072|
-|⌃|262144|
-|⌃⇧|393216|
-|⌥|524288|
-|⌥⇧|655360|
-|⌃⌥|786432|
-|⌃⌥⇧|917504|
-|⌘|1048576|
-|⇧⌘|1179648|
-|⌃⌘|1310720|
-|⌃⇧⌘|1441792|
-|⌥⌘|1572864|
-|⌥⇧⌘|1703936|
-|⌃⌥⌘|1835008|
-|⌃⌥⇧⌘|1966080|
 
 ## Field name mapping
 
