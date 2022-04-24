@@ -851,9 +851,10 @@ PopClip applies the following mapping to field names loaded from the config file
 | pass html                 | capture html     |
 | blocked apps              | excluded apps    |
 | regular expression        | regex            |
-| apple script file         | applescript file |
 | apple script              | applescript      |
-| java script file          | javascript file  |
+| apple script file         | applescript file |
+| apple script call         | applescript call |
 | java script               | javascript       |
+| java script file          | javascript file  |
 
 Also, if the field name has the prefix `extension` or `option`, it is removed.
