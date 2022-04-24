@@ -1,5 +1,5 @@
 name: Test Scpt
-applescript:
+applescript call:
   file: Test.scpt  
   handler: oi
   parameters: [text, option bbB]
