@@ -557,7 +557,7 @@ You can output a string to the standard output, and PopClip will act upon it if 
 
 #### Example Shell Script Files
 
-Here is an example of an extension shell script (this one is for 'Say'):
+Here is a simple example shell script (this one is for 'Say'):
 
 ```sh
 #!/bin/sh

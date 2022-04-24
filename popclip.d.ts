@@ -857,7 +857,7 @@ declare interface PopClip {
   appear: () => void
 
   /**
-     * Simulate a key press by the user. (Note - ability to use key string format applies to an unreleased PopClip beta)
+     * Simulate a key press by the user.
      *
      * #### Examples
      *
