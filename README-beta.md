@@ -369,7 +369,7 @@ The following fields are used at the top level of the configuration to define pr
 |`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
 |`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 |`entitlements`|Array|Only applies to JavaScript extensions. The possible values are `network` (allows use of XMLHttpRequest) and `dynamic` (allows dynamically generated actions).|
-|`action`|Dictionary|A dictionary defining a single action for this extension.|
+|`action`|Dictionary|A dictionary defining a single action for this extension. See [Action properties](#action-properties).|
 |`actions`|Array|Array of dictionaries defining the actions for this extension.|
 
 If neither `actions` nor `action` is defined, PopClip will look at the top level of the plist for an action definition.
@@ -394,6 +394,8 @@ The following fields define properties common to all actions. All fields are opt
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
 |`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
+
+Additionally, there will be action-specific properties as described in the sections below. 
 
 ### Shortcut actions
 
@@ -437,13 +439,13 @@ The string `***` will work as a shorthand for `{popclip text}`.
 
 In a Key Press action, PopClip will simulate a key press, or sequence of presses, as if it was performed by the user.
 
-A Key Press action is defined by the presence of a `key combo` field, as follows:
+A Key Press action is defined by the presence of a `key combo` or `key combos` field, as follows:
 
 | Key         | Type   | Description                                                                                                                                      |
 | ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
 | `key combo` | Number | When just a number is given, it is interpreted as a *Mac virtual key code*. PopCLip will press the key with no modifiers.                        |
-| `key combo` | String | The key combination to press, in [Key Combo String Format](#key-combo-string-format).                                                            |
-| `key combo` | Array  | Instead of a single key combo, you can supply array of them. PopClip will press all of the key combos in sequence, with a 100ms delay in between. |
+| `key combo` | String | The key combination to press, as defined in [Key Combo String Format](#key-combo-string-format).                                                            |
+| `key combos` | Array  | Instead of a single key combo, you can supply array of them. PopClip will press all of the key combos in sequence, with a 100ms delay in between. |
 
 #### Key Combo String Format
 
