@@ -6,7 +6,7 @@
 
 # PopClip Extensions
 
-This document applies to latest [PopClip beta](https://pilotmoon.com/popclip/download). See also: [Changelog](CHANGELOG.md)
+This document applies to latest [PopClip beta](https://pilotmoon.com/popclip/download) or unreleased work in progress. See also: [Changelog](CHANGELOG.md)
 
 NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
@@ -41,7 +41,6 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [URL actions](#url-actions)
     - [Key Press actions](#key-press-actions)
       - [Key Combo String Format](#key-combo-string-format)
-      - [Virtual Key Codes](#virtual-key-codes)
     - [AppleScript actions](#applescript-actions)
       - [Handler invocation](#handler-invocation)
       - [Example plain text AppleScript with placeholder strings](#example-plain-text-applescript-with-placeholder-strings)
@@ -395,7 +394,7 @@ The following fields define properties common to all actions. All fields are opt
 |`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
 
-Additionally, there will be action-specific properties as described in the sections below. 
+Additionally, there will be action-specific properties as described in the sections below.
 
 ### Shortcut actions
 
@@ -441,15 +440,15 @@ In a Key Press action, PopClip will simulate a key press, or sequence of presses
 
 A Key Press action is defined by the presence of a `key combo` or `key combos` field, as follows:
 
-| Key         | Type   | Description                                                                                                                                      |
-| ----------- | ------ | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `key combo` | Number | When just a number is given, it is interpreted as a *Mac virtual key code*. PopCLip will press the key with no modifiers.                        |
-| `key combo` | String | The key combination to press, as defined in [Key Combo String Format](#key-combo-string-format).                                                            |
-| `key combos` | Array  | Instead of a single key combo, you can supply array of them. PopClip will press all of the key combos in sequence, with a 100ms delay in between. |
+| Key          | Type    | Description                                                                                                     |
+| ------------ | ------- | --------------------------------------------------------------------------------------------------------------- |
+| `key combo`  | String  | The key combination to press, as defined in [Key Combo String Format](#key-combo-string-format).                |
+| `key combo`  | Integer | If a number is given, it is interpreted directly as a virtual key code (see below).                             |
+| `key combos` | Array   | Instead of a single key combo, you can supply array of them. PopClip will press all the key combos in sequence. |
 
 #### Key Combo String Format
 
-The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
+The string format is a convenient human-readable format that can specify a key and modifiers. It is a space-separated list of one or more modifiers (the order does not matter), followed by the key to press. The key combo string is not case sensitive.
 
 Some examples:
 
@@ -457,26 +456,22 @@ Some examples:
 - `option shift .` - *Hold option and shift, and press the dot key*
 - `command space` - *Hold command, and press space bar*
 - `f1` - *The F1 key on its own with no modifiers*
-- `option 0x4b` - *0x4b is the  numeric code for 'Keypad Divide'*
+- `option 0x4b` - *0x4b is the hex numeric code for 'Keypad Divide'*
 
 The **key** is specified in one of the following ways:
 
 - **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
 - **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
-- **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
+- **As a virtual key code.** For more esoteric keys, you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`). [This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) will help you find the virtual key codes for all the keys.
 
 The **modifiers** are specified with the following keywords:
 
-| Modifier    | Keyword          |
-| ----------- | ---------------- |
-| Command (⌘) | `command` or `⌘` |
-| Option (⌥)  | `option` or `⌥`  |
-| Control (⌃) | `control` or `^` |
-| Shift (⇧)   | `shift` or `⇧`   |
-
-#### Virtual Key Codes
-
-[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) will help you find the virtual key codes for all the keys.
+| Modifier    | Keyword                  |
+| ----------- | ------------------------ |
+| Command (⌘) | `command`, `cmd` or `⌘`  |
+| Option (⌥)  | `option`, `opt` or `⌥`   |
+| Control (⌃) | `control`, `ctrl` or `^` |
+| Shift (⇧)   | `shift` or `⇧`           |
 
 ### AppleScript actions
 
@@ -553,8 +548,8 @@ An Shell Script action is defined by the presence of a `shell script file` field
 
 |Key|Type|Description|
 |---|----|-----|
-|`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, you may define a `script interpreter`.|
-|`script interpreter`|String (optional)|Specify the interpreter to use for `Shell Script File`. The default is `/bin/sh`. You can either specify an absolute path (starting with `/`) such as `/usr/bin/ruby`, or an executable name on its own such as `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell.|
+|`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, either define a `script interpreter` or set the script's executable bit and include a shebang (e.g. `#!/usr/bin/env ruby`) at the top of the file.|
+|`script interpreter`|String (optional)|Specify the interpreter to use for `shell script file`. For example `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell. Alternatively, you can specify the absolute path (starting with `/`).
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
 
