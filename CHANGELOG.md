@@ -1,3 +1,9 @@
+<!-- markdownlint-configure-file
+{
+  "no-duplicate-header": false
+}
+-->
+
 # Changelog
 
 All notable changes to PopClip's extensions programming interface will be documented in this file.
@@ -9,15 +15,17 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ## PopClip Beta / Unreleased
 
 - Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
-- Added the abiliy to execute pre-compile AppleScript `.scpt` files, and to invoke handlers within them with parameters.
+- Added the ability to execute pre-compile AppleScript `.scpt` files, and to invoke handlers within them with parameters.
 - Brought back the `restore pasteboard` field for actions.
-- Changes to the JavaScript programming envoronment:
+- Added a 'test harness' mode, as way to run JavaScript in the PopClip environment. Run as: `/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
+- Changes to the JavaScript programming environment:
   - Added RTF processing features (via RichText class object).
   - Added locale information to the `util` object.
-  - Added a promise-based global function `sleep` to the JavaScript environment. (e.g. `await sleep(1000)`).
+  - Added a promise-based global function `sleep` (e.g. `await sleep(1000)`).
   - Supports the key combo string format in the `popclip.pressKey()` method.
   - Added `xhtml` field to the `popclip.input` object.
   - Updated to the latest versions of the bundled npm libraries.
+  - Improvements to the XMLHttpRequest implementation, including adding `Blob` and `ArrayBuffer` support.
 
 ## PopClip 2021.11 (3785)
 
@@ -54,14 +62,14 @@ My goal with these recent changes is to drastically lower the barrier of entry f
 
 As the cherry on top of that, PopClip now has a new built in action for installing extensions from selected text. It activates when you select text starting with `# popclip` followed by a YAML extension definition. The extension must be a URL, Service or Key Press extension. Here is an example:
 
-```
+```yaml
 # popclip extension to search Emojipedia
 name: Emojipedia
 icon: search filled E
 url: https://emojipedia.org/search/?q=***
 ```
 
-This means simple extensions can be shared simply by plain text in emails, on websites etc. Extensions shared this way don't also show an unsigned extension warning. 
+This means simple extensions can be shared simply by plain text in emails, on websites etc. Extensions shared this way don't also show an unsigned extension warning.
 
 There is limit of 1000 characters for this. (If you are doing anything requiring more than that, you should probably be creating a packaged extension.)
 

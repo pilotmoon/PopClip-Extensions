@@ -1,3 +1,9 @@
+<!-- markdownlint-configure-file
+{
+    "no-inline-htmL": false
+}
+-->
+
 # PopClip Extensions
 
 This document applies to latest [PopClip beta](https://pilotmoon.com/popclip/download). See also: [Changelog](CHANGELOG.md)
@@ -48,7 +54,8 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
       - [Network access from JavaScript](#network-access-from-javascript)
       - [Async/await](#asyncawait)
       - [TypeScript](#typescript)
-      - [JavaScript reference](#javascript-reference)
+      - [JavaScript language reference](#javascript-language-reference)
+      - [Test Harness](#test-harness)
   - [Meanings of particular fields](#meanings-of-particular-fields)
     - [The `requirements` array](#the-requirements-array)
       - [Note on side effect of requirements field](#note-on-side-effect-of-requirements-field)
@@ -100,7 +107,9 @@ By default, PopClip will display a warning dialog when you try to install your o
 
 If you find this gets annoying while you are testing your work, you can turn off the warning. Run the following command at the Terminal, then Quit and restart PopClip:
 
-    defaults write com.pilotmoon.popclip LoadUnsignedExtensions -bool YES
+```zsh
+defaults write com.pilotmoon.popclip LoadUnsignedExtensions -bool YES
+```
 
 Please be aware that PopClip extensions can contain arbitrary executable code. Be careful about the extensions you create, and be wary about loading extensions you get from someone else.
 
@@ -110,7 +119,9 @@ Please be aware that PopClip extensions can contain arbitrary executable code. B
 
 To help you when creating extensions, PopClip can be configured to write script output and debug info to be viewed with the Console app. To enable it, run this command in Terminal, then Quit and restart PopClip:
 
-    defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
+```zsh
+defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
+```
 
 ## Extension Snippets
 
@@ -189,7 +200,7 @@ A Key Press example:
 
 ```yaml
 # popclip
-name: Keypress Example
+name: Key Press Example
 key combo: command option J
 ```
 
@@ -246,11 +257,13 @@ If you double-click a `.popclipext` package, PopClip will attempt to load and in
 
 Here is an example package structure, the 'Say' extension:
 
+```text
     Say.popclipext                  -- Containing folder
        _Signature.plist             -- Signature (official Pilotmoon extensions only)
        Config.plist                 -- Main configuration file
        say.sh                       -- Script file
        speechicon.png               -- Icon file
+```
 
 ### About .popclipextz files
 
@@ -260,11 +273,11 @@ For distribution, an extension package folder may be zipped and renamed with the
 
 Every extension must contain a Config file, in either JSON, YAML or plist format.
 
-| Format | File Name      | Description                                                                |
-| ------ | -------------- | -------------------------------------------------------------------------- |
-| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format. ([quickref](https://quickref.me/json))               |
-| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org)  format. ([quickref](https://quickref.me/yaml)) | 
-| plist  | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list). |
+| Format | File Name      | Description                                                                                        |
+| ------ | -------------- | -------------------------------------------------------------------------------------------------- |
+| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format. ([quickref](https://quickref.me/json)) |
+| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org)  format. ([quickref](https://quickref.me/yaml))             |
+| plist  | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list).                         |
 
 The Config file must define a single dictionary at its root, which defines the extension. Although the three formats are different, they all can be used to define a dictionary mapping
 string keys to values. The values can be strings, numbers, booleans, arrays or other dictionaries. (In this documentation the term 'field' is used to refer to a key/value pair in a dictionary.)
@@ -337,7 +350,7 @@ The following keywords modify the way the text is drawn:
 
 As a handy tool, the extension [IconPreview.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/blob/master/extensions/IconPreview.popclipextz?raw=true) in this repo will display the icon for a text string you select.
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/iconpreview.gif" width="200"> 
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/docs-assets/iconpreview.gif" width="200">
 
 ## The Config file structure
 
@@ -379,7 +392,7 @@ The following fields define properties common to all actions. All fields are opt
 |`after`|String|String to indicate an action PopClip should take *after* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).
 |`excluded apps`|Array|Array of bundle identifiers of applications. The action will not appear when PopClip is being used in any of the the specified apps.|
 |`required apps`|Array|Array of bundle identifiers of applications. The action will only appear when PopClip is being used in one of the specified apps. *Note: This field does not make PopClip do a check to see if the app is present on the computer. For that, use the `App` field.*|
-|`regex`|String|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. _Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `requirements` keys `url`, `urls`, `email`, `emails` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs._|
+|`regex`|String|A [Regular Expression](http://regularexpressions.info/) to be applied to the selected text. The action will appear only if the text matches the regex, and the matching part of the text is passed to the action. The regex engine used is Cocoa's `NSRegularExpression`, which uses the [ICU specification](https://unicode-org.github.io/icu/userguide/strings/regexp.html) for regular expressions. *Note: There is no need to use your own regex to match URLs, email addresses or file paths. Use one of the `requirements` keys `url`, `urls`, `email`, `emails` or `path` instead. Also be careful to avoid badly crafted regexes which never terminate against certain inputs.*|
 |`app`|Dictionary|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [The `app` dictionary](#the-app-dictionary).|
 |`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
@@ -609,9 +622,15 @@ The axios library is promise-based, and you'll notice that the above example use
 
 When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts). The TypeScript configuration I use is in [tsconfig.json](/tsconfig.json).
 
-#### JavaScript reference
+#### JavaScript language reference
 
-There are loads of JavaScript references out there, but the one I use and recommend is [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+There are loads of JavaScript language references out there, but the one I use and recommend is [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+
+#### Test Harness
+
+PopClip has a 'test harness' mode, as way to run JavaScript in the PopClip environment. it is run from the command line like this:
+
+`/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
 
 ## Meanings of particular fields
 
@@ -712,7 +731,6 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`browser url`|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
 |`option *`|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-
 ### Example Shell Script Files
 
 Here is an example of an extension shell script (this one is for 'Say'):
@@ -741,9 +759,11 @@ print input.upcase  # make the text ALL CAPS
 
 While developing a script, you can test it from the command line by exporting the required variables. For example:
 
-    export POPCLIP_TEXT="my test text"
-    export POPCLIP_OPTION_FOO="foo"
-    ./myscript
+```shell-script
+export POPCLIP_TEXT="my test text"
+export POPCLIP_OPTION_FOO="foo"
+./myscript
+```
 
 ### Indicating Errors
 
@@ -757,8 +777,6 @@ Scripts may indicate success or failure as follows:
 
 ## Key Combo Format
 
-_(This section contains documentation for a beta version of PopClip.)_
-
 Key presses may be expressed either as a number, a string, or a dictionary.
 
 ### Key Combo Number Format
@@ -771,17 +789,18 @@ When just a number is given, it is interpreted as a *Mac virtual key code*. the 
 The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
 
 Some examples:
-*  `command b` or `command B`- _Hold command, and press 'b' key_
-*  `option shift .` - _Hold option and shift, and press the dot key_
-*  `command space` - _Hold command, and press space bar_
-*  `f1` - _The F1 key on its own with no modifiers_
-*  `option 0x4b` - _0x4b is the  numeric code for 'Keypad Divide'_
+
+- `command b` or `command B`- *Hold command, and press 'b' key*
+- `option shift .` - *Hold option and shift, and press the dot key*
+- `command space` - *Hold command, and press space bar*
+- `f1` - *The F1 key on its own with no modifiers*
+- `option 0x4b` - *0x4b is the  numeric code for 'Keypad Divide'*
 
 The **key** is specified in one of the following ways:
 
-* **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
-* **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
-* **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
+- **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
+- **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
+- **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
 
 The **modifiers** are specified with the following keywords:
 
