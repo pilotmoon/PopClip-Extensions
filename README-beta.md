@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-This document applies to PopClip 2021.11 (3785). See also: [Changelog](CHANGELOG.md)
+This document applies to latest [PopClip beta](https://pilotmoon.com/popclip/download). See also: [Changelog](CHANGELOG.md)
 
 NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
@@ -35,6 +35,11 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [URL action properties](#url-action-properties)
     - [Key Press action properties](#key-press-action-properties)
     - [AppleScript action properties](#applescript-action-properties)
+      - [Handler invocation](#handler-invocation)
+      - [Example plain text AppleScript with placeholder strings](#example-plain-text-applescript-with-placeholder-strings)
+      - [Example of calling an AppleScript handler with parameters](#example-of-calling-an-applescript-handler-with-parameters)
+      - [AppleScript return values and errors](#applescript-return-values-and-errors)
+      - [Using JXA Scripts](#using-jxa-scripts)
     - [Shell Script action properties](#shell-script-action-properties)
     - [JavaScript action properties](#javascript-action-properties)
       - [The JavaScript Engine](#the-javascript-engine)
@@ -52,13 +57,14 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The `options` array](#the-options-array)
   - [Using Scripts](#using-scripts)
     - [Script Fields](#script-fields)
-    - [Example AppleScript File](#example-applescript-file)
     - [Example Shell Script Files](#example-shell-script-files)
     - [Shell Script Testing](#shell-script-testing)
     - [Indicating Errors](#indicating-errors)
-  - [Key Combo format](#key-combo-format)
-    - [Key code string format](#key-code-string-format)
-    - [Key code dictionary format](#key-code-dictionary-format)
+  - [Key Combo Format](#key-combo-format)
+    - [Key Combo Number Format](#key-combo-number-format)
+    - [Key Combo String Format](#key-combo-string-format)
+    - [Key Combo Dictionary Format](#key-combo-dictionary-format)
+    - [Modifier combinations](#modifier-combinations)
   - [Field name mapping](#field-name-mapping)
 
 ## Introduction
@@ -179,7 +185,7 @@ actions:
   javascript: popclip.pasteText('*' + popclip.input.text + '*')  
 ```
 
-A Key Combo example:
+A Key Press example:
 
 ```yaml
 # popclip
@@ -195,7 +201,6 @@ name: Make Sticky
 service name: Make Sticky
 ```
 
-
 A more complex Key Combo example with a raw key code and using some more fields:
 
 ```yaml
@@ -204,9 +209,7 @@ name: Paste and Enter
 icon: square monospaced ↵
 requirements: [paste]
 before: paste
-key combo:
-  key code: 0x24 # see https://bit.ly/3wSkQ9I
-  modifiers: 0 # `modifiers` is required even if zero
+key combo: 0x24 # see https://bit.ly/3wSkQ9I
 ```
 
 ## Anatomy of a PopClip Extension
@@ -381,6 +384,7 @@ The following fields define properties common to all actions. All fields are opt
 |`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
 |`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
+|`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
 
 ### Shortcut action properties
 
@@ -420,22 +424,79 @@ A Key Press action is defined by the presence of a `key combo` field.
 
 |Key|Type|Description|
 |---|----|-----------|
-|`key combo`|String or Dictionary|The key combination that PopClip should press. See [Key Combo format](#key-combo-format).|
+|`key combo`|Number, String, Dictionary or Array|The key combination, or sequence of key combinations, that PopClip should press. See [Key Combo format](#key-combo-format).|
 
-The key press is delivered at the current app level, not at the OS level. This means PopClip is not able to trigger global keyboard shortcuts. So for example PopClip can trigger ⌘B for "bold" (if the app supports that) but not ⌘Tab for "switch app".
+PopClip will simulate a key press as if they were pressed by the user. If an array is given, the PopCLip will press all of the key combos in the array in sequence.
 
 ### AppleScript action properties
 
-An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows.
+An AppleScript action is defined by the presence of either an `applescript file` field or an `applescript` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
-|`applescript file`|String|The name of the AppleScript file to run, for example `my_script.applescript`. The file must exist in the extension's package directory and must be a plain text file. (Save files as `.applescript`, not `.scpt` — **.scpt is a different file format and will not work!**)  
-|`applescript`|String|A text string to run as an AppleScript. For example: `tell application "LaunchBar" to set selection to "{popclip text}"`.|
+|`applescript file`|String|File name, of an `.applescript` or `.scpt` file to run.
+|`applescript`|String|A text string to interpret directly as AppleScript source.|
+|`applescript`|Dictionary|Three fields defining a [handler invocation](#applescript-handler-invocation), as below.|
 
-Within the AppleScript, use `"{popclip text}"` as the placeholder for the selected text. PopClip will replace the placeholders with the actual text before executing the script. Other fields are also available: see [Script Fields](#script-fields).
+#### Handler invocation
 
-You can return a value from the script and have PopClip act upon it by defining an `after` key. See also [Example AppleScript File](#example-applescript-file).
+|Key|Type|Description|
+|---|----|-----------|
+|`file`|String|File name, of an `.applescript` or `.scpt` file.|
+|`handler`|String|Name of a handler within the file to call.|
+|`parameters`|Array|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields).|
+
+PopClip can execute an AppleScript supplied either as a **plain text script** (`.applescript` file), or as a **compiled script** (`.scpt` file created in the Script Editor app).
+
+#### Example plain text AppleScript with placeholder strings
+
+Within a plain text script, you may use `{popclip text}` as a placeholder for the selected text. PopClip will replace the placeholder with the actual text before executing the script. Other placeholders are also available; see [Script Fields](#script-fields).
+
+Here is an example `.applescript` file with placeholder strings:
+
+```applescript
+tell application "TextEdit"
+ activate
+ set theDocument to make new document
+ set text of theDocument to ("{popclip text} - Clipped from {popclip browser url}")
+end tell
+```
+
+#### Example of calling an AppleScript handler with parameters
+
+Within a compiled script (`.scpt`), you cannot use placeholder strings. Instead, you need to put your code in a handler  and pass values to it.
+
+Here is a same example as above, but this time wrapped in a handler named 'newDocument' that takes two parameters.
+
+```applescript
+on newDocument(theText, theUrl) --this is a handler
+  tell application "TextEdit"
+    activate
+    set theDocument to make new document
+    set text of theDocument to (theText & " - Clipped from " & theUrl)
+  end tell
+end go
+```
+
+And the `Config.yaml` file to call this might be:
+
+```yaml
+name: TextEdit Clip
+applescript:
+  file: example.scpt
+  handler: newDocument
+  parameters: [text, browser url]
+```
+
+The number and order of parameters in the Config file must match exactly what the handler expects to receive.
+
+#### AppleScript return values and errors
+
+You can return a string from the script and have PopClip act upon it by defining an `after` key. To return errors, see [Indicating Errors](#indicating-errors).
+
+#### Using JXA Scripts
+
+Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts.
 
 ### Shell Script action properties
 
@@ -633,37 +694,24 @@ Options are presented to the user in a preferences user interface window and are
 
 These strings are available in Shell Script and AppleScript extensions. Where no value is available, the field will be set to an empty string.
 
-|Shell Script Variable|AppleScript Field|Description|
-|---------------------|-----------------|-----------|
-|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
-|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
-|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
-|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
-|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
-|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Capture HTML` must be specified.)|
-|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
-|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
-|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
-|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
-|`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
-|`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
-|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
-|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
-|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
+|Field Name|Shell Script Variable|AppleScript Field|Description|
+|----|---------------------|-----------------|-----------|
+|`extension identifier`|`POPCLIP_EXTENSION_IDENTIFIER`|`{popclip extension identifier}`|This extension's identifier.|
+|`action identifier`|`POPCLIP_ACTION_IDENTIFIER`|`{popclip action identifier}`|The identifier specified in the action's configuration, if any.|
+|`text`|`POPCLIP_TEXT`|`{popclip text}`|The part of the selected plain text matching the specified regex or requirement.|
+|`full text`|`POPCLIP_FULL_TEXT`|`{popclip full text}`|The selected plain text in its entirety.|
+|`urlencoded text`|`POPCLIP_URLENCODED_TEXT`|`{popclip urlencoded text}`|URL-encoded form of the matched text.|
+|`html`|`POPCLIP_HTML`|`{popclip html}`|Sanitized HTML for the selection. CSS is removed, potentially unsafe tags are removed and markup is corrected. (`Capture HTML` must be specified.)|
+|`raw html`|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
+|`markdown`|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
+|`urls`|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
+|`modifier flags`|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
+|`bundle identifier`|`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
+|`app name`|`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
+|`browser title`|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
+|`browser url`|`POPCLIP_BROWSER_URL`|`{popclip browser url}`|The URL of the web page that the text was selected from. (Supported browsers only.)|
+|`option *`|`POPCLIP_OPTION_*` *(all UPPERCASE)*|`{popclip option *}` *(all lowercase)*|One such value is generated for each option specified in `Options`, where `*` represents the `Option Identifier`. For boolean options, the value with be a string, either `0` or `1`.|
 
-### Example AppleScript File
-
-**Important: AppleScript files must be in plain text format. Save as .applescript, not .scpt.**
-
-Here is an example of an AppleScript file (this one is for the 'TextEdit' extension):
-
-```applescript
-tell application "TextEdit"
- activate
- set theDocument to make new document
- set text of theDocument to "{popclip text}"
-end tell
-```
 
 ### Example Shell Script Files
 
@@ -704,41 +752,60 @@ Scripts may indicate success or failure as follows:
 |Result|JavaScript|Shell Script|AppleScript|
 |------|------------|-----------|----------|
 |Success|Complete without throwing error.|Exit code `0`|Complete without throwing error.|
-|General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with code `501`. (Example: `error "message" number 501`.)|
+|General error. (PopClip will show an "X".)|Throw any error. (Example: `throw new Error('message')`.)| Exit code `1`|Throw error with any code. (Example: `error "message" number 501`.)|
 |Error with user's settings, or not signed in. (PopClip will show an "X" and pop up the extension's options UI.)|Throw error with specific message 'Not signed in'. (Example: `throw new Error('Not signed in')`.)| Exit code `2`|Throw error with code `502`. (Example: `error "message" number 502`.)|
 
-## Key Combo format
+## Key Combo Format
 
-Key presses may be expressed in either of two ways.
+_(This section contains documentation for a beta version of PopClip.)_
 
-### Key code string format
+Key presses may be expressed either as a number, a string, or a dictionary.
 
-The string format is a convenient human-readable format that can specify a key character and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by a single character to press.
+### Key Combo Number Format
 
-For example: `option shift .` or `command B`
+When just a number is given, it is interpreted as a *Mac virtual key code*. the corresponding key is pressed directly, with no modifiers.
+[This StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes) gives virtual key codes for all the keys.
 
-The key code string is not case sensitive. (Key character will automatically be converted to uppercase).
+### Key Combo String Format
 
-The modifiers are specified with the following keywords:
+The string format is a convenient human-readable format that can specify a key and modifiers. It is simply a space-separated list of one or more modifiers (order does not matter), followed by the key to press. The key combo string is not case sensitive.
+
+Some examples:
+*  `command b` or `command B`- _Hold command, and press 'b' key_
+*  `option shift .` - _Hold option and shift, and press the dot key_
+*  `command space` - _Hold command, and press space bar_
+*  `f1` - _The F1 key on its own with no modifiers_
+*  `option 0x4b` - _0x4b is the  numeric code for 'Keypad Divide'_
+
+The **key** is specified in one of the following ways:
+
+* **As a character.** For keys which produce a single character. Examples: `A`, `;`, `9`.
+* **As a key name.** The following are supported: `return`, `space`, `delete`, `escape`, `left`, `right`, `down`, `up`, and `f1`, `f2`, etc. to `f19`.
+* **As a virtual key code.** For more esoteric keys you can specify the virtual key code numerically. This can be as a decimal number, or a hexadecimal number (starting with `0x`).
+
+The **modifiers** are specified with the following keywords:
 
 | Modifier    | Keyword             |
 | ----------- | ------------------- |
-| Command (⌘) | `command` or `cmd`  |
-| Option (⌥)  | `option` or `opt`   |
-| Control (⌃) | `control` or `ctrl` |
-| Shift (⇧)   | `shift`             |
+| Command (⌘) | `command` or `⌘` |
+| Option (⌥)  | `option` or `⌥` |
+| Control (⌃) | `control` or `^` |
+| Shift (⇧)   | `shift` or `⇧`
+ |
 
-### Key code dictionary format
+### Key Combo Dictionary Format
 
 The dictionary format is also able to specify modifiers plus a key character or key code.
 
 |Key|Type|Required?|Description|
 |---|----|------|----|
-|`key char`|String|(see note below) |Character key to press. For example `A`. Letter keys should be given ing upper case.|
-|`key code`|Number|(see note below) |Virtual key code for key to press. For example, the delete key is `51`. For help finding the code see [this StackOverflow question](http://stackoverflow.com/questions/3202629/where-can-i-find-a-list-of-mac-virtual-key-codes).|
+|`key char`|String|(see note below)|Character key to press. For example `A`. Letter keys should be given in upper case.|
+|`key code`|Number|(see note below)|Virtual key code for key to press. For example, the delete key is `51`. |
 |`modifiers`|Number|Required|Bit mask for modifiers to press. Use `0` for no modifiers. Shift=`131072`, Control=`262144`, Option=`524288`, Command=`1048576`. Add together the values to specify multiple modifiers (see table below).
 
-Note: Exactly one of `keyChar` or `keyCode` should be specified. Not both.
+Note: Either `keyChar` or `keyCode` is required. Not both.
+
+### Modifier combinations
 
 Table of modifier combinations:
 

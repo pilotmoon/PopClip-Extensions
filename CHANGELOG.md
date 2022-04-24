@@ -6,10 +6,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## PopClip Beta
+## PopClip Beta / Unreleased
 
+- Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
+- Added the abiliy to execute pre-compile AppleScript `.scpt` files, and to invoke handlers within them with parameters.
 - Brought back the `restore pasteboard` field for actions.
-- Added a promise-based global function `sleep` to the JavaScript environment. (e.g. `await sleep(1000)`)
+- Changes to the JavaScript programming envoronment:
+  - Added RTF processing features (via RichText class object).
+  - Added locale information to the `util` object.
+  - Added a promise-based global function `sleep` to the JavaScript environment. (e.g. `await sleep(1000)`).
+  - Supports the key combo string format in the `popclip.pressKey()` method.
+  - Added `xhtml` field to the `popclip.input` object.
+  - Updated to the latest versions of the bundled npm libraries.
 
 ## PopClip 2021.11 (3785)
 
