@@ -229,7 +229,7 @@ There are seven kinds of actions supported by PopClip extensions.
 |Service|Send the selected text to a macOS Service.| [MakeSticky](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/MakeSticky)|
 |URL|Open a URL, with the selected text URL-encoded and inserted.|[GoogleTranslate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/GoogleTranslate)|
 |Key Press|Press a key combination.| [Delete](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Delete)|
-|JavaScript|Run a JavaScript script.| TODO |
+|JavaScript|Run a JavaScript script.| [Sort](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Sort) |
 |AppleScript|Run an AppleScript script.|[BBEdit](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit)|
 |Shell Script|Run a shell script.| [Say](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Say)
 
@@ -543,16 +543,14 @@ Note that when using a compiled script, these can be be 'JavaScript for Automati
 
 ### Shell Script actions
 
-An Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field, as follows:
+A Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----|
 |`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, either define a `script interpreter` or set the script's executable bit and include a shebang (e.g. `#!/usr/bin/env ruby`) at the top of the file.|
 |`script interpreter`|String (optional)|Specify the interpreter to use for `shell script file`. For example `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell. Alternatively, you can specify the absolute path (starting with `/`).
 
-The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can return a value from the script and have PopClip act upon it by defining an `after` key. See [Example Shell Script File](#example-shell-script-file).
-
-You can output a string to the standard output, and PopClip will act upon it if you have defined an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
+The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can output a string to the standard output and have PopClip act upon it by defining an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
 
 #### Example Shell Script Files
 
