@@ -1,0 +1,24 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.taskpaper",
+  "popclip version": 3856,
+  "name": "TaskPaper",
+  "icon": "ttick.png",
+  "regex": "(?s)^[\\n\\r]*[^\\n\\r]{1,300}[\\n\\r]*$",
+  "applescript file": "tp.scpt",
+  "applescript handler": "inbox",
+  "applescript parameters": [
+    "text"
+  ],
+  "after": "show-status",
+  "app": {
+    "check installed": true,
+    "name": "TaskPaper 3",
+    "link": "https://www.taskpaper.com/",
+    "bundle identifiers": [
+      "com.hogbaysoftware.TaskPaper3",
+      "com.hogbaysoftware.TaskPaper3.direct",
+      "com.hogbaysoftware.TaskPaper3-setapp"
+    ]
+  },
+  "description": "Add a new task to an Inbox project in TaskPaper 3."
+}
