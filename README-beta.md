@@ -583,15 +583,19 @@ print input.upcase  # make the text ALL CAPS
 
 #### Shell Script Testing
 
-While developing a script, you can test it from the command line by exporting the required variables. For example:
+While developing a script, you can test it from the command line by setting the required variables in the call. For example:
+
+```shell-script
+POPCLIP_TEXT="my test text" POPCLIP_OPTION_FOO="foo" ./myscript
+```
+
+Or export them before calling the script:
 
 ```shell-script
 export POPCLIP_TEXT="my test text"
 export POPCLIP_OPTION_FOO="foo"
 ./myscript
 ```
-
-*See also [Using Scripts](#using-scripts) below.*
 
 ### JavaScript actions
 
