@@ -1,4 +1,4 @@
-import axios from '@popclip/axios' // TODO @popclip/axios
+import axios from '@popclip/axios'
 import { translation } from './langs.json'
 import { access } from './access.json'
 
