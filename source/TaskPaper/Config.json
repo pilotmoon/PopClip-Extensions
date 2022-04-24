@@ -1,14 +1,16 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.taskpaper",
-  "popclip version": 3856,
+  "popclip version": 3858,
   "name": "TaskPaper",
   "icon": "ttick.png",
   "regex": "(?s)^[\\n\\r]*[^\\n\\r]{1,300}[\\n\\r]*$",
-  "applescript file": "tp.scpt",
-  "applescript handler": "inbox",
-  "applescript parameters": [
-    "text"
-  ],
+  "applescript": {
+    "file": "tp.scpt",
+    "handler": "inbox",
+    "parameters": [
+      "text"
+    ]
+  },
   "after": "show-status",
   "app": {
     "check installed": true,
