@@ -1,10 +1,10 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.taskpaper",
-  "popclip version": 3858,
+  "popclip version": 3861,
   "name": "TaskPaper",
   "icon": "ttick.png",
   "regex": "(?s)^[\\n\\r]*[^\\n\\r]{1,300}[\\n\\r]*$",
-  "applescript": {
+  "applescript call": {
     "file": "tp.scpt",
     "handler": "inbox",
     "parameters": [
