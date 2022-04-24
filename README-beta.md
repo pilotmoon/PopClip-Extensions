@@ -489,9 +489,9 @@ The `applescript call` dictionary lets you call a named handler within the scrip
 
 |Key|Type|Description|
 |---|----|-----------|
-|`file`|String (Required)|File name, of an `.applescript` or `.scpt` file.|
-|`handler`|String (Required)|Name of a handler within the script to call.|
-|`parameters`|Array (Optional)|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive. Omit or leave empty if there are no parameters.|
+|`file`|String|File name, of an `.applescript` or `.scpt` file.|
+|`handler`|String|Name of a handler within the script to call.|
+|`parameters`|Array (optional)|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive. Omit or leave empty if there are no parameters.|
 
 #### AppleScript format
 
