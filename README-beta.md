@@ -474,11 +474,11 @@ The **modifiers** are specified with the following keywords:
 
 ### AppleScript actions
 
-An AppleScript action is defined by the presence of either an `applescript file`, or an `applescript` or `applescript call` field, as follows:
+An AppleScript action is defined by the presence of either an `applescript file`, `applescript` or `applescript call` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
-|`applescript file`|String|File name, of an `.applescript` or `.scpt` file to run.
+|`applescript file`|String|File name, of an `.applescript` or `.scpt` file to run.|
 |`applescript`|String|A text string to interpret directly as AppleScript source.|
 |`applescript call`|Dictionary|Three fields defining a call to a named handler, as below.|
 
@@ -512,7 +512,7 @@ end tell
 
 #### Example of calling an AppleScript handler with parameters
 
-Within a compiled script (`.scpt`), you cannot use placeholder strings. Instead, you need to put your code in a handler  and pass values to it.
+Within a compiled script (`.scpt`), you cannot use placeholder strings. Instead, you need to put your code in a handler and pass values to it.
 
 Here is a same example as above, but this time wrapped in a handler named 'newDocument' that takes two parameters.
 
