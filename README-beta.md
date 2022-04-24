@@ -495,7 +495,7 @@ The `applescript call` dictionary lets you call a named handler within the scrip
 
 #### AppleScript format
 
-PopClip can execute an AppleScript supplied either as a **plain text script** (`.applescript` file), or as a **compiled script** (`.scpt` file, created in the Script Editor app). The ways you pass values to the script differs depending on the script type (see examples below).
+PopClip can execute an AppleScript supplied either as a **plain text script** (`.applescript` file), or as a **compiled script** (`.scpt` file, created in the Script Editor app). The ways you can pass values to the script differ depending on the script type (see examples below).
 
 The script may optionally return a string (e.g. `return "foo"`), and act on it with an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
 
