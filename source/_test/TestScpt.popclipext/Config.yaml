@@ -1,0 +1,14 @@
+name: Test Scpt
+applescript file: Test.scpt
+applescript parameters: [text, option bbB]
+applescript handler: oi
+after: show-result
+options: 
+- identifier: aaa
+  type: string
+  label: String Param
+  defaultValue: abc123
+- identifier: bbB
+  type: boolean
+  label: Booelan Param
+  defaultValue: true
