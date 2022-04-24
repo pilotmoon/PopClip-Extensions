@@ -670,9 +670,9 @@ javascript: |
 
 #### Network access from JavaScript
 
-PopClip provides its own implementation of XMLHttpRequest. To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
+PopClip provides its own implementation of XMLHttpRequest (XHR). To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
 
-PopClip is also bundled with the HTTP library [axios](https://axios-http.com/docs/intro) version 0.26.1, which you can load using `const axios = require('@popclip/axios')`. This is a lot easier to use than XMLHttpRequest.
+PopClip is also bundled with the HTTP library [axios](https://axios-http.com/docs/intro) version 0.26.1, which you can load using `const axios = require('@popclip/axios')`. This is a lot easier to use than XHR.
 
 Some limitations to be aware of:
 
