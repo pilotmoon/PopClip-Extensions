@@ -694,6 +694,8 @@ javascript: |
 after: copy-result
 ```
 
+For a more substantial axios example, see for example [Instant Translate](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/InstantTranslate).
+
 #### About TypeScript and .ts files
 
 When looking at the extensions in this repo I have made, you will see `.ts` files. These are [TypeScript](https://www.typescriptlang.org/) source code, which compiles down to JavaScript. I prefer to use TS than raw JS as it helps me to write correct code, aided by the TypeScript definitions file [popclip.d.ts](/popclip.d.ts). The TypeScript configuration I use is in [tsconfig.json](/tsconfig.json).
