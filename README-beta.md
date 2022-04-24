@@ -52,9 +52,8 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [JavaScript actions](#javascript-actions)
       - [The JavaScript Engine](#the-javascript-engine)
       - [Error handling and debugging](#error-handling-and-debugging)
-      - [Asynchronous operations](#asynchronous-operations)
+      - [Asynchronous operations and async/await](#asynchronous-operations-and-asyncawait)
       - [Network access from JavaScript](#network-access-from-javascript)
-      - [Async/await](#asyncawait)
       - [About TypeScript and .ts files](#about-typescript-and-ts-files)
       - [JavaScript testing](#javascript-testing)
       - [JavaScript language reference](#javascript-language-reference)
@@ -604,7 +603,7 @@ A JavaScript action is defined by the presence of either a `javascript file` fie
 |`javascript file`|String|The name of the JavaScript file to run, for example `foo.js`.  
 |`javascript`|String|A text string to run as a JavaScript. For example: `popclip.showText('Hello world!')`|
 
-PopClip loads the file or the string and evaluates it as if it were a function body. Scripts can by return results by finishing with a return statement. A quick example (Config.yaml):
+PopClip loads the file (or the string) and evaluates it as if it were wrapped in an async function call. Scripts can by return results by finishing with a return statement. A quick example (Config.yaml):
 
 ```yaml
 # popclip (this is exactly how the published Uppercase extension works)
@@ -640,13 +639,13 @@ PopClip's JavaScript engine is Apple's [JavaScriptCore](https://developer.apple.
 
 In general you don't need to worry too much about catching and handling errors. If the script throws an error, PopClip simply shows the shaking-'X'. Debug output can be viewed in the console as described in [Debug Output](#debug-output).
 
-#### Asynchronous operations
+#### Asynchronous operations and async/await
 
-Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of XMLHttpRequest and setTimeout, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. In such a case the returned value from the script (if any) is the return value of the last function to complete. For example:
+Usually, the JavaScript code will be run synchronously (i.e., as a single code block that PopClip waits to finish). However PopClip provides implementations of `XMLHttpRequest` and `setTimeout`, which are asynchronous. If a script uses these, PopClip will show its spinner and wait until the last asynchronous operation has finished. In such a case the returned value from the script (if any) is the return value of the last function to complete. For example:
 
 ```yaml
-# popclip async example
-name: Async Test
+# popclip setTimeout example
+name: setTimeout Test
 javascript: | 
   setTimeout(() => { 
     return 'bar'
@@ -655,13 +654,25 @@ javascript: |
 after: show-result # result shown will be 'bar', not 'foo'
 ```
 
+You can also use the `await` keyword when calling any function that returns a Promise. Internally, PopClip runs all the code you supply wrapped in an `async` function call, and resolves any returned promises itself.
+
+As a convenience, PopClip also supplies a global function `sleep(delayInMilliseconds)` as a promise-based wrapper around `setTimeout`:
+
+```yaml
+# popclip await example
+name: Await Test
+javascript: | 
+  await sleep(5000) // 5 second delay
+  popclip.showText('Boo!')
+```
+
 During asynchronous operations, clicking PopClip's spinner will cancel all current operations.
 
 #### Network access from JavaScript
 
-PopClip provides its own implementation of XMLHttpRequest (XHR). To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
+PopClip provides its own implementation of XMLHttpRequest. To use it, you need to include the `network` entitlement in the `entitlements` field of the config file.
 
-PopClip is also bundled with the HTTP library [axios](https://axios-http.com/docs/intro), which you can load using `const axios = require('axios')`. This is a lot easier to use than XHR!
+PopClip is also bundled with the HTTP library [axios](https://axios-http.com/docs/intro) version 0.26.1, which you can load using `const axios = require('@popclip/axios')`. This is a lot easier to use than XMLHttpRequest.
 
 Some limitations to be aware of:
 
@@ -677,15 +688,11 @@ icon: symbol:square.and.arrow.down.fill
 requirements: [url]
 entitlements: [network]
 javascript: |
-  const axios = require('axios')
+  const axios = require('@popclip/axios')
   const response = await axios.get(popclip.input.data.urls[0]) // throws for non-2xx status
   return response.data
 after: copy-result
 ```
-
-#### Async/await
-
-The axios library is promise-based, and you'll notice that the above example uses the `await` keyword. That's possible because, internally, PopClip runs the JS code wrapped as an `async` function, and resolves any returned promises itself, allowing you to use `await` to get nice clean code like the above.
 
 #### About TypeScript and .ts files
 
