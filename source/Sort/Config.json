@@ -6,5 +6,4 @@
   "regex": "(?s)^(.+)[\\r\\n](.+)$",
   "javascript file": "sort.js",
   "description": "Sort the selected lines alphabetically.",
-  "note": "1 Nov 2021: Updated for macOS Monterey. Requires PopClip 2021.11."
 }
