@@ -10,7 +10,7 @@ Download: [CommaList.popclipextz](https://github.com/pilotmoon/PopClip-Extension
 
 The extension has two actions, both with the same icon, which appear only when the text selection contains a suitable input:
 
-* The **Join with commas** action is available when the text selection contains more than one line (ignoring blank lines). It replaces the lines with a single-line comma-separated list.
+* The **Join with commas** action is available when the text selection contains more than one line (ignoring blank lines). It replaces each newline with a comma and a space. Blank lines, and spaces at the start and end of lines, are ignored.
 * The **Split into lines** action is available when the text selection is a single line, with at least one comma. It replaces the commas (and any spaces around the commas), with newlines.
 
 ## About
