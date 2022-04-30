@@ -1,16 +1,16 @@
 [
   {
-    "Members" : [
+    "Members": [
       "PasteAndMatch",
       "PasteAndEnter",
       "Delete",
       "SelectAll",
       "Highlight"
     ],
-    "Title" : "Text Editing"
+    "Title": "Text Editing"
   },
   {
-    "Members" : [
+    "Members": [
       "Formatting",
       "Uppercase",
       "Lowercase",
@@ -26,47 +26,47 @@
       "AlternatingCase",
       "FullHalfWidth"
     ],
-    "Title" : "Text Transformation"
+    "Title": "Text Transformation"
   },
   {
-    "Members" : [
+    "Members": [
       "MarkdownToHTML",
       "CopyAsMarkdown"
     ],
-    "Title" : "Markdown"
+    "Title": "Markdown"
   },
   {
-    "Members" : [
+    "Members": [
       "CharCount",
       "WordCount",
       "LineCount"
     ],
-    "Title" : "Text Statistics"
+    "Title": "Text Statistics"
   },
   {
-    "Members" : [
+    "Members": [
       "CommaList",
       "Sort",
       "Reverse",
       "Shuffle"
     ],
-    "Title" : "Text Lists"
+    "Title": "Text Lists"
   },
   {
-    "Members" : [
+    "Members": [
       "LargeType",
       "Print"
     ],
-    "Title" : "Text Display"
+    "Title": "Text Display"
   },
   {
-    "Members" : [
+    "Members": [
       "Say"
     ],
-    "Title" : "Text-to-speech"
+    "Title": "Text-to-speech"
   },
   {
-    "Members" : [
+    "Members": [
       "InstantTranslate",
       "GoogleTranslate",
       "BingTranslator",
@@ -79,10 +79,10 @@
       "Glosbe",
       "Pinyin"
     ],
-    "Title" : "Translation"
+    "Title": "Translation"
   },
   {
-    "Members" : [
+    "Members": [
       "Notes",
       "MakeSticky",
       "Bear",
@@ -99,17 +99,17 @@
       "Tot",
       "Yojimbo"
     ],
-    "Title" : "Notes Apps"
+    "Title": "Notes Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "Scrivener",
       "Ulysses"
     ],
-    "Title" : "Writing Apps"
+    "Title": "Writing Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "Reminders",
       "OmniFocus",
       "Things3",
@@ -123,41 +123,41 @@
       "Todoist",
       "TickTick"
     ],
-    "Title" : "To-Do Apps"
+    "Title": "To-Do Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "Fantastical2",
       "Fantastical3",
       "BusyCal"
     ],
-    "Title" : "Calendar Apps"
+    "Title": "Calendar Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "Cardhop",
       "BusyContacts"
     ],
-    "Title" : "Contacts Apps"
+    "Title": "Contacts Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "Unclutter",
       "Yoink",
       "Dropshelf"
     ],
-    "Title" : "Drag & Drop Utilities"
+    "Title": "Drag & Drop Utilities"
   },
   {
-    "Members" : [
+    "Members": [
       "Alfred",
       "LaunchBar",
       "Quicksilver"
     ],
-    "Title" : "Launcher Utilities"
+    "Title": "Launcher Utilities"
   },
   {
-    "Members" : [
+    "Members": [
       "TextEdit",
       "Email",
       "Messages",
@@ -173,10 +173,10 @@
       "DayOne",
       "FindAnyFile"
     ],
-    "Title" : "Other Apps"
+    "Title": "Other Apps"
   },
   {
-    "Members" : [
+    "Members": [
       "GoogleSearch",
       "Baidu",
       "Bing",
@@ -188,10 +188,10 @@
       "Yandex",
       "Naver"
     ],
-    "Title" : "Web Search"
+    "Title": "Web Search"
   },
   {
-    "Members" : [
+    "Members": [
       "Wikipedia",
       "GoogleImages",
       "GoogleMaps",
@@ -215,38 +215,38 @@
       "Taobao",
       "JD"
     ],
-    "Title" : "Other Searches"
+    "Title": "Other Searches"
   },
   {
-    "Members" : [
+    "Members": [
       "Twitterrific",
       "Tweetbot",
       "YoruFukurou",
       "Buffer",
       "LinkedIn"
     ],
-    "Title" : "Social Networking"
+    "Title": "Social Networking"
   },
   {
-    "Members" : [
+    "Members": [
       "Music",
       "iTunesMusic",
       "Spotify",
       "Discogs"
     ],
-    "Title" : "Music"
+    "Title": "Music"
   },
   {
-    "Members" : [
+    "Members": [
       "ShortenLink",
       "Bitly",
       "Droplr",
       "ShortMenu"
     ],
-    "Title" : "Link Shortening"
+    "Title": "Link Shortening"
   },
   {
-    "Members" : [
+    "Members": [
       "ReadingList",
       "Pocket",
       "Pinboard",
@@ -263,47 +263,52 @@
       "OpenInVivaldi",
       "GetIP"
     ],
-    "Title" : "Work with URLs"
+    "Title": "Work with URLs"
   },
   {
-    "Members" : [
+    "Members": [
       "Call",
       "Skype",
       "PhoneAmego"
     ],
-    "Title" : "Phone Numbers"
+    "Title": "Phone Numbers"
   },
   {
-    "Members" : [
+    "Members": [
       "OnlineDictionary",
       "OnlineThesaurus",
       "Antidote",
       "Eudic"
     ],
-    "Title" : "Dictionaries"
+    "Title": "Dictionaries"
   },
   {
-    "Members" : [
-      "Dash",    
-      "SnippetsLab",
-      "Quiver",
+    "Members": [
       "RunCommand",
-      "BBEdit",
       "URLEncode",
       "HTMLEncode",
       "Base64",
-      "UnixTime"
+      "UnixTime",
+      "Dash",
+      "SnippetsLab",
+      "Quiver",
+      "BBEdit"
     ],
-    "Title" : "For Developers"
+    "Title": "For Developers"
   },
   {
-    "Members" : [
+    "Members": [
       "Timestamp",
       "Calculate",
-      "Convert",
-      "Append",
-      "Swap"      
+      "Convert"
     ],
-    "Title" : "Useful Tools"
+    "Title": "Useful Tools"
+  },
+  {
+    "Members": [
+      "Append",
+      "Swap"
+    ],
+    "Title": "Clipboard Tools"
   }
 ]

@@ -27,7 +27,7 @@
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.swap</string>
 	<key>Extension Name</key>
-	<string>Swap</string>
+	<string>Swap with Clipboard</string>
 	<key>Required Software Version</key>
 	<integer>693</integer>
 	<key>Version</key>
