@@ -6,10 +6,7 @@ Download: [Ext.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/
 
 ## Description
 
-<figure>
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext/Ext-demo.gif" width="480px">
-<figcaption><i>Extension Name</i> demo animation.</figcaption>
-</figure>
 
 ### Options
 

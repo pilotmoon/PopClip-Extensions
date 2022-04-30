@@ -6,10 +6,7 @@ Download: [CommaList.popclipextz](https://github.com/pilotmoon/PopClip-Extension
 
 ## Description
 
-<figure>
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CommaList/CommaList-demo.gif" width="480px">
-<figcaption><i>Comma List</i>'s two actions: <i>Join with commas</i> and <i>Split into lines</i>.</figcaption>
-</figure>
 
 The extension has two actions, both with the same icon, which appear only when the text selection contains a suitable input:
 
