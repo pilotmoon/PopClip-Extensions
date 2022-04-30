@@ -66,6 +66,9 @@
         "speechicon",
         "myextension",
         "myscript"
-    ]
+    ],
+    "markdownlint.config": {
+        "no-inline-html": false,        
+    }
     
 }

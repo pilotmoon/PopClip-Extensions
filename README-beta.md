@@ -1,9 +1,3 @@
-<!-- markdownlint-configure-file
-{
-    "no-inline-htmL": false
-}
--->
-
 # PopClip Extensions
 
 This document applies to latest [PopClip beta](https://pilotmoon.com/popclip/download) or unreleased work in progress. See also: [Changelog](CHANGELOG.md)

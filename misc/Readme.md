@@ -4,7 +4,16 @@ A template for extension readmes.
 
 Download: [Ext.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Ext.popclipextz)
 
+## Description
+
+<figure>
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext/Ext-demo.gif" width="480px">
+<figcaption><i>Extension Name</i> demo animation.</figcaption>
+</figure>
+
+### Options
+
+todo
 
 ## About
 
@@ -13,6 +22,10 @@ This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 ### Author
 
 Author Name
+
+### Acknowledgements
+
+todo
 
 ### Requirements
 
