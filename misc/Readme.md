@@ -2,7 +2,7 @@
 
 A template for extension readmes.
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext.popclipext/Ext-demo.gif" width="320px">
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext/Ext-demo.gif" width="320px">
 
 ## About
 
