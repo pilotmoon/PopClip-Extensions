@@ -5,5 +5,5 @@
   "icon": "sort.png",
   "regex": "(?s)^(.+)[\\r\\n](.+)$",
   "javascript file": "sort.js",
-  "description": "Sort the selected lines alphabetically.",
+  "description": "Sort the selected lines alphabetically."
 }
