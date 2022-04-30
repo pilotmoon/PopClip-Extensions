@@ -45,6 +45,15 @@
   },
   {
     "Members" : [
+      "CommaList",
+      "Sort",
+      "Reverse",
+      "Shuffle"
+    ],
+    "Title" : "Text Lists"
+  },
+  {
+    "Members" : [
       "LargeType",
       "Print"
     ],
@@ -292,11 +301,8 @@
       "Timestamp",
       "Calculate",
       "Convert",
-      "Sort",
-      "Reverse",
-      "Shuffle",
       "Append",
-      "Swap"
+      "Swap"      
     ],
     "Title" : "Useful Tools"
   }
