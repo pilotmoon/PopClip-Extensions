@@ -2,6 +2,8 @@
 
 Split a comma-separated list into separate lines, and vice versa. Blank lines are ignored.
 
+Download: [Comma List — PopClip Extensions](https://pilotmoon.com/popclip/extensions/page/CommaList)
+
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CommaList/CommaList-demo.gif" width="320px">
 
 ## About
