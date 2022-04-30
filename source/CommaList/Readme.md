@@ -18,6 +18,10 @@ Nick Moore
 
 Requires PopClip 2021.11.
 
+### Technical Notes
+
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/CommaList)
+
 ## Changelog
 
 ### v1 - 30 Apr 2022

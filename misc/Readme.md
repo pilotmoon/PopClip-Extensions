@@ -18,9 +18,9 @@ Author Name
 
 Requires PopClip x.x
 
-### Notes
+### Technical Notes
 
-* Notes
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Ext)
   
 ## Changelog
 
