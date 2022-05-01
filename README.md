@@ -11,7 +11,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
   - [Introduction](#introduction)
     - [License](#license)
     - [Credits](#credits)
-    - [Contributing](#contributing)
+    - [Repository Layout & Contributing](#repository-layout--contributing)
     - [Extension Signing](#extension-signing)
     - [Debug Output](#debug-output)
   - [Extension Snippets](#extension-snippets)
@@ -67,7 +67,7 @@ PopClip Extensions add extra actions to [PopClip](http://pilotmoon.com/popclip).
 
 ![Screenshot showing extensions in use.](https://raw.github.com/pilotmoon/PopClip-Extensions/master/docs-assets/example.png)
 
-This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published on the main [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page. Plus bonus extensions not published on that page.
+This repository contains the documentation for making your own extensions (this readme file) as well as the source files for the extensions published in the official [PopClip Extensions](http://pilotmoon.com/popclip/extensions) directory.
 
 ### License
 
@@ -77,14 +77,23 @@ All extension source files are published under the MIT License (see [LICENSE.txt
 
 All the extensions and documentation were created by Nick Moore, except where stated. Individual extension credits are included in a readme file with the extension.
 
-### Contributing
+### Repository Layout & Contributing
 
-Thank you for contributing! New extensions can be contributed by pull request, as a new folder in the `source` folder of this repo. Alternatively simply by zip up your extension and email it to me. Contributors, please note the following:
+The important folders:
 
+- `source` - sources for the published extensions (maintained and supported by me)
+- `extensions` - signed and zipped `.popclipextz` files for publication
+- `source-contrib` - folder for user-submitted and experimental extensions (not maintained or supported by me)
+
+Bugfixes and new extension submissions are welcome via pull request. Please note the following:
+
+- New extensions should be submitted in the `source-contrib` folder only. (The `source` folder is reserved for my officially maintained extensions.)
+- Extensions must be submitted as source files. Please do not submit zipped extensions.
 - By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
-- Submitting to the repo does not guarantee publication on the website. (And if I don't publish your extension there it doesn't mean your extension is bad. I curate that list for the general audience and your extension just might be more technical or niche.)
+- Submitting an extension does not guarantee publication on the website.
 - I may make changes to any extension submitted.
-- Don't worry about signing the extension, I will take care of that.
+
+Feel free to maintain your own separate repositories of extensions, and do let us know about them. A good place to tell PopClip users about your work is the [Show and Tell](https://forum.popclip.app/c/show-and-tell/16) section in the PopClip forum.
 
 ### Extension Signing
 

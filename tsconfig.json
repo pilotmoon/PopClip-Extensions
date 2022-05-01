@@ -31,7 +31,9 @@
     "include": [
         "./popclip.d.ts",
         "./lib",
-        "./source"        
+        "./source",
+        "./source-contrib",
+        "./source-test"        
     ],
     "ts-standard": {
         "ignore": [
