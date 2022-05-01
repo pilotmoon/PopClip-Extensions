@@ -1,0 +1,2 @@
+#!/bin/zsh
+${0:a:h}/list-extensions | jq 'length'

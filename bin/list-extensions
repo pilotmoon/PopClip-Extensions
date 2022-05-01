@@ -1,0 +1,2 @@
+#!/bin/zsh
+cat Index.json | jq '[.[].Members] | add | sort' 

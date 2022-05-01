@@ -1,0 +1,35 @@
+#!/bin/zsh
+# this checks all folders in source and moves them to source-contrib if they are not on official list
+set -e
+here=${0:a:h}
+source=$here/../source/
+extensions=$here/../extensions/
+contrib=$here/../source-contrib/
+function isOfficialExtension {
+    $here/list-extensions | jq --arg n "$1" 'index( $n )'    
+}
+
+print "checking source dir"
+for file in $source/*; do
+  extname=${file:t};
+  index=$(isOfficialExtension $extname)
+  if [[ $index == null ]]; then
+    print "$extname is not official"
+    git mv $file $contrib/$extname.popclipext || print "already there"
+  else
+    print "$extname is official"
+  fi
+done
+
+print "checking extensions dir"
+for file in $extensions/*; do
+  zname=${file:t}
+  extname=${zname%.popclipextz};
+  index=$(isOfficialExtension $extname)
+  if [[ $index == null ]]; then
+    print "$extname is not official"    
+    git mv $file $contrib || print "already there"
+  else
+    print "$extname is official"
+  fi
+done
