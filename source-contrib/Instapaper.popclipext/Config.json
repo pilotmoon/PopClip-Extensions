@@ -1,0 +1,36 @@
+{
+  "popclip version": 693,
+  "identifier": "com.pilotmoon.popclip.extension.instapaper",
+  "name": "Instapaper",
+  "icon": "i.png",
+  "requirements": [
+    "httpurl"
+  ],
+  "shell script file": "instapaperAdd.php",
+  "script interpreter": "/usr/bin/php",
+  "after": "show-status",
+  "app": {
+    "link": "http://instapaper.com/",
+    "name": "Instapaper"
+  },
+  "options": [
+    {
+      "label": "Email or username",
+      "identifier": "username",
+      "type": "string"
+    },
+    {
+      "label": "Password, if needed",
+      "identifier": "password",
+      "type": "password"
+    }
+  ],
+  "description": "Save the URL to read later with Instapaper.",
+  "actions": [
+    {
+      "long running": true
+    }
+  ],
+  "options script interpreter": "/usr/bin/php",
+  "options script file": "instapaperAuth.php"
+}

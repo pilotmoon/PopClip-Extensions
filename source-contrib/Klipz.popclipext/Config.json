@@ -1,0 +1,166 @@
+{
+  "identifier": "com.dhoerl.popclip.extension.swap",
+  "name": "Klipz",
+  "requirements": [
+    "copy",
+    "paste"
+  ],
+  "required apps": [
+    "com.apple.dt.Xcode"
+  ],
+  "app": {
+    "name": "Xcode"
+  },
+  "credits": [
+    {
+      "name": "David Hoerl",
+      "link": "http://www.linkedin.com/pub/david-hoerl/0/98/a84/"
+    }
+  ],
+  "version": 1,
+  "actions": [
+    {
+      "shell script file": "KlipzHelp.sh",
+      "regex": "^[?]$",
+      "title": "Klipz Cheat Sheet",
+      "requirements": [
+        "copy"
+      ],
+      "after": "show-result"
+    },
+    {
+      "regex": "^[hH][eE][lL][pP]$",
+      "title": "Klipz Help",
+      "requirements": [
+        "copy"
+      ],
+      "shell script file": "KlipzHelp.sh"
+    },
+    {
+      "icon": "basic2-241.png",
+      "shell script file": "Klipz1.py",
+      "regex": "(?s)^.{1,}\\n$",
+      "title": "Copy-1",
+      "requirements": [
+        "copy"
+      ],
+      "script interpreter": "/usr/bin/Python2.7"
+    },
+    {
+      "requirements": [
+        "paste"
+      ],
+      "regex": "^$",
+      "icon": "basic2-243.png",
+      "title": "Paste-1",
+      "script interpreter": "/usr/bin/Python2.7",
+      "shell script file": "Klipz1.py",
+      "after": "paste-result"
+    },
+    {
+      "icon": "basic2-241.png",
+      "shell script file": "Klipz2.py",
+      "regex": "(?s)^.{1,}\\n$",
+      "title": "Copy-2",
+      "requirements": [
+        "copy"
+      ],
+      "script interpreter": "/usr/bin/Python2.7"
+    },
+    {
+      "requirements": [
+        "paste"
+      ],
+      "regex": "^$",
+      "icon": "basic2-243.png",
+      "title": "Paste-2",
+      "script interpreter": "/usr/bin/Python2.7",
+      "shell script file": "Klipz2.py",
+      "after": "paste-result"
+    }
+  ],
+  "additional actions": [
+    {
+      "icon": "basic2-241.png",
+      "shell script file": "Klipz3.py",
+      "regex": "(?s)^.{1,}\\n$",
+      "title": "Copy-3",
+      "requirements": [
+        "copy"
+      ],
+      "script interpreter": "/usr/bin/Python2.7"
+    },
+    {
+      "requirements": [
+        "paste"
+      ],
+      "regex": "^$",
+      "icon": "basic2-243.png",
+      "title": "Paste-3",
+      "script interpreter": "/usr/bin/Python2.7",
+      "shell script file": "Klipz3.py",
+      "after": "paste-result"
+    },
+    {
+      "icon": "basic2-241.png",
+      "shell script file": "Klipz4.py",
+      "regex": "(?s)^.{1,}\\n$",
+      "title": "Copy-4",
+      "requirements": [
+        "copy"
+      ],
+      "script interpreter": "/usr/bin/Python2.7"
+    },
+    {
+      "requirements": [
+        "paste"
+      ],
+      "regex": "^$",
+      "icon": "basic2-243.png",
+      "title": "Paste-4",
+      "script interpreter": "/usr/bin/Python2.7",
+      "shell script file": "Klipz4.py",
+      "after": "paste-result"
+    }
+  ],
+  "description": "Manage one or more queue-based clipboards. Click on one of its actions to open a PDF with instructions.",
+  "options": [
+    {
+      "label": "Default Clipboard:",
+      "default value": "Project",
+      "type": "multiple",
+      "values": [
+        "Global",
+        "Project"
+      ],
+      "identifier": "default_clipboard"
+    },
+    {
+      "label": "Queue Type:",
+      "default value": "LIFO",
+      "type": "multiple",
+      "values": [
+        "LIFO",
+        "FIFO"
+      ],
+      "identifier": "queue_type"
+    },
+    {
+      "label": "Pasting with Option:",
+      "default value": "All",
+      "type": "multiple",
+      "values": [
+        "All",
+        "One"
+      ],
+      "identifier": "pop_type"
+    },
+    {
+      "label": "Separator:",
+      "default value": "",
+      "type": "string",
+      "identifier": "separator"
+    }
+  ],
+  "options title": "Klipz Help:  Select text \"?\" or \"Help\""
+}

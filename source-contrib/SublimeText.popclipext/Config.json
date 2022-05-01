@@ -1,0 +1,13 @@
+{
+  "popclip version": 701,
+  "identifier": "com.pilotmoon.popclip.extension.sublimetext",
+  "name": "Sublime Text",
+  "title": "ST",
+  "shell script file": "sublime.sh",
+  "script interpreter": "/bin/bash",
+  "app": {
+    "link": "http://www.sublimetext.com/",
+    "name": "Sublime Text"
+  },
+  "description": "Open the selected text as a new file in Sublime Text."
+}

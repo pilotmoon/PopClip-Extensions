@@ -1,0 +1,17 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.lingvo-dictionary",
+  "name": "Lingvo",
+  "icon": "lingvo.png",
+  "service name": "Look Up in Lingvo European",
+  "app": {
+    "link": "http://www.abbyy.com/dictionary_for_mac/",
+    "name": "ABBYY Lingvo Dictionary"
+  },
+  "description": "Look up the text in ABBYY Lingvo Dictionary.",
+  "credits": [
+    {
+      "name": "Aleksey Nikolaev",
+      "link": "https://github.com/nikolalek"
+    }
+  ]
+}

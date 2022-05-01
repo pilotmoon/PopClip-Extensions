@@ -1,0 +1,19 @@
+{
+  "identifier": "com.vfasky.popclip.extension.coffeescript",
+  "name": "CoffeeScript",
+  "icon": "coffeescript.png",
+  "title": "Coffee",
+  "requirements": [
+    "copy"
+  ],
+  "shell script file": "compile.js",
+  "script interpreter": "/usr/local/bin/node",
+  "after": "paste-result",
+  "version": 2,
+  "actions": [
+    {
+      "long running": false
+    }
+  ],
+  "description": "Convert Coffee Script text to JS."
+}
