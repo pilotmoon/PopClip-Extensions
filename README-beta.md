@@ -95,7 +95,7 @@ Bugfixes and new extension submissions are welcome via pull request. Please note
 - Submitting an extension does not guarantee publication on the website.
 - I may make changes to any extension submitted.
 
-Feel free to maintain your own separate repositories of extensions, and do let us know about them. A good place to tell PopClip users about your work is the [Show and Tell](https://forum.popclip.app/c/show-and-tell/16) section in the PopClip forum.
+A good place to tell PopClip users about your work is the [Show and Tell](https://forum.popclip.app/c/show-and-tell/16) section in the PopClip forum.
 
 ### Extension Signing
 
