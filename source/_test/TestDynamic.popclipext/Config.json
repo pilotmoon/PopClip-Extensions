@@ -1,7 +1,0 @@
-{
-    "identifier": "com.pilotmoonunsignedtest.popclip.extension.test-jdynamics",
-    "name": "TestDynamic",
-    "popclipVersion": 3704,
-    "entitlements" : ["dynamic"],
-    "javascriptFile" : "main.js"
-}

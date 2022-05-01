@@ -15,7 +15,7 @@ for file in $source/*; do
   index=$(isOfficialExtension $extname)
   if [[ $index == null ]]; then
     print "$extname is not official"
-    git mv $file $contrib/$extname.popclipext || print "already there"
+    git mv -v $file $contrib/$extname.popclipext || print "already there"
   else
     print "$extname is official"
   fi
@@ -28,7 +28,7 @@ for file in $extensions/*; do
   index=$(isOfficialExtension $extname)
   if [[ $index == null ]]; then
     print "$extname is not official"    
-    git mv $file $contrib || print "already there"
+    git mv -v $file $contrib || print "already there"
   else
     print "$extname is official"
   fi

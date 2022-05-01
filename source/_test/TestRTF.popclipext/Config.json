@@ -1,7 +1,0 @@
-{
-    "identifier": "com.pilotmoon.popclip.extension.test-rtf",
-    "name": "TestRTF",
-    "popclipVersion": 3835,
-    "module": "testrtf.js",
-    "captureRtf": true
-}
