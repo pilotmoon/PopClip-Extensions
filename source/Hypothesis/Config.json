@@ -8,6 +8,9 @@
     "name": "Hypothesis"
   },
   "module": "hypothesis.js",
+  "entitlements": [
+    "network"
+  ],
   "options": [
     {
       "label": "API token",
