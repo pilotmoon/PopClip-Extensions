@@ -82,12 +82,12 @@ All the extensions and documentation were created by Nick Moore, except where st
 The important folders:
 
 - `source` - sources for the published extensions (maintained and supported by me)
-- `contrib` - folder for user-submitted and experimental extensions
-- `extensions` - signed and zipped `.popclipextz` files built from the `source` and `contrib` folders
+- `source-contrib` - folder for user-submitted and experimental extensions
+- `extensions` - signed and zipped `.popclipextz` files built from the `source` and `source-contrib` folders
 
 Bugfixes and new extension submissions are welcome via pull request. Please note the following:
 
-- New extensions should be submitted as source files in a `.popclipext` folder inside the `contrib` folder.
+- New extensions should be submitted as source files in a `.popclipext` folder inside the `source-contrib` folder.
 - Please do not submit any zipped `.popclipextz` files.
 - By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
 - Submitting an extension does not guarantee publication on the website.
