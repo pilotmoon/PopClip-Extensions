@@ -1,0 +1,38 @@
+{
+  "popclip version": 3785,
+  "name": "Hypothesis",
+  "icon": "hypothesis.png",
+  "after": "show-status",
+  "app": {
+    "link": "https://web.hypothes.is/",
+    "name": "Hypothesis"
+  },
+  "module": "hypothesis.js",
+  "options": [
+    {
+      "label": "API token",
+      "identifier": "password",
+      "type": "password",
+      "description": "Get API token from https://hypothes.is/account/developer"
+    },
+    {
+      "label": "User",
+      "identifier": "user",
+      "type": "string",
+      "description": "Username"
+    },
+    {
+      "label": "Group",
+      "identifier": "group",
+      "type": "string",
+      "description": "Group Name"
+    },
+    {
+      "label": "tag",
+      "identifier": "tag",
+      "type": "string",
+      "default value": "PopClip"
+    }
+  ],
+  "description": "Save selected text to Hypothes.is."
+}
