@@ -32,8 +32,7 @@
         "./popclip.d.ts",
         "./lib",
         "./source",
-        "./source-contrib",
-        "./source-test"        
+        "./contrib",    
     ],
     "ts-standard": {
         "ignore": [
