@@ -1,0 +1,14 @@
+#!/bin/zsh
+set -e
+for dir in *.popclipext; do  
+  pushd $dir
+  pwd
+  if [[ -f Config.plist ]]; then
+    pcxconvert
+  fi
+  if [[ -f Config.json ]]; then
+    git rm Config.plist
+    git add Config.json
+  fi
+  popd
+done
