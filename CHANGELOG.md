@@ -12,9 +12,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## PopClip Beta / Unreleased
+## Unreleased
 
 - Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
+- Key Press extension can now take an array of key combos, which are pressed 100ms apart.
 - Added the ability to execute pre-compile AppleScript `.scpt` files, and to invoke handlers within them with parameters.
 - Brought back the `restore pasteboard` field for actions.
 - Added a 'test harness' mode, as way to run JavaScript in the PopClip environment. Run as: `/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
