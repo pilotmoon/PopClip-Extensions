@@ -24,18 +24,19 @@ exports.action = action;
 // the dynamically generated extension options
 exports.options = (() => {
     const { names, codes } = languageList();
-    return [{
-            identifier: 'destlang',
-            label: {
-                en: 'Destination Language',
-                'zh-Hans': '翻译为',
-                'zh-Hant': '轉換為'
-            },
-            type: 'multiple',
-            valueLabels: names,
-            values: codes,
-            defaultValue: 'en'
-        }];
+    const option = {
+        identifier: 'destlang',
+        label: {
+            en: 'Destination Language',
+            'zh-Hans': '翻译为',
+            'zh-Hant': '轉換為'
+        },
+        type: 'multiple',
+        valueLabels: names,
+        values: codes,
+        defaultValue: 'en'
+    };
+    return [option];
 })();
 // build the language list from the json file
 // To fetch latest: `curl https://api.cognitive.microsofttranslator.com/languages\?api-version\=3.0\&scope\=translation > langs.json`
