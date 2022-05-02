@@ -6,20 +6,23 @@ echo "--ignore canvas" > temp/cmds
 count=2
 here=${0:a:h}
 
+
+
 list=($*)
 for name in $list; do
-    print "*" $name
+    flatname=$(echo $name | tr "/" "+")
+    print "*" $name $flatname
     print "Shimming..."
-    print "module.exports=require(\"$name\")" > temp/$name.shim.js
+    print "module.exports=require(\"$name\")" > temp/$flatname.shim.js
     print "Browserifying..."
-    cat temp/cmds | NODE_PATH=$here/../lib xargs -n $count npx browserify --standalone $name -e temp/$name.shim.js -o temp/$name.packed.js
+    cat temp/cmds | NODE_PATH=$here/../lib xargs -n $count npx browserify --standalone $flatname -e temp/$flatname.shim.js -o temp/$flatname.packed.js
     print "Uglifying..."
-    cat temp/$name.packed.js | npx uglifyjs > temp/$name.ugly.js
+    cat temp/$flatname.packed.js | npx uglifyjs > temp/$flatname.ugly.js
     print "Compressing..."
-    lzfse -encode -i temp/$name.ugly.js > temp/$name.js.lzfse
+    lzfse -encode -i temp/$flatname.ugly.js > temp/$flatname.js.lzfse
     print "Copying..."
     # copy both unprocessed and compressed minified versions
-    cp temp/$name.packed.js $name.js
+    cp temp/$flatname.packed.js $flatname.js
     # cp temp/$name.js.lzfse .
     print "Done"
     print 
