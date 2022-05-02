@@ -148,7 +148,7 @@
             "type": "object"
         },
         "ActionObject": {
-            "description": "An alternative way to define as an action, as a non-callable object with a `code` member.",
+            "description": "An alternative way to define as an action, as a non-callable object with a `code` member.\nIf code is omitted, displays as disabled title/icon only.",
             "properties": {
                 "after": {
                     "description": "An optional step to peform after the main action.",
@@ -576,6 +576,16 @@
             "description": "Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.\n\n#### Notes\nCaptured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.",
             "type": "boolean"
         },
+        "entitlements": {
+            "items": {
+                "enum": [
+                    "dynamic",
+                    "network"
+                ],
+                "type": "string"
+            },
+            "type": "array"
+        },
         "excludedApps": {
             "description": "Array of bundle identifiers for which the extension should not appear. The action will not\nappear if PopClip is used in any of the specified apps.\n\nThis property has no effect on dynamically generated actions.",
             "items": {
@@ -592,6 +602,9 @@
         },
         "identifier": {
             "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
+            "type": "string"
+        },
+        "macosVersion": {
             "type": "string"
         },
         "name": {
@@ -611,6 +624,9 @@
                 "$ref": "#/definitions/Option"
             },
             "type": "array"
+        },
+        "popclipVersion": {
+            "type": "number"
         },
         "preserveColor": {
             "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",

@@ -24,7 +24,7 @@ export const action: ActionFunction = async (input, options) => {
 // the dynamically generated extension options
 export const options: Option[] = (() => {
   const { names, codes } = languageList()
-  return [{
+  const option: Option = {
     identifier: 'destlang',
     label: {
       en: 'Destination Language',
@@ -35,7 +35,8 @@ export const options: Option[] = (() => {
     valueLabels: names,
     values: codes,
     defaultValue: 'en'
-  }]
+  }
+  return [option]
 })()
 
 // build the language list from the json file

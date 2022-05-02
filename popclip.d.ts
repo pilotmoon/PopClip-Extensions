@@ -412,6 +412,9 @@ declare interface ActionObject extends ActionProperties {
  */
 declare type Action = ActionFunction | ActionObject
 
+// included for JSON Schema
+declare type Entitlement = 'network' | 'dynamic'
+
 /**
  * The Extension object defines the PopClip extension.
  *
@@ -494,6 +497,11 @@ declare interface Extension extends ActionProperties {
      * Simplified property to define a single action.
      */
   action?: Action
+
+  // the following are included for the benefit of the JSON Scheme generation
+  popclipVersion?: number
+  macosVersion?: string
+  entitlements?: Entitlement[]
 }
 
 /**
