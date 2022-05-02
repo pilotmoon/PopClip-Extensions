@@ -9,6 +9,7 @@
     "uglify-js": "^3.14.2"
   },
   "dependencies": {
+    "@joplin/turndown-plugin-gfm": "^1.0.43",
     "@types/voca": "^1.4.1",
     "evernote": "^2.0.5",
     "html-entities": "^2.3.2",
