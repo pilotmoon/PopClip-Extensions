@@ -1,18 +1,22 @@
 import { lower, upper } from './table.json'
+const lowerMap = new Map(Object.entries(lower))
+const upperMap = new Map(Object.entries(upper))
 
-function choose (from: any, cNext: string): string {
+function choose (from: string | string[], cNext: string): string {
   if (typeof from === 'string') {
     return from
+  } else if (lowerMap.has(cNext)) {
+    return from[1]
   } else {
-    return (cNext in lower) ? from[1] : from[0]
+    return from[0]
   }
 }
 
 function t (c: string, cNext: string): string {
-  if (c in lower) {
-    return lower[c]
-  } else if (c in upper) {
-    return choose(upper[c], cNext)
+  if (lowerMap.has(c)) {
+    return lowerMap.get(c) as string
+  } else if (upperMap.has(c)) {
+    return choose(upperMap.get(c) as string, cNext)
   } else {
     return c
   }
@@ -21,18 +25,27 @@ function t (c: string, cNext: string): string {
 export function transliterate (input): string {
   // split into array of characters
   let result: string = ''
-  // special case of empty string
-  if (input.length > 0) {
-    // loop up to last but one character
-    for (let i = 0; i < input.length - 1; i += 1) {
-      result += t(input[i], input[i + 1])
-    }
-    // finish with last character
-    result += t(input[input.length - 1], '')
+  for (let i = 0; i < input.length; i += 1) {
+    result += t(input[i], input[i + 1])
   }
   return result
 }
 
-export const action: ActionFunction = (input) => {
-  return transliterate(popclip.input.text)
+export function hasCyrillic (string): boolean {
+  let result = false
+  for (const c of string) {
+    if (upperMap.has(c) || lowerMap.has(c)) {
+      result = true
+    }
+  }
+  return result
+}
+
+export const actions: PopulationFunction = (input) => {
+  if (hasCyrillic(input.text)) {
+    const action: ActionFunction = (input) => {
+      transliterate(popclip.input.text)
+    }
+    return action
+  }
 }

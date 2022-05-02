@@ -6,6 +6,9 @@
     "title": "Я-A",
     "identifier": "com.pilotmoon.popclip.extension.cyrillic-transliteration",
     "module": "transliterate.js",
+    "entitlements": [
+        "dynamic"
+    ],
     "after": "paste-result",
     "description": "Transliterate from Cyrillic into Latin characters."
 }
