@@ -775,6 +775,7 @@ The `cut`, `copy` and `paste` keys can be used as the `before` string. All the v
 |`cut`|Invoke app's Cut command, as if user pressed ⌘X.|
 |`copy`|Invoke app's Copy command, as if user pressed ⌘C.|
 |`paste`|Invoke app's Paste command, as if user pressed ⌘V.|
+|`paste-plain`|Reduce the current clipboard to plain text only, then invoke app's Paste command.|
 |`popclip-appear`|Trigger PopClip to appear again with the current selection. (This is used by the Select All extension.)|
 |`copy-selection`|Place the original selected text to the clipboard. (This is used by the Swap extension.)|
 
