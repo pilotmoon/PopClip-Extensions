@@ -1,0 +1,8 @@
+{
+    "identifier": "template.js-network",
+    "popclipVersion": 3785,
+    "description": "A template for PopClip extensions using JavaScript with network access.",
+    "name": "Template",        
+    "entitlements" : ["network"],
+    "module": "main.js"
+}
