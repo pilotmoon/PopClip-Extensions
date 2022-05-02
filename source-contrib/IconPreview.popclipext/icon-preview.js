@@ -3,3 +3,7 @@ exports.actions = (selection) => {
 		icon: selection.text
 	}
 }
+// examples:
+// symbol:flame
+// square A
+// eva:sun-fill
