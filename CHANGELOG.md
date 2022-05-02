@@ -78,7 +78,7 @@ This means simple extensions can be shared simply by plain text in emails, on we
 
 There is limit of 1000 characters for this. (If you are doing anything requiring more than that, you should probably be creating a packaged extension.)
 
-## 2021.10 (3543) — 30 Sep 2021
+## PopClip 2021.10 (3543)
 
 ### Added
 
@@ -93,7 +93,7 @@ There is limit of 1000 characters for this. (If you are doing anything requiring
 
 - ~~The `Script Interpreter` field is deprecated.~~ _Reverted - see later changes to this field._
 
-## 2021.9 (3510) — 22 Sep 2021
+## PopClip 2021.9 (3510)
 
 ### Added
 
