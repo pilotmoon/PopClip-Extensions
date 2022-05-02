@@ -62,8 +62,8 @@
                     "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
                     "type": "string"
                 },
-                "preserveColor": {
-                    "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
+                "preserveImageColor": {
+                    "description": "Whether the action's icon should be displayed in its original color rather than monochrome.",
                     "type": "boolean"
                 },
                 "regex": {
@@ -128,6 +128,10 @@
                         ]
                     },
                     "type": "array"
+                },
+                "restorePasteboard": {
+                    "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
+                    "type": "boolean"
                 },
                 "stayVisible": {
                     "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
@@ -212,8 +216,8 @@
                     "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
                     "type": "string"
                 },
-                "preserveColor": {
-                    "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
+                "preserveImageColor": {
+                    "description": "Whether the action's icon should be displayed in its original color rather than monochrome.",
                     "type": "boolean"
                 },
                 "regex": {
@@ -278,6 +282,10 @@
                         ]
                     },
                     "type": "array"
+                },
+                "restorePasteboard": {
+                    "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
+                    "type": "boolean"
                 },
                 "stayVisible": {
                     "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
@@ -628,8 +636,8 @@
         "popclipVersion": {
             "type": "number"
         },
-        "preserveColor": {
-            "description": "Whether the action's icon should be displayed in its orignal color rather than monochrome.",
+        "preserveImageColor": {
+            "description": "Whether the action's icon should be displayed in its original color rather than monochrome.",
             "type": "boolean"
         },
         "regex": {
@@ -694,6 +702,10 @@
                 ]
             },
             "type": "array"
+        },
+        "restorePasteboard": {
+            "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
+            "type": "boolean"
         },
         "stayVisible": {
             "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
