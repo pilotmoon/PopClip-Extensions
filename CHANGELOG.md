@@ -17,8 +17,8 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Added
 
 - Added the ability to execute pre-compiled AppleScript `.scpt` files, and to invoke handlers within them with parameters.
-- Key Press extensions can now take an array of key combos, to press a sequence of keys. There is also now a 100ms delay after each key press.
-- Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
+- Key Press extensions can now take an array of key combos, to press a sequence of keys.
+- Extended the key code string format to simplify specifying non-character keys, and raw key codes. For example: `command tab`.
 - Brought back the `restore pasteboard` field for actions.
 - Added a 'test harness' mode to PopClip, for testing your JavaScript code in the PopClip environment. Run as: `/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
 - Additions to the JavaScript programming environment:
@@ -30,6 +30,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Changed
 
+- For Key Press extensions, there is now a 100ms delay after each key press.
 - Updated the versions of some of the bundled npm libraries for JavaScript extensions. (There should be no breaking changes.)
 
 ## PopClip 2021.11 (3785)
