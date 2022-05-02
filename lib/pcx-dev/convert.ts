@@ -18,11 +18,11 @@ process.stdin.on('end', () => {
 
 /**
  * Rename a single property name.
- * @param name Propert name to rename
+ * @param name Property name to rename
  * @returns The renamed property name
  */
 function rename (name: string): string {
-  name = ca.spaceCase(ca.snakeCase(name))
+  name = ca.lowerCase(name)
   // remove defined prefixes
   for (const prefix of prefixes) {
     if (typeof prefix === 'string' && name.startsWith(prefix)) {
@@ -33,7 +33,7 @@ function rename (name: string): string {
   if (name in mapping) {
     name = mapping[name]
   }
-  return name
+  return ca.camelCase(name)
 }
 
 /**
