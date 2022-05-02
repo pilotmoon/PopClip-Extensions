@@ -14,7 +14,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ## PopClip 2022.5 (3895)
 
-- Added the ability to execute pre-compile AppleScript `.scpt` files, and to invoke handlers within them with parameters.
+- Added the ability to execute pre-compiled AppleScript `.scpt` files, and to invoke handlers within them with parameters.
 - Key Press extensions can now take an array of key combos, to press a sequence of keys. There is also now a 100ms delay after each key press.
 - Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
 - Brought back the `restore pasteboard` field for actions.
