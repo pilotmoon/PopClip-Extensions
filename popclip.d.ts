@@ -259,9 +259,14 @@ declare interface ActionFlags {
   stayVisible?: boolean
 
   /**
-   * Whether the action's icon should be displayed in its orignal color rather than monochrome.
+   * Whether the action's icon should be displayed in its original color rather than monochrome.
    */
-  preserveColor?: boolean
+  preserveImageColor?: boolean
+
+  /**
+   * Whether the pasteboard should be restored to its original state after `paste-result`.
+   */
+  restorePasteboard?: boolean
 }
 
 /**
