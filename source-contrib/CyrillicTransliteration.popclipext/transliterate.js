@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.actions = exports.hasCyrillic = exports.transliterate = void 0;
+exports.action = exports.transliterate = void 0;
 const table_json_1 = require("./table.json");
 const lowerMap = new Map(Object.entries(table_json_1.lower));
 const upperMap = new Map(Object.entries(table_json_1.upper));
@@ -35,22 +35,7 @@ function transliterate(input) {
     return result;
 }
 exports.transliterate = transliterate;
-function hasCyrillic(string) {
-    let result = false;
-    for (const c of string) {
-        if (upperMap.has(c) || lowerMap.has(c)) {
-            result = true;
-        }
-    }
-    return result;
-}
-exports.hasCyrillic = hasCyrillic;
-const actions = (input) => {
-    if (hasCyrillic(input.text)) {
-        const action = (input) => {
-            transliterate(popclip.input.text);
-        };
-        return action;
-    }
+const action = (input) => {
+    return transliterate(popclip.input.text);
 };
-exports.actions = actions;
+exports.action = action;

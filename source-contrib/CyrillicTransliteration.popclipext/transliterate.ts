@@ -31,21 +31,6 @@ export function transliterate (input): string {
   return result
 }
 
-export function hasCyrillic (string): boolean {
-  let result = false
-  for (const c of string) {
-    if (upperMap.has(c) || lowerMap.has(c)) {
-      result = true
-    }
-  }
-  return result
-}
-
-export const actions: PopulationFunction = (input) => {
-  if (hasCyrillic(input.text)) {
-    const action: ActionFunction = (input) => {
-      transliterate(popclip.input.text)
-    }
-    return action
-  }
+export const action: ActionFunction = (input) => {
+  return transliterate(popclip.input.text)
 }
