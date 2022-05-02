@@ -14,18 +14,23 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ## PopClip 2022.5 (3895)
 
+### Added
+
 - Added the ability to execute pre-compiled AppleScript `.scpt` files, and to invoke handlers within them with parameters.
 - Key Press extensions can now take an array of key combos, to press a sequence of keys. There is also now a 100ms delay after each key press.
 - Enhanced the key code string format to allow specifying named keys (space, escape etc.) characters and raw key codes.
 - Brought back the `restore pasteboard` field for actions.
-- Added a 'test harness' mode, as way to test your JavaScript code in the PopClip environment. Run as: `/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
-- Changes to the JavaScript programming environment:
+- Added a 'test harness' mode to PopClip, for testing your JavaScript code in the PopClip environment. Run as: `/Application/PopClip.app/Contents/MacOS/PopClip runjs <filename>`
+- Additions to the JavaScript programming environment:
   - Added RTF processing features (via RichText class object).
   - Added locale information to the `util` object.
   - Added a promise-based global function `sleep` (e.g. `await sleep(1000)`).
-  - Supports the key combo string format in the `popclip.pressKey()` method.
-  - Updated to the latest versions of the bundled npm libraries.
+  - Supports the new key combo string format in the `popclip.pressKey()` method.
   - Improvements to the XMLHttpRequest implementation, including adding `Blob` and `ArrayBuffer` support.
+
+### Changed
+
+- Updated the versions of some of the bundled npm libraries for JavaScript extensions. (There should be no breaking changes.)
 
 ## PopClip 2021.11 (3785)
 
