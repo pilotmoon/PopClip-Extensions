@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.options = exports.action = void 0;
-const axios_1 = require("@popclip/axios"); // TODO @popclip/axios
+const axios_1 = require("@popclip/axios");
 const langs_json_1 = require("./langs.json");
 const access_json_1 = require("./access.json");
 // the translation endpoint
