@@ -6,7 +6,7 @@ Download: [Ext.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext/Ext-demo.gif" width="480px">
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Ext.popclipext/Ext-demo.gif" width="480px">
 
 ### Options
 
@@ -28,12 +28,14 @@ todo
 
 Requires PopClip x.x
 
-### Technical Notes
+### Links
 
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Ext)
+* [Directory Page](#) - todo
+* [Forum Page](#) - todo
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Ext.popclipext)
   
 ## Changelog
 
-### v1 - 1 Jan 1979
+### 1 Jan 1979
 
 * Initial release

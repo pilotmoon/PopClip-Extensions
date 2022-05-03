@@ -6,7 +6,7 @@ Download: [CommaList.popclipextz](https://github.com/pilotmoon/PopClip-Extension
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CommaList/CommaList-demo.gif" width="480px">
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CommaList.popclipext/CommaList-demo.gif" width="480px">
 
 The extension has two actions, both with the same icon, which appear only when the text selection contains a suitable input:
 
