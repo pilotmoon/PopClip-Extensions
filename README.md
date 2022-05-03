@@ -529,7 +529,7 @@ on newDocument(theText, theUrl) --this is a handler
     set theDocument to make new document
     set text of theDocument to (theText & " - Clipped from " & theUrl)
   end tell
-end go
+end newDocument
 ```
 
 And a `Config.json` file to call this might be:
