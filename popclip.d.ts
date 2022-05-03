@@ -385,6 +385,24 @@ declare interface ActionProperties extends ActionFlags {
   * An optional step to peform after the main action.
   */
   after?: AfterStep
+
+  // fpr benefit of JSON Schema
+  shortcutName?: string
+  serviceName?: string
+  url?: string
+  keyCombo?: string | number
+  keyCombos?: Array<string | number>
+  applescript?: string
+  applescriptFile?: string
+  applescriptCall?: {
+    file: string
+    handler: string
+    parameters?: string[]
+  }
+  shellScriptFile?: string
+  scriptInterpreter?: string
+  javascript?: string
+  javascriptFile?: string
 }
 
 /**

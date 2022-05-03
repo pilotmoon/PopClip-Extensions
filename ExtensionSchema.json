@@ -24,6 +24,29 @@
                     "$ref": "#/definitions/AssociatedApp",
                     "description": "Declares the application or website associated with this action, if any."
                 },
+                "applescript": {
+                    "type": "string"
+                },
+                "applescriptCall": {
+                    "properties": {
+                        "file": {
+                            "type": "string"
+                        },
+                        "handler": {
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "applescriptFile": {
+                    "type": "string"
+                },
                 "before": {
                     "description": "An optional step to peform before the main action.",
                     "enum": [
@@ -61,6 +84,27 @@
                 "identifier": {
                     "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
                     "type": "string"
+                },
+                "javascript": {
+                    "type": "string"
+                },
+                "javascriptFile": {
+                    "type": "string"
+                },
+                "keyCombo": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "keyCombos": {
+                    "items": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "array"
                 },
                 "preserveImageColor": {
                     "description": "Whether the action's icon should be displayed in its original color rather than monochrome.",
@@ -133,6 +177,18 @@
                     "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
                     "type": "boolean"
                 },
+                "scriptInterpreter": {
+                    "type": "string"
+                },
+                "serviceName": {
+                    "type": "string"
+                },
+                "shellScriptFile": {
+                    "type": "string"
+                },
+                "shortcutName": {
+                    "type": "string"
+                },
                 "stayVisible": {
                     "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
                     "type": "boolean"
@@ -147,6 +203,9 @@
                         }
                     ],
                     "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
+                },
+                "url": {
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -173,6 +232,29 @@
                 "app": {
                     "$ref": "#/definitions/AssociatedApp",
                     "description": "Declares the application or website associated with this action, if any."
+                },
+                "applescript": {
+                    "type": "string"
+                },
+                "applescriptCall": {
+                    "properties": {
+                        "file": {
+                            "type": "string"
+                        },
+                        "handler": {
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "applescriptFile": {
+                    "type": "string"
                 },
                 "before": {
                     "description": "An optional step to peform before the main action.",
@@ -216,6 +298,27 @@
                     "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
                     "type": "string"
                 },
+                "javascript": {
+                    "type": "string"
+                },
+                "javascriptFile": {
+                    "type": "string"
+                },
+                "keyCombo": {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                },
+                "keyCombos": {
+                    "items": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "array"
+                },
                 "preserveImageColor": {
                     "description": "Whether the action's icon should be displayed in its original color rather than monochrome.",
                     "type": "boolean"
@@ -287,6 +390,18 @@
                     "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
                     "type": "boolean"
                 },
+                "scriptInterpreter": {
+                    "type": "string"
+                },
+                "serviceName": {
+                    "type": "string"
+                },
+                "shellScriptFile": {
+                    "type": "string"
+                },
+                "shortcutName": {
+                    "type": "string"
+                },
                 "stayVisible": {
                     "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
                     "type": "boolean"
@@ -301,6 +416,9 @@
                         }
                     ],
                     "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
+                },
+                "url": {
+                    "type": "string"
                 }
             },
             "type": "object"
@@ -560,6 +678,29 @@
             "$ref": "#/definitions/AssociatedApp",
             "description": "Declares the application or website associated with this action, if any."
         },
+        "applescript": {
+            "type": "string"
+        },
+        "applescriptCall": {
+            "properties": {
+                "file": {
+                    "type": "string"
+                },
+                "handler": {
+                    "type": "string"
+                },
+                "parameters": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "applescriptFile": {
+            "type": "string"
+        },
         "auth": {
             "description": "Function signature of the [[Extension.auth]] method.",
             "type": "object"
@@ -611,6 +752,27 @@
         "identifier": {
             "description": "A unique identifying string.\n\n#### Notes\n\nAn identifier for an action can be any string of your choosing.\n\nAn identifier for the extension itself, if provided, should ideally be globally unique.\n\nI suggest using a reverse DNS-style identifier. For example `com.example.myextension`.\n\nIf you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.\n\nDo not use the `com.pilotmoon.` prefix for your own extension.",
             "type": "string"
+        },
+        "javascript": {
+            "type": "string"
+        },
+        "javascriptFile": {
+            "type": "string"
+        },
+        "keyCombo": {
+            "type": [
+                "string",
+                "number"
+            ]
+        },
+        "keyCombos": {
+            "items": {
+                "type": [
+                    "string",
+                    "number"
+                ]
+            },
+            "type": "array"
         },
         "macosVersion": {
             "type": "string"
@@ -707,6 +869,18 @@
             "description": "Whether the pasteboard should be restored to its original state after `paste-result`.",
             "type": "boolean"
         },
+        "scriptInterpreter": {
+            "type": "string"
+        },
+        "serviceName": {
+            "type": "string"
+        },
+        "shellScriptFile": {
+            "type": "string"
+        },
+        "shortcutName": {
+            "type": "string"
+        },
         "stayVisible": {
             "description": "Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.\n\n#### Notes\nAn example of this in use is the Formatting extension.",
             "type": "boolean"
@@ -721,6 +895,9 @@
                 }
             ],
             "description": "The action's title. The title is displayed in the action button if there is no icon.\nFor extensions with icons, the title is displayed in the tooltip.\n\nIf no title is defined here, the extension's [`[name]] will be used, if any."
+        },
+        "url": {
+            "type": "string"
         }
     },
     "type": "object"
