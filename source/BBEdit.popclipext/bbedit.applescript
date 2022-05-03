@@ -1,4 +1,6 @@
-tell application "BBEdit"
-	activate
-	make new text window with properties {contents:"{popclip text}"}
-end tell
+on newDocument(theText)
+	tell application "BBEdit"
+		activate
+		make new text document with properties {contents: theText}
+	end tell
+end newDocument	
