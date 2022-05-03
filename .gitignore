@@ -4,3 +4,4 @@ source/*.popclipextz
 .nova/
 node_modules/
 temp/
+scratch/

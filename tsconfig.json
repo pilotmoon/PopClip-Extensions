@@ -33,6 +33,7 @@
         "./lib",
         "./source",
         "./source-contrib",    
+        "./scratch"
     ],
     "ts-standard": {
         "ignore": [
