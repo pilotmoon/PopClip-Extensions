@@ -2,7 +2,6 @@
   "identifier": "com.andrewford.popclip.extension.gladystext",
   "name": "Gladys Text",
   "icon": "gladys.png",
-  "captureHtml": true,
   "url": "gladys://x-callback-url/create-item?text={popclip text}",
   "app": {
     "link": "https://www.bru.build/gladys-for-macos",
