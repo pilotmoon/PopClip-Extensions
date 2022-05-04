@@ -13,10 +13,15 @@ function webTranslate(text, lang) {
     const url = `https://www.deepl.com/translator#auto/${lang}/${encodeURIComponent(escapedText)}`;
     popclip.openUrl(url);
 }
-async function appTranslate() {
-    popclip.pressKey('command C');
-    await sleep(100);
-    popclip.pressKey('command C');
+async function appTranslate(combo) {
+    if (combo.length === 0) {
+        popclip.pressKey('command C');
+        await sleep(100);
+        popclip.pressKey('command C');
+    }
+    else {
+        popclip.pressKey(combo);
+    }
 }
 // our action
 exports.actions = [{
@@ -25,7 +30,7 @@ exports.actions = [{
     }, {
         requirements: ['text', 'option-mode=app'],
         app: { bundleIdentifiers: ['com.linguee.DeepLCopyTranslator'], checkInstalled: true, name: 'DeepL', link: 'https://www.deepl.com/app/' },
-        code: appTranslate
+        code: async (_, options) => await appTranslate(options.combo)
     }];
 // the dynamically generated extension options
 exports.options = (() => {
@@ -33,9 +38,14 @@ exports.options = (() => {
         identifier: 'mode',
         label: 'Mode',
         type: 'multiple',
-        valueLabels: ['DeepL Website', 'DeepL App'],
-        values: ['web', 'app'],
-        description: "In 'DeepL App' mode, the app must be running, and have 'DeepL Shortcut' set to '⌘+C+C'."
+        valueLabels: ['DeepL App', 'DeepL Website'],
+        values: ['app', 'web']
+    };
+    const comboOption = {
+        identifier: 'combo',
+        label: 'DeepL App Shortcut',
+        type: 'string',
+        description: "Leave this blank to use '⌘+C+C', the default. Or type a shortcut like 'control option command D', if you have set custom DeepL preferences."
     };
     const { names, codes } = languageList();
     const languageOption = {
@@ -47,7 +57,7 @@ exports.options = (() => {
         defaultValue: 'EN-US',
         description: "Only affects 'DeepL Website' mode."
     };
-    return [modeOption, languageOption];
+    return [modeOption, comboOption, languageOption];
 })();
 // build the language list from the json file
 function languageList() {

@@ -8,12 +8,13 @@ Download: [DeepLTranslator.popclipextz](https://github.com/pilotmoon/PopClip-Ext
 
 The extension has a single action that takes text as input and sends it either to the DeepL website, or the DeepL app.
 
-When using the App mode, the DeepL App must be already running and the "DeepL Shortcut" setting must be "⌘+C+C".
+When using the App mode, the DeepL app must be already running and the "DeepL App Shortcut" setting must be set to match the shortcut in DeepL preferences.
 
 ### Options
 
 * **Mode**: Chose whether to perform the translation in a browser on the DeepL website, or in the DeepL app.
-* **Output Language**: Chose the output language for website mode. (Input language will auto-detect.)
+* **DeepL App Shortcut**: Sets the key combo for PopClip to use to activate DeepL. Leave this blank to use the default DeepL combo which is "⌘+C+C". Otherwise type a key combo like "control option command D". (See [Key Combo String Format](https://github.com/pilotmoon/PopClip-Extensions#key-combo-string-format).)
+* **Website Output Language**: Chose the output language for website mode. (Input language will auto-detect.)
 
 ## About
 
