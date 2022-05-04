@@ -2,7 +2,7 @@
 
 Translate the text with [DeepL Translator](https://www.deepl.com/translator).
 
-Download: [DeepL.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/DeepL.popclipextz)
+Download: [DeepLTranslator.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/DeepLTranslator.popclipextz)
 
 ## Description
 
@@ -30,7 +30,7 @@ Requires PopClip 2022.5
 ### Links
 
 <!-- * [Forum Page](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/DeepL.popclipext)
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/DeepLTranslator.popclipext)
   
 ## Changelog
 
