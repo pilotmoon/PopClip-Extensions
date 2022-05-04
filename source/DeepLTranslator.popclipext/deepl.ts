@@ -39,12 +39,14 @@ export const options: Option[] = (() => {
     label: 'Mode',
     type: 'multiple',
     valueLabels: ['DeepL App', 'DeepL Website'],
-    values: ['app', 'web']
+    values: ['app', 'web'],
+    description: "In 'DeepL App' mode, the app must be running, and have 'DeepL Shortcut' set to '⌘+C+C'."
   }
   const comboOption: Option = {
     identifier: 'combo',
     label: 'DeepL App Shortcut',
     type: 'string',
+    hidden: true,
     description: "Leave this blank to use '⌘+C+C', the default. Or type a shortcut like 'control option command D', if you have set custom DeepL preferences."
   }
   const { names, codes } = languageList()
