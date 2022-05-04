@@ -525,6 +525,7 @@ declare interface Extension extends ActionProperties {
   popclipVersion?: number
   macosVersion?: string
   entitlements?: Entitlement[]
+  module?: string
 }
 
 /**

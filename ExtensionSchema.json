@@ -777,6 +777,9 @@
         "macosVersion": {
             "type": "string"
         },
+        "module": {
+            "type": "string"
+        },
         "name": {
             "anyOf": [
                 {
