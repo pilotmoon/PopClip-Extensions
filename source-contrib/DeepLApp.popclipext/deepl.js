@@ -20,7 +20,7 @@ exports.action = {
 exports.options = (() => {
     const comboOption = {
         identifier: 'combo',
-        label: 'DeepL App Shortcut',
+        label: 'DeepL Shortcut',
         type: 'string',
         description: "Leave this blank to use '⌘+C+C', the default. Or type a shortcut like 'control option command D', if you have set custom DeepL preferences."
     };
