@@ -39,6 +39,7 @@ Requires PopClip 2022.5
 * Support DeepL App mode.
 * Add more output languages to Website mode.
 * Set source language to auto detect in Website mode.
+* Fix bug in website mode where input text would be cut off after the first slash (/) character.
 
 ### 9 Nov 2020
 
