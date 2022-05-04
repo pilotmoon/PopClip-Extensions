@@ -1,0 +1,24 @@
+{
+  "identifier": "at.EternalStorms.Yoink.PopClipExtension",
+  "name": "Yoink",
+  "icon": "yoink.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "Yoink",
+    "link": "https://eternalstorms.at/yoink/mac",
+    "bundleIdentifiers": [
+      "at.EternalStorms.Yoink",
+      "at.EternalStorms.Yoink-setapp",
+      "at.EternalStorms.Yoink-demo"
+    ]
+  },
+  "popclipVersion": 3785,
+  "macosVersion": "10.7.3",
+  "description": "Add the selected text to Yoink.",
+  "serviceName": "Add Selected Text to Yoink",
+  "captureHtml": true,
+  "credits": {
+    "name": "Eternal Storms Software, Matthias Gansrigler",
+    "link": "https://eternalstorms.at"
+  }
+}
