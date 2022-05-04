@@ -797,7 +797,7 @@ Options are presented to the user in a preferences user interface window and are
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`identifier`|String|Required|Identifying string for this option. This is passed to your script. The identifier will be downcased or upcased for AppleScript and Shell Script targets, respectively — see [Script Fields](#script-fields).|
-|`type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
+|`type`|String|Required|One of the following: `string` (text box for free text entry), `boolean` (a check box), `multiple` (pop-up box with multiple choice options), `heading` (not actually an option, but serves as a heading in the prefs window) or `password` (password entry field). Passwords are stored in user's keychain instead of app preferences.|
 |`label`|Localizable String|Required|The label to appear in the UI for this option.|
 |`description`|Localizable String|Optional|A longer description to appear in the UI to explain this option.|
 |`default value`|String|Optional|This field specifies the default value of the option. If omitted, `string` options default to the empty string, `boolean` options default to `true`, and `multiple` options default to the top item in the list. A `password` field may not have a default value.|

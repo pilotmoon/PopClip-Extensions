@@ -581,6 +581,16 @@ declare interface Option {
    * An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].
    */
   icon?: IconString
+
+  /*
+   * If true, this option will be hidden in the prefs window. Default is false.
+   */
+  hidden?: boolean
+
+  /*
+   * If true, this option will be be inset to the right of its label, instead of below it. Default is false.
+   */
+  inset?: boolean
 }
 
 /** Represents a generic range, as a location and length */
