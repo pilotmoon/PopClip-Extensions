@@ -1,17 +1,19 @@
 # DeepL Translator
 
-Translate the text with DeepL.
+Translate the text with [DeepL Translator](https://www.deepl.com/translator).
 
 Download: [DeepL.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/DeepL.popclipextz)
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/DeepL.popclipext/DeepL-demo.gif" width="480px">
+The extension has a single action that takes text as input and sends it either to the DeepL website, or the DeepL app.
+
+When using the App mode, the DeepL App must be already running. (In a future update I hope to get it to launch the app for you!)
 
 ### Options
 
 * **Mode**: Chose whether to perform the translation in a browser on the DeepL website, or in the DeepL app.
-* **Output language**: Chose the output language when performing the translation on the website.
+* **Output Language**: Chose the output language for website mode. (Input language will auto-detect.)
 
 ## About
 
