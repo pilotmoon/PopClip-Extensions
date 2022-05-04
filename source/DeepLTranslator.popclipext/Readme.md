@@ -8,7 +8,7 @@ Download: [DeepL.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/ra
 
 The extension has a single action that takes text as input and sends it either to the DeepL website, or the DeepL app.
 
-When using the App mode, the DeepL App must be already running. (In a future update I hope to get it to launch the app for you!)
+When using the App mode, the DeepL App must be already running and the "DeepL Shortcut" setting must be "⌘+C+C".
 
 ### Options
 
