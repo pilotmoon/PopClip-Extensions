@@ -11,8 +11,8 @@
   "after": "show-status",
   "app": {
     "link": "https://www.onenote.com/",
-    "name": "OneNote"
+    "name": "Microsoft OneNote"
   },
-  "description": "Send the text to OneNote, as a new page the 'Quick Notes' section of the default notebook.",
-  "note": "20 Apr 2022: Updated for macOS 12 Monterey"
+  "description": "Add the text as a Quick Note in Microsoft OneNote.",
+  "note": "5 May 2022: Updated for macOS 12 Monterey"
 }
