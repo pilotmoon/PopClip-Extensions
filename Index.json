@@ -113,17 +113,17 @@
   {
     "Members": [
       "Reminders",
-      "OmniFocus",
-      "Things3",
       "2Do",
       "Doit",
+      "Due",      
+      "OmniFocus",
       "TaskPaper",
-      "Todo",
-      "Due",
-      "Wunderlist",
+      "TaskPaper",
       "TheHitList",
-      "Todoist",
-      "TickTick"
+      "Things3",
+      "TickTick",
+      "Todo",
+      "Todoist"
     ],
     "Title": "To-Do Apps"
   },

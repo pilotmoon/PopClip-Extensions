@@ -1,6 +1,6 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.taskpaper",
-  "popclip version": 3861,
+  "popclip version": 3895,
   "name": "TaskPaper",
   "icon": "ttick.png",
   "regex": "(?s)^[\\n\\r]*[^\\n\\r]{1,300}[\\n\\r]*$",
@@ -22,5 +22,6 @@
       "com.hogbaysoftware.TaskPaper3-setapp"
     ]
   },
-  "description": "Add a new task to an Inbox project in TaskPaper 3."
+  "description": "Send the text to TaskPaper 3 as a new Inbox task.",
+  "note": "Updated 5 May 2022 for macOS Monterey."
 }
