@@ -547,7 +547,9 @@ And a `Config.json` file to call this might be:
 
 #### Using JXA Scripts
 
-Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts.
+Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts. 
+
+An example of an extension using a JXA script is [TaskPaper](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/TaskPaper.popclipext).
 
 ### Shell Script actions
 
