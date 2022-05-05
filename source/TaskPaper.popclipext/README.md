@@ -1,8 +1,12 @@
 # TaskPaper
 
-Send the text to TaskPaper 3 as a new Inbox task.
+Send the text to TaskPaper 3.
 
 Download: [TaskPaper.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/TaskPaper.popclipextz)
+
+## Description
+
+The extension has one action, which takes the selected plain text and adds it as a new task in the Inbox project of the open TaskPaper document.
 
 ## About
 
@@ -14,7 +18,7 @@ Nick Moore
 
 ### Acknowledgements
 
-The JSX script used was [posted](https://support.hogbaysoftware.com/t/basic-script-to-add-selected-text-to-taskpaper-3-inbox/1681) by Jesse Grosjean at the Hog Bay Software forum.
+The JSX script used is based on the one [posted](https://support.hogbaysoftware.com/t/basic-script-to-add-selected-text-to-taskpaper-3-inbox/1681) by Jesse Grosjean at the Hog Bay Software forum.
 
 ### Requirements
 
