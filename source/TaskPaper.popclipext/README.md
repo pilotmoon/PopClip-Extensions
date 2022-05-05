@@ -1,6 +1,6 @@
 # TaskPaper
 
-Send the text to TaskPaper 3.
+Send the text to [TaskPaper 3](https://www.taskpaper.com) ("Plain text to-do lists for Mac").
 
 Download: [TaskPaper.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/TaskPaper.popclipextz)
 
