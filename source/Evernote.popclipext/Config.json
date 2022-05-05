@@ -1,5 +1,5 @@
 {
-  "popclip version": 3824,
+  "popclip version": 3895,
   "identifier": "com.pilotmoon.popclip.extension.evernote",
   "name": "Evernote",
   "icon": "evernote-logo.svg",
@@ -12,5 +12,5 @@
     "name": "Evernote",
     "link": "https://evernote.com/"
   },
-  "description": "Send the text to Evernote."
+  "description": "Send the selected text to Evernote."
 }
