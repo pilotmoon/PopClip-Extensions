@@ -12,6 +12,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
+## Beta / Unreleased
+
+### Added
+
+- PopClip can detect snippets that are formatted JSON. (JSON is a subset of YAML, so it's still actually treated as YAML.)
+
+### Changed
+
+- Increased maximum snippet length from 1000 to 5000 characters.
+
 ## PopClip 2022.5 (3895)
 
 ### Added
