@@ -8,6 +8,8 @@ Download: [TaskPaper.popclipextz](https://github.com/pilotmoon/PopClip-Extension
 
 The extension has one action, which takes the selected plain text and adds it as a new task in the Inbox project of the open TaskPaper document.
 
+If no TaskPaper document is currently open, the extension will show an "X".
+
 ## About
 
 This is an extension for [PopClip](https://pilotmoon.com/popclip/).
