@@ -14,13 +14,14 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ## Beta / Unreleased
 
-### Added
-
-- PopClip can detect snippets that are formatted JSON. (JSON is a subset of YAML, so it's still actually treated as YAML.)
-
 ### Changed
 
 - Increased maximum snippet length from 1000 to 5000 characters.
+- Optionally, the `#popclip` marker may now appear at the end of the snippet instead of the start. This means that a one-liner like `{name: Test, shortcut name: Test Shortcut} #popclip`, which is valid YAML, is now a valid PopClip snippet.
+
+### Fixed
+
+- The snippet detector now correctly recognises snippets written in JSON syntax. (Valid JSON is valid YAML.)
 
 ## PopClip 2022.5 (3895)
 
