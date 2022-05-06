@@ -14,6 +14,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ## Beta / Unreleased
 
+### Added
+
+- Added something called a "module snippet". (To be described!)
+
 ### Changed
 
 - Increased maximum snippet length from 1000 to 5000 characters.
@@ -21,7 +25,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Fixed
 
-- The snippet detector now correctly recognises snippets written in JSON syntax. (Valid JSON is valid YAML.)
+- The snippet detector now correctly recognizes snippets written in JSON syntax. (Valid JSON is valid YAML.)
 
 ## PopClip 2022.5 (3895)
 
