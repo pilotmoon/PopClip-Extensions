@@ -22,17 +22,22 @@ Requires PopClip 2021.11.
 
 ## Changelog
 
-### v3 — 29 Mar 2022
+### 7 May 2022
+
+* Hold Option(⌥) key to clip as a code block.
+* Removed the HTML tags from the auto-generated titles.
+
+### 29 Mar 2022
 
 * Ported to Python 3 for compatibility with macOS Monterey 12.3.
 * Removed the dependency on PHP.
 * Also removed the Clean/Original option since PopClip's HTML handling is now always cleaned.
 
-### v2 — 2 Dec 2016
+### 2 Dec 2016
 
 * Minor changes by Nick Moore in preparation for publication at PopCLip website.
 
-### v1 — 24 Feb 2016
+### 24 Feb 2016
 
 * Initial release.
 * Original extension [published on BitBucket](https://bitbucket.org/rusnazarov/quiver-popclip/src).

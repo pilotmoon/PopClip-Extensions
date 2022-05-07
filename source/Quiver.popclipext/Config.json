@@ -1,0 +1,26 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.quiver",
+  "name": "Quiver",
+  "icon": "quiver.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "Quiver",
+    "link": "http://happenapps.com/#quiver",
+    "bundleIdentifier": "com.happenapps.Quiver"
+  },
+  "popclipVersion": 3785,
+  "options": [
+    {
+      "identifier": "library",
+      "type": "string",
+      "label": "Library Location",
+      "defaultValue": "~/Library/Containers/com.happenapps.Quiver/Data/Library/Application Support/Quiver/Quiver.qvlibrary",
+      "description": "You probably don't need to change this."
+    }
+  ],
+  "description": "Send the selection to Quiver, the programmer's notebook.",
+  "note": "7 May 2022: Updated to clip as code block when holding ⌥.",
+  "scriptInterpreter": "python3",
+  "shellScriptFile": "quiver.py",
+  "captureHtml": true
+}

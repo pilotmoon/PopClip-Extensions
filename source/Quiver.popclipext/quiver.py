@@ -8,7 +8,9 @@ import subprocess
 from time import time
 
 title = os.environ['POPCLIP_BROWSER_TITLE']
+text = os.environ['POPCLIP_TEXT']
 html = os.environ['POPCLIP_HTML']
+modifiers = os.environ['POPCLIP_MODIFIER_FLAGS']
 url = os.environ['POPCLIP_BROWSER_URL']
 path = os.environ['POPCLIP_OPTION_LIBRARY']
 name = str(uuid.uuid1()).upper()
@@ -21,12 +23,18 @@ if not os.path.exists(path):
 cells = []
 
 if not title:
-    title = html.replace("\n", " ")[:html.find(' ', 35)] + "..."
+    title = text.replace("\n", " ")[:text.find(' ', 35)] + "..."
 
-cells.append({
-    "type": "text",
-    "data": html
-})
+if modifiers == '524288':
+    cells.append({
+        "type": "code",
+        "data": text
+    })
+else:
+    cells.append({
+        "type": "text",
+        "data": html
+    })
 
 if url:
     cells.append({
