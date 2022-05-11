@@ -1,9 +1,4 @@
 {
-    "files.exclude": {
-        "**/*.js": {
-            "when": "$(basename).ts"
-        }
-    },
     "search.exclude": {
         "*.popclipextz": true
     },
@@ -18,11 +13,17 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "Config.json"
+                "Config.json",
             ],
             "url": "./ExtensionSchema.json"
         }
     ],
+    "yaml.schemas": {
+        "./ExtensionSchema.json": "Config.yaml",        
+    },
+    "markdownlint.config": {
+        "no-inline-html": false,        
+    },
     "cSpell.words": [
         "applescript",
         "asyncawait",
@@ -67,9 +68,5 @@
         "speechicon",
         "myextension",
         "myscript"
-    ],
-    "markdownlint.config": {
-        "no-inline-html": false,        
-    }
-    
+    ]
 }
