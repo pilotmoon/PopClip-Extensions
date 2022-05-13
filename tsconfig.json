@@ -20,7 +20,7 @@
         // (note es2018 is required for async generators)
         "target": "es2017",
         "lib": [
-            "esnext"
+            "es2021"
         ],
         // we can specify esnext lib due to polyfills in popclip
         "skipLibCheck": true,
