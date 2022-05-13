@@ -1058,6 +1058,13 @@ declare interface Util {
   clarify: (obscuredString: string) => any
 
   /**
+   * A promise-based sleep function. Included as a more convenient alternative
+   * to [[setTimeout]] for performing simple delays. Call as `await sleep(1000)`.
+   * @param durationMilliseconds How long to sleep in milliseconds
+   */
+  sleep: (durationMilliseconds: number) => Promise<void>
+
+  /**
      * The `constant` property is a container for pre-defined constants.
      */
   readonly constant: {
@@ -1248,7 +1255,7 @@ declare function defineExtension (extension: Extension): void
   * #### Notes
   * PopClip's `require()` implementation attempts to import from the following module formats:
   *
-  * * AMD modules, which use `define(...)`.
+  * * AMD modules, which use `define(...)`Util.
   * * Node/CommonJS modules, which use `module.exports = ...` or `exports.name = ...`
   * * TypeScript compiled modules, which use `exports.default = ...`
   *
@@ -1308,13 +1315,8 @@ declare function setTimeout (callback: (...args?: any) => void, timeout?: number
  */
 declare function clearTimeout (timeoutId: number): void
 
-/**
- * Global promise-based sleep function. Included as a more convenient alternative
- * to [[setTimeout]] for performing simple delays. Call as `await sleep(1000)`.
- * @param durationMilliseconds How long to sleep in milliseconds
- */
+/* For backward compatibility - use util.sleep instead */
 declare function sleep (durationMilliseconds: number): Promise<void>
-
 /* for library compatibility (implemented as util.base64Encode with no options) */
 declare function btoa (string: string): string
 /* for library compatibility (imeplemented as util.base64Decode) */
