@@ -521,6 +521,11 @@ declare interface Extension extends ActionProperties {
      */
   action?: Action
 
+  /**
+   * A unit test function for this extension. Should throw an error if test fails.
+   */
+  test?: () => void
+
   // the following are included for the benefit of the JSON Scheme generation
   popclipVersion?: number
   macosVersion?: string

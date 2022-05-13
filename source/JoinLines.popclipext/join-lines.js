@@ -1,16 +1,20 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.test = exports.action = void 0;
+exports.test = exports.action = exports.regex = void 0;
+exports.regex = /\n|\r/;
 const action = input => joinLines(input.text);
 exports.action = action;
 // split input into lines, trim them, discard blank lines, and join with space
 function joinLines(text) {
-    return text.split(/\n/).map(str => str.trim()).filter(str => str.length > 0).join(' ');
+    return text.split(exports.regex).map(str => str.trim()).filter(str => str.length > 0).join(' ');
 }
 // test function
 function test() {
     const testData = [
         ['one\ntwo', 'one two'],
+        ['one\r\ntwo', 'one two'],
+        ['one\rtwo', 'one two'],
+        ['one\n\rtwo', 'one two'],
         ['  one', 'one'],
         ['', ''],
         ['\n', ''],

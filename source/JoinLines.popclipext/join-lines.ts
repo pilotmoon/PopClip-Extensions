@@ -1,14 +1,18 @@
+export const regex = /\n|\r/
 export const action: ActionFunction = input => joinLines(input.text)
 
 // split input into lines, trim them, discard blank lines, and join with space
 function joinLines (text: string): string {
-  return text.split(/\n/).map(str => str.trim()).filter(str => str.length > 0).join(' ')
+  return text.split(regex).map(str => str.trim()).filter(str => str.length > 0).join(' ')
 }
 
 // test function
 export function test (): void {
   const testData = [
     ['one\ntwo', 'one two'],
+    ['one\r\ntwo', 'one two'],
+    ['one\rtwo', 'one two'],
+    ['one\n\rtwo', 'one two'],
     ['  one', 'one'],
     ['', ''],
     ['\n', ''],
