@@ -24,7 +24,7 @@ Requires PopClip 2022.5
 
 ### Links
 
-<!-- * [Forum Page](#) -->
+* [Forum Topic](https://forum.popclip.app/t/new-extension-join-lines/874)
 * [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/JoinLines.popclipext)
   
 ## Changelog
