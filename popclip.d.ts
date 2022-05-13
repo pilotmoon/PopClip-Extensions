@@ -406,7 +406,7 @@ declare interface ActionProperties extends ActionFlags {
 }
 
 /**
- * A calable object, with additional properties to define its title, icon and other properties.
+ * A callable object, with additional properties to define its title, icon and other properties.
  *
  * @category Definition
  */

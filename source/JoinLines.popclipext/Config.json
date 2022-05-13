@@ -1,0 +1,10 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.join-lines",
+  "popclipVersion": 3895,
+  "name": "Join Lines",
+  "icon": "JoinLines.svg",
+  "module": "join-lines.js",
+  "after": "paste-result",
+  "regex": "\\n",
+  "description": "Replace line breaks with spaces."
+}
