@@ -1,6 +1,6 @@
 export const action: ActionFunction = (selection) => {
-  const separator = (popclip.modifierKeys & util.constant.MODIFIER_OPTION) !== 0 ? '' : '\n'
-  if ((popclip.modifierKeys & util.constant.MODIFIER_SHIFT) !== 0) {
+  const separator = popclip.modifiers.option ? '' : '\n'
+  if (popclip.modifiers.option) {
     pasteboard.text = selection.text.trim() + separator + pasteboard.text.trim()
   } else {
     pasteboard.text = pasteboard.text.trim() + separator + selection.text.trim()

@@ -2,7 +2,7 @@
   "identifier" : "com.pilotmoon.popclip.extension.append",
   "name" : "Append to Clipboard",
   "icon" : "plus.png",
+  "module": "append.js",
   "description" : "Append the selected text as a new line after the existing clipboard contents. If you hold down Shift (⇧), it will prepend instead. If you hold down Option (⌥), it will do it without a newline.",
-  "note": "Updated for macOS 12.0 Monterey.",
-  "popclipVersion": 3543
+  "popclipVersion": 3895
 }
