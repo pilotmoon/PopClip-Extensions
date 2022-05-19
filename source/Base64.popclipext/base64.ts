@@ -6,6 +6,7 @@ const encode: Action = {
       urlSafe: options.variant === 'url',
       trimmed: options.trim === true
     }))
+    return null
   }
 }
 
@@ -15,6 +16,7 @@ const decode: Action = {
   title: 'Base64 Decode',
   code (input) {
     popclip.pasteText(util.base64Decode(input.text))
+    return null
   }
 }
 

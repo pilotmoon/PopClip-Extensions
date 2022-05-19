@@ -7,6 +7,7 @@ export const actions: PopulationFunction = (selection) => {
       title: 'Join with commas',
       code () {
         popclip.pasteText(inputLines.join(', '))
+        return null
       }
     }
     return action
@@ -18,9 +19,12 @@ export const actions: PopulationFunction = (selection) => {
         title: 'Split into lines',
         code () {
           popclip.pasteText(outputLines.join('\r'))
+          return null
         }
       }
       return action
+    } else {
+      return null
     }
   }
 }

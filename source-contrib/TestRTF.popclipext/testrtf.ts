@@ -21,4 +21,5 @@ export const action: ActionFunction = (input, options, context) => {
   // } else {
   //   popclip.copyContent(content)
   // }
+  return null
 }

@@ -3,6 +3,11 @@ import { replaceSpaces } from '@popclip/helpers/replace-spaces'
 export const actions: PopulationFunction = (selection) => {
   const result = transformLines(selection.text, (text) => replaceSpaces(text, '-'))
   if (result !== selection.text) {
-    return () => popclip.pasteText(result)
+    return () => {
+      popclip.pasteText(result)
+      return null
+    }
+  } else {
+    return null
   }
 }

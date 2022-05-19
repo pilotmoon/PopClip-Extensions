@@ -15,6 +15,7 @@ defineExtension({
     title: 'HTML-encode',
     code: (selection, options) => {
       popclip.pasteText(entities.encode(selection.text, { mode: options.mode as EncodeMode }))
+      return null
     }
   }, {
     icon: '[[&;]]',
@@ -22,6 +23,7 @@ defineExtension({
     regex: /&(\w+|#\d+);/,
     code: (selection) => {
       popclip.pasteText(entities.decode(selection.text))
+      return null
     }
   }]
 })

@@ -25,11 +25,17 @@ async function appTranslate (combo: string): Promise<void> {
 // our action
 export const actions: ActionObject[] = [{
   requirements: ['text', 'option-mode=web'],
-  code: (input, options) => webTranslate(input.text, options.destlang as string)
+  code: (input, options) => {
+    webTranslate(input.text, options.destlang as string)
+    return null
+  }
 }, {
   requirements: ['text', 'option-mode=app'],
   app: { bundleIdentifiers: ['com.linguee.DeepLCopyTranslator'], checkInstalled: true, name: 'DeepL', link: 'https://www.deepl.com/app/' },
-  code: async (_, options) => await appTranslate(options.combo as string)
+  code: async (_, options) => {
+    await appTranslate(options.combo as string)
+    return null
+  }
 }]
 
 // the dynamically generated extension options

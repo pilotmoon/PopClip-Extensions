@@ -1,5 +1,5 @@
 const extension: Extension = {
-  name: `${util.localize('Paste')} =`,
+  name: `${util.localize('Paste')} + ↵`,
   options: [{
     identifier: 'showIcon',
     type: 'boolean',
@@ -12,7 +12,12 @@ const extension: Extension = {
         // `undefined` will fall back to the extension's icon; `null` sets no icon
         icon: popclip.options.showIcon as boolean ? undefined : null,
         code () {
-          popclip.pasteText(pasteboard.text)
+          if (popclip.modifiers.shift) {
+            popclip.pasteText(pasteboard.text)
+          } else {
+            popclip.performPaste()
+          }
+          popclip.pressKey(util.constant.KEY_RETURN)
           return null
         }
       }

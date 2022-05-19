@@ -6,7 +6,13 @@ const replace_spaces_1 = require("@popclip/helpers/replace-spaces");
 const actions = (selection) => {
     const result = (0, transform_lines_1.transformLines)(selection.text, (text) => (0, replace_spaces_1.replaceSpaces)(text, '_'));
     if (result !== selection.text) {
-        return () => popclip.pasteText(result);
+        return () => {
+            popclip.pasteText(result);
+            return null;
+        };
+    }
+    else {
+        return null;
     }
 };
 exports.actions = actions;

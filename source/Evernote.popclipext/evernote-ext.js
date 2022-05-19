@@ -61,5 +61,6 @@ const action = async (input, options, context) => {
         throw new Error('Evernote API error: ' + JSON.stringify(e));
     }
     popclip.showSuccess();
+    return null;
 };
 exports.action = action;

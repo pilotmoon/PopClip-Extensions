@@ -4,7 +4,7 @@ export const actions: PopulationFunction = (selection) => {
   // const separator = util.localeInfo.decimalSeparator
 
   if (selection.text.length > 1000) { // limit input size
-    return
+    return null
   }
   let text = selection.text.trim()
   const endsWithEquals = text.endsWith('=')
@@ -17,7 +17,7 @@ export const actions: PopulationFunction = (selection) => {
 
   let result = evaluate(text)
   if (result === undefined || typeof result === 'function' || typeof result === 'string') {
-    return
+    return null
   }
   if (typeOf(result) === 'ResultSet') {
     const resultArray = result.valueOf()

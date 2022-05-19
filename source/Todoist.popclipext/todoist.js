@@ -8,6 +8,7 @@ const client_json_1 = require("./client.json");
 const action = async (input) => {
     const headers = { Authorization: `Bearer ${popclip.options.authsecret}` };
     await axios_1.default.post('https://api.todoist.com/rest/v1/tasks', { content: input.text }, { headers });
+    return null;
 };
 exports.action = action;
 // note: endpoint https://todoist.com/api/v8/items/add also works with only task:add scope

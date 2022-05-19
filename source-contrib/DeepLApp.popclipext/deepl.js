@@ -14,7 +14,10 @@ async function appTranslate(combo) {
 // our action
 exports.action = {
     app: { bundleIdentifiers: ['com.linguee.DeepLCopyTranslator'], checkInstalled: true, name: 'DeepL', link: 'https://www.deepl.com/app/' },
-    code: async (_, options) => await appTranslate(options.combo)
+    code: async (_, options) => {
+        await appTranslate(options.combo);
+        return null;
+    }
 };
 // the dynamically generated extension options
 exports.options = (() => {

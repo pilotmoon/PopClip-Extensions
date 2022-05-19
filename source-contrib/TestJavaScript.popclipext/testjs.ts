@@ -9,12 +9,13 @@ const starIcon = `svg:
 
 const testAction: Action = {
   code: () => {
-    return 'coderan'
+    return 'code ran'
   }
 }
 
-function x (selection): void {
+function x (selection): null {
   popclip.showText(this.identifier)
+  return null
 }
 
 testAction.after = 'show-result'
@@ -23,14 +24,14 @@ testAction.after = 'show-result'
 // print(f)
 
 defineExtension({
-  title: 'fallbacktitle',
+  title: 'fallback title',
   icon: starIcon,
   name: {
     en: 'Test the JS plz',
     fr: 'Test SVP',
     pt: 'test pt',
     'pt-BR': 'test BRAZIL',
-    'en-GB': 'alright guvna',
+    'en-GB': 'alright guv\'na',
     'zh-Hans': '你好'
   },
   // options: [
@@ -54,6 +55,7 @@ defineExtension({
         print(selection.data)
         print(selection.data.paths)
         print(selection.data.paths.ranges)
+        return null
       }
     },
     {
@@ -62,6 +64,7 @@ defineExtension({
       requirements: [],
       code (selection) {
         popclip.pasteText(JSON.stringify(util.timeZoneInfo))
+        return null
       }
     },
     {
@@ -70,6 +73,7 @@ defineExtension({
       requirements: [],
       code (selection) {
         popclip.pasteText(JSON.stringify(util.localeInfo))
+        return null
       }
     },
     {
@@ -78,12 +82,14 @@ defineExtension({
       captureRtf: true,
       code (selection) {
         print(selection.rtf)
+        return null
       }
     }, {
       title: 'Show Success',
       icon: 'symbol:checkmark',
       code () {
         popclip.showSuccess()
+        return null
       }
     }, {
       title: 'Show Success Async',
@@ -92,6 +98,7 @@ defineExtension({
         setTimeout(() => {
           popclip.showSuccess()
         }, 1000)
+        return null
       }
     }, {
       title: 'Timer 5s',
@@ -101,6 +108,7 @@ defineExtension({
           print('5s timer fired')
           return 'my string 456'
         }, 5000)
+        return null
       },
       after: 'show-result'
     }, {
@@ -110,6 +118,7 @@ defineExtension({
         setInterval(() => {
           print('100ms timer fired')
         }, 1)
+        return null
       },
       after: 'show-result'
     }, {
@@ -117,12 +126,14 @@ defineExtension({
       icon: 'symbol:hand.raised',
       async code (selection) {
         print((await axios.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
+        return null
       }
     }, {
       title: 'Large File',
       icon: 'symbol:bus.fill',
       async code (selection) {
         popclip.showText((await axios.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
+        return null
       }
     }, {
       title: 'Large File with timeout',
@@ -130,36 +141,42 @@ defineExtension({
       async code (selection) {
         // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
         popclip.showText((await axios.get('https://10.255.255.1/')).statusText)
+        return null
       }
     }, {
       title: 'Example.com',
       icon: 'symbol:seal',
       async code (selection) {
         print((await axios.get('https://example.com/')).statusText)
+        return null
       }
     }, {
       title: 'Example.com 404',
       icon: 'symbol:nosign',
       async code (selection) {
         print((await axios.get('https://example.com/sdkfjhdkjf')).statusText)
+        return null
       }
     }, {
       title: '301 Redirect',
       icon: 'symbol:arrowshape.bounce.right',
       async code (selection) {
         print((await axios.get('https://pilotmoon.com/link/popclip')).statusText)
+        return null
       }
     }, {
       title: 'JSON',
       icon: 'symbol:number',
       async code (selection) {
         print((await axios.get('https://dog.ceo/api/breeds/image/random')).statusText)
+        return null
       }
     }, {
       title: 'Settings',
       icon: 'symbol:gear',
       code (selection) {
         popclip.showSettings()
+        return null
       }
     }, {
       title: 'POST JSON',
@@ -170,6 +187,7 @@ defineExtension({
           job: 'ZZ66'
         }
         print((await axios.post('https://reqres.in/api/users', info)).statusText)
+        return null
       }
     }, {
       title: 'POST superagent',
@@ -182,18 +200,21 @@ defineExtension({
         const res = await superagent.post('https://reqres.in/api/users').send(info)
         print(res)
         print({ myFunc: () => {} })
+        return null
       }
     }, {
       title: 'POST Blob',
       async code (selection) {
         const a = new Blob(['test blob'])
         print((await axios.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText)
+        return null
       }
     }, {
       title: 'POST ArrayBuffer',
       async code (selection) {
         const a = new Int8Array([21, 31])
         print((await axios.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText)
+        return null
       }
     }
   ]
@@ -214,10 +235,10 @@ defineExtension({
 //   .get('https://xkcd.com/')
 //   .end((err, res) => {
 //     if (err) {
-//       print('errrorrrr')
+//       print('error')
 //     } else {
 //       //print(res.text)
-//       print('gotit')
+//       print('got it')
 //     }
 //   })
 
@@ -230,7 +251,7 @@ defineExtension({
 //     print(err)
 //   }
 // })().catch(error => {
-//   print('onrs', error)
+//   print('on rs', error)
 // })c
 
 // (async () => {
@@ -241,7 +262,7 @@ defineExtension({
 //     print(err)
 //   }
 // })().catch(error => {
-//   print('onra', error)
+//   print('on ra', error)
 // })
 
 // http().then(value => {

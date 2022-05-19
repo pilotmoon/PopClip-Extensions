@@ -197,7 +197,7 @@ declare interface AssociatedApp {
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | undefined
+ declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | null
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
@@ -418,7 +418,7 @@ declare interface ActionFunction extends ActionProperties {
     * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
     * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
     */
-  (input: Input, options: Options, context: Context): unknown
+  (input: Input, options: Options, context: Context): Promise<string | null> | string | null
 }
 
 /**
@@ -427,7 +427,7 @@ declare interface ActionFunction extends ActionProperties {
  */
 declare interface ActionObject extends ActionProperties {
   /** Same function signature as [[ActionFunction]] */
-  code?: (input: Input, options: Options, context: Context) => unknown
+  code?: (input: Input, options: Options, context: Context) => Promise<string | null> | string | null
 }
 
 /**

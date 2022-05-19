@@ -4,5 +4,6 @@ exports.action = void 0;
 const action = () => {
     print(pasteboard.content);
     pasteboard.content = { 'public.utf8-plain-text': 'fish', 'public.html': '<b>fish</b>' };
+    return null;
 };
 exports.action = action;

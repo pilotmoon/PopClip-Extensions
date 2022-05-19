@@ -23,5 +23,6 @@ const action = (input, options, context) => {
     // } else {
     //   popclip.copyContent(content)
     // }
+    return null;
 };
 exports.action = action;

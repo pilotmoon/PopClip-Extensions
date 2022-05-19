@@ -17,6 +17,7 @@ const actions = (selection, options, context) => {
                     // one email to each address
                     emails.forEach((email) => popclip.openUrl('mailto:' + email));
                 }
+                return null;
             }
         });
     }
@@ -30,6 +31,7 @@ const actions = (selection, options, context) => {
                     body += '\n\n' + context.browserUrl;
                 }
                 popclip.openUrl('mailto:' + options.default + '?body=' + encodeURIComponent(body));
+                return null;
             },
             captureHtml: true
         });

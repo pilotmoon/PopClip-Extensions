@@ -6,6 +6,7 @@ import { client } from './client.json'
 export const action: Action = async (input) => {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
   await axios.post('https://api.todoist.com/rest/v1/tasks', { content: input.text }, { headers })
+  return null
 }
 // note: endpoint https://todoist.com/api/v8/items/add also works with only task:add scope
 // but this is old API which may be deprecated (Todoist has been several times terminated old APIs in the past)
