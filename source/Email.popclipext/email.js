@@ -9,7 +9,7 @@ const actions = (selection, options, context) => {
             title: emails.length === 1 ? `New email to ${emails[0]}` : `New email to ${emails.length} addresses`,
             icon: 'at.png',
             code: function () {
-                if ((popclip.modifierKeys & util.constant.MODIFIER_SHIFT) !== 0) {
+                if (popclip.modifiers.shift) {
                     // multiple recipients
                     popclip.openUrl('mailto:' + emails.join());
                 }
