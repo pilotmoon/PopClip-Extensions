@@ -5,6 +5,7 @@
   "description" : "Create a new mail message with the selected \"to:\" address, or with the selected text, in the default mail client.",  
   "icon" : "envelope.png",
   "module": "email.js",
+  "entitlements": ["dynamic"],
   "options" : [
     {
       "Identifier" : "actions-heading",
