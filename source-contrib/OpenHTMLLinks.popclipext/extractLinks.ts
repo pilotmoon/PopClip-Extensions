@@ -8,6 +8,6 @@ import { parseHTML } from 'linkedom'
 export function extractLinks (html: string): string[] {
   const { document } = parseHTML(html)
   var links = document.getElementsByTagName('a')
-  links = links.map((element) => element.getAttribute('href'))
-  return links.filter((link) => typeof link === 'string')
+  links = links.map((element: any) => element.getAttribute('href'))
+  return links.filter((link: any) => typeof link === 'string')
 }

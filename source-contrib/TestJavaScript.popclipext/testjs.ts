@@ -13,11 +13,6 @@ const testAction: Action = {
   }
 }
 
-function x (selection): null {
-  popclip.showText(this.identifier)
-  return null
-}
-
 testAction.after = 'show-result'
 
 // const f = popclip.input?.text
@@ -43,11 +38,6 @@ defineExtension({
   // ],
   actions: [
     testAction,
-    {
-      identifier: 'my magic identifier',
-      // not title example
-      code: x
-    },
     {
       title: 'Data',
       icon: '((D))',

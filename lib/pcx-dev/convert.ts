@@ -30,8 +30,8 @@ function rename (name: string): string {
     }
   }
   // perform defined renamings
-  if (name in mapping) {
-    name = mapping[name]
+  if (Object.keys(mapping).includes(name)) {
+    name = mapping[name as keyof typeof mapping]
   }
   return ca.camelCase(name)
 }
@@ -40,10 +40,10 @@ function rename (name: string): string {
  * Rename an object's enumerable string keys using a given transform.
  * @param obj Object whose keys should be renamed
  * @param transform The renaming transform
- * @retutns New object with renamed keys.
+ * @returns New object with renamed keys.
  */
 function renameKeys (obj: any, transform: (s: string) => string): any {
-  const result = {}
+  const result: any = {}
   for (const [key, value] of Object.entries(obj)) {
     const newKey = transform(key)
     if (Array.isArray(value)) {
@@ -117,7 +117,7 @@ function convert (jsonConfig: string): string {
   config = processSpecial(config)
 
   const keyOrder = otherKeysBefore.concat(actionKeys, otherKeysAfter)
-  const ordered = {}
+  const ordered: any = {}
   for (const key of keyOrder) {
     ordered[key] = null
   }

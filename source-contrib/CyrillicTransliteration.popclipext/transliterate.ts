@@ -22,7 +22,7 @@ function t (c: string, cNext: string): string {
   }
 }
 
-export function transliterate (input): string {
+export function transliterate (input: string): string {
   // split into array of characters
   let result: string = ''
   for (let i = 0; i < input.length; i += 1) {

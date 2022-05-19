@@ -12,10 +12,6 @@ const testAction = {
         return 'code ran';
     }
 };
-function x(selection) {
-    popclip.showText(this.identifier);
-    return null;
-}
 testAction.after = 'show-result';
 // const f = popclip.input?.text
 // print(f)
@@ -39,11 +35,6 @@ defineExtension({
     // ],
     actions: [
         testAction,
-        {
-            identifier: 'my magic identifier',
-            // not title example
-            code: x
-        },
         {
             title: 'Data',
             icon: '((D))',

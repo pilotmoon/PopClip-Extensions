@@ -1,9 +1,11 @@
+"use strict";
 /**
  * "aLtErNatInG CasE" eXtEnsIoN fOr pOpcLiP, FoR AlL YoUr mEmING NeeDS.
  * iCoN: sPonGe bY BeN dAvIs fRoM ThE NoUn pRoJeCt
  * @author Nick Moore
  * @module AlternatingCase
  */
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * Make characters alternately upper/lower case, with optional randomness sprinkled in.
  */
@@ -28,9 +30,10 @@ function alternatingCase(string, options) {
     }
     return characters.join('');
 }
-define({
-    action(selection, options) {
+const extension = {
+    action: (selection, options) => {
         popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness }));
+        return null;
     },
     options: [
         {
@@ -39,4 +42,5 @@ define({
             type: 'boolean'
         }
     ]
-});
+};
+exports.default = extension;

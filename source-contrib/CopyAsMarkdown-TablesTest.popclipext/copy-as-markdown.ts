@@ -4,7 +4,7 @@ import turndownPluginGfm = require('./@joplin+turndown-plugin-gfm')
 
 export function htmlToMarkdown (html: string): string {
   // generate DOM object from HTML
-  function JSDOM (html): any { return linkedom.parseHTML(html) } // facade to work like jsdom
+  function JSDOM (html: any): any { return linkedom.parseHTML(html) } // facade to work like jsdom
   const { document } = new (JSDOM as any)(html)
   const options = { headingStyle: 'atx' }
   var turndownService = new TurndownService(options)

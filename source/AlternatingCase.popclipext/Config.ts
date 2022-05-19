@@ -28,15 +28,16 @@ function alternatingCase (string: string, options?: {randomness?: boolean}): str
   return characters.join('')
 }
 
-define({
-  action (selection, options) {
-    popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness }))
+const extension: Extension = {
+  action: (selection, options) => {
+    popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness as boolean }))
+    return null
   },
   options: [
     {
       identifier: 'randomness',
       label: 'Add Randomness',
       type: 'boolean'
-    }
-  ]
-})
+    }]
+}
+export default extension
