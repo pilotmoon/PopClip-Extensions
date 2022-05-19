@@ -3,7 +3,7 @@
   "name": "Shorten Link",
   "icon": "shortlink.png",
   "requirements": [
-    "url"
+    "urls"
   ],
   "entitlements": [
     "network"
