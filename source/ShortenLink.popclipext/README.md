@@ -1,23 +1,57 @@
-URL Shortener
-===
+# Shorten Link
 
-Turns a long URL into a much shorter one. Several service are available:
+Shorten the selected URL using is.gd or v.gd.
 
-	bit.ly
-	goo.gl
-	t.cn
-	j.mp
-	is.gd
-	v.gd
-	tiny.cc
+Download: [ShortenLink.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/ShortenLink.popclipextz)
 
-## Credit
-Extension and icon created by @[hzlzh](https://twitter.com/hzlzh 'Contact me on Twitter')  
+## Description
 
-Demo video: [http://vine.co/v/b59z06HXmUA](http://vine.co/v/bJZjEEwKunz)
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ShortenLink.popclipext/ShortenLink-demo.gif" width="480px">
 
-Post: [http://zlz.im/popclip-extensions/](http://zlz.im/popclip-extensions/)  
-Github: [hzlzh/PopClip-Extensions](https://github.com/hzlzh/PopClip-Extensions)  
+The extension has one action, which is available when the input text string contains one or more web URLs. The extension will shorten all the detected URLs using the selected shortening service, replacing the URLs in the string with their shortened equivalents.
 
-Screenshot:  
-![URL-Shortener.png](https://github.com/hzlzh/PopClip-Extensions/raw/master/Downloads/extra/URL-Shortener.png)
+### Options
+
+The **Shortening Service** has the choice of shortening services:
+
+* **is.gd** (<https://is.gd/>)
+* **v.gd** (<https://v.gd/>)
+
+## About
+
+This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+
+### Author
+
+Nick Moore
+
+### Acknowledgements
+
+The original PHP extension by this name (now completely rewritten) was by [hzlzh](https://github.com/hzlzh/PopClip-Extensions/tree/master/Source/URLShortener.popclipext).
+
+### Requirements
+
+Requires PopClip 2021.11
+
+### Links
+
+<!-- * [Forum Topic](#) -->
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/ShortenLink.popclipext)
+  
+## Changelog
+
+### 19 May 2022
+
+* Rewritten in in JavaScript.
+
+### 4 Jun 2016
+
+* Use https endpoint.
+
+### 16 April 2016
+
+* Removed goo.gl from supported services.
+
+### 11 Feb 2013
+
+* Original PHP extension.

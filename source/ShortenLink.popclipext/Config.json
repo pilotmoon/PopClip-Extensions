@@ -1,0 +1,37 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.urlshortener",
+  "name": "Shorten Link",
+  "icon": "shortlink.png",
+  "requirements": [
+    "url"
+  ],
+  "entitlements": [
+    "network"
+  ],
+  "popclipVersion": 3895,
+  "module": "shorten-link.bundle.js",
+  "after": "paste-result",
+  "note": "19 May 2022: Updated for macOS Monterey.",
+  "options": [
+    {
+      "label": "Shortening Service",
+      "type": "multiple",
+      "values": [
+        "is.gd",
+        "v.gd"
+      ],
+      "identifier": "domain"
+    }
+  ],
+  "description": "Shorten the selected URL using is.gd or v.gd.",
+  "apps": [
+    {
+      "link": "https://is.gd/",
+      "name": "is.gd"
+    },
+    {
+      "link": "https://v.gd/",
+      "name": "v.gd"
+    }
+  ]
+}
