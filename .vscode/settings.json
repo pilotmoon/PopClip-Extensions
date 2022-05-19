@@ -28,6 +28,8 @@
         "applescript",
         "asyncawait",
         "authsecret",
+        "axios",
+        "browserify",
         "centimetres",
         "deduped",
         "destlang",

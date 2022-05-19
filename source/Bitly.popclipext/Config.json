@@ -10,7 +10,7 @@
     "urls"
   ],
   "after": "paste-result",
-  "module": "bitly.js",
+  "module": "bitly.bundle.js",
   "description": "Shorten URLs in the text using Bitly.",
   "app": {
     "name": "Bitly",

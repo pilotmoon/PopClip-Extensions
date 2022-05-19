@@ -1,0 +1,11 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.hyphenate",
+  "name": "Hyphenate",
+  "icon": "hyphen.png",
+  "entitlements": [
+    "dynamic"
+  ],
+  "module": "hyphenate.bundle.js",
+  "popclipVersion": 3785,
+  "description": "Replace spaces between words with hyphens, and vice versa."
+}

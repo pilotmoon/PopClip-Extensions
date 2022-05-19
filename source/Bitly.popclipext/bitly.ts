@@ -1,31 +1,21 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import axios from '@popclip/axios'
+import { replaceRangesAsync } from '@popclip/helpers/replace-ranges'
+import { concurrentTransform } from '@popclip/helpers/generator'
 import { client } from './client.json'
-import { replaceRangesAsync } from './replace'
 
 // bitly api endpoint
 const bitly = axios.create({ baseURL: 'https://api-ssl.bitly.com/', headers: { Accept: 'application/json' } })
 
-// asynchronous generator which yields the shortened form of all the supplied urls
-async function * shortened (urls: Iterable<string>): AsyncIterable<string> {
+async function shorten (url: string): Promise<string> {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-  const table = new Map()
-  const deduped = new Set(urls) // exclude any duplicate URLs
-
-  // issue all the api calls, saving the results in the table
-  await Promise.all(Array.from(deduped, async (long_url) => {
-    table.set(long_url, await bitly.post('v4/shorten', { long_url }, { headers }))
-  }))
-
-  // yield the shortened form of each url in the text
-  for (const url of urls) {
-    yield table.get(url).data.link
-  }
+  const response = await bitly.post('v4/shorten', { long_url: url }, { headers })
+  return response.data.link
 }
 
 // replace all matched urls with their shortened equivalents, calling duplicates only once
 export const action: Action = async (input) => {
-  return await replaceRangesAsync(input.text, input.data.urls.ranges, shortened(input.data.urls))
+  return await replaceRangesAsync(input.text, input.data.urls.ranges, concurrentTransform(input.data.urls, shorten))
 }
 
 // sign in to bitly using authorization flow

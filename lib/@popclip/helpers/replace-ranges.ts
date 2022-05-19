@@ -1,6 +1,5 @@
 /**
- * Utility module for ranged text replacement.
- * @module replace
+ * Utility functions for ranged text replacement.
  */
 
 /**
@@ -18,26 +17,26 @@ function * textBetweenRanges (text: string, ranges: Range[]): Generator<string> 
   yield text.substring(pos, text.length)
 }
 
-/** Asynchronous version of `replaceRanges`. */
-export const replaceRangesAsync = async (text: string, ranges: Range[], replacements: AsyncIterable<string>): Promise<string> => {
-  const between = textBetweenRanges(text, ranges)
-  let result = between.next().value as string
-  for await (const item of replacements) {
-    result += item + (between.next().value as string)
-  }
-  return result
-}
-
 /** Replace sections in a string with given replacements
  * @param text String on which to perform the operation.
  * @param ranges Array of ranges in to replace. Must all be contained within the `text`, in ascending order, and non-overlapping.
  * @param replacements The replacement values, corresponding to `ranges`.
  * @return The modified string.
  */
-export const replaceRanges = (text: string, ranges: Range[], replacements: Iterable<string>): string => {
+export function replaceRanges (text: string, ranges: Range[], replacements: Iterable<string>): string {
   const between = textBetweenRanges(text, ranges)
   let result = between.next().value as string
   for (const item of replacements) {
+    result += item + (between.next().value as string)
+  }
+  return result
+}
+
+/** Asynchronous version of `replaceRanges`. */
+export async function replaceRangesAsync (text: string, ranges: Range[], replacements: AsyncIterable<string>): Promise<string> {
+  const between = textBetweenRanges(text, ranges)
+  let result = between.next().value as string
+  for await (const item of replacements) {
     result += item + (between.next().value as string)
   }
   return result

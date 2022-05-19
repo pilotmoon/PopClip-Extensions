@@ -2,4 +2,4 @@
 print "Compiling TypeScript..."
 npx tsc
 print "Browserifying..."
-npx browserify _Config.js > Config.js
+npx browserify --standalone foo underscore.js > underscore.bundle.js

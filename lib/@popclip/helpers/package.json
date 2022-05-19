@@ -1,0 +1,12 @@
+{
+  "name": "pcx-utils",
+  "version": "0.1.0",
+  "description": "Common utilities for use in PopClip Extensions",
+  "main": "index.js",
+  "scripts": {
+    "test": "/Applications/PopClip.app/Contents/MacOS/PopClip runjs test.js"
+  },
+  "author": "Nick Moore",
+  "license": "ISC",
+  "private": true
+}
