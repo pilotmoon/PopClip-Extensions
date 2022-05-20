@@ -9,16 +9,16 @@ using `./bin/getmodules evernote` (tool in this repo).
 */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-var-requires */
-const enml_js_1 = require("./enml.js");
+const enml_1 = require("./enml");
 const consumer_json_1 = require("./consumer.json");
-const evernote_js_1 = require("./evernote.js");
+const evernote_1 = require("evernote");
 const { consumerKey, consumerSecret } = util.clarify(consumer_json_1.consumer);
 // this keeps oauth module happy
 const g = globalThis;
 g.location = { protocol: 'https:' };
 // sign in to evernote using its delightfully byzantine oauth system
 const auth = async (info, flow) => await new Promise(function (resolve, reject) {
-    const client = new evernote_js_1.Client({
+    const client = new evernote_1.Client({
         consumerKey,
         consumerSecret,
         sandbox: false
@@ -41,7 +41,7 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
     });
 });
 const action = async (input, options, context) => {
-    const content = (0, enml_js_1.renderEnml)(input.html);
+    const content = (0, enml_1.renderEnml)(input.html);
     const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note';
     const attributes = { sourceApplication: 'PopClip' };
     if (context.browserUrl.length > 0) {
@@ -49,7 +49,7 @@ const action = async (input, options, context) => {
     }
     const note = { title, content, attributes };
     try {
-        const authenticatedClient = new evernote_js_1.Client({
+        const authenticatedClient = new evernote_1.Client({
             token: options.authsecret,
             sandbox: false
         });

@@ -4,7 +4,7 @@
   "name": "Evernote",
   "icon": "evernote-logo.svg",
   "capture html": true,
-  "module": "evernote-ext.js",
+  "module": "main.bundle.js.lzfse",
   "entitlements": [
     "network"
   ],

@@ -7,9 +7,9 @@ using `./bin/getmodules evernote` (tool in this repo).
 */
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-var-requires */
-import { renderEnml } from './enml.js'
+import { renderEnml } from './enml'
 import { consumer } from './consumer.json'
-import { Client } from './evernote.js'
+import { Client } from 'evernote'
 
 const { consumerKey, consumerSecret } = util.clarify(consumer)
 
