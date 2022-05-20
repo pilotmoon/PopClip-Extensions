@@ -10,16 +10,12 @@
   },
   "dependencies": {
     "@joplin/turndown-plugin-gfm": "^1.0.43",
+    "@popclip/helpers": "file:lib/@popclip/helpers",
     "@types/voca": "^1.4.1",
     "evernote": "^2.0.5",
-    "html-entities": "^2.3.2",
-    "linkedom": "^0.12.1",
+    "html-entities": "^2.3.3",
     "mathjs": "^10.0.0",
-    "node-blob": "^0.0.2",
-    "@popclip/helpers": "file:lib/@popclip/helpers",
-    "sanitize-html": "^2.5.1",
     "superagent": "^6.1.0",
-    "turndown": "^7.1.1",
     "voca": "^1.4.0"
   }
 }

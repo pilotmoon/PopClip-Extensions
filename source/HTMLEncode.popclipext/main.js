@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const entities = require("html-entities");
+// some info about HTML entities https://developer.mozilla.org/en-US/docs/Glossary/Entity
+// npm page for html-entities library https://www.npmjs.com/package/html-entities
+const entities = require("./html-entities");
 defineExtension({
     options: [{
             identifier: 'mode',

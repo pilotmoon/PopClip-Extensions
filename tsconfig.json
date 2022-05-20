@@ -14,7 +14,8 @@
         "excludeNotDocumented": true
     },
     "compilerOptions": {
-        "strictNullChecks": true,
+        "strict": true,
+        "noImplicitAny": false,
         // note es2018 requires macOS 10.14
         // once we drop support for high sierra this can be bumped for cleaner js code
         // (note es2018 is required for async generators)

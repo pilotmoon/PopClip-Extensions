@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.extractLinks = void 0;
-const linkedom_1 = require("linkedom");
+const linkedom_1 = require("@popclip/linkedom");
 /**
  * Extracts the the "href" properties of all the links in an HTML document.
  * @param html HTML source code to scan

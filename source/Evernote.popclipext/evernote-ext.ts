@@ -6,14 +6,15 @@ using `./bin/getmodules evernote` (tool in this repo).
 -Nick
 */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Client } from './evernote.js'
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { renderEnml } from './enml.js'
 import { consumer } from './consumer.json'
+const Client: any = require('./evernote.js')
 
 const { consumerKey, consumerSecret } = util.clarify(consumer)
 
 // this keeps oauth module happy
-globalThis.location = { protocol: 'https:' }
+const g: any = globalThis; g.location = { protocol: 'https:' }
 
 // sign in to evernote using its delightfully byzantine oauth system
 const auth: AuthFunction = async (info, flow) => await new Promise(function (resolve, reject) {
@@ -22,10 +23,10 @@ const auth: AuthFunction = async (info, flow) => await new Promise(function (res
     consumerSecret,
     sandbox: false
   })
-  client.getRequestToken(info.redirect, async function (_, requestToken, requestTokenSecret) {
+  client.getRequestToken(info.redirect, async function (_: string, requestToken: string, requestTokenSecret: string) {
     if (typeof requestToken === 'string' && requestToken.length > 0 && typeof requestTokenSecret === 'string' && requestTokenSecret.length > 0) {
       const { oauth_verifier } = await flow(client.getAuthorizeUrl(requestToken))
-      client.getAccessToken(requestToken, requestTokenSecret, oauth_verifier, function (_, accessToken) {
+      client.getAccessToken(requestToken, requestTokenSecret, oauth_verifier, function (_: string, accessToken: string) {
         if (typeof accessToken === 'string' && accessToken.length > 0) {
           resolve(accessToken)
         } else {

@@ -1,16 +1,18 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.action = exports.htmlToMarkdown = void 0;
-const linkedom = require("@popclip/linkedom");
-const TurndownService = require("@popclip/turndown");
-const turndownPluginGfm = require("./@joplin+turndown-plugin-gfm");
+const linkedom_1 = __importDefault(require("@popclip/linkedom"));
+const turndown_1 = __importDefault(require("@popclip/turndown"));
+const _joplin_turndown_plugin_gfm_1 = __importDefault(require("./@joplin+turndown-plugin-gfm"));
 function htmlToMarkdown(html) {
     // generate DOM object from HTML
-    function JSDOM(html) { return linkedom.parseHTML(html); } // facade to work like jsdom
+    function JSDOM(html) { return linkedom_1.default.parseHTML(html); } // facade to work like jsdom
     const { document } = new JSDOM(html);
-    const options = { headingStyle: 'atx' };
-    var turndownService = new TurndownService(options);
-    turndownService.use(turndownPluginGfm.gfm);
+    const turndownService = new turndown_1.default({ headingStyle: 'atx' });
+    turndownService.use(_joplin_turndown_plugin_gfm_1.default.gfm);
     return turndownService.turndown(document);
 }
 exports.htmlToMarkdown = htmlToMarkdown;
