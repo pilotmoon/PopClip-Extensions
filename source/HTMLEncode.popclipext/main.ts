@@ -1,7 +1,7 @@
 // some info about HTML entities https://developer.mozilla.org/en-US/docs/Glossary/Entity
 // npm page for html-entities library https://www.npmjs.com/package/html-entities
-import entities = require('./html-entities')
-defineExtension({
+import entities = require('html-entities')
+const extension: Extension = {
   options: [{
     identifier: 'mode',
     label: 'Encoding Mode',
@@ -13,7 +13,7 @@ defineExtension({
     icon: '[&;]',
     title: 'HTML-encode',
     code: (selection, options) => {
-      popclip.pasteText(entities.encode(selection.text, { mode: options.mode }))
+      popclip.pasteText(entities.encode(selection.text, { mode: options.mode as entities.EncodeMode }))
       return null
     }
   }, {
@@ -25,4 +25,5 @@ defineExtension({
       return null
     }
   }]
-})
+}
+export default extension

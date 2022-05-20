@@ -1,0 +1,5 @@
+#!/bin/zsh
+npx tsc
+npx browserify --standalone foo main.js > main.bundle.js
+lzfse -encode -i main.bundle.js > main.bundle.js.lzfse   
+rm main.bundle.js

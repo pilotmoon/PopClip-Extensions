@@ -1,7 +1,11 @@
 {
-  "Extension Description" : "HTML-encode or decode the selected text.",
-  "Extension Identifier" : "com.pilotmoon.popclip.extension.htmlencode",
-  "Extension Image File" : "entities.png",
-  "Extension Name" : "HTML Encode",
-  "Required Software Version" : 3749
+  "description": "HTML-encode or decode the selected text.",
+  "identifier": "com.pilotmoon.popclip.extension.htmlencode",
+  "icon": "entities.png",
+  "name": "HTML Encode",
+  "module": "main.bundle.js.lzfse",
+  "entitlements": [
+    "dynamic"
+  ],
+  "popclipVersion": 3895
 }

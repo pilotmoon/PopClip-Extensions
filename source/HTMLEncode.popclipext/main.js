@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 // some info about HTML entities https://developer.mozilla.org/en-US/docs/Glossary/Entity
 // npm page for html-entities library https://www.npmjs.com/package/html-entities
-const entities = require("./html-entities");
-defineExtension({
+const entities = require("html-entities");
+const extension = {
     options: [{
             identifier: 'mode',
             label: 'Encoding Mode',
@@ -27,4 +27,5 @@ defineExtension({
                 return null;
             }
         }]
-});
+};
+exports.default = extension;
