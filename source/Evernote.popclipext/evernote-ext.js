@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.action = exports.auth = void 0;
 /*
 Where does the the `evernote.js` come from?
 It is the npm module `evernote`, that has been packed using browserify.
@@ -39,7 +38,6 @@ const auth = async (info, flow) => await new Promise(function (resolve, reject) 
         }
     });
 });
-exports.auth = auth;
 const action = async (input, options, context) => {
     const content = (0, enml_js_1.renderEnml)(input.html);
     const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note';
@@ -63,4 +61,4 @@ const action = async (input, options, context) => {
     popclip.showSuccess();
     return null;
 };
-exports.action = action;
+exports.default = { action, auth };

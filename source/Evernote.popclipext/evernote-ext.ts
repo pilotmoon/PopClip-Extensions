@@ -16,7 +16,7 @@ const { consumerKey, consumerSecret } = util.clarify(consumer)
 globalThis.location = { protocol: 'https:' }
 
 // sign in to evernote using its delightfully byzantine oauth system
-export const auth: AuthFunction = async (info, flow) => await new Promise(function (resolve, reject) {
+const auth: AuthFunction = async (info, flow) => await new Promise(function (resolve, reject) {
   const client = new Client({
     consumerKey,
     consumerSecret,
@@ -38,7 +38,7 @@ export const auth: AuthFunction = async (info, flow) => await new Promise(functi
   })
 })
 
-export const action: ActionFunction = async (input, options, context) => {
+const action: ActionFunction = async (input, options, context) => {
   const content = renderEnml(input.html)
   const title = context.browserTitle.length > 0 ? context.browserTitle : 'New Note'
   const attributes: any = { sourceApplication: 'PopClip' }
@@ -60,3 +60,5 @@ export const action: ActionFunction = async (input, options, context) => {
   popclip.showSuccess()
   return null
 }
+
+export default { action, auth }

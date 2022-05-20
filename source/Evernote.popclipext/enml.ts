@@ -3,9 +3,9 @@
 // with a couple of extra tags and a restriction on which tags can attributes can be used.
 // The allowed list of tags and attributes  is given in enml.json.
 // https://dev.evernote.com/doc/articles/enml.php
-import sanitizeHtml = require ('@popclip/sanitize-html.js')
-import htmlparser2 = require('@popclip/htmlparser2.js')
-import render = require('@popclip/dom-serializer.js')
+import sanitizeHtml from '@popclip/sanitize-html'
+import htmlparser2 from '@popclip/htmlparser2'
+import render from '@popclip/dom-serializer'
 import { allowedTags, allowedAttributes } from './enml.json'
 
 // clean HTML by removing disallowed tags and attributes

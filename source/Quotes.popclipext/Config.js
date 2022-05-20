@@ -1,4 +1,3 @@
-"use strict";
 define(function () {
     // the possible quotes styles
     const styles = [

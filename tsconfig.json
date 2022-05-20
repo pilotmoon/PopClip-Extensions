@@ -25,6 +25,7 @@
         // we can specify esnext lib due to polyfills in popclip
         "skipLibCheck": true,
         "module": "commonjs",
+        "esModuleInterop": true,
         "moduleResolution": "node",
         "resolveJsonModule": true,
         "baseUrl": "./lib",
