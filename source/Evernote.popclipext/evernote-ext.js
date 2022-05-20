@@ -11,14 +11,14 @@ using `./bin/getmodules evernote` (tool in this repo).
 /* eslint-disable @typescript-eslint/no-var-requires */
 const enml_js_1 = require("./enml.js");
 const consumer_json_1 = require("./consumer.json");
-const Client = require('./evernote.js');
+const evernote_js_1 = require("./evernote.js");
 const { consumerKey, consumerSecret } = util.clarify(consumer_json_1.consumer);
 // this keeps oauth module happy
 const g = globalThis;
 g.location = { protocol: 'https:' };
 // sign in to evernote using its delightfully byzantine oauth system
 const auth = async (info, flow) => await new Promise(function (resolve, reject) {
-    const client = new Client({
+    const client = new evernote_js_1.Client({
         consumerKey,
         consumerSecret,
         sandbox: false
@@ -49,7 +49,7 @@ const action = async (input, options, context) => {
     }
     const note = { title, content, attributes };
     try {
-        const authenticatedClient = new Client({
+        const authenticatedClient = new evernote_js_1.Client({
             token: options.authsecret,
             sandbox: false
         });

@@ -9,7 +9,7 @@ using `./bin/getmodules evernote` (tool in this repo).
 /* eslint-disable @typescript-eslint/no-var-requires */
 import { renderEnml } from './enml.js'
 import { consumer } from './consumer.json'
-const Client: any = require('./evernote.js')
+import { Client } from './evernote.js'
 
 const { consumerKey, consumerSecret } = util.clarify(consumer)
 
