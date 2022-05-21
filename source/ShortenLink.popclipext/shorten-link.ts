@@ -1,4 +1,4 @@
-import axios from '@popclip/axios'
+import axios from 'axios'
 import { replaceRangesAsync } from '@popclip/helpers/replace-ranges'
 import { concurrentTransform } from '@popclip/helpers/generator'
 

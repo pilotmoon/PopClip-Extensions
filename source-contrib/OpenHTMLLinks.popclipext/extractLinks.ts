@@ -1,4 +1,4 @@
-import { parseHTML } from '@popclip/linkedom'
+import { parseHTML } from 'linkedom'
 
 /**
  * Extracts the the "href" properties of all the links in an HTML document.

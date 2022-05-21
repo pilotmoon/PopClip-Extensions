@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.options = exports.action = void 0;
-const axios_1 = __importDefault(require("@popclip/axios"));
+const axios_1 = __importDefault(require("axios"));
 const langs_json_1 = require("./langs.json");
 const access_json_1 = require("./access.json");
 // the translation endpoint

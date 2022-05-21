@@ -1,5 +1,5 @@
-import linkedom from '@popclip/linkedom'
-import TurndownService from '@popclip/turndown'
+import linkedom from 'linkedom'
+import TurndownService from 'turndown'
 import turndownPluginGfm from './@joplin+turndown-plugin-gfm'
 
 export function htmlToMarkdown (html: string): string {

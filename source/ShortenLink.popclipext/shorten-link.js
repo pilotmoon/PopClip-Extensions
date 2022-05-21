@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.action = void 0;
-const axios_1 = __importDefault(require("@popclip/axios"));
+const axios_1 = __importDefault(require("axios"));
 const replace_ranges_1 = require("@popclip/helpers/replace-ranges");
 const generator_1 = require("@popclip/helpers/generator");
 const action = async (input, options) => {

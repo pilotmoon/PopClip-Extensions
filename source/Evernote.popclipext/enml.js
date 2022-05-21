@@ -9,9 +9,9 @@ exports.renderEnml = exports.renderXhtml = exports.cleanHtml = void 0;
 // with a couple of extra tags and a restriction on which tags can attributes can be used.
 // The allowed list of tags and attributes  is given in enml.json.
 // https://dev.evernote.com/doc/articles/enml.php
-const sanitize_html_1 = __importDefault(require("@popclip/sanitize-html"));
-const htmlparser2_1 = __importDefault(require("@popclip/htmlparser2"));
-const dom_serializer_1 = __importDefault(require("@popclip/dom-serializer"));
+const sanitize_html_1 = __importDefault(require("sanitize-html"));
+const htmlparser2_1 = __importDefault(require("htmlparser2"));
+const dom_serializer_1 = __importDefault(require("dom-serializer"));
 const enml_json_1 = require("./enml.json");
 // clean HTML by removing disallowed tags and attributes
 const cleanHtml = (dirty) => {

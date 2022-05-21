@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
-const axios_1 = __importDefault(require("@popclip/axios"));
+const axios_1 = __importDefault(require("axios"));
 const replace_ranges_1 = require("@popclip/helpers/replace-ranges");
 const generator_1 = require("@popclip/helpers/generator");
 const client_json_1 = require("./client.json");

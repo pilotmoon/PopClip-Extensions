@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import axios from '@popclip/axios'
+import axios from 'axios'
 import { client } from './client.json'
 
 // add task to todoist

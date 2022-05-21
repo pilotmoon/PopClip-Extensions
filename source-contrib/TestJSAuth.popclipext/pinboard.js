@@ -7,7 +7,7 @@ exports.options = exports.auth = exports.action = void 0;
 // re-implementation of Pinboard ext (as basic test)
 // docs: https://pinboard.in/api/
 //       https://axios-http.com/docs/req_config
-const axios_1 = __importDefault(require("@popclip/axios"));
+const axios_1 = __importDefault(require("axios"));
 const p = axios_1.default.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } });
 // add url to pinboard
 // uses page title as description if page url matches selected url

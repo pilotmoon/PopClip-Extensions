@@ -2,7 +2,7 @@
  * PopClip Extension for Pinboard
  * API docs: https://pinboard.in/api/
  */
-import axios from '@popclip/axios'
+import axios from 'axios'
 const p = axios.create({ baseURL: 'https://api.pinboard.in/v1/', params: { format: 'json' } })
 
 // add url to pinboard

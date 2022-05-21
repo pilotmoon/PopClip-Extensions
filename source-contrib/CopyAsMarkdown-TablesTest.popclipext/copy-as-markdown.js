@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.action = exports.htmlToMarkdown = void 0;
-const linkedom_1 = __importDefault(require("@popclip/linkedom"));
-const turndown_1 = __importDefault(require("@popclip/turndown"));
+const linkedom_1 = __importDefault(require("linkedom"));
+const turndown_1 = __importDefault(require("turndown"));
 const _joplin_turndown_plugin_gfm_1 = __importDefault(require("./@joplin+turndown-plugin-gfm"));
 function htmlToMarkdown(html) {
     // generate DOM object from HTML
