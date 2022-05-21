@@ -5,12 +5,12 @@
     "ts-standard": "^10.0.0",
     "typedoc": "^0.22.4",
     "typescript": "^4.4.3",
-    "typescript-json-schema": "^0.51.0",
-    "uglify-js": "^3.14.2"
+    "typescript-json-schema": "^0.51.0"
   },
   "dependencies": {
     "@joplin/turndown-plugin-gfm": "^1.0.43",
     "@popclip/helpers": "file:lib/@popclip/helpers",
+    "@popclip/test": "file:lib/@popclip/test",
     "@types/voca": "^1.4.1",
     "evernote": "^2.0.5",
     "html-entities": "^2.3.3",

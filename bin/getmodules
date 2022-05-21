@@ -5,16 +5,15 @@ mkdir -p temp
 echo "--ignore canvas" > temp/cmds
 count=2
 here=${0:a:h}
+root=$here/..
 
 list=($*)
 for name in $list; do
     flatname=$(echo $name | tr "/" "+")
     print "*" $name $flatname
-    print "Shimming..."
-    print "module.exports=require(\"$name\")" > temp/$flatname.shim.js
     print "Browserifying..."
-    print $here/../lib
-    cat temp/cmds | xargs -n $count npx browserify --standalone $flatname -e temp/$flatname.shim.js -o temp/$flatname.bundle.js
+    print $root/lib
+    cat temp/cmds | xargs -n $count npx browserify --standalone $flatname -e $root/node_modules/$name -o temp/$flatname.bundle.js
     # print "Uglifying..."
     # cat temp/$flatname.bundle.js | npx uglifyjs > temp/$flatname.ugly.js
     # print "Compressing..."
