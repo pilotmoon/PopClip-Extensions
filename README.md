@@ -700,7 +700,7 @@ icon: symbol:square.and.arrow.down.fill
 requirements: [url]
 entitlements: [network]
 javascript: |
-  const axios = require('@popclip/axios')
+  const axios = require('axios')
   const response = await axios.get(popclip.input.data.urls[0]) // throws for non-2xx status
   return response.data
 after: copy-result
