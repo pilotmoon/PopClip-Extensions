@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>QSpace.png</string>
+			<string>icon.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>path</string>
