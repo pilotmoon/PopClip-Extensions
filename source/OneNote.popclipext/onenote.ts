@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { client_id } from './client.json'
-import axios from '@popclip/axios'
+import axios from 'axios'
 
 const login_uri = 'https://login.microsoftonline.com/common/oauth2/v2.0'
 const oauth_endpoint = axios.create({ baseURL: login_uri })

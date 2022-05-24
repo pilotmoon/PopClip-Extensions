@@ -1,0 +1,19 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.droplr",
+  "name": "Droplr",
+  "icon": "droplr.svg",
+  "requirements": [
+    "urls"
+  ],
+  "entitlements": [
+    "network"
+  ],
+  "after": "paste-result",
+  "app": {
+    "link": "https://droplr.com/",
+    "name": "Droplr"
+  },
+  "popclipVersion": 3895,
+  "description": "Shorten URLs in the text using Droplr.",
+  "module": "droplr.bundle.js.lzfse"
+}
