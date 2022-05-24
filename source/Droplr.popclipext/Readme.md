@@ -35,4 +35,4 @@ Requires PopClip 2022.5 and Droplr Enterprise account.
 
 ### 24 May 2022
 
-* New development version
+* New development version - NOT YET TESTED
