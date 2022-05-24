@@ -17,7 +17,10 @@
     "evernote": "^2.0.5",
     "html-entities": "^2.3.3",
     "mathjs": "^10.0.0",
+    "slackify-markdown": "^4.3.1",
     "superagent": "^6.1.0",
-    "voca": "^1.4.0"
+    "turndown-plugin-gfm": "^1.0.2",
+    "voca": "^1.4.0",
+    "zod": "^3.17.3"
   }
 }
