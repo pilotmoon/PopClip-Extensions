@@ -6,11 +6,9 @@ Download: [Droplr.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/r
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Droplr.popclipext/Droplr-demo.gif" width="480px">
+The extension has one actions that shortens any URLs in the input plain text using Droplr.
 
-### Options
-
-Username and password for sign-in. (Stored in Keychain.)
+NOTE: Droplr link shortening is only available to Droplr's Enterprise plan.
 
 ## About
 
@@ -26,7 +24,7 @@ Nick Moore
 
 ### Requirements
 
-Requires PopClip 2022.5
+Requires PopClip 2022.5 and Droplr Enterprise account.
 
 ### Links
 
