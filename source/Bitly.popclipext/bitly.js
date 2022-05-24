@@ -26,7 +26,7 @@ const auth = async (info, flow) => {
     const redirect_uri = 'popclip://callback?popclip_ext_id=' + info.identifier; // old style callback is registered with bitly
     const { client_id, client_secret } = util.clarify(client_json_1.client);
     const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
-    const response = await bitly.post('oauth/access_token', new URLSearchParams({ client_id, client_secret, redirect_uri, code }));
+    const response = await bitly.post('oauth/access_token', util.buildQuery({ client_id, client_secret, redirect_uri, code }));
     return response.data.access_token;
 };
 exports.auth = auth;
