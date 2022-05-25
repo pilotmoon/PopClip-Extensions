@@ -25,7 +25,8 @@
       "JoinLines",
       "Slugify",
       "AlternatingCase",
-      "FullHalfWidth"
+      "FullHalfWidth",
+      "ROT13"
     ],
     "Title": "Text Transformation"
   },
@@ -302,9 +303,9 @@
   },
   {
     "Members": [
-      "Timestamp",
       "Calculate",
-      "Convert"
+      "Convert",
+      "Timestamp"   
     ],
     "Title": "Useful Tools"
   },

@@ -1,33 +1,35 @@
 # ROT13
 
-A PopClip extension to apply the ROT13 cipher to the selected text. 
+Apply the ROT13 cipher to the selected text.
+
+## Description
+
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ROT13.popclipext/ROT13-demo.gif" width="480px">
+
+ROT13 is used in online forums as a means of hiding spoilers, punchlines, puzzle solutions, and offensive materials from the casual glance.
 
 As [cryptii.com](https://cryptii.com/pipes/rot13-decoder) puts it:
 
 > ROT13 (rotate by 13 places) replaces a letter with the letter 13 letters after it in the alphabet. It has been described as the "Usenet equivalent printing an answer to a quiz upside down" as it provides virtually no cryptographic security.
 
-### Requirements
+## About
 
-Requires PopClip Build 3721 or above.
+This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 
 ### Author
 
 Nick Moore
 
+### Requirements
+
+Requires PopClip 2022.5
+
 ### Acknowledgements
 
-The cipher function is taken from [rot13-cipher](https://github.com/rocktimsaikia/rot13-cipher) (MIT License).
+The cipher function is [rot13-cipher](https://github.com/rocktimsaikia/rot13-cipher) (MIT License).
 
 ## Changelog
 
-### v1 — 25 Oct 2021
+### 25 May 2022
 
 * Initial release
-
-
-
-
-
-
-
-

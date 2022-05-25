@@ -1,0 +1,8 @@
+{
+  "popclip version": 3895,
+  "identifier": "com.pilotmoon.popclip.extension.rot13",
+  "name": "ROT13",
+  "icon": "filled square R13",
+  "description": "Apply the ROT13 cipher to the text.",
+  "module": "rot13.js"
+}
