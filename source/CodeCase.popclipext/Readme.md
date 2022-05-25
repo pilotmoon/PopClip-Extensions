@@ -1,6 +1,6 @@
 # Coding Cases
 
-Convert the selection to common naming formats for programming and web design.
+Convert the selection to common identifier formats used in source code.
 
 Download: [CodeCase.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/CodeCase.popclipextz)
 
