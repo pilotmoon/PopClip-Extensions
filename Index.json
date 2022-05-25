@@ -287,15 +287,16 @@
   },
   {
     "Members": [
-      "RunCommand",
-      "URLEncode",
-      "HTMLEncode",
       "Base64",
-      "UnixTime",
+      "BBEdit",
+      "BundleID",
       "Dash",
-      "SnippetsLab",
+      "HTMLEncode",
       "Quiver",
-      "BBEdit"
+      "RunCommand",
+      "SnippetsLab",
+      "UnixTime",
+      "URLEncode"
     ],
     "Title": "For Developers"
   },

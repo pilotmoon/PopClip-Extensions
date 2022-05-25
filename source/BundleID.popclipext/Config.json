@@ -1,0 +1,8 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.bundleid",
+  "name": "Bundle ID",
+  "entitlements": ["dynamic"],
+  "requirements": [],
+  "popclipVersion": 3895,
+  "description": "Show the bundle identifier of the app."
+}
