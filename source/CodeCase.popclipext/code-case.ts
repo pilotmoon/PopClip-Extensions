@@ -3,7 +3,7 @@ import * as ca from 'case-anything'
 
 const config = [
   { icon: 'camel-case.svg', method: 'camelCase', title: 'camelCase' },
-  { icon: 'pascal-case.svg', method: 'UpperCamelCase', title: 'UpperCamelCase' },
+  { icon: 'pascal-case.svg', method: 'upperCamelCase', title: 'UpperCamelCase' },
   { icon: 'kebab-case.svg', method: 'kebabCase', title: 'kebab-case' },
   { icon: 'snake-case.svg', method: 'snakeCase', title: 'snake_case' },
   { icon: 'const-case.svg', method: 'constantCase', title: 'CONSTANT_CASE' }

@@ -23,8 +23,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const ca = __importStar(require("case-anything"));
 require("core-js/es/string/match-all"); // temporary until next popclip version
+const ca = __importStar(require("case-anything"));
 const config = [
     { icon: 'camel-case.svg', method: 'camelCase', title: 'camelCase' },
     { icon: 'pascal-case.svg', method: 'upperCamelCase', title: 'UpperCamelCase' },
