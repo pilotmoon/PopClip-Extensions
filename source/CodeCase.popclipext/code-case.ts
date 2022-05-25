@@ -11,9 +11,7 @@ const config = [
 
 const actions = config.map(config => {
   const action: ActionObject = {
-    code (input) {
-      return ca[config.method](input.text)
-    },
+    code: input => ca[config.method](input.text),
     requirements: ['text', `option-${config.method}=1`],
     title: config.title,
     icon: config.icon,
