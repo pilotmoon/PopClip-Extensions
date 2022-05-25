@@ -1,0 +1,8 @@
+{
+    "name": "Coding Cases",
+    "popclipVersion": 3895,
+    "icon": "camel-case.svg",
+    "identifier": "com.pilotmoon.popclip.extension.code-case",
+    "description": "Convert the selection to either camelCase, UpperCamelCase, kebab-case, snake_case or CONSTANT_CASE.",    
+    "module": "code-case.bundle.js.lzfse"
+}

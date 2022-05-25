@@ -13,6 +13,8 @@
     "@popclip/test": "file:lib/@popclip/test",
     "@types/crypto-js": "^4.1.1",
     "@types/voca": "^1.4.1",
+    "case-anything": "^2.1.10",
+    "core-js": "^3.22.7",
     "crypto-js": "^4.1.1",
     "evernote": "^2.0.5",
     "html-entities": "^2.3.3",
