@@ -15,5 +15,5 @@
   },
   "popclipVersion": 3895,
   "description": "Shorten URLs in the text using Droplr.",
-  "module": "droplr.bundle.js.lzfse"
+  "module": "droplr.bundle.js"
 }

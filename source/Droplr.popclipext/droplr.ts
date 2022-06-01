@@ -31,11 +31,42 @@ async function droplrRequest (action: string, method: 'GET'|'POST', passwordHash
   return response.data
 }
 
+/* Read stored credentials either from old extension or this extensions. */
+function credentials (): { passwordHash: string, userEmail: string } {
+  const result = { passwordHash: '', userEmail: '' }
+  let credentials: any = {}
+  try {
+    // this version uses plain JSON
+    credentials = JSON.parse(popclip.options.authsecret)
+  } catch (err) {
+    try {
+      // old extension used base64-encoded query
+      credentials = util.parseQuery(util.base64Decode(popclip.options.authsecret))
+    } catch (err) {
+      // fall through
+      print('Neither type of credentials found')
+    }
+  }
+
+  if (typeof credentials.passwordHash === 'string' && typeof credentials.userEmail === 'string') {
+    // new style credentials
+    result.passwordHash = credentials.passwordHash
+    result.userEmail = credentials.userEmail
+  } else if (typeof credentials.passHash === 'string' && typeof credentials.userEmail === 'string') {
+    // old style credentials
+    result.passwordHash = credentials.passHash
+    result.userEmail = credentials.userEmail
+  } else {
+    throw new Error('Not signed in')
+  }
+  return result
+}
+
 async function shorten (url: string): Promise<string> {
-  const { passwordHash, userEmail } = JSON.parse(popclip.options.authsecret)
+  const { passwordHash, userEmail } = credentials()
   const data = await droplrRequest('/links', 'POST', passwordHash, userEmail, 'text/plain', url)
   const { shortlink, privacy, password } = data as {shortlink: string, privacy: 'PUBLIC'|'PRIVATE'|'OBSCURE', password: string}
-  return shortlink + (privacy === 'PRIVATE' ? shortlink + '/' + password : '')
+  return shortlink + (privacy === 'PRIVATE' ? '/' + password : '')
 }
 
 export const action: Action = async (input) => {

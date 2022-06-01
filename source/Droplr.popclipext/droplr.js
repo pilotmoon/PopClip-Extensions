@@ -32,11 +32,44 @@ async function droplrRequest(action, method, passwordHash, userEmail, contentTyp
     });
     return response.data;
 }
+/* Read stored credentials either from old extension or this extensions. */
+function credentials() {
+    const result = { passwordHash: '', userEmail: '' };
+    let credentials = {};
+    try {
+        // this version uses plain JSON
+        credentials = JSON.parse(popclip.options.authsecret);
+    }
+    catch (err) {
+        try {
+            // old extension used base64-encoded query
+            credentials = util.parseQuery(util.base64Decode(popclip.options.authsecret));
+        }
+        catch (err) {
+            // fall through
+            print('Neither type of credentials found');
+        }
+    }
+    if (typeof credentials.passwordHash === 'string' && typeof credentials.userEmail === 'string') {
+        // new style credentials
+        result.passwordHash = credentials.passwordHash;
+        result.userEmail = credentials.userEmail;
+    }
+    else if (typeof credentials.passHash === 'string' && typeof credentials.userEmail === 'string') {
+        // old style credentials
+        result.passwordHash = credentials.passHash;
+        result.userEmail = credentials.userEmail;
+    }
+    else {
+        throw new Error('Not signed in');
+    }
+    return result;
+}
 async function shorten(url) {
-    const { passwordHash, userEmail } = JSON.parse(popclip.options.authsecret);
+    const { passwordHash, userEmail } = credentials();
     const data = await droplrRequest('/links', 'POST', passwordHash, userEmail, 'text/plain', url);
     const { shortlink, privacy, password } = data;
-    return shortlink + (privacy === 'PRIVATE' ? shortlink + '/' + password : '');
+    return shortlink + (privacy === 'PRIVATE' ? '/' + password : '');
 }
 const action = async (input) => {
     return await (0, replace_ranges_1.replaceRangesAsync)(input.text, input.data.urls.ranges, (0, generator_1.concurrentTransform)(input.data.urls, shorten));
