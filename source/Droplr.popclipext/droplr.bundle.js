@@ -6981,7 +6981,6 @@ async function droplrRequest(action, method, passwordHash, userEmail, contentTyp
 }
 /* Read stored credentials either from old extension or this extensions. */
 function credentials() {
-    const result = { passwordHash: '', userEmail: '' };
     let credentials = {};
     try {
         // this version uses plain JSON
@@ -6997,20 +6996,17 @@ function credentials() {
             print('Neither type of credentials found');
         }
     }
-    if (typeof credentials.passwordHash === 'string' && typeof credentials.userEmail === 'string') {
-        // new style credentials
-        result.passwordHash = credentials.passwordHash;
-        result.userEmail = credentials.userEmail;
+    // adjust old style credentials, which used different name
+    if (typeof credentials.passHash === 'string') {
+        credentials.passwordHash = credentials.passHash;
     }
-    else if (typeof credentials.passHash === 'string' && typeof credentials.userEmail === 'string') {
-        // old style credentials
-        result.passwordHash = credentials.passHash;
-        result.userEmail = credentials.userEmail;
+    // if we have got what we are looking for
+    if (typeof credentials.passwordHash === 'string' && typeof credentials.userEmail === 'string') {
+        return credentials;
     }
     else {
         throw new Error('Not signed in');
     }
-    return result;
 }
 async function shorten(url) {
     const { passwordHash, userEmail } = credentials();

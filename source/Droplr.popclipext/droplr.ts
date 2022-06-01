@@ -33,7 +33,6 @@ async function droplrRequest (action: string, method: 'GET'|'POST', passwordHash
 
 /* Read stored credentials either from old extension or this extensions. */
 function credentials (): { passwordHash: string, userEmail: string } {
-  const result = { passwordHash: '', userEmail: '' }
   let credentials: any = {}
   try {
     // this version uses plain JSON
@@ -48,18 +47,17 @@ function credentials (): { passwordHash: string, userEmail: string } {
     }
   }
 
+  // adjust old style credentials, which used different name
+  if (typeof credentials.passHash === 'string') {
+    credentials.passwordHash = credentials.passHash
+  }
+
+  // if we have got what we are looking for
   if (typeof credentials.passwordHash === 'string' && typeof credentials.userEmail === 'string') {
-    // new style credentials
-    result.passwordHash = credentials.passwordHash
-    result.userEmail = credentials.userEmail
-  } else if (typeof credentials.passHash === 'string' && typeof credentials.userEmail === 'string') {
-    // old style credentials
-    result.passwordHash = credentials.passHash
-    result.userEmail = credentials.userEmail
+    return credentials
   } else {
     throw new Error('Not signed in')
   }
-  return result
 }
 
 async function shorten (url: string): Promise<string> {
