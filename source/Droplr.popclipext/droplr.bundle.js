@@ -7034,7 +7034,7 @@ exports.auth = auth;
 // options
 exports.options = [
     { identifier: 'username', type: 'string', label: util.localize('Username') },
-    { identifier: 'password', type: 'password', label: util.localize('Password'), description: 'Note: this extension requires a Droplr Enterprise account.' }
+    { identifier: 'password', type: 'password', label: util.localize('Password') }
 ];
 
 },{"./access.json":39,"@popclip/helpers/generator":1,"@popclip/helpers/replace-ranges":2,"axios":"axios","crypto-js":13}]},{},[40])(40)

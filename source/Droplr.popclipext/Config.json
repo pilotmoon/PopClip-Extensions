@@ -1,7 +1,7 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.droplr",
   "name": "Droplr",
-  "icon": "droplr.svg",
+  "icon": "droplr-icon.svg",
   "requirements": [
     "urls"
   ],
@@ -15,5 +15,6 @@
   },
   "popclipVersion": 3895,
   "description": "Shorten URLs in the text using Droplr.",
-  "module": "droplr.bundle.js"
+  "module": "droplr.bundle.js",
+  "note": "Updated 1 Jun 2022 with bugfix."
 }

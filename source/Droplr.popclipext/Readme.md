@@ -8,7 +8,7 @@ Download: [Droplr.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/r
 
 The extension has one actions that shortens any URLs in the input plain text using Droplr.
 
-NOTE: Droplr link shortening is only available to Droplr's Enterprise plan.
+Note: Droplr link shortening is only available on old Droplr accounts, or new accounts on Droplr's Enterprise plan.
 
 ## About
 
@@ -24,7 +24,7 @@ Nick Moore
 
 ### Requirements
 
-Requires PopClip 2022.5 and Droplr Enterprise account.
+Requires PopClip 2022.5 and either an old Droplr account with grandfathered-in link shortening feature, or a Droplr Enterprise account.
 
 ### Links
 
@@ -33,6 +33,14 @@ Requires PopClip 2022.5 and Droplr Enterprise account.
   
 ## Changelog
 
+### 1 Jun 2022
+
+* Tested and appears to work.
+
 ### 24 May 2022
 
-* New development version - NOT YET TESTED
+* New version in JavaScript (untested).
+
+### 26 Feb 2013
+
+* Original PHP version.

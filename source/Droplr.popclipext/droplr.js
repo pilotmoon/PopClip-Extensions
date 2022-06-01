@@ -87,5 +87,5 @@ exports.auth = auth;
 // options
 exports.options = [
     { identifier: 'username', type: 'string', label: util.localize('Username') },
-    { identifier: 'password', type: 'password', label: util.localize('Password'), description: 'Note: this extension requires a Droplr Enterprise account.' }
+    { identifier: 'password', type: 'password', label: util.localize('Password') }
 ];
