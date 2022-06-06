@@ -18,7 +18,7 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add a new reminder in Reminders. (Requires PopClip version 2020.12)</string>
+	<string>Add a new reminder in Reminders.</string>
 	<key>Extension Identifier</key>
 	<string>com.pilotmoon.popclip.extension.reminders</string>
 	<key>Extension Name</key>

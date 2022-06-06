@@ -1,1 +1,0 @@
-Please note this extension WILL NOT WORK at present because it needs a future PopClip update will request Reminders access on the extension's behalf.
