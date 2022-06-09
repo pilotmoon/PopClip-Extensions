@@ -1,0 +1,5 @@
+#!/bin/zsh
+set -e
+module=notion
+npx tsc
+npx browserify --external axios --standalone foo $module.js > $module.bundle.js

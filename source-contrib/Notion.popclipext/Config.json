@@ -1,0 +1,10 @@
+{
+    "popclipVersion": 3895,
+    "name": "Notion",
+    "identifier": "com.pilotmoon.popclip.extension.notion",
+    "icon": "N",
+    "entitlements": ["network"],
+    "captureHtml": true,
+    "module": "notion.js",
+    "description": "todo"
+}
