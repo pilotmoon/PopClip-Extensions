@@ -22,5 +22,11 @@ This extension is a replacement for the PreviewHighlight extension. The intentio
 - Alternote
 - DevonThink
 
-8 Feb 2022: Added support for Obsidian and Logseq
-4 Jan 2018: Added support for Scrivener 3
+### ⇧⌘L
+- iA Writer
+
+## Changelog
+
+- 17 June 2022: Added support for iA Writer
+- 8 Feb 2022: Added support for Obsidian and Logseq
+- 4 Jan 2018: Added support for Scrivener 3
