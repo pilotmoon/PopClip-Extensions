@@ -1,0 +1,9 @@
+# popclip Logseq quick capture
+name: Logseq
+identifier: "me.eindex.popclip.extesion.logseq"
+icon: Logseq.png
+type: string
+captureHtml: true
+description: Logseq qucik capture
+javascript: |
+  popclip.openUrl(`logseq://x-callback-url/quickCapture?content=${encodeURIComponent(popclip.input.markdown)}&url=${encodeURIComponent(popclip.context.browserUrl)}&title=${encodeURIComponent(popclip.context.browserTitle)}`)
