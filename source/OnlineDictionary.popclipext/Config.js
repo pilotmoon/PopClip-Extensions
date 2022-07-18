@@ -1,4 +1,5 @@
 let services = {
+    'dicio.com.br': 'https://www.dicio.com.br/***',
     'dict.cc': 'https://www.dict.cc/?s=***',
     'dict.cn': 'https://dict.cn/***',
     'dict.leo.org': 'https://dict.leo.org/?search=***',
