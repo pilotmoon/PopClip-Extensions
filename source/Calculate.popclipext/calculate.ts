@@ -1,7 +1,7 @@
 import { evaluate, format, typeOf } from 'mathjs'
 
 export const actions: PopulationFunction = (selection) => {
-  // const separator = util.localeInfo.decimalSeparator
+  const separator = util.localeInfo.decimalSeparator
 
   if (selection.text.length > 1000) { // limit input size
     return null

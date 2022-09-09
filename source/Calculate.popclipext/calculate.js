@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
 const mathjs_1 = require("mathjs");
 const actions = (selection) => {
-    // const separator = util.localeInfo.decimalSeparator
+    const separator = util.localeInfo.decimalSeparator;
     if (selection.text.length > 1000) { // limit input size
         return null;
     }
@@ -13,7 +13,7 @@ const actions = (selection) => {
         text = text.substring(0, text.length - 1);
     }
     // replace locale decimal separator with .
-    // text = text.replace(separator, '.')
+    text = text.replace(separator, '.')
     let result = (0, mathjs_1.evaluate)(text);
     if (result === undefined || typeof result === 'function' || typeof result === 'string') {
         return null;
@@ -28,7 +28,7 @@ const actions = (selection) => {
         resultString = resultString.substring(0, maxLength) + '…';
     }
     // replace . with local decimal separator
-    // resultString = resultString.replace('.', separator)
+    resultString = resultString.replace('.', separator)
     return {
         title: resultString,
         icon: null,

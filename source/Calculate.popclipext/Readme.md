@@ -42,16 +42,19 @@ The extension is implemented using [mathjs](https://mathjs.org/). The evaluation
 
 ## Changelog
 
-### v3 - 16 Nov 2021
+### 9 Sep 2022
 
-<!-- * Allow input and output with comma as decimal separator, as per system locale e.g. `3,1 * 2` → `6,2` -->
+* Allow input and output with comma as decimal separator, as per system locale e.g. `3,1 * 2` → `6,2`.
+
+### 16 Nov 2021
+
 * Prevent really long outputs when selecting a quoted string.
 
-### v2 - 8 Nov 2021
+### 8 Nov 2021
 
 * Rewritten in JavaScript using mathjs library.
 * Displays result as title of button.
 
-### v1 - 8 Apr 2013
+### 8 Apr 2013
 
 * Initial release (PHP).
