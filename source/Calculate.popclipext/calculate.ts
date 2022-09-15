@@ -13,7 +13,7 @@ export const actions: PopulationFunction = (selection) => {
   }
 
   // replace locale decimal separator with .
-  // text = text.replace(separator, '.')
+  text = text.replace(separator, '.')
 
   let result = evaluate(text)
   if (result === undefined || typeof result === 'function' || typeof result === 'string') {
@@ -30,7 +30,7 @@ export const actions: PopulationFunction = (selection) => {
   }
 
   // replace . with local decimal separator
-  // resultString = resultString.replace('.', separator)
+  resultString = resultString.replace('.', separator)
 
   return {
     title: resultString,
