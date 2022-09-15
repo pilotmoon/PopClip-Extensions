@@ -37,6 +37,14 @@
       "title": "Highlight"
     },
     {
+      "keyCombo": "shift command U",
+      "requiredApps": [
+        "pro.writer.mac"
+      ],
+      "icon": "hlite.png",
+      "title": "Highlight"
+    },
+    {
       "keyCombo": "option shift command 1",
       "requiredApps": [
         "com.smileonmymac.PDFpenPro",
@@ -46,5 +54,5 @@
       "title": "Highlight"
     }
   ],
-  "description": "Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen and PDF Expert only."
+  "description": "Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen, PDF Expert and iA Writer only."
 }
