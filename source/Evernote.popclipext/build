@@ -1,6 +1,6 @@
 #!/bin/zsh
 npx tsc
 module=main
-npx browserify --external @popclip/sanitize-html --external @popclip/htmlparser2 --external @popclip/dom-serializer --standalone foo $module.js > $module.bundle.js
+npx browserify --external sanitize-html --external htmlparser2 --external dom-serializer --standalone foo $module.js > $module.bundle.js
 lzfse -encode -i $module.bundle.js > $module.bundle.js.lzfse   
 rm $module.bundle.js

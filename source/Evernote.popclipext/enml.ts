@@ -3,9 +3,9 @@
 // with a couple of extra tags and a restriction on which tags can attributes can be used.
 // The allowed list of tags and attributes  is given in enml.json.
 // https://dev.evernote.com/doc/articles/enml.php
-import sanitizeHtml from 'sanitize-html'
-import htmlparser2 from 'htmlparser2'
-import render from 'dom-serializer'
+import sanitizeHtml from 'sanitize-html' // has default export
+import { parseDocument } from 'htmlparser2'
+import render from 'dom-serializer' // has default export
 import { allowedTags, allowedAttributes } from './enml.json'
 
 // clean HTML by removing disallowed tags and attributes
@@ -20,7 +20,7 @@ export const cleanHtml = (dirty: string): string => {
 }
 // render given HTML string as XHTML
 export const renderXhtml = (html: string): string => {
-  const document = htmlparser2.parseDocument(html)
+  const document = parseDocument(html)
   return render(document, { xmlMode: true })
 }
 // render given HTML string as ENML
