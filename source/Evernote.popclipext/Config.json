@@ -12,5 +12,6 @@
     "name": "Evernote",
     "link": "https://evernote.com/"
   },
-  "description": "Send the selected text to Evernote."
+  "description": "Send the selected text to Evernote.",
+  "note": "Updated 15 Sep 2022 with fix."
 }

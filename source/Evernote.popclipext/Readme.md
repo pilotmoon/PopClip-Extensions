@@ -35,6 +35,10 @@ Icon from [svgrepo](https://www.svgrepo.com/svg/24585/evernote) (CC0).
   
 ## Changelog
 
+### 15 Sep 2022
+
+* Fix bug with build, extension not working.
+
 ### 5 May 2022
 
 * Rewritten to send the to the Evernote servers directly using the Evernote API.
