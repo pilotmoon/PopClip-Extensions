@@ -12,16 +12,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## Beta / Unreleased
+## Beta (Build 3939) / Unreleased
 
 ### Added
 
 - Added something called a "module snippet". (To be described!)
+- Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
 
 ### Changed
 
 - Increased maximum snippet length from 1000 to 5000 characters.
 - Optionally, the `#popclip` marker may now appear at the end of the snippet instead of the start. This means that a one-liner like `{name: Test, shortcut name: Test Shortcut} #popclip`, which is valid YAML, is now a valid PopClip snippet.
+- Updated the versions of built in NPM modules as follows:
+  - case-anything to 2.1.10
+  - core-js to 3.25.1
+  - sanitize-html to 2.7.2
 
 ### Fixed
 
