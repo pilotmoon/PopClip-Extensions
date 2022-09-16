@@ -1,11 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.options = exports.auth = exports.action = void 0;
-const axios_1 = __importDefault(require("axios"));
-const crypto_js_1 = __importDefault(require("crypto-js"));
+const axios_1 = require("axios");
+const CryptoJS = require("crypto-js");
 const replace_ranges_1 = require("@popclip/helpers/replace-ranges");
 const generator_1 = require("@popclip/helpers/generator");
 const access_json_1 = require("./access.json");
@@ -17,7 +14,7 @@ async function droplrRequest(action, method, passwordHash, userEmail, contentTyp
     const { puk, prk } = util.clarify(access_json_1.access);
     const epochMilliseconds = new Date().getTime();
     const pub = util.base64Encode(`${puk}:${userEmail}`);
-    const sig = crypto_js_1.default.HmacSHA1(`${method} ${action} HTTP/1.1\n${contentType}\n${epochMilliseconds}`, `${prk}:${passwordHash}`).toString(crypto_js_1.default.enc.Base64);
+    const sig = CryptoJS.HmacSHA1(`${method} ${action} HTTP/1.1\n${contentType}\n${epochMilliseconds}`, `${prk}:${passwordHash}`).toString(CryptoJS.enc.Base64);
     const response = await (0, axios_1.default)({
         baseURL: 'https://api.droplr.com',
         method: method,
@@ -72,7 +69,7 @@ const action = async (input) => {
 };
 exports.action = action;
 const auth = async (info) => {
-    const passwordHash = crypto_js_1.default.SHA1(info.password).toString(crypto_js_1.default.enc.Hex);
+    const passwordHash = CryptoJS.SHA1(info.password).toString(CryptoJS.enc.Hex);
     const userEmail = info.username;
     // retrieve the 'account' endpoint to prove we can login
     await droplrRequest('/account', 'GET', passwordHash, userEmail, '');

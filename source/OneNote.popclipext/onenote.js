@@ -1,12 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.action = exports.auth = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
 const client_json_1 = require("./client.json");
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 const login_uri = 'https://login.microsoftonline.com/common/oauth2/v2.0';
 const oauth_endpoint = axios_1.default.create({ baseURL: login_uri });
 const scope = 'Notes.Create offline_access';

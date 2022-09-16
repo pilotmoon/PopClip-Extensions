@@ -1,5 +1,5 @@
 import axios from 'axios'
-import CryptoJS from 'crypto-js'
+import * as CryptoJS from 'crypto-js'
 import { replaceRangesAsync } from '@popclip/helpers/replace-ranges'
 import { concurrentTransform } from '@popclip/helpers/generator'
 import { access } from './access.json'

@@ -1,12 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable @typescript-eslint/naming-convention */
 const access_json_1 = require("./access.json");
 const zod_1 = require("zod");
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 // slack api base
 const slack = axios_1.default.create({ baseURL: 'https://slack.com/api/' });
 // the expected api response

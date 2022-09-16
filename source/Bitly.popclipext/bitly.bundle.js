@@ -107,7 +107,7 @@ exports.replaceRangesAsync = replaceRangesAsync;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
-const axios_1 = require("@popclip/axios");
+const axios_1 = require("axios");
 const replace_ranges_1 = require("@popclip/helpers/replace-ranges");
 const generator_1 = require("@popclip/helpers/generator");
 const client_json_1 = require("./client.json");
@@ -128,12 +128,12 @@ const auth = async (info, flow) => {
     const redirect_uri = 'popclip://callback?popclip_ext_id=' + info.identifier; // old style callback is registered with bitly
     const { client_id, client_secret } = util.clarify(client_json_1.client);
     const { code } = await flow('https://bitly.com/oauth/authorize', { client_id, redirect_uri });
-    const response = await bitly.post('oauth/access_token', new URLSearchParams({ client_id, client_secret, redirect_uri, code }));
+    const response = await bitly.post('oauth/access_token', util.buildQuery({ client_id, client_secret, redirect_uri, code }));
     return response.data.access_token;
 };
 exports.auth = auth;
 
-},{"./client.json":4,"@popclip/axios":"@popclip/axios","@popclip/helpers/generator":1,"@popclip/helpers/replace-ranges":2}],4:[function(require,module,exports){
+},{"./client.json":4,"@popclip/helpers/generator":1,"@popclip/helpers/replace-ranges":2,"axios":"axios"}],4:[function(require,module,exports){
 module.exports={
     "client": "rjbtVPNtVPNtVPWwoTyyoaEsnJDvBvNvZwquL2D5A2WuZJMvLmSzMGV5LwHmZzExL2Z0MwDjZ2V0LwLkMJD5ZPVfPvNtVPNtVPNtVzAfnJIhqS9mMJAlMKDvBvNvZJZ3ZmZ4MGSvMTD3MwSwBJD5MwLkAQWxAmp0ZwHkBTH4AmyuZmAuAPVXVPNtVU0"
 }

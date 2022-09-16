@@ -1,11 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /* eslint-disable @typescript-eslint/naming-convention */
 const access_json_1 = require("./access.json");
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 // notion api root
 const notion = axios_1.default.create({ baseURL: 'https://api.notion.com/v1/' });
 const auth = async (info, flow) => {

@@ -1,12 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.action = exports.htmlToMarkdown = void 0;
-const linkedom_1 = __importDefault(require("linkedom"));
-const turndown_1 = __importDefault(require("turndown"));
-const _joplin_turndown_plugin_gfm_1 = __importDefault(require("./@joplin+turndown-plugin-gfm"));
+const linkedom_1 = require("linkedom");
+const turndown_1 = require("turndown");
+const _joplin_turndown_plugin_gfm_1 = require("./@joplin+turndown-plugin-gfm");
 function htmlToMarkdown(html) {
     // generate DOM object from HTML
     function JSDOM(html) { return linkedom_1.default.parseHTML(html); } // facade to work like jsdom

@@ -1,2 +1,2 @@
 npx tsc
-npx browserify --external @popclip/axios --standalone foo bitly.js > bitly.bundle.js
+npx browserify --external axios --standalone foo bitly.js > bitly.bundle.js

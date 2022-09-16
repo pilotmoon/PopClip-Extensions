@@ -1,11 +1,8 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = void 0;
 /* eslint-disable @typescript-eslint/naming-convention */
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 const client_json_1 = require("./client.json");
 // add task to todoist
 const action = async (input) => {

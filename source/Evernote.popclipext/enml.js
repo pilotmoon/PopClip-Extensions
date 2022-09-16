@@ -1,7 +1,4 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.renderEnml = exports.renderXhtml = exports.cleanHtml = void 0;
 // Utility for rendering HTML as ENML (Evernote Markup Language),
@@ -9,13 +6,13 @@ exports.renderEnml = exports.renderXhtml = exports.cleanHtml = void 0;
 // with a couple of extra tags and a restriction on which tags can attributes can be used.
 // The allowed list of tags and attributes  is given in enml.json.
 // https://dev.evernote.com/doc/articles/enml.php
-const sanitize_html_1 = __importDefault(require("sanitize-html")); // has default export
+const sanitizeHtml = require("sanitize-html");
 const htmlparser2_1 = require("htmlparser2");
-const dom_serializer_1 = __importDefault(require("dom-serializer")); // has default export
+const dom_serializer_1 = require("dom-serializer");
 const enml_json_1 = require("./enml.json");
 // clean HTML by removing disallowed tags and attributes
 const cleanHtml = (dirty) => {
-    return (0, sanitize_html_1.default)(dirty, {
+    return sanitizeHtml(dirty, {
         allowedTags: enml_json_1.allowedTags,
         allowedAttributes: enml_json_1.allowedAttributes,
         exclusiveFilter: function (frame) {

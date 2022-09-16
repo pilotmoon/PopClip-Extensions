@@ -1,10 +1,7 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.options = exports.action = void 0;
-const axios_1 = __importDefault(require("axios"));
+const axios_1 = require("axios");
 const langs_json_1 = require("./langs.json");
 const access_json_1 = require("./access.json");
 // the translation endpoint
