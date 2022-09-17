@@ -19,12 +19,11 @@ const action = (input, options, context) => {
     const rs = new RichString(input.text, sourceOptions);
     // const content = { 'public.rtf': rs.rtf, 'public.html': rs.html }
     const content = { 'public.rtf': rs.rtf };
-    if (context.hasFormatting) {
-        popclip.pasteContent(content);
-    }
-    else {
-        popclip.copyContent(content);
-    }
+    // if (context.hasFormatting) {
+    //   popclip.pasteContent(content)
+    // } else {
+    popclip.copyContent(content);
+    // }
     return null;
 };
 exports.action = action;
