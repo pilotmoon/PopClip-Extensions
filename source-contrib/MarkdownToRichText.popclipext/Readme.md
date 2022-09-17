@@ -1,10 +1,8 @@
 # Markdown to Rich Text
 
-It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and pastes it over the selection. If pasting is not possible, it copies it to the clipboard instead.
+It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard. (By holding ⌥⇧ you can get it to try to paste the result in place instead.)
 
 By contrast with the Markdown to HTML extension, which produces HTML *source code* as plain text, this extension produces RTF content which is labelled as RTF on the clipboard. This means it is recognised by any Mac app which supports pasting RTF content.
-
-By holding the Shift key you force it to copy to the clipboard instead of pasting.
 
 ### A note on formatting
 
@@ -46,6 +44,10 @@ Nick Moore
 
 ## Changelog
 
-### v0 - 13 Apr 2022
+### 17 Sep 2022
+
+* Change default behaviour to Copy.
+
+### 13 Apr 2022
 
 * Initial test release.

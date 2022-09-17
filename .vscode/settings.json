@@ -30,6 +30,7 @@
         "asyncawait",
         "authsecret",
         "axios",
+        "behaviour",
         "browserify",
         "centimetres",
         "checkmark",
