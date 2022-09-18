@@ -1,0 +1,4 @@
+identifier: "com.pilotmoon.popclip.extension.bul_lat_switcher"
+name: "BulLatSwitcher"
+icon: BUL
+javascript file: bul_lat_switcher.js
