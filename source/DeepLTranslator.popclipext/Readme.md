@@ -35,6 +35,10 @@ Requires PopClip 2022.5
   
 ## Changelog
 
+### 5 Oct 2022
+
+* Add support for Indonesian, Turkish and Ukrainian languages.
+
 ### 4 May 2022
 
 * Support DeepL App mode.

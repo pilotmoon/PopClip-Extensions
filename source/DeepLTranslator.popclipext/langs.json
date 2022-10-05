@@ -62,6 +62,11 @@
             "supports_formality": false
         },
         {
+            "language": "ID",
+            "name": "Indonesian",
+            "supports_formality": false
+        },
+        {
             "language": "IT",
             "name": "Italian",
             "supports_formality": true
@@ -124,6 +129,16 @@
         {
             "language": "SV",
             "name": "Swedish",
+            "supports_formality": false
+        },
+        {
+            "language": "TR",
+            "name": "Turkish",
+            "supports_formality": false
+        },
+        {
+            "language": "UK",
+            "name": "Ukrainian",
             "supports_formality": false
         },
         {
