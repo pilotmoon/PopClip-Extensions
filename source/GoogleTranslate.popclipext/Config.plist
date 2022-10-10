@@ -12,7 +12,7 @@
 	<array>
 		<dict>
 			<key>URL</key>
-			<string>http://{popclip option site}/?langpair=auto%7Cauto&amp;text={popclip text}</string>
+			<string>https://{popclip option site}/?langpair=auto%7Cauto&amp;text={popclip text}</string>
 			<key>Image File</key>
 			<string>gtrans.png</string>
 			<key>Title</key>
