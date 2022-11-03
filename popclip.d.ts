@@ -202,7 +202,7 @@ declare interface AssociatedApp {
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
-declare type AuthFlowFunction = (url: string, params?: {[string]: string | undefined}) => Promise<any>
+declare type AuthFlowFunction = (url: string, params?: {[string]: string | undefined}, expect?: string[]) => Promise<any>
 
 /** Credentials used in auth function */
 declare interface AuthInfo {
@@ -212,7 +212,7 @@ declare interface AuthInfo {
   password: string
   /** An appropriate value to use as the redirection URL in authorization flows for this extension.
    * Example output:
-   * `popclip://callback/com.pilotmoon.popclip.extension.todoist`
+   * `http://localhost:58906/callback/com.pilotmoon.popclip.extension.todoist/auth`
    */
   redirect: string
   /** Extension display name */

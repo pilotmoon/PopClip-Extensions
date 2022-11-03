@@ -1,10 +1,19 @@
 {
-    "popclipVersion": 3895,
+    "popclipVersion": 3942,
     "name": "Notion",
     "identifier": "com.pilotmoon.popclip.extension.notion",
-    "icon": "N",
+    "icon": "notion-logo.svg",
     "entitlements": ["network"],
     "captureHtml": true,
-    "module": "notion.js",
-    "description": "todo"
+    "module": "notion.bundle.js.lzfse",
+    "description": "todo",
+    "options": [
+    {
+        "type": "string",
+        "identifier": "page",
+        "label": "Page Name",
+        "defaultValue": "Quick Note",
+        "description": "PopClip will append text clips to a page with this name. It is case sensitive. PopClip must have access permission to the page."
+    }
+    ]
 }
