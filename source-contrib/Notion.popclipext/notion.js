@@ -46,7 +46,7 @@ const action = async (input, options, context) => {
         throw new Error('could not get a page to add to');
     }
     // append source reference to clipped markdown
-    const markdown = popclip.input.markdown + `\n\n— *${makeReference(popclip.context)}*, ${timeStamp()}`;
+    const markdown = popclip.input.markdown + `\n\n— *${makeReference(popclip.context)}* (${timeStamp()})`;
     // convert in to Notion block format
     const blocks = (0, martian_1.markdownToBlocks)(markdown);
     await notion.patch(`blocks/${pageId}/children`, {

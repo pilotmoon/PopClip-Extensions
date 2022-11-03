@@ -53,7 +53,7 @@ const action: ActionFunction = async (input, options, context) => {
   }
 
   // append source reference to clipped markdown
-  const markdown = popclip.input.markdown + `\n\n— *${makeReference(popclip.context)}*, ${timeStamp()}`
+  const markdown = popclip.input.markdown + `\n\n— *${makeReference(popclip.context)}* (${timeStamp()})`
   // convert in to Notion block format
   const blocks = markdownToBlocks(markdown)
   await notion.patch(`blocks/${pageId}/children`, {
