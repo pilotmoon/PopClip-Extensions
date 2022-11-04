@@ -13,11 +13,10 @@ export const action: Action = async (input, options) => {
   // our task object
   const task: {content: string, project_id?: string, section_id?: string, due_string?: string} = { content: input.markdown }
 
-  // set project date
+  // set project
   if ((options.project as string).length > 0) {
     const projects: Array<{id: string, name: string}> = (await todoist.get('projects')).data
     for (const project of projects) {
-      print('project', project)
       if (project.name === options.project) {
         print(`found project id ${project.id} for name ${options.project}`)
         task.project_id = project.id
@@ -26,13 +25,13 @@ export const action: Action = async (input, options) => {
     }
   }
 
+  // set section
   if (task.project_id !== undefined) {
     if ((options.section as string).length > 0) {
       const sections: Array<{id: string, name: string}> = (await todoist.get('sections')).data
       for (const section of sections) {
-        print('project', section)
         if (section.name === options.section) {
-          print(`found project id ${section.id} for name ${options.section}`)
+          print(`found section id ${section.id} for name ${options.section}`)
           task.section_id = section.id
           break
         }
