@@ -12,22 +12,26 @@ const action = async (input, options) => {
     todoist.defaults.headers.common.Authorization = `Bearer ${options.authsecret}`;
     // our task object
     const task = { content: input.markdown };
-    // set project
-    const projects = (await todoist.get('projects')).data;
-    for (const project of projects) {
-        if ((options.project === '' && project.is_inbox_project) || project.name === options.project) {
-            print(`found project id ${project.id} for name ${options.project}`);
-            task.project_id = project.id;
-            break;
-        }
-    }
-    // set section
-    if (typeof task.project_id === 'string' && typeof options.section === 'string' && options.section.length > 0) {
-        const sections = (await todoist.get('sections?project_id=' + task.project_id)).data;
-        for (const section of sections) {
-            if (section.name === options.section) {
-                print(`found section id ${section.id} for name ${options.section}`);
-                task.section_id = section.id;
+    const projectSpecified = (typeof options.project === 'string' && options.project.length > 0);
+    const sectionSpecified = (typeof options.section === 'string' && options.section.length > 0);
+    if (projectSpecified || sectionSpecified) {
+        // set project
+        const projects = (await todoist.get('projects')).data;
+        for (const project of projects) {
+            if ((options.project === '' && project.is_inbox_project) || project.name === options.project) {
+                print(`found project id ${project.id} for name ${options.project}`);
+                task.project_id = project.id;
+                // set section
+                if (sectionSpecified) {
+                    const sections = (await todoist.get('sections?project_id=' + task.project_id)).data;
+                    for (const section of sections) {
+                        if (section.name === options.section) {
+                            print(`found section id ${section.id} for name ${options.section}`);
+                            task.section_id = section.id;
+                            break;
+                        }
+                    }
+                }
                 break;
             }
         }
