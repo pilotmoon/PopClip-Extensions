@@ -5,6 +5,7 @@
   "icon": "todoist-2016.png",
   "module": "todoist.js",
   "after": "show-status",
+  "captureHtml": true,
   "entitlements": [
     "network"
   ],
@@ -12,6 +13,20 @@
     "link": "https://todoist.com/",
     "name": "Todoist"
   },
-  "note": "Updated 4 Nov 2022 for Todoist REST API v2.",
-  "description": "Add the selected text to your Todoist inbox."
+  "note": "Updated 4 Nov 2022: optional project name and due date; support formatted text; and uses for Todoist REST API v2.",
+  "description": "Add the selected text as a task in Todoist.",
+  "options": [
+    {
+      "identifier": "project",
+      "type": "string",
+      "label": "Project name",
+      "description": "Name of a project to add tasks to. Leave blank for Inbox."
+    },
+    {
+      "identifier": "due",
+      "type": "string",
+      "label": "Due date",
+      "description": "Due date in natural language e.g. \"today\", \"tomorrow at 4pm\", \"in 3 days\", \"monday\". Leave blank for no due date."
+    }
+  ]
 }

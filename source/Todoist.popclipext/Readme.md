@@ -1,6 +1,8 @@
 # Todoist
 
-Add the selected text to your [Todoist](https://todoist.com/) inbox.
+Add the selected text to [Todoist](https://todoist.com/).
+
+The task can either be added to the Inbox, or to a specified project. You can also specify a due date for tasks, in Todoist's natural language format.
 
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Todoist.popclipext/Todoist-demo.gif" width="320px">
 
@@ -24,6 +26,8 @@ Requires PopClip 2021.11
 
 ### v5 — 4 Nov 2022
 
+* Added options to pre-specify a project and due date for tasks.
+* Formatting and links are preserved in the task's text.
 * Updated to work with Todoist's REST API v2.
 
 ### v4 — 30 Mar 2022

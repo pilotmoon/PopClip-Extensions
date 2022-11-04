@@ -7,9 +7,28 @@ const client_json_1 = require("./client.json");
 // Todoist REST API v2 root
 const todoist = axios_1.default.create({ baseURL: 'https://api.todoist.com/rest/v2/' });
 // add task to todoist
-const action = async (input) => {
-    const headers = { Authorization: `Bearer ${popclip.options.authsecret}` };
-    await todoist.post('tasks', { content: input.text }, { headers });
+const action = async (input, options) => {
+    // set auth header for all requests
+    todoist.defaults.headers.common.Authorization = `Bearer ${options.authsecret}`;
+    // our task object
+    const task = { content: input.markdown };
+    // set project date
+    if (options.project.length > 0) {
+        const projects = (await todoist.get('projects')).data;
+        for (const project of projects) {
+            print('project', project);
+            if (project.name === options.project) {
+                print(`found project id ${project.id} for name ${options.project}`);
+                task.project_id = project.id;
+                break;
+            }
+        }
+    }
+    // set due date
+    if (options.due.length > 0) {
+        task.due_string = options.due;
+    }
+    await todoist.post('tasks', task);
     return null;
 };
 exports.action = action;

@@ -6,9 +6,32 @@ import { client } from './client.json'
 const todoist = axios.create({ baseURL: 'https://api.todoist.com/rest/v2/' })
 
 // add task to todoist
-export const action: Action = async (input) => {
-  const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-  await todoist.post('tasks', { content: input.text }, { headers })
+export const action: Action = async (input, options) => {
+  // set auth header for all requests
+  todoist.defaults.headers.common.Authorization = `Bearer ${options.authsecret}`
+
+  // our task object
+  const task: {content: string, project_id?: string, due_string?: string} = { content: input.markdown }
+
+  // set project date
+  if ((options.project as string).length > 0) {
+    const projects: Array<{id: string, name: string}> = (await todoist.get('projects')).data
+    for (const project of projects) {
+      print('project', project)
+      if (project.name === options.project) {
+        print(`found project id ${project.id} for name ${options.project}`)
+        task.project_id = project.id
+        break
+      }
+    }
+  }
+
+  // set due date
+  if ((options.due as string).length > 0) {
+    task.due_string = options.due as string
+  }
+
+  await todoist.post('tasks', task)
   return null
 }
 
