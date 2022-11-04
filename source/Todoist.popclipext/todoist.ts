@@ -14,20 +14,18 @@ export const action: Action = async (input, options) => {
   const task: {content: string, project_id?: string, section_id?: string, due_string?: string} = { content: input.markdown }
 
   // set project
-  if ((options.project as string).length > 0) {
-    const projects: Array<{id: string, name: string}> = (await todoist.get('projects')).data
-    for (const project of projects) {
-      if (project.name === options.project) {
-        print(`found project id ${project.id} for name ${options.project}`)
-        task.project_id = project.id
-        break
-      }
+  const projects: Array<{id: string, name: string, is_inbox_project: boolean}> = (await todoist.get('projects')).data
+  for (const project of projects) {
+    if ((options.project === '' && project.is_inbox_project) || project.name === options.project) {
+      print(`found project id ${project.id} for name ${options.project}`)
+      task.project_id = project.id
+      break
     }
   }
 
   // set section
-  if ((options.section as string).length > 0) {
-    const sections: Array<{id: string, name: string}> = (await todoist.get('sections')).data
+  if (typeof task.project_id === 'string' && typeof options.section === 'string' && options.section.length > 0) {
+    const sections: Array<{id: string, name: string}> = (await todoist.get('sections?project_id=' + task.project_id)).data
     for (const section of sections) {
       if (section.name === options.section) {
         print(`found section id ${section.id} for name ${options.section}`)
@@ -38,8 +36,8 @@ export const action: Action = async (input, options) => {
   }
 
   // set due date
-  if ((options.due as string).length > 0) {
-    task.due_string = options.due as string
+  if (typeof options.due === 'string' && options.due.length > 0) {
+    task.due_string = options.due
   }
 
   await todoist.post('tasks', task)
