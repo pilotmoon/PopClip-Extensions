@@ -24,6 +24,19 @@ const action = async (input, options) => {
             }
         }
     }
+    if (task.project_id !== undefined) {
+        if (options.section.length > 0) {
+            const sections = (await todoist.get('sections')).data;
+            for (const section of sections) {
+                print('project', section);
+                if (section.name === options.section) {
+                    print(`found project id ${section.id} for name ${options.section}`);
+                    task.section_id = section.id;
+                    break;
+                }
+            }
+        }
+    }
     // set due date
     if (options.due.length > 0) {
         task.due_string = options.due;

@@ -11,7 +11,7 @@ export const action: Action = async (input, options) => {
   todoist.defaults.headers.common.Authorization = `Bearer ${options.authsecret}`
 
   // our task object
-  const task: {content: string, project_id?: string, due_string?: string} = { content: input.markdown }
+  const task: {content: string, project_id?: string, section_id?: string, due_string?: string} = { content: input.markdown }
 
   // set project date
   if ((options.project as string).length > 0) {
@@ -22,6 +22,20 @@ export const action: Action = async (input, options) => {
         print(`found project id ${project.id} for name ${options.project}`)
         task.project_id = project.id
         break
+      }
+    }
+  }
+
+  if (task.project_id !== undefined) {
+    if ((options.section as string).length > 0) {
+      const sections: Array<{id: string, name: string}> = (await todoist.get('sections')).data
+      for (const section of sections) {
+        print('project', section)
+        if (section.name === options.section) {
+          print(`found project id ${section.id} for name ${options.section}`)
+          task.section_id = section.id
+          break
+        }
       }
     }
   }

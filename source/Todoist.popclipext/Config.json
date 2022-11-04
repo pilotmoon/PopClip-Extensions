@@ -23,6 +23,12 @@
       "description": "Name of a project to add tasks to. Leave blank for Inbox."
     },
     {
+      "identifier": "section",
+      "type": "string",
+      "label": "Section name",
+      "description": "Name of a section to add tasks to. Leave blank for no section."
+    },
+    {
       "identifier": "due",
       "type": "string",
       "label": "Due date",
