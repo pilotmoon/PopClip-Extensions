@@ -12,6 +12,6 @@
     "link": "https://todoist.com/",
     "name": "Todoist"
   },
-  "note": "Updated for macOS 12.",
+  "note": "Updated 4 Nov 2022 for Todoist REST API v2.",
   "description": "Add the selected text to your Todoist inbox."
 }

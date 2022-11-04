@@ -2,14 +2,15 @@
 import axios from 'axios'
 import { client } from './client.json'
 
+// Todoist REST API v2 root
+const todoist = axios.create({ baseURL: 'https://api.todoist.com/rest/v2/' })
+
 // add task to todoist
 export const action: Action = async (input) => {
   const headers = { Authorization: `Bearer ${popclip.options.authsecret}` }
-  await axios.post('https://api.todoist.com/rest/v1/tasks', { content: input.text }, { headers })
+  await todoist.post('tasks', { content: input.text }, { headers })
   return null
 }
-// note: endpoint https://todoist.com/api/v8/items/add also works with only task:add scope
-// but this is old API which may be deprecated (Todoist has been several times terminated old APIs in the past)
 
 // sign in to todoist
 export const auth: AuthFunction = async (info, flow) => {

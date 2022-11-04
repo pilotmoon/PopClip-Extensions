@@ -22,6 +22,10 @@ Requires PopClip 2021.11
 
 ## Changelog
 
+### v5 — 4 Nov 2022
+
+* Updated to work with Todoist's REST API v2.
+
 ### v4 — 30 Mar 2022
 
 * Extension ported to JavaScript.
