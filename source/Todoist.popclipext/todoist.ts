@@ -26,15 +26,13 @@ export const action: Action = async (input, options) => {
   }
 
   // set section
-  if (task.project_id !== undefined) {
-    if ((options.section as string).length > 0) {
-      const sections: Array<{id: string, name: string}> = (await todoist.get('sections')).data
-      for (const section of sections) {
-        if (section.name === options.section) {
-          print(`found section id ${section.id} for name ${options.section}`)
-          task.section_id = section.id
-          break
-        }
+  if ((options.section as string).length > 0) {
+    const sections: Array<{id: string, name: string}> = (await todoist.get('sections')).data
+    for (const section of sections) {
+      if (section.name === options.section) {
+        print(`found section id ${section.id} for name ${options.section}`)
+        task.section_id = section.id
+        break
       }
     }
   }

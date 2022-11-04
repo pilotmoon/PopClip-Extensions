@@ -4,8 +4,6 @@ Add the selected text to [Todoist](https://todoist.com/).
 
 The task can either be added to the Inbox (default), or to a specified project and section. You can also specify a due date for tasks, in Todoist's natural language format.
 
-Note if you want to add tasks to a section in the Inbox, you must explicitly set the project name as "Inbox", not just leave blank.
-
 <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Todoist.popclipext/Todoist-demo.gif" width="320px">
 
 Download: [Todoist.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Todoist.popclipextz)

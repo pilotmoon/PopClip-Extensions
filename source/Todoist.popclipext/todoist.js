@@ -24,15 +24,13 @@ const action = async (input, options) => {
         }
     }
     // set section
-    if (task.project_id !== undefined) {
-        if (options.section.length > 0) {
-            const sections = (await todoist.get('sections')).data;
-            for (const section of sections) {
-                if (section.name === options.section) {
-                    print(`found section id ${section.id} for name ${options.section}`);
-                    task.section_id = section.id;
-                    break;
-                }
+    if (options.section.length > 0) {
+        const sections = (await todoist.get('sections')).data;
+        for (const section of sections) {
+            if (section.name === options.section) {
+                print(`found section id ${section.id} for name ${options.section}`);
+                task.section_id = section.id;
+                break;
             }
         }
     }
