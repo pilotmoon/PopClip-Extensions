@@ -36,7 +36,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [Key Press actions](#key-press-actions)
       - [Key Combo String Format](#key-combo-string-format)
     - [AppleScript actions](#applescript-actions)
-      - [The `applescript call` dictionary](#the-applescript-call-dictionary)
+      - [The `call` array](#the-call-array)
       - [AppleScript format](#applescript-format)
       - [Example plain text AppleScript with placeholder strings](#example-plain-text-applescript-with-placeholder-strings)
       - [Example of calling an AppleScript handler with parameters](#example-of-calling-an-applescript-handler-with-parameters)
@@ -478,23 +478,20 @@ The **modifiers** are specified with the following keywords:
 
 ### AppleScript actions
 
-An AppleScript action is defined by the presence of either an `applescript`, `applescript file` or `applescript call` field, as follows:
+An AppleScript action is defined by the presence of either an `applescript`, `applescript file` field, with optional `call` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
 |`applescript`|String|A text string to interpret directly as AppleScript source.|
 |`applescript file`|String|File name of an `.applescript` or `.scpt` file to run.|
-|`applescript call`|Dictionary|Three fields defining a call to a named handler, as below.|
+|`call`|Array of Strings (optional)|Handler name and parameters.|
 
-#### The `applescript call` dictionary
+#### The `call` array
 
-The `applescript call` dictionary lets you call a named handler within the script.
+The `call` array specifies a named handler and its parameters.
 
-|Key|Type|Description|
-|---|----|-----------|
-|`file`|String|File name, of an `.applescript` or `.scpt` file.|
-|`handler`|String|Name of a handler within the script to call.|
-|`parameters`|Array (optional)|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive. Omit or leave empty if there are no parameters.|
+- The first string in the array (required) specifies the name of the handler to call.
+- Any subsequent strings (optional) specify the values to pass as parameters, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive.
 
 #### AppleScript format
 
@@ -537,11 +534,8 @@ And a `Config.json` file to call this might be:
 ```json
 {
   "name": "TextEdit Clip",
-  "applescript call": {
-    "file": "example.scpt",
-    "handler": "newDocument",
-    "parameters": ["text", "browser url"]
-  }
+  "applescript file": "example.scpt",
+  "call": ["newDocument", "text", "browser url"]
 }
 ```
 

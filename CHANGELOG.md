@@ -27,6 +27,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
   - case-anything to 2.1.10
   - core-js to 3.25.1
   - sanitize-html to 2.7.2
+- Allow the applescript to be specified as `applescript` string or `applescript file` when calling a named handler. Added the `call` array for specifying the handler and parameters.
 
 ### Fixed
 
@@ -52,6 +53,10 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 - For Key Press extensions, there is now a 100ms delay after each key press.
 - Updated the versions of some of the bundled npm libraries for JavaScript extensions. (There should be no breaking changes.)
+
+### Deprecated
+
+- The `applescript call` field is deprecated.
 
 ## PopClip 2021.11 (3785)
 

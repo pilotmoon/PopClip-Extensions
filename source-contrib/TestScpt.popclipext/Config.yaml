@@ -1,8 +1,4 @@
 name: Test Scpt
-applescript call:
-  file: Test.scpt  
-  handler: oi
-  parameters: [text, option bbB]
 after: show-result
 options: 
 - identifier: aaa
@@ -11,5 +7,26 @@ options:
   defaultValue: abc123
 - identifier: bbB
   type: boolean
-  label: Booelan Param
+  label: Boolean Param
   defaultValue: true
+actions:
+- title: scpt
+  applescript call:
+    file: Test.scpt  
+    handler: oi
+    parameters: [text, option bbB]
+- title: scpt2
+  applescript file: Test.scpt  
+  applescript call:    
+    handler: oi
+    parameters: [text, option bbB]
+- title: pre
+  applescript: return "hello from text with no params"
+- title: params
+  applescript: return "hello from text with params ({popclip app name})"
+- title: handler text
+  applescript: |
+    on go(param,param2)
+      return "yes! " & param2
+    end go
+  call: ['go', 'text', 'option aaa']
