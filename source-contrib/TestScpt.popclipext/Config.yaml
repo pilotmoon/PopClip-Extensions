@@ -29,4 +29,6 @@ actions:
     on go(param,param2)
       return "yes! " & param2
     end go
-  call: ['go', 'text', 'option aaa']
+  applescript call:    
+    handler: go
+    parameters: [text, option bbB]
