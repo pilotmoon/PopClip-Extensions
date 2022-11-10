@@ -1,0 +1,11 @@
+name: Test Scripts
+descrtiption: Simple tests with examples of various scripting languages
+after: show-result
+actions:
+- title: Hi Py
+  shell script file: hello.py # without shebang, not executable
+  interpreter: python3
+- title: Bye Py
+  shell script file: goodbye.py # with shebang, executable
+- title: Hi Rb
+  shell script file: hello.rb

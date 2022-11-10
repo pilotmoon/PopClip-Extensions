@@ -28,6 +28,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
   - core-js to 3.25.1
   - sanitize-html to 2.7.2
 - Allow the applescript to be specified as `applescript` string or `applescript file` when calling a named handler.
+- The `script interpreter` field has been renamed to `interpreter`.
 
 ### Fixed
 

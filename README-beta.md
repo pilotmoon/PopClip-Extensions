@@ -573,16 +573,23 @@ echo $POPCLIP_TEXT | say  # pipe text to 'say' command
 A shell script can return a string back to PopClip via stdout. For example:
 
 ```sh
-#!/bin/sh
+#!/bin/zsh
 echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
 ```
 
-A ruby example:
+The same in Python:
+
+```python
+#!/usr/bin/env python3
+import os
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!'
+```
+
+In Ruby:
 
 ```ruby
 #!/usr/bin/env ruby
-input=ENV['POPCLIP_TEXT']
-print input.upcase  # make the text ALL CAPS
+print 'Hello, ' + ENV['POPCLIP_TEXT'] + ', from Ruby'
 ```
 
 #### Shell Script Testing
