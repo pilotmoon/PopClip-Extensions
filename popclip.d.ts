@@ -400,7 +400,7 @@ declare interface ActionProperties extends ActionFlags {
     parameters?: string[]
   }
   shellScriptFile?: string
-  scriptInterpreter?: string
+  interpreter?: string
   javascript?: string
   javascriptFile?: string
 }
