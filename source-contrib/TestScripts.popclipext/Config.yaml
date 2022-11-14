@@ -9,3 +9,6 @@ actions:
   shell script file: goodbye.py # with shebang, executable
 - title: Hi Rb
   shell script file: hello.rb
+- title: Hi Swift
+  shell script file: hello.swift
+  script interpreter: swift
