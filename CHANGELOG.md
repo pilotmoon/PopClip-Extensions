@@ -12,23 +12,43 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## Beta (Build 3939) / Unreleased
+## Beta / Unreleased
 
 ### Added
 
-- Added something called a "module snippet". (To be described!)
 - Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
+- Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
+
+```js
+// #popclip
+// { name: Spotify, lang: js }
+const term = popclip.input.text.trim().split(/\s+/).join(' ')
+popclip.openUrl('spotify:search:' + encodeURIComponent(term))
+```
+
+```python
+#!/usr/bin/env python3
+# #popclip
+# { name: Hello Python, after: show-result }
+import os
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
+```
 
 ### Changed
 
 - Increased maximum snippet length from 1000 to 5000 characters.
-- Optionally, the `#popclip` marker may now appear at the end of the snippet instead of the start. This means that a one-liner like `{name: Test, shortcut name: Test Shortcut} #popclip`, which is valid YAML, is now a valid PopClip snippet.
 - Updated the versions of built in NPM modules as follows:
   - case-anything to 2.1.10
   - core-js to 3.25.1
   - sanitize-html to 2.7.2
-- Allow the applescript to be specified as `applescript` string or `applescript file` when calling a named handler.
 - The `script interpreter` field has been renamed to `interpreter`.
+- The `parameters` field has in the `applescript call` dictionary has been renamed to `params`.
+- Allow the script source to be specified as `applescript` string or `applescript file` when calling a named handler. Example:
+```yaml
+name: AppleScript Example
+applescript file: script.applescript
+applescript call: { handler: mySubroutine, params: [text] }
+```
 
 ### Fixed
 
