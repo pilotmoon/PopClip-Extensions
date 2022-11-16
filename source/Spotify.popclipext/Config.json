@@ -6,10 +6,9 @@
   "app": {
     "checkInstalled": true,
     "name": "Spotify",
-    "link": "http://www.spotify.com/",
+    "link": "https://www.spotify.com/",
     "bundleIdentifier": "com.spotify.client"
   },
-  "url": "spotify:search:{popclip text}",
   "popclipVersion": 3895,
   "description": "Search Spotify.",
   "javascript": "spotify.js",
