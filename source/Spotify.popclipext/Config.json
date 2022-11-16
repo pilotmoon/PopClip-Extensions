@@ -11,6 +11,6 @@
   },
   "popclipVersion": 3895,
   "description": "Search Spotify.",
-  "javascript": "spotify.js",
+  "javascript file": "spotify.js",
   "note": "Updated 16 Nov 2022 for latest Spotify client." 
 }
