@@ -50,18 +50,19 @@ print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
   #popclip
   name: AppleScript Example
   language: applescript
+  after: show-result
   actions:
   - title: X1
-    applescript call: { handler: subroutine1, params: [text] }
+    applescript call: { handler: foo, params: [text] }
   - title: X2
-    applescript call: { handler: subroutine2, params: [text] }
+    applescript call: { handler: bar, params: [text] }
 *)
-on subroutine1(theText) do
-  -- stuff
-end subroutine1
-on subroutine2(theText) do
-  -- other stuff
-end subroutine2
+on foo(theText)
+	return "foo + " & theText
+end foo
+on bar(theText)
+	return "bar + " & theText
+end bar
 ```
 
 ### Fixed
