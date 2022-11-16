@@ -44,10 +44,22 @@ print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
 - The `script interpreter` field has been renamed to `interpreter`.
 - The `parameters` field has in the `applescript call` dictionary has been renamed to `params`.
 - Allow the script source to be specified as `applescript` string or `applescript file` when calling a named handler. Example:
-```yaml
-name: AppleScript Example
-applescript file: script.applescript
-applescript call: { handler: mySubroutine, params: [text] }
+
+```applescript
+(*
+  #popclip
+  name: AppleScript Example
+  language: applescript
+  actions:
+  - applescript call: { handler: subroutine1, params: [text] }
+  - applescript call: { handler: subroutine2, params: [text] }
+*)
+on subroutine1(theText) do
+  -- stuff
+end subroutine1
+on subroutine2(theText) do
+  -- other stuff
+end subroutine2
 ```
 
 ### Fixed
