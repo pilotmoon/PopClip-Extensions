@@ -21,7 +21,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ```js
 // #popclip
-// { name: Spotify, lang: js }
+// { name: Spotify, language: javascript }
 const term = popclip.input.text.trim().split(/\s+/).join(' ')
 popclip.openUrl('spotify:search:' + encodeURIComponent(term))
 ```
@@ -51,8 +51,10 @@ print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
   name: AppleScript Example
   language: applescript
   actions:
-  - applescript call: { handler: subroutine1, params: [text] }
-  - applescript call: { handler: subroutine2, params: [text] }
+  - title: X1
+    applescript call: { handler: subroutine1, params: [text] }
+  - title: X2
+    applescript call: { handler: subroutine2, params: [text] }
 *)
 on subroutine1(theText) do
   -- stuff
