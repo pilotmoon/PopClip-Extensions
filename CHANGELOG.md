@@ -46,17 +46,15 @@ print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
 - Allow the script source to be specified as `applescript` string or `applescript file` when calling a named handler. Example:
 
 ```applescript
-(*
-  #popclip
-  name: AppleScript Example
-  language: applescript
-  after: show-result
-  actions:
-  - title: X1
-    applescript call: { handler: foo, params: [text] }
-  - title: X2
-    applescript call: { handler: bar, params: [text] }
-*)
+-- #popclip
+-- name: AppleScript Example
+-- language: applescript
+-- after: show-result
+-- actions:
+-- - title: X1
+--   applescript call: { handler: foo, params: [text] }
+-- - title: X2
+--   applescript call: { handler: bar, params: [text] }
 on foo(theText)
 	return "foo + " & theText
 end foo
