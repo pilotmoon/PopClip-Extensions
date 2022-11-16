@@ -21,7 +21,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ```js
 // #popclip
-// { name: Spotify, language: javascript }
+// { name: Spotify, icon: circle filled S, language: javascript }
 const term = popclip.input.text.trim().split(/\s+/).join(' ')
 popclip.openUrl('spotify:search:' + encodeURIComponent(term))
 ```
@@ -29,7 +29,7 @@ popclip.openUrl('spotify:search:' + encodeURIComponent(term))
 ```python
 #!/usr/bin/env python3
 # #popclip
-# { name: Hello Python, after: show-result }
+# { name: Hello Python, icon: square hi!, after: show-result }
 import os
 print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
 ```
