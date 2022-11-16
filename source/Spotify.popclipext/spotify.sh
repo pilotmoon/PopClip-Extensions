@@ -1,1 +1,0 @@
-open "spotify:search:$POPCLIP_TEXT"
