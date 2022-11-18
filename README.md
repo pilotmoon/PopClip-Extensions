@@ -451,7 +451,7 @@ A Key Press action is defined by the presence of a `key combo` or `key combos` f
 
 #### Key Combo String Format
 
-The string format is a convenient human-readable format that can specify a key and modifiers. It is a space-separated list of one or more modifiers (the order does not matter), followed by the key to press. The key combo string is not case sensitive.
+The string format is a convenient human-readable format that can specify a key and modifiers. It is a space-separated list of zero or more modifiers (the order does not matter), followed by the key to press. The key combo string is not case sensitive.
 
 Some examples:
 
