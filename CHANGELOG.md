@@ -17,6 +17,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Added
 
 - Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
+- A key code format string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
 - Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
 
 ```js

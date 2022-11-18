@@ -459,7 +459,8 @@ Some examples:
 - `option shift .` - *Hold option and shift, and press the dot key*
 - `command space` - *Hold command, and press space bar*
 - `f1` - *The F1 key on its own with no modifiers*
-- `option 0x4b` - *0x4b is the hex numeric code for 'Keypad Divide'*
+- `option numpad /` - *Hold option, press '/' key on numeric keypad*
+- `option 0x4b` - *0x4b is the hex numeric code for numeric keypad '/'', equivalent to `option numpad /`*
 
 The **key** is specified in one of the following ways:
 
@@ -469,12 +470,13 @@ The **key** is specified in one of the following ways:
 
 The **modifiers** are specified with the following keywords:
 
-| Modifier    | Keyword                  |
-| ----------- | ------------------------ |
-| Command (⌘) | `command`, `cmd` or `⌘`  |
-| Option (⌥)  | `option`, `opt` or `⌥`   |
-| Control (⌃) | `control`, `ctrl` or `^` |
-| Shift (⇧)   | `shift` or `⇧`           |
+| Modifier       | Keyword                  |
+| -------------- | ------------------------ |
+| Command (⌘)    | `command`, `cmd` or `⌘`  |
+| Option (⌥)     | `option`, `opt` or `⌥`   |
+| Control (⌃)    | `control`, `ctrl` or `^` |
+| Shift (⇧)      | `shift` or `⇧`           |
+| Numeric Keypad | `numpad`                 |
 
 ### AppleScript actions
 
