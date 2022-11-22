@@ -24,7 +24,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The Config file](#the-config-file)
     - [Field names](#field-names)
   - [Icons](#icons)
-    - [Colour handling](#colour-handling)
+    - [Color handling](#color-handling)
     - [Text-based icons](#text-based-icons)
     - [Examples of symbols and text-based icons](#examples-of-symbols-and-text-based-icons)
   - [The Config file structure](#the-config-file-structure)
@@ -59,6 +59,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The `before` and `after` strings](#the-before-and-after-strings)
     - [The `app` dictionary](#the-app-dictionary)
     - [The `options` array](#the-options-array)
+    - [The `icon options` dictionary](#the-icon-options-dictionary)
   - [Using Scripts](#using-scripts)
     - [Script Fields](#script-fields)
     - [Indicating Errors](#indicating-errors)
@@ -313,11 +314,11 @@ Icons may be specified in the `icon` fields in a few different ways:
 
 - **As SVG source code:** `svg:<svg source>`.
 
-### Colour handling
+### Color handling
 
 Images suitable for use as icons will typically be solid black on a transparent background. Opacity can be used for shading.
 
-By default, PopClip renders icons all in the same color, ignoring any color information in the image. However, you can use the `preserve image color` flag in the extension options to tell PopClip to keep the icon's original color palette. Color `iconify:` icons will automatically be rendered in color.
+By default, PopClip renders icons all in the same color, ignoring any color information in the image. However, you can set the `preserve color` flag in `icon options` to tell PopClip to keep the original color palette. (Color icons from Iconify will automatically be rendered in color.)
 
 ### Text-based icons
 
@@ -380,6 +381,7 @@ The following fields are used at the top level of the configuration to define pr
 |`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
 |`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 |`entitlements`|Array|Only applies to JavaScript extensions. The possible values are `network` (allows use of XMLHttpRequest) and `dynamic` (allows dynamically generated actions).|
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 |`action`|Dictionary|A dictionary defining a single action for this extension. See [Action properties](#action-properties).|
 |`actions`|Array|Array of dictionaries defining the actions for this extension.|
 
@@ -389,10 +391,12 @@ If neither `actions` nor `action` is defined, PopClip will look at the top level
 
 The following fields define properties common to all actions. All fields are optional.
 
+Action properties can also be set in the extension properties section. Properties set at the top level will apply to all actions (unless overridden in the individual action )
+
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`title`|Localizable String|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
-|`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
+|`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. If omitted, the action will take the extension icon as its icon. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
 |`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
 |`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `text` is applied by default.|
 |`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).|
@@ -403,8 +407,8 @@ The following fields define properties common to all actions. All fields are opt
 |`app`|Dictionary|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [The `app` dictionary](#the-app-dictionary).|
 |`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
-|`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 
 Additionally, there will be action-specific properties as described in the sections below.
 
@@ -823,6 +827,15 @@ Options are presented to the user in a preferences user interface window and are
 |`values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
 |`value labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If omitted, the option values themselves are shown.|
 |`inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
+
+### The `icon options` dictionary
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`preserve color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
+|`preserve aspect`|Boolean|If true, the supplied icon will be displayed with its original aspect ratio instead of being scaled to fit a square. Default is `false`.|
+|`flip horizontal`|Boolean|If true, the supplied icon will be drawn horizontally flipped. Default is `false`.|
+|`flip vertical`|Boolean|If true, the supplied icon will be drawn vertically flipped. Default is `false`.|
 
 ## Using Scripts
 

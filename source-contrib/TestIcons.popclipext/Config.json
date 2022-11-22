@@ -1,7 +1,7 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.test-svg",
   "name": "Test Icons",
-  # "icon": "popclip:menu-down",
+  "icon": "popclip:menu-down",
   "actions": [
     {
       "icon": "filled square Bob",
@@ -16,7 +16,11 @@
     },
     {
       "icon": "rainbow.png",
-      "preserveImageColor": true,
+      "iconOptions": {
+        "preserveColor": true,
+        "preserveAspect": true,
+        "flipVertical": true
+      },      
       "title": "TestSVG-png",
       "shellScriptFile": "null.sh"
     },
