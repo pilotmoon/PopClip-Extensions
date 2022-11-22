@@ -374,6 +374,7 @@ The following fields are used at the top level of the configuration to define pr
 |---|----|-----------|
 |`name` |Localizable String| This is a display name that appears in the preferences list of extensions. If omitted, a name is generated automatically from the `.popclipext` package name.|
 |`icon` |String|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 |`identifier` |String| You may provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.)If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead.|
 |`description`|Localizable String|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`macos version` |String|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
@@ -381,7 +382,6 @@ The following fields are used at the top level of the configuration to define pr
 |`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
 |`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 |`entitlements`|Array|Only applies to JavaScript extensions. The possible values are `network` (allows use of XMLHttpRequest) and `dynamic` (allows dynamically generated actions).|
-|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 |`action`|Dictionary|A dictionary defining a single action for this extension. See [Action properties](#action-properties).|
 |`actions`|Array|Array of dictionaries defining the actions for this extension.|
 
@@ -397,6 +397,7 @@ Action properties can also be set in the extension properties section. Propertie
 |---|----|---------|-----------|
 |`title`|Localizable String|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
 |`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. If omitted, the action will take the extension icon as its icon. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 |`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
 |`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `text` is applied by default.|
 |`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).|
@@ -408,7 +409,6 @@ Action properties can also be set in the extension properties section. Propertie
 |`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
-|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 
 Additionally, there will be action-specific properties as described in the sections below.
 
@@ -829,6 +829,8 @@ Options are presented to the user in a preferences user interface window and are
 |`inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
 
 ### The `icon options` dictionary
+
+These icon options can also be placed directly in among the action properties or extension properties with the same effect.
 
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
