@@ -11,7 +11,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
   - [Introduction](#introduction)
     - [License](#license)
     - [Credits](#credits)
-    - [Repository Layout & Contributing](#repository-layout--contributing)
+    - [Repository Layout \& Contributing](#repository-layout--contributing)
     - [Extension Signing](#extension-signing)
     - [Debug Output](#debug-output)
   - [Extension Snippets](#extension-snippets)
@@ -24,6 +24,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The Config file](#the-config-file)
     - [Field names](#field-names)
   - [Icons](#icons)
+    - [Colour handling](#colour-handling)
     - [Text-based icons](#text-based-icons)
     - [Examples of symbols and text-based icons](#examples-of-symbols-and-text-based-icons)
   - [The Config file structure](#the-config-file-structure)
@@ -302,13 +303,21 @@ Older versions of PopClip used different names for some fields. Where there is a
 
 Icons may be specified in the `icon` fields in a few different ways:
 
-- **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com) or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
-
-- **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified. Therefore, you should specify an appropriate `macos version` when using a symbol icon.)
+- **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. PNG icons should be at least 256 pixels high.
 
 - **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below).
 
-PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size.
+- **As an Iconify icon:** `iconify:<iconify identifier>`. For example `iconify:ion:fish`. Iconify provides over 100,000 open source icons. Search for icons at: <https://icon-sets.iconify.design/>. PopClip needs internet access to retrieve the icon.
+
+- **As an SF Symbol:** `symbol:<symbol name>` specifies an Apple [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
+
+- **As SVG source code:** `svg:<svg source>`.
+
+### Colour handling
+
+Images suitable for use as icons will typically be solid black on a transparent background. Opacity can be used for shading.
+
+By default, PopClip renders icons all in the same color, ignoring any color information in the image. However, you can use the `preserve image color` flag in the extension options to tell PopClip to keep the icon's original color palette. Color `iconify:` icons will automatically be rendered in color.
 
 ### Text-based icons
 

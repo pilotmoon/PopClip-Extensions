@@ -1,9 +1,10 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.test-svg",
-  "name": "Test SVG",
+  "name": "Test Icons",
+  # "icon": "popclip:menu-down",
   "actions": [
     {
-      "icon": "text:[🤠]",
+      "icon": "filled square Bob",
       "preserveImageColor": true,
       "title": "TestSVG-text",
       "shellScriptFile": "null.sh"
@@ -11,7 +12,7 @@
     {
       "title": "TestSVG-text",
       "shellScriptFile": "null.sh",
-      "icon": "-[]-"
+      "icon": "text:square filled monospaced []"
     },
     {
       "icon": "rainbow.png",
@@ -33,7 +34,7 @@
     {
       "title": "TestSVG-insta",
       "shellScriptFile": "null.sh",
-      "icon": "symbol:flame"
+      "icon": "symbol:xmark.bin.fill"
     },
     {
       "title": "NullIcon",
