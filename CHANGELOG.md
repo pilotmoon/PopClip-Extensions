@@ -16,9 +16,13 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 ### Added
 
-- Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
-- A key code format string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
+- PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
 - Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
+- A key code format string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
+- Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
+- Added options for icon drawing including `flip horizontal`, `flip vertical` and `preserve aspect`.
+
+Example script snippets:
 
 ```js
 // #popclip
@@ -43,7 +47,9 @@ print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
   - core-js to 3.25.1
   - sanitize-html to 2.7.2
 - The `script interpreter` field has been renamed to `interpreter`.
+- The `preserve image color` field has been renamed to `preserve color`.
 - The `parameters` field has in the `applescript call` dictionary has been renamed to `params`.
+- Icons are now drawn in a square canvas with uniform height and width, unless the new `preserve aspect` flag is set.
 - Allow the script source to be specified as `applescript` string or `applescript file` when calling a named handler. Example:
 
 ```applescript
