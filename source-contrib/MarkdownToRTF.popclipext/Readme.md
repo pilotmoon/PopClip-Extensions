@@ -1,4 +1,4 @@
-# Markdown to Rich Text
+# Markdown to RTF
 
 It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard. (By holding ⌥⇧ you can get it to try to paste the result in place instead.)
 
@@ -6,16 +6,9 @@ By contrast with the Markdown to HTML extension, which produces HTML *source cod
 
 ### A note on formatting
 
-As part of the conversion process, decision had to baked in regarding font styles, indentation, spacing etc. The conversion tries use simple, sane choices for formatting. It also tries to match the existing font of the selection is possible, with fallback to the system default font.
+As part of the conversion process, decision had to baked in regarding font styles, indentation, spacing etc. The conversion tries to use use simple, sane choices for formatting.
 
 Please send feedback to Nick if you have comments about the output formatting choices or notice any glitches.
-
-### Options
-
-The **Paragraph Separation** option determines how paragraphs are separated in the output, as follows:
-
-* **0.5x Spacing** (default) sets the paragraph spacing to half the line height;
-* **Blank Line** adds a full blank line between paragraphs instead.
 
 ### Limitations
 
@@ -24,10 +17,9 @@ Not all markdown features are currently supported:
 * `----` to produce a horizontal separator will not work
 * HTML tags mixed into the Markdown will not be processed
 
-### TODO
+### To-do
 
-* Icon!
-* Testing/gather feedback.
+Add a sub-action to set the output font by selecting some text in that font.
 
 ## About
 
@@ -39,10 +31,14 @@ Nick Moore
 
 ### Requirements
 
-* Requires PopClip Build 3835
+* Requires PopClip Build 4031
 * Requires macOS 12.0
 
 ## Changelog
+
+### 29 Nov 2022
+
+* Simplify and streamline the extension; change minimum requirement to next beta.
 
 ### 17 Sep 2022
 

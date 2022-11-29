@@ -5,18 +5,30 @@
 ## Example Level Two Heading
 
 1. This is an ordered list.
-2. Old Macdonald had a far.
+2. Old Macdonald had a farm.
 
 That was an ordered list.
 
 - **Unordered List:** Markdown supports unordered lists too
-    - subitem
-    - subitem 2
-        1. apple
-        2. banana
-        3. _Strawberry_
+  - subitem
+  - subitem 2
+      1. apple
+      2. banana
+      3. _Strawberry_
+  - further sub-item
+    - 3rd level list
+      - 4th level **list**
+        -  How deep does this go????
+      - woohah
+  - and another subitem
 - **Stuff:**  Another line in this list.
 - **More Stuff:**  How do you do. Lorem ipsum dolor sit amet. How do you do. Lorem ipsum dolor sit amet. How do you do.Lorem ipsum dolor sit amet. How do you do.
+
+- Starting a new list with a blank line before
+* changing to a asterisk to start the list
+* Carrying on the asterisk list
+1. Starting a numbered list
+2. number two
 
 ### Why Markdown?
 

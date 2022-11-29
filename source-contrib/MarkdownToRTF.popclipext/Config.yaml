@@ -1,0 +1,9 @@
+{
+    "identifier": "com.pilotmoon.popclip.extension.markdown-to-rtf",
+    "name": "Markdown to RTF",
+    "icon": "RTF",
+    "description": "Copy Markdown as Rich Text.",
+    "popclipVersion": 4031,
+    "macosVersion": "12.0",    
+    "module": "mdrtf.js",
+}
