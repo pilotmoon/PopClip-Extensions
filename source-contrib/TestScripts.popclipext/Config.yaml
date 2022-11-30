@@ -12,8 +12,10 @@ actions:
 - title: Hi Swift
   shell script file: hello.swift
   script interpreter: /usr/bin/swift
-# - title: No Interpreter (should not load)
+#- title: No Interpreter (should not load)
 #   shell script file: hello.swift
+# - title: No Shebang (should not load)
+#   shell script file: exe_no_shebang
 - title: No Interpreter sh
   shell script file: hello.sh
 - title: Direct zsh
