@@ -2,6 +2,10 @@
 This is a TypeScript definitions file for PopClip's JavaScript interface.
 This file lets TypeScript-aware editors provide auto-complete and
 syntax checking for both JavaScript and TypeScript code.
+
+One way to point your editor to this file is to add a line like this to
+the top of your JS or TS:
+/// <reference path="(...insert path to...)/popclip.d.ts" />
 */
 
 /**
@@ -10,8 +14,7 @@ syntax checking for both JavaScript and TypeScript code.
  * #### Notes
  *
  * An `en` string is required, as the default fallback, and it should usually
- * contain a string in US English. _(That's the macOS default,
- * as a Brit this of course pains me! -Nick)_
+ * contain a string in US English, which is the macOS default.
  *
  * The predefined languages in this interface definition are the ones that
  * PopClip currently ships with translations for.
