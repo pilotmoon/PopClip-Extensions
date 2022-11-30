@@ -18,6 +18,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 - PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
 - Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
+- PopClip will now open `.popcliptxt` files. This is basically a snippet in a text file.
 - You can now specify a `shell script` as a literal string without needing to create a separate file. This enables shell scripts in 'regular' snippets.
 - A `key combo` string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
 - Added options for icon drawing including `flip horizontal`, `flip vertical` and `preserve aspect`.
