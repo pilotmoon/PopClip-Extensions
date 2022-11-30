@@ -144,8 +144,6 @@ All features of regular extensions can be used, with the limitation that additio
 
 If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet will install without the usual "unsigned extension" prompt. AppleScript snippets, and JavaScript snippets with the network entitlement, will still give the unsigned warning.
 
-Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
-
 In the absence of an explicit `identifier` field, the extension is identified by its `name`. Installing another extension with the same name (or identifier) will overwrite an existing one.
 
 ### Extension Snippets Examples
@@ -567,12 +565,20 @@ An example of an extension using a JXA script is [TaskPaper](https://github.com/
 
 ### Shell Script actions
 
-A Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field, as follows:
+A Shell Script action is defined by the presence of either a `shell script` or `shell script file` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----|
-|`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, either define a `script interpreter` or set the script's executable bit and include a shebang (e.g. `#!/usr/bin/env ruby`) at the top of the file.|
-|`script interpreter`|String (optional)|Specify the interpreter to use for `shell script file`. For example `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell. Alternatively, you can specify the absolute path (starting with `/`).
+|`shell script`|String|A string to be run as a shell script. The string will be passed via standard input to the specified `interpreter`, invoked without arguments.|
+|`shell script file`|String|The name of a file in the extension's package directory. See the section about script file execution below.|
+|`interpreter`|String (optional)|Specify the interpreter to use for `shell script` or `shell script file`. You can specify a bare executable name, for example `ruby`, and PopClip will look it in the `PATH` of the user's default shell. Alternatively, you can specify an absolute path such as `/bin/zsh`. If omitted, PopClip will directly execute the script file instead, if possible (see below).|
+
+The `shell script file` will be executed as follows:
+
+- If an `interpreter` is specified, then PopClip will call this interpreter with the script file path as argument.
+- Otherwise, if the script file has executable permissions set (with `chmod +x`) and the first line of the file starts with `#!`, then PopClip will execute the file directly.
+- Otherwise, if the extension has a `popclip version` and it is set to a value less than  `4035`, or if the script file name ends with `.sh`, the script will be executed with `/bin/sh`. (This behaviour is for backward compatibility with existing extensions.)
+- If none of the above conditions are met, the extension will fail to load because no interpreter has been specified.
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can output a string to the standard output and have PopClip act upon it by defining an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
 
@@ -582,7 +588,7 @@ Here is a simple example shell script (this one is for 'Say'):
 
 ```sh
 #!/bin/sh
-echo $POPCLIP_TEXT | say  # pipe text to 'say' command
+echo "$POPCLIP_TEXT" | say  # pipe text to 'say' command
 ```
 
 A shell script can return a string back to PopClip via stdout. For example:

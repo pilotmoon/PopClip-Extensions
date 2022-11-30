@@ -1,5 +1,5 @@
 name: Test Scripts
-descrtiption: Simple tests with examples of various scripting languages
+descrtiption: Simple tests with examples of various scripting languages and ways of calling the,.
 after: show-result
 actions:
 - title: Hi Py
@@ -11,4 +11,19 @@ actions:
   shell script file: hello.rb
 - title: Hi Swift
   shell script file: hello.swift
-  script interpreter: swift
+  script interpreter: /usr/bin/swift
+# - title: No Interpreter (should not load)
+#   shell script file: hello.swift
+- title: No Interpreter sh
+  shell script file: hello.sh
+- title: Direct zsh
+  shell script: echo "direct script"
+  interpreter: zsh
+- title: Direct ruby
+  interpreter: ruby
+  shell script: print 'Hello, ' + ENV['POPCLIP_TEXT'] + ', from Ruby direct'
+- title: Direct python
+  interpreter: python3
+  shell script: |
+    import os
+    print('Hello, ' + os.environ['POPCLIP_TEXT'] + ', from Python')
