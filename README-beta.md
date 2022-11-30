@@ -570,8 +570,8 @@ A Shell Script action is defined by the presence of either a `shell script` or `
 |Key|Type|Description|
 |---|----|-----|
 |`shell script`|String|A string to be run as a shell script. The string will be passed via standard input to the specified `interpreter`, invoked without arguments.|
-|`shell script file`|String|The name of a file in the extension's package directory. See the section about script file execution below.|
-|`interpreter`|String (optional)|Specify the interpreter to use for `shell script` or `shell script file`. You can specify a bare executable name, for example `ruby`, and PopClip will look it in the `PATH` of the user's default shell. Alternatively, you can specify an absolute path such as `/bin/zsh`. If omitted, PopClip will directly execute the script file instead, if possible (see below).|
+|`shell script file`|String|The name of a file in the extension's package directory. See below for more details.|
+|`interpreter`|String (optional)|Specify the interpreter to use for `shell script` or `shell script file`. You can specify a bare executable name, for example `ruby`, and PopClip will look for it in the `PATH` of the user's default shell. Alternatively, you can specify an absolute path such as `/bin/zsh`. If omitted, PopClip will directly execute the script file instead, if possible (see below).|
 
 The `shell script file` will be executed as follows:
 
