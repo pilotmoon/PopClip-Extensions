@@ -32,7 +32,7 @@
   },
   {
     "Members": [
-      "MarkdownToHTML",
+      "Markdown",
       "CopyAsMarkdown"
     ],
     "Title": "Markdown"

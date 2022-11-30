@@ -1,9 +1,9 @@
-Markdown to HTML
-================
+Markdown
+========
 
 Markdown-to-HTML conversion extension for PopClip.
 
-This extension uses [Markdown](https://daringfireball.net/projects/markdown/), by John Gruber (see license below).
+This extension uses the original [Markdown](https://daringfireball.net/projects/markdown/) Perl script by John Gruber (see license below).
 
 ```text
 Copyright (c) 2004, John Gruber  
