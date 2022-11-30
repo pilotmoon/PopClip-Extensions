@@ -18,7 +18,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 
 - PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
 - Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
-- You can now specify a `shell script` as a literal string without needing to create a separate file.
+- You can now specify a `shell script` as a literal string without needing to create a separate file. This enables shell scripts in 'regular' snippets.
 - A `key combo` string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
 - Added options for icon drawing including `flip horizontal`, `flip vertical` and `preserve aspect`.
 - Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
@@ -26,17 +26,18 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 ### Changed
 
 - Increased maximum snippet length from 1000 to 5000 characters.
-- Updated the versions of built in NPM modules as follows:
-  - case-anything to 2.1.10
-  - core-js to 3.25.1
-  - sanitize-html to 2.7.2
 - The `script interpreter` field has been renamed to `interpreter`.
 - Shell script files are no longer executed with `/bin/sh` by default. An interpreter must be explicitly specified.
 - The `preserve image color` field has been renamed to `preserve color`.
 - The `parameters` field has in the `applescript call` dictionary has been renamed to `params`.
 - Icons are now drawn in a square canvas with uniform height and width, unless the new `preserve aspect` flag is set.
 - Allow the script source to be specified as `applescript` string or `applescript file` when calling a named handler. (See example below.)
-
+- PopClip now enforces that the extension identifier may contain only A-Z, a-z, 0-9, period (.), and hyphen (-).
+- Updated the versions of built in NPM modules as follows:
+  - case-anything to 2.1.10
+  - core-js to 3.25.1
+  - sanitize-html to 2.7.2
+  
 Example script snippets:
 
 ```js
