@@ -34,7 +34,5 @@
 	<string>com.pilotmoon.popclip.extension.dialectic</string>
 	<key>Extension Name</key>
 	<string>Dialectic</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

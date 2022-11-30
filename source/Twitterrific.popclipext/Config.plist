@@ -40,7 +40,5 @@
 	<string>com.pilotmoon.popclip.extension.twitterrific</string>
 	<key>Extension Name</key>
 	<string>Twitterrific</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

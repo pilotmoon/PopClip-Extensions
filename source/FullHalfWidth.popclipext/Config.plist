@@ -50,9 +50,5 @@
 	<string>FullHalfWidth.png</string>
 	<key>Extension Name</key>
 	<string>Full/Half Width</string>
-	<key>Position</key>
-	<integer>2</integer>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

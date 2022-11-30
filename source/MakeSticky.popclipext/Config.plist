@@ -21,7 +21,5 @@
 	<string>Stickies</string>
 	<key>Required OS Version</key>
 	<string>10.7</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

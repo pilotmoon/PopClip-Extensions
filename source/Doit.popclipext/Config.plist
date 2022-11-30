@@ -32,7 +32,4 @@
 	<string>com.snoworange.Doitim-Mac</string>
 	<key>Extension Name</key>
 	<string>Doit.im</string>
-	<key>Version</key>
-	<integer>2</integer>
-</dict>
 </plist>

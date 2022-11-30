@@ -11,8 +11,6 @@
 			<string>whtsky</string>
 		</dict>
 	</array>
-	<key>Version</key>
-	<integer>2</integer>
 	<key>Extension Name</key>
 	<string>Python Package</string>
 	<key>Extension Identifier</key>

@@ -39,7 +39,5 @@
 	<string>com.pilotmoon.popclip.extension.notational-velocity</string>
 	<key>Extension Name</key>
 	<string>Notational Velocity</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

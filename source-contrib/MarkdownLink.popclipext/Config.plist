@@ -30,7 +30,5 @@
 	<string>org.tcchou.popclip.extension.mdlink</string>
 	<key>Extension Name</key>
 	<string>Markdown Link</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

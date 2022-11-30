@@ -19,7 +19,5 @@
 	<string>com.pilotmoon.popclip.extension.dictionary2</string>
 	<key>Extension Name</key>
 	<string>Dictionary2</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

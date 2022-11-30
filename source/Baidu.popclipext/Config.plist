@@ -41,7 +41,5 @@
 	<string>Baidu.png</string>
 	<key>Extension Name</key>
 	<string>Baidu</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

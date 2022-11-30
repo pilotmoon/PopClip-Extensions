@@ -29,7 +29,5 @@
 	<string>com.vfasky.popclip.extension.coffeescript</string>
 	<key>Extension Name</key>
 	<string>CoffeeScript</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

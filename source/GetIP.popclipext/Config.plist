@@ -34,7 +34,5 @@
 	<string>getip.png</string>
 	<key>Extension Name</key>
 	<string>Get IP</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

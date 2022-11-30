@@ -23,7 +23,5 @@
 	<string>Tweet</string>
 	<key>Required OS Version</key>
 	<string>10.8</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

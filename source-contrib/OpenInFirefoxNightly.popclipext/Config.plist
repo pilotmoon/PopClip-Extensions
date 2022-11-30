@@ -38,7 +38,5 @@
 	<string>com.pilotmoon.popclip.extension.open-in-firefox</string>
 	<key>Extension Name</key>
 	<string>Open in Firefox</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

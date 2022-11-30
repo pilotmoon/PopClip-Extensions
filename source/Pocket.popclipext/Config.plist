@@ -36,7 +36,5 @@
 	<string>com.pilotmoon.popclip.extension.pocket</string>
 	<key>Extension Name</key>
 	<string>Pocket</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

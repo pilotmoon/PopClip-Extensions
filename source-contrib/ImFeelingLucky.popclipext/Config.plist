@@ -30,7 +30,5 @@
 	<string>com.lucifr.popclip.extension.google-lucky</string>
 	<key>Extension Name</key>
 	<string>I'm Feeling Lucky</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

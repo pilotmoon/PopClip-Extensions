@@ -26,7 +26,5 @@
 	<string>com.pilotmoon.popclip.extension.mail</string>
 	<key>Extension Name</key>
 	<string>Mail</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

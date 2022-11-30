@@ -27,7 +27,5 @@
 	<string>com.pilotmoon.popclip.extension.open-in-safari</string>
 	<key>Extension Name</key>
 	<string>Open in Safari</string>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>

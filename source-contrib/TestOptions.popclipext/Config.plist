@@ -155,7 +155,5 @@
 		<key>en</key>
 		<string>Here is my title, it is quite ling. Will it wrap to several lines? I hope so!.</string>
 	</dict>
-	<key>Version</key>
-	<integer>2</integer>
 </dict>
 </plist>
