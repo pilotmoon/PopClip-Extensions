@@ -45,7 +45,7 @@ exports.apps = browsers_json_1.browsers.map(makeApp);
 // dynamically generate the actions
 const actions = (input, options, context) => {
     return browsers_json_1.browsers.filter(browser => {
-        return options[browser.bundleId] === true && context.appIdentifier !== browser.bundleId;
+        return input.data.urls.length > 0 && options[browser.bundleId] === true && context.appIdentifier !== browser.bundleId;
     }).map(makeAction);
 };
 exports.actions = actions;

@@ -38,6 +38,12 @@
             "bundleId": "com.operasoftware.Opera",
             "icon": "icons/fa6-brands-opera.svg",
             "link": "https://www.opera.com/"
+        },
+        {
+            "name": "Vivaldi",
+            "bundleId": "com.vivaldi.Vivaldi",
+            "icon": "icons/simple-icons-vivaldi.svg",
+            "link": "https://vivaldi.com/"
         }
     ]
 }

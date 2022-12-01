@@ -7,6 +7,7 @@
 # name: GetIcon
 # regex: ([a-z0-9]+(?:-[a-z0-9]+)*):([a-z0-9]+(?:-[a-z0-9]+)*)
 # stdin: text
+# after: copy-result
 #
 set -e # exit on errors
 log() { # print named params to stderr
@@ -28,10 +29,14 @@ url="https://api.iconify.design/${prefix}.json?icons=${icon}"; log url
 svg=$(http get $url | jq -r ".icons.\"$icon\".body")
 
 # save to file
-file="${HOME}/Downloads/${prefix}-${icon}.svg"; log file
-echo -n $svg > $file
+svg_name="${prefix}-${icon}.svg"
+out_file="${HOME}/Downloads/${svg_name}"; log out_file
+echo -n $svg > $out_file
 
 # pop open in dropshelf
 if [[ -d "/Applications/Dropshelf.app" ]]; then
-    open -a Dropshelf $file
+    open -a Dropshelf $out_file
 fi
+
+# return the file name
+echo -n $svg_name

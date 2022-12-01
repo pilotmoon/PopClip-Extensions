@@ -50,6 +50,6 @@ export const apps: AssociatedApp[] = browsers.map(makeApp)
 // dynamically generate the actions
 export const actions: PopulationFunction = (input, options, context) => {
   return browsers.filter(browser => {
-    return options[browser.bundleId] === true && context.appIdentifier !== browser.bundleId
+    return input.data.urls.length > 0 && options[browser.bundleId] === true && context.appIdentifier !== browser.bundleId
   }).map(makeAction)
 }
