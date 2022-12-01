@@ -20,6 +20,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
 - PopClip will install an extension from a `.popcliptxt` file. This is basically a snippet in a text file.
 - Allows a `shell script` as a literal string without needing to create a separate file. This enables shell scripts in 'regular' snippets.
+- Added optional `stdin` field for shell scripts, to allow passing a value to the script via stdin.
 - Allows the AppleScript source to be specified as `applescript` string or `applescript file` when calling a named handler. (See example below.)
 - A `key combo` string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
 - Added options for icon drawing including `flip horizontal`, `flip vertical` and `preserve aspect`.
