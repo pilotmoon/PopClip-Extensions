@@ -1,12 +1,12 @@
-# Open in Browsers
+# Open in Browser
 
 Open the selected URL(s) in a specific browsers.
 
-Download: [OpenInBrowsers.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/OpenInBrowsers.popclipextz)
+Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/OpenInBrowser.popclipextz)
 
 ## Description
 
-<!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/OpenInBrowsers.popclipext/OpenInBrowsers-demo.gif" width="480px"> -->
+<!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/OpenInBrowser.popclipext/OpenInBrowser-demo.gif" width="480px"> -->
 
 The extension has actions that appear when selecting text containing one or more web URLs. The action will open all URLs in the selected text.
 
@@ -45,7 +45,7 @@ Requires PopClip 2022.5
 ### Links
 
 <!-- * [Forum Topic](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/OpenInBrowsers.popclipext)
+* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/OpenInBrowser.popclipext)
   
 ## Changelog
 

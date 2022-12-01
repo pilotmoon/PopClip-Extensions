@@ -1,6 +1,6 @@
 {
-    "identifier": "com.pilotmoon.popclip.extension.optn-in-browsers",
-    "name": "Open in Browsers",
+    "identifier": "com.pilotmoon.popclip.extension.open-in-browser",
+    "name": "Open in Browser",
     "popclipVersion": 3895,
     "icon": "mdi-open-in-browser.svg",
     "module": "open.js",
