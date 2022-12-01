@@ -251,20 +251,14 @@
   },
   {
     "Members": [
+      "OpenInBrowsers",
       "ReadingList",
       "Pocket",
       "Pinboard",
       "Readwise",
       "RaindropIO",
       "Leech",
-      "Downie",
-      "OpenInSafari",
-      "OpenInChrome",
-      "OpenInFirefox",
-      "OpenInBrave",
-      "OpenInOpera",
-      "OpenInEdge",
-      "OpenInVivaldi",
+      "Downie",            
       "GetIP"
     ],
     "Title": "Work with URLs"

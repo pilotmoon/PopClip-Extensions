@@ -5,5 +5,5 @@
     "icon": "mdi-open-in-browser.svg",
     "module": "open.js",
     "entitlements": ["dynamic"],
-    "description": "Open link(s) in specific browsers. Supports Safari, Chrome, Brave, Firefox, Opera and Vivaldi."
+    "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Brave, Edge, Opera and Vivaldi."
 }
