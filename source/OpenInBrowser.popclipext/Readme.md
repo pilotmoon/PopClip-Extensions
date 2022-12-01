@@ -24,7 +24,7 @@ When selecting a URL inside a browser, the action for opening in that browser wi
 
 ### Options
 
-This extension has an checkbox to show or hide each browser in the PopClip popup.
+Each browser action has an checkbox to show or hide it in the PopClip popup.
 
 ## About
 
