@@ -1,0 +1,37 @@
+#!/bin/zsh
+# Download an iconify icon to Downloads folder as SVG; pop open in Dropshelf
+# Example inputs: simple-icons:vivaldi
+#
+# #popclip
+# popclip version: 4050
+# name: GetIcon
+# regex: ^([a-z0-9]+(?:-[a-z0-9]+)*):([a-z0-9]+(?:-[a-z0-9]+)*)$
+# stdin: text
+#
+set -e # exit on errors
+log() { # print named params to stderr
+  for name in $*; do
+    echo ${(r:8:)name} ${(P)name} >>/dev/stderr
+  done
+}
+
+# get input from stdin
+input=$(cat); log input
+
+# parse the input
+parts=(${(s(:))input}) # split on :
+prefix=$parts[1]
+icon=$parts[2]
+url="https://api.iconify.design/${prefix}.json?icons=${icon}"; log url
+
+# get svg string (`brew install httpie`, `brew install jq`)
+svg=$(http get $url | jq -r ".icons.$icon.body")
+
+# save to file
+file="${HOME}/Downloads/${prefix}-${icon}.svg"; log file
+echo -n $svg > $file
+
+# pop open in dropshelf
+if [[ -d "/Applications/Dropshelf.app" ]]; then
+    open -a Dropshelf $file
+fi
