@@ -1,0 +1,43 @@
+{
+    "browsers": [
+        {
+            "name": "Safari",
+            "bundleId": "com.apple.Safari",
+            "icon": "icons/fa6-brands-safari.svg",
+            "link": "https://www.apple.com/safari/",
+            "defaultEnabled": true
+        },
+        {
+            "name": "Chrome",
+            "bundleId": "com.google.Chrome",
+            "icon": "icons/fa6-brands-chrome.svg",
+            "link": "https://www.google.com/chrome/",
+            "defaultEnabled": true
+        },
+        {
+            "name": "Firefox",
+            "bundleId": "org.mozilla.firefox",
+            "icon": "icons/fa6-brands-firefox.svg",
+            "link": "https://www.google.com/chrome/",
+            "defaultEnabled": true
+        },
+        {
+            "name": "Brave",
+            "bundleId": "com.brave.Browser",
+            "icon": "icons/simple-icons-brave.svg",
+            "link": "https://brave.com/"
+        },
+        {
+            "name": "Edge",
+            "bundleId": "com.microsoft.edgemac",
+            "icon": "icons/fa6-brands-edge.svg",
+            "link": "https://www.microsoft.com/edge"
+        },
+        {
+            "name": "Opera",
+            "bundleId": "com.operasoftware.Opera",
+            "icon": "icons/fa6-brands-opera.svg",
+            "link": "https://www.opera.com/"
+        }
+    ]
+}

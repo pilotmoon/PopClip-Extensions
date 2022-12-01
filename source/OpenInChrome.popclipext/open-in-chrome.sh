@@ -1,4 +1,5 @@
 COUNT=0
+echo $SHELL
 for THIS_URL in $POPCLIP_URLS
 do
 	let COUNT=COUNT+1
