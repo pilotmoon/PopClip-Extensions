@@ -1,6 +1,6 @@
 # Open in Browser
 
-Open the selected URL(s) in a specific browsers.
+Open the selected URL(s) in a specific browser.
 
 Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/OpenInBrowser.popclipextz)
 
