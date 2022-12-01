@@ -8,7 +8,7 @@ Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Exten
 
 <!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/OpenInBrowser.popclipext/OpenInBrowser-demo.gif" width="480px"> -->
 
-The extension adds several actions, each for a specific browser. The supported browsers are:
+The extension adds an action for each of the following browsers:
 
 * Safari
 * Chrome
