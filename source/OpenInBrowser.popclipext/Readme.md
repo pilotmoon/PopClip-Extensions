@@ -8,9 +8,7 @@ Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Exten
 
 <!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/OpenInBrowser.popclipext/OpenInBrowser-demo.gif" width="480px"> -->
 
-The extension has actions that appear when selecting text containing one or more web URLs. The action will open all URLs in the selected text.
-
-There are actions in one the following browsers:
+The extension adds several actions, each for a specific browser. The supported browsers are:
 
 * Safari
 * Chrome
@@ -20,7 +18,9 @@ There are actions in one the following browsers:
 * Opera
 * Vivaldi
 
-When selecting a URL inside a browser, the action for opening in the current browser will not appear.
+The actions appear only when the selected text contains one or more web URL. All URLs in the selections will be opened, in separate tabs.
+
+When selecting a URL inside a browser, the action for opening in that browser will not appear.
 
 ### Options
 
