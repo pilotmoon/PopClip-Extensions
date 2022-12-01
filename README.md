@@ -11,7 +11,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
   - [Introduction](#introduction)
     - [License](#license)
     - [Credits](#credits)
-    - [Repository Layout & Contributing](#repository-layout--contributing)
+    - [Repository Layout \& Contributing](#repository-layout--contributing)
     - [Extension Signing](#extension-signing)
     - [Debug Output](#debug-output)
   - [Extension Snippets](#extension-snippets)
@@ -62,6 +62,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [Script Fields](#script-fields)
     - [Indicating Errors](#indicating-errors)
   - [Field name mapping](#field-name-mapping)
+    - [Modifier values](#modifier-values)
 
 ## Introduction
 
@@ -547,7 +548,7 @@ And a `Config.json` file to call this might be:
 
 #### Using JXA Scripts
 
-Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts. 
+Note that when using a compiled script, these can be be 'JavaScript for Automation' (JXA) scripts instead of AppleScripts. Everything works the same except 'handlers' correspond to top level JXA functions. JXA cannot be used in plain text scripts.
 
 An example of an extension using a JXA script is [TaskPaper](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/TaskPaper.popclipext).
 
@@ -592,7 +593,6 @@ In Ruby:
 #!/usr/bin/env ruby
 print 'Hello, ' + ENV['POPCLIP_TEXT'] + ', from Ruby'
 ```
-
 
 #### Shell Script Testing
 
@@ -832,7 +832,7 @@ These strings are available in Shell Script and AppleScript extensions. Where no
 |`raw html`|`POPCLIP_RAW_HTML`|`{popclip raw html}`|The original unsanitized HTML, if available. (`Capture HTML` must be specified.)|
 |`markdown`|`POPCLIP_MARKDOWN`|`{popclip markdown}`|A conversion of the HTML to Markdown. (`Capture HTML` must be specified.)|
 |`urls`|`POPCLIP_URLS`|`{popclip urls}`|Newline-separated list of web URLs that PopClip detected in the selected text.|
-|`modifier flags`|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Key Code format](#key-code-format). For example, `0` for no modifiers, or `131072` if shift is held down.|
+|`modifier flags`|`POPCLIP_MODIFIER_FLAGS`|`{popclip modifier flags}`|Modifier flags for the keys held down when the extension's button was clicked in PopClip. Values are as defined in [Modifier values](#modifier-values). For example, `0` for no modifiers, or `131072` if shift is held down.|
 |`bundle identifier`|`POPCLIP_BUNDLE_IDENTIFIER`|`{popclip bundle identifier}`|Bundle identifier of the app the text was selected in. For example, `com.apple.Safari`.|
 |`app name`|`POPCLIP_APP_NAME`|`{popclip app name}`|Name of the app the text was selected in. For example, `Safari`.|
 |`browser title`|`POPCLIP_BROWSER_TITLE`|`{popclip browser title}`|The title of the web page that the text was selected from. (Supported browsers only.)|
@@ -872,3 +872,24 @@ PopClip applies the following mapping to field names loaded from the config file
 | java script file          | javascript file  |
 
 Also, if the field name has the prefix `extension` or `option`, it is removed.
+
+### Modifier values
+
+|Keys|Value|
+|----|-----|
+|none|0|
+|⇧|131072|
+|⌃|262144|
+|⌃⇧|393216|
+|⌥|524288|
+|⌥⇧|655360|
+|⌃⌥|786432|
+|⌃⌥⇧|917504|
+|⌘|1048576|
+|⇧⌘|1179648|
+|⌃⌘|1310720|
+|⌃⇧⌘|1441792|
+|⌥⌘|1572864|
+|⌥⇧⌘|1703936|
+|⌃⌥⌘|1835008|
+|⌃⌥⇧⌘|1966080|
