@@ -12,7 +12,7 @@
         "com.evernote.Evernote",
         "com.readdle.PDFExpert-Mac",
         "md.obsidian"
-      ],
+      ]
     },
     {
       "keyCombo": "shift command H",
@@ -21,7 +21,7 @@
         "com.literatureandlatte.scrivener3",
         "com.apple.iWork.Pages",
         "com.electron.logseq"
-      ],
+      ]
     },
     {
       "keyCombo": "shift command L",
@@ -29,20 +29,20 @@
         "com.devon-technologies.thinkpro2",
         "com.devon-technologies.think3",
         "com.Alternote"
-      ],
+      ]
     },
     {
       "keyCombo": "shift command U",
       "requiredApps": [
         "pro.writer.mac"
-      ],
+      ]
     },
     {
       "keyCombo": "option shift command 1",
       "requiredApps": [
         "com.smileonmymac.PDFpenPro",
         "com.smileonmymac.PDFpen"
-      ],
+      ]
     }
   ],
   "description": "Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen, PDF Expert and iA Writer only."
