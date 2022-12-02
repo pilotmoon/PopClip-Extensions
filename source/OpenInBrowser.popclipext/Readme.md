@@ -14,6 +14,7 @@ The extension adds an action for each of the following browsers:
 * Chrome
 * Firefox
 * Brave
+* DuckDuckGo
 * Edge
 * Opera
 * Vivaldi
@@ -49,6 +50,11 @@ Requires PopClip 2022.5
   
 ## Changelog
 
-### 1 Dec 2022
+### 2022-12-01
 
 * Initial release
+
+### 2022-12-02
+
+* Add DuckDuckGo browser.
+* Fix "app not found" messages for browsers that aren't installed.

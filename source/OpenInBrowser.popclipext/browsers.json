@@ -18,7 +18,7 @@
             "name": "Firefox",
             "bundleId": "org.mozilla.firefox",
             "icon": "icons/fa6-brands-firefox.svg",
-            "link": "https://www.google.com/chrome/",
+            "link": "https://getfirefox.com/",
             "defaultEnabled": true
         },
         {
@@ -26,6 +26,12 @@
             "bundleId": "com.brave.Browser",
             "icon": "icons/simple-icons-brave.svg",
             "link": "https://brave.com/"
+        },
+        {
+            "name": "DuckDuckGo",
+            "bundleId": "com.duckduckgo.macos.browser",
+            "icon": "icons/simple-icons-duckduckgo.svg",
+            "link": "https://duckduckgo.com/mac"
         },
         {
             "name": "Edge",
