@@ -6,6 +6,7 @@ interface BrowserDefinition {
   link: string
   defaultEnabled?: boolean
 }
+
 function makeOption (browser: BrowserDefinition): Option {
   const option: Option = {
     identifier: browser.bundleId,
@@ -16,6 +17,7 @@ function makeOption (browser: BrowserDefinition): Option {
   }
   return option
 }
+
 function makeAction (browser: BrowserDefinition): Action {
   const action: Action = {
     title: 'Open in ' + browser.name,
@@ -25,18 +27,15 @@ function makeAction (browser: BrowserDefinition): Action {
         popclip.openUrl(url, { app: browser.bundleId })
       }
       return null
+    },
+    app: {
+      name: browser.name,
+      link: browser.link,
+      bundleIdentifiers: [browser.bundleId],
+      checkInstalled: true
     }
   }
   return action
-}
-function makeApp (browser: BrowserDefinition): AssociatedApp {
-  const app: AssociatedApp = {
-    name: browser.name,
-    link: browser.link,
-    bundleIdentifiers: [browser.bundleId],
-    checkInstalled: true
-  }
-  return app
 }
 
 // return options with title
@@ -45,8 +44,7 @@ export const options: Option[] = [{
   label: 'Enabled Browsers',
   type: 'heading'
 }, ...browsers.map(makeOption)]
-// return apps list
-export const apps: AssociatedApp[] = browsers.map(makeApp)
+
 // dynamically generate the actions
 export const actions: PopulationFunction = (input, options, context) => {
   return browsers.filter(browser => {

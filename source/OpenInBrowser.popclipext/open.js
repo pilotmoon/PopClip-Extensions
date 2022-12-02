@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.actions = exports.apps = exports.options = void 0;
+exports.actions = exports.options = void 0;
 const browsers_json_1 = require("./browsers.json");
 function makeOption(browser) {
     const option = {
@@ -21,18 +21,15 @@ function makeAction(browser) {
                 popclip.openUrl(url, { app: browser.bundleId });
             }
             return null;
+        },
+        app: {
+            name: browser.name,
+            link: browser.link,
+            bundleIdentifiers: [browser.bundleId],
+            checkInstalled: true
         }
     };
     return action;
-}
-function makeApp(browser) {
-    const app = {
-        name: browser.name,
-        link: browser.link,
-        bundleIdentifiers: [browser.bundleId],
-        checkInstalled: true
-    };
-    return app;
 }
 // return options with title
 exports.options = [{
@@ -40,8 +37,6 @@ exports.options = [{
         label: 'Enabled Browsers',
         type: 'heading'
     }, ...browsers_json_1.browsers.map(makeOption)];
-// return apps list
-exports.apps = browsers_json_1.browsers.map(makeApp);
 // dynamically generate the actions
 const actions = (input, options, context) => {
     return browsers_json_1.browsers.filter(browser => {
