@@ -18,7 +18,7 @@ Released on 6 Dec 2022.
 
 ### Added
 
-- PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
+- Extensions and snippets can now use icons from [Iconify](https://icon-sets.iconify.design/), which provides over 100,000 open source icons. Specify them like this: `iconify:ph:rainbow-bold`.
 - Snippets can now be added as a comment header to any text file, with the result that the entire file becomes installable as a JavaScript, Apple Script or shell script extension. (See [Header Snippets](https://github.com/pilotmoon/PopClip-Extensions#header-snippets) in the main Readme.)
 - PopClip will install an extension from a `.popcliptxt` file. This is basically a snippet in a text file.
 - Added `shell script` field for specifying a shell script as a literal string. This allows shell scripts to be put directly in snippets.
