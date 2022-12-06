@@ -1,2 +1,0 @@
-#!/bin/zsh
-echo -n $POPCLIP_TEXT | ./Markdown.pl

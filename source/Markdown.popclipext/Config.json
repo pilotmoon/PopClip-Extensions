@@ -1,10 +1,11 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.markdown-to-html",
-  "popclipVersion": 3895,
+  "popclipVersion": 4069,
   "name": "Markdown",
   "icon": "dfstar.png",
+  "shellScriptFile": "Markdown.pl",
+  "stdin": "text",
   "after": "paste-result",  
-  "shellScriptFile": "shim",
   "app": {    
     "name": "Markdown",
     "link": "https://daringfireball.net/projects/markdown/syntax"
