@@ -1,8 +1,8 @@
 # PopClip Extensions
 
-This document applies to PopClip 2022.5 (3895). See also: [Changelog](CHANGELOG.md)
+This document applies to PopClip 2022.12 (4069). See also: [Changelog](CHANGELOG.md)
 
-NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
+Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
 ## Table of Contents
 
@@ -15,7 +15,8 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [Extension Signing](#extension-signing)
     - [Debug Output](#debug-output)
   - [Extension Snippets](#extension-snippets)
-    - [Extension Snippets Examples](#extension-snippets-examples)
+    - [Snippets Examples](#snippets-examples)
+    - [Header Snippets](#header-snippets)
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
     - [Types of Actions](#types-of-actions)
     - [Filtering](#filtering)
@@ -24,6 +25,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The Config file](#the-config-file)
     - [Field names](#field-names)
   - [Icons](#icons)
+    - [Color handling](#color-handling)
     - [Text-based icons](#text-based-icons)
     - [Examples of symbols and text-based icons](#examples-of-symbols-and-text-based-icons)
   - [The Config file structure](#the-config-file-structure)
@@ -58,6 +60,7 @@ NEW: Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to dat
     - [The `before` and `after` strings](#the-before-and-after-strings)
     - [The `app` dictionary](#the-app-dictionary)
     - [The `options` array](#the-options-array)
+    - [The `icon options` dictionary](#the-icon-options-dictionary)
   - [Using Scripts](#using-scripts)
     - [Script Fields](#script-fields)
     - [Indicating Errors](#indicating-errors)
@@ -124,12 +127,12 @@ defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 
 ## Extension Snippets
 
-PopClip 2021.11 supports a new, simplified way to create and share simple extensions called "Extension Snippets".
+Since version 2021.11, PopClip supports a simplified way to create and share simple extensions called "Extension Snippets".
 
 Here is an example extension snippet:
 
 ```yaml
-# popclip extension to search Emojipedia
+#popclip extension to search Emojipedia
 name: Emojipedia
 icon: search filled E
 url: https://emojipedia.org/search/?q=***
@@ -137,17 +140,15 @@ url: https://emojipedia.org/search/?q=***
 
 When you select the above text, PopClip will offer an "Install Extension" action. Clicking it will install the above extension directly, without any need for config files or a .popclipext folder.
 
-The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, with the addition of a comment header beginning with `# popclip` (with or without a space, not case sensitive).
+The format of a snippet is a simply a regular PopClip extension config in [YAML](https://quickref.me/yaml) format, marked with `#popclip` (or `# popclip`) at the start. (Note that `#` denotes a YAML comment. The entire selection including the `#popclip` line must parse as valid YAML.)
 
-All features of regular extensions can be used, with the limitation that additional files (such as icon files or scripts) cannot be included. Extension snippets can be a maximum of 1000 characters.
+All features of regular extensions can be used, with the limitation that additional files (such as icon files or scripts) cannot be included. Extension snippets can be a maximum of 5000 characters.
 
-If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet will install without the usual "unsigned extension" prompt. AppleScript snippets, and JavaScript snippets with the network entitlement, will still give the unsigned warning.
+If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet will install without the usual "unsigned extension" prompt. Shell Script snippets, AppleScript snippets and JavaScript snippets with the network entitlement will still give the unsigned warning.
 
-Full Shell Script extensions can't be expressed as snippets, although you can use an AppleScript to run a simple shell script as a string literal (see example below).
+In snippets, `name` is a required field. In the absence of an explicit `identifier` field, the extension is identified by its `name`. Installing another extension with the same name will overwrite an existing one with the same name.
 
-In the absence of an explicit `identifier` field, the extension is identified by its `name`. Installing another extension with the same name (or identifier) will overwrite an existing one.
-
-### Extension Snippets Examples
+### Snippets Examples
 
 A Shortcuts example:
 
@@ -159,31 +160,34 @@ macos version: '12.0' # shortcuts only work on Monterey and above!
 shortcut name: My Shortcut Name
 ```
 
-An AppleScript example, running a shell script:
+A Key Press example:
 
 ```yaml
-# popclip shellscript nested in an applescript 
-name: Say
-applescript: do shell script "say '{popclip text}'"
+#popclip
+name: Key Press Example
+key combo: command option J
 ```
 
-A multi-line AppleScript example (the pipe character begins a YAML multi-line string, and the following lines must all be indented with two spaces - not tabs!):
+A Service example -- this time using flow-style YAML markup with braces.
 
 ```yaml
-# PopClip LaunchBar example
-name: LaunchBar
-icon: LB
-applescript: | # pipe character begins a multi-line string
-  tell application "LaunchBar"
-    set selection to "{popclip text}"
-  end tell
-# the above lines are indented with two spaces. no tabs allowed in YAML!
+#popclip
+{ name: Make Sticky, service name: Make Sticky }
+```
+
+An shell script example:
+
+```yaml
+#popclip shellscript example  
+name: Say
+shell script: say -v Daniel $POPCLIP_TEXT
+interpreter: zsh
 ```
 
 A JavaScript example, including multiple actions:
 
 ```yaml
-# popclip js + multi action example
+#popclip js + multi action example
 name: Markdown Formatting
 requirements: [text, paste]
 actions:
@@ -195,22 +199,6 @@ actions:
   javascript: popclip.pasteText('*' + popclip.input.text + '*')  
 ```
 
-A Key Press example:
-
-```yaml
-# popclip
-name: Key Press Example
-key combo: command option J
-```
-
-A Service example:
-
-```yaml
-# popclip
-name: Make Sticky
-service name: Make Sticky
-```
-
 A more complex Key Combo example with a raw key code and using some more fields:
 
 ```yaml
@@ -219,7 +207,55 @@ name: Paste and Enter
 icon: square monospaced ↵
 requirements: [paste]
 before: paste
-key combo: 0x24 # see https://bit.ly/3wSkQ9I
+key combo: 0x24
+```
+
+### Header Snippets
+
+In PopClip 2022.12, a snippet can be added as a comment header to any source code, and the entire text will be interpreted as a combined snippet and source file.
+
+The comment must be embedded using the same comment style for every line. (Whatever characters preceded the `#popclip` )
+
+When using a snippet you must specify either the `interpreter` (in the case of a shell script) or `language` (in the case of a JavaScript or AppleScript.)
+
+A Python example:
+
+```python
+# #popclip
+# { name: Hello Python, icon: hi, after: show-result, interpreter: python3 }
+import os
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
+```
+
+An alternative way to specify the interpreter is with a shebang line at the top:
+
+```python
+#!/usr/bin/env python3
+# #popclip
+# { name: Hello Python Alternative, icon: hi, after: show-result }
+import os
+print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!')
+```
+
+A JavaScript example:
+
+```javascript
+// #popclip
+// { name: Hello JS, icon: Hi!, language: javascript }
+const greeting = 'Hello ' + popclip.input.text
+popclip.showText(greeting)
+```
+
+An AppleScript example:
+
+```yaml
+-- # PopClip LaunchBar example
+-- name: LaunchBar
+-- icon: LB
+-- language: applescript
+tell application "LaunchBar"
+  set selection to "{popclip text}"
+end tell
 ```
 
 ## Anatomy of a PopClip Extension
@@ -270,16 +306,16 @@ For distribution, an extension package folder may be zipped and renamed with the
 
 ### The Config file
 
-Every extension must contain a Config file, in either JSON, YAML or plist format.
+Every extension must define a configuration dictionary. This can be provided in a file called either `Config.plist`, `Config.yaml`, `Config.json`, or `Config.js`.
 
-| Format | File Name      | Description                                                                                        |
-| ------ | -------------- | -------------------------------------------------------------------------------------------------- |
-| JSON   | `Config.json`  | A file in [JSON](https://www.json.org/json-en.html) format. ([quickref](https://quickref.me/json)) |
-| YAML   | `Config.yaml`  | A file in [YAML 1.2](https://yaml.org)  format. ([quickref](https://quickref.me/yaml))             |
-| plist  | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list).                         |
+| Format     | File Name      | Description                                                                              |
+| ---------- | -------------- | ---------------------------------------------------------------------------------------- |
+| plist      | `Config.plist` | An Apple [XML Property List](https://en.wikipedia.org/wiki/Property_list) (Plist) file.  |
+| YAML       | `Config.yaml`  | A [YAML 1.2](https://yaml.org) file ([quickref](https://quickref.me/yaml)).              |
+| JSON       | `Config.json`  | A [JSON](https://www.json.org/json-en.html) file ([quickref](https://quickref.me/json)). |
+| JavaScript | `Config.js`    | A JavaScript source file exporting an object. (See #TODO).                               |
 
-The Config file must define a single dictionary at its root, which defines the extension. Although the three formats are different, they all can be used to define a dictionary mapping
-string keys to values. The values can be strings, numbers, booleans, arrays or other dictionaries. (In this documentation the term 'field' is used to refer to a key/value pair in a dictionary.)
+The Config file must define a single dictionary at its root, which defines the extension. Although the three formats are different, they all can be used to define a dictionary mapping string keys to values. The values can be strings, numbers, booleans, arrays or other dictionaries. (In this documentation the term 'field' is used to refer to a key/value pair in a dictionary.)
 
 The choice of format does not affect the extension functionality in any way, so you can choose whichever format you prefer to work with. (Plist was the original config file format for PopClip extensions for many years, and the JSON and YAML formats were added later.)
 
@@ -303,13 +339,21 @@ Older versions of PopClip used different names for some fields. Where there is a
 
 Icons may be specified in the `icon` fields in a few different ways:
 
-- **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. You can create your own with an image editor, or you could use icons from a website like [The Noun Project](https://thenounproject.com) or the macOS app [IconJar](https://geticonjar.com/resources/). Please include any applicable copyright attribution in a README file.
-
-- **As an SF Symbol:** `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above. Also note that some symbols require higher macOS versions as indicated in the "Availability" panel in Apple's SF Symbols browser app. (If the symbol does not exist on the version of macOS the user is running, it will be as if no icon was specified. Therefore, you should specify an appropriate `macos version` when using a symbol icon.)
+- **As a filename:** `<filename>.png` or `<filename>.svg` specifies an image file within the extension package, in either PNG or SVG format. PNG icons should be at least 256 pixels high.
 
 - **As a text-based icon:** Using a special format, you can instruct PopClip to generate a text-based icon (see below).
 
-PNG and SVG icons should be square and monochrome. The image should be black, on a transparent background. You can use opacity to create shading. PNG icons should be at least 256x256 pixels in size.
+- **As an Iconify icon:** `iconify:<iconify identifier>`. For example `iconify:ion:fish`. Iconify provides over 100,000 open source icons. Search for icons at: <https://icon-sets.iconify.design/>. PopClip needs internet access to retrieve the icon.
+
+- **As an SF Symbol:** `symbol:<symbol name>` specifies an Apple [SF Symbols](https://sfsymbols.com) identifier, for example `symbol:flame`. Symbols are only available on macOS 11.0 and above.
+
+- **As SVG source code:** `svg:<svg source>`.
+
+### Color handling
+
+Images suitable for use as icons will typically be solid black on a transparent background. Opacity can be used for shading.
+
+By default, PopClip renders icons all in the same color, ignoring any color information in the image. However, you can set the `preserve color` flag in `icon options` to tell PopClip to keep the original color palette. (Color icons from Iconify will automatically be rendered in color.)
 
 ### Text-based icons
 
@@ -365,10 +409,11 @@ The following fields are used at the top level of the configuration to define pr
 |---|----|-----------|
 |`name` |Localizable String| This is a display name that appears in the preferences list of extensions. If omitted, a name is generated automatically from the `.popclipext` package name.|
 |`icon` |String|See [Icons](#icons). If you omit this field, the icon for the first action will be used (if any), or else no icon will be displayed. |
-|`identifier` |String| You may provide an identifier string here to uniquely identify this extension. Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (Do not use the prefix `com.pilotmoon.` for your own extensions.)If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead.|
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
+|`identifier` |String| You may provide an identifier string here to uniquely identify this extension. An identifier may contains only alphanumeric characters (A-Z, a-z, 0-9), period (.), and hyphen (-). Use your own prefix, which could be a reverse DNS-style prefix based on a domain name you control `com.example.myextension`. (The prefix `com.pilotmoon.` is reserved for signed extensions only. Do not use it for your own extensions.) If you omit this field, PopClip will identify the extension by its package name (e.g. `Name.popclipext`) instead.|
 |`description`|Localizable String|A short, human readable description of this extension. Appears on the web site but not in the app.|
 |`macos version` |String|Minimum version number of Mac OS X needed by this extension. For example `10.8.2` or `11.0`.|
-|`popclip version` |Integer|Minimum PopClip version required. This is the build number, as shown in brackets in the about pane. You should specify `3895` for new extensions based on this document.|
+|`popclip version` |Integer|Minimum PopClip version required. This is specified as the integer build number. You should specify `4069` for new extensions based on this document. Specifying a version here can also help preserve your extension's functionality in future, because PopClip applies backward-compatibility rules for old extensions.|
 |`options`|Array|Array of dictionaries defining the options for this extension, if any. See [The `options` array](#the-options-array).|
 |`options title`|Localizable String|Title to appear at the top of the options window. Default is `Options for <extension name>`.|
 |`entitlements`|Array|Only applies to JavaScript extensions. The possible values are `network` (allows use of XMLHttpRequest) and `dynamic` (allows dynamically generated actions).|
@@ -381,10 +426,13 @@ If neither `actions` nor `action` is defined, PopClip will look at the top level
 
 The following fields define properties common to all actions. All fields are optional.
 
+Action properties can also be set in the extension properties section. Properties set at the top level will apply to all actions (unless overridden in the individual action )
+
 |Key|Type|Required?|Description|
 |---|----|---------|-----------|
 |`title`|Localizable String|The title is displayed on the action button if there is no icon. For extensions with icons, the title is displayed in the tooltip. If omitted, the action will take the extension name as its title.|
-|`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
+|`icon`|String| The icon to show on the action button. See [Icons](#icons) for the icon specification format. If omitted, the action will take the extension icon as its icon. To explicitly specify no icon, set this field either to boolean `false` (in a plist) or to `null` (in JSON/YAML).|
+|`icon options`|Dictionary|Specifies options for displaying the icon. See [The `icon options` dictionary](#the-icon-options-dictionary).|
 |`identifier`|String|A string to identify this action. In shell script and AppleScript actions, the identifier is passed to the script.|
 |`requirements`|Array|Array consisting of zero or more of the strings listed in [the `requirements` array](#the-requirements-array). All the requirements in the array must be satisfied. If the array is omitted, the requirement `text` is applied by default.|
 |`before`|String|String to indicate an action PopClip should take *before* performing the main action. See [The `before` and `after` strings](#the-before-and-after-strings).|
@@ -395,7 +443,6 @@ The following fields define properties common to all actions. All fields are opt
 |`app`|Dictionary|Information about the app or website associated with this action. You can use this field to, optionally, specify that a certain app must be present on the system for the action to work. See [The `app` dictionary](#the-app-dictionary).|
 |`stay visible`|Boolean|If `true`, the PopClip popup will not disappear after the user clicks the action. (An example is the Formatting extension.) Default is `false`.|
 |`capture html`|Boolean|If `true`, PopClip will attempt to capture HTML and Markdown for the selection. PopClip makes its best attempt to extract HTML, first of all from the selection's HTML source itself, if available. Failing that, it will convert any RTF text to HTML. And failing that, it will generate an HTML version of the plain text. It will then generate Markdown from the final HTML. Default is `false`.|
-|`preserve image color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
 |`restore pasteboard`|Boolean|If true, then PopClip will restore the pasteboard to its previous contents after pasting text in the `paste-result` after-step. Default is `false`.|
 
 Additionally, there will be action-specific properties as described in the sections below.
@@ -460,7 +507,8 @@ Some examples:
 - `option shift .` - *Hold option and shift, and press the dot key*
 - `command space` - *Hold command, and press space bar*
 - `f1` - *The F1 key on its own with no modifiers*
-- `option 0x4b` - *0x4b is the hex numeric code for 'Keypad Divide'*
+- `option numpad /` - *Hold option, press '/' key on numeric keypad*
+- `option 0x4b` - *0x4b is the hex numeric code for numeric keypad '/'', equivalent to `option numpad /`*
 
 The **key** is specified in one of the following ways:
 
@@ -470,22 +518,23 @@ The **key** is specified in one of the following ways:
 
 The **modifiers** are specified with the following keywords:
 
-| Modifier    | Keyword                  |
-| ----------- | ------------------------ |
-| Command (⌘) | `command`, `cmd` or `⌘`  |
-| Option (⌥)  | `option`, `opt` or `⌥`   |
-| Control (⌃) | `control`, `ctrl` or `^` |
-| Shift (⇧)   | `shift` or `⇧`           |
+| Modifier       | Keyword                  |
+| -------------- | ------------------------ |
+| Command (⌘)    | `command`, `cmd` or `⌘`  |
+| Option (⌥)     | `option`, `opt` or `⌥`   |
+| Control (⌃)    | `control`, `ctrl` or `^` |
+| Shift (⇧)      | `shift` or `⇧`           |
+| Numeric Keypad | `numpad`                 |
 
 ### AppleScript actions
 
-An AppleScript action is defined by the presence of either an `applescript`, `applescript file` or `applescript call` field, as follows:
+An AppleScript action is defined by the presence of either an `applescript`, `applescript file` field, with optional `applescript call` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----------|
 |`applescript`|String|A text string to interpret directly as AppleScript source.|
 |`applescript file`|String|File name of an `.applescript` or `.scpt` file to run.|
-|`applescript call`|Dictionary|Three fields defining a call to a named handler, as below.|
+|`applescript call`|Dictionary (optional)|A named handler to call.|
 
 #### The `applescript call` dictionary
 
@@ -493,7 +542,6 @@ The `applescript call` dictionary lets you call a named handler within the scrip
 
 |Key|Type|Description|
 |---|----|-----------|
-|`file`|String|File name, of an `.applescript` or `.scpt` file.|
 |`handler`|String|Name of a handler within the script to call.|
 |`parameters`|Array (optional)|Array of strings specifying names of values to pass as parameters to the handler, as defined in [Script Fields](#script-fields). The number and order of parameters must match exactly what the handler expects to receive. Omit or leave empty if there are no parameters.|
 
@@ -538,8 +586,8 @@ And a `Config.json` file to call this might be:
 ```json
 {
   "name": "TextEdit Clip",
-  "applescript call": {
-    "file": "example.scpt",
+  "applescript file": "example.scpt",
+  "applescript call": {    
     "handler": "newDocument",
     "parameters": ["text", "browser url"]
   }
@@ -554,12 +602,21 @@ An example of an extension using a JXA script is [TaskPaper](https://github.com/
 
 ### Shell Script actions
 
-A Shell Script action is defined by the presence of a `shell script file` field, with an optional `script interpreter` field, as follows:
+A Shell Script action is defined by the presence of either a `shell script` or `shell script file` field, as follows:
 
 |Key|Type|Description|
 |---|----|-----|
-|`shell script file`|String (required)|The name of the shell script file to invoke. The file must exist in the extension's package. By default, the script is executed using `/bin/sh`. To use other scripting runtimes, either define a `script interpreter` or set the script's executable bit and include a shebang (e.g. `#!/usr/bin/env ruby`) at the top of the file.|
-|`script interpreter`|String (optional)|Specify the interpreter to use for `shell script file`. For example `ruby`. PopClip will look for the named executable in the `PATH` of the user's default shell. Alternatively, you can specify the absolute path (starting with `/`).
+|`shell script`|String|A string to be run as a shell script. The string will be passed via standard input to the specified `interpreter`, invoked without arguments.|
+|`shell script file`|String|The name of a file in the extension's package directory. See below for more details.|
+|`interpreter`|String (optional)|Specify the interpreter to use for `shell script` or `shell script file`. You can specify a bare executable name, for example `ruby`, and PopClip will look for it in the `PATH` of the user's default shell. Alternatively, you can specify an absolute path such as `/bin/zsh`. If omitted, PopClip will directly execute the script file instead, if possible (see below).|
+|`stdin`|String (optional)|Name of a field whose value should be passed to the script via standard input (see [Script Fields](#script-fields)). For example, `text` to pass the matched text (same as `$POPCLIP_TEXT` variable). If omitted, no standard input is provided to the script.|
+
+The `shell script file` will be executed as follows:
+
+- If an `interpreter` is specified, then PopClip will call this interpreter with the script file path as argument.
+- Otherwise, if the script file has executable permissions set (with `chmod +x`) and the first line of the file starts with `#!`, then PopClip will execute the file directly.
+- Otherwise, if the extension has a `popclip version` and it is set to a value less than  `4035`, or if the script file name ends with `.sh`, the script will be executed with `/bin/sh`. (This behaviour is for backward compatibility with existing extensions.)
+- If none of the above conditions are met, the extension will fail to load because no interpreter has been specified.
 
 The the current working directory will be set to the package directory. Within the script, access the selected text as `$POPCLIP_TEXT`, and other variables as described in [Script Fields](#script-fields). You can output a string to the standard output and have PopClip act upon it by defining an `after` key. For returning errors, see [Indicating Errors](#indicating-errors).
 
@@ -569,7 +626,7 @@ Here is a simple example shell script (this one is for 'Say'):
 
 ```sh
 #!/bin/sh
-echo $POPCLIP_TEXT | say  # pipe text to 'say' command
+echo "$POPCLIP_TEXT" | say  # pipe text to 'say' command
 ```
 
 A shell script can return a string back to PopClip via stdout. For example:
@@ -814,6 +871,17 @@ Options are presented to the user in a preferences user interface window and are
 |`values`|Array|Required for `multiple` type|Array of strings representing the possible values for the multiple choice option.|
 |`value labels`|Array|Optional|Array of "human friendly" strings corresponding to the multiple choice values. This is used only in the PopClip options UI, and is not passed to the script. If omitted, the option values themselves are shown.|
 |`inset`|Boolean|Optional|If true, the option field will be shown inset to the right of the label, instead of under it. Default is false.|
+
+### The `icon options` dictionary
+
+These icon options can also be placed directly in among the action properties or extension properties with the same effect.
+
+|Key|Type|Required?|Description|
+|---|----|---------|-----------|
+|`preserve color`|Boolean|If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is `false`.|
+|`preserve aspect`|Boolean|If true, the supplied icon will be displayed with its original aspect ratio instead of being scaled to fit a square. Default is `false`.|
+|`flip horizontal`|Boolean|If true, the supplied icon will be drawn horizontally flipped. Default is `false`.|
+|`flip vertical`|Boolean|If true, the supplied icon will be drawn vertically flipped. Default is `false`.|
 
 ## Using Scripts
 
