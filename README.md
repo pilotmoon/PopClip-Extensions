@@ -146,7 +146,7 @@ All features of regular extensions can be used, with the limitation that additio
 
 If the extension is of type Shortcut, Service, URL, Key Combo or JavaScript (without network entitlement), the extension snippet will install without the usual "unsigned extension" prompt. Shell Script snippets, AppleScript snippets and JavaScript snippets with the network entitlement will still give the unsigned warning.
 
-In snippets, `name` is a required field. In the absence of an explicit `identifier` field, the extension is identified by its `name`. Installing another extension with the same name will overwrite an existing one with the same name.
+In snippets, `name` is a required field. Installing another extension with the same name will overwrite an existing one with the same name, but you can avoid this by specifying a unique `identifier` field.
 
 ### Snippets Examples
 
@@ -212,13 +212,13 @@ key combo: 0x24
 
 ### Header Snippets
 
-In PopClip 2022.12, you can add a snippet as a comment to source code, and PopClip will read the whole file as a snippet.
+New in PopClip 2022.12, you can add a snippet as a comment header to any source code, and PopClip will see the whole thing as a snippet.
 
-When using a header snippet you must specify either the `interpreter` (in the case of a shell script) or `language` (in the case of a JavaScript or AppleScript). The file then be taken as the `shell script file`, `javascript file` or `applescript file` as appropriate.
+When using a header snippet you must specify either the `interpreter` (for a shell script) or `language` (for JavaScript or AppleScript). The whole text will then become the `shell script file`, `javascript file` or `applescript file` for the extension, as appropriate.
 
-The comment must be us a consistent style indenting for every line of the snippet.
+The snippet header should be added using the comment style of the source language, using the same comment style and indenting for every line of the snippet. (That is, whatever characters precede the `#popclip` line, should precede all the lines of the snippet header.)
 
-As an example, take "classic" snippet:
+As an example, consider this "classic" snippet for a JavaScript extension:
 
 ```yaml
 #popclip - classic YAML snippet
@@ -229,16 +229,18 @@ javascript: |
   popclip.showText(greeting)
 ```
 
-Now you can write the same snippet like this:
+Now, you can write the same thing like this:
 
 ```javascript
-// #popclip - source code with snippet in header comment
-// { name: Hello JS, icon: Hi!, language: javascript }
+// #popclip - source code with snippet header
+// name: Hello JS
+// icon: Hi!
+// language: javascript
 const greeting = 'Hello ' + popclip.input.text
 popclip.showText(greeting)
 ```
 
-A Python example:
+A Python example, this time with a compact single line snippet, using braces (YAML flow-style):
 
 ```python
 # #popclip
@@ -247,7 +249,7 @@ import os
 print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
 ```
 
-An alternative way to specify the interpreter is with a shebang line at the top:
+An alternative way to specify a shell script is to put a shebang (`#!`) line at the top, in which case, the `interpreter` field is not needed:
 
 ```python
 #!/usr/bin/env python3
