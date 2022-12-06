@@ -14,7 +14,7 @@ Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date abo
     - [Repository Layout \& Contributing](#repository-layout--contributing)
     - [Extension Signing](#extension-signing)
     - [Debug Output](#debug-output)
-  - [Extension Snippets](#extension-snippets)
+  - [Snippets](#snippets)
     - [Snippets Examples](#snippets-examples)
     - [Header Snippets](#header-snippets)
   - [Anatomy of a PopClip Extension](#anatomy-of-a-popclip-extension)
@@ -125,11 +125,11 @@ To help you when creating extensions, PopClip can be configured to write script 
 defaults write com.pilotmoon.popclip EnableExtensionDebug -bool YES
 ```
 
-## Extension Snippets
+## Snippets
 
-Since version 2021.11, PopClip supports a simplified way to create and share simple extensions called "Extension Snippets".
+The simplest way to create and share extensions is by writing a "snippet". You can do this anywhere you like, in any place you can type text.
 
-Here is an example extension snippet:
+Here is an example snippet:
 
 ```yaml
 #popclip extension to search Emojipedia
@@ -175,7 +175,7 @@ A Service example -- this time using flow-style YAML markup with braces.
 { name: Make Sticky, service name: Make Sticky }
 ```
 
-An shell script example:
+An shell script example (new in PopClip 2022.12):
 
 ```yaml
 #popclip shellscript example  
@@ -212,11 +212,31 @@ key combo: 0x24
 
 ### Header Snippets
 
-In PopClip 2022.12, a snippet can be added as a comment header to any source code, and the entire text will be interpreted as a combined snippet and source file.
+In PopClip 2022.12, you can add a snippet as a comment to source code, and PopClip will read the whole file as a snippet.
 
-The comment must be embedded using the same comment style for every line. (Whatever characters preceded the `#popclip` )
+When using a header snippet you must specify either the `interpreter` (in the case of a shell script) or `language` (in the case of a JavaScript or AppleScript). The file then be taken as the `shell script file`, `javascript file` or `applescript file` as appropriate.
 
-When using a snippet you must specify either the `interpreter` (in the case of a shell script) or `language` (in the case of a JavaScript or AppleScript.)
+The comment must be us a consistent style indenting for every line of the snippet.
+
+As an example, take "classic" snippet:
+
+```yaml
+#popclip - classic YAML snippet
+name: Hello JS
+icon: Hi!
+javascript: |
+  const greeting = 'Hello ' + popclip.input.text
+  popclip.showText(greeting)
+```
+
+Now you can write the same snippet like this:
+
+```javascript
+// #popclip - source code with snippet in header comment
+// { name: Hello JS, icon: Hi!, language: javascript }
+const greeting = 'Hello ' + popclip.input.text
+popclip.showText(greeting)
+```
 
 A Python example:
 
@@ -237,22 +257,11 @@ import os
 print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!')
 ```
 
-A JavaScript example:
-
-```javascript
-// #popclip
-// { name: Hello JS, icon: Hi!, language: javascript }
-const greeting = 'Hello ' + popclip.input.text
-popclip.showText(greeting)
-```
-
 An AppleScript example:
 
-```yaml
+```applescript
 -- # PopClip LaunchBar example
--- name: LaunchBar
--- icon: LB
--- language: applescript
+-- { name: LaunchBar, icon: LB, language: applescript }
 tell application "LaunchBar"
   set selection to "{popclip text}"
 end tell

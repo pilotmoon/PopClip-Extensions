@@ -42,6 +42,7 @@ Released on 6 Dec 2022.
 ### Fixed
 
 - The snippet detector now correctly recognizes snippets written in JSON syntax. (Valid JSON is valid YAML.)
+- Fixed never-ending spinner with some Shortcuts actions.
 
 ## PopClip 2022.5 (3895)
 
