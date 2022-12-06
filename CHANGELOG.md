@@ -19,11 +19,11 @@ Released on 6 Dec 2022.
 ### Added
 
 - PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
-- Snippets can now be added as a comment header to any text file, with the result that the entire file becomes installable as a JavaScript, Apple Script or shell script extension. Examples below.
+- Snippets can now be added as a comment header to any text file, with the result that the entire file becomes installable as a JavaScript, Apple Script or shell script extension. (See [Header Snippets](https://github.com/pilotmoon/PopClip-Extensions#header-snippets) in the main Readme.)
 - PopClip will install an extension from a `.popcliptxt` file. This is basically a snippet in a text file.
-- Allows a `shell script` as a literal string without needing to create a separate file. This enables shell scripts in 'regular' snippets.
+- Added `shell script` field for specifying a shell script as a literal string. This allows shell scripts to be put directly in snippets.
 - Added optional `stdin` field for shell scripts, to allow passing a value to the script via stdin.
-- Allows the AppleScript source to be specified as `applescript` string or `applescript file` when calling a named handler. (See example below.)
+- Allows the AppleScript source to be specified as `applescript` string or `applescript file` when calling a named handler.
 - A `key combo` string can now specify `numpad` as a modifier, to denote pressing a key on the numeric keypad.
 - Added options for icon drawing including `flip horizontal`, `flip vertical` and `preserve aspect`.
 - Added built-in [core-js](https://github.com/zloirock/core-js) shim inside PopClip to allow modern JavaScript features on all target platforms.
@@ -37,42 +37,7 @@ Released on 6 Dec 2022.
 - The `parameters` field has in the `applescript call` dictionary has been renamed to `params`.
 - Icons are now drawn in a square canvas with uniform height and width, unless the new `preserve aspect` flag is set.
 - PopClip now enforces that the extension identifier may contain only A-Z, a-z, 0-9, period (.), and hyphen (-).
-- Updated the versions of built in NPM modules.
-  
-Examples of scripts with PopClip header snippets:
-
-```js
-// #popclip
-// { name: Spotify, icon: circle filled S, language: javascript }
-const term = popclip.input.text.trim().split(/\s+/).join(' ')
-popclip.openUrl('spotify:search:' + encodeURIComponent(term))
-```
-
-```python
-#!/usr/bin/env python3
-# #popclip
-# { name: Hello Python, icon: square hi!, after: show-result }
-import os
-print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
-```
-
-```applescript
--- #popclip
--- name: AppleScript Example
--- language: applescript
--- after: show-result
--- actions:
--- - title: X1
---   applescript call: { handler: foo, params: [text] }
--- - title: X2
---   applescript call: { handler: bar, params: [text] }
-on foo(theText)
-	return "foo + " & theText
-end foo
-on bar(theText)
-	return "bar + " & theText
-end bar
-```
+- Updated the versions of several of the built in NPM modules.
 
 ### Fixed
 

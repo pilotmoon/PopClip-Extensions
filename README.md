@@ -1,6 +1,6 @@
 # PopClip Extensions
 
-This document applies to PopClip 2022.12 (4069). See also: [Changelog](CHANGELOG.md)
+This document applies to PopClip 2022.12 (4069), which was released on 6 Dec 2022. See also: [Changelog](CHANGELOG.md)
 
 Check the [**PopClip Forum**](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
