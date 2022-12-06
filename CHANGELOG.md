@@ -12,12 +12,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases. (Version numbers are
 [calendar based](https://calver.org).)
 
-## Beta / Unreleased
+## PopClip 2022.12 (4069)
+
+Released on 6 Dec 2022.
 
 ### Added
 
 - PopClip can now retrieve icons from [Iconify](https://iconify.design). Specify them like this: `iconify:ph:rainbow-bold`.
-- Added "script snippets". This inverts the concept of snippets by embedding a YAML header into a script, instead if the other way round. Supports AppleScript, JavaScript and shell scripts. Examples below.
+- Snippets can now be added as a comment header to any text file, with the result that the entire file becomes installable as a JavaScript, Apple Script or shell script extension. Examples below.
 - PopClip will install an extension from a `.popcliptxt` file. This is basically a snippet in a text file.
 - Allows a `shell script` as a literal string without needing to create a separate file. This enables shell scripts in 'regular' snippets.
 - Added optional `stdin` field for shell scripts, to allow passing a value to the script via stdin.
@@ -37,7 +39,7 @@ Version numbers correspond to [PopClip](https://pilotmoon.com/popclip) releases.
 - PopClip now enforces that the extension identifier may contain only A-Z, a-z, 0-9, period (.), and hyphen (-).
 - Updated the versions of built in NPM modules.
   
-Example script snippets:
+Examples of scripts with PopClip header snippets:
 
 ```js
 // #popclip
