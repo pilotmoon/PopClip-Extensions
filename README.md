@@ -216,8 +216,6 @@ New in PopClip 2022.12, you can add a snippet as a comment header to any source 
 
 When using a header snippet you must specify either the `interpreter` (for a shell script) or `language` (for JavaScript or AppleScript). The whole text will then become the `shell script file`, `javascript file` or `applescript file` for the extension, as appropriate.
 
-The snippet header should be added using the comment style of the source language, using the same comment style and indenting for every line of the snippet. (That is, whatever characters precede the `#popclip` line, should precede all the lines of the snippet header.)
-
 As an example, consider this "classic" snippet for a JavaScript extension:
 
 ```yaml
@@ -240,7 +238,9 @@ const greeting = 'Hello ' + popclip.input.text
 popclip.showText(greeting)
 ```
 
-A Python example, this time with a compact single line snippet, using braces (YAML flow-style):
+The snippet header should be added using the comment style of the source language, using the same comment prefix on every line. (That is, whatever characters precede `#popclip`, must also precede the other lines.)
+
+Here is Python example, this time with a compact single line snippet, using braces (YAML flow-style):
 
 ```python
 # #popclip
@@ -254,7 +254,7 @@ An alternative way to specify a shell script is to put a shebang (`#!`) line at 
 ```python
 #!/usr/bin/env python3
 # #popclip
-# { name: Hello Python Alternative, icon: hi, after: show-result }
+# { name: Hello Python 2, icon: hi, after: show-result }
 import os
 print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!')
 ```
