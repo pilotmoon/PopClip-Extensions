@@ -5,5 +5,5 @@
     "description": "Copy Markdown to the clipboard as formatted text.",
     "popclipVersion": 4031,
     "macosVersion": "12.0",    
-    "module": "mdrtf.js",
+    "module": "mdrtf.js"
 }
