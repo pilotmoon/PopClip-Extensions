@@ -33,7 +33,8 @@
   {
     "Members": [
       "Markdown",
-      "CopyAsMarkdown"
+      "CopyAsMarkdown",
+      "MarkdownToRTF"
     ],
     "Title": "Markdown"
   },

@@ -2,7 +2,7 @@
 
 It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard. (By holding ⌥⇧ you can get it to try to paste the result in place instead.)
 
-By contrast with the Markdown to HTML extension, which produces HTML *source code* as plain text, this extension produces RTF content which is labelled as RTF on the clipboard. This means it is recognised by any Mac app which supports pasting RTF content.
+By contrast with the Markdown to HTML extension, which produces HTML *source code* as plain text, this extension produces RTF content whicosh is labelled as RTF on the clipboard. This means it is recognised by any Mac app which supports pasting RTF content.
 
 ### A note on formatting
 
@@ -17,9 +17,10 @@ Not all markdown features are currently supported:
 * `----` to produce a horizontal separator will not work
 * HTML tags mixed into the Markdown will not be processed
 
-### To-do
+### To-do, notes
 
-Add a sub-action to set the output font by selecting some text in that font.
+* Add a sub-action to set the output font by selecting some text in that font?
+* Icon is pretty poor. I'm open to better ideas!
 
 ## About
 
@@ -31,10 +32,14 @@ Nick Moore
 
 ### Requirements
 
-* Requires PopClip Build 4031
-* Requires macOS 12.0
+* Requires PopClip 2022.12.
+* Requires macOS 12.0.
 
 ## Changelog
+
+### 2023-01-20
+
+* Proper release no that 2022.12 is available.
 
 ### 29 Nov 2022
 
