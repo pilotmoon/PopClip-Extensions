@@ -6,9 +6,9 @@ Download: [Notion.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/r
 
 ## Description
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Notion.popclipext/Notion-demo.gif" width="480px">
+<!-- <img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Notion.popclipext/Notion-demo.gif" width="480px"> -->
 
-The extension works with [Notion](https://www.notion.so/), a popular web-based notes app. It will send the selected text as (including formatting and links) to a Notion page of your choice along with the clip's source reference and capture date.
+The extension works with [Notion](https://www.notion.so/), a popular web-based project workspace app with Mac and iOS clients. THe extension will append the selected text (including formatting and links) to a Notion page of your choice along with the clip's source reference and capture date.
 
 ### Options
 
@@ -30,7 +30,7 @@ The SVG icon is from [WikiMedia Commons](https://commons.wikimedia.org/wiki/File
 
 ### Requirements
 
-Requires PopClip Build 3942 and a Notion account.
+Requires PopClip 2022.12, and a Notion account.
 
 ### Links
 
@@ -39,5 +39,6 @@ Requires PopClip Build 3942 and a Notion account.
   
 ## Changelog
 
-x
+### 2023-01-20
 
+* Initial release.
