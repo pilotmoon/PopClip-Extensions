@@ -6,7 +6,7 @@
     "entitlements": ["network"],
     "captureHtml": true,
     "module": "notion.bundle.js.lzfse",
-    "description": "todo",
+    "description": "Append the selection to a note in Notion.",
     "options": [
     {
         "type": "string",
