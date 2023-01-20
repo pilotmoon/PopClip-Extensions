@@ -1,8 +1,14 @@
 # Markdown to RTF
 
-It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard. (By holding ⌥⇧ you can get it to try to paste the result in place instead.)
+Convert Markdown source to formatted text, and place it on the clipboard.
 
-By contrast with the Markdown to HTML extension, which produces HTML *source code* as plain text, this extension produces RTF content whicosh is labelled as RTF on the clipboard. This means it is recognised by any Mac app which supports pasting RTF content.
+<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/MarkdownToRTF.popclipext/MarkdownToRTF-demo.gif" width="480px">
+
+## Description
+
+It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard.
+
+By contrast with the [Markdown](https://pilotmoon.com/popclip/extensions/Markdown) extension, which produces HTML *source code* as plain text, this extension produces RTF content whicosh is labelled as RTF on the clipboard. This means it is recognised by any Mac app which supports pasting RTF content.
 
 ### A note on formatting
 
