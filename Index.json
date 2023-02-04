@@ -119,7 +119,7 @@
       "Reminders",
       "2Do",
       "Doit",
-      "Due",      
+      "Due",
       "OmniFocus",
       "TaskPaper",
       "TaskPaper",
@@ -257,7 +257,7 @@
       "Readwise",
       "RaindropIO",
       "Leech",
-      "Downie",            
+      "Downie",
       "GetIP"
     ],
     "Title": "Work with URLs"
@@ -299,7 +299,7 @@
     "Members": [
       "Calculate",
       "Convert",
-      "Timestamp"   
+      "Timestamp"
     ],
     "Title": "Useful Tools"
   },
