@@ -10,6 +10,7 @@
 # after: copy-result
 #
 set -e # exit on errors
+eval "$(/opt/homebrew/bin/brew shellenv)"
 log() { # print named params to stderr
   for name in $*; do
     echo ${(r:8:)name} ${(P)name} >>/dev/stderr
@@ -32,7 +33,7 @@ svg=$(http get $url | jq -r ".icons.\"$icon\".body")
 svg_name="${prefix}-${icon}.svg"
 out_file="${HOME}/Downloads/${svg_name}"; log out_file
 echo -n $svg > $out_file
-
+ 
 # pop open in dropshelf
 if [[ -d "/Applications/Dropshelf.app" ]]; then
     open -a Dropshelf $out_file
