@@ -52,6 +52,12 @@
       "link": "https://www.opera.com/"
     },
     {
+      "name": "Orion",
+      "bundleId": "com.kagi.kagimacOS",
+      "icon": "icons/mdi-star-four-points-circle-outline.svg",
+      "link": "https://browser.kagi.com/"
+    },
+    {
       "name": "Vivaldi",
       "bundleId": "com.vivaldi.Vivaldi",
       "icon": "icons/simple-icons-vivaldi.svg",
