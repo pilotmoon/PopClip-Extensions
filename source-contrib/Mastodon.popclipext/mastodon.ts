@@ -34,7 +34,7 @@ const auth: AuthFunction = async (info, flow) => {
     response_type: "code",
     redirect_uri: info.redirect,
     scope: scopes,
-  });
+  }, ["code"]);
 
   // finally get the access token
   const tokenResponse = await getInstance(server).post("/oauth/token", {

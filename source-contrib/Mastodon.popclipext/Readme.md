@@ -3,7 +3,7 @@
 ## Description
 
 This [PopClip](https://pilotmoon.com/popclip/) extension defines a single
-actions The action appears only if the input text looks liuke an ActivityPub
+action. The action appears only if the input text looks like an ActivityPub
 account, such as `@feditips@mstdn.social` (with or without the preceding `@`).
 The action will attempt to follow the account on the configured Mastodon
 instance.
