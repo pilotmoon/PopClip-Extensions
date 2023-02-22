@@ -9,7 +9,7 @@ exports.regex = regex;
 // we need to be able to search for account name then follow it
 const scopes = "read:search write:follows";
 // helper to create an axios instance for a given server
-function getInstance(server, token = null) {
+function getInstance(server, token) {
   const headers = { Accept: "application/json" };
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;

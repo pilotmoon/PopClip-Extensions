@@ -8,7 +8,7 @@ const regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
 const scopes = "read:search write:follows";
 
 // helper to create an axios instance for a given server
-function getInstance(server: string, token: string | null = null) {
+function getInstance(server: string, token?: string) {
   const headers = { Accept: "application/json" };
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
