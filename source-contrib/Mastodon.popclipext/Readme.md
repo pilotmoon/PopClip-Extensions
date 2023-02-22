@@ -27,7 +27,7 @@ Icon by Simple Icons (CC0) via Iconify.
 
 ## Change Log
 
-### 2023-02-2
+### 2023-02-22
 
 - Light code clean-up.
 
