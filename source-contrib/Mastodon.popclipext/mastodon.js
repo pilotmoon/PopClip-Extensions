@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.auth = exports.action = exports.regex = void 0;
 const axios_1 = require("axios");
-// regex for matchin ActivityPub account with or without preceding @
+// regex for matching an ActivityPub account, with or without preceding `@`
 // e.g. @feditips@mstdn.social
 exports.regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
-// we need to be able to search for accoun name then follow it
+// we need to be able to search for account name then follow it
 const scopes = "read:search write:follows";
 // helper to create an axios instance for a given server
 function getInstance(server, token = null) {
@@ -17,17 +17,20 @@ function getInstance(server, token = null) {
 }
 // Mastodon auth flow as per https://docs.joinmastodon.org/client/token/
 const auth = async (info, flow) => {
-  // slight hack, we use the username field to get the server name
+  // slight hack, we use the username field to pass the server name
   const server = info.username.trim();
+  const instance = getInstance(server);
   // first register our application
-  const appResponse = await getInstance(server).post("/api/v1/apps", {
-    client_name: "PopClip",
-    redirect_uris: info.redirect,
-    scopes,
-    website: "https://pilotmoon.com/popclip/",
-  });
+  const { data: { client_id, client_secret } } = await instance.post(
+    "/api/v1/apps",
+    {
+      client_name: "PopClip",
+      redirect_uris: info.redirect,
+      scopes,
+      website: "https://pilotmoon.com/popclip/",
+    },
+  );
   // next, get the user to authorize us
-  const { client_id, client_secret } = appResponse.data;
   const { code } = await flow(server + "/oauth/authorize", {
     client_id,
     response_type: "code",
@@ -35,7 +38,7 @@ const auth = async (info, flow) => {
     scope: scopes,
   }, ["code"]);
   // finally get the access token
-  const tokenResponse = await getInstance(server).post("/oauth/token", {
+  const { data: credentials } = await instance.post("/oauth/token", {
     client_id,
     client_secret,
     redirect_uri: info.redirect,
@@ -43,27 +46,19 @@ const auth = async (info, flow) => {
     code,
   });
   // return the server name and token info as a JSON string
-  return JSON.stringify({
-    server: server,
-    credentials: tokenResponse.data,
-  });
+  return JSON.stringify({ server, credentials });
 };
 exports.auth = auth;
 // follow an ActivityPub account
 const action = async (input, options) => {
   const accountIdentifier = input.regexResult[1];
   const { server, credentials } = JSON.parse(options.authsecret);
-  const instance = await getInstance(server, credentials.access_token);
+  const instance = getInstance(server, credentials.access_token);
   // first search for the account
-  const searchResponse = await instance.get("/api/v2/search", {
+  const { data: { accounts } } = await instance.get("/api/v2/search", {
     params: { q: accountIdentifier, resolve: "true" },
   });
-  const accounts = searchResponse.data.accounts;
-  print("accounts", accounts);
-  if (!accounts.length) {
-    throw new Error("Search returned no results");
-  }
-  // find the account we want
+  // look through search results to find the account we want
   let id;
   for (const account of accounts) {
     if (account.acct === accountIdentifier) {
@@ -75,10 +70,7 @@ const action = async (input, options) => {
     throw new Error("Account not found");
   }
   // follow the account
-  const followResponse = await instance.post(
-    "/api/v1/accounts/" + id + "/follow",
-  );
-  print("followResponse", followResponse);
+  await instance.post("/api/v1/accounts/" + id + "/follow");
   popclip.showSuccess();
   return null;
 };

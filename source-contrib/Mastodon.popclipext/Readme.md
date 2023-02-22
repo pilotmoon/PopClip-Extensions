@@ -10,7 +10,7 @@ instance.
 
 ## Configuration
 
-Initially the extension config asks you to proivide the URL of your Mastodon
+Initially the extension config asks you to provide the URL of your Mastodon
 instance. You should paste the full server URL of your instance, for example:
 `https://mastodonapp.uk`.
 
