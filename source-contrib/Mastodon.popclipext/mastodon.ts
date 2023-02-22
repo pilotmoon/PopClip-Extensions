@@ -2,7 +2,7 @@ import axios from "axios";
 
 // regex for matching an ActivityPub account, with or without preceding `@`
 // e.g. @feditips@mstdn.social
-export const regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
+const regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
 
 // we need to be able to search for account name then follow it
 const scopes = "read:search write:follows";
@@ -54,19 +54,19 @@ const auth: AuthFunction = async (info, flow) => {
 
 // follow an ActivityPub account
 const action: ActionFunction = async (input, options) => {
-  const accountIdentifier = input.regexResult[1];
+  const accountToFollow = input.regexResult[1];
   const { server, credentials } = JSON.parse(options.authsecret);
   const instance = getInstance(server, credentials.access_token);
 
   // first search for the account
   const { data: { accounts } } = await instance.get("/api/v2/search", {
-    params: { q: accountIdentifier, resolve: "true" },
+    params: { q: accountToFollow, resolve: "true" },
   });
 
   // look through search results to find the account we want
   let id;
   for (const account of accounts) {
-    if (account.acct === accountIdentifier) {
+    if (account.acct === accountToFollow) {
       id = account.id;
       break;
     }
@@ -82,4 +82,4 @@ const action: ActionFunction = async (input, options) => {
 };
 action.title = "Follow on Mastodon";
 
-export { action, auth };
+export { action, auth, regex };
