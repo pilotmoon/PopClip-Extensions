@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.regex = exports.auth = exports.action = void 0;
 const axios_1 = require("axios");
 // regex for matching an ActivityPub account, with or without preceding `@`
-// e.g. @feditips@mstdn.social
+// e.g. `@feditips@mstdn.social` or `feditips@mstdn.social`
 const regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
 exports.regex = regex;
 // we need to be able to search for account name then follow it
@@ -52,6 +52,7 @@ const auth = async (info, flow) => {
 exports.auth = auth;
 // follow an ActivityPub account
 const action = async (input, options) => {
+  var _a;
   const accountToFollow = input.regexResult[1];
   const { server, credentials } = JSON.parse(options.authsecret);
   const instance = getInstance(server, credentials.access_token);
@@ -60,13 +61,11 @@ const action = async (input, options) => {
     params: { q: accountToFollow, resolve: "true" },
   });
   // look through search results to find the account we want
-  let id;
-  for (const account of accounts) {
-    if (account.acct === accountToFollow) {
-      id = account.id;
-      break;
-    }
-  }
+  const id =
+    (_a = accounts.find((account) => account.acct === accountToFollow)) ===
+        null || _a === void 0
+      ? void 0
+      : _a.id;
   if (!id) {
     throw new Error("Account not found");
   }

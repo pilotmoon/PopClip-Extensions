@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // regex for matching an ActivityPub account, with or without preceding `@`
-// e.g. @feditips@mstdn.social
+// e.g. `@feditips@mstdn.social` or `feditips@mstdn.social`
 const regex = /@?([\w-]+@[a-zA-Z0-9.-]+)/;
 
 // we need to be able to search for account name then follow it
@@ -10,7 +10,9 @@ const scopes = "read:search write:follows";
 // helper to create an axios instance for a given server
 function getInstance(server: string, token: string | null = null) {
   const headers = { Accept: "application/json" };
-  if (token) headers["Authorization"] = `Bearer ${token}`;
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
   return axios.create({ baseURL: server, headers });
 }
 
@@ -64,16 +66,8 @@ const action: ActionFunction = async (input, options) => {
   });
 
   // look through search results to find the account we want
-  let id;
-  for (const account of accounts) {
-    if (account.acct === accountToFollow) {
-      id = account.id;
-      break;
-    }
-  }
-  if (!id) {
-    throw new Error("Account not found");
-  }
+  const id = accounts.find((account) => account.acct === accountToFollow)?.id;
+  if (!id) throw new Error("Account not found");
 
   // follow the account
   await instance.post("/api/v1/accounts/" + id + "/follow");
