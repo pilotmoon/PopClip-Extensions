@@ -23,9 +23,13 @@ Nick Moore
 
 ## Acknowledgements
 
-Icon by Simple Icons (CCO) via Iconify.
+Icon by Simple Icons (CC0) via Iconify.
 
 ## Change Log
+
+### 2023-02-2
+
+- Light code clean-up.
 
 ### 2023-02-20
 
