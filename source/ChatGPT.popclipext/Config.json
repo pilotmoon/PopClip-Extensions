@@ -1,0 +1,25 @@
+{
+  "name": "ChatGPT",
+  "icon": "logos-openai-icon.svg",
+  "identifier": "com.pilotmoon.popclip.extension.chatgpt",
+  "popclipVersion": 4069,
+  "module": "chatgpt.js",
+  "entitlements": [
+    "network"
+  ],
+  "options": [
+    {
+      "identifier": "apikey",
+      "label": "API Key",
+      "type": "string",
+      "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
+    },
+    {
+      "identifier": "showreset",
+      "label": "Show Reset Button",
+      "type": "boolean",
+      "icon": "game-icons-broom.svg",
+      "description": "Show a button to reset the conversation"
+    }
+  ]
+}
