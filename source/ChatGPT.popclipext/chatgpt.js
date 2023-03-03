@@ -52,7 +52,7 @@ exports.actions = [{
   code: chat,
 }, {
   title: "ChatGPT: Reset",
-  icon: "broom.svg",
+  icon: "broom-icon.svg",
   requirements: ["option-showreset=1"],
   after: "show-status",
   code: reset,
