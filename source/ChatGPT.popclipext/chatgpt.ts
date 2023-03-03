@@ -14,7 +14,7 @@ interface Response {
   data: ResponseData;
 }
 
-// the extension keeps the kistory of past messages in memory
+// the extension keeps the message history in memory
 const messages: Array<Message> = [];
 
 // the last chat date

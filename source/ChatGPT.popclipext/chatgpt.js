@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.actions = void 0;
 const axios_1 = require("axios");
-// the extension keeps the kistory of past messages in memory
+// the extension keeps the message history in memory
 const messages = [];
 // the last chat date
 let lastChat = new Date();
