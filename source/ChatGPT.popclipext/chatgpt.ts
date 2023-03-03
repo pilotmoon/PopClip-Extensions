@@ -78,7 +78,7 @@ export const actions: Action[] = [{
   code: chat,
 }, {
   title: "ChatGPT: Reset",
-  icon: "game-icons-broom.svg",
+  icon: "broom.svg",
   requirements: ["option-showreset=1"],
   after: "show-status",
   code: reset,

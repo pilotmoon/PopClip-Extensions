@@ -1,6 +1,7 @@
 # ChatGPT
 
-Send the selected text to ChatGPT, and append the response.
+Send the selected text to [ChatGPT](https://openai.com/blog/chatgpt), and append
+the response.
 
 Download:
 [ChatGPT.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/ChatGPT.popclipextz)

@@ -1,6 +1,6 @@
 {
   "name": "ChatGPT",
-  "icon": "simple-icons-openai.svg",
+  "icon": "openai.svg",
   "identifier": "com.pilotmoon.popclip.extension.chatgpt",
   "description": "Send the selected text to ChatGPT and append the response. Hold Shift (⇧) to copy just the response.",
   "note": "To use this extension you will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAPI API key</a>",
@@ -24,7 +24,7 @@
       "identifier": "showreset",
       "label": "Show Reset Button",
       "type": "boolean",
-      "icon": "game-icons-broom.svg",
+      "icon": "broom.svg",
       "description": "Show a button to reset the conversation"
     }
   ]
