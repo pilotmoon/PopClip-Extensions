@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// interfaces for OpenAI API
+// typescript interfaces for OpenAI API
 interface Message {
   role: "user" | "system" | "assistant";
   content: string;
@@ -13,9 +13,6 @@ interface ResponseData {
 interface Response {
   data: ResponseData;
 }
-
-// 5 minutes
-const resetInterval = 1000 * 60 * 5;
 
 // the extension keeps the kistory of past messages in memory
 const messages: Array<Message> = [];
