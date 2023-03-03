@@ -29,6 +29,9 @@ url="https://api.iconify.design/${prefix}.json?icons=${icon}"; log url
 # get svg string (`brew install httpie`, `brew install jq`)
 svg=$(http get $url | jq -r ".icons.\"$icon\".body")
 
+# wrap in svg tag
+svg="<svg xmlns=\"http://www.w3.org/2000/svg\">${svg}</svg>"
+
 # save to file
 svg_name="${prefix}-${icon}.svg"
 out_file="${HOME}/Downloads/${svg_name}"; log out_file
