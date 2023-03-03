@@ -50,7 +50,7 @@ This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 
 ### Author
 
-Author Name
+Nick Moore
 
 ### Acknowledgements
 
