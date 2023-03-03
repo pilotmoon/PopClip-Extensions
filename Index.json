@@ -32,6 +32,12 @@
   },
   {
     "Members": [
+      "ChatGPT"
+    ],
+    "Title": "AI Tools"
+  },
+  {
+    "Members": [
       "Markdown",
       "CopyAsMarkdown",
       "MarkdownToRTF"
@@ -83,12 +89,6 @@
       "Pinyin"
     ],
     "Title": "Translation"
-  },
-  {
-    "Members": [
-      "ChatGPT"
-    ],
-    "Title": "AI Tools"
   },
   {
     "Members": [

@@ -20,7 +20,7 @@ an extended dialogue with the AI. The chat history automatically resets if there
 are no messages for 5 minutes.
 
 The **Reset** action (broom icon) clears the current chat history to start a
-fresh conversation.
+fresh conversation. You can uncheck the "Show Reset Button" option to hide this.
 
 ### Configuration
 
