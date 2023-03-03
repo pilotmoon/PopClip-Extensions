@@ -43,8 +43,11 @@ const chat: ActionFunction = async (input, options) => {
   });
 
   // if the last chat was long enough ago, reset the history
-  if (new Date().getTime() - lastChat.getTime() > resetInterval) {
-    reset();
+  if (options.resetMinutes.length > 0) {
+    const resetInterval = parseInt(options.resetMinutes) * 1000 * 60;
+    if (new Date().getTime() - lastChat.getTime() > resetInterval) {
+      reset();
+    }
   }
 
   // add the new message to the history
@@ -79,7 +82,7 @@ export const actions: Action[] = [{
 }, {
   title: "ChatGPT: Reset",
   icon: "broom-icon.svg",
-  requirements: ["option-showreset=1"],
+  requirements: ["option-showReset=1"],
   after: "show-status",
   code: reset,
 }];

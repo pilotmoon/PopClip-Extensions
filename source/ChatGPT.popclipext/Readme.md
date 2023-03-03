@@ -17,11 +17,10 @@ As a modifier, if you hold the Shift (⇧) key while invoking the action, the
 response will be copied to the clipboard instead of appended to the selection.
 
 The previous messages in the chat are sent along with each new message, allowing
-an extended dialogue with the AI. The chat history automatically resets if there
-are no messages for 5 minutes.
+an extended dialogue with the AI.
 
 The **Reset** action (broom icon) clears the current chat history to start a
-fresh conversation. You can uncheck the "Show Reset Button" option to hide this.
+fresh conversation.
 
 ### Configuration
 
@@ -34,6 +33,16 @@ account. To get an API Key:
 2. Generate an API key here: <https://platform.openai.com/account/api-keys>
 3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
+
+#### Reset Timer (minutes)
+
+After this many minutes without any messages, the extension will automatically
+reset the conversation. Set it blank to never reset, and set it to 0 to always
+reset. The default value is 15 minutes.
+
+#### Show Reset Button
+
+Control whether or not to show the reset action in the popup.
 
 ## About
 
@@ -60,6 +69,10 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 
 ## Changelog
 
+### 2023-03-03.1
+
+- Add configurable reset timer.
+
 ### 2023-03-03
 
-- Initial release
+- Initial release.

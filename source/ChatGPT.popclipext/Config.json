@@ -21,11 +21,18 @@
       "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
     },
     {
-      "identifier": "showreset",
+      "identifier:": "resetMinutes",
+      "label": "Reset Timer (minutes)",
+      "type": "string",
+      "description": "Reset the conversation if idle for this many minutes. Set blank to disable.",
+      "defaultValue": "15"
+    },
+    {
+      "identifier": "showReset",
       "label": "Show Reset Button",
       "type": "boolean",
       "icon": "broom-icon.svg",
-      "description": "Show a button to reset the conversation"
+      "description": "Show a button to reset the conversation."
     }
   ]
 }
