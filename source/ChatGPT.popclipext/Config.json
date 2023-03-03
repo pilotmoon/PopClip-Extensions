@@ -3,7 +3,7 @@
   "icon": "openai-icon.svg",
   "identifier": "com.pilotmoon.popclip.extension.chatgpt",
   "description": "Send the selected text to ChatGPT and append the response. Hold Shift (⇧) to copy just the response.",
-  "note": "To use this extension you will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAPI API key</a>",
+  "note": "You will need an <a href=\"https://platform.openai.com/account/api-keys\">OpenAI API key</a>",
   "app": {
     "name": "ChatGPT",
     "link": "https://openai.com/blog/chatgpt"
