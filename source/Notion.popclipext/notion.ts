@@ -40,7 +40,7 @@ const action: ActionFunction = async (input, options, context) => {
   const pages: Array<{object: string, id: string, properties: {title: {title: Array<{plain_text: string}>}}}> = response.data.results
   if (response.data.object === 'list') {
     for (const page of pages) {
-      const foundPageName = page.properties.title.title[0].plain_text
+      const foundPageName = page?.properties?.title?.title?.[0]?.plain_text
       print('foundPageName', foundPageName, pageName)
       if (foundPageName === pageName) {
         pageId = page.id
