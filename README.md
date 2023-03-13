@@ -251,7 +251,7 @@ Here is Python example, this time with a compact single line snippet, using brac
 # #popclip
 # { name: Hello Python, icon: hi, after: show-result, interpreter: python3 }
 import os
-print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 An alternative way to specify a shell script is to put a shebang (`#!`) line at the top, in which case, the `interpreter` field is not needed:
@@ -261,7 +261,7 @@ An alternative way to specify a shell script is to put a shebang (`#!`) line at 
 # #popclip
 # { name: Hello Python 2, icon: hi, after: show-result }
 import os
-print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!')
+print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 An AppleScript example:
@@ -649,7 +649,7 @@ A shell script can return a string back to PopClip via stdout. For example:
 
 ```sh
 #!/bin/zsh
-echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
+echo -n "Hello, ${POPCLIP_TEXT}!"  # echo to stdout, no newline at end
 ```
 
 The same in Python:
@@ -657,7 +657,7 @@ The same in Python:
 ```python
 #!/usr/bin/env python3
 import os
-print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!'
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 In Ruby:
