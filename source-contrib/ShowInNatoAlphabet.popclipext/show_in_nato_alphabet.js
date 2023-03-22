@@ -41,4 +41,4 @@ const natoAlphabet = {
     }
   }
 
-  popclip.pasteText(natoText.trim());
+  popclip.showText(natoText.trim());
