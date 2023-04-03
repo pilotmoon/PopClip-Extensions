@@ -20,6 +20,7 @@ const auth = async (info, flow) => {
     return JSON.stringify(response.data);
 };
 const action = async (input, options, context) => {
+    var _a, _b, _c, _d;
     // set up for calling api
     const auth = JSON.parse(options.authsecret);
     notion.defaults.headers.common.Authorization = `Bearer ${auth.access_token}`;
@@ -34,7 +35,7 @@ const action = async (input, options, context) => {
     const pages = response.data.results;
     if (response.data.object === 'list') {
         for (const page of pages) {
-            const foundPageName = page.properties.title.title[0].plain_text;
+            const foundPageName = (_d = (_c = (_b = (_a = page === null || page === void 0 ? void 0 : page.properties) === null || _a === void 0 ? void 0 : _a.title) === null || _b === void 0 ? void 0 : _b.title) === null || _c === void 0 ? void 0 : _c[0]) === null || _d === void 0 ? void 0 : _d.plain_text;
             print('foundPageName', foundPageName, pageName);
             if (foundPageName === pageName) {
                 pageId = page.id;

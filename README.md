@@ -9,6 +9,9 @@ See also:
 
 Check the [*PopClip Forum*](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
+**Note: The repo is currently closed for new extension contributions. I am working on a new, improved extension directory that will let people publish extensions to a central directory from their own Github repos. Please bear with me!**
+
+
 ## Table of Contents
 
 - [PopClip Extensions](#popclip-extensions)
@@ -96,9 +99,11 @@ The important folders:
 - `source-contrib` - folder for user-submitted and experimental extensions
 - `extensions` - signed and zipped `.popclipextz` files built from the `source` and `source-contrib` folders
 
-Bugfixes and new extension submissions are welcome via pull request. Please note the following:
+**Note: Pull requests for new extensions are closed (see note above)**
 
-- New extensions should be submitted as source files in a `.popclipext` folder inside the `source-contrib` folder.
+Bugfixes ~~and new extension submissions~~ are welcome via pull request. Please note the following:
+
+- ~~New extensions should be submitted as source files in a `.popclipext` folder inside the `source-contrib` folder.~~
 - Please do not submit any zipped `.popclipextz` files.
 - By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).
 - Submitting an extension does not guarantee publication on the website.
@@ -251,7 +256,7 @@ Here is Python example, this time with a compact single line snippet, using brac
 # #popclip
 # { name: Hello Python, icon: hi, after: show-result, interpreter: python3 }
 import os
-print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!')
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 An alternative way to specify a shell script is to put a shebang (`#!`) line at the top, in which case, the `interpreter` field is not needed:
@@ -261,7 +266,7 @@ An alternative way to specify a shell script is to put a shebang (`#!`) line at 
 # #popclip
 # { name: Hello Python 2, icon: hi, after: show-result }
 import os
-print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!')
+print('Hello again, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 An AppleScript example:
@@ -649,7 +654,7 @@ A shell script can return a string back to PopClip via stdout. For example:
 
 ```sh
 #!/bin/zsh
-echo "Hello, ${POPCLIP_TEXT}!"  # echo to stdout
+echo -n "Hello, ${POPCLIP_TEXT}!"  # echo to stdout, no newline at end
 ```
 
 The same in Python:
@@ -657,7 +662,7 @@ The same in Python:
 ```python
 #!/usr/bin/env python3
 import os
-print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!'
+print('Hello, ' + os.environ['POPCLIP_TEXT'] + '!', end='')
 ```
 
 In Ruby:

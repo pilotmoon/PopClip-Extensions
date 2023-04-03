@@ -1,0 +1,4 @@
+identifier: "com.jbaruch.popclip.extension.show_in_nato_alphabet"
+name: "Show In NATO Alphabet"
+icon: iconify:circle-flags:nato
+javascript file: show_in_nato_alphabet.js

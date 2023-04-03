@@ -42,3 +42,7 @@ Requires PopClip 2022.12, and a Notion account.
 ### 2023-01-20
 
 * Initial release.
+
+### 2023-03-09
+
+* Bug fix attempt ("undefined is not an object evaluating page.properties.title.title").

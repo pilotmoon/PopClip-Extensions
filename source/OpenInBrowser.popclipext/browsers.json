@@ -1,55 +1,67 @@
 {
-    "browsers": [
-        {
-            "name": "Safari",
-            "bundleId": "com.apple.Safari",
-            "icon": "icons/fa6-brands-safari.svg",
-            "link": "https://www.apple.com/safari/",
-            "defaultEnabled": true
-        },
-        {
-            "name": "Chrome",
-            "bundleId": "com.google.Chrome",
-            "icon": "icons/fa6-brands-chrome.svg",
-            "link": "https://www.google.com/chrome/",
-            "defaultEnabled": true
-        },
-        {
-            "name": "Firefox",
-            "bundleId": "org.mozilla.firefox",
-            "icon": "icons/fa6-brands-firefox.svg",
-            "link": "https://getfirefox.com/",
-            "defaultEnabled": true
-        },
-        {
-            "name": "Brave",
-            "bundleId": "com.brave.Browser",
-            "icon": "icons/simple-icons-brave.svg",
-            "link": "https://brave.com/"
-        },
-        {
-            "name": "DuckDuckGo",
-            "bundleId": "com.duckduckgo.macos.browser",
-            "icon": "icons/simple-icons-duckduckgo.svg",
-            "link": "https://duckduckgo.com/mac"
-        },
-        {
-            "name": "Edge",
-            "bundleId": "com.microsoft.edgemac",
-            "icon": "icons/fa6-brands-edge.svg",
-            "link": "https://www.microsoft.com/edge"
-        },
-        {
-            "name": "Opera",
-            "bundleId": "com.operasoftware.Opera",
-            "icon": "icons/fa6-brands-opera.svg",
-            "link": "https://www.opera.com/"
-        },
-        {
-            "name": "Vivaldi",
-            "bundleId": "com.vivaldi.Vivaldi",
-            "icon": "icons/simple-icons-vivaldi.svg",
-            "link": "https://vivaldi.com/"
-        }
-    ]
+  "browsers": [
+    {
+      "name": "Safari",
+      "bundleId": "com.apple.Safari",
+      "icon": "icons/fa6-brands-safari.svg",
+      "link": "https://www.apple.com/safari/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Chrome",
+      "bundleId": "com.google.Chrome",
+      "icon": "icons/fa6-brands-chrome.svg",
+      "link": "https://www.google.com/chrome/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Firefox",
+      "bundleId": "org.mozilla.firefox",
+      "icon": "icons/fa6-brands-firefox-browser.svg",
+      "link": "https://getfirefox.com/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Arc",
+      "bundleId": "company.thebrowser.Browser",
+      "icon": "icons/arc-browser.svg",
+      "link": "https://www.apple.com/safari/"
+    },
+    {
+      "name": "Brave",
+      "bundleId": "com.brave.Browser",
+      "icon": "icons/simple-icons-brave.svg",
+      "link": "https://brave.com/"
+    },
+    {
+      "name": "DuckDuckGo",
+      "bundleId": "com.duckduckgo.macos.browser",
+      "icon": "icons/simple-icons-duckduckgo.svg",
+      "link": "https://duckduckgo.com/mac"
+    },
+    {
+      "name": "Edge",
+      "bundleId": "com.microsoft.edgemac",
+      "icon": "icons/fa6-brands-edge.svg",
+      "link": "https://www.microsoft.com/edge"
+    },
+    {
+      "name": "Opera",
+      "bundleId": "com.operasoftware.Opera",
+      "icon": "icons/fa6-brands-opera.svg",
+      "link": "https://www.opera.com/"
+    },
+    {
+      "name": "Orion",
+      "bundleId": "com.kagi.kagimacOS",
+      "icon": "icons/mdi-star-four-points-circle-outline.svg",
+      "link": "https://browser.kagi.com/"
+    },
+    {
+      "name": "Vivaldi",
+      "bundleId": "com.vivaldi.Vivaldi",
+      "icon": "icons/simple-icons-vivaldi.svg",
+      "link": "https://vivaldi.com/"
+    }
+  ]
 }

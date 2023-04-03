@@ -2,7 +2,8 @@
 
 Open the selected URL(s) in a specific browser.
 
-Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/OpenInBrowser.popclipextz)
+Download:
+[OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/OpenInBrowser.popclipextz)
 
 ## Description
 
@@ -10,18 +11,22 @@ Download: [OpenInBrowser.popclipextz](https://github.com/pilotmoon/PopClip-Exten
 
 The extension adds an action for each of the following browsers:
 
-* Safari
-* Chrome
-* Firefox
-* Brave
-* DuckDuckGo
-* Edge
-* Opera
-* Vivaldi
+- Safari
+- Chrome
+- Firefox
+- Arc
+- Brave
+- DuckDuckGo
+- Edge
+- Opera
+- Orion
+- Vivaldi
 
-The actions appear only when the selected text contains one or more web URL. All URLs in the selections will be opened, in separate tabs.
+The actions appear only when the selected text contains one or more web URL. All
+URLs in the selections will be opened, in separate tabs.
 
-When selecting a URL inside a browser, the action for opening in that browser will not appear.
+When selecting a URL inside a browser, the action for opening in that browser
+will not appear.
 
 ### Options
 
@@ -37,7 +42,8 @@ Nick Moore
 
 ### Acknowledgements
 
-Icons from Iconify (Font Awesome Brands, Simple Icons).
+Icons from Iconify (Font Awesome Brands, Simple Icons). Arc browser icon from
+<https://logotyp.us/logo/arc-browser/>.
 
 ### Requirements
 
@@ -46,15 +52,24 @@ Requires PopClip 2022.5
 ### Links
 
 <!-- * [Forum Topic](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/OpenInBrowser.popclipext)
-  
+
+- [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/OpenInBrowser.popclipext)
+
 ## Changelog
 
 ### 2022-12-01
 
-* Initial release
+- Initial release.
 
 ### 2022-12-02
 
-* Add DuckDuckGo browser.
-* Fix "app not found" messages for browsers that aren't installed.
+- Add DuckDuckGo browser.
+- Fix "app not found" messages for browsers that aren't installed.
+
+### 2023-02-08
+
+- Add Arc browser.
+
+### 2023-02-11
+
+- Add Orion browser.

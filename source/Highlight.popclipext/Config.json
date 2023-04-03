@@ -34,7 +34,8 @@
     {
       "keyCombo": "shift command U",
       "requiredApps": [
-        "pro.writer.mac"
+        "pro.writer.mac",
+        "net.ia.presenter"
       ]
     },
     {
@@ -45,5 +46,5 @@
       ]
     }
   ],
-  "description": "Highlight the selected text. Works in Pages, Preview, Evernote, Alternote, Scrivener, DevonThink, Skim, PDFpen, PDF Expert and iA Writer only."
+  "description": "Highlight the selected text. Works in Pages, Preview, Alternote, DevonThink, Evernote, iA Writer, iA Presenter, LogSeq, Obsidian, PDFpen, PDF Expert, Scrivener and Skim only."
 }

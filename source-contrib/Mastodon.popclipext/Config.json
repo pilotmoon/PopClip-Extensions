@@ -1,0 +1,17 @@
+{
+  "name": "Mastodon",
+  "icon:": "simple-icons-mastodon.svg",
+  "description": "Follow the selected account on Mastodon",
+  "identifier": "com.pilotmoon.popclip.extension.mastodon",
+  "module": "mastodon.js",
+  "entitlements": ["network"],
+  "popclipVersion": 4069,
+  "options": [
+    {
+      "identifier": "username",
+      "type": "string",
+      "label": "Instance URL",
+      "description": "The URL of your Mastodon instance e.g. https://mastodon.social"
+    }
+  ]
+}

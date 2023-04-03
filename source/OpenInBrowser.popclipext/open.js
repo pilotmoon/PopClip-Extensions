@@ -6,17 +6,17 @@ function makeOption(browser) {
     const option = {
         identifier: browser.bundleId,
         label: browser.name,
-        type: 'boolean',
+        type: "boolean",
         icon: browser.icon,
-        defaultValue: browser.defaultEnabled === true
+        defaultValue: browser.defaultEnabled === true,
     };
     return option;
 }
 function makeAction(browser) {
     const action = {
-        title: 'Open in ' + browser.name,
+        title: "Open in " + browser.name,
         icon: browser.icon,
-        code: input => {
+        code: (input) => {
             for (const url of input.data.urls) {
                 popclip.openUrl(url, { app: browser.bundleId });
             }
@@ -26,21 +26,22 @@ function makeAction(browser) {
             name: browser.name,
             link: browser.link,
             bundleIdentifiers: [browser.bundleId],
-            checkInstalled: true
-        }
+            checkInstalled: true,
+        },
     };
     return action;
 }
 // return options with title
 exports.options = [{
-        identifier: 'heading',
-        label: 'Enabled Browsers',
-        type: 'heading'
+        identifier: "heading",
+        label: "Enabled Browsers",
+        type: "heading",
     }, ...browsers_json_1.browsers.map(makeOption)];
 // dynamically generate the actions
 const actions = (input, options, context) => {
-    return browsers_json_1.browsers.filter(browser => {
-        return input.data.urls.length > 0 && options[browser.bundleId] === true && context.appIdentifier !== browser.bundleId;
+    return browsers_json_1.browsers.filter((browser) => {
+        return input.data.urls.length > 0 && options[browser.bundleId] === true &&
+            context.appIdentifier !== browser.bundleId;
     }).map(makeAction);
 };
 exports.actions = actions;

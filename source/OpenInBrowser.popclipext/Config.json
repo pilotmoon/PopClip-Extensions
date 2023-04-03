@@ -1,9 +1,9 @@
 {
-    "identifier": "com.pilotmoon.popclip.extension.open-in-browser",
-    "name": "Open in Browser",
-    "popclipVersion": 3895,
-    "icon": "mdi-open-in-browser.svg",
-    "module": "open.js",
-    "entitlements": ["dynamic"],
-    "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Brave, DuckDuckGo, Edge, Opera and Vivaldi."
+  "identifier": "com.pilotmoon.popclip.extension.open-in-browser",
+  "name": "Open in Browser",
+  "popclipVersion": 3895,
+  "icon": "mdi-open-in-browser.svg",
+  "module": "open.js",
+  "entitlements": ["dynamic"],
+  "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Arc, Brave, DuckDuckGo, Edge, Opera, Orion and Vivaldi."
 }
