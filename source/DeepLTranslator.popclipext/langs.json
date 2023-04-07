@@ -77,6 +77,11 @@
             "supports_formality": false
         },
         {
+            "language": "KO",
+            "name": "Korean",
+            "supports_formality": false
+        },
+        {
             "language": "LT",
             "name": "Lithuanian",
             "supports_formality": false
@@ -84,6 +89,11 @@
         {
             "language": "LV",
             "name": "Latvian",
+            "supports_formality": false
+        },
+        {
+            "language": "NB",
+            "name": "Norwegian (Bokmål)",
             "supports_formality": false
         },
         {
