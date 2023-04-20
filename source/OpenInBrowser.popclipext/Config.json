@@ -5,5 +5,5 @@
   "icon": "mdi-open-in-browser.svg",
   "module": "open.js",
   "entitlements": ["dynamic"],
-  "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Arc, Brave, DuckDuckGo, Edge, Opera, Orion and Vivaldi."
+  "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Arc, Brave, DEVONagent Pro, DuckDuckGo, Edge, Opera, Orion and Vivaldi."
 }
