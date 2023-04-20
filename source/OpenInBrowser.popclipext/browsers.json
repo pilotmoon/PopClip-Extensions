@@ -34,6 +34,12 @@
       "link": "https://brave.com/"
     },
     {
+      "name": "DEVONagent Pro",
+      "bundleId": "com.devon-technologies.agent",
+      "icon": "icons/devontech-dap.svg",
+      "link": "https://devontechnologies.com/apps/devonagent"
+    },
+    {
       "name": "DuckDuckGo",
       "bundleId": "com.duckduckgo.macos.browser",
       "icon": "icons/simple-icons-duckduckgo.svg",
