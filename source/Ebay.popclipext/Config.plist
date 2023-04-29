@@ -21,6 +21,8 @@
 	<string>com.pilotmoon.popclip.extension.ebay</string>
 	<key>Extension Image File</key>
 	<string>ebay.png</string>
+	<key>Preserve Aspect</key>
+	<true/>
 	<key>Extension Name</key>
 	<string>Ebay</string>
 	<key>Options</key>
