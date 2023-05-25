@@ -18,8 +18,10 @@ The extension adds an action for each of the following browsers:
 - Brave
 - DuckDuckGo
 - Edge
+- Mullvad
 - Opera
 - Orion
+- Tor Browser
 - Vivaldi
 
 The actions appear only when the selected text contains one or more web URL. All
@@ -73,3 +75,7 @@ Requires PopClip 2022.5
 ### 2023-02-11
 
 - Add Orion browser.
+
+### 2023-05-25
+
+- Add Mullvad and Tor Browser.

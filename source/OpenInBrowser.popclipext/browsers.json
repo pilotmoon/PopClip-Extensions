@@ -52,6 +52,12 @@
       "link": "https://www.microsoft.com/edge"
     },
     {
+      "name": "Mullvad",
+      "bundleId": "net.mullvad.mullvadbrowser",
+      "icon": "icons/M.png",
+      "link": "https://mullvad.net/browser"
+    },
+    {
       "name": "Opera",
       "bundleId": "com.operasoftware.Opera",
       "icon": "icons/fa6-brands-opera.svg",
@@ -62,6 +68,12 @@
       "bundleId": "com.kagi.kagimacOS",
       "icon": "icons/mdi-star-four-points-circle-outline.svg",
       "link": "https://browser.kagi.com/"
+    },
+    {
+      "name": "Tor Browser",
+      "bundleId": "org.torproject.torbrowser",
+      "icon": "icons/simple-icons-torbrowser.svg",
+      "link": "https://www.torproject.org/download/"
     },
     {
       "name": "Vivaldi",
