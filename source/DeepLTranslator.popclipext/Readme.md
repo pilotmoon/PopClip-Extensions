@@ -35,6 +35,10 @@ Requires PopClip 2022.5
   
 ## Changelog
 
+### 1 Jun 2023
+
+* Add Korean and Norwegian languages.
+
 ### 5 Oct 2022
 
 * Add support for Indonesian, Turkish and Ukrainian languages.
