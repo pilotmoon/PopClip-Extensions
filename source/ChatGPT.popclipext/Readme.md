@@ -76,3 +76,7 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 ### 2023-03-03
 
 - Initial release.
+
+### 2023-07-15
+
+- Add error message reporting instead of just an X.
