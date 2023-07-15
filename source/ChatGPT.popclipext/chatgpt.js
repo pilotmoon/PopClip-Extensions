@@ -46,10 +46,10 @@ const chat = async (input, options) => {
     } else {
       popclip.pasteText(getTranscript(2));
     }
+    popclip.showSuccess();
   } catch (e) {
     popclip.showText(getErrorInfo(e));
   }
-  popclip.showSuccess();
   return null;
 };
 function getErrorInfo(error) {
