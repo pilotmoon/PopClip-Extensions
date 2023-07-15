@@ -51,26 +51,43 @@ const chat: ActionFunction = async (input, options) => {
   messages.push({ role: "user", content: input.text });
 
   // send the whole message history to OpenAI
-  const { data }: Response = await openai.post(
-    "chat/completions",
-    {
-      model: "gpt-3.5-turbo",
-      messages,
-    },
-  );
+  try {
+    const { data }: Response = await openai.post(
+      "chat/completions",
+      {
+        model: "gpt-3.5-turbo",
+        messages,
+      },
+    );
 
-  // add the response to the history
-  messages.push(data.choices[0].message);
-  lastChat = new Date();
+    // add the response to the history
+    messages.push(data.choices[0].message);
+    lastChat = new Date();
 
-  // if holding shift, copy just the response. else, paste the last input and response.
-  if (popclip.modifiers.shift) {
-    popclip.copyText(getTranscript(1));
-  } else {
-    popclip.pasteText(getTranscript(2));
+    // if holding shift, copy just the response. else, paste the last input and response.
+    if (popclip.modifiers.shift) {
+      popclip.copyText(getTranscript(1));
+    } else {
+      popclip.pasteText(getTranscript(2));
+    }
+  } catch (e) {
+    popclip.showText(getErrorInfo(e));
   }
+  popclip.showSuccess();
   return null;
 };
+
+export function getErrorInfo(error: unknown): string {
+  if (
+    typeof error === "object" && error !== null && "response" in error
+  ) {
+    const response = (error as any).response;
+    //return JSON.stringify(response);
+    return `Message from OpenAI (code ${response.status}): ${response.data.error.message}`;
+  } else {
+    return String(error);
+  }
+}
 
 // export the actions
 export const actions: Action[] = [{
@@ -80,6 +97,5 @@ export const actions: Action[] = [{
   title: "ChatGPT: Reset",
   icon: "broom-icon.svg",
   requirements: ["option-showReset=1"],
-  after: "show-status",
   code: reset,
 }];
