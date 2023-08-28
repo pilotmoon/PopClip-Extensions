@@ -1,6 +1,0 @@
-{
-    "popclipVersion": 3785,
-    "identifier": "com.pilotmoon.popclip.extension.icon-preview",
-    "module": "icon-preview.js",
-    "entitlements": ["dynamic"]
-}
