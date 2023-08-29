@@ -1,0 +1,10 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.say",
+  "name": "Say",
+  "icon": "speechicon.png",
+  "popclipVersion": 4069,
+  "shellScriptFile": "say.zsh",
+  "interpreter": "zsh",
+  "stdin": "text",
+  "description": "Speak the selected text aloud, using the system default voice."
+}
