@@ -5,9 +5,6 @@
 
 # PopClip Extensions
 
-> [!INFO]
-> Visit the [*PopClip Forum*](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
-
 This repository contains the source files for the extensions published on the official [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
 
 ### License
