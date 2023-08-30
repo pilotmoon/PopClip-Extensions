@@ -1,6 +1,7 @@
 # PopClip Extensions
 
-**Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
+> [!IMPORTANT]
+> Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.
 
 Check the [*PopClip Forum*](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
