@@ -9,7 +9,7 @@ This repository contains the source files for the extensions published in the of
 
 ### License
 
-All extension source files are published under the MIT License (see <LICENSE.txt>) unless noted otherwise in the readme files of individual extensions.
+All extension source files are published under the MIT License (see [LICENSE.txt](LICENSE.txt)) unless noted otherwise in the readme files of individual extensions.
 
 ### Credits
 
