@@ -1,9 +1,12 @@
-# PopClip Extensions
-
 > [!IMPORTANT]
 > **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
 
-Check the [*PopClip Forum*](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
+---
+
+# PopClip Extensions
+
+> [!INFO]
+> Visit the [*PopClip Forum*](https://forum.popclip.app/) to keep up-to date about extensions development, to ask questions, and to help others.
 
 This repository contains the source files for the extensions published on the official [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
 
@@ -23,15 +26,18 @@ The important folders:
 - `source-contrib` - folder for user-submitted and experimental extensions
 - `extensions` - signed and zipped `.popclipextz` files built from the `source` and `source-contrib` folders
 
-**Note: Pull requests for new extensions are closed (see note above)**
-
 Bugfixes ~~and new extension submissions~~ are welcome via pull request. Please note the following:
 
-**The repo is currently closed for new extension contributions. I am working on a new, improved extension directory that will let people publish extensions to a central directory from their own GitHub repos. Please bear with me!**
+**The repo is currently closed for new extension contributions. I am working on a new, improved extension directory. Please bear with me!**
 
 - ~~New extensions should be submitted as source files in a `.popclipext` folder inside the `source-contrib` folder.~~
 - ~~Please do not submit any zipped `.popclipextz` files.~~
 - ~~By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).~~
 - ~~Submitting an extension does not guarantee publication on the website.~~
 - ~~I may make changes to any extension submitted.~~
+
+----
+
+> [!IMPORTANT]
+> **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
 
