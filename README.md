@@ -5,11 +5,11 @@
 
 # PopClip Extensions
 
-This repository contains the source files for the extensions published on the official [PopClip Extensions](http://pilotmoon.com/popclip/extensions) page.
+This repository contains the source files for the extensions published in the official [PopClip Extensions Directory](https://www.popclip.app/extensions/).
 
 ### License
 
-All extension source files are published under the MIT License (see [LICENSE.txt](/LICENSE.txt)) unless noted otherwise in the readme files of individual extensions.
+All extension source files are published under the MIT License (see <LICENSE.txt>) unless noted otherwise in the readme files of individual extensions.
 
 ### Credits
 
