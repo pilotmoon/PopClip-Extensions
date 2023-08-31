@@ -12,9 +12,9 @@
 				<string>path</string>
 			</array>
 			<key>Service Name</key>
-			<string>Reveal in QSpace</string>
+			<string>QSpace Pro/Reveal</string>
 			<key>Title</key>
-			<string>Reveal in QSpace</string>
+			<string>Reveal in QSpace Pro</string>
 		</dict>
 	</array>
 	<key>Apps</key>
@@ -31,18 +31,6 @@
 			<key>Name</key>
 			<string>QSpace Pro</string>
 		</dict>
-		<dict>
-			<key>Bundle Identifiers</key>
-			<array>
-				<string>com.jinghaoshe.qspace</string>
-			</array>
-			<key>Check Installed</key>
-			<false/>
-			<key>Link</key>
-			<string>https://qspace.awehunt.com/</string>
-			<key>Name</key>
-			<string>QSpace</string>
-		</dict>
 	</array>
 	<key>Credits</key>
 	<array>
@@ -54,12 +42,12 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Reveal files in QSpace.</string>
+	<string>Reveal files in QSpace Pro.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.reveal-in-qspace</string>
+	<string>com.pilotmoon.popclip.extension.reveal-in-qspace-pro</string>
 	<key>Extension Name</key>
-	<string>Reveal in QSpace</string>
+	<string>Reveal in QSpace Pro</string>
 	<key>Version</key>
-	<integer>1</integer>
+	<integer>2</integer>
 </dict>
 </plist>

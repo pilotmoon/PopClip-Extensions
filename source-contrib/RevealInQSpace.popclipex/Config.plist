@@ -6,31 +6,19 @@
 	<array>
 		<dict>
 			<key>Image File</key>
-			<string>icon.png</string>
+			<string>QSpace.png</string>
 			<key>Requirements</key>
 			<array>
 				<string>path</string>
 			</array>
 			<key>Service Name</key>
-			<string>Add to Stash Shelf</string>
+			<string>QSpace/Reveal</string>
 			<key>Title</key>
-			<string>Add to Stash Shelf</string>
+			<string>Reveal in QSpace</string>
 		</dict>
 	</array>
 	<key>Apps</key>
 	<array>
-		<dict>
-			<key>Bundle Identifiers</key>
-			<array>
-				<string>com.jinghaoshe.qspace.pro</string>
-			</array>
-			<key>Check Installed</key>
-			<false/>
-			<key>Link</key>
-			<string>https://qspace.awehunt.com/</string>
-			<key>Name</key>
-			<string>QSpace Pro</string>
-		</dict>
 		<dict>
 			<key>Bundle Identifiers</key>
 			<array>
@@ -54,12 +42,12 @@
 		</dict>
 	</array>
 	<key>Extension Description</key>
-	<string>Add files to QSpace Stash Shelf.</string>
+	<string>Reveal files in QSpace.</string>
 	<key>Extension Identifier</key>
-	<string>com.pilotmoon.popclip.extension.add-to-stashshelf</string>
+	<string>com.pilotmoon.popclip.extension.reveal-in-qspace</string>
 	<key>Extension Name</key>
-	<string>Add to Stash Shelf</string>
+	<string>Reveal in QSpace</string>
 	<key>Version</key>
-	<integer>1</integer>
+	<integer>2</integer>
 </dict>
 </plist>
