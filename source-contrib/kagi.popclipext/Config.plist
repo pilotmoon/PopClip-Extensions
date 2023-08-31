@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>kagi.png</string>
+			<key>Title</key>
+			<dict>
+				<key>en</key>
+				<string>Kagi</string>
+			</dict>
+			<key>URL</key>
+			<string>https://kagi.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://kagi.com/</string>
+			<key>Name</key>
+			<string>Kagi</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search the web using Kagi.</string>
+	</dict>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Mohamed Elashri</string>
+		</dict>
+	</array>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.kagi</string>
+	<key>Extension Name</key>
+	<dict>
+		<key>en</key>
+      <string>Kagi</string>
+	</dict>
+</dict>
+</plist>
