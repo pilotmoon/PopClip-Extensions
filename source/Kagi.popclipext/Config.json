@@ -1,0 +1,11 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.kagi",
+  "name": "Kagi",
+  "icon": "kagi.svg",
+  "url": "https://kagi.com/search?q={popclip text}",
+  "app": {
+    "link": "http://kagi.com/",
+    "name": "Kagi"
+  },
+  "description": "Search the web using Kagi."
+}
