@@ -1,14 +1,9 @@
 # ChatGPT
 
-Send the selected text to [ChatGPT](https://openai.com/blog/chatgpt), and append
-the response.
-
-Download:
-[ChatGPT.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/ChatGPT.popclipextz)
+PopClip extension to send the selected text to [ChatGPT](https://openai.com/blog/chatgpt),
+and append the response.
 
 ## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ChatGPT.popclipext/ChatGPT-demo.gif" width="480px">
 
 The main action, **Chat**, sends the selected text to OpenAI's ChatGPT and
 appends the response as a new line.
@@ -44,9 +39,15 @@ reset. The default value is 15 minutes.
 
 Control whether or not to show the reset action in the popup.
 
-## About
+### Errors
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+You may see the following error:
+
+`Message from OpenAI (code 429): You exceeded your current quota, please check your plan and billing data.`
+
+The message means you need to add some credit to you OpenAI API account. You can do this at <https://platform.openai.com/account/billing/overview>. (Even if you already have ChatGPT Pro, you still need to have API credits on your account to use this extension.)
+
+## About
 
 ### Author
 
@@ -63,11 +64,15 @@ Icons:
 
 Requires PopClip 2022.12 and an Open AI Platform account.
 
-### Links
-
-- [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/ChatGPT.popclipext)
-
 ## Changelog
+
+### 2023-08-31
+
+- Add docuemntation about error message to README.
+
+### 2023-07-15
+
+- Add error message reporting instead of just an X.
 
 ### 2023-03-03.1
 
@@ -76,7 +81,3 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 ### 2023-03-03
 
 - Initial release.
-
-### 2023-07-15
-
-- Add error message reporting instead of just an X.
