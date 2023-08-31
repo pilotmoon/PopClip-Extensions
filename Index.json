@@ -188,16 +188,17 @@
   },
   {
     "Members": [
-      "GoogleSearch",
       "Baidu",
       "Bing",
-      "Ecosia",
-      "YahooSearch",
-      "YahooJapanSearch",
       "DuckDuckGo",
+      "Ecosia",
+      "GoogleSearch",
+      "Kagi",
+      "Naver",
       "StartPage",
-      "Yandex",
-      "Naver"
+      "YahooJapanSearch",
+      "YahooSearch",
+      "Yandex"
     ],
     "Title": "Web Search"
   },
