@@ -1,5 +1,5 @@
-### CamelCamelCamel Extension
+# CamelCamelCamel Extension
 
-Extension to search [camelcamelcamel.com](camelcamelcamel.com), an Amazon price tracker.
+A PopClip extension to search [https://camelcamelcamel.com](camelcamelcamel.com), an Amazon price tracker.
 
-Icon: Camel by parkjisun from the Noun Project
+Icon: Camel by parkjisun from the Noun Project.
