@@ -80,6 +80,12 @@
       "bundleId": "com.vivaldi.Vivaldi",
       "icon": "icons/simple-icons-vivaldi.svg",
       "link": "https://vivaldi.com/"
+    },
+    {
+      "name": "Waterfox",
+      "bundleId": "net.waterfox.waterfox",
+      "icon": "icons/waterfox.svg",
+      "link": "https://www.waterfox.net/"
     }
   ]
 }

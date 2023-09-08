@@ -17,6 +17,7 @@ The extension has an action for each of the following browsers:
 - Orion
 - Tor Browser
 - Vivaldi
+- Waterfox
 
 An checkbox in settings shows or hides each browser's action in the PopClip bar.
 
@@ -25,28 +26,32 @@ will not appear.
 
 ## Acknowledgements
 
-Icons from Iconify (Font Awesome Brands, Simple Icons). Arc browser icon from
-<https://logotyp.us/logo/arc-browser/>.
+Icons from Font Awesome Brands and Simple Icons. Arc browser icon from
+<https://logotyp.us/logo/arc-browser/>. Waterfox icon from <https://iconduck.com/icons/303816/waterfox>.
 
 ## Changelog
 
-### 2022-12-01
+### 2023-09-08
 
-- Initial release.
+- Add Waterfox browser.
+
+### 2023-05-25
+
+- Add Mullvad and Tor Browser.
+
+### 2023-02-11
+
+- Add Orion browser.
+
+### 2023-02-08
+
+- Add Arc browser.
 
 ### 2022-12-02
 
 - Add DuckDuckGo browser.
 - Fix "app not found" messages for browsers that aren't installed.
 
-### 2023-02-08
+### 2022-12-01
 
-- Add Arc browser.
-
-### 2023-02-11
-
-- Add Orion browser.
-
-### 2023-05-25
-
-- Add Mullvad and Tor Browser.
+- Initial release.
