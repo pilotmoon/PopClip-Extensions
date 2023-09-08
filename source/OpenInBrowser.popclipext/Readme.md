@@ -27,7 +27,7 @@ will not appear.
 ## Acknowledgements
 
 Icons from Font Awesome Brands and Simple Icons. Arc browser icon from
-<https://logotyp.us/logo/arc-browser/>. Waterfox icon from <https://iconduck.com/icons/303816/waterfox>.
+<https://logotyp.us/logo/arc-browser/>. Waterfox icon from <https://commons.wikimedia.org/wiki/File:Waterfox_logo_in_2023.png>.
 
 ## Changelog
 

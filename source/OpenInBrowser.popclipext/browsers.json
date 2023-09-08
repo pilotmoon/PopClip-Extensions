@@ -84,7 +84,7 @@
     {
       "name": "Waterfox",
       "bundleId": "net.waterfox.waterfox",
-      "icon": "icons/waterfox.svg",
+      "icon": "icons/waterfox.png",
       "link": "https://www.waterfox.net/"
     }
   ]
