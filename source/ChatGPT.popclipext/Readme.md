@@ -1,11 +1,12 @@
 # ChatGPT
 
-PopClip extension to send the selected text to [ChatGPT](https://openai.com/blog/chatgpt),
-and append the response.
+PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5 chat API, and append the response.
+
+**Note: Requires pre-paid API credits on your OpenAI account. API usage is not included in ChatGPT Plus subscripiton.**
 
 ## Description
 
-The main action, **Chat**, sends the selected text to OpenAI's ChatGPT and
+The main action, **Chat**, sends the selected text to OpenAI and
 appends the response as a new line.
 
 As a modifier, if you hold the Shift (⇧) key while invoking the action, the
@@ -45,7 +46,7 @@ You may see the following error:
 
 `Message from OpenAI (code 429): You exceeded your current quota, please check your plan and billing data.`
 
-The message means you need to add some credit to you OpenAI API account. You can do this at <https://platform.openai.com/account/billing/overview>. (Even if you already have ChatGPT Pro, you still need to have API credits on your account to use this extension.)
+The message means you need to add some credit to you OpenAI API account. You can do this at <https://platform.openai.com/account/billing/overview>.
 
 ## About
 
