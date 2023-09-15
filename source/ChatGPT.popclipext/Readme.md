@@ -30,6 +30,10 @@ account. To get an API Key:
 3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
 
+#### Model
+
+Available values are `gpt-3.5-turbo` and `gpt-4`. Note that some accounts might not be able to access the GPT-4 model — see OpenAI's documentation for details.
+
 #### Reset Timer (minutes)
 
 After this many minutes without any messages, the extension will automatically

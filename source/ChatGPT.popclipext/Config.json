@@ -21,6 +21,13 @@
       "description": "Obtain an API key from: https://platform.openai.com/account/api-keys"
     },
     {
+      "identifier:": "model",
+      "label": "Model",
+      "type": "multiple",
+      "defaultValue": "gpt-3.5-turbo",
+      "values": ["gpt-3.5-turbo", "gpt-4"]
+    },
+    {
       "identifier:": "resetMinutes",
       "label": "Reset Timer (minutes)",
       "type": "string",
