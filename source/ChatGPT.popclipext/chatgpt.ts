@@ -64,13 +64,17 @@ const chat: ActionFunction = async (input, options) => {
     messages.push(data.choices[0].message);
     lastChat = new Date();
 
-    // if holding shift, copy just the response. else, paste the last input and response.
-    if (popclip.modifiers.shift) {
+    // if holding shift and alt, pasye just the responsw.
+    // if holding shift, copy just the response.
+    // else, paste the last input and response.
+    if (popclip.modifiers.shift && popclip.modifiers.option) {
+      popclip.pasteText(getTranscript(1));
+    } else if (popclip.modifiers.shift) {
       popclip.copyText(getTranscript(1));
     } else {
       popclip.pasteText(getTranscript(2));
+      popclip.showSuccess();
     }
-    popclip.showSuccess();
   } catch (e) {
     popclip.showText(getErrorInfo(e));
   }

@@ -6,14 +6,18 @@ PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s G
 
 ## Description
 
+### Actions
+
 The main action, **Chat**, sends the selected text to OpenAI and
 appends the response as a new line.
 
-As a modifier, if you hold the Shift (⇧) key while invoking the action, the
-response will be copied to the clipboard instead of appended to the selection.
+The previous messages in the chat are sent along with each new message, allowing an extended dialogue with the AI.
 
-The previous messages in the chat are sent along with each new message, allowing
-an extended dialogue with the AI.
+Modifiers:
+
+- Hold Shift(⇧) to copy just the response to the clipboard.
+
+- Hold Option(⌥)-Shift(⇧) to paste the response over the selection.
 
 The **Reset** action (broom icon) clears the current chat history to start a
 fresh conversation.
