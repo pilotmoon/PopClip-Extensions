@@ -20,13 +20,13 @@ const actions = config.map(config => {
     return action;
 });
 const options = config.map(config => {
-    const action = {
+    const option = {
         identifier: config.method,
         label: config.title,
         type: 'boolean',
         icon: config.icon
     };
-    return action;
+    return option;
 });
 const extension = { actions, options };
 exports.default = extension;
