@@ -41,7 +41,6 @@ const action = async (input, options) => {
         task.due_string = options.due;
     }
     await todoist.post('tasks', task);
-    return null;
 };
 exports.action = action;
 // sign in to todoist

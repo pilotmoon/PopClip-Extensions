@@ -15,12 +15,8 @@ const extension = {
                 icon: popclip.options.showIcon ? undefined : null,
                 code() {
                     popclip.pasteText(pasteboard.text);
-                    return null;
                 }
             };
-        }
-        else {
-            return null;
         }
     }
 };

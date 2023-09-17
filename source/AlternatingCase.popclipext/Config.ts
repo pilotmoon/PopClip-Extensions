@@ -31,7 +31,6 @@ function alternatingCase (string: string, options?: {randomness?: boolean}): str
 const extension: Extension = {
   action: (selection, options) => {
     popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness as boolean }))
-    return null
   },
   options: [
     {

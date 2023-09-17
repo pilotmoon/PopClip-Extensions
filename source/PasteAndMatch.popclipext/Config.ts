@@ -13,11 +13,8 @@ const extension: Extension = {
         icon: popclip.options.showIcon as boolean ? undefined : null,
         code () {
           popclip.pasteText(pasteboard.text)
-          return null
         }
       }
-    } else {
-      return null
     }
   }
 }

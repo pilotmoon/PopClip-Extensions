@@ -21,7 +21,7 @@ define(function () {
         defaultValue: !(index > 0)
       }
     }),
-    actions (selection, options) {
+    actions (selection, options) {      
       if (selection.text.length > 0) {
         return styles.filter((style, index) => options[makeIdentifier(index)]).map((style, index) => {
           return {
@@ -29,12 +29,9 @@ define(function () {
             icon: makeIcon(index),
             code: (selection) => {
               popclip.pasteText(style[0] + selection.text + style[2])
-              return null
             }
           }
         })
-      } else {
-        return null
       }
     }
   }

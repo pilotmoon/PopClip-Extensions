@@ -5,9 +5,6 @@ export const actions: PopulationFunction = (selection) => {
   if (result !== selection.text) {
     return () => {
       popclip.pasteText(result)
-      return null
     }
-  } else {
-    return null
   }
 }

@@ -55,7 +55,7 @@ const auth: AuthFunction = async (info, flow) => {
 };
 
 // follow an ActivityPub account
-const action: ActionFunction = async (input, options) => {
+const follow: ActionFunction = async (input, options) => {
   const accountToFollow = input.regexResult[1];
   const { server, credentials } = JSON.parse(options.authsecret);
   const instance = getInstance(server, credentials.access_token);
@@ -72,8 +72,13 @@ const action: ActionFunction = async (input, options) => {
   // follow the account
   await instance.post("/api/v1/accounts/" + id + "/follow");
   popclip.showSuccess();
-  return null;
 };
-action.title = "Follow on Mastodon";
 
-export { action, auth, regex };
+export default {
+  action: {
+    code: follow,
+    title: "Follow on Mastodon"
+  },
+  auth,
+  regex
+};

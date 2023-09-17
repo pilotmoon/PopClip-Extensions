@@ -10,7 +10,6 @@ let lastChat = new Date();
 function reset() {
     print("Resetting chat history");
     messages.length = 0;
-    return null;
 }
 // get the content of the last `n` messages from the chat, trimmed and separated by double newlines
 function getTranscript(n) {
@@ -57,7 +56,6 @@ const chat = async (input, options) => {
     catch (e) {
         popclip.showText(getErrorInfo(e));
     }
-    return null;
 };
 function getErrorInfo(error) {
     if (typeof error === "object" && error !== null && "response" in error) {
@@ -73,7 +71,7 @@ exports.getErrorInfo = getErrorInfo;
 // export the actions
 exports.actions = [{
         title: "ChatGPT: Chat",
-        code: chat,
+        code: chat
     }, {
         title: "ChatGPT: Reset",
         icon: "broom-icon.svg",

@@ -3,7 +3,7 @@
         "entryPoints": [
             "./popclip.d.ts"
         ],
-        "name": "PopClip Extensions JavaScript Reference",
+        "name": "PopClip JavaScript API Reference",
         "out": "./docs",
         "disableSources": false,
         "sort": [
@@ -39,6 +39,7 @@
         "./source-contrib",    
         "./scratch"
     ],
+    "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"],
     "ts-standard": {
         "ignore": [
             "**/*.js"

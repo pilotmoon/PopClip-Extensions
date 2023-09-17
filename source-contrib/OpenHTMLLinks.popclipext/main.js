@@ -16,7 +16,6 @@ defineExtension({
                 popclip.openUrl(link);
             });
         }
-        return null;
     },
     captureHtml: true
 });

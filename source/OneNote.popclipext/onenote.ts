@@ -40,5 +40,4 @@ export const action: ActionFunction = async (input, options, context) => {
     content = content + `<p>Clipped from: <a href="${context.browserUrl}">${context.browserTitle}</a></p>`
   }
   await onenote_endpoint.post('pages', content, { headers: { 'Content-Type': 'text/html' } })
-  return null
 }

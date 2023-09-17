@@ -12,7 +12,7 @@ function simulate(testString) {
     const x = extension.actions({ text: testString }, {}, {});
     if (typeof x === 'function') { // got single action as expected
         // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
-        return x({ text: testString }, {}, {});
+        return x({ text: testString }, { authsecret: "" }, {});
     }
     else {
         return null;

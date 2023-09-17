@@ -4,6 +4,5 @@ export const actions: PopulationFunction = (selection) => {
   print('in populator with ' + memory.join(','))
   return () => {
     print('dynamic hello')
-    return null
   }
 }

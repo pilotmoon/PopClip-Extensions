@@ -2,7 +2,7 @@ import axios from 'axios'
 import { replaceRangesAsync } from '@popclip/helpers/replace-ranges'
 import { concurrentTransform } from '@popclip/helpers/generator'
 
-export const action: Action = async (input, options) => {
+export const action: ActionFunction = async (input, options) => {
   async function shorten (url: string): Promise<string> {
     const endpoint = `https://${options.domain as string}/create.php?format=json&url=${encodeURIComponent(url)}`
     const response = await axios.get(endpoint)

@@ -143,7 +143,8 @@ declare interface AssociatedApp {
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
-declare type PopulationFunction = (input: Input, options: Options, context: Context) => (Action | ActionFunction)[] | Action | ActionFunction | null
+declare type PopulationFunction<CustomOptions extends Options = Options> = (input: Input, options: CustomOptions, context: Context) => (Action | ActionFunction)[] | Action | ActionFunction | void
+
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
@@ -175,46 +176,31 @@ declare interface AuthInfo {
 declare type AuthFunction = (info: AuthInfo, flow: AuthFlowFunction) => Promise<string>
 
 /**
- * Boolean flags that affect the behaviour of actions.
- * @category Definition
+ * Properties that define how an icon is interpreted.
  */
-declare interface ActionFlags {
+declare interface IconProperties {
   /**
-   * Whether PopClip will capture HTML and Markdown content for the selection. Default is no.
+   * If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is false.
    */
-  captureHtml?: boolean
-
-  /**
-   * Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.
-   */
-  captureRtf?: boolean
-
-  /**
-   * Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
-   */
-  stayVisible?: boolean
-
-  /**
-   * Whether the pasteboard should be restored to its original state after `paste-result`.
-   */
-  restorePasteboard?: boolean
-}
-
-/**
- * Boolean flags that define how an icon is interpreted.
- * @category Definition
- */
-declare interface IconFlags {
   preserveColor?: boolean
+  /**
+   * If true, the supplied icon will be displayed with its original aspect ratio instead of being scaled to fit a square. Default is false.
+   */
   preserveAspect?: boolean
+  /**
+   * If true, the supplied icon will be drawn horizontally flipped. Default is false.
+   */
   flipHorizontal?: boolean
+  /**
+   * If true, the supplied icon will be drawn vertically flipped. Default is false.
+   */
   flipVertical?: boolean
 }
 
 /**
  * Properties common to Action and Extension
  */
-declare interface ActionProperties extends ActionFlags, IconFlags {
+declare interface ActionProperties extends IconProperties {
 
   /**
     * A unique identifying string. An identifier for an action can be any string of your choosing.
@@ -316,6 +302,26 @@ declare interface ActionProperties extends ActionFlags, IconFlags {
   */
   after?: AfterStep
 
+  /**
+   * Whether PopClip will capture HTML and Markdown content for the selection. Default is no.
+   */
+  captureHtml?: boolean
+
+  /**
+   * Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.
+   */
+  captureRtf?: boolean
+
+  /**
+   * Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
+   */
+  stayVisible?: boolean
+
+  /**
+   * Whether the pasteboard should be restored to its original state after `paste-result`.
+   */
+  restorePasteboard?: boolean
+
   // static properties for benefit of JSON Schema
   shortcutName?: string
   serviceName?: string
@@ -342,14 +348,14 @@ declare interface ActionProperties extends ActionFlags, IconFlags {
   * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
   * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
   */
-declare type ActionFunction = (input: Input, options: Options, context: Context) => Promise<string | undefinsed | null> | string | undefined | null
+declare type ActionFunction<CustomOptions extends Options = Options> = (input: Input, options: CustomOptions & AuthOptions, context: Context) => Promise<string | void> | string | void
 
 /**
- * An alternative way to define as an action, as a non-callable object with a `code` member.
- * If code is omitted, displays as disabled title/icon only.
+ * **Action** represents the properties of a single action.
+ * If `code` is omitted, the action displays a disabled title/icon only.
  */
-declare interface Action extends ActionProperties {
-  code?: ActionFunction
+declare interface Action<CustomOptions extends Options = Options> extends ActionProperties {
+  code?: ActionFunction<CustomOptions>
 }
 
 // included for JSON Schema
@@ -357,10 +363,8 @@ declare type Entitlement = 'network' | 'dynamic'
 
 /**
  * The Extension object defines the PopClip extension.
- *
- * @category Definition
  */
-declare interface Extension extends ActionProperties {
+declare interface Extension<CustomOptions extends Options = Options> extends ActionProperties {
 
   /**
    * The display name of this extension.
@@ -378,7 +382,7 @@ declare interface Extension extends ActionProperties {
    *
    * If the sign in needs a username and password, you'll also need to define `username` and `password` options. PopClip will then pass the values
    * of those options in the info parameter. */
-  auth?: AuthFunction
+  auth?: AuthFunction<CustomOptions>
 
   /**
    * Define the actions to go in PopClip's popup. This can be an array or a function.
@@ -390,12 +394,12 @@ declare interface Extension extends ActionProperties {
    *   Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
    *   Population function requires the `dynamic` entitlement.
    */
-  actions?: (Action | ActionFunction)[] | PopulationFunction
+  actions?: (Action<CustomOptions> | ActionFunction<CustomOptions>)[] | PopulationFunction<CustomOptions>
 
   /**
    * Simplified property to define a single action.
    */
-  action?: Action | ActionFunction
+  action?: Action<CustomOptions> | ActionFunction<CustomOptions>
 
   // the following are static properties, included for the benefit of the JSON Scheme generation
   popclipVersion?: number
@@ -406,8 +410,6 @@ declare interface Extension extends ActionProperties {
 
 /**
  * Defines a single extension option.
- *
- * @category Definition
  */
 declare interface Option {
   /**
@@ -609,22 +611,25 @@ declare interface Context {
 }
 
 /**
- * Represents the current values of the extension's option (that were defined in {@link Extension.options}.
- * It maps option identifier strings to the current option value. See {@link PopClip.options}, {@link Extension.actions}, [[ActionFunction]].
- *
- * The `authsecret` property has the special behaviour of thorowing an `Error` with the message 'Not signed in' if it is accessed while either
- * undefined or holding an empty string.
+ * Represents the current values of the extension's settings.
  */
 declare interface Options {
-  readonly authsecret: string
   readonly [identifier: string]: string | boolean
 }
 
 /**
-* PopClip defines the methods and properties of the global [[`popclip`]] object.
-*
-* Methods in the **Action Methods** category are only available in an action function. If called from
-* a population function, the method will throw an exception.
+ * The `authsecret` property has the special behaviour of throwing an `Error` with the message 'Not signed in' if it is accessed while either
+ * undefined or holding an empty string.
+ */
+declare interface AuthOptions {
+  /**
+   * The stored value that was returned from the `auth()` function.
+   */
+  authsecret: string
+}
+
+/**
+* This interface describes the methods and properties of the global [[`popclip`]] object.
 *
 */
 declare interface PopClip {
@@ -649,7 +654,7 @@ declare interface PopClip {
   /**
      * The current values of the options.
      */
-  readonly options: Options
+  readonly options: Options & AuthOptions
 
   /**
      * If the target app's Paste command is available, this method places the given string on the pasteboard
@@ -668,8 +673,6 @@ declare interface PopClip {
      * ```
      * @param text The plain text string to paste
      * @param options
-     *
-     * @category Action
      */
   pasteText: (text: string, options?: PasteOptions) => void
 
@@ -681,7 +684,6 @@ declare interface PopClip {
   /**
      * Places the given string on the pasteboard, and shows "Copied" notificaction to the user.
      * @param text The plain text string to copy
-     * @category Action
      */
   copyText: (text: string) => void
 
@@ -694,7 +696,6 @@ declare interface PopClip {
      * Invokes a command in the target app.
      * @param command Either `cut`, `copy` or `paste`.
      * @param options Options for the command.
-     * @category Action
      */
   performCommand: (command: 'cut'|'copy'|'paste', options?: {
     /** Transformation to apply to the pasteboard contents. (Default: `none`)
@@ -768,7 +769,6 @@ declare interface PopClip {
      * When this parameter is a number, PopClip will use that exact key code.
      *
      * @param modifiers An optional bit mask specifiying additional modifier keys, if any.
-     * @category Action
      */
   pressKey: (key: string | number, modifiers?: number) => void
 
@@ -799,7 +799,6 @@ declare interface PopClip {
      *
      * @param url A well-formed URL
      * @param options Options.
-     * @category Action
      */
   openUrl: (url: string, options?: {
     /**
@@ -900,11 +899,7 @@ declare interface Util {
    * This function will ROT13 decipher the text, apply Base64 decoding, and parse the result as JSON. */
   clarify: (obscuredString: string) => any
 
-  /**
-   * A promise-based sleep function. Included as a more convenient alternative
-   * to [[setTimeout]] for performing simple delays. Call as `await sleep(1000)`.
-   * @param durationMilliseconds How long to sleep in milliseconds
-   */
+  // same as global sleep()
   sleep: (durationMilliseconds: number) => Promise<void>
 
   /**
@@ -981,6 +976,9 @@ declare interface PasteboardContent {
   [string: string]
 }
 
+/**
+ * Options for Paste operations.
+ */
 declare interface PasteOptions {
   /**
    * Whether to restore the original contents of the pasteboard after the paste
@@ -1049,14 +1047,15 @@ declare function print (...args: any[]): void
  *
  * #### Notes
  *
- * The _define_ function exports an arbitrary object, which other files can import using [[require]].
+ * The _define_ function family exports an arbitrary object, which other files can import using [[require]].
  *
  * It should be called only once in any file; if it is called more than once, only the
  * final call will have any effect.
  *
  * Partially implements AMD spec: https://github.com/amdjs/amdjs-api/wiki/AMD
  * 
- * Note: define() is deprecated. CommonJS is now the recommended module format.
+ * Note that using `define()` in your extensions is not recommended. Instead, use [[defineExtension]] or
+ * `module.exports = ...`.
  */
 declare function define (object: object): void
 declare function define (factory: () => object): void
@@ -1064,12 +1063,18 @@ declare function define (dependencies: string[], factory: () => object): void
 declare function define (id: string, factory: () => object): void
 declare function define (id: string, dependencies: string[], factory: () => object): void
 
-/*
- * Typed version of define() for defining an extension.
- * Note: defineExtension() is deprecated. CommonJS is now the recommended module format.
- * @param extension The extension object to pass to PopClip.
+/**
+ * This global function may be called as an alternative to setting `module.exports` directly.
+ * The advantage of using `defineExtension()` is that you will automatically get type checking
+ * and autocomplete for your extension object.
+ * 
+ * You may define the shape of the extensions's options object by specifying the
+ * `CustomOptions` generic type parameter. This will enable type checking and autocomplete for
+ * the `options` parameter in action functions and the population function.
+ * 
+ * @param extension The extension object to export.
  */
-declare function defineExtension (extension: Extension): void
+declare function defineExtension<CustomOptions extends Options = Options> (extension: Extension<CustomOptions>): void
 
 /* Declare ambient module + exports for CommonJS-style exporting */
 declare const module: { exports: any }
@@ -1104,7 +1109,16 @@ declare const exports: any
   */
 declare function require (file: string): object
 
-/* Globals */
+/**
+ * A promise-based sleep function. Included as a more convenient alternative
+ * to [[setTimeout]] for performing simple delays. Call as `await sleep(1000)`.
+ * @param durationMilliseconds How long to sleep in milliseconds
+ */
+declare function sleep (durationMilliseconds: number): Promise<void>
+
+/* WebAPI and Node.js Globals
+ * The following functions and objects are available in PopClip via polyfills.
+ */
 
 /**
  * Call a function after a specified time interval.
@@ -1121,21 +1135,27 @@ declare function require (file: string): object
  * @param timeout Timeout in milliseconds. If this parameter is omitted, a value of 0 is used,
  * @param args Additional arguments to be passed to the callback function.
  * @returns Numeric identifier for the timer which can be passed to [[clearTimeout]] to cancel it.
- * @category Timer
  */
 declare function setTimeout (callback: (...args?: any) => void, timeout?: number, ...args?: any): number
 
 /**
  * Cancels a timeout prevouly created with [[setTimeout]].
  * @param timeoutId Identifier of the timeout to cancel.
- * @category Timer
  */
 declare function clearTimeout (timeoutId: number): void
 
-// Same as util.sleep
-declare function sleep (durationMilliseconds: number): Promise<void>
+// XMLHttpRequest is implemented natively in PopClip; I recommend using axios instead.
+declare const XMLHttpRequest;
+
+// these are from WebAPI, and are implemented with core-js polyfills
 declare function btoa (string: string): string
 declare function atob (string: string): string
-declare const Blob: any
-declare const Buffer: any
-// also URL, URLSearchParams, structuredClone — TODO
+declare const URL
+declare const URLSearchParams
+declare function structuredClone<T>(value: T): T;
+
+// this is implemented with 'node-blob` library
+declare const Blob
+
+// Buffer is a node.js object, iplemented with 'buffer' library
+declare const Buffer

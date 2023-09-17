@@ -13,7 +13,6 @@ const action = async (selection, options, context) => {
     const url = selection.data.urls[0];
     const description = context.browserUrl === url ? context.browserTitle : '';
     await p.get('posts/add', { params: { url, description, auth_token: token } });
-    return null;
 };
 exports.action = action;
 // retrieve user's api token using basic http authentication

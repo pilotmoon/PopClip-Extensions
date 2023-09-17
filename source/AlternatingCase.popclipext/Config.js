@@ -33,7 +33,6 @@ function alternatingCase(string, options) {
 const extension = {
     action: (selection, options) => {
         popclip.pasteText(alternatingCase(selection.text, { randomness: options.randomness }));
-        return null;
     },
     options: [
         {

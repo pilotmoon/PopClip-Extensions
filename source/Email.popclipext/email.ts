@@ -13,7 +13,6 @@ export const actions: PopulationFunction = (selection, options, context) => {
           // one email to each address
           emails.forEach((email) => popclip.openUrl('mailto:' + email))
         }
-        return null
       }
     })
   }
@@ -27,7 +26,6 @@ export const actions: PopulationFunction = (selection, options, context) => {
           body += '\n\n' + context.browserUrl
         }
         popclip.openUrl('mailto:' + (options.default as string) + '?body=' + encodeURIComponent(body))
-        return null
       },
       captureHtml: true
     })

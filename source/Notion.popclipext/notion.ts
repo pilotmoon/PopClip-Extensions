@@ -60,7 +60,6 @@ const action: ActionFunction = async (input, options, context) => {
     children: blocks
   })
   popclip.showSuccess()
-  return null
 }
 
 // a markdown fragment to represent the clip's source

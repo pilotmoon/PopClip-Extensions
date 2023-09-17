@@ -25,7 +25,6 @@ const action: ActionFunction = async (input, options, context) => {
   const url = AccessResponse.parse(JSON.parse(options.authsecret)).incoming_webhook.url
   const text = slack_escape(popclip.input.text)
   await slack.post(url, { text })
-  return null
 }
 
 // https://api.slack.com/reference/surfaces/formatting#basics

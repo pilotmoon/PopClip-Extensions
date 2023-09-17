@@ -1,6 +1,5 @@
 "use strict";
 /* eslint-disable @typescript-eslint/triple-slash-reference */
-/// <reference path="/Applications/PopClip.app/Contents/Resources/popclip.d.ts" />// #popclip
 // #popclip
 // name: Paste List
 // language: javascript
@@ -17,7 +16,6 @@ const setList = {
         print('input', input);
         lines = input.text.split(/\n/);
         print('lines', lines);
-        return null;
     }
 };
 // action for pasting the first item in list
@@ -29,7 +27,6 @@ const pasteItem = {
         const line = (_a = lines.shift()) !== null && _a !== void 0 ? _a : '';
         pasteboard.text = lines.join('\n');
         popclip.pasteText(line, { restore: true });
-        return null;
     }
 };
 exports.actions = [setList, pasteItem];

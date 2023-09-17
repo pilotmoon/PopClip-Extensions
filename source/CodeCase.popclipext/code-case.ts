@@ -10,7 +10,7 @@ const config = [
 ]
 
 const actions = config.map(config => {
-  const action: ActionObject = {
+  const action: Action = {
     code: input => ca[config.method](input.text),
     requirements: ['text', `option-${config.method}=1`],
     title: config.title,
@@ -21,13 +21,13 @@ const actions = config.map(config => {
 })
 
 const options = config.map(config => {
-  const action: Option = {
+  const option: Option = {
     identifier: config.method,
     label: config.title,
     type: 'boolean',
     icon: config.icon
   }
-  return action
+  return option
 })
 
 const extension: Extension = { actions, options }

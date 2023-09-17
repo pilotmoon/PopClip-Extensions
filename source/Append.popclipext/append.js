@@ -9,6 +9,5 @@ const action = (selection) => {
     else {
         pasteboard.text = pasteboard.text.trim() + separator + selection.text.trim();
     }
-    return null;
 };
 exports.action = action;

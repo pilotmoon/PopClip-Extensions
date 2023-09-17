@@ -20,7 +20,6 @@ function makeAction(browser) {
             for (const url of input.data.urls) {
                 popclip.openUrl(url, { app: browser.bundleId });
             }
-            return null;
         },
         app: {
             name: browser.name,

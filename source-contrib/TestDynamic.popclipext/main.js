@@ -7,7 +7,6 @@ const actions = (selection) => {
     print('in populator with ' + memory.join(','));
     return () => {
         print('dynamic hello');
-        return null;
     };
 };
 exports.actions = actions;

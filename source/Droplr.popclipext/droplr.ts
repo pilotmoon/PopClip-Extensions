@@ -67,7 +67,7 @@ async function shorten (url: string): Promise<string> {
   return shortlink + (privacy === 'PRIVATE' ? '/' + password : '')
 }
 
-export const action: Action = async (input) => {
+export const action: ActionFunction = async (input) => {
   return await replaceRangesAsync(input.text, input.data.urls.ranges, concurrentTransform(input.data.urls, shorten))
 }
 

@@ -9,7 +9,6 @@ const encode = {
             urlSafe: options.variant === 'url',
             trimmed: options.trim === true
         }));
-        return null;
     }
 };
 const decode = {
@@ -18,7 +17,6 @@ const decode = {
     title: 'Base64 Decode',
     code(input) {
         popclip.pasteText(util.base64Decode(input.text));
-        return null;
     }
 };
 exports.actions = [encode, decode];

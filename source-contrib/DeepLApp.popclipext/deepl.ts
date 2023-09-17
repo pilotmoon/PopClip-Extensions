@@ -9,11 +9,10 @@ async function appTranslate (combo: string): Promise<void> {
 }
 
 // our action
-export const action: ActionObject = {
+export const action: Action = {
   app: { bundleIdentifiers: ['com.linguee.DeepLCopyTranslator'], checkInstalled: true, name: 'DeepL', link: 'https://www.deepl.com/app/' },
   code: async (_, options) => {
     await appTranslate(options.combo as string)
-    return null
   }
 }
 

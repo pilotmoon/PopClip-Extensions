@@ -18,15 +18,11 @@ const extension = {
                         popclip.pasteText(pasteboard.text);
                     }
                     else {
-                        popclip.performPaste();
+                        popclip.performCommand('paste');
                     }
                     popclip.pressKey(util.constant.KEY_RETURN);
-                    return null;
                 }
             };
-        }
-        else {
-            return null;
         }
     }
 };

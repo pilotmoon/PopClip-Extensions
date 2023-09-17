@@ -10,7 +10,6 @@ const actions = (selection) => {
             title: 'Join with commas',
             code() {
                 popclip.pasteText(inputLines.join(', '));
-                return null;
             }
         };
         return action;
@@ -23,13 +22,9 @@ const actions = (selection) => {
                 title: 'Split into lines',
                 code() {
                     popclip.pasteText(outputLines.join('\r'));
-                    return null;
                 }
             };
             return action;
-        }
-        else {
-            return null;
         }
     }
 };

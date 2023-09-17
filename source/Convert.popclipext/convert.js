@@ -89,9 +89,8 @@ function convert(input) {
 }
 const actions = (input) => {
     const result = convert(input.text);
-    if (result === null) {
-        return null;
-    }
+    if (result === null)
+        return;
     const action = () => result;
     action.title = result;
     action.icon = null; // set null to allow title to show

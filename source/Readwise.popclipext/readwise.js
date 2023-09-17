@@ -12,7 +12,6 @@ const action = async (input, options, context) => {
         payload.title = context.browserTitle;
     }
     await readwise.post('highlights/', { highlights: [payload] }, { headers: { Authorization: `Token ${options.authsecret}` } });
-    return null;
 };
 exports.action = action;
 const auth = async (info) => {

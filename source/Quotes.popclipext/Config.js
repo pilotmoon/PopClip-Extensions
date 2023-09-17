@@ -41,13 +41,9 @@ define(function () {
                         icon: makeIcon(style),
                         code: (selection) => {
                             popclip.pasteText(style[0] + selection.text + style[2]);
-                            return null;
                         }
                     };
                 });
-            }
-            else {
-                return null;
             }
         }
     };

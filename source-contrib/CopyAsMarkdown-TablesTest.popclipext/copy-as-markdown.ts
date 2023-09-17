@@ -11,6 +11,6 @@ export function htmlToMarkdown (html: string): string {
   return turndownService.turndown(document)
 }
 
-export const action: Action = (input) => {
+export const action: ActionFunction = (input) => {
   return htmlToMarkdown(input.html)
 }

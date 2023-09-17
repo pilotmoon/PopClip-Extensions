@@ -1,5 +1,13 @@
 import axios from "axios";
 
+// our own options
+declare type ChatGPTOptions = {
+  resetMinutes: string;
+  apikey: string;
+  model: string;
+  showReset: boolean;
+};
+
 // typescript interfaces for OpenAI API
 interface Message {
   role: "user" | "system" | "assistant";
@@ -24,7 +32,6 @@ let lastChat: Date = new Date();
 function reset() {
   print("Resetting chat history");
   messages.length = 0;
-  return null;
 }
 
 // get the content of the last `n` messages from the chat, trimmed and separated by double newlines
@@ -33,7 +40,7 @@ function getTranscript(n: number): string {
 }
 
 // the main chat action
-const chat: ActionFunction = async (input, options) => {
+const chat: ActionFunction<ChatGPTOptions> = async (input, options) => {
   const openai = axios.create({
     baseURL: "https://api.openai.com/v1",
     headers: { Authorization: `Bearer ${options.apikey}` },
@@ -78,7 +85,6 @@ const chat: ActionFunction = async (input, options) => {
   } catch (e) {
     popclip.showText(getErrorInfo(e));
   }
-  return null;
 };
 
 export function getErrorInfo(error: unknown): string {
@@ -94,9 +100,9 @@ export function getErrorInfo(error: unknown): string {
 }
 
 // export the actions
-export const actions: Action[] = [{
+export const actions: Action<ChatGPTOptions>[] = [{
   title: "ChatGPT: Chat",
-  code: chat,
+  code: chat
 }, {
   title: "ChatGPT: Reset",
   icon: "broom-icon.svg",

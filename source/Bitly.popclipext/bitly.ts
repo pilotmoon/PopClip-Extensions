@@ -14,7 +14,7 @@ async function shorten (url: string): Promise<string> {
 }
 
 // replace all matched urls with their shortened equivalents, calling duplicates only once
-export const action: Action = async (input) => {
+export const action: ActionFunction = async (input) => {
   return await replaceRangesAsync(input.text, input.data.urls.ranges, concurrentTransform(input.data.urls, shorten))
 }
 

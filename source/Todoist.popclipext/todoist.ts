@@ -6,7 +6,7 @@ import { client } from './client.json'
 const todoist = axios.create({ baseURL: 'https://api.todoist.com/rest/v2/' })
 
 // add task to todoist
-export const action: Action = async (input, options) => {
+export const action: ActionFunction = async (input, options) => {
   // set auth header for all requests
   todoist.defaults.headers.common.Authorization = `Bearer ${options.authsecret}`
 
@@ -45,7 +45,6 @@ export const action: Action = async (input, options) => {
   }
 
   await todoist.post('tasks', task)
-  return null
 }
 
 // sign in to todoist
