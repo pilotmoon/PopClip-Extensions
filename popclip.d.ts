@@ -9,22 +9,13 @@ the top of your JS or TS:
 */
 
 /**
- * An object mapping language codes to strings. See [[LocalizableString]].
- *
- * #### Notes
- *
- * An `en` string is required, as the default fallback, and it should usually
- * contain a string in US English, which is the macOS default.
- *
- * The predefined languages in this interface definition are the ones that
- * PopClip currently ships with translations for.
- * But you can include other languages too.
- * For example you can include `en-GB` or `en-CA` string to have different
- * regional spellings.
+ * An object giving strings for the different languages PopClip supports. See [[LocalizableString]].
  */
 declare interface StringTable {
   /** English (US) language string. */
   en: string
+  /** English (UK) language string. */
+  'en-GB'?: string
   /** Danish language string. */
   da?: string
   /** German language string. */
@@ -41,10 +32,16 @@ declare interface StringTable {
   ko?: string
   /** Dutch language string. */
   nl?: string
+  /** Polish language string. */
+  pl?: string
   /** Brazilian Portuguese language string. */
   'pt-BR'?: string
   /** Russian language string. */
   ru?: string
+  /** Slovak language string. */
+  sk?: string
+  /** Turkish language string. */
+  tr?: string
   /** Vietnamese language string. */
   vi?: string
   /** Simplified Chinese language string. */
@@ -69,43 +66,13 @@ declare interface StringTable {
  * ```js
  * option.label = "Color" // just use this string
  * option.label = { en: "Color", "en-GB": "Colour", fr: "Couleur", "zh-Hans": "颜色" }
+ * ```
  */
 declare type LocalizableString = string | StringTable
 
 /**
- * A string with a special format to declare an icon. Used for {@link Extension.icon} and {@link Action.icon}.
- *
- * Icons may be specified in a few different ways:
- *
- * * **Image file:** A string with suffix `.png` or `.svg` matching the name of an image file in the extension package. Images must be in either PNG or SVG format.
- * The icons should be square and monochrome, black, on a transparent background. You can use opacity to create shading.
- * PNG icons should be at least 256x256 pixels in size.
- *
- * * **SF Symbol:** A string of the form `symbol:<symbol name>` specifies an [SF Symbols](https://sfsymbols.com) name, for example `symbol:flame`.
- * Symbols are available starting on macOS 11.0 and above, but some symbols require higher macOS versions, as indicated in the
- * "Availability" panel in Apple's SF Symbols browser app.
- *
- * * **Text icon:** A string of the form `text:<text icon specifier>` instructs PopClip to generate a text-based icon, as described below.
- *
- * ### Text icons
- *
- * Text-based icons can up to three characters, on their own or within an enclosing shape. The enclosing shape is specified using different kinds of brackets around the text. The easiest way to explain is probably by example:
- *
- * * `text:A` - the letter A on its own
- *
- * * `text:(1)` - the digit 1 in an outline circle
- *
- * * `text:((本))` - the character 本 in a filled circle
- *
- * * `text:[xyz]` - the characters xyz in an outline square
- *
- * * `text:[[!]]` - the character ! in a filled square
- *
- */
-declare type IconString = string
-
-/**
- * Represents the state of the four modifier keys. The value is true when the key is held down.
+ * Represents the state of the four modifier keys. The value is true when the key is held down
+ * at the time the action is invoked.
  * See {@link PopClip.modifiers}.
  */
 declare interface Modifiers {
@@ -121,31 +88,14 @@ declare interface Modifiers {
 
 /**
   * A requirement is specified in the {@link Action.requirements} array as a string.
-  * The possible strings are:
-  *
-  * | Specifier     | Condition                                                  |
-  * |---------------|------------------------------------------------------------|
-  * |`text`|One or more characters of text must be selected. |
-  * |`copy`| A synonym for `text`, for backwards compatibility.|
-  * |`cut`| Text must be selected and the app's Cut command must be available.|
-  * |`paste`|The app's Paste command must be available.|
-  * |`formatting`|The selected text control must support formatting. (PopClip makes its best guess about this, erring on the side of a false positive.)|
-  * |`weburl`|The text must contain exactly one web URL (http or https).|
-  * |`weburls`|The text must contain one or more web URLs (http or https).|
-  * |`email`|The text must contain exactly one email address.|
-  * |`emails`|The text must contain one or email addresses.|
-  * |`path`|The text must be a local file path, and it must exist on the local file system.|
-  * |`option-foo=bar`|The current value of the option named `foo` must be equal to the string `bar`. (Boolean values match against strings `0` and `1`.)|
-  *
-  * A requirement can also be **negated** by prefixing `!`, to specify that the requirement must _not_ be met.
   *
   * #### Example
   * ```js
-  * ["paste", "!weburls", "option-goFishing=1"]
+  * ["paste", "!urls", "option-goFishing=1"]
   * ```
   */
  declare type Requirement =
- | 'text' | 'copy' | 'cut' | 'paste' | 'formatting' | 'url' | 'urls' | 'email' | 'emails' | 'path'
+ | 'text' | 'cut' | 'paste' | 'formatting' | 'url' | 'urls' | 'email' | 'emails' | 'path'
  | `option-${string}=${string}`
 
  /** Negated form of [[Requirement]]. */
@@ -154,41 +104,34 @@ declare interface Modifiers {
  /**
   * Strings which can be used to specify the [[before]] action.
   */
- declare type BeforeStep = 'cut' | 'copy' | 'paste' | 'paste-plain' | 'popclip-appear' | 'show-status'
+ declare type BeforeStep = 'cut' | 'copy' | 'paste' | 'paste-plain'
 
  /**
   * Strings which can be used to specify the [[after]] action.
   */
- declare type AfterStep = BeforeStep | 'copy-result' | 'paste-result' | 'show-result' | 'preview-result'
+ declare type AfterStep = BeforeStep | 'popclip-appear' | 'show-status' | 'copy-result' | 'paste-result' | 'show-result' | 'preview-result'
 
 /**
  * Declares information about an app or website that this extension interacts with.
  */
 declare interface AssociatedApp {
-  /** Name of the app. Fo example "Scrivener" */
+  /**
+   * Name of the app. For example "Scrivener"
+   */
   name: string
 
   /**
    * Web page where user can obtain the app, e.g. "https://www.literatureandlatte.com/scrivener".
-   *
-   * PopClip will link to this page if the "missing app" dialog is shown. The link is also used
-   * this in the online extension listing.
    */
   link: string
 
   /**
-   * Indicates whether PopClip should check for the presence of the app on the computer. If not found,
-   * PopCLip will display a message prompting the user to install the app. Default is no. Not applicable for websites.
+   * Indicates whether PopClip should check for the presence of the app on the computer. Default is false.
    */
   checkInstalled?: boolean
 
   /**
    * List of possible bundle identifiers of this app.
-   *
-   * PopCLip uses this list when checking for the presence of the app. Include here all application variants
-   * that work with this extension. In the simplest case there may
-   * be just one bundle ID, but an app may have alternative bundle IDs such as for free/pro variants,
-   * an App Store version, a stand-alone version, a Setapp version, and so on.
    */
   bundleIdentifiers?: string[]
 }
@@ -200,14 +143,16 @@ declare interface AssociatedApp {
  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
  * @returns A single action, an array of actions.
  */
- declare type PopulationFunction = (input: Input, options: Options, context: Context) => Action[] | Action | null
+declare type PopulationFunction = (input: Input, options: Options, context: Context) => (Action | ActionFunction)[] | Action | ActionFunction | null
 
 /**
  * Object returned by [[Extension.auth]] when there is an authentication flow to kick off
  */
 declare type AuthFlowFunction = (url: string, params?: {[string]: string | undefined}, expect?: string[]) => Promise<any>
 
-/** Credentials used in auth function */
+/**
+ * Credentials used in auth function
+ * */
 declare interface AuthInfo {
   /** Value of `username` option (will be empty string if none defined) */
   username: string
@@ -230,41 +175,24 @@ declare interface AuthInfo {
 declare type AuthFunction = (info: AuthInfo, flow: AuthFlowFunction) => Promise<string>
 
 /**
- * Boolean flags that define certain properties of actions.
+ * Boolean flags that affect the behaviour of actions.
  * @category Definition
  */
 declare interface ActionFlags {
   /**
    * Whether PopClip will capture HTML and Markdown content for the selection. Default is no.
-   *
-   * #### Notes
-   * The HTML can be accessed in the [[Selection.html]] property, and the Markdown
-   * can be accessed in the [[Selection.markdown]] property.
-   *
-   * If the selection is not HTML-backed, PopClip will generate HTML from any available RTF or plain text
-   * content.
    */
   captureHtml?: boolean
 
   /**
    * Whether PopClip will capture RTF (Rich Text Format) content for the selection. Default is no.
-   *
-   * #### Notes
-   * Captured RTF can be accessed in the [[Selection.items]] property under the `public.rtf` key.
    */
   captureRtf?: boolean
 
-  /** Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
-   *
-   * #### Notes
-   * An example of this in use is the Formatting extension.
+  /**
+   * Whether PopClip's popup should stay on screen after clicking this action's button. Default is no.
    */
   stayVisible?: boolean
-
-  /**
-   * Whether the action's icon should be displayed in its original color rather than monochrome.
-   */
-  preserveImageColor?: boolean
 
   /**
    * Whether the pasteboard should be restored to its original state after `paste-result`.
@@ -273,42 +201,40 @@ declare interface ActionFlags {
 }
 
 /**
- * Properties common to ActionObject, ActionFunction and Extension
+ * Boolean flags that define how an icon is interpreted.
+ * @category Definition
  */
-declare interface ActionProperties extends ActionFlags {
+declare interface IconFlags {
+  preserveColor?: boolean
+  preserveAspect?: boolean
+  flipHorizontal?: boolean
+  flipVertical?: boolean
+}
+
+/**
+ * Properties common to Action and Extension
+ */
+declare interface ActionProperties extends ActionFlags, IconFlags {
 
   /**
-    * A unique identifying string.
-    *
-    * #### Notes
-    *
-    * An identifier for an action can be any string of your choosing.
-    *
-    * An identifier for the extension itself, if provided, should ideally be globally unique.
-    *
-    * I suggest using a reverse DNS-style identifier. For example `com.example.myextension`.
-    *
-    * If you don't have your own domain name, you can use anything you like — it doesn't matter, as long as it is unique.
-    *
-    * Do not use the `com.pilotmoon.` prefix for your own extension.
+    * A unique identifying string. An identifier for an action can be any string of your choosing.
     */
   identifier?: string
 
   /**
-     * The action's title. The title is displayed in the action button if there is no icon.
-     * For extensions with icons, the title is displayed in the tooltip.
+     * The action's title. 
      *
      * If no title is defined here, the extension's [`[name]] will be used, if any.
     */
   title?: LocalizableString
 
   /**
-     * A string to define the action's icon. See [[IconString]].
+     * A string to define the action's icon.
      *
      * If no icon is defined here, the extension's {@link Extension.icon | icon} will be used, if any.
      * Setting to `null` explicitly sets the action to have no icon.
      */
-  icon?: IconString | null
+  icon?: string | null
 
   /**
     * An array of conditions which must be met for this action to appear — see [[Requirement]].
@@ -378,6 +304,7 @@ declare interface ActionProperties extends ActionFlags {
   * Declares the application or website associated with this action, if any.
   */
   app?: AssociatedApp
+  apps?: AssociatedApp[]
 
   /**
   * An optional step to peform before the main action.
@@ -389,7 +316,7 @@ declare interface ActionProperties extends ActionFlags {
   */
   after?: AfterStep
 
-  // fpr benefit of JSON Schema
+  // static properties for benefit of JSON Schema
   shortcutName?: string
   serviceName?: string
   url?: string
@@ -398,10 +325,10 @@ declare interface ActionProperties extends ActionFlags {
   applescript?: string
   applescriptFile?: string
   applescriptCall?: {
-    file: string
     handler: string
     parameters?: string[]
   }
+  shellScript?: string
   shellScriptFile?: string
   interpreter?: string
   javascript?: string
@@ -409,34 +336,21 @@ declare interface ActionProperties extends ActionFlags {
 }
 
 /**
- * A callable object, with additional properties to define its title, icon and other properties.
- *
- * @category Definition
- */
-declare interface ActionFunction extends ActionProperties {
-  /**
-    * An action function is called when the user clicks the action button in PopClip. This is where
-    * the extension does its main work.
-    * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
-    * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
-    * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
-    */
-  (input: Input, options: Options, context: Context): Promise<string | null> | string | null
-}
+  * An action function is called when the user clicks the action button in PopClip. This is where
+  * the extension does its main work.
+  * @param input The selected text and related properties. (Same object as [[PopClip.selection]].)
+  * @param options Current values of the options for this extension. (Same object as [[PopClip.options]].)
+  * @param context Information about the context surrounding the selection. (Same object as [[PopClip.context]].)
+  */
+declare type ActionFunction = (input: Input, options: Options, context: Context) => Promise<string | undefinsed | null> | string | undefined | null
 
 /**
  * An alternative way to define as an action, as a non-callable object with a `code` member.
  * If code is omitted, displays as disabled title/icon only.
  */
-declare interface ActionObject extends ActionProperties {
-  /** Same function signature as [[ActionFunction]] */
-  code?: (input: Input, options: Options, context: Context) => Promise<string | null> | string | null
+declare interface Action extends ActionProperties {
+  code?: ActionFunction
 }
-
-/**
- * An action can be defined using either the callable object or non-callable object form.
- */
-declare type Action = ActionFunction | ActionObject
 
 // included for JSON Schema
 declare type Entitlement = 'network' | 'dynamic'
@@ -444,92 +358,46 @@ declare type Entitlement = 'network' | 'dynamic'
 /**
  * The Extension object defines the PopClip extension.
  *
- * You create this in Config.js and export it with `define()`.
- *
- * Any properties omitted from the extension object in Config.js (apart from [[action]] and [[actions]])
- * fall back to the equivalent value in the Config.json file, if it is present.
- *
- *
- * #### Examples
- *
- * *Simple extension* — The following Config.js defines a complete extension:
- *
- * * Config.js
- * ```js
- *   define({
- *     identifier: "com.example.my-extension",
- *     name: "My Extension",
- *     action: function(selection) {
- *       popclip.showText("Your text is: " + selection.text)
- *     }
- *   })
- * ```
- *
- * *Example with Config.json* — The previous example is equivalent to:
- *
- * * Config.json:
- * ```json
- * {
- *     "identifier": "com.example.my-extension",
- *     "name": "My Extension",
- * }
- * ```
- *
- * * Config.js:
- * ```js
- *   define({
- *     action: function(selection) {
- *       popclip.showText("Your text is: " + selection.text)
- *     }
- *   })
- * ```
- *
- *
  * @category Definition
  */
 declare interface Extension extends ActionProperties {
 
   /**
    * The display name of this extension.
-   *
-   * If omitted, the name is taken from the Config.json file, or else auto-generated from the package name.
    */
   name?: LocalizableString
 
   /**
-     * Defines the user-configurable options for this extension.
-     */
+   * Defines the user-configurable options for this extension.
+   */
   options?: Option[]
 
   /**
-   * If you define this function then PopClip will display a 'sign in' button in the options UI. When the use clicks Sign In,
+   * If you define this function then PopClip will display a 'sign in' button in the options UI. When the user clicks the button,
+   * PopClip will call this function with an `info` object and an `flow` callback.
    *
    * If the sign in needs a username and password, you'll also need to define `username` and `password` options. PopClip will then pass the values
    * of those options in the info parameter. */
   auth?: AuthFunction
 
   /**
-     * Define the actions to go in PopClip's popup. This can be an array or a function.
-     *
-     * * If it's an array, the supplied actions are used in the popup, subject to meeting the
-     * requirements and regex conditions.
-     *
-     * * If it's a function, it is called by PopClip to dynamically populate the popup with actions from this extension.
-     * Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
-     */
-  actions?: Action[] | PopulationFunction
-
-  /**
-     * Simplified property to define a single action.
-     */
-  action?: Action
-
-  /**
-   * A unit test function for this extension. Should throw an error if test fails.
+   * Define the actions to go in PopClip's popup. This can be an array or a function.
+   *
+   * - If it's an array, the supplied actions are used in the popup, subject to meeting the
+   *   requirements and regex conditions.
+   *
+   * - If it's a population function, it is called by PopClip to dynamically populate the popup with actions from this extension.
+   *   Setting requirements and regex keys has no effect on dynamic actions — the function itself is responsible for deciding what actions to show.
+   *   Population function requires the `dynamic` entitlement.
    */
-  test?: () => void
+  actions?: (Action | ActionFunction)[] | PopulationFunction
 
-  // the following are included for the benefit of the JSON Scheme generation
+  /**
+   * Simplified property to define a single action.
+   */
+  action?: Action | ActionFunction
+
+  // the following are static properties, included for the benefit of the JSON Scheme generation
   popclipVersion?: number
   macosVersion?: string
   entitlements?: Entitlement[]
@@ -586,9 +454,9 @@ declare interface Option {
   valueLabels?: LocalizableString[]
 
   /**
-   * An icon for this option. It is only displayed for boolean options, next to the check box. See [[IconString]].
+   * An icon for this option. It is only displayed for boolean options, next to the check box.
    */
-  icon?: IconString
+  icon?: string
 
   /*
    * If true, this option will be hidden in the prefs window. Default is false.
@@ -601,12 +469,17 @@ declare interface Option {
   inset?: boolean
 }
 
-/** Represents a generic range, as a location and length */
+/**
+ * Represents a generic range, as a location and length
+ */
 declare interface Range {
   location: number
   length: number
 }
-/** An array of strings with an addiontal `ranges` property defining the source of the data in the orignal string. */
+
+/**
+ * An array of strings with an addiontal `ranges` property defining the source of the data in the orignal string.
+ */
 declare interface RangedStrings extends Array<string> {
   ranges: Range[]
 }
@@ -616,64 +489,71 @@ declare interface RangedStrings extends Array<string> {
  */
 declare interface Input {
   /**
-     * The plain text selected by the user. If there is no selected text, perhaps because the user invoked PopClip by a long press,
-     * this will be the empty string.
-     */
+   * The plain text selected by the user. If there is no selected text, this will be the empty string.
+   */
   text: string
 
   /**
-     * If the action specified {@link Action.requirements | requirements} or a {@link Action.regex | regex} to match the input, this will be the matching part of the text.
-     * Otherwise, it will be the same string as [[text]].
-     */
+   * If the action specified {@link Action.requirements | requirements} or a {@link Action.regex | regex} to match the input, this will be the matching part of the text.
+   * Otherwise, it will be the same string as [[text]].
+   */
   matchedText: string
 
-  /*
-     * If the action specified a {@link Action.regex | regex} to match the input, this will be the full result of the the match.
-     *
-     * You can use this to access any capture groups from the regex.
-     * The value is a return value from JavaScript's [RegExp.prototype.exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) method.
-     *
-     * #### Example
-     * ```js
-     * // text: "apple", regex: /.(.)/
-     * selection.regexResult[0] // "ap" (full match)
-     * selection.regexResult[1] // "p" (capture group 1)
-     * ```
-     */
+  /**
+   * If the action specified a {@link Action.regex | regex} to match the input, this will be the full result of the the match.
+   *
+   * You can use this to access any capture groups from the regex.
+   * The value is a return value from JavaScript's [RegExp.prototype.exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) method.
+   *
+   * #### Example
+   * ```js
+   * // text: "apple", regex: /.(.)/
+   * selection.regexResult[0] // "ap" (full match)
+   * selection.regexResult[1] // "p" (capture group 1)
+   * ```
+   */
   regexResult?: any
 
   /**
-     * HTML. (docs todo)
-     */
+   * HTML content (if `captureHtml` is true).
+   */
   html: string
 
   /**
-   * XHTML. (docs todo)
+   * XHTML content (if `captureHtml` is true).
    */
   xhtml: string
 
   /**
-     * Markdown. (docs todo)
-     */
+   * Markdown content (if `captureHtml` is true).
+    */
   markdown: string
 
   /**
-     * RTF. (docs todo)
-     */
+   * RTF content (if `captureRtf` is true).
+   */
   rtf: string
 
   /**
-     * Data of various kinds, that PopClip detected in the selected text.
-     */
+   * Data of various kinds, that PopClip detected in the selected text.
+   */
   data: {
-    /** HTTP ot HTTPS urls. */
+    /**
+     * HTTP ot HTTPS urls.
+     */
     urls: RangedStrings
-    /** Other protocols or app urls e.g. ftp:, omnifocus:, craftdocs: etc. (PopClip has a pre-defined allowlist
-         * for these "other" URL schemes.) */
+    /**
+     * Other protocols or app urls e.g. `ftp:`, `omnifocus:`, `craftdocs:` etc. (PopClip has a pre-defined allowlist
+     * for custom URL schemes.)
+     */
     nonHttpUrls: RangedStrings
-    /** Email addresses. */
+    /**
+     * Email addresses.
+     */
     emails: RangedStrings
-    /** A local file path. The file path must be for a directory or file that exists. */
+    /**
+     * Local file paths.
+     * */
     paths: RangedStrings
   }
 
@@ -688,11 +568,8 @@ declare interface Input {
 */
 declare interface Context {
   /**
-     * Indicates whether the text area supports formatting.
-     *
-     * PopClip can't always detect whether the text area supports formatting or not, in which case
-     * it will err on the side of a false positive.
-     */
+   * Indicates whether the text area supports formatting.
+   */
   hasFormatting: boolean
 
   /**
@@ -751,50 +628,11 @@ declare interface Options {
 *
 */
 declare interface PopClip {
-  /*
-    * A bit field representing state of the modifier keys when the action was invoked in PopClip.
-    *
-    * #### Notes
-    *
-    * Constants for the modifiers are given in {@link Util.constant | util.constant}.
-    *
-    * During the execution of the population function, the value of this property is always zero.
-    *
-    * #### Example
-    *
-    * ```javascript
-    * // test for shift
-    * if (popclip.modifierKeys & util.constant.MODIFIER_SHIFT) {
-    *   ...
-    * }
-    *
-    * // test for shift OR option
-    * let combo = util.constant.MODIFIER_SHIFT|util.constant.MODIFIER_OPTION;
-    * if (popclip.modifierKeys & combo) {
-    *   ...
-    * }
-    *
-    * // test for shift AND option
-    * if ((popclip.modifierKeys & combo) === combo) {
-    *   ...
-    * }
-    * ```
-    */
-  readonly modifierKeys: number
-
   /**
      * The state of the modifier keys when the action was invoked in PopClip.
      *
      * #### Notes
      * During the execution of the population function, all the modifiers will read as false.
-     *
-     * #### Example
-     * ```js
-     * if (popclip.modifiers.shift) {
-     *   ...
-     * }
-     * ```
-     *
      */
   readonly modifiers: Modifiers
 
@@ -804,7 +642,7 @@ declare interface PopClip {
   readonly input: Input
 
   /**
-     * The current context around the selection.
+     * The current context.
      */
   readonly context: Context
 
@@ -852,19 +690,16 @@ declare interface PopClip {
    */
   copyContent: (content: PasteboardContent) => void
 
-  // included for compatibility with old extensions
-  performPaste: () => void
-
   /**
-     * (BETA) Invokes a command in the target app.
+     * Invokes a command in the target app.
      * @param command Either `cut`, `copy` or `paste`.
-     * @param options Options for the command
+     * @param options Options for the command.
      * @category Action
      */
   performCommand: (command: 'cut'|'copy'|'paste', options?: {
     /** Transformation to apply to the pasteboard contents. (Default: `none`)
-     * * `none`: regular pasteboard operation
-     * * `plain`: strips away everything but plain text
+     * - `none`: regular pasteboard operation
+     * - `plain`: strips away everything but plain text
      */
     transform?: 'none'|'plain'
   }) => void
@@ -929,7 +764,7 @@ declare interface PopClip {
      * Some key code and modifier constants are available in {@link Util.constant | util.constant}.
      *
      * @param key The key to press. When this parameter is a string, PopClip will interpret it as in
-     * [Key Combo String Format](https://github.com/pilotmoon/PopClip-Extensions#key-combo-string-format).
+     * [Key Press actions](https://www.popclip.app/dev/key-press-actions).
      * When this parameter is a number, PopClip will use that exact key code.
      *
      * @param modifiers An optional bit mask specifiying additional modifier keys, if any.
@@ -946,8 +781,8 @@ declare interface PopClip {
      *
      * If no target app is specified:
      *
-     * * If the URL has the http or https scheme, and the current app is a browser, the URL is opened in the current app.
-     * * Otherwise, PopClip asks macOS to open the URL in the default handler for that URL type.
+     * - If the URL has the http or https scheme, and the current app is a browser, the URL is opened in the current app.
+     * - Otherwise, PopClip asks macOS to open the URL in the default handler for that URL type.
      *
      * #### URL encoding
      *
@@ -963,13 +798,13 @@ declare interface PopClip {
      * ```
      *
      * @param url A well-formed URL
-     * @param options
+     * @param options Options.
      * @category Action
      */
   openUrl: (url: string, options?: {
     /**
-         * Bundle identifier of the app to open the URL with. For example `"com.google.Chrome"`.
-         */
+     * Bundle identifier of the app to open the URL with. For example `"com.google.Chrome"`.
+     */
     app?: string
   }) => void
 }
@@ -978,7 +813,7 @@ declare interface PopClip {
  * The global `popclip` object encapsulates the user's current interaction with PopClip, and provides methods
  * for performing various actions. It implements [[PopClip]].
  */
-declare var popclip: PopClip
+declare const popclip: PopClip
 
 // experimental rich text class
 declare class RichString {
@@ -1030,12 +865,12 @@ declare interface Util {
      */
   base64Encode: (string: string, options?: {
     /**
-         * Whether to encode using the URL-safe variant, with `-` and `_` substituted for `+` and `/`. Default is no.
-         */
+     * Whether to encode using the URL-safe variant, with `-` and `_` substituted for `+` and `/`. Default is no.
+     */
     urlSafe?: boolean
     /**
-         * Whether to trim the `=`/`==` padding from the string. Default is no.
-         */
+     * Whether to trim the `=`/`==` padding from the string. Default is no.
+     */
     trimmed?: boolean
   }) => string
 
@@ -1134,7 +969,7 @@ declare interface Util {
 /**
  * The global `util` object acts as a container for various utility functions and constants. It implements [[Util]].
  */
-declare var util: Util
+declare const util: Util
 
 /**
  * Represents the raw pasteboard content, indexed by UTI. Supports string data only.
@@ -1148,9 +983,9 @@ declare interface PasteboardContent {
 
 declare interface PasteOptions {
   /**
-       * Whether to restore the original contents of the pasteboard after the paste
-       * operation. Default is `false`.
-       */
+   * Whether to restore the original contents of the pasteboard after the paste
+   * operation. Default is `false`.
+   */
   restore?: boolean
 }
 
@@ -1187,7 +1022,7 @@ declare interface Pasteboard {
 /**
  * The global `pasteboard` object provides access to the contents of the macOS general pasteboard (i.e. the system clipboard). It implements [[Pasteboard]].
  */
-declare var pasteboard: Pasteboard
+declare const pasteboard: Pasteboard
 
 /**
  * Output a string for debugging purposes. By default it is not output anywhere,  but
@@ -1214,29 +1049,14 @@ declare function print (...args: any[]): void
  *
  * #### Notes
  *
- * The _define_ function exports an arbitrary object, which other files can  import using [[require]].
+ * The _define_ function exports an arbitrary object, which other files can import using [[require]].
  *
  * It should be called only once in any file; if it is called more than once, only the
  * final call will have any effect.
  *
- * It is used in the extension's Config.js file to define the extension itself.
- *
- * #### Example
- * ```js
- * // greetings.js
- * function hello(name) {
- *   print("Hello, ${name}!");
- * })
- * function goodbye(name) {
- *   print("Bye, ${name}!");
- * })
- * // export these two functions. hey, we made a module!
- * define({hello, goodbye});
- *
- * ```
- *
- * Partially implements AMD protocol.
- * AMD spec: https://github.com/amdjs/amdjs-api/wiki/AMD
+ * Partially implements AMD spec: https://github.com/amdjs/amdjs-api/wiki/AMD
+ * 
+ * Note: define() is deprecated. CommonJS is now the recommended module format.
  */
 declare function define (object: object): void
 declare function define (factory: () => object): void
@@ -1244,28 +1064,27 @@ declare function define (dependencies: string[], factory: () => object): void
 declare function define (id: string, factory: () => object): void
 declare function define (id: string, dependencies: string[], factory: () => object): void
 
-/* declare ambient module + exports for node-style exporting */
-declare const module: { exports: any }
-declare const exports: any
-
-/**
- * Function called from Config.js to define the extension.
+/*
+ * Typed version of define() for defining an extension.
+ * Note: defineExtension() is deprecated. CommonJS is now the recommended module format.
  * @param extension The extension object to pass to PopClip.
  */
 declare function defineExtension (extension: Extension): void
-/* note that internally, `defineExtension` is just a synonym for `define`, but it's nice to have
- * this simple version for cleaner type checking and it's easier to explain in the docs.
- */
+
+/* Declare ambient module + exports for CommonJS-style exporting */
+declare const module: { exports: any }
+declare const exports: any
 
 /**
   * Import an object from another file.
   *
   * #### Notes
+  * 
   * PopClip's `require()` implementation attempts to import from the following module formats:
   *
-  * * AMD modules, which use `define(...)`Util.
-  * * Node/CommonJS modules, which use `module.exports = ...` or `exports.name = ...`
-  * * TypeScript compiled modules, which use `exports.default = ...`
+  * - AMD modules, which use `define(...)`.
+  * - CommonJS modules, which use `module.exports = ...` or `exports.name = ...`
+  * - TypeScript-compiled ES modules, which use `exports.default = ...`
   *
   * #### Notes
   *
@@ -1274,21 +1093,11 @@ declare function defineExtension (extension: Extension): void
   * Otherwise, the path is resolved relative to the extensions's package root.
   * If there is no file in the extension, PopClip will look in its internal module repository.
   *
-  * If no file extension is given, PopCLip will try adding the extensions `.js`, `.json` in that order.
+  * If no file extension is given, PopCLip will try adding the extensions `.js`, `.ts`, `.json` in that order.
   *
-  * JSON files are parsed and returned as an object.
-  *
-  * #### Example
-  *
-  * ```js
-  * // load the functions from the greeting.js file
-  * const greetings = require('./greetings.js');
-  * print(greetings.hello("PopClip")) // Hello, Popclip!
-  *
-  * // alternative using destructuring assignment
-  * const {hello, goodbye} = require('./greetings.js');
-  * print(goodbye("PopClip")) // Bye, Popclip!
-  * ```
+  * TypeScript files are transpiled to JavaScript on the fly.
+  * 
+  * JSON files are parsed and returned as an object.å
   *
   * @param file Path to the file to import.
   * @return The imported object.
@@ -1323,11 +1132,10 @@ declare function setTimeout (callback: (...args?: any) => void, timeout?: number
  */
 declare function clearTimeout (timeoutId: number): void
 
-/* For backward compatibility - use util.sleep instead */
+// Same as util.sleep
 declare function sleep (durationMilliseconds: number): Promise<void>
-/* for library compatibility (implemented as util.base64Encode with no options) */
 declare function btoa (string: string): string
-/* for library compatibility (imeplemented as util.base64Decode) */
 declare function atob (string: string): string
-// Blob is included via a
 declare const Blob: any
+declare const Buffer: any
+// also URL, URLSearchParams, structuredClone — TODO
