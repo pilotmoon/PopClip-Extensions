@@ -2,15 +2,14 @@
   "identifier": "com.pilotmoon.popclip.extension.spotify-search",
   "name": "Spotify",
   "icon": "sifynew.png",
-  "regex": "(?s)^.{1,300}$",
   "app": {
     "checkInstalled": true,
     "name": "Spotify",
     "link": "https://www.spotify.com/",
     "bundleIdentifier": "com.spotify.client"
   },
-  "popclipVersion": 3895,
+  "popclipVersion": 4225,
   "description": "Search Spotify.",
-  "javascript file": "spotify.js",
-  "note": "Updated 16 Nov 2022 for latest Spotify client." 
+  "url": "spotify:search:***",
+  "cleanQuery": true
 }
