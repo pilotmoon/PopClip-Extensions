@@ -1,6 +1,6 @@
 define({
     identifier: "com.pilotmoon.popclip.extension.capitalize",
     name: "Capitalize",
-    icon: "text:[[Ab]]",    
+    icon: "square filled Ab",    
     action: require('capitalize.js'),
 });
