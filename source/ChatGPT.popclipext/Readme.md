@@ -75,9 +75,13 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 
 ## Changelog
 
+### 2023-09-24
+
+- Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).
+
 ### 2023-08-31
 
-- Add docuemntation about error message to README.
+- Add documentation about error message to README.
 
 ### 2023-07-15
 
