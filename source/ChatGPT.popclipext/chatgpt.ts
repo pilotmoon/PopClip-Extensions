@@ -62,7 +62,7 @@ const chat: ActionFunction<ChatGPTOptions> = async (input, options) => {
     const { data }: Response = await openai.post(
       "chat/completions",
       {
-        model: "gpt-3.5-turbo",
+        model: options.model || "gpt-3.5-turbo",
         messages,
       },
     );

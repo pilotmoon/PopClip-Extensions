@@ -33,7 +33,7 @@ const chat = async (input, options) => {
     // send the whole message history to OpenAI
     try {
         const { data } = await openai.post("chat/completions", {
-            model: "gpt-3.5-turbo",
+            model: options.model || "gpt-3.5-turbo",
             messages,
         });
         // add the response to the history
