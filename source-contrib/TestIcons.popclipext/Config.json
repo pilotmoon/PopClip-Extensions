@@ -28,7 +28,7 @@
     },
     {
       "icon": "instagram.svg",
-      "preserveImageColor": true,
+      "mask": false,
       "title": "TestLocalSVG",
       "shellScriptFile": "null.sh"
     },

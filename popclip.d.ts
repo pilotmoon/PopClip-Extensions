@@ -502,10 +502,14 @@ declare interface Input {
   matchedText: string
 
   /**
-   * If the action specified a {@link Action.regex | regex} to match the input, this will be the full result of the the match.
+   * If the action specified a {@link Action.regex | regex} to match the input, this will be the result of the the match.
    *
    * You can use this to access any capture groups from the regex.
-   * The value is a return value from JavaScript's [RegExp.prototype.exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) method.
+   *
+   * If the regex was specified as a JavaScript regex, the value is a return value from JavaScript's
+   * [RegExp.prototype.exec()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec) method.
+   *
+   * If the regex was specified as an ICU regex in the static config, the value is the array of capture components.
    *
    * #### Example
    * ```js
@@ -514,7 +518,7 @@ declare interface Input {
    * selection.regexResult[1] // "p" (capture group 1)
    * ```
    */
-  regexResult?: any
+  regexResult?: RegExpMatchArray | string[] | null
 
   /**
    * HTML content (if `captureHtml` is true).
