@@ -2,7 +2,7 @@
   "actions" : [
     { 
       "title" : "Tot",
-      "url" : "tot://{popclip option page}/append?text={popclip text}"      
+      "url" : "tot://{popclip option page}/append?text={\n: popclip text}"      
     }
   ],
   "app": {
