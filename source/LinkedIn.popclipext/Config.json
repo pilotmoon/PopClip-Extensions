@@ -1,0 +1,9 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.linkedin",
+  "name": "LinkedIn",
+  "icon": "in.png",
+  "regex": "(?s)^.{1,195}$",
+  "url": "https://www.linkedin.com/search/results/all/?keywords=***",
+  "popclipVersion": 4225,
+  "description": "Search for the selected name on LinkedIn."
+}
