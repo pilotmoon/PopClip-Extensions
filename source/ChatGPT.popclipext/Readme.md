@@ -75,6 +75,10 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 
 ## Changelog
 
+### 2024-03-14
+
+- Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
+
 ### 2023-09-24
 
 - Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).
