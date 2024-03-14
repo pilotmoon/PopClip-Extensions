@@ -23,5 +23,7 @@
 	<string>com.bimawa.popclip.extension.qrGenerator</string>
 	<key>Extension Name</key>
 	<string>QR Generator</string>
+	<key>Version</key>
+	<integer>2</integer>
 </dict>
 </plist>
