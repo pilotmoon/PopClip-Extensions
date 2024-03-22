@@ -11,5 +11,12 @@
   "popclipVersion": 4225,
   "after": "show-status",
   "description": "Create a new Inbox task in OmniFocus 4.",
-  "applescriptFile": "omnifocus.applescript"    
+  "applescriptFile": "omnifocus.applescript",
+  "options": [
+    {
+      "type": "boolean",
+      "label": "Use Quick Entry panel",
+      "identifier": "quickentry"
+    }
+  ]
 }

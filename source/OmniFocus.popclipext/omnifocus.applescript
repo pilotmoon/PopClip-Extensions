@@ -5,7 +5,14 @@ else
 end if
 set theNote to theSource & " on " & ((current date) as string) & return & return & "{popclip text}"
 tell application id "com.omnigroup.OmniFocus4"
-	tell default document
-		make new inbox task with properties {name:first paragraph of "{popclip text}", note:theNote}
-	end tell
+	if "{popclip option quickentry}" = "1" then
+		tell quick entry
+			open
+			make new inbox task with properties {name:first paragraph of "{popclip text}", note:theNote}
+		end tell
+	else
+		tell default document
+			make new inbox task with properties {name:first paragraph of "{popclip text}", note:theNote}
+		end tell
+	end if
 end tell
