@@ -1,0 +1,15 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.omnifocus",
+  "name": "OmniFocus",
+  "icon": "omnitick.png",
+  "app": {
+    "link": "https://www.omnigroup.com/omnifocus/",
+    "name": "OmniFocus 4",
+    "bundleIdentifier": "com.omnigroup.OmniFocus4",
+    "checkInstalled": true
+  },
+  "popclipVersion": 4225,
+  "after": "show-status",
+  "description": "Create a new Inbox task in OmniFocus 4.",
+  "applescriptFile": "omnifocus.applescript"    
+}
