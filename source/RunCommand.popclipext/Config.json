@@ -25,6 +25,13 @@
         "option-term=iTerm2 v2.9+"
       ],
       "applescript file": "iterm2-3.applescript"
+    },
+    {
+      "requirements": [
+        "text",
+        "option-term=Warp"
+      ],
+      "applescript file": "warp.applescript"
     }
   ],
   "options": [
@@ -34,7 +41,8 @@
       "values": [
         "Terminal",
         "iTerm2 v2.9+",
-        "iTerm2"
+        "iTerm2",
+        "Warp"
       ],
       "identifier": "term"
     }
