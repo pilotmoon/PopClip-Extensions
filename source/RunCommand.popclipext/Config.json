@@ -15,16 +15,9 @@
     {
       "requirements": [
         "text",
-        "option-term=iTerm2"
-      ],
-      "applescript file": "iterm2.applescript"
-    },
-    {
-      "requirements": [
-        "text",
         "option-term=iTerm2 v2.9+"
       ],
-      "applescript file": "iterm2-3.applescript"
+      "applescript file": "iterm2.applescript"
     },
     {
       "requirements": [
@@ -41,11 +34,15 @@
       "values": [
         "Terminal",
         "iTerm2 v2.9+",
+        "Warp"
+      ],
+      "valueLabels": [
+        "Terminal",
         "iTerm2",
         "Warp"
       ],
       "identifier": "term"
     }
   ],
-  "description": "Run the selected text as a terminal command. Supports both Terminal and iTerm2. (Now updated for iTerm2 v2.9.)"
+  "description": "Run the selected text as a terminal command. Supports Terminal, iTerm2 and Warp."
 }
