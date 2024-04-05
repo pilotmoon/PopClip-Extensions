@@ -3,6 +3,7 @@
   "identifier" : "com.pilotmoon.popclip.extension.quotes",
   "name" : "Quotes",
   "icon" : "quotes.png",
-  "popclipVersion" : 3749,
-  "note" : "Updated 12 Oct 2021: Added backticks"
+  "popclipVersion" : 4225,
+  "entitlements" : ["dynamic"],
+  "module" : "quotes.ts"
 }

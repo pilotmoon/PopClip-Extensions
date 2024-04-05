@@ -3,6 +3,7 @@
   "identifier" : "com.pilotmoon.popclip.extension.brackets",
   "name" : "Brackets",
   "icon" : "brackets-round.png",
-  "popclipVersion" : 3749,
-  "entitlements": ["dynamic"]
+  "popclipVersion" : 4225,
+  "entitlements": ["dynamic"],
+  "module": "brackets.ts"
 }
