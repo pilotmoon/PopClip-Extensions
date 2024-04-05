@@ -180,22 +180,73 @@ declare type AuthFunction = (info: AuthInfo, flow: AuthFlowFunction) => Promise<
  */
 declare interface IconProperties {
   /**
-   * If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is false.
-   */
+  * If true, the supplied icon will be displayed with its original color instead of being filled in white/black. Default is false.
+  */
   preserveColor?: boolean
   /**
-   * If true, the supplied icon will be displayed with its original aspect ratio instead of being scaled to fit a square. Default is false.
-   */
+  * If true, the supplied icon will be displayed with its original aspect ratio instead of being scaled to fit a square. Default is false.
+  */
   preserveAspect?: boolean
   /**
-   * If true, the supplied icon will be drawn horizontally flipped. Default is false.
-   */
-  flipHorizontal?: boolean
+  * If true, the supplied icon will be drawn horizontally flipped. Default is false.
+  */
+  flipX?: boolean
   /**
-   * If true, the supplied icon will be drawn vertically flipped. Default is false.
-   */
-  flipVertical?: boolean
+  * If true, the supplied icon will be drawn vertically flipped. Default is false.
+  */
+  flipY?: boolean
+
+  /**
+  * Move the icon horizontally by the specified distance, expressed as percentage of the icon's width.
+  */
+  moveX?: number
+
+  /**
+    * Move the icon vertically by the specified distance, expressed as percentage of the icon's height.
+    */
+  moveY?: number
+
+  /**
+  * Scale the icon by the specified factor, expressed as a percentage of the original size.
+  */
+  scale?: number
+
+  /**
+    * Rotate the icon anticlockwise by the specified angle, expressed in degrees.
+    */
+  rotate?: number
+
+  /**
+    Draw the icon inside a square.
+    */
+  square?: boolean
+
+  /**
+    * Draw the icon inside a circle.
+    */
+  circle?: boolean
+
+  /**
+    * Draw the icon inside a magnifying glass shape.
+    */
+  search?: boolean
+
+  /**
+    * Draw a strike-through line over the icon.
+    */
+  strike?: boolean
+
+  /**
+    * Draw the enclosing shape as a solid shape.
+    */
+  filled?: boolean
+
+  /**
+    * For text icons only. Draw the text using a monospaced font.
+    */
+  monospaced?: boolean
 }
+
 
 /**
  * Properties common to Action and Extension
@@ -208,7 +259,7 @@ declare interface ActionProperties extends IconProperties {
   identifier?: string
 
   /**
-     * The action's title. 
+     * The action's title.
      *
      * If no title is defined here, the extension's [`[name]] will be used, if any.
     */
@@ -422,15 +473,16 @@ declare interface Option {
    *  * `string`: a text box for free text entry,
    *  * `boolean`: a check box,
    *  * `multiple`: multiple-choice drop-down with predefined options,
-   *  * `password`: a password entry field (passwords are stored in user's keychain instead of preferences),
+   *  * `secret`: concealed text entry field (persisted in user's keychain),
+   *  * `password`: concealed text entry field (not persisted, only passed to auth function),
    *  * `heading`: adds a heading in the user interface, but does not actually define an option
    */
-  type: 'string' | 'boolean' | 'multiple' | 'password' | 'heading'
+  type: 'string' | 'boolean' | 'multiple' | 'password' | 'heading' | 'secret'
 
   /**
    * A short label for this option.
    */
-  label: LocalizableString
+  label?: LocalizableString
 
   /**
    * An optional longer explanantion of this option, to be shown in the UI.
@@ -1057,7 +1109,7 @@ declare function print (...args: any[]): void
  * final call will have any effect.
  *
  * Partially implements AMD spec: https://github.com/amdjs/amdjs-api/wiki/AMD
- * 
+ *
  * Note that using `define()` in your extensions is not recommended. Instead, use [[defineExtension]] or
  * `module.exports = ...`.
  */
@@ -1071,11 +1123,11 @@ declare function define (id: string, dependencies: string[], factory: () => obje
  * This global function may be called as an alternative to setting `module.exports` directly.
  * The advantage of using `defineExtension()` is that you will automatically get type checking
  * and autocomplete for your extension object.
- * 
+ *
  * You may define the shape of the extensions's options object by specifying the
  * `CustomOptions` generic type parameter. This will enable type checking and autocomplete for
  * the `options` parameter in action functions and the population function.
- * 
+ *
  * @param extension The extension object to export.
  */
 declare function defineExtension<CustomOptions extends Options = Options> (extension: Extension<CustomOptions>): void
@@ -1088,7 +1140,7 @@ declare const exports: any
   * Import an object from another file.
   *
   * #### Notes
-  * 
+  *
   * PopClip's `require()` implementation attempts to import from the following module formats:
   *
   * - AMD modules, which use `define(...)`.
@@ -1105,7 +1157,7 @@ declare const exports: any
   * If no file extension is given, PopCLip will try adding the extensions `.js`, `.ts`, `.json` in that order.
   *
   * TypeScript files are transpiled to JavaScript on the fly.
-  * 
+  *
   * JSON files are parsed and returned as an object.å
   *
   * @param file Path to the file to import.

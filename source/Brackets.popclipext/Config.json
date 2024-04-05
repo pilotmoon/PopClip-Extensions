@@ -4,5 +4,6 @@
   "name" : "Brackets",
   "icon" : "brackets-round.png",
   "popclipVersion" : 3749,
+  "entitlements": ["dynamic"],
   "note" : "Updated for macOS 12.0 Beta."
 }
