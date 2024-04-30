@@ -1,3 +1,0 @@
-on run
-	tell application "Xcode" to beep
-end run

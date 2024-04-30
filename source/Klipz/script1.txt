@@ -1,5 +1,0 @@
-tell application "Xcode"
-	activate
-	set foo to name of project 1 of active workspace document
-	return foo
-end tell

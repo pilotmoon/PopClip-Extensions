@@ -7,8 +7,6 @@
 		<dict>
 			<key>After</key>
 			<string>preview-result</string>
-			<key>Image File</key>
-			<string></string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,16}$</string>
 			<key>Script Interpreter</key>

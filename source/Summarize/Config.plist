@@ -5,8 +5,6 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Image File</key>
-			<string></string>
 			<key>Service Name</key>
 			<string>Summarize</string>
 			<key>Title</key>
