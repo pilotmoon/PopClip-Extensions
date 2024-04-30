@@ -619,6 +619,12 @@ declare interface Input {
    * Unprocessed selection contents indexed by UTI.
    */
   content: PasteboardContent
+
+  /**
+  Indicate if the text content is *just* a web URL (or URL-like string
+  such as `popclip.app`), allowing for leading and trailing whitespace.
+  */
+  isUrl: boolean
 }
 
 /**
@@ -862,6 +868,30 @@ declare interface PopClip {
      */
     app?: string
   }) => void
+
+   /**
+    * Share items with a named macOS sharing service.
+    *
+    * #### Example
+    * ```js
+    * // share a string with the Messages service
+    * popclip.share("com.apple.share.Messages.window", ["Hello, world!"]);
+    * // share a URL with the Safari Reading List service
+    * popclip.share("com.apple.share.System.add-to-safari-reading-list", [{ url: "https://example.com" }]);
+    * // share a an html string with the Notes service
+    * const item = new RichString("Some <b>simple</b> html", { format: html })
+    * popclip.share("com.apple.Notes.SharingExtension", [item]);
+    * ```
+    *
+    * #### Notes
+    *
+    * The list of available sharing services is determined by the user's system configuration.
+    *
+    * @param serviceName The name of the sharing service to use.
+    * @param items An array of items to share. Each item can be a string, a {@link RichString} object, or an object with a `url` property.
+    * @throws If the service name is not recognized, or if the service cannot handle the supplied items, an error is thrown.
+    */
+  share: (serviceName: string, items: (string | RichString | { url: string } )[]) => void
 }
 
 /**
@@ -870,13 +900,41 @@ declare interface PopClip {
  */
 declare const popclip: PopClip
 
-// experimental rich text class
+/**
+ * Represents a formatted text string. The underlying implementation uses a macOS Attributed String (`NSAttributedString`) object.
+ * Can be constructed from a plain string in RTF, HTML, or Markdown format.
+ *
+ * #### Example
+ * ```js
+ * // create a RichString object from a html string
+ * const item = new RichString("<b>bold</b> and <i>italic</i>.", {format: 'html'});
+ * // create a RichString object from a markdown string
+ * const item = new RichString("# Title\n\nBody.", {format: 'markdown'});
+ * ```
+ */
 declare class RichString {
-  constructor (source: string, options?: {format?: 'rtf'|'html'|'markdown', baseFont?: object, paragraphSeparation?: 'newlines'|'spacing'});
+  /**
+    * Create a new RichString object from a string.
+    *
+    * @param source The string to convert to a RichString object.
+    * @param options Options for the conversion.
+    */
+  constructor (source: string,
+               options?: {
+      /**
+       Format of the source string. Default is 'rtf'.
+       */
+      format?: 'rtf' | 'html' | 'markdown',
+      }
+  );
+  /**
+   * An RTF representation of the content.
+   */
   readonly rtf: string
+  /**
+   * An HTML representation of the content.
+   */
   readonly html: string
-  font: object
-  applyFont: (font: object) => void
 }
 
 /**
