@@ -41,7 +41,7 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
+			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.eusoft.freeeudic</string>
 				<string>com.eusoft.eudic</string>				

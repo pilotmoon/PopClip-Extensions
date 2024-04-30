@@ -14,7 +14,7 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
+			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.macromates.textmate</string>
 				<string>com.macromates.TextMate.preview</string>			
