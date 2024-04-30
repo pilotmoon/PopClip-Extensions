@@ -5,8 +5,6 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>Image File</key>
-			<string></string>			
 			<key>Shell Script File</key>
 			<string>sublime.sh</string>
 			<key>Title</key>

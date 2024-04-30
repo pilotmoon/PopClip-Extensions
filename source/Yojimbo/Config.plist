@@ -28,7 +28,7 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
+			<key>Bundle Identifiers</key>
 			<array>
 				<string>com.barebones.yojimbo4</string>
 				<string>com.barebones.yojimbo</string>

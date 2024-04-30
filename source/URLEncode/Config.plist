@@ -46,7 +46,7 @@
 	<string>com.pilotmoon.popclip.extension.urlencode</string>
 	<key>Extension Name</key>
 	<string>URL Encode</string>
-	<key>Required Apps</key>
+	<key>Required Software Version</key>
 	<integer>701</integer>
 </dict>
 </plist>
