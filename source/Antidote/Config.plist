@@ -29,10 +29,6 @@
 	<key>Apps</key>
 	<array>
 		<dict>
-			<key>Bundle Identifier</key>
-			<string></string>
-			<key>Check Installed</key>
-			<false/>
 			<key>Link</key>
 			<string>http://www.antidote.info/antidote/</string>
 			<key>Name</key>

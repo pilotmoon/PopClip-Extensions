@@ -72,8 +72,6 @@
 			<string>password</string>
 		</dict>
 	</array>
-	<key>Options </key>
-	<string></string>
 	<key>Options Script File</key>
 	<string>droplrAuth.php</string>
 	<key>Options Script Interpreter</key>
