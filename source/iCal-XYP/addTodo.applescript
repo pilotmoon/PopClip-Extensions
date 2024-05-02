@@ -1,4 +1,4 @@
---test change 2 3
+--test change 2 3 4
 on extractDate(str)
   --display dialog str
   set dtStr to ""
