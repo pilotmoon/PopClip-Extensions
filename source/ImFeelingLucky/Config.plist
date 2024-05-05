@@ -10,7 +10,7 @@
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,}$</string>
 			<key>Title</key>
-			<string>I'm Feeling Lucky</string>
+			<string>I'm Still Feeling Lucky</string>
 			<key>URL</key>
 			<string>http://www.google.com/search?q={popclip text}&amp;btnI=I'm+Feeling+Lucky</string>
 		</dict>
