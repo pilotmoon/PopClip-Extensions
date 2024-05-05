@@ -20,4 +20,4 @@ Post: [http://zlz.im/popclip-extensions/](http://zlz.im/popclip-extensions/)
 Github: [hzlzh/PopClip-Extensions](https://github.com/hzlzh/PopClip-Extensions)  
 
 Screenshot:  
-![URL-Shortener.png](https://github.com/hzlzh/PopClip-Extensions/raw/master/Downloads/extra/URL-Shortener.png)
+![URL-Shortener.png](extra/URL-Shortener.png)
