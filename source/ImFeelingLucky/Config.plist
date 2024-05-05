@@ -9,8 +9,6 @@
 			<string>FeelingLuckyIcon.png</string>
 			<key>Regular Expression</key>
 			<string>(?s)^.{1,}$</string>
-			<key>Title</key>
-			<string>I'm Still Feeling Lucky</string>
 			<key>URL</key>
 			<string>http://www.google.com/search?q={popclip text}&amp;btnI=I'm+Feeling+Lucky</string>
 		</dict>
@@ -29,8 +27,6 @@
 	<key>Extension Identifier</key>
 	<string>com.lucifr.popclip.extension.google-lucky</string>
 	<key>Extension Name</key>
-	<string>I'm Feeling Lucky</string>
-	<key>Version</key>
-	<integer>2</integer>
+	<string>I'm Still Feeling Lucky</string>	
 </dict>
 </plist>
