@@ -2,10 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>Version</key>
-<integer>1</integer>
 <key>Extension Name</key>
-<string>Znajdz Aukcje</string>
+<string>Znajdz Aukcje 1</string>
 <key>Extension Identifier</key>
 <string>com.sebaszwarc.znajdzaukcje</string>
 <key>Extension Description</key>
