@@ -10,5 +10,5 @@ Fixed bug where user text was not properly escaped for AppleScript.
 
 ### 8 Oct 2019
 
-Hard code to Alfred 4 bundle ID. Remove support for Alfred 2 and 3.fddsdsd
+Hard code to Alfred 4 bundle IDfdf. Remove support for Alfred 2 and 3.fddsdsd
 sggfgffgdfggfgdsdfdfgfgdsdfdffd
