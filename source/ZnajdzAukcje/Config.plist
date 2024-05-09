@@ -14,7 +14,7 @@
 		<key>URL</key>
 		<string>http://allegro.pl/listing/listing.php?string={popclip text}</string>
 		<key>Image File</key>
-		<string>aukcja.png</string>
+		<string>aukcja.png</string>df
 		<key>Title</key>
 		<string>Allegro</string>
 	</dict>
