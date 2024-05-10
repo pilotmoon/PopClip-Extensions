@@ -1,6 +1,6 @@
 // #popclip
 // name: Bundle ID
-// #identifier: com.pilotmoon.popclip.extension.bundleid
+// identifier: com.pilotmoon.popclip.extension.bundleid
 // description: Show the bundle identifier of the app.
 // entitlements: [dynamic]
 // requirements: []
