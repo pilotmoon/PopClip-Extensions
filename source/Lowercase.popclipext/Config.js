@@ -1,8 +1,10 @@
-define({
-    identifier: "com.pilotmoon.popclip.extension.lowercase",
-    name: "Lowercase",
-    icon: "square filled ab",
-    action: (selection) => {
-        popclip.pasteText(selection.text.toLowerCase());
-    },
-})
+// #popclip
+// name: Lowercase
+// identifier: com.pilotmoon.popclip.extension.lowercase
+// description: Make the selected text all lowercase.
+// icon: square filled ab
+// popclip version: 4151
+
+exports.action = (input) => {
+  popclip.pasteText(input.text.toLowerCase());
+};
