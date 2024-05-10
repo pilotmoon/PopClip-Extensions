@@ -16,13 +16,13 @@ let services = {
 // sorted array of display names
 let names = Object.keys(services).sort();
 let urls = names.map((key) => services[key]);
-exports.options = {
+exports.options =[{
   identifier: "service",
   type: "multiple",
   label: "Thesaurus Service",
   values: urls,
   valueLabels: names,
-};
+}];
 exports.action = (input, options) => {
   popclip.openUrl(
     options.service.replace(
