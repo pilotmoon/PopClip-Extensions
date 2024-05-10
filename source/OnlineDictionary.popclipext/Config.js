@@ -1,3 +1,4 @@
+// #popclip
 // name: Online Dictionary
 // identifier: xcom.pilotmoon.popclip.extension.online-dictionary
 // description: >-
