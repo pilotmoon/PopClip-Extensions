@@ -20,7 +20,7 @@ Nick Moore
 
 ### Requirements
 
-Requires PopClip 2022.5
+Requires PopClip 2023.9 or later.
 
 ### Links
 
@@ -32,3 +32,7 @@ Requires PopClip 2022.5
 ### 25 May 2022
 
 * Initial release
+
+### 10 May 2024
+
+* Updates needed for submission to new extension directory
