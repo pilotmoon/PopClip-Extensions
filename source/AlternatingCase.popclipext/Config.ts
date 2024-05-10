@@ -4,7 +4,8 @@
 // description: Change the text to AlTeRnAtInG CaSe, with optional randomness.
 // icon: noun_sponge_575115.svg
 // popclipVersion: 4225
-// module: Config.ts
+// language: typescript
+// module: true
 
 /**
  * Make characters alternately upper/lower case, with optional randomness sprinkled in.
