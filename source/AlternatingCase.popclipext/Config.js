@@ -1,6 +1,6 @@
 // #popclip
 // name: Alternating Case
-// #identifier: com.pilotmoon.popclip.extension.alternating-case
+// identifier: com.pilotmoon.popclip.extension.alternating-case
 // description: Change the text to AlTeRnAtInG CaSe, with optional randomness.
 // icon: noun_sponge_575115.svg
 // popclipVersion: 4151
