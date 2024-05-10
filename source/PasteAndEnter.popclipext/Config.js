@@ -1,13 +1,13 @@
 // #popclip
-// name: Paste and Match Style
-// #identifier: com.pilotmoon.popclip.extension.pasteplain
-// description: Paste as plain text only, without formatting.
-// icon: paste-equal.png
+// name: Paste and Enter
+// #identifier: com.pilotmoon.popclip.extension.pasteandenter
+// description: PopClip will paste, then press the Return (↵) key for you.
+// icon: paste-enter.png
 // entitlements: [dynamic]
 // popclipVersion: 4151
 
 module.exports = {
-  name: `${util.localize("Paste")} =`,
+  name: `${util.localize("Paste")} + ↵`,
   options: [{
     identifier: "showIcon",
     type: "boolean",
@@ -20,7 +20,12 @@ module.exports = {
         // `undefined` will fall back to the extension's icon; `null` sets no icon
         icon: popclip.options.showIcon ? undefined : null,
         code() {
-          popclip.pasteText(pasteboard.text);
+          if (popclip.modifiers.shift) {
+            popclip.pasteText(pasteboard.text);
+          } else {
+            popclip.performCommand("paste");
+          }
+          popclip.pressKey(util.constant.KEY_RETURN);
         },
       };
     }

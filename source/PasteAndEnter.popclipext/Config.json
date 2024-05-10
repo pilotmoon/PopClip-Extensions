@@ -1,8 +1,0 @@
-{
-  "description" : "PopClip will paste, then press the Return (↵) key for you.",
-  "identifier" : "com.pilotmoon.popclip.extension.pasteandenter",
-  "icon" : "paste-enter.png",
-  "name" : "Paste and Enter",
-  "popclipVersion" : 3895,
-  "module": "paste-and-enter.js"
-}

@@ -4,8 +4,6 @@
 // description: Search for the selected word in an online dictionary. Includes Dictionary.com, Merriam Webster Online, Oxford Advanced Learner's Dictionary, Youdao, dict.cn, dict.cc, and more.
 // icon: dictionary.svg
 // popclipVersion: 4151
-// language: javascript
-// module: true
 
 let services = {
   "dicio.com.br": "https://www.dicio.com.br/***",

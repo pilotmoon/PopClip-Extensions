@@ -5,8 +5,6 @@
 // entitlements: [dynamic]
 // requirements: []
 // popclipVersion: 4151
-// language: javascript
-// module: true
 
 exports.actions = () => {
   if (popclip.context.appIdentifier.length > 0) {

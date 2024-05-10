@@ -4,8 +4,6 @@
 // description: Search for the selected word in an online thesaurus. Includes Thesaurus.com, Collins, and PowerThesaurus.
 // icon: thesaurus.svg
 // popclipVersion: 4151
-// language: javascript
-// module: true
 
 let services = {
   "thesaurus.com": "http://thesaurus.com/browse/***",

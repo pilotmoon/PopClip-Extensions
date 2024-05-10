@@ -1,8 +1,0 @@
-{  
-  "identifier" : "com.pilotmoon.popclip.extension.pasteplain",
-  "name" : "Paste and Match Style",
-  "icon" : "paste-equal.png",  
-  "description" : "Paste as plain text only, without formatting.",
-  "popclipVersion" : 3543,
-  "note": "Updated for PopClip 2021.10 to fix not appearing in the popup, and with option to show as icon."
-}
