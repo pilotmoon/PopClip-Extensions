@@ -56,7 +56,7 @@ const auth: AuthFunction = async (info, flow) => {
 
 // follow an ActivityPub account
 const follow: ActionFunction = async (input, options) => {
-  const accountToFollow = input.regexResult[1];
+  const accountToFollow = input.regexResult?.[1];
   const { server, credentials } = JSON.parse(options.authsecret);
   const instance = getInstance(server, credentials.access_token);
 

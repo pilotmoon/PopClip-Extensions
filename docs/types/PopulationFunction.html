@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Context | PopClip JavaScript API Reference</title><meta name="description" content="Documentation for PopClip JavaScript API Reference"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>PopulationFunction | PopClip JavaScript API Reference</title><meta name="description" content="Documentation for PopClip JavaScript API Reference"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,100 +13,46 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">PopClip JavaScript API Reference</a></li>
-<li><a href="Context.html">Context</a></li></ul>
-<h1>Interface Context</h1></div>
-<section class="tsd-panel tsd-comment">
-<div class="tsd-comment tsd-typography"><p>Properties relating the context surrounding the selected text.</p>
+<li><a href="PopulationFunction.html">PopulationFunction</a></li></ul>
+<h1>Type alias PopulationFunction&lt;CustomOptions&gt;</h1></div>
+<div class="tsd-signature"><span class="tsd-kind-type-alias">Population<wbr/>Function</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type tsd-kind-type-parameter">CustomOptions</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">input</span>, <span class="tsd-kind-parameter">options</span>, <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-symbol">(</span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span></div>
+<section class="tsd-panel">
+<h4>Type Parameters</h4>
+<ul class="tsd-type-parameter-list">
+<li>
+<h4><span class="tsd-kind-type-parameter">CustomOptions</span><span class="tsd-signature-symbol"> extends </span><a href="../interfaces/Options.html" class="tsd-signature-type tsd-kind-interface">Options</a> = <a href="../interfaces/Options.html" class="tsd-signature-type tsd-kind-interface">Options</a></h4></li></ul></section>
+<div class="tsd-type-declaration">
+<h4>Type declaration</h4>
+<ul class="tsd-parameters">
+<li class="tsd-parameter-signature">
+<ul class="tsd-signatures">
+<li class="tsd-signature" id="__type.__type-1"><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">input</span>, <span class="tsd-kind-parameter">options</span>, <span class="tsd-kind-parameter">context</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>A population function dynamically generates the actions for the extension. See [[Extension.actions]].</p>
 </div>
-<div class="tsd-comment tsd-typography"></div></section>
-<section class="tsd-panel tsd-hierarchy">
-<h4>Hierarchy</h4>
-<ul class="tsd-hierarchy">
-<li><span class="target">Context</span></li></ul></section><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:633</li></ul></aside>
-<section class="tsd-panel-group tsd-index-group">
-<section class="tsd-panel tsd-index-panel">
-<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
-<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-chevronSmall"></use></svg> Index</h5></summary>
-<div class="tsd-accordion-details">
-<section class="tsd-index-section">
-<h3 class="tsd-index-heading">Properties</h3>
-<div class="tsd-index-list"><a href="Context.html#appIdentifier" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>app<wbr/>Identifier</span></a>
-<a href="Context.html#appName" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>app<wbr/>Name</span></a>
-<a href="Context.html#browserTitle" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>browser<wbr/>Title</span></a>
-<a href="Context.html#browserUrl" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>browser<wbr/>Url</span></a>
-<a href="Context.html#canCopy" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Copy</span></a>
-<a href="Context.html#canCut" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Cut</span></a>
-<a href="Context.html#canPaste" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Paste</span></a>
-<a href="Context.html#hasFormatting" class="tsd-index-link"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>has<wbr/>Formatting</span></a>
-</div></section></div></details></section></section>
-<section class="tsd-panel-group tsd-member-group">
-<h2>Properties</h2>
-<section class="tsd-panel tsd-member"><a id="appIdentifier" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>app<wbr/>Identifier</span><a href="#appIdentifier" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">app<wbr/>Identifier</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The bundle identitifier of the current app, for example <code>com.agiletortoise.Drafts-OSX</code>.</p>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><span class="tsd-kind-parameter">input</span>: <a href="../interfaces/Input.html" class="tsd-signature-type tsd-kind-interface">Input</a></h5>
+<div class="tsd-comment tsd-typography"><p>The selected text and related properties. (Same object as [[PopClip.selection]].)</p>
 </div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:672</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="appName" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>app<wbr/>Name</span><a href="#appName" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">app<wbr/>Name</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>The name of the current app, for example <code>Drafts</code>.</p>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">options</span>: <span class="tsd-signature-type tsd-kind-type-parameter">CustomOptions</span></h5>
+<div class="tsd-comment tsd-typography"><p>Current values of the options for this extension. (Same object as [[PopClip.options]].)</p>
 </div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:667</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="browserTitle" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>browser<wbr/>Title</span><a href="#browserTitle" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">browser<wbr/>Title</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>If the current app is a compatible browser, this will be the page title.</p>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">context</span>: <a href="../interfaces/Context.html" class="tsd-signature-type tsd-kind-interface">Context</a></h5>
+<div class="tsd-comment tsd-typography"><p>Information about the context surrounding the selection. (Same object as [[PopClip.context]].)</p>
 </div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
+<div class="tsd-comment tsd-typography"></div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">(</span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/Action.html" class="tsd-signature-type tsd-kind-interface">Action</a><span class="tsd-signature-symbol"> | </span><a href="ActionFunction.html" class="tsd-signature-type tsd-kind-type-alias">ActionFunction</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></h4><p>A single action, an array of actions.</p>
+
+<div class="tsd-comment tsd-typography"></div></li></ul></li></ul></div><aside class="tsd-sources">
 <ul>
-<li>Defined in popclip.d.ts:662</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="browserUrl" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>browser<wbr/>Url</span><a href="#browserUrl" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">browser<wbr/>Url</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-<div class="tsd-comment tsd-typography"><p>If the current app is a compatible browser, this will be the page URL.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:657</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="canCopy" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>can<wbr/>Copy</span><a href="#canCopy" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">can<wbr/>Copy</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><p>This property is true iff text was selected.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:647</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="canCut" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>can<wbr/>Cut</span><a href="#canCut" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">can<wbr/>Cut</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><p>This property is true iff text was selected and the app&#39;s Cut command is enabled.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:652</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="canPaste" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>can<wbr/>Paste</span><a href="#canPaste" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">can<wbr/>Paste</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><p>This property is true iff the Paste command is enabled in the current app.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:642</li></ul></aside></section>
-<section class="tsd-panel tsd-member"><a id="hasFormatting" class="tsd-anchor"></a>
-<h3 class="tsd-anchor-link"><span>has<wbr/>Formatting</span><a href="#hasFormatting" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></h3>
-<div class="tsd-signature"><span class="tsd-kind-property">has<wbr/>Formatting</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
-<div class="tsd-comment tsd-typography"><p>Indicates whether the text area supports formatting.</p>
-</div>
-<div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
-<ul>
-<li>Defined in popclip.d.ts:637</li></ul></aside></section></section></div>
+<li>Defined in popclip.d.ts:146</li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -120,43 +66,31 @@
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-checkbox"></use></svg><span>Private</span></label></li>
 <li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><use href="#icon-checkbox"></use></svg><span>Inherited</span></label></li></ul></form></div>
 <div class="tsd-theme-toggle">
-<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
-<details open class="tsd-index-accordion tsd-page-navigation"><summary class="tsd-accordion-summary">
-<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="#icon-chevronDown"></use></svg>On This Page</h3></summary>
-<div class="tsd-accordion-details">
-<ul>
-<li><a href="#appIdentifier" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>app<wbr/>Identifier</span></a></li>
-<li><a href="#appName" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>app<wbr/>Name</span></a></li>
-<li><a href="#browserTitle" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>browser<wbr/>Title</span></a></li>
-<li><a href="#browserUrl" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>browser<wbr/>Url</span></a></li>
-<li><a href="#canCopy" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Copy</span></a></li>
-<li><a href="#canCut" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Cut</span></a></li>
-<li><a href="#canPaste" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>can<wbr/>Paste</span></a></li>
-<li><a href="#hasFormatting" class=""><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1024"></use></svg><span>has<wbr/>Formatting</span></a></li></ul></div></details></div>
+<h4 class="uppercase">Theme</h4><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="../modules.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg><span>PopClip JavaScript API Reference</span></a>
 <ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="..">
-<li><a href="Action.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Action</a></li>
-<li><a href="../types/ActionFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>ActionFunction</a></li>
-<li><a href="ActionProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>ActionProperties</a></li>
-<li><a href="../types/AfterStep.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AfterStep</a></li>
-<li><a href="AssociatedApp.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AssociatedApp</a></li>
-<li><a href="../types/AuthFlowFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AuthFlowFunction</a></li>
-<li><a href="../types/AuthFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AuthFunction</a></li>
-<li><a href="AuthInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AuthInfo</a></li>
-<li><a href="AuthOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AuthOptions</a></li>
-<li><a href="../types/BeforeStep.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>BeforeStep</a></li>
-<li><a href="Context.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Context</a></li>
-<li><a href="Extension.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Extension</a></li>
-<li><a href="IconProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>IconProperties</a></li>
-<li><a href="Input.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Input</a></li>
-<li><a href="../types/LocalizableString.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>LocalizableString</a></li>
-<li><a href="Modifiers.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Modifiers</a></li>
-<li><a href="../types/NegatedRequirement.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>NegatedRequirement</a></li>
-<li><a href="Option.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Option</a></li>
-<li><a href="Options.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Options</a></li>
-<li><a href="PasteOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>PasteOptions</a></li>
-<li><a href="Pasteboard.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Pasteboard</a></li>
+<li><a href="../interfaces/Action.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Action</a></li>
+<li><a href="ActionFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>ActionFunction</a></li>
+<li><a href="../interfaces/ActionProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>ActionProperties</a></li>
+<li><a href="AfterStep.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AfterStep</a></li>
+<li><a href="../interfaces/AssociatedApp.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AssociatedApp</a></li>
+<li><a href="AuthFlowFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AuthFlowFunction</a></li>
+<li><a href="AuthFunction.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>AuthFunction</a></li>
+<li><a href="../interfaces/AuthInfo.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AuthInfo</a></li>
+<li><a href="../interfaces/AuthOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>AuthOptions</a></li>
+<li><a href="BeforeStep.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>BeforeStep</a></li>
+<li><a href="../interfaces/Context.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Context</a></li>
+<li><a href="../interfaces/Extension.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Extension</a></li>
+<li><a href="../interfaces/IconProperties.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>IconProperties</a></li>
+<li><a href="../interfaces/Input.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Input</a></li>
+<li><a href="LocalizableString.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>LocalizableString</a></li>
+<li><a href="../interfaces/Modifiers.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Modifiers</a></li>
+<li><a href="NegatedRequirement.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>NegatedRequirement</a></li>
+<li><a href="../interfaces/Option.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Option</a></li>
+<li><a href="../interfaces/Options.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Options</a></li>
+<li><a href="../interfaces/PasteOptions.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>PasteOptions</a></li>
+<li><a href="../interfaces/Pasteboard.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-256"></use></svg>Pasteboard</a></li>
 <li>Loading...</li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>
