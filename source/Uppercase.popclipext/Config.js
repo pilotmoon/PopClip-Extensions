@@ -1,6 +1,6 @@
 // #popclip
 // name: Uppercase
-// #identifier: com.pilotmoon.popclip.extension.uppercase
+// identifier: com.pilotmoon.popclip.extension.uppercase
 // description: Make the selected text ALL UPPERCASE.
 // icon: "square filled AB"
 // popclip version: 4151
