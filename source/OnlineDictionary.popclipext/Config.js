@@ -1,6 +1,6 @@
 // #popclip
 // name: Online Dictionary
-// identifier: xcom.pilotmoon.popclip.extension.online-dictionary
+// identifier: com.pilotmoon.popclip.extension.online-dictionary
 // description: >-
 //   Search for the selected word in an online dictionary. Includes Dictionary.com,
 //   Merriam Webster Online, Oxford Advanced Learner's Dictionary, Youdao, dict.cn,
