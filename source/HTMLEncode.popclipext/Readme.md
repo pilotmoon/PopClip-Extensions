@@ -26,20 +26,19 @@ This extension is implemented using [html-entities](https://github.com/mdevils/h
 
 ## Changelog
 
-### v4 — 16 Oct 2021
+### 16 Oct 2021
 
 - Restructured code using TypeScript, for PopClip Build 3624 ([beta](https://pilotmoon.com/popclip/download)).
 - Added this readme.
-- TODO: Build and publish the .popclipextz when the beta is released.
 
-### v3 — 24 Sep 2021
+### 24 Sep 2021
 
 - New implementation in JavaScript for PopClip 2021.9.
 
-### v2 — 14 Aug 2014
+### 14 Aug 2014
 
 - Add decoding ability.
 
-### v1 — 29 Aug 2013
+### 29 Aug 2013
 
 - Initial release (implemented in PHP).

@@ -2,10 +2,6 @@
 
 Translate the text with [DeepL Translator](https://www.deepl.com/translator).
 
-Download: [DeepLTranslator.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/DeepLTranslator.popclipextz)
-
-## Description
-
 The extension has a single action that takes text as input and sends it either to the DeepL website, or the DeepL app.
 
 When using the App mode, the DeepL app must be already running and the "DeepL App Shortcut" setting must be set to match the shortcut in DeepL preferences.
@@ -18,7 +14,7 @@ When using the App mode, the DeepL app must be already running and the "DeepL Ap
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -28,11 +24,6 @@ Nick Moore
 
 Requires PopClip 2022.5
 
-### Links
-
-<!-- * [Forum Page](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/DeepLTranslator.popclipext)
-  
 ## Changelog
 
 ### 1 Jun 2023

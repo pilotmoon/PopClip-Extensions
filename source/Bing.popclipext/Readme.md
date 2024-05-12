@@ -2,11 +2,9 @@
 
 Search the web using Bing.
 
-Download: [Bing.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Bing.popclipextz)
-
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -19,11 +17,6 @@ This is an extension for [PopClip](https://pilotmoon.com/popclip/).
 ### Requirements
 
 Requires PopClip 2022.5
-
-### Links
-
-* [Directory Page](https://pilotmoon.com/popclip/extensions/page/Bing)
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Bing.popclipext)
   
 ## Changelog
 

@@ -20,10 +20,10 @@ Readwise API: [https://readwise.io/api_deets](https://readwise.io/api_deets)
 
 ## Changelog
 
-### v2 - 16 Nov 2021
+### 16 Nov 2021
 
 * Rewritten in JavaScript for macOS Monterey.
   
-### v1 - 19 Feb 2021
+### 19 Feb 2021
 
 * Initial version in PHP by Griffin Caprio.

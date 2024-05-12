@@ -2,8 +2,6 @@
 
 Convert Markdown source to formatted text, and place it on the clipboard.
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/MarkdownToRTF.popclipext/MarkdownToRTF-demo.gif" width="480px">
-
 ## Description
 
 It interprets the plain text of the selection as Markdown, and converts it to Rich Text Format (RTF) and copies it to the clipboard.
@@ -30,7 +28,7 @@ Not all markdown features are currently supported:
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -43,9 +41,9 @@ Nick Moore
 
 ## Changelog
 
-### 2023-01-20
+### 20 Jan 2023
 
-* Proper release no that 2022.12 is available.
+* Proper release now that 2022.12 is available.
 
 ### 29 Nov 2022
 

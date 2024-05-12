@@ -1,14 +1,10 @@
 # Pinyin
 
-Download: [Pinyin.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Pinyin.popclipextz)
-
 Display Chinese characters as [pinyin](https://en.wikipedia.org/wiki/Pinyin).
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Pinyin.popclipext/Pinyin-demo.gif" width="320px">
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -17,8 +13,6 @@ Based on the extension originally created by [dofy](https://github.com/dofy/PopC
 ### Requirements
 
 Requires PopClip 2021.11
-
-### Notes
 
 ## Changelog
 

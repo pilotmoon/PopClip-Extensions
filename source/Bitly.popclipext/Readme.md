@@ -22,20 +22,20 @@ The SVG icon is from [IconFinder](https://www.iconfinder.com/icons/1298728/bitly
 
 ## Changelog
 
-### v4 — 1 Nov 2021
+### 1 Nov 2021
 
 * Rewritten using PopClip's JavaScript API, for compatibility with macOS Monterey.
 * Now shortens all URLs detected in the text, instead of just one.
 * Changed icon to a Bitly logo.
 
-### v3 - 5 Jun 2020
+### 5 Jun 2020
 
 * Updated to fix login failure.
 
-### v2 - 7 May 2020
+### 7 May 2020
 
 * Updated for Bitly API v4.
 
-### v1 - 19 Feb 2013
+### 19 Feb 2013
 
 * Initial release (written in PHP).

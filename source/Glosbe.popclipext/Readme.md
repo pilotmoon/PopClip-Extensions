@@ -14,14 +14,6 @@ Nick Moore
 
 ## Changelog
 
-### v1 — 18 Oct 2021
+### 18 Oct 2021
 
 * Initial release
-
-
-
-
-
-
-
-

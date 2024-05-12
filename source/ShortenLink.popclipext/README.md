@@ -2,12 +2,6 @@
 
 Shorten the selected URL using is.gd or v.gd.
 
-Download: [ShortenLink.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/ShortenLink.popclipextz)
-
-## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ShortenLink.popclipext/ShortenLink-demo.gif" width="480px">
-
 The extension has one action, which is available when the input text string contains one or more web URLs. The extension will shorten all the detected URLs using the selected shortening service, replacing the URLs in the string with their shortened equivalents.
 
 ### Options
@@ -19,7 +13,7 @@ The **Shortening Service** has the choice of shortening services:
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -33,11 +27,6 @@ The original PHP extension by this name (now completely rewritten) was by [hzlzh
 
 Requires PopClip 2021.11
 
-### Links
-
-<!-- * [Forum Topic](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/ShortenLink.popclipext)
-  
 ## Changelog
 
 ### 19 May 2022

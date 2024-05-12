@@ -2,11 +2,7 @@
 
 Convert the selection to common identifier formats used in source code.
 
-Download: [CodeCase.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/CodeCase.popclipextz)
-
 ## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CodeCase.popclipext/CodeCase-demo.gif" width="480px">
 
 The extension has 5 actions, which can be individually toggled in settings:
 
@@ -18,7 +14,7 @@ The extension has 5 actions, which can be individually toggled in settings:
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -33,11 +29,6 @@ Nick Moore
 
 Requires PopClip 2022.5
 
-### Links
-
-<!-- * [Forum Topic](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/CodeCase.popclipext)
-  
 ## Changelog
 
 ### 25 May 2022

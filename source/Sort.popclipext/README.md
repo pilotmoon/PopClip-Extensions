@@ -22,14 +22,14 @@ with options `{numeric: true, sensitivity: 'base'}`.
 
 ## Changelog
 
-### v3 - 1 Nov 2021
+### 1 Nov 2021
 
 * Re-implemented in JavaScript.
 
-### v2 - 17 Dec 2015
+### 17 Dec 2015
 
 * Modified to no longer remove duplicates.
 
-### v1 - 8 Feb 2013
+### 8 Feb 2013
 
 * Original extension (PHP) by Agassi.

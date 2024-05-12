@@ -1,20 +1,10 @@
 # Amazon
 
-Search Amazon, with option to select from various amazon country sites.
-
-Download: [Amazon.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Amazon.popclipextz)
-
-## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Amazon.popclipext/Amazon-demo.gif" width="480px">
-
-### Options
-
-todo
+Search Amazon, with option to select from different Amazon country sites.
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -26,13 +16,8 @@ Icon by Dave Gandy ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)) f
 
 ### Requirements
 
-Requires PopClip 2022.5
+Requires PopClip 2022.5 or later.
 
-### Links
-
-<!-- * [Forum Topic](#) -->
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/Amazon.popclipext)
-  
 ## Changelog
 
 ### 2022-11-28
@@ -42,7 +27,6 @@ Requires PopClip 2022.5
 ### 2020-11-25
 
 * Add `smile.amazon.de`.
-
 
 ### 2020-11-16
 

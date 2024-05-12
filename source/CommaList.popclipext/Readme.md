@@ -2,12 +2,6 @@
 
 Split a comma-separated list into separate lines, and vice versa.
 
-Download: [CommaList.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/CommaList.popclipextz)
-
-## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/CommaList.popclipext/CommaList-demo.gif" width="480px">
-
 The extension has two actions, both with the same icon, which appear only when the text selection contains a suitable input:
 
 * The **Join with commas** action is available when the text selection contains more than one line (ignoring blank lines). It replaces each newline with a comma and a space. Blank lines, and spaces at the start and end of lines, are ignored.
@@ -15,7 +9,7 @@ The extension has two actions, both with the same icon, which appear only when t
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -25,14 +19,8 @@ Nick Moore
 
 Requires PopClip 2021.11.
 
-### Links
-
-* [Directory Page](https://pilotmoon.com/popclip/extensions/page/CommaList)
-* [Forum Page](https://forum.popclip.app/t/new-extension-comma-list/828)
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/CommaList)
-
 ## Changelog
 
-### v1 - 30 Apr 2022
+### 30 Apr 2022
 
 * Initial release

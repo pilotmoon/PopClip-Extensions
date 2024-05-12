@@ -2,11 +2,9 @@
 
 Send the text to a new document in BBEdit.
 
-Download: [BBEdit.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/BBEdit.popclipextz)
-
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -16,11 +14,6 @@ Nick Moore, [Javier JJ](https://github.com/jjarava)
 
 Requires PopClip 2021.11
 
-### Links
-
-* [Directory Page](https://pilotmoon.com/popclip/extensions/page/BBEdit)
-* [GitHub Source](https://github.com/pilotmoon/PopClip-Extensions/tree/master/source/BBEdit.popclipext)
-  
 ## Changelog
 
 ### 3 May 2022
@@ -30,4 +23,3 @@ Requires PopClip 2021.11
 ### 28 Feb 2014
 
 * Initial release.
-

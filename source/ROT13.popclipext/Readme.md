@@ -2,10 +2,6 @@
 
 Apply the ROT13 cipher to the selected text.
 
-## Description
-
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/ROT13.popclipext/ROT13-demo.gif" width="480px">
-
 ROT13 is used in online forums as a means of hiding spoilers, punchlines, puzzle solutions, and offensive materials from the casual glance.
 
 As [cryptii.com](https://cryptii.com/pipes/rot13-decoder) puts it:
@@ -14,7 +10,7 @@ As [cryptii.com](https://cryptii.com/pipes/rot13-decoder) puts it:
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 

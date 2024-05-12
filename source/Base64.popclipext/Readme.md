@@ -35,17 +35,17 @@ Requires PopClip 2021.11.
 
 ## Changelog
 
-### v3 - 5 Nov 2021
+### 5 Nov 2021
 
 * Update JavaScript for PopCLip 2021.11.
 * Rename to "Base64".
 * Swap the icons (solid icon for encoding, outline for decoding).
 
-### v2 - 1 Oct 2021
+### 1 Oct 2021
 
 * Rewritten in JavaScript.
 * Added 'trim spaces' option.
   
-* ### v1 - 4 Jun 2015
+* ### 4 Jun 2015
 
 * Initial release (PHP), as "Base64 Encode".

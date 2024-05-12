@@ -6,7 +6,7 @@ Note: When coming from a previous version of the extension, you will need to log
 
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 
@@ -20,14 +20,14 @@ Requires PopClip 2021.11 and a Pinboard account.
 
 ## Changelog
 
-### v3 - 9 Nov 2021
+### 9 Nov 2021
 
 * Rewritten in JavaScript for compatibility with macOS Monterey.
 
-### v2 - 8 Oct 2013
+### 8 Oct 2013
 
 * Updated to add the page title as the bookmark title.
 
-### v1 - 18 Feb 2013
+### 18 Feb 2013
 
 * Initial release (PHP).

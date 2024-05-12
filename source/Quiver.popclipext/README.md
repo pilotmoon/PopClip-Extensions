@@ -2,11 +2,9 @@
 
 Send the selected text to [Quiver](https://yliansoft.com/#quiver), the programmer's notebook.
 
-Download: [Quiver.popclipextz](https://github.com/pilotmoon/PopClip-Extensions/raw/master/extensions/Quiver.popclipextz)
-
 ## About
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+This is an extension for [PopClip](https://www.popclip.app/).
 
 ### Author
 

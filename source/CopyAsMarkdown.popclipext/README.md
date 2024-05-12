@@ -26,10 +26,10 @@ Hat-tip to Brett Terpstra whose [Web Markdownifier](http://brettterpstra.com/201
 
 ## Changelog
 
-### v2 - 3 Feb 2022
+### 3 Feb 2022
 
 * Rewritten in JavaScript & Turndown.
 
-### v1 - 7 Dec 2016
+### 7 Dec 2016
 
 * Initial release (Python & html2text)
