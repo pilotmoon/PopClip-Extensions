@@ -31,6 +31,10 @@ Icons from Font Awesome Brands and Simple Icons. Arc browser icon from
 
 ## Changelog
 
+### 2024-05-13
+
+- Add keywords for directory search.
+
 ### 2023-09-08
 
 - Add Waterfox browser.
