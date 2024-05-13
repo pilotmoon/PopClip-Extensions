@@ -12,14 +12,18 @@ Based on the extension originally created by [dofy](https://github.com/dofy/PopC
 
 ### Requirements
 
-Requires PopClip 2021.11
+Requires PopClip 2024.5.1 or later.
 
 ## Changelog
 
-### v2 - 20 Apr 2022
+### 13 May 2024
+
+* Update for compatibility with PopClip 2024.5.1.
+  
+### 20 Apr 2022
 
 * Updated code from dofy original repo
 
-### v1 - 2 Feb 2022
+### 2 Feb 2022
 
 * Initial release
