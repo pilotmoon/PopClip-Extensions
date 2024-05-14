@@ -8,15 +8,15 @@
 // captureRtf: true
 
 export function action(input: Input) {
-	const items: (string | RichString | { url: string })[] = [];
+	let item: string | RichString | { url: string };
 	if (popclip.input.isUrl) {
-		items.push({ url: input.data.urls[0] });
+		item = { url: input.data.urls[0] };
 	} else if (input.content["public.rtf"]) {
-		items.push(new RichString(input.rtf, { format: "rtf" }));
+		item = new RichString(input.rtf, { format: "rtf" });
 	} else if (popclip.input.content["public.html"]) {
-		items.push(new RichString(input.html, { format: "html" }));
+		item = new RichString(input.html, { format: "html" });
 	} else {
-		items.push(input.text);
+		item = input.text;
 	}
-	popclip.share("com.apple.Notes.SharingExtension", items);
+	popclip.share("com.apple.Notes.SharingExtension", [item]);
 }
