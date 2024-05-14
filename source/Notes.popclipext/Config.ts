@@ -1,6 +1,6 @@
 // #popclip
 // name: Notes
-// identifier: com.pilotmoon.popclip.extension.Notes
+// identifier: com.pilotmoon.popclip.extension.notes
 // description: Make a new note, or append to an existing note, in the Notes app.
 // icon: notepad.png
 // popclip version: 4586
