@@ -1,19 +1,12 @@
 {
   "devDependencies": {
-    "browserify": "^17.0.0",
-    "patch-package": "^6.4.7",
-    "ts-standard": "^10.0.0",
-    "typedoc": "0.25.1",
-    "typescript": "5.2.2",
-    "typescript-json-schema": "^0.51.0"
-  },
-  "dependencies": {
     "@joplin/turndown-plugin-gfm": "^1.0.43",
     "@popclip/helpers": "file:lib/@popclip/helpers",
     "@popclip/test": "file:lib/@popclip/test",
     "@tryfabric/martian": "^1.2.4",
     "@types/crypto-js": "^4.1.1",
     "@types/voca": "^1.4.1",
+    "browserify": "^17.0.0",
     "case-anything": "^2.1.10",
     "core-js": "^3.22.7",
     "crypto-js": "^4.1.1",
@@ -23,6 +16,7 @@
     "slackify-markdown": "^4.3.1",
     "superagent": "^6.1.0",
     "turndown-plugin-gfm": "^1.0.2",
+    "typescript": "5.4.5",
     "voca": "^1.4.0",
     "zod": "^3.17.3"
   }

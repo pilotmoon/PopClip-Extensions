@@ -1,2 +1,0 @@
-#!/bin/zsh
-npx typescript-json-schema tsconfig.json Extension > ExtensionSchema.json

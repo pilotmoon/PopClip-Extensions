@@ -1,4 +1,0 @@
-#!/bin/zsh
-# Live compiles all the .ts files in the repo to .js, as per tsconfig.json
-npx tsc --watch
-

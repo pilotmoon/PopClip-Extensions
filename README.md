@@ -1,13 +1,22 @@
 <!-- markdownlint-disable MD041 -->
 <!-- markdownlint-disable MD001 -->
-> [!IMPORTANT]
-> **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
+
+> [!IMPORTANT] > **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
+
+---
+
+Please note -- the structure of this repo is changing. It is no longer the only repo which can provide extensions to the directory. The directory backend now accepts extensions from multiple repositories. So this is now just one of many extension repos.
+
+The repo has a large build up of over a decade of cruft which I am trying to tame down bit by bit!
+
+Extension signing is now handled automatically on the server and the files in `extensions/` have been removed. An archive of previous signed & published `.popclipext` files can be found in the `archive` branch:
+<https://github.com/pilotmoon/PopClip-Extensions/tree/archive/extensions>
 
 ---
 
 # PopClip Extensions
 
-This repository contains the source files for the extensions published in the official [PopClip Extensions Directory](https://www.popclip.app/extensions/).
+This repository contains the source files for my extensions published in the official [PopClip Extensions Directory](https://www.popclip.app/extensions/).
 
 ### License
 
@@ -17,25 +26,19 @@ All extension source files are published under the MIT License (see [LICENSE.txt
 
 All the extensions and documentation were created by Nick Moore, except where stated. Individual extension credits are included in a readme file with the extension.
 
-### Repository Layout & Contributing
+### Repository Layout
 
 The important folders:
 
 - `source` - sources for the published extensions (maintained and supported by me)
-- `source-contrib` - folder for user-submitted and experimental extensions
-- `extensions` - signed and zipped `.popclipextz` files built from the `source` and `source-contrib` folders
+- `source-contrib` - folder for user-submitted and experimental extensions (for archive/reference only -- no longer maintained)
 
-Bugfixes ~~and new extension submissions~~ are welcome via pull request. Please note the following:
+### Contributing
 
-**The repo is currently closed for new extension contributions. I am working on a new, improved extension directory. Please bear with me!**
+Bug fixes and updates to existing extensions are welcome via pull request.
 
-- ~~New extensions should be submitted as source files in a `.popclipext` folder inside the `source-contrib` folder.~~
-- ~~Please do not submit any zipped `.popclipextz` files.~~
-- ~~By contributing to this repo, you agree that your contribution may be published at [PopClip Extensions](https://pilotmoon.com/popclip/extensions/).~~
-- ~~Submitting an extension does not guarantee publication on the website.~~
-- ~~I may make changes to any extension submitted.~~
+Your own extensions should not be contributed to this repo, but instead you may submit them to the extensions directory directly from your own repository. As this is a new feature, I am onboarding contributors on an indiviual basis. Please contact Nick via <mailto:support@pilotmoon.com> for instructions.
 
 ---
 
-> [!IMPORTANT]
-> **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
+> [!IMPORTANT] > **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**

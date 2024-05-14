@@ -1,3 +1,4 @@
+extensions/
 source/*.popclipextz
 .DS_Store
 *.pyc
@@ -5,3 +6,5 @@ source/*.popclipextz
 node_modules/
 temp/
 scratch/
+bun.lockb
+package-lock.json
