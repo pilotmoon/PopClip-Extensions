@@ -1,33 +1,23 @@
 {
-    "compilerOptions": {
-        "strict": true,
-        "noImplicitAny": false,
-        // note es2018 requires macOS 10.14
-        // once we drop support for high sierra this can be bumped for cleaner js code
-        // (note es2018 is required for async generators)
-        "target": "es2017",
-        "lib": [
-            "es2021"
-        ],
-        // we can specify esnext lib due to polyfills in popclip
-        "module": "commonjs",
-        "esModuleInterop": false,
-        "moduleResolution": "node",
-        "resolveJsonModule": true,
-        "baseUrl": "./lib",
-    },
-    "include": [
-        "./popclip.d.ts",
-        "./lib",
-        "./extras",
-        "./source",
-        "./source-contrib",    
-        "./scratch"
-    ],
-    "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"],
-    "ts-standard": {
-        "ignore": [
-            "**/*.js"
-        ]
-    }
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": false,
+    "target": "es2018",
+    "lib": ["es2023"],
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "baseUrl": "./lib"
+  },
+  "include": [
+    "./node_modules/@popclip/types/popclip.d.ts",
+    "./node_modules/@popclip/types/extra/shims.d.ts",
+    "./lib",
+    "./extras",
+    "./source",
+    "./source-contrib"
+  ],
+  "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"]
 }
