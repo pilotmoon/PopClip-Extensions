@@ -1,6 +1,6 @@
 # ChatGPT
 
-PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5 and GPT-4 chat API, and append the response.
+PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o  chat API, and append the response.
 
 **Note: Requires pre-paid API credits on your OpenAI account. API usage is not included in ChatGPT Plus subscripiton.**
 
@@ -36,7 +36,7 @@ account. To get an API Key:
 
 #### Model
 
-Available values are `gpt-3.5-turbo`, `gpt-4-turbo-preview` and `gpt-4`. Note that some accounts might not be able to access the GPT-4 model — see OpenAI's documentation for details.
+Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access the GPT-4o model — see OpenAI's documentation for details.
 
 #### Reset Timer (minutes)
 
