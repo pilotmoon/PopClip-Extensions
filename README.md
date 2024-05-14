@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD001 -->
 > [!IMPORTANT]
 > **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
 
@@ -33,8 +35,7 @@ Bugfixes ~~and new extension submissions~~ are welcome via pull request. Please 
 - ~~Submitting an extension does not guarantee publication on the website.~~
 - ~~I may make changes to any extension submitted.~~
 
-----
+---
 
 > [!IMPORTANT]
 > **Developer documentation has moved! See <https://www.popclip.app/dev/> for the latest docs.**
-

@@ -1,18 +1,4 @@
 {
-    "typedocOptions": {
-        "entryPoints": [
-            "./popclip.d.ts"
-        ],
-        "name": "PopClip JavaScript API Reference",
-        "out": "./docs",
-        "disableSources": false,
-        "sort": [
-            "alphabetical"
-        ],
-        "excludeExternals": true,
-        "readme": "README-js.md",
-        "excludeNotDocumented": true
-    },
     "compilerOptions": {
         "strict": true,
         "noImplicitAny": false,
@@ -24,7 +10,6 @@
             "es2021"
         ],
         // we can specify esnext lib due to polyfills in popclip
-        "skipLibCheck": true,
         "module": "commonjs",
         "esModuleInterop": false,
         "moduleResolution": "node",
