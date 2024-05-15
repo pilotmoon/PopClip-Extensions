@@ -15,15 +15,15 @@
   "description": "Make a new clipping in the currently open Scrivener document.",
   "actions": [
     {
-      "requirements": ["option-action=new"],
+      "requirements": ["text", "option-action=new"],
       "serviceName": "Scrivener/Scrivener: Make New Clipping"
     },
     {
-      "requirements": ["option-action=text"],
+      "requirements": ["text", "option-action=text"],
       "serviceName": "Scrivener/Scrivener: Append to Text"
     },
     {
-      "requirements": ["option-action=notes"],
+      "requirements": ["text", "option-action=notes"],
       "serviceName": "Scrivener/Scrivener: Append to Notes"
     }
   ],
