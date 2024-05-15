@@ -2,7 +2,7 @@
 
 Send the text to Scrivener using its system service interface.
 
-**Action** option: choose between Scrivener's "Make New Clipping", "Append to Text" and "Append to Notes" services.
+Choose between Scrivener's "Make New Clipping", "Append to Text" and "Append to Notes" services.
 
 Author: Nick Moore
 
