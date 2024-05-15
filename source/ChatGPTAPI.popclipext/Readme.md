@@ -1,10 +1,10 @@
-# ChatGPT
+# ChatGPT API
 
-PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o  chat API, and append the response.
+PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o chat API, and append the response.
 
 **Note: Requires pre-paid API credits on your OpenAI account. API usage is not included in ChatGPT Plus subscripiton.**
 
-## Description
+See also: [ChatGPT Website](https://www.popclip.app/extensions/x/73pbck) extension, which opens a new chat on the ChatGPT website with your selected text as the first message.
 
 ### Actions
 
@@ -17,7 +17,7 @@ Modifiers:
 
 - Hold Shift(⇧) to copy just the response to the clipboard.
 
-- Hold Option(⌥)-Shift(⇧) to paste the response over the selection.
+- Hold Option(⌥)-Shift(⇧) to paste just the response over the selection.
 
 The **Reset** action (broom icon) clears the current chat history to start a
 fresh conversation.
@@ -36,7 +36,7 @@ account. To get an API Key:
 
 #### Model
 
-Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access the GPT-4o model — see OpenAI's documentation for details.
+Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
 
 #### Reset Timer (minutes)
 
@@ -71,10 +71,11 @@ Icons:
 
 ### Requirements
 
-Requires PopClip 2022.12 and an Open AI Platform account.
+Requires PopClip 2024.5.1 and an Open AI Platform account.
 
 ## Changelog
 
+- 2024-05-15 (2): Rename to `ChatGPT API` and refactor code slightly.
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
 - 2024-03-14: Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
 - 2023-09-24: Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).

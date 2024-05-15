@@ -3,7 +3,6 @@
     "strict": true,
     "noImplicitAny": false,
     "target": "es2018",
-    "lib": ["es2023"],
     "skipLibCheck": true,
     "module": "commonjs",
     "esModuleInterop": true,
