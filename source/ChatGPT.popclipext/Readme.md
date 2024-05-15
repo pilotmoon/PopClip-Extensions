@@ -75,26 +75,9 @@ Requires PopClip 2022.12 and an Open AI Platform account.
 
 ## Changelog
 
-### 2024-03-14
-
-- Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
-
-### 2023-09-24
-
-- Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).
-
-### 2023-08-31
-
-- Add documentation about error message to README.
-
-### 2023-07-15
-
-- Add error message reporting instead of just an X.
-
-### 2023-03-03.1
-
-- Add configurable reset timer.
-
-### 2023-03-03
-
-- Initial release.
+- 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
+- 2024-03-14: Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
+- 2023-09-24: Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).
+- 2023-08-31: Add documentation about error message to README.
+- 2023-07-15: Add error message reporting instead of just an X.
+- 2023-03-03: Initial release.
