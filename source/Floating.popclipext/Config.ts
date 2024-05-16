@@ -1,7 +1,7 @@
 // #popclip
 // name: Floating
 // identifier: com.pilotmoon.popclip.extension.floating
-// description: Open the selected URL in Floating.
+// description: View the selected URL "picture-in-picture" with Floating.
 // icon: symbol:pip
 // requirements: [url]
 // app: { name: Floating, bundleIdentifier: com.pranapps.Floating, link: https://apps.apple.com/app/floating-picture-in-picture/id1508833245?mt=12, checkInstalled: true }

@@ -1,7 +1,7 @@
 // #popclip
 // name: IINA
 // identifier: com.pilotmoon.popclip.extension.iina
-// description: Open the selected URL in IINA.
+// description: Open the selected video URL in IINA.
 // icon: symbol:film
 // requirements: [url]
 // app: { name: IINA, bundleIdentifier: com.colliderli.iina, link: https://iina.io/, checkInstalled: true }
