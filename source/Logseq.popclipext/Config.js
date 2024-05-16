@@ -1,11 +1,11 @@
 // # popclip Logseq quick capture
 // name: Logseq
 // identifier: "me.eindex.popclip.extesion.logseq"
-// description: Quick capture the text to Logseq
+// description: Quick capture the text to Logseq.
 // icon: Logseq.png
 // popclip version: 4151
 // captureHtml: true
-// apps: [{ name: Logseq, link: https://logseq.com/ }]
+// apps: [{ name: Logseq, link: https://logseq.com/, bundleIdentifier: com.electron.logseq, checkInstalled: true }]
 // language: javascript
 
 let url = new URL("logseq://x-callback-url/quickCapture");
