@@ -1,0 +1,17 @@
+{
+  "identifier": "cc.Anybox.anybox.PopClip.save",
+  "name": "Save to Anybox",
+  "icon": "iconify:gravity-ui:bookmark",
+  "app": {
+    "checkInstalled": true,
+    "name": "Anybox",
+    "link": "https://anybox.cc",
+    "bundleIdentifier": "cc.Anybox.anybox"
+  },
+  "applescriptCall": {
+    "file": "Anybox.applescript",
+    "handler": "newDocument",
+    "parameters": ["text"]
+  },
+  "description": "Save selected text to Anybox."
+}
