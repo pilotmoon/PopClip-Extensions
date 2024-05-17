@@ -40,7 +40,11 @@ Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note 
 
 #### System Message
 
-Optional text to specify the system message. This tells the chatbothow to behave.
+Optional text to specify the system message. This tells the chatbot how to behave.
+
+Example system message:
+
+- _You are proofreader. I want you to correct the spelling and grammar of my messages. Please reply to each message with a corrected version. After each message, please briely list the errors you corrected._
 
 If you leave the System Message field blank, no system message will be specified.
 
