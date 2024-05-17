@@ -1,5 +1,5 @@
 // #popclip
-// name: ChatGPT API
+// name: OpenAI Chat
 // icon: openai-icon.svg
 // identifier: com.pilotmoon.popclip.extension.chatgpt
 // description: Send the selected text to OpenAI's Chat API and append the response.
@@ -154,11 +154,11 @@ export function getErrorInfo(error: unknown): string {
 // export the actions
 export const actions: Action<OptionsShape>[] = [
 	{
-		title: "ChatGPT: Chat",
+		title: "Chat",
 		code: chat,
 	},
 	{
-		title: "ChatGPT: Reset",
+		title: "Reset Chat",
 		icon: "broom-icon.svg",
 		stayVisible: true,
 		requirements: ["option-showReset=1"],

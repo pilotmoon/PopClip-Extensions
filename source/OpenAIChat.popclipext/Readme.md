@@ -1,4 +1,4 @@
-# ChatGPT API
+# OpenAI Chat
 
 PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o chat API. The response is pasted after the selected text. The previous messages in the chat are sent along with each new message, allowing an extended dialogue with the AI.
 
