@@ -10,22 +10,10 @@ As [cryptii.com](https://cryptii.com/pipes/rot13-decoder) puts it:
 
 ## About
 
-This is an extension for [PopClip](https://www.popclip.app/).
-
-### Author
-
-Nick Moore
-
-### Requirements
-
-Requires PopClip 2022.5
-
-### Acknowledgements
-
-The cipher function is [rot13-cipher](https://github.com/rocktimsaikia/rot13-cipher) (MIT License).
+- Author: Nick Moore
+- Implemented with [rot13-cipher](https://github.com/rocktimsaikia/rot13-cipher).
 
 ## Changelog
 
-### 25 May 2022
-
-* Initial release
+- 17 May 2024: Fixed for PopClip 2024.5
+- 25 May 2022: Initial release
