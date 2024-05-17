@@ -38,28 +38,11 @@ account. To get an API Key:
 
 Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
 
-#### Prompt
+#### System Message
 
-Optional text to include at the start of the first message of each new chat. The message will be formatted like this:
+Optional text to specify the system message. This tells the chatbothow to behave.
 
-```
-{your prompt here}
-
-Text: """
-{selected text here}
-"""
-```
-
-(This quoting structure is recommended by OpenAI in their [prompt
-engineering guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api).)
-
-Example prompts might be:
-
-- _Translate the following text into French._
-- _Summarize the following text in 20 words or less._
-- _Act as a proofreader. Correct the spelling and grammar of the following text._
-
-If you leave the Prompt field blank, the selected text will be sent as-is, without a prompt.
+If you leave the System Message field blank, no system message will be specified.
 
 #### Reset Timer (minutes)
 
@@ -98,7 +81,7 @@ Requires PopClip 2024.5.1 and an Open AI Platform account.
 
 ## Changelog
 
-- 2024-05-17: Store API key in keychain. Configurable prompt. PopClip bar stays on screen after pressing reset.
+- 2024-05-17: Store API key in keychain. Configurable system message. PopClip bar stays on screen after pressing reset.
 - 2024-05-15 (2): Rename to `ChatGPT API` and refactor code slightly.
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
 - 2024-03-14: Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).

@@ -5,6 +5,7 @@
 // description: Send the selected text to OpenAI's Chat API and append the response.
 // app: { name: Chat API, link: 'https://platform.openai.com/docs/api-reference/chat' }
 // popclipVersion: 4586
+// keywords: openai
 // entitlements: [network]
 
 import axios from "axios";
@@ -25,11 +26,11 @@ export const options: Option[] = [
 		values: ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "gpt-4o"],
 	},
 	{
-		identifier: "prompt",
-		label: "Prompt",
+		identifier: "systemMessage",
+		label: "System Message",
 		type: "string",
 		description:
-			"Optional prompt to add before the first message of a new chat. Leave blank for no prompt.",
+			"Optional system message to specify the behaviour of the AI agent.",
 	},
 	{
 		identifier: "resetMinutes",
@@ -52,7 +53,7 @@ type OptionsShape = {
 	resetMinutes: string;
 	apikey: string;
 	model: string;
-	prompt: string;
+	systemMessage: string;
 	showReset: boolean;
 };
 
@@ -103,15 +104,16 @@ const chat: ActionFunction<OptionsShape> = async (input, options) => {
 		}
 	}
 
-	// insert prompt if this is the first message and a prompt is provided
-	let content = input.text;
-	let prompt = options.prompt.trim();
-	if (prompt && messages.length === 0) {
-		content = `${prompt.trim()}\n\nText: """\n${content}\n"""\n`;
+	if (messages.length === 0) {
+		// add the system message to the start of the conversation
+		let systemMessage = options.systemMessage.trim();
+		if (systemMessage) {
+			messages.push({ role: "system", content: systemMessage });
+		}
 	}
 
 	// add the new message to the history
-	messages.push({ role: "user", content });
+	messages.push({ role: "user", content: input.text.trim() });
 
 	// send the whole message history to OpenAI
 	try {
