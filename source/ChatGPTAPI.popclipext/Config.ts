@@ -13,7 +13,7 @@ export const options: Option[] = [
 	{
 		identifier: "apikey",
 		label: "API Key",
-		type: "string",
+		type: "secret",
 		description:
 			"Obtain an API key from: https://platform.openai.com/account/api-keys",
 	},
@@ -23,6 +23,13 @@ export const options: Option[] = [
 		type: "multiple",
 		defaultValue: "gpt-3.5-turbo",
 		values: ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "gpt-4o"],
+	},
+	{
+		identifier: "prompt",
+		label: "Prompt",
+		type: "string",
+		description:
+			"Optional prompt to add before the first message of a new chat. Leave blank for no prompt.",
 	},
 	{
 		identifier: "resetMinutes",
@@ -45,6 +52,7 @@ type OptionsShape = {
 	resetMinutes: string;
 	apikey: string;
 	model: string;
+	prompt: string;
 	showReset: boolean;
 };
 
@@ -95,8 +103,15 @@ const chat: ActionFunction<OptionsShape> = async (input, options) => {
 		}
 	}
 
+	// insert prompt if this is the first message and a prompt is provided
+	let content = input.text;
+	let prompt = options.prompt.trim();
+	if (prompt && messages.length === 0) {
+		content = `${prompt.trim()}\n\nText: """\n${content}\n"""\n`;
+	}
+
 	// add the new message to the history
-	messages.push({ role: "user", content: input.text });
+	messages.push({ role: "user", content });
 
 	// send the whole message history to OpenAI
 	try {
@@ -109,7 +124,7 @@ const chat: ActionFunction<OptionsShape> = async (input, options) => {
 		messages.push(data.choices[0].message);
 		lastChat = new Date();
 
-		// if holding shift and alt, pasye just the responsw.
+		// if holding shift and alt, paste just the response.
 		// if holding shift, copy just the response.
 		// else, paste the last input and response.
 		if (popclip.modifiers.shift && popclip.modifiers.option) {
@@ -143,6 +158,7 @@ export const actions: Action<OptionsShape>[] = [
 	{
 		title: "ChatGPT: Reset",
 		icon: "broom-icon.svg",
+		stayVisible: true,
 		requirements: ["option-showReset=1"],
 		code: reset,
 	},

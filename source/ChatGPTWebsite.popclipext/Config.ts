@@ -24,6 +24,14 @@ const gptOption: Option = {
 		"Optional: identifier of custom GPT to use, for example `g-HMNcP6w7d-data-analyst`. Leave blank for none.",
 };
 
+const promptOption: Option = {
+	identifier: "prompt",
+	label: "Prompt",
+	type: "string",
+	description:
+		"Optional prompt to insert before the text. Leave blank for no prompt.",
+};
+
 function openSite(text: string, model: string, customGpt: string) {
 	let url = new URL("https://chatgpt.com/");
 	if (customGpt) {
@@ -36,11 +44,20 @@ function openSite(text: string, model: string, customGpt: string) {
 	popclip.openUrl(url.href);
 }
 
+function prepareText(text: string, prompt: string) {
+	// Add prompt if provided
+	prompt = prompt.trim();
+	if (prompt) {
+		text = `${prompt}\n\nText: """\n${text}\n"""\n`;
+	}
+	return text;
+}
+
 export default {
-	options: [modelOption, gptOption],
+	options: [modelOption, gptOption, promptOption],
 	action: () =>
 		openSite(
-			popclip.input.text,
+			prepareText(popclip.input.text, popclip.options.prompt as string),
 			popclip.options.model as string,
 			popclip.options.customGpt as string,
 		),

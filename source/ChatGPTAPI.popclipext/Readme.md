@@ -1,10 +1,10 @@
 # ChatGPT API
 
-PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o chat API, and append the response.
+PopClip extension to send the selected text, optionally with a pre-configured prompt, to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o chat API. The response is pasted after the selected text.
 
 **Note: Requires pre-paid API credits on your OpenAI account. API usage is not included in ChatGPT Plus subscripiton.**
 
-See also: [ChatGPT Website](https://www.popclip.app/extensions/x/73pbck) extension, which opens a new chat on the ChatGPT website with your selected text as the first message.
+See also: [ChatGPT Website](https://www.popclip.app/extensions/x/73pbck) extension, which opens a new chat on the ChatGPT website.
 
 ### Actions
 
@@ -37,6 +37,29 @@ account. To get an API Key:
 #### Model
 
 Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
+
+#### Prompt
+
+Optional text to include at the start of the first message of each new chat. The message will be formatted like this:
+
+```
+{your prompt here}
+
+Text: """
+{selected text here}
+"""
+```
+
+(This quoting structure is recommended by OpenAI in their [prompt
+engineering guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api).)
+
+Example prompts might be:
+
+- _Translate the following text into French._
+- _Summarize the following text in 20 words or less._
+- _Act as a proofreader. Correct the spelling and grammar of the following text._
+
+If you leave the Prompt field blank, the selected text will be sent as-is, without a prompt.
 
 #### Reset Timer (minutes)
 
@@ -75,6 +98,7 @@ Requires PopClip 2024.5.1 and an Open AI Platform account.
 
 ## Changelog
 
+- 2024-05-17: Store API key in keychain. Configurable prompt. PopClip bar stays on screen after pressing reset.
 - 2024-05-15 (2): Rename to `ChatGPT API` and refactor code slightly.
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
 - 2024-03-14: Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
