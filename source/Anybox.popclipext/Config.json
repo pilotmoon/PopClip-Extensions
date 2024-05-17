@@ -1,6 +1,6 @@
 {
   "identifier": "cc.Anybox.anybox.PopClip.save",
-  "name": "Save to Anybox",
+  "name": "Anybox",
   "icon": "iconify:gravity-ui:bookmark",
   "app": {
     "checkInstalled": true,
