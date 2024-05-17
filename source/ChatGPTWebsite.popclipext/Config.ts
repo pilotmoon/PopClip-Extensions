@@ -5,6 +5,7 @@
 // icon: square filled scale=85 iconify:simple-icons:openai
 // app: { name: ChatGPT Website, link: 'https://chatgpt.com/' }
 // popclip version: 4586
+// keywords: openai
 // language: typescript
 // module: true
 

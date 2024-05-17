@@ -5,7 +5,7 @@
 // description: Send the selected text to OpenAI's Chat API and append the response.
 // app: { name: Chat API, link: 'https://platform.openai.com/docs/api-reference/chat' }
 // popclipVersion: 4586
-// keywords: openai
+// keywords: openai chatgpt
 // entitlements: [network]
 
 import axios from "axios";
