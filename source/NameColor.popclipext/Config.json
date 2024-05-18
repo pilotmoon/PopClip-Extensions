@@ -1,0 +1,10 @@
+{
+  "name": "Name Color",
+  "identifier": "com.oxxie.popclipextensions.namecolor",
+  "description": "Suggests a descriptive name for a hexadecimal color value.",
+  "icon": "ColorPicker.png",
+  "regex": "^#?[a-fA-F0-9]{6}$|^#?[a-fA-F0-9]{3}$",
+  "after": "preview-result",
+  "shellScriptFile": "namecolor.py",
+  "scriptInterpreter": "/usr/bin/python3"
+}
