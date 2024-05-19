@@ -1,34 +1,34 @@
 # HTML Encode
 
-Encode and decode HTML/XML [character entities](https://developer.mozilla.org/en-US/docs/Glossary/Entity) in text.
+Encode and decode HTML character entties in text.
 
 ### Description
 
-*Encoding* (outlined icon) has two modes, configurable in the options: 
+_Encoding_ (solid filled icon) has two modes, configurable in the options:
 
-* **HTML special characters only**: Only the characters `<`, `>`, `&`, `"` and `'` will be encoded (as `&lt;`, `&gt;`, `&amp;`, `&quot;` and `&apos;` respectively).
+- **HTML special characters only**: Only the characters `<`, `>`, `&`, `"` and `'` will be encoded (as `&lt;`, `&gt;`, `&amp;`, `&quot;` and `&apos;` respectively).
 
-* **All non-ASCII characters**: All non "ASCII printable" characters will be encoded. For example the string `⪐⅔Ãµ やあ` is encoded as `&gsiml;&frac23;&Atilde;&micro; &#12420;&#12354;`.
+- **All non-ASCII characters**: All non "ASCII printable" characters will be encoded. For example the string `⪐⅔Ãµ やあ` is encoded as `&gsiml;&frac23;&Atilde;&micro; &#12420;&#12354;`.
 
-*Decoding* (solid filled icon) simply decodes all HTML entities encountered back to their corresponding characters.
+_Decoding_ (outlined icon) simply decodes all HTML entities encountered back to their corresponding characters.
 
-### Requirements
+### Info
 
-Requires [PopClip](https://pilotmoon.com/popclip/download) Build 3624 or above.
+Author: Nick Moore
 
-### Author
+This extension is implemented using [entities](https://github.com/fb55/entities) (MIT license).
 
-Nick Moore
-
-### Acknowledgements
-
-This extension is implemented using [html-entities](https://github.com/mdevils/html-entities) (MIT license).
+Some info about HTML entities: <https://developer.mozilla.org/en-US/docs/Glossary/Entity>
 
 ## Changelog
 
+### 19 May 2024
+
+Rewritten using `entities` module which is built in to PopClip.
+
 ### 16 Oct 2021
 
-- Restructured code using TypeScript, for PopClip Build 3624 ([beta](https://pilotmoon.com/popclip/download)).
+- Restructured code using TypeScript.
 - Added this readme.
 
 ### 24 Sep 2021

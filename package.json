@@ -25,5 +25,8 @@
     "typescript": "5.4.5",
     "voca": "^1.4.0",
     "zod": "^3.17.3"
+  },
+  "dependencies": {
+    "entities": "^4.5.0"
   }
 }
