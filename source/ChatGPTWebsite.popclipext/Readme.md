@@ -10,13 +10,9 @@ See also: [ChatGPT API](https://www.popclip.app/extensions/x/48f32j) extension, 
 
 OpenAI model to select via URL parameter. Options are "Default" (currently GPT-3.5), "GPT 4" and "GPT 4o".
 
-#### Custom GPT identifier
-
-If you want to use a custom GPT, you can paste the identifier here. You will find it in the URL of the website. It starts with `g-`, for example, `g-HMNcP6w7d-data-analyst`.
-
 #### Prompt
 
-Optional text to include at the start of the first message of each new chat. The message will be formatted like this:
+Optional prompt to include with the first message of each new chat. The message will be formatted like this:
 
 ```
 {your prompt here}
@@ -48,6 +44,7 @@ The basic URL format is: `https://chatgpt.com/?q={text}&model={model}`
 
 ## Changelog
 
+- 19 May 2024: Removed custom GPT option since it didn't work!
 - 17 May 2024: Added option to specify a prompt.
 - 15 May 2024 (2): Added option to specify custom GPT.
 - 15 May 2024: Initial release.

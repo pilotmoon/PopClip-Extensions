@@ -17,14 +17,6 @@ const modelOption: Option = {
 	valueLabels: ["Default", "GPT-4", "GPT-4o"],
 };
 
-const gptOption: Option = {
-	identifier: "customGpt",
-	label: "Custom GPT identifier",
-	type: "string",
-	description:
-		"Optional: identifier of custom GPT to use, for example `g-HMNcP6w7d-data-analyst`. Leave blank for none.",
-};
-
 const promptOption: Option = {
 	identifier: "prompt",
 	label: "Prompt",
@@ -33,11 +25,8 @@ const promptOption: Option = {
 		"Optional prompt to insert before the text. Leave blank for no prompt.",
 };
 
-function openSite(text: string, model: string, customGpt: string) {
+function openSite(text: string, model: string) {
 	let url = new URL("https://chatgpt.com/");
-	if (customGpt) {
-		url.pathname = `/g/${customGpt}`;
-	}
 	url.searchParams.append("q", text.trim());
 	if (model) {
 		url.searchParams.append("model", model);
@@ -55,11 +44,10 @@ function prepareText(text: string, prompt: string) {
 }
 
 export default {
-	options: [modelOption, gptOption, promptOption],
+	options: [modelOption, promptOption],
 	action: () =>
 		openSite(
 			prepareText(popclip.input.text, popclip.options.prompt as string),
 			popclip.options.model as string,
-			popclip.options.customGpt as string,
 		),
 };
