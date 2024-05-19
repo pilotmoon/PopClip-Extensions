@@ -1,0 +1,12 @@
+{
+  "popclipVersion": 4225,
+  "name": {
+    "en": "Cyrillic Transliteration"
+  },
+  "title": "Я-A",
+  "identifier": "com.pilotmoon.popclip.extension.cyrillic-transliteration",
+  "module": "transliterate.ts",
+  "regex": "\\p{Cyrillic}",
+  "after": "paste-result",
+  "description": "Transliterate from Cyrillic into Latin characters."
+}
