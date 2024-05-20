@@ -8,6 +8,7 @@
 // requirements: [url]
 // entitlements: [network]
 // after: show-status
+// popclip version: 4151
 // language: javascript
 
 const axios = require("axios");
