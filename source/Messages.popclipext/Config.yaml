@@ -1,0 +1,7 @@
+name: Messages
+identifier: com.pilotmoon.popclip.extension.messages
+description: Share the text using Messages.
+keywords: sms imessage
+icon: message.png
+popclipVersion: 4586
+javascript: popclip.share("com.apple.messages.ShareExtension", [popclip.input.text]);
