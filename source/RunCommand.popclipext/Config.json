@@ -1,48 +1,43 @@
 {
-  "popclipV version": 3785,
+  "name": "Run Command",
   "identifier": "com.pilotmoon.popclip.extension.rtc",
-  "name": "Terminal",
+  "description": "Run the selected text as a command in the active terminal window. Supports Terminal, iTerm2 and Warp.",
+  "keywords": "terminal iterm2 warp run command",
+  "popclip version": 4151,
   "icon": "RTC.png",
-  "title": "Run Terminal Command",
   "actions": [
     {
-      "requirements": [
-        "text",
-        "option-term=Terminal"
-      ],
+      "requirements": ["text", "option-term=Terminal"],
       "applescript file": "terminal.applescript"
     },
     {
-      "requirements": [
-        "text",
-        "option-term=iTerm2 v2.9+"
-      ],
-      "applescript file": "iterm2.applescript"
+      "requirements": ["text", "option-term=iTerm2 v2.9+"],
+      "applescript file": "iterm2.applescript",
+      "app": {
+        "name": "iTerm2",
+        "link": "http://www.iterm2.com/",
+        "bundleIdentifiers": ["com.googlecode.iterm2"],
+        "checkInstalled": false
+      }
     },
     {
-      "requirements": [
-        "text",
-        "option-term=Warp"
-      ],
-      "applescript file": "warp.applescript"
+      "requirements": ["text", "option-term=Warp"],
+      "applescript file": "warp.applescript",
+      "app": {
+        "name": "iTerm2",
+        "link": "https://www.warp.dev/",
+        "bundleIdentifiers": ["dev.warp.Warp-Stable"],
+        "checkInstalled": false
+      }
     }
   ],
   "options": [
     {
       "label": "Terminal Emulator",
       "type": "multiple",
-      "values": [
-        "Terminal",
-        "iTerm2 v2.9+",
-        "Warp"
-      ],
-      "valueLabels": [
-        "Terminal",
-        "iTerm2",
-        "Warp"
-      ],
+      "values": ["Terminal", "iTerm2 v2.9+", "Warp"],
+      "valueLabels": ["Terminal", "iTerm2", "Warp"],
       "identifier": "term"
     }
-  ],
-  "description": "Run the selected text as a terminal command. Supports Terminal, iTerm2 and Warp."
+  ]
 }
