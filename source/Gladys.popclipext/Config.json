@@ -1,12 +1,14 @@
 {
+  "name": "Gladys",
   "identifier": "com.andrewford.popclip.extension.gladystext",
-  "name": "Gladys Text",
+  "description": "Make a new text item in Gladys.",
+  "popclipVersion": 4151,
   "icon": "gladys.png",
   "url": "gladys://x-callback-url/create-item?text={popclip text}",
   "app": {
     "link": "https://www.bru.build/gladys-for-macos",
-    "name": "Gladys for MacOS"
-  },
-  "popclipVersion": 693,
-  "description": "Make a new text item in Gladys."
+    "name": "Gladys for MacOS",
+    "bundleIdentifier": "build.bru.MacGladys",
+    "checkInstalled": true
+  }
 }
