@@ -1,5 +1,5 @@
 {
-  "name": "Run Command",
+  "name": "Terminal",
   "identifier": "com.pilotmoon.popclip.extension.rtc",
   "description": "Run the selected text as a command in the active terminal window. Supports Terminal, iTerm2 and Warp.",
   "keywords": "terminal iterm2 warp run command",
