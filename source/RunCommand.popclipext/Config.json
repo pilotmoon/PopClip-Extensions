@@ -24,7 +24,7 @@
       "requirements": ["text", "option-term=Warp"],
       "applescript file": "warp.applescript",
       "app": {
-        "name": "iTerm2",
+        "name": "Warp",
         "link": "https://www.warp.dev/",
         "bundleIdentifiers": ["dev.warp.Warp-Stable"],
         "checkInstalled": false
