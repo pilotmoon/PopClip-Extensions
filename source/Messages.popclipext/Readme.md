@@ -6,7 +6,7 @@ Sends the selected text to the macOS Messages sharing service.
 
 Uses the service identifier `com.apple.messages.ShareExtension` which pops open a share sheet.
 
-There is an alternative service identifier `com.apple.share.Messages.window` which puts the text directly in the messages window. But this services in only available on macOS ?? and later.
+There is an alternative service identifier `com.apple.share.Messages.window` which puts the text directly in the messages window. But this service does not seem to be enabled always — I'm not sure why — so the extension was failing for some.
 
 ## Changelog
 
