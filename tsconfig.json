@@ -12,11 +12,9 @@
   },
   "include": [
     "./node_modules/@popclip/types/popclip.d.ts",
-    "./node_modules/@popclip/types/extra/shims.d.ts",
     "./lib",
-    "./extras",
     "./source",
-    "./source-contrib"
+    "./contrib"
   ],
   "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"]
 }
