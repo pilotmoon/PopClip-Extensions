@@ -52,12 +52,12 @@ With all that said... please do submit your extension! I'm looking forward to se
 
 ## Credits
 
-All the extensions were created by Nick Moore, except where stated. Individual extension credits are included in the extension's readme file.
+Credits are included in the individual extension readme files.
 
 ## License
 
-All extensions in this repo are published under the MIT License (see [LICENSE.txt](LICENSE.txt)) unless noted otherwise in the readme file.
+All source code is published under the MIT License ([LICENSE.txt](LICENSE.txt)) unless stated otherwise in the extension readme files.
 
 ## Changelog
 
-Where provided, individual changelogs are included in the extension readme files.
+Individual changelogs are included in the extension readme files.
