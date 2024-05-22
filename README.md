@@ -32,15 +32,16 @@ Please note I will not publish all submissions. Extensions to be published must 
 - The extension "just works", with only minimal configuration by the user.
 - A well-chosen name, in keeping with the naming style of other extensions. Names are usually one or two words; for example ✅"Instapaper", not ❌"Send to Instapaper"; ✅"Uppercase" not ❌"Convert to Uppercase".
 - A good icon, clearly representing the action. (Use [Iconify or SF Symbols](https://www.popclip.app/dev/icons) if you're not a designer.)
-- In the Config, a clear, concise `description` of what the extension does.
-- Except for the very very simplest extensions, include a `readme.md` file explaining briefly how to use the extension, particularly mentioning any special features and configuration options.
+- In the Config, a clear, concise, one-sentence `description` of what the extension does. This is what appears on the website next to the extension name.
+- Apart from the simplest extensions, include a `readme.md` file explaining briefly how to use the extension, particularly mentioning any special features and configuration options. Add a Changelog at the bottom of the readme.
 - Where API keys are needed, this should be clearly documented in the readme with instructions and a link to obtain the key.
 - No pointless scripts. For example, don't use a bash script to open a URL when you could just use the `url` action.
 - Favour JavaScript actions over Shell Script or AppleScript actions unless the particular action really needs to be a shell script or AppleScript.
 - Shell Script extensions must work out-of-the-box on a default installation of the latest macOS. I won't publish extensions that require the user to install additional scripting languages or libraries.
-- Use the Readme to give proper credit to any open source libraries or icons used.
+- Use the Readme to give credit to yourself as the author and acknowledge any other contributors, open source libraries, or icon creators.
 - No compiled binaries. All submissions must be source code only.
-- Extensions that interact with a website or app should have an `app` dictionary in the Config, defining the `name` and `link` fields. For macOS apps, the `bundleIdentifiers` key with the `checkInstalled: true` option should also be used.
+- Extensions that interact with a website or app should have an `app` dictionary in the Config, defining the `name` and `link` fields. The name will be automatically linked in the extension description.
+- For extensions that work with a 3rd party macOS app, the `bundleIdentifiers` key with the `checkInstalled: true` option should also be used as well.
 - No extensions aimed at circumventing copyright, defeating paywalls etc.
 - No links to torrent / filesharing sites that predominantly index copyrighted content.
 - Nothing that "phones home", collects user data, or modifies the user's system in any way.
