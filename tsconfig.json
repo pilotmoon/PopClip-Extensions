@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "strict": true,
-    "noImplicitAny": false,
     "target": "es2018",
-    "skipLibCheck": true,
     "module": "commonjs",
-    "esModuleInterop": true,
     "moduleResolution": "node",
+    "baseUrl": "./lib",
+    "skipLibCheck": true,
     "resolveJsonModule": true,
-    "baseUrl": "./lib"
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": false
   },
   "include": [
     "./node_modules/@popclip/types/popclip.d.ts",
