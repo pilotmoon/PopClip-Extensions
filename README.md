@@ -14,7 +14,7 @@ This repository contains the source files for many of the extensions published i
 The main folders:
 
 - `source` - sources for the published extensions (maintained and supported by me)
-- `source-contrib` - folder for as-yet-unpublished user-contributed and experimental extensions
+- `contrib` - folder for unpublished / user-contributed / experimental / niche / archived extensions (not maintained or supported)
 
 ## Contributing
 
@@ -22,7 +22,7 @@ Fixes and improvements to existing extensions are welcome via pull request.
 
 To contribute new extensions to the directory, the preferred way is for you to submit it directly to the directory server from your own repo. The extension's directory page will be linked to your repo and you will maintain and update the extension yourself. Contact me at <mailto:support@pilotmoon.com> for the submission instructions.
 
-Alternatively, new extensions may be submitted by pull request **in the `source-contrib` folder** of this repo. (If I publish it, I will move it to the `source` folder myself.)
+Alternatively, new extensions may be submitted by pull request **in the `contrib` folder** of this repo. (If I publish it, I will move it to the `source` folder myself.)
 
 ### Quality Guidelines
 
