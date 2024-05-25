@@ -2,6 +2,7 @@
 // name: UpNote
 // identifier: com.pilotmoon.popclip.extension.upnote
 // description: Create a new note in UpNote with the selected text.
+// app: { name: UpNote, link: https://getupnote.com/ }
 // popclipVersion: 4586
 // icon: upnote.svg
 
