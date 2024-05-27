@@ -22,8 +22,8 @@ To use this extension, you need to get an API token from your Roam Research sett
 1. Go to the settings for the hosted graph you want to capture text to.
 2. Click the Graph tab on the left.
 3. Click the New API Token button.
-   ![](./_media/shot-token-1.png)
-4. Give the token a name (for example "popclip") and select "append-only" as the Access Scope. Click the Create button. ![](./_media/shot-token-2.png)
+   ![](_media/shot-token-1.png)
+4. Give the token a name (for example "popclip") and select "append-only" as the Access Scope. Click the Create button. ![](_media/shot-token-2.png)
 5. Copy the token and paste it into the API Token field in the extension's settings.
 
 ## Notes
