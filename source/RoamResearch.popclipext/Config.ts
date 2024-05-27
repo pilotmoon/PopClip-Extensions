@@ -74,7 +74,7 @@ const action: Action<RoamOptions> = {
 		// add source URL if available
 		let string = input.markdown.trim();
 		if (context.browserUrl) {
-			string += `\n\nSource: ${context.browserUrl}`;
+			string += `\n- Source: ${context.browserUrl}`;
 		}
 
 		// post to API

@@ -2,7 +2,7 @@
 
 Capture text to a [Roam Research][home] hosted graph.
 
-The extension sends the text directly to the Roam Research API and does not need the macOS app to be installed locally
+The extension sends the text directly to the Roam Research API and does not need the macOS app to be installed locally.
 
 When capturing from a supported browser the source link will be added.
 
@@ -11,7 +11,7 @@ When capturing from a supported browser the source link will be added.
 You'll need to provide the following:
 
 - **API Token**: See below.
-- **Graph Name**: The name of an existing hosted graph to capture to.
+- **Graph Name**: The name of the hosted graph.
 - **Page Name** (optional): Name of the page to capture to. If the page doesn't exist, it will be created. If you leave it blank, the text will be added to the daily note page.
 - **Nest Under** (optional): If provided, the notes will be nested under this block. If the block doesn't exist, it will be created. If omitted, the notes will be added to the page directly.
 
