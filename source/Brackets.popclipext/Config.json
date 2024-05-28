@@ -1,9 +1,0 @@
-{
-  "description" : "Put brackets around the selected text, choosing from (), [], {} and &lt;&gt;.",
-  "identifier" : "com.pilotmoon.popclip.extension.brackets",
-  "name" : "Brackets",
-  "icon" : "brackets-round.png",
-  "popclipVersion" : 4225,
-  "entitlements": ["dynamic"],
-  "module": "brackets.ts"
-}
