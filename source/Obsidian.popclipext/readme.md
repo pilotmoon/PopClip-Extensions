@@ -1,17 +1,17 @@
 # Obsidian PopClip Extension
 
-**⚠️ Heads up! You'll need to prepare Obsidian to receive clippings. Please read the Configuration section carefully.**
-
 Captures the selected text to [Obsidian][obsidian], placing it either in a specified file or in the Daily Note page, optionally under a configurable heading.
 
 When the text is captured from a supported browser, the source link will be added.
+
+**⚠️ Heads up! Preparation steps in Obsidian are needed. Please read the Configuration section carefully.**
 
 ## Configuration
 
 Prerequisites:
 
 - Install [Obsidian][obsidian].
-- Install and enable the [Obsidian Advanced URL][uri-plugin] community plugin.
+- 👉 Install and enable the [Obsidian Advanced URL][uri-plugin] community plugin. 👈
 - Know the name of the destination vault in Obsidian.
 - Decide whether you want to append to Daily Note or a named file.
   - For Daily Note:
