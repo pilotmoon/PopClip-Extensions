@@ -36,9 +36,10 @@ function openSite(text: string, model: string) {
 
 function prepareText(text: string, prompt: string) {
 	// Add prompt if provided
+	text = text.trim();
 	prompt = prompt.trim();
 	if (prompt) {
-		text = `${prompt}\n\nText: """\n${text}\n"""\n`;
+		text = `${prompt}\n\n${text}`;
 	}
 	return text;
 }

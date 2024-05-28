@@ -12,18 +12,7 @@ OpenAI model to select via URL parameter. Options are "Default" (currently GPT-3
 
 #### Prompt
 
-Optional prompt to include with the first message of each new chat. The message will be formatted like this:
-
-```
-{your prompt here}
-
-Text: """
-{selected text here}
-"""
-```
-
-(This quoting structure is recommended by OpenAI in their [prompt
-engineering guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api).)
+Optional prompt to insert at the start of the message.
 
 Example prompts might be:
 
@@ -44,6 +33,7 @@ The basic URL format is: `https://chatgpt.com/?q={text}&model={model}`
 
 ## Changelog
 
+- 28 May 2024: Remove the quoting when using a prompt.
 - 19 May 2024: Removed custom GPT option since it didn't work!
 - 17 May 2024: Added option to specify a prompt.
 - 15 May 2024 (2): Added option to specify custom GPT.
