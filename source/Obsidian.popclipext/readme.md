@@ -11,7 +11,7 @@ When the text is captured from a supported browser, the source link will be adde
 Prerequisites:
 
 - Install [Obsidian][obsidian].
-- 👉 Install and enable the [Obsidian Advanced URL][uri-plugin] community plugin. 👈
+- 👉 Install and enable the [Obsidian Advanced URI][uri-plugin] community plugin. 👈
 - Know the name of the destination vault in Obsidian.
 - Decide whether you want to append to Daily Note or a named file.
   - For Daily Note:
