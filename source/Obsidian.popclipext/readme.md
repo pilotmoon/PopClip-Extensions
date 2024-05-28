@@ -36,7 +36,7 @@ Troubleshooting:
 
 ## Notes
 
-Author: Nick Moore, based on original snippet posted by [forum user EdM](edm). Icon by Simple Icons.
+Author: Nick Moore, based on original snippet posted by [forum user EdM][edm]. Icon by Simple Icons.
 
 [obsidian]: https://obsidian.md/
 [uri-plugin]: https://vinzent03.github.io/obsidian-advanced-uri/installing
