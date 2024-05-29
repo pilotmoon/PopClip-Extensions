@@ -2,7 +2,7 @@
 // name: Agenda
 // identifier: com.pilotmoon.popclip.extension.agenda
 // description: Capture text to an Agenda note.
-// popclip version: 4151
+// popclip version: 4586
 // icon: agenda.svg
 // app:
 //   name: Agenda
