@@ -1,8 +1,9 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // convert "old style" JSON config to "new style"
 /* eslint-disable @typescript-eslint/no-dynamic-delete */
 import * as ca from 'case-anything'
-import { mapping, prefixes, actionKeys, otherKeysBefore, otherKeysAfter } from './mapping.json'
+import { mapping, prefixes, actionKeys, otherKeysBefore, otherKeysAfter, skip } from './mapping.json'
+import { dump as dumpYaml } from "js-yaml";
 
 // read all of stdin
 const chunks: string[] = []
@@ -119,8 +120,13 @@ function convert (jsonConfig: string): string {
   const keyOrder = otherKeysBefore.concat(actionKeys, otherKeysAfter)
   const ordered: any = {}
   for (const key of keyOrder) {
-    ordered[key] = null
+    ordered[key] = undefined
   }
   Object.assign(ordered, config)
-  return JSON.stringify(ordered, removeNull, 2) + '\n'
+  for (const key of Object.keys(ordered)) {
+    if (skip.includes(key)) {
+      delete ordered[key]
+    }
+  }
+  return dumpYaml(ordered, {noArrayIndent: true})
 }
