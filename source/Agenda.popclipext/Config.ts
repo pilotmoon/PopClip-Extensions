@@ -23,7 +23,7 @@ export const options: Option[] = [
 export const action: Action<AgendaOptions> = {
 	captureHtml: true,
 	code(input, options, context) {
-		let text = input.markdown;
+		let text = input.markdown.trim();
 		if (context.browserUrl) {
 			text += `\n[${context.browserTitle || "Source"}](${context.browserUrl})`;
 		}
@@ -34,7 +34,7 @@ function addNote(text: string, options: AgendaOptions) {
 	const url = new URL("agenda://x-callback-url/create-note");
 	url.searchParams.set("project-title", options.title);
 	url.searchParams.set("title", "Clipped with PopClip");
-	url.searchParams.set("text", text.trim());
+	url.searchParams.set("text", text);
 	popclip.openUrl(url.href.replaceAll("+", "%20"));
 }
 export function test() {
