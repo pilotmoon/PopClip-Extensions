@@ -10,14 +10,21 @@
 //   bundleIdentifier: com.momenta.agenda.macos
 //   checkInstalled: true
 
-type AgendaOptions = { title: string };
+type AgendaOptions = { title: string; noteTitle: string };
 export const options: Option[] = [
 	{
 		identifier: "title",
-		label: "Project Title",
+		label: "Project Name",
 		type: "string",
-		defaultValue: "Snippets",
-		description: "Name of existing project in which to insert notes.",
+		description:
+			"Name of project to capture to. Leave blank to capture to the active project.",
+	},
+	{
+		identifier: "noteTitle",
+		label: "Note Title",
+		type: "string",
+		defaultValue: "Clipping",
+		description: "Title for clipped notes.",
 	},
 ];
 export const action: Action<AgendaOptions> = {
@@ -32,11 +39,13 @@ export const action: Action<AgendaOptions> = {
 };
 function addNote(text: string, options: AgendaOptions) {
 	const url = new URL("agenda://x-callback-url/create-note");
-	url.searchParams.set("project-title", options.title);
-	url.searchParams.set("title", "Clipped with PopClip");
+	if (options.title) {
+		url.searchParams.set("project-title", options.title);
+	}
+	url.searchParams.set("title", options.noteTitle);
 	url.searchParams.set("text", text);
 	popclip.openUrl(url.href.replaceAll("+", "%20"));
 }
 export function test() {
-	addNote("Hello, World!", { title: "Snippets" });
+	addNote("Hello, World!", { title: "Snippets", noteTitle: "" });
 }
