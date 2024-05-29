@@ -1,0 +1,40 @@
+{
+  "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension",
+  "name": "ScreenFloat",
+  "icon": "symbol:plus.viewfinder",
+  "app": {
+    "name": "ScreenFloat",
+    "link": "https://eternalstorms.at/ScreenFloat",
+    "checkInstalled": true,
+    "bundleIdentifiers": [
+      "at.EternalStorms.ScreenFloat-appstore",
+      "at.EternalStorms.ScreenFloat-trial",
+      "at.EternalStorms.ScreenFloat-setapp"
+    ]
+  },
+  "macos version": "12.0",
+  "serviceName": "Capture with ScreenFloat",
+  "description": "Capture selected text or a portion of your screen with ScreenFloat.",
+  "actions": [
+    {
+      "title": "Capture selected text in ScreenFloat",
+      "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.TextCapture",
+      "url": "esssf2://popClipCapture.at/?text={popclip text}"
+    },
+    {
+      "title": "Capture a screenshot with ScreenFloat",
+      "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.ScreenshotCapture",
+      "url": "esssf2://sci-capture.at/?captureType=screenshot&shouldFloat=true"
+    },
+    {
+      "title": "Capture a timed screenshot with ScreenFloat",
+      "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.TimedScreenshotCapture",
+      "url": "esssf2://sci-capture.at/?captureType=timed&shouldFloat=true"
+    },
+    {
+      "title": "Record your screen with ScreenFloat",
+      "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.ScreenRecord",
+      "url": "esssf2://sci-capture.at/?captureType=video&shouldFloat=true"
+    }
+  ]
+}
