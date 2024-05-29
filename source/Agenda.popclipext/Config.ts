@@ -1,6 +1,6 @@
 // #popclip
 // name: Agenda
-// identifier: com.marcboulos.popclip.extension.Agenda
+// identifier: com.pilotmoon.popclip.extension.agenda
 // description: Capture text to an Agenda note.
 // popclip version: 4151
 // icon: agenda.svg
