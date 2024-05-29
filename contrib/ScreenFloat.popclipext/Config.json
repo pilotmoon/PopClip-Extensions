@@ -1,6 +1,7 @@
 {
   "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension",
   "name": "ScreenFloat",
+  "popclip version": 4151,
   "icon": "symbol:plus.viewfinder",
   "app": {
     "name": "ScreenFloat",
@@ -15,25 +16,63 @@
   "macos version": "12.0",
   "serviceName": "Capture with ScreenFloat",
   "description": "Capture selected text or a portion of your screen with ScreenFloat.",
+  "options": [
+    {
+      "identifier": "actions-heading",
+      "label": "Actions",
+      "type": "heading"
+    },
+    {
+      "identifier": "text",
+      "label": "Capture Text",
+      "type": "boolean",
+      "icon": "symbol:plus.viewfinder"
+    },
+    {
+      "identifier": "shot",
+      "label": "Screenshot",
+      "type": "boolean",
+      "icon": "symbol:camera.shutter.button"
+    },
+    {
+      "identifier": "timed",
+      "label": "Timed Screenshot",
+      "type": "boolean",
+      "icon": "symbol:camera.badge.clock"
+    },
+    {
+      "identifier": "record",
+      "label": "Record Screen",
+      "type": "boolean",
+      "icon": "symbol:record.circle"
+    }
+  ],
   "actions": [
     {
       "title": "Capture selected text in ScreenFloat",
       "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.TextCapture",
+      "requirements": ["text", "option-text=1"],
       "url": "esssf2://popClipCapture.at/?text={popclip text}"
     },
     {
       "title": "Capture a screenshot with ScreenFloat",
       "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.ScreenshotCapture",
+      "icon": "symbol:camera.shutter.button",
+      "requirements": ["option-shot=1"],
       "url": "esssf2://sci-capture.at/?captureType=screenshot&shouldFloat=true"
     },
     {
       "title": "Capture a timed screenshot with ScreenFloat",
       "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.TimedScreenshotCapture",
+      "icon": "symbol:camera.badge.clock",
+      "requirements": ["option-timed=1"],
       "url": "esssf2://sci-capture.at/?captureType=timed&shouldFloat=true"
     },
     {
       "title": "Record your screen with ScreenFloat",
       "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.ScreenRecord",
+      "icon": "symbol:record.circle",
+      "requirements": ["option-shot=1"],
       "url": "esssf2://sci-capture.at/?captureType=video&shouldFloat=true"
     }
   ]
