@@ -72,7 +72,7 @@
       "title": "Record your screen with ScreenFloat",
       "identifier": "at.EternalStorms.ScreenFloat.PopClipExtension.ScreenRecord",
       "icon": "symbol:record.circle",
-      "requirements": ["option-shot=1"],
+      "requirements": ["option-record=1"],
       "url": "esssf2://sci-capture.at/?captureType=video&shouldFloat=true"
     }
   ]
