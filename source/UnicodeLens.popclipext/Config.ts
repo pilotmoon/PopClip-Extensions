@@ -3,7 +3,7 @@
 // identifier: com.pilotmoon.popclip.extension.unicode-lens
 // description: View the underlying Unicode code points of selected text.
 // popclipVersion: 4586
-// icon: iconify:tabler:grid-dots
+// icon: iconify:ic:baseline-lens-blur
 
 export const action: Action = {
 	code(input) {
