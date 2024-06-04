@@ -9,7 +9,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "strict": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "allowImportingTsExtensions": true
   },
   "include": [
     "./node_modules/@popclip/types/popclip.d.ts",
