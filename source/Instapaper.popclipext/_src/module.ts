@@ -21,7 +21,6 @@ export const auth: AuthFunction = async (info, flow) => {
 			x_auth_mode: "client_auth",
 		},
 	);
-	print({ data });
 	return data;
 };
 

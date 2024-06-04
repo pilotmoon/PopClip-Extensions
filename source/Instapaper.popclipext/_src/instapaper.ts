@@ -18,7 +18,6 @@ const oauth = new OAuth({
 	consumer: util.clarify(client),
 	signature_method: "HMAC-SHA1",
 	hash_function(base_string, key) {
-		print({ base_string, key });
 		return Buffer.from(hmac(sha1, key, base_string)).toString("base64");
 	},
 });
@@ -27,7 +26,6 @@ const oauth = new OAuth({
 export const instapaper = axios.create();
 instapaper.interceptors.request.use(async (config) => {
 	const { oauth_token, oauth_token_secret, ...data } = config.data;
-	print({ oauth_token, oauth_token_secret, data });
 	const auth = oauth.authorize(
 		{
 			url: config.url!,

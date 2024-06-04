@@ -572,14 +572,12 @@ var oauth = new import_oauth_1.default({
   consumer: util.clarify(client),
   signature_method: "HMAC-SHA1",
   hash_function(base_string, key) {
-    print({ base_string, key });
     return Buffer.from(hmac(sha1, key, base_string)).toString("base64");
   }
 });
 var instapaper = import_axios.default.create();
 instapaper.interceptors.request.use(async (config) => {
   const { oauth_token, oauth_token_secret, ...data } = config.data;
-  print({ oauth_token, oauth_token_secret, data });
   const auth2 = oauth.authorize(
     {
       url: config.url,
@@ -618,7 +616,6 @@ var auth = async (info, flow) => {
       x_auth_mode: "client_auth"
     }
   );
-  print({ data });
   return data;
 };
 var action = {
