@@ -2745,13 +2745,13 @@ var auth = async (info, flow) => {
 };
 var action = {
   requirements: ["url"],
-  code(input, options2, context) {
+  code(input, options2) {
     const auth2 = Object.fromEntries(new URLSearchParams(options2.authsecret));
-    return instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
+    instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
       url: input.data.urls[0],
-      title: context.browserUrl,
       ...auth2
     });
+    popclip.showSuccess();
   }
 };
 /*! Bundled license information:

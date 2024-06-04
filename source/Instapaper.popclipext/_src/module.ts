@@ -27,12 +27,12 @@ export const auth: AuthFunction = async (info, flow) => {
 
 export const action: Action = {
 	requirements: ["url"],
-	code(input, options, context) {
+	code(input, options) {
 		const auth = Object.fromEntries(new URLSearchParams(options.authsecret));
-		return instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
+		instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
 			url: input.data.urls[0],
-			title: context.browserUrl,
 			...auth,
 		});
+		popclip.showSuccess();
 	},
 };
