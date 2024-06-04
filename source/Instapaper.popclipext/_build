@@ -1,0 +1,3 @@
+#!/bin/zsh
+bun run check
+bun run esbuild --bundle --format=cjs --target=es2018 _src/module.ts > module.bundle.js

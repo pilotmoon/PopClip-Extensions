@@ -1,0 +1,9 @@
+#popclip
+name: Instapaper
+identifier: com.pilotmoon.popclip.extension.instapaper
+description: Save a URL to read later with Instapaper.
+popclip version: 4586
+icon: i.png
+app: { name: Instapaper, link: https://www.instapaper.com/ }
+entitlements: [network]
+module: module.bundle.js
