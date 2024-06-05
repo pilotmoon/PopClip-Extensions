@@ -4,6 +4,8 @@ Capture selected text with [ScreenFloat](https://eternalstorms.at/ScreenFloat/),
 
 Originally contributed by Matthias Gansrigler of Eternal Storms Software.
 
+Requires ScreenFloat version 2.2 or later.
+
 ## Changelog
 
-- 29 May 2024: Initial draft
+- 5 Jun 2024: Initial release
