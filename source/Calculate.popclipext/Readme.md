@@ -2,8 +2,6 @@
 
 Evaluate the text as mathematical expression.
 
-<img src="https://raw.githubusercontent.com/pilotmoon/PopClip-Extensions/master/source/Calculate.popclipext/Calculate-demo.gif" width="320px">
-
 The result is displayed as the action's button title. Clicking the action button will paste or copy the result. (Holding Shift (⇧) will always copy.)
 
 Examples with simple arithmetic:
