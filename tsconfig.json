@@ -10,13 +10,9 @@
     "esModuleInterop": true,
     "strict": true,
     "noImplicitAny": false,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "types": ["node", "@popclip/types"]
   },
-  "include": [
-    "./node_modules/@popclip/types/popclip.d.ts",
-    "./lib",
-    "./source",
-    "./contrib"
-  ],
+  "include": ["./lib", "./source", "./contrib"],
   "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"]
 }
