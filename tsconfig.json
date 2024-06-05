@@ -13,6 +13,5 @@
     "allowImportingTsExtensions": true,
     "types": ["node", "@popclip/types"]
   },
-  "include": ["./lib", "./source", "./contrib"],
-  "exclude": ["/Applications/PopClip.app/Contents/Resources/popclip.d.ts"]
+  "include": ["./lib", "./source", "./contrib"]
 }
