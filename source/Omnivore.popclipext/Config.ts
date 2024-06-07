@@ -14,7 +14,7 @@ export const options: Option[] = [
     identifier: "apiKey",
     type: "secret",
     label: "API Key",
-    description: "Get from https://app.omnivore.app/settings/api",
+    description: "Get it from https://omnivore.app/settings/api",
   },
 ];
 type OmnivoreOptions = {
