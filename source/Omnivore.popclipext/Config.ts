@@ -3,7 +3,7 @@
 // identifier: com.pilotmoon.popclip.extension.omnivore
 // description: Save the URL to read later with Omnivore.
 // popclip version: 4615
-// icon: omnivore-logo.png
+// icon: scale=90 file:omnivore-logo.png
 // entitlements: [network]
 // app: { name: Omnivore, link: https://omnivore.app/ }
 
@@ -14,7 +14,7 @@ export const options: Option[] = [
     identifier: "apiKey",
     type: "secret",
     label: "API Key",
-    description: "See: https://app.omnivore.app/settings/api",
+    description: "Get from https://app.omnivore.app/settings/api",
   },
 ];
 type OmnivoreOptions = {
