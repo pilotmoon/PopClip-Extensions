@@ -9,19 +9,17 @@
 
 import axios from "axios";
 
-export const options: Option[] = [
+export const options = [
   {
     identifier: "apiKey",
     type: "secret",
     label: "API Key",
     description: "Get it from https://omnivore.app/settings/api",
   },
-];
-type OmnivoreOptions = {
-  apiKey: string;
-};
+] as const;
+type Options = InferOptions<typeof options>;
 
-export const action: Action<OmnivoreOptions> = {
+export const action: Action<Options> = {
   requirements: ["url"],
   async code(input, options) {
     await addToOmnivore(input.data.urls[0], options);
@@ -29,7 +27,7 @@ export const action: Action<OmnivoreOptions> = {
   },
 };
 
-async function addToOmnivore(url: string, options: OmnivoreOptions) {
+async function addToOmnivore(url: string, options: Options) {
   const query = saveUrlQuery(url);
   print({ url, query });
   await axios.post("https://api-prod.omnivore.app/api/graphql", query, {
