@@ -10,19 +10,9 @@ Copy web page content as Markdown source code. Also works on plain text and RTF 
 * **&lt;strong&gt; Delimiter**: Choose between `**` and `__` for `<strong>` elements.
 * **Link Style**: Choose between inlined links (`[text](url)`) and reference links (`[text][id]`).
 
-## About
-
-This is an extension for [PopClip](https://www.popclip.app/).
-
-### Author
-
-Nick Moore
-
-### Requirements
-
-Requires PopClip 2023.7.
-
 ### Notes
+
+Author: Nick Moore.
 
 The original extension used [html2text](https://pypi.python.org/pypi/html2text/3.200.3) by Aaron Swartz.
 
