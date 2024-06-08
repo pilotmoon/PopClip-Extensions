@@ -620,9 +620,9 @@ var auth = async (info, flow) => {
 };
 var action = {
   requirements: ["url"],
-  code(input, options2) {
+  async code(input, options2) {
     const auth2 = Object.fromEntries(new URLSearchParams(options2.authsecret));
-    instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
+    await instapaper.post("https://www.instapaper.com/api/1/bookmarks/add", {
       url: input.data.urls[0],
       ...auth2
     });
