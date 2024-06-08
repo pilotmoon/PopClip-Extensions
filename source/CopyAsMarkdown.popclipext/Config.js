@@ -3,10 +3,10 @@
 // identifier: com.pilotmoon.popclip.extension.copy-as-markdown
 // description: Copy web content as Markdown.
 // icon: '>md.png'
-// popclip version: 4225
+// popclip version: 4615
 
-const linkedom=require("linkedom");
-const TurndownService=require("turndown");
+const linkedom = require("linkedom");
+const TurndownService = require("turndown");
 
 exports.options = [
   {
@@ -40,7 +40,7 @@ exports.options = [
     type: "multiple",
     values: ["inlined", "referenced"],
     valueLabels: ["Inline — [text](url)", "Reference — [text][id]"],
-  }
+  },
 ];
 
 function htmlToMarkdown(html, options) {

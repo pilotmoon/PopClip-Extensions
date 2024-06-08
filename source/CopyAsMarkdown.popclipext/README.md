@@ -32,14 +32,7 @@ Hat-tip to Brett Terpstra whose [Web Markdownifier](http://brettterpstra.com/201
 
 ## Changelog
 
-### 13 May 2024
-
-* Added output format options as per [forum request](https://forum.popclip.app/t/updated-extension-copy-as-markdown/603/4).
-
-### 3 Feb 2022
-
-* Rewritten in JavaScript & Turndown.
-
-### 7 Dec 2016
-
-* Initial release (Python & html2text)
+- 8 June 2024: Updated required PopClip version to 2024.5.2.
+- 13 May 2024: Added output format options as per [forum request](https://forum.popclip.app/t/updated-extension-copy-as-markdown/603/4).
+- 3 Feb 2022: Rewritten in JavaScript & Turndown.
+- 7 Dec 2016: Initial release (Python & html2text)
