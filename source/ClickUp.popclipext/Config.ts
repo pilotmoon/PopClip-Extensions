@@ -10,8 +10,6 @@
 import axios from "axios";
 import { client } from "./client.json";
 
-const clickup = axios.create({ baseURL: "https://api.clickup.com/api/v2" });
-
 export const options = [
   {
     identifier: "listUrl",
@@ -29,11 +27,14 @@ export const auth: AuthFunction = async (info, flow) => {
     client_id,
     redirect_uri,
   });
-  const { data } = await clickup.post("oauth/token", {
-    client_id,
-    client_secret,
-    code,
-  });
+  const { data } = await axios.post(
+    "https://api.clickup.com/api/v2/oauth/token",
+    {
+      client_id,
+      client_secret,
+      code,
+    },
+  );
   return JSON.stringify(data);
 };
 
@@ -60,15 +61,22 @@ export const action: Action<Options> = {
 
 async function addTask(name: string, description: string, options: Options) {
   const { access_token } = JSON.parse(options.authsecret);
-  clickup.defaults.headers.common["Authorization"] = `Bearer ${access_token}`;
   const listId = Number.parseInt(
     /\/li\/(\d+)$/.exec(options.listUrl)?.[1] ?? "",
   );
   if (!listId) throw new Error("Invalid list URL");
-  await clickup.post(`/list/${listId}/task`, {
-    name,
-    description,
-  });
+  await axios.post(
+    `https://api.clickup.com/api/v2/list/${listId}/task`,
+    {
+      name,
+      description,
+    },
+    {
+      headers: {
+        Authorization: `Bearer ${access_token}`,
+      },
+    },
+  );
 }
 
 export async function test() {
