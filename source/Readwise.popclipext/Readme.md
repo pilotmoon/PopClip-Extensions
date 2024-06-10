@@ -1,11 +1,11 @@
 # Readwise
 
-Save a highlight to [Readwise](https://readwise.io/) or a URL to [Readwise Reader](https://read.readwise.io/).
+Save a highlight to [Readwise](https://readwise.io/) or a URL to [Readwise Reader](https://readwise.io/read).
 
 The extension has two actions:
 
 - **Save Highlight**: Saves any text as a highlight in [Readwise](https://readwise.io/). When clipped from a supported browser, the source page URL and title will be included.
-- **Save Article**: Appears only when you select a URL. The URL will be saved as an article in [Readwise Reader](https://read.readwise.io/).
+- **Save Article**: Appears only when you select a URL. The URL will be saved as an article in [Readwise Reader](https://readwise.io/read).
 
 You can choose whether each action appears by toggling it on or off in the extension's settings.
 
