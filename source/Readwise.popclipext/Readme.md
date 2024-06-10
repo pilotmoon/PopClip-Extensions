@@ -1,29 +1,23 @@
 # Readwise
 
-Save the selected text as a highligh in [Readwise](https://readwise.io/).
+Save the selected text as a highlight in [Readwise](https://readwise.io/).
 
-## About
+The highlight will be saved with the selected text as the quote, the page URL as the source, and the current date as the highlight date.
 
-This is an extension for [PopClip](https://pilotmoon.com/popclip/).
+## Configuration
 
-### Authors
+- **Access Token**: Obtain your token from <https://readwise.io/access_token>.
 
-Griffin Caprio ([gcaprio](https://github.com/gcaprio)), Nick Moore
+## Notes
 
-### Requirements
+Authors: Griffin Caprio ([gcaprio](https://github.com/gcaprio)), Nick Moore
 
-Requires PopClip 2021.11.
+Links:
 
-### Notes
-
-Readwise API: [https://readwise.io/api_deets](https://readwise.io/api_deets)
+- [Readwise API](https://readwise.io/api_deets)
 
 ## Changelog
 
-### 16 Nov 2021
-
-* Rewritten in JavaScript for macOS Monterey.
-  
-### 19 Feb 2021
-
-* Initial version in PHP by Griffin Caprio.
+- 10 Jun 2024: Updated the code to a more modern format.
+- 16 Nov 2021: Rewritten in JavaScript for macOS Monterey.
+- 19 Feb 2021: Initial version in PHP by Griffin Caprio.
