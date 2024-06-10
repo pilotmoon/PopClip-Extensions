@@ -64,7 +64,7 @@ async function addTask(name: string, description: string, options: Options) {
   const listId = Number.parseInt(
     /\/li\/(\d+)$/.exec(options.listUrl)?.[1] ?? "",
   );
-  if (!listId) throw new Error("Invalid list URL");
+  if (!listId) throw new Error("Settings error: Invalid list URL");
   await axios.post(
     `https://api.clickup.com/api/v2/list/${listId}/task`,
     {
