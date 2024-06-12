@@ -80,23 +80,27 @@ export async function test() {
     vaultName: "Dry, Dark Place",
     fileName: "Clippings",
     heading: "",
+    sourceLink: true,
   });
   await sleep(100);
   capture("in clippings file, with heading", {
     vaultName: "Dry, Dark Place",
     fileName: "Clippings",
     heading: "My Heading",
+    sourceLink: true,
   });
   await sleep(100);
   capture("in daily note file, no heading", {
     vaultName: "Dry, Dark Place",
     fileName: "",
     heading: "",
+    sourceLink: true,
   });
   await sleep(100);
   capture("in daily note file, with heading", {
     vaultName: "Dry, Dark Place",
     fileName: "",
     heading: "My Heading",
+    sourceLink: true,
   });
 }
