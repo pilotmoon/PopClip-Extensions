@@ -82,7 +82,7 @@ const saveUrl: ActionFunction<AuthOptions> = async (
 export const actions: Action<AuthOptions>[] = [
   {
     title: "Save Highlight",
-    requirements: ["!url"],
+    requirements: ["text", "!url"],
     code: saveHighlight,
   },
   {
