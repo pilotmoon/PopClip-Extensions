@@ -26,6 +26,7 @@ PopClip extension settings:
 - **Vault Name**: The name of the vault in Obsidian.
 - **File Name**: Enter the name of the file to append to, or leave blank to use the Daily Note.
 - **Heading**: Enter the heading under which to append the text, or leave blank to not use a heading.
+- **Include source link**: Whether to include the source page link when capturing from a supported browser.
 
 Troubleshooting:
 
@@ -45,4 +46,5 @@ Author: Nick Moore, based on original snippet posted by [forum user EdM][edm]. I
 
 ## Changelog
 
+- 12 Jun 2024: Add option whether to include source link.
 - 27 May 2023: Initial release.
