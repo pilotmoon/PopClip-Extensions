@@ -8,7 +8,7 @@ Icon: "archive-bold" from Solar Icons Set (CC-BY-4.0).
 
 Links:
 
-- [Wikipedia article "Achive.today"](https://en.wikipedia.org/wiki/Archive.today)
+- [Wikipedia article "Archive.today"](https://en.wikipedia.org/wiki/Archive.today)
 
 ## Changelog
 
