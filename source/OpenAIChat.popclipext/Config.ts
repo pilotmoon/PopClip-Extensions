@@ -12,6 +12,14 @@ import axios from "axios";
 
 export const options: Option[] = [
 	{
+		identifier: "domain",
+		label: "API base domain",
+		type: "string",
+		defaultValue: "api.openai.com",
+		description:
+			"Base domain",
+	},
+	{
 		identifier: "apikey",
 		label: "API Key",
 		type: "secret",
@@ -51,6 +59,7 @@ export const options: Option[] = [
 
 type OptionsShape = {
 	resetMinutes: string;
+	domain: string;
 	apikey: string;
 	model: string;
 	systemMessage: string;
@@ -92,7 +101,7 @@ function getTranscript(n: number): string {
 // the main chat action
 const chat: ActionFunction<OptionsShape> = async (input, options) => {
 	const openai = axios.create({
-		baseURL: "https://api.openai.com/v1",
+		baseURL: `https://${options.domain}/v1`,
 		headers: { Authorization: `Bearer ${options.apikey}` },
 	});
 
