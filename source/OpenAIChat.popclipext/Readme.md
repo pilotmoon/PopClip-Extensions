@@ -82,9 +82,8 @@ Icons:
 
 ## Changelog
 
-- 2024-05-19: Add API Base Domain setting. Thanks to [@chentao1006](https://github.com/chentao1006).
+- 2024-05-18: Add API Base Domain setting. Thanks to [@chentao1006](https://github.com/chentao1006).
 - 2024-05-17: Store API key in keychain. Configurable system message. PopClip bar stays on screen after pressing reset. Rename to "OpenAI Chat".
-- 2024-05-15 (2): Rename to `ChatGPT API` and refactor code slightly.
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
 - 2024-03-14: Add support for `gpt-4-turbo-preview` model. Fix thanks to [@santiagoti](https://github.com/santiagoti).
 - 2023-09-24: Add support for GPT-4 model. Fix thanks to [@rijieli](https://github.com/pilotmoon/PopClip-Extensions/pull/1225).
