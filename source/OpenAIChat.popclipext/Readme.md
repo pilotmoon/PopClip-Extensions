@@ -1,6 +1,6 @@
 # OpenAI Chat
 
-PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or newest GPT-4o [Chat API](https://platform.openai.com/docs/api-reference/chat).
+PopClip extension to send the selected text to [OpenAI](https://openai.com/)'s GPT-3.5, GPT-4, GPT-4-Turbo or GPT-4o [Chat API](https://platform.openai.com/docs/api-reference/chat).
 
 The response is pasted after the selected text. The previous messages in the chat are sent along with each new message, allowing an extended dialogue with the AI.
 
@@ -40,13 +40,18 @@ Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note 
 
 #### System Message
 
-Optional text to specify the system message. This tells the chatbot how to behave.
+Optional text to specify the system message. This tells the assistant how to behave.
 
 Example system message:
 
-- _You are proofreader. I want you to correct the spelling and grammar of my messages. Please reply to each message with a corrected version. After each message, please briely list the errors you corrected._
+- _You are proofreader. I want you to correct the spelling and grammar of my messages. Please reply to each message with a corrected version. After each message, please briefly list the errors you corrected._
 
 If you leave the System Message field blank, no system message will be specified.
+
+#### API Base Domain
+
+The base domain for the OpenAI API. This should be `api.openai.com` unless you
+are using a custom domain to access the API.
 
 #### Reset Timer (minutes)
 
@@ -66,25 +71,18 @@ You may see the following error:
 
 The message means you need to add some credit to you OpenAI API account. You can do this at <https://platform.openai.com/account/billing/overview>.
 
-## About
+## Notes
 
-### Author
-
-Nick Moore
-
-### Acknowledgements
+Author: Nick Moore, with additional contributions.
 
 Icons:
 
 - "openai" by [Simple Icons](https://simpleicons.org/).
 - "broom" by [GameIcons](https://game-icons.net/).
 
-### Requirements
-
-Requires PopClip 2024.5.1 and an Open AI Platform account.
-
 ## Changelog
 
+- 2024-05-19: Add API Base Domain setting. Thanks to [@chentao1006](https://github.com/chentao1006).
 - 2024-05-17: Store API key in keychain. Configurable system message. PopClip bar stays on screen after pressing reset. Rename to "OpenAI Chat".
 - 2024-05-15 (2): Rename to `ChatGPT API` and refactor code slightly.
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
