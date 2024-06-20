@@ -22,8 +22,6 @@ To use a different destination, click *Copy link* in Tana for the node you want 
 
 Author: Nick Moore.
 
-The extension simply takes your selected Markdown content and adds each paragraph to Tana as a node. The source link (if enabled) is added as another node at the end. If you can think of a better way to organise the captured content, please let me know.
-
 Links:
 
 - [Tana API Docs](https://tana.inc/docs/input-api)
