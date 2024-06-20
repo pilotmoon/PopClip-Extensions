@@ -40,9 +40,9 @@ type Options = InferOptions<typeof options>;
 export const action: Action<Options> = {
   captureHtml: true,
   async code(input, options, context) {
-    let content = popclip.input.markdown.trim();
+    let content = popclip.input.html.trim();
     if (options.sourceLink && context?.browserUrl && !input.isUrl) {
-      content += `\n<a href="${context?.browserUrl}">${context?.browserTitle || "Source"}</a>`;
+      content += ` — <a href="${context?.browserUrl}">${context?.browserTitle || "Source"}</a>`;
     }
     await captureContent(content, options);
     popclip.showSuccess();
@@ -50,12 +50,12 @@ export const action: Action<Options> = {
 };
 
 async function captureContent(content: string, options: Options) {
-  const nodes = content.split(/\n+/).map((line) => ({ name: line }));
+  content = content.split(/\n+/).join(" ");
   await axios.post(
     "https://europe-west1-tagr-prod.cloudfunctions.net/addToNodeV2",
     {
       targetNodeId: options.nodeId,
-      nodes,
+      nodes: [{ name: content }],
     },
     {
       headers: { Authorization: `Bearer ${options.apiToken}` },
