@@ -58,7 +58,7 @@ async function captureContent(content: string, options: Options) {
       nodes,
     },
     {
-      headers: { Authorization: `Bearer ${options.apiToken} ` },
+      headers: { Authorization: `Bearer ${options.apiToken}` },
     },
   );
 }
@@ -69,7 +69,7 @@ export async function test() {
     {
       nodeId: "INBOX",
       sourceLink: false,
-      apiToken: "API_TEKON_HERE",
+      apiToken: "API_TOKEN_HERE",
     },
   );
 }
