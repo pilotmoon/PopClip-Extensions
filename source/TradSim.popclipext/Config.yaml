@@ -1,8 +1,8 @@
 #popclip
 name:
-  - en: Traditional/Simplified
-  - zh hans: 简繁转换器
-  - zh hant: 簡繁轉換器
+  en: Traditional/Simplified
+  zh hans: 简繁转换器
+  zh hant: 簡繁轉換器
 identifier: com.pilotmoon.popclip.extension.traditional-simplified
 description: Convert text between Traditional and Simplified Chinese.
 popclip version: 4151
