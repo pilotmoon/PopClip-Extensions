@@ -22,7 +22,7 @@
     "slackify-markdown": "^4.3.1",
     "superagent": "^9.0.2",
     "turndown": "7.1.3",
-    "typescript": "5.4.5",
+    "typescript": "^5.5.2",
     "voca": "^1.4.0",
     "zod": "^3.17.3"
   },
@@ -34,6 +34,7 @@
     "@noble/hashes": "^1.4.0",
     "@types/js-yaml": "^4.0.9",
     "js-yaml": "^4.1.0",
-    "oauth-1.0a": "^2.2.6"
+    "oauth-1.0a": "^2.2.6",
+    "tongwen-core": "4.1.1"
   }
 }

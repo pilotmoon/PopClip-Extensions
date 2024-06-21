@@ -1,0 +1,8 @@
+#popclip
+name: Traditional/Simplified
+identifier: com.pilotmoon.popclip.extension.traditional-simplified
+description: Convert text between Traditional and Simplified Chinese.
+popclip version: 4151
+icon: trad-sim.png
+regex: '[\u4E00-\u9FFF\u3400-\u4DBF]'
+module: module.bundle.js
