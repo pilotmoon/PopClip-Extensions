@@ -31,6 +31,7 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var module_exports = {};
 __export(module_exports, {
   actions: () => actions,
+  options: () => options,
   test: () => test
 });
 module.exports = __toCommonJS(module_exports);
@@ -175,6 +176,24 @@ var LangType;
 })(LangType || (LangType = {}));
 
 // _module.ts
+var S_ICON = "\u7B80";
+var S_TITLE = "Convert to Simplified";
+var T_ICON = "\u7E41";
+var T_TITLE = "Convert to Traditional";
+var options = [
+  {
+    identifier: "showSimplified",
+    label: S_TITLE,
+    icon: S_ICON,
+    type: "boolean"
+  },
+  {
+    identifier: "showTraditional",
+    label: T_TITLE,
+    icon: T_ICON,
+    type: "boolean"
+  }
+];
 var mConv = createConverterMap({
   s2t: [import_s2t_char.default, import_s2t_phrase.default],
   t2s: [import_t2s_char.default, import_t2s_phrase.default]
@@ -187,15 +206,17 @@ function toTraditional(text) {
 }
 var actions = [
   {
-    icon: "\u7B80",
-    title: "Convert to Simplified Chinese",
+    icon: S_ICON,
+    title: S_TITLE,
+    requirements: ["option-showSimplified=1"],
     code(input) {
       popclip.pasteText(toSimplified(input.text));
     }
   },
   {
-    icon: "\u7E41",
-    title: "Convert to Traditional Chinese",
+    icon: T_ICON,
+    title: T_TITLE,
+    requirements: ["option-showTraditional=1"],
     code(input) {
       popclip.pasteText(toTraditional(input.text));
     }
