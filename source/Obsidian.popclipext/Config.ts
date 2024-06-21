@@ -2,7 +2,7 @@
 // name: Obsidian
 // identifier: com.pilotmoon.popclip.extension.obsidian
 // description: Capture text to Obsidian.
-// popclip version: 4586
+// popclip version: 4615
 // app: { name: Obsidian, link: https://obsidian.md/ }
 // icon: iconify:simple-icons:obsidian
 
@@ -59,7 +59,7 @@ function capture(markdown: string, options: Options) {
   }
   url.searchParams.append("data", markdown);
   url.searchParams.append("mode", "append");
-  popclip.openUrl(url.href.replaceAll("+", "%20"));
+  popclip.openUrl(url.href.replaceAll("+", "%20"), { activate: false });
 }
 
 export const action: Action<Options> = {
