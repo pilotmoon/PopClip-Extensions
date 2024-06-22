@@ -2,7 +2,7 @@
   "devDependencies": {
     "@joplin/turndown-plugin-gfm": "^1.0.43",
     "@popclip/helpers": "file:lib/popclip-helpers",
-    "@popclip/types": "1.4666.0",
+    "@popclip/types": "^1.4670.0",
     "@tryfabric/martian": "^1.2.4",
     "@types/crypto-js": "^4.1.1",
     "@types/voca": "^1.4.1",
