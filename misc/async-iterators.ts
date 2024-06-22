@@ -26,12 +26,13 @@ export async function* concurrentTransform<T, U>(
 }
 
 async function tx(z: string) {
+  await sleep(100);
   return z + "!";
 }
 
 const f = concurrentTransform(["a", "b", "c"], tx);
-(async () => {
+export async function test() {
   for await (const x of f) {
     print(x);
   }
-})();
+}
