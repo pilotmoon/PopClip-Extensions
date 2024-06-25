@@ -19,4 +19,5 @@ The regex is based on "CJK Unified Ideographs" and "CJK Unified Ideographs Exten
 
 ## Changelog
 
+- 25 Jun 2024: Add keywords to metadata
 - 21 Jun 2024: Initial release
