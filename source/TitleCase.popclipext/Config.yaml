@@ -1,0 +1,8 @@
+name: Title Case
+identifier: com.pilotmoon.popclip.extension.title-case
+description: Capitalizes words according to typical English titling conventions.
+icon: square filled T
+popclipVersion: 4151
+after: paste-result
+shell script file: titlecase.pl
+stdin: text
