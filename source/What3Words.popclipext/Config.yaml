@@ -2,6 +2,7 @@ name: What3Words
 identifier: com.pilotmoon.popclip.extension.what3words
 description: Open a what3words address on the web.
 popclip version: 4151
+keywords: maps
 icon: ///
 regex: '[a-z]+\.[a-z]+\.[a-z]+' # match word.word.word anywhere in the text
 app: { name: what3words, link: https://what3words.com/ }
