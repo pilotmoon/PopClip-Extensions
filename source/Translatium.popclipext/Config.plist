@@ -26,9 +26,7 @@
 		<dict>
 			<key>Bundle Identifiers</key>
 			<array>
-				<string>io.webcatalog.translatium</string>
-				<string>com.webcatalog.translatium</string>
-				<string>com.moderntranslator.app</string>
+				<string>com.translatium.app</string>
 			</array>
 			<key>Check Installed</key>
 			<true/>
