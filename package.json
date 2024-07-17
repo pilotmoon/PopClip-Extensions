@@ -34,6 +34,7 @@
     "@noble/hashes": "^1.4.0",
     "@types/js-yaml": "^4.0.9",
     "js-yaml": "^4.1.0",
+    "latextomathml": "0.0.4",
     "oauth-1.0a": "^2.2.6",
     "tongwen-core": "4.1.1"
   }
