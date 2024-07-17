@@ -1,0 +1,11 @@
+name: Translatium
+identifier: com.pilotmoon.popclip.extension.translatium
+description: Translate the text using Translatium.
+icon: translatium.png
+app:
+  checkInstalled: true
+  name: Translatium
+  link: https://translatium.app/
+  bundleIdentifiers:
+    - com.translatium.app
+url: translatium://?text={popclip text}
