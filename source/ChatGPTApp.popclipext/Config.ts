@@ -38,7 +38,7 @@ export const action: ActionFunction<Options> = async (input, options) => {
   await util.sleep(50);
   if (options.mode === "new") {
     popclip.pressKey("command n");
-    await util.sleep(500);
+    await util.sleep(800);
   }
   popclip.pressKey("command v");
   await util.sleep(100);

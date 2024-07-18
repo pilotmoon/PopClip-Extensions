@@ -15,5 +15,6 @@ Chat`.
 
 ## Changelog
 
+- 18 Jul 2024: Extend delay after ⌘N press to 0.8s
 - 26 Jun 2024: Add new/current chat option, and prompt option
 - 16 May 2024: Initial release
