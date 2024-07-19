@@ -3,6 +3,7 @@ identifier: com.pilotmoon.popclip.extension.formatting
 description: Bold, italic and underline.
 popclip version: 4151
 icon: symbol:bold.italic.underline
+keywords: bold italic underline
 stayVisible: true
 actions:
   - title: Bold
