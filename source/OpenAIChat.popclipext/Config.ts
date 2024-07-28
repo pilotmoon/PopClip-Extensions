@@ -23,7 +23,7 @@ export const options = [
     label: "Model",
     type: "multiple",
     defaultValue: "gpt-3.5-turbo",
-    values: ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "gpt-4o"],
+    values: ["gpt-3.5-turbo", "gpt-4", "gpt-4-turbo", "gpt-4o", "gpt-4o-mini"],
   },
   {
     identifier: "systemMessage",
