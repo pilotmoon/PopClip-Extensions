@@ -36,7 +36,7 @@ account. To get an API Key:
 
 #### Model
 
-Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `gpt-4o`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
+Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo`, `gpt-4o` and `gpt-4o-mini`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
 
 #### System Message
 
@@ -82,6 +82,7 @@ Icons:
 
 ## Changelog
 
+- 2024-07-30: Add `gpt-4o-mini` model. Thanks to [@kis87988](https://github.com/pilotmoon/PopClip-Extensions/pull/1249).
 - 2024-05-18: Add API Base Domain setting. Thanks to [@chentao1006](https://github.com/chentao1006).
 - 2024-05-17: Store API key in keychain. Configurable system message. PopClip bar stays on screen after pressing reset. Rename to "OpenAI Chat".
 - 2024-05-15: Update model list to include `gpt-4o`. Thanks to [@igor-arkhipov](https://github.com/igor-arkhipov).
