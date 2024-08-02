@@ -10,7 +10,7 @@
   },
   "popclipVersion": 4225,
   "after": "show-status",
-  "description": "Create a new Inbox task in OmniFocus 4.",
+  "description": "Create a new Inbox task in OmniFocus 4 Pro.",
   "applescriptFile": "omnifocus.applescript",
   "options": [
     {
