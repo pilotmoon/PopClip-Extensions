@@ -2,9 +2,9 @@
 
 Add the selected text before or after the current clipboard text.
 
-- **Append/Prepend — Option (⌥):** By default, it will insert the selection _after_ the current clipboard text. If you hold down Option, it will insert it _before_ instead.
+- **Append/Prepend — Shift (⌥):** By default, it will insert the selection _after_ the current clipboard text. If you hold down Shift, it will insert it _before_ instead.
 
-- **Line separator — Shift (⇧):** By default, it will separate the new text from the existing text with a line separator. If you hold down Shift, it will separate with a space instead.
+- **Line separator — Option (⇧):** By default, it will separate the new text from the existing text with a line separator. If you hold down Option, it will separate with a space instead.
 
 Author: Nick Moore
 
