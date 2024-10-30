@@ -1,5 +1,5 @@
 #!/bin/zsh
 curl 'https://api-free.deepl.com/v2/languages?type=target' \
-  -H 'Authorization: DeepL-Auth-Key 13b3bd0a-e820-b273-da5a-2feaa12e61eb:fx' \
+  -H 'Authorization: DeepL-Auth-Key xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx:fx' \
   | jq '{langs: map(del(.supports_formality))}' \
   > langs.json

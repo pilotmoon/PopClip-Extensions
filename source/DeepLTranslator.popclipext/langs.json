@@ -123,6 +123,10 @@
     {
       "language": "ZH",
       "name": "Chinese (simplified)"
+    },
+    {
+      "language": "ZH-HANS",
+      "name": "Chinese (simplified)"
     }
   ]
 }
