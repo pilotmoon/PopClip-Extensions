@@ -1,50 +1,20 @@
 # DeepL Translator
 
-Translate the text with [DeepL Translator](https://www.deepl.com/translator).
+Translate the text with [DeepL Translator desktop app](https://www.deepl.com/macos-app).
 
-The extension has a single action that takes text as input and sends it either to the DeepL website, or the DeepL app.
+The extension has a single action that takes text as input and sends it either to the DeepL app.
 
-When using the App mode, the DeepL app must be already running and the "DeepL App Shortcut" setting must be set to match the shortcut in DeepL preferences.
-
-### Options
-
-* **Mode**: Chose whether to perform the translation in a browser on the DeepL website, or in the DeepL app.
-* **DeepL App Shortcut**: Sets the key combo for PopClip to use to activate DeepL. Leave this blank to use the default DeepL combo which is "⌘+C+C". Otherwise type a key combo like "control option command D". (See [Key Combo String Format](https://github.com/pilotmoon/PopClip-Extensions#key-combo-string-format).)
-* **Website Output Language**: Chose the output language for website mode. (Input language will auto-detect.)
+The DeepL app must be already running and the DeeplL's app shortcut must be set to "⌘+C+C" (the default).
 
 ## About
 
-This is an extension for [PopClip](https://www.popclip.app/).
-
-### Author
-
-Nick Moore
-
-### Requirements
-
-Requires PopClip 2022.5
+- Author: Nick Moore
 
 ## Changelog
 
-### 1 Jun 2023
-
-* Add Korean and Norwegian languages.
-
-### 5 Oct 2022
-
-* Add support for Indonesian, Turkish and Ukrainian languages.
-
-### 4 May 2022
-
-* Support DeepL App mode.
-* Add more output languages to Website mode.
-* Set source language to auto detect in Website mode.
-* Fix bug in website mode where input text would be cut off after the first slash (/) character.
-
-### 9 Nov 2020
-
-* Add more output languages.
-
-### 27 Dep 2018
-
-* Initial release.
+- 20 Oct 2024: Remove support for DeepL website mode since it doesn't work anymore.
+- 1 Jun 2023: Add Korean and Norwegian languages.
+- 5 Oct 2022: Add support for Indonesian, Turkish and Ukrainian languages.
+- 4 May 2022: Support DeepL App mode. Add more output languages to Website mode. Set source language to auto detect in Website mode. Fix bug in website mode where input text would be cut off after the first slash (/) character.
+- 9 Nov 2020: Add more output languages.
+- 27 Dep 2018: Initial release.
