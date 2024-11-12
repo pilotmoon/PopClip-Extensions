@@ -1,0 +1,12 @@
+name:
+  en: Yandex
+  ru: Яндекс
+identifier: com.pilotmoon.popclip.extension.yandex
+description:
+  en: Search the web using Yandex.
+  ru: искать на Яндексе
+icon: yandex.png
+app:
+  link: http://yandex.ru/
+  name: Yandex
+url: https://yandex.ru/search/?text={popclip text}
