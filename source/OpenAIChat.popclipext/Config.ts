@@ -2,7 +2,7 @@
 // name: OpenAI Chat
 // icon: openai-icon.svg
 // identifier: com.pilotmoon.popclip.extension.chatgpt
-// description: Send the selected text to OpenAI's Chat API and append the response.
+// description: Send the selected text to OpenAI's Chat API.
 // app: { name: Chat API, link: 'https://platform.openai.com/docs/api-reference/chat' }
 // popclipVersion: 4586
 // keywords: openai chatgpt
@@ -48,11 +48,13 @@ export const options = [
     defaultValue: "15",
   },
   {
-    identifier: "replaceMessage",
-    label: "Replace the message.",
-    type: "boolean",
-    description: "Replace the original message with the polished texts.",
-    defaultValue: false,
+    identifier: "textMode",
+    label: "Response Handling",
+    type: "multiple",
+    values: ["append", "replace"],
+    valueLabels: ["Append", "Replace"],
+    defaultValue: "append",
+    description: "Append the response, or replace the selected text.",
   },
   {
     identifier: "showReset",
@@ -134,13 +136,18 @@ const chat: ActionFunction<Options> = async (input, options) => {
     messages.push(data.choices[0].message);
     lastChat = new Date();
 
-    // if holding shift and option or selected replaceMessage option, paste just the response.
+    // append or replace?
+    let replace = options.textMode === "replace";
+    if (popclip.modifiers.option) {
+      // if holding option, toggle append mode
+      replace = !replace;
+    }
+
     // if holding shift, copy just the response.
-    // else, paste the last input and response.
-    if ((popclip.modifiers.shift && popclip.modifiers.option) || options.replaceMessage) {
-      popclip.pasteText(getTranscript(1));
-    } else if (popclip.modifiers.shift) {
+    if (popclip.modifiers.shift) {
       popclip.copyText(getTranscript(1));
+    } else if (replace) {
+      popclip.pasteText(getTranscript(1));
     } else {
       popclip.pasteText(getTranscript(2));
       popclip.showSuccess();

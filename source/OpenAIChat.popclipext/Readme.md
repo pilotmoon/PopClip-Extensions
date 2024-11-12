@@ -11,13 +11,14 @@ See also: [ChatGPT Website](https://www.popclip.app/extensions/x/73pbck) extensi
 ### Actions
 
 The main action, **Chat**, sends the selected text to OpenAI and
-appends the response as a new line.
+either pastes the response after the selected text, replaces the selected text
+with the response, or copies the response to the clipboard.
 
 Modifiers:
 
-- Hold Shift(⇧) to copy just the response to the clipboard.
+- Hold Shift(⇧) to copy the response to the clipboard.
 
-- Hold Option(⌥)-Shift(⇧) to paste just the response over the selection.
+- Hold Option(⌥) to do the opposite of the current Response Handling setting.
 
 The **Reset** action (broom icon) clears the current chat history to start a
 fresh conversation.
@@ -63,6 +64,13 @@ reset. The default value is 15 minutes.
 
 Control whether or not to show the reset action in the popup.
 
+#### Response Handling
+
+Control how the response is handled. The options are:
+
+- **Append** (default): Append the response to the end of the selected text.
+- **Replace**: Replace the selected text with the response.
+
 ### Errors
 
 You may see the following error:
@@ -82,6 +90,7 @@ Icons:
 
 ## Changelog
 
+- 2024-11-12: Add "Response Handling" setting. Thanks to [@zhiyelee](https://github.com/pilotmoon/PopClip-Extensions/pull/1250) for the idea.
 - 2024-07-30: Add `gpt-4o-mini` model. Thanks to [@kis87988](https://github.com/pilotmoon/PopClip-Extensions/pull/1249).
 - 2024-05-18: Add API Base Domain setting. Thanks to [@chentao1006](https://github.com/chentao1006).
 - 2024-05-17: Store API key in keychain. Configurable system message. PopClip bar stays on screen after pressing reset. Rename to "OpenAI Chat".
