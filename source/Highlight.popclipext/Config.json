@@ -44,7 +44,13 @@
         "com.smileonmymac.PDFpenPro",
         "com.smileonmymac.PDFpen"
       ]
+    },
+    {
+      "keyCombo": "shift command e",
+      "requiredApps": [
+        "com.apple.Notes"
+      ]
     }
   ],
-  "description": "Highlight the selected text. Works in Pages, Preview, Alternote, DevonThink, Evernote, iA Writer, iA Presenter, LogSeq, Obsidian, PDFpen, PDF Expert, Scrivener and Skim only."
+  "description": "Highlight the selected text. Works in Pages, Preview, Alternote, DevonThink, Evernote, iA Writer, iA Presenter, LogSeq, Obsidian, PDFpen, PDF Expert, Scrivener, Skim and Apple Notes only."
 }
