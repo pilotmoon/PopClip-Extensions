@@ -7,6 +7,7 @@ This extension is a replacement for the PreviewHighlight extension. The intentio
 ## List of currently supported apps, by keyboard shortcut
 
 ### ⌃⌘H
+
 - Preview
 - PDF Expert
 - Skim
@@ -14,19 +15,23 @@ This extension is a replacement for the PreviewHighlight extension. The intentio
 - Obsidian
 
 ### ⇧⌘H
+
 - Pages
 - Scrivener
 - Logseq
 
 ### ⇧⌘L
+
 - Alternote
 - DevonThink
 
 ### ⇧⌘L
+
 - iA Writer
 
 ### ⇧⌘E
-- Apple Notes
+
+- Apple Notes (Sequoia)
 
 ## Changelog
 
