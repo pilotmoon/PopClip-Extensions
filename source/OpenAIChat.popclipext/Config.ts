@@ -48,6 +48,13 @@ export const options = [
     defaultValue: "15",
   },
   {
+    identifier: "replaceMessage",
+    label: "Replace the message.",
+    type: "boolean",
+    description: "Replace the original message with the polished texts.",
+    defaultValue: false,
+  },
+  {
     identifier: "showReset",
     label: "Show Reset Button",
     type: "boolean",
@@ -127,10 +134,10 @@ const chat: ActionFunction<Options> = async (input, options) => {
     messages.push(data.choices[0].message);
     lastChat = new Date();
 
-    // if holding shift and option, paste just the response.
+    // if holding shift and option or selected replaceMessage option, paste just the response.
     // if holding shift, copy just the response.
     // else, paste the last input and response.
-    if (popclip.modifiers.shift && popclip.modifiers.option) {
+    if ((popclip.modifiers.shift && popclip.modifiers.option) || options.replaceMessage) {
       popclip.pasteText(getTranscript(1));
     } else if (popclip.modifiers.shift) {
       popclip.copyText(getTranscript(1));
