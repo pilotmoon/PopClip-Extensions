@@ -40,14 +40,6 @@ export const options = [
     description: "Leave as default unless you use a custom server.",
   },
   {
-    identifier: "resetMinutes",
-    label: "Reset Timer (minutes)",
-    type: "string",
-    description:
-      "Reset the conversation if idle for this many minutes. Set blank to disable.",
-    defaultValue: "15",
-  },
-  {
     identifier: "textMode",
     label: "Response Handling",
     type: "multiple",
@@ -55,6 +47,14 @@ export const options = [
     valueLabels: ["Append", "Replace"],
     defaultValue: "append",
     description: "Append the response, or replace the selected text.",
+  },
+  {
+    identifier: "resetMinutes",
+    label: "Reset Timer (minutes)",
+    type: "string",
+    description:
+      "Reset the conversation if idle for this many minutes. Set blank to disable.",
+    defaultValue: "15",
   },
   {
     identifier: "showReset",
