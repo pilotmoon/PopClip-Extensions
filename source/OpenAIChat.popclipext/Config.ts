@@ -43,10 +43,11 @@ export const options = [
     identifier: "textMode",
     label: "Response Handling",
     type: "multiple",
-    values: ["append", "replace"],
-    valueLabels: ["Append", "Replace"],
+    values: ["append", "replace", "copy"],
+    valueLabels: ["Append", "Replace", "Copy"],
     defaultValue: "append",
-    description: "Append the response, or replace the selected text.",
+    description:
+      "Append the response, replace the selected text, or copy to clipboard.",
   },
   {
     identifier: "resetMinutes",
@@ -136,6 +137,9 @@ const chat: ActionFunction<Options> = async (input, options) => {
     messages.push(data.choices[0].message);
     lastChat = new Date();
 
+    // copy?
+    let copy = options.textMode === "copy" || popclip.modifiers.shift;
+
     // append or replace?
     let replace = options.textMode === "replace";
     if (popclip.modifiers.option) {
@@ -143,8 +147,7 @@ const chat: ActionFunction<Options> = async (input, options) => {
       replace = !replace;
     }
 
-    // if holding shift, copy just the response.
-    if (popclip.modifiers.shift) {
+    if (copy) {
       popclip.copyText(getTranscript(1));
     } else if (replace) {
       popclip.pasteText(getTranscript(1));
