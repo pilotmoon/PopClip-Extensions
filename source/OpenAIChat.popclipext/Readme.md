@@ -98,7 +98,7 @@ Icons:
 
 ## Changelog
 
-- 2024-11-20: Add `o1-preview` and `01-mini` models.
+- 2024-11-20: Add `o1-preview` and `o1-mini` models.
 - 2024-11-15: Add "Copy" tp Response Handcling options.
 - 2024-11-12: Add "Response Handling" setting. Thanks to
   [@zhiyelee](https://github.com/pilotmoon/PopClip-Extensions/pull/1250) for the
