@@ -32,7 +32,7 @@ account. To get an API Key:
 
 #### Model
 
-Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo`, `gpt-4o` and
+Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo`, `gpt-4o`,
 `gpt-4o-mini`, `o1-preview` and `o1-mini`. Note that some accounts might not be
 able to access all models — see OpenAI's documentation for details.
 
