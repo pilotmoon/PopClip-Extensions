@@ -1,0 +1,16 @@
+{
+  "identifier": "com.hachipoo.Dockside.PopClipExtension",
+  "name": "Dockside",
+  "icon": "dockside.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "Dockside",
+    "link": "https://hachipoo.com/dockside-app",
+    "bundleIdentifiers": ["com.hachipoo.Dockside"]
+  },
+  "popclipVersion": 3785,
+  "macosVersion": "13.0.0",
+  "description": "Add Selected Text to Dockside",
+  "serviceName": "Add to Dockside",
+  "captureHtml": true
+}
