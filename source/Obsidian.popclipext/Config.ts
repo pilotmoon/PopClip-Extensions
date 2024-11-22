@@ -73,7 +73,7 @@ function capture(markdown: string, options: Options) {
 export const action: Action<Options> = {
 	captureHtml: true,
 	code(input, options, context) {
-		let content = "\n" + input.markdown.trim();
+		let content = (options.newFile ? "" : "\n") + input.markdown.trim();
 		if (options.sourceLink && context?.browserUrl) {
 			content += `\n[${context?.browserTitle || "Source"}](${
 				context?.browserUrl
