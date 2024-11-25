@@ -6,7 +6,7 @@ popclip version: 4151
 description:
   en: Search the web using Yandex.
   ru: искать на Яндексе
-icon: yandex.png
+icon: scale=90 file:yandex.png
 app:
   link: http://yandex.ru/
   name: Yandex
