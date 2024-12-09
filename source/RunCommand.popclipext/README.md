@@ -10,6 +10,7 @@ Original extension and icon created by [James Smith](https://twitter.com/smithjw
 
 ## Changelog
 
+- 9 Nov 2024: Remove needless line from iTerm2 script
 - 21 May 2024: Add filter keywords for directory and update readme.
 - 28 Mar 2024: Removed the legacy iTerm option and added Warp Terminal.
 - 19 Feb 2016: Added third config option to support iTerm2 v2.9 and above, which has breaking AppleScript changes.
