@@ -11,7 +11,7 @@
   "applescriptCall": {
     "file": "Anybox.applescript",
     "handler": "newDocument",
-    "parameters": ["text"]
+    "parameters": ["text","browser url"]
   },
   "description": "Save selected text to Anybox."
 }
