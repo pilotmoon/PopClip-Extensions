@@ -1,3 +1,0 @@
-#!/bin/zsh
-bun run check
-bun run esbuild --external:axios --bundle --format=cjs --target=es2018 _src/module.ts > module.bundle.js

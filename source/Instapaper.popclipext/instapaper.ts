@@ -1,24 +1,15 @@
 import axios from "axios";
-import { hmac } from "@noble/hashes/hmac";
-import { sha1 } from "@noble/hashes/sha1";
 import OAuth from "oauth-1.0a";
 import { client } from "./client.json";
-
-// Polyfill for TextEncoder
-// This does not accept an encoding, and always uses UTF-8.
-// TODO: move this into PopClip itself for general use, and remove from this script
-function ShimTextEncoder() {}
-ShimTextEncoder.prototype.encode = (string, options) => {
-	return Buffer.from(string);
-};
-globalThis.TextEncoder = ShimTextEncoder as any;
 
 // create OAuth instance for signing requests
 const oauth = new OAuth({
 	consumer: util.clarify(client),
 	signature_method: "HMAC-SHA1",
 	hash_function(base_string, key) {
-		return Buffer.from(hmac(sha1, key, base_string)).toString("base64");
+		return Buffer.from(
+			util.hmac(Buffer.from(base_string), Buffer.from(key), "sha1"),
+		).toString("base64");
 	},
 });
 
