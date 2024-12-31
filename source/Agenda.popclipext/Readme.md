@@ -20,4 +20,5 @@ Technical notes:
 
 ## Changelog
 
+- 31 Dec 2024: Update code to use new openUrl API
 - 29 May 2024: Initial release

@@ -2,7 +2,7 @@
 // name: Agenda
 // identifier: com.pilotmoon.popclip.extension.agenda
 // description: Capture text to an Agenda note.
-// popclip version: 4586
+// popclip version: 4688
 // icon: agenda.svg
 // app:
 //   name: Agenda
@@ -44,7 +44,7 @@ function addNote(text: string, options: AgendaOptions) {
 	}
 	url.searchParams.set("title", options.noteTitle);
 	url.searchParams.set("text", text);
-	popclip.openUrl(url.href.replaceAll("+", "%20"));
+	popclip.openUrl(url);
 }
 export function test() {
 	addNote("Hello, World!", { title: "Snippets", noteTitle: "" });
