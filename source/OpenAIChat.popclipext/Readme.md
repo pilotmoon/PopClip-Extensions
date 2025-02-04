@@ -33,7 +33,7 @@ account. To get an API Key:
 #### Model
 
 Available values are `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo`, `gpt-4o`,
-`gpt-4o-mini`, `o1-preview` and `o1-mini`. Note that some accounts might not be
+`gpt-4o-mini`, `o1`, `o1-mini` and `o3-mini`. Note that some accounts might not be
 able to access all models — see OpenAI's documentation for details.
 
 #### System Message
@@ -98,6 +98,7 @@ Icons:
 
 ## Changelog
 
+- 2025-02-04: Add `o1` and `o3-mini` models, remove `o1-preview` model.
 - 2024-11-20: Add `o1-preview` and `o1-mini` models.
 - 2024-11-15: Add "Copy" tp Response Handcling options.
 - 2024-11-12: Add "Response Handling" setting. Thanks to
