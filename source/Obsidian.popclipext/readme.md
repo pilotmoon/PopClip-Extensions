@@ -64,7 +64,7 @@ Icon by Simple Icons.
 
 ## Changelog
 
-- 7 Feb 2024: Add "Include timestamp" option. Thanks
+- 7 Feb 2025: Add "Include timestamp" option. Thanks,
   [dangehub](https://github.com/pilotmoon/PopClip-Extensions/pull/1271).
 - 22 Nov 2024: Add option to create new file every time (as per
   [forum request](https://forum.popclip.app/t/clip-selection-to-obsidian/359/37?u=nick)).
