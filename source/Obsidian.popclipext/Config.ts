@@ -51,10 +51,24 @@ export const options = [
 		type: "boolean",
 		label: "Include source link",
 	},
+	{
+		identifier: "includeTimestamp",
+		type: "boolean",
+		label: "Include Timestamp",
+		defaultValue: false,
+		description:
+			"Add the current time as a prefix to the capture, e.g., '- 11:58 '.",
+	},
 ] as const;
+
 type Options = InferOptions<typeof options>;
 
 function capture(markdown: string, options: Options) {
+	if (options.includeTimestamp) {
+		const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+		markdown = `- ${timestamp} ${markdown}`;
+	}
+
 	const url = new URL("obsidian://advanced-uri");
 	url.searchParams.append("vault", options.vaultName);
 	if (options.fileName) {
@@ -69,6 +83,7 @@ function capture(markdown: string, options: Options) {
 	url.searchParams.append("mode", options.newFile ? "new" : "append");
 	popclip.openUrl(url, { activate: false });
 }
+
 
 export const action: Action<Options> = {
 	captureHtml: true,
@@ -90,6 +105,7 @@ export async function test() {
 		heading: "",
 		newFile: false,
 		sourceLink: true,
+		includeTimestamp: true,
 	});
 	capture("in clippings file, no heading, new file", {
 		vaultName: "Dry, Dark Place",
@@ -97,6 +113,7 @@ export async function test() {
 		heading: "",
 		newFile: true,
 		sourceLink: true,
+		includeTimestamp: true,
 	});
 	await sleep(100);
 	capture("in clippings file, with heading", {
@@ -105,6 +122,7 @@ export async function test() {
 		heading: "My Heading",
 		newFile: false,
 		sourceLink: true,
+		includeTimestamp: true,
 	});
 	await sleep(100);
 	capture("in daily note file, no heading", {
@@ -113,6 +131,7 @@ export async function test() {
 		newFile: false,
 		heading: "",
 		sourceLink: true,
+		includeTimestamp: true,
 	});
 	await sleep(100);
 	capture("in daily note file, with heading", {
@@ -121,5 +140,6 @@ export async function test() {
 		fileName: "",
 		heading: "My Heading",
 		sourceLink: true,
+		includeTimestamp: true,
 	});
 }
