@@ -54,10 +54,10 @@ export const options = [
 	{
 		identifier: "includeTimestamp",
 		type: "boolean",
-		label: "Include Timestamp",
+		label: "Include timestamp",
 		defaultValue: false,
 		description:
-			"Add the current time as a prefix to the capture, e.g., '- 11:58 '.",
+			"Add the current time as a prefix to the capture, e.g. '- 17:58 '.",
 	},
 ] as const;
 
@@ -65,7 +65,11 @@ type Options = InferOptions<typeof options>;
 
 function capture(markdown: string, options: Options) {
 	if (options.includeTimestamp) {
-		const timestamp = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+		const timestamp = new Date().toLocaleTimeString([], {
+			hour: "2-digit",
+			minute: "2-digit",
+			hour12: false,
+		});
 		markdown = `- ${timestamp} ${markdown}`;
 	}
 
@@ -83,7 +87,6 @@ function capture(markdown: string, options: Options) {
 	url.searchParams.append("mode", options.newFile ? "new" : "append");
 	popclip.openUrl(url, { activate: false });
 }
-
 
 export const action: Action<Options> = {
 	captureHtml: true,

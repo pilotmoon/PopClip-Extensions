@@ -33,12 +33,15 @@ PopClip extension settings:
 - **File Name**: Enter the name of the file to append to, or leave blank to use
   the Daily Note.
 - **Always create new file**: When off (default), clippings will all be appended
-  to the same file. When enabled, a new file will be created every time the
+  <!-- to the same file. When enabled, a new file will be created every time the -->
   action is triggered, with an incrementing number appended to the file name.
 - **Heading**: Optionally, an existing heading in the destination file under
   which to append the text. Leave blank to append to the end of the file.
 - **Include source link**: Whether to include the source page link when
   capturing from a supported browser.
+- **Include timestamp**: Whether to include a timestamp at the beginning of the
+  captured text. The format is `- HH:MM {captured text}`. (This format works
+  with Obsidian's [Thino](https://github.com/Quorafind/Obsidian-Thino) plugin.)
 
 Troubleshooting:
 
@@ -61,6 +64,8 @@ Icon by Simple Icons.
 
 ## Changelog
 
+- 7 Feb 2024: Add "Include timestamp" option. Thanks
+  [dangehub](https://github.com/pilotmoon/PopClip-Extensions/pull/1271).
 - 22 Nov 2024: Add option to create new file every time (as per
   [forum request](https://forum.popclip.app/t/clip-selection-to-obsidian/359/37?u=nick)).
 - 12 Jun 2024: Add option whether to include source link.
