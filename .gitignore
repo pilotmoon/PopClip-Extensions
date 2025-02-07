@@ -7,4 +7,5 @@ node_modules/
 temp/
 scratch/
 bun.lockb
+bun.lock
 package-lock.json
