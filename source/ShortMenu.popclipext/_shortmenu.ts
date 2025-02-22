@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// bitly api endpoint
+// Short Menu api endpoint
 const sm = axios.create({
   baseURL: "https://api.shortmenu.com/",
 });
