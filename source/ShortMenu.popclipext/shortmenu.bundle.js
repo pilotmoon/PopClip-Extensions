@@ -2311,17 +2311,14 @@ var options = [
   }
 ];
 var sm = axios_default.create({
-  baseURL: "https://api.shortmenu.com/",
-  headers: { Accept: "application/json" }
+  baseURL: "https://api.shortmenu.com/"
 });
 async function shorten(url, domain, tags, apikey) {
-  print({ apikey });
   const response = await sm.post(
     "links",
     { destinationUrl: url, domain, tags },
     { headers: { "X-Api-Key": apikey } }
   );
-  print(response.data);
   return response.data.shortUrl;
 }
 var action = async (input, options2) => {
@@ -2337,5 +2334,4 @@ var action = async (input, options2) => {
 async function test() {
   const key = "XXXX";
   print(await shorten("https://example.com", "shm.to", [], key));
-  print(await shorten("https://example.com", "", [], ""));
 }
