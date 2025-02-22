@@ -1,0 +1,15 @@
+{
+  "popclipVersion": 4586,
+  "name": "Short Menu",
+  "icon": "shortmenu.png",
+  "identifier": "com.pilotmoon.popclip.extension.short-menu",
+  "entitlements": ["network"],
+  "requirements": ["urls"],
+  "after": "paste-result",
+  "module": "shortmenu.bundle.js",
+  "description": "Shorten URLs with Short Menu.",
+  "app": {
+    "name": "Short Menu",
+    "link": "https://shortmenu.com/"
+  }
+}
