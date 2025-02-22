@@ -24,4 +24,5 @@ Links:
 
 ## Changelog
 
+- 22 Feb 2024: Updated code to use latest PopClip internal API
 - 7 Jun 2024: Initial release
