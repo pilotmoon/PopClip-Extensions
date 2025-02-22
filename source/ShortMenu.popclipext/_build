@@ -2,4 +2,4 @@
 set -e
 bun run check
 bun run esbuild \
-  --bundle --format=cjs --target=es2018 _shortmenu.ts > shortmenu.bundle.js
+  --bundle --format=cjs --target=es2018 _module.ts > module.bundle.js

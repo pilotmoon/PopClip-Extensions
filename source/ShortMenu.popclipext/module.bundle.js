@@ -159,14 +159,15 @@ var require_generator = __commonJS({
   }
 });
 
-// _shortmenu.ts
-var shortmenu_exports = {};
-__export(shortmenu_exports, {
+// _module.ts
+var module_exports = {};
+__export(module_exports, {
   action: () => action,
-  options: () => options,
-  test: () => test
+  options: () => options
 });
-module.exports = __toCommonJS(shortmenu_exports);
+module.exports = __toCommonJS(module_exports);
+var import_replace_ranges = __toESM(require_replace_ranges());
+var import_generator = __toESM(require_generator());
 
 // ../../node_modules/axios/lib/helpers/bind.js
 function bind(fn, thisArg) {
@@ -2294,8 +2295,19 @@ var {
 } = axios_default;
 
 // _shortmenu.ts
-var import_replace_ranges = __toESM(require_replace_ranges());
-var import_generator = __toESM(require_generator());
+var sm = axios_default.create({
+  baseURL: "https://api.shortmenu.com/"
+});
+async function shorten(url, domain, tags, apikey) {
+  const response = await sm.post(
+    "links",
+    { destinationUrl: url, domain, tags },
+    { headers: { "X-Api-Key": apikey } }
+  );
+  return response.data.shortUrl;
+}
+
+// _module.ts
 var options = [
   {
     identifier: "apikey",
@@ -2310,28 +2322,13 @@ var options = [
     description: "If you have a custom domain, enter it here. Leave blank to use `shm.to`."
   }
 ];
-var sm = axios_default.create({
-  baseURL: "https://api.shortmenu.com/"
-});
-async function shorten(url, domain, tags, apikey) {
-  const response = await sm.post(
-    "links",
-    { destinationUrl: url, domain, tags },
-    { headers: { "X-Api-Key": apikey } }
-  );
-  return response.data.shortUrl;
-}
 var action = async (input, options2) => {
-  function shortenWrapped(url) {
-    return shorten(url, options2.domain || "shm.to", [], options2.apikey);
-  }
   return await (0, import_replace_ranges.replaceRangesAsync)(
     input.text,
     input.data.urls.ranges,
-    (0, import_generator.concurrentTransform)(input.data.urls, shortenWrapped)
+    (0, import_generator.concurrentTransform)(
+      input.data.urls,
+      (url) => shorten(url, options2.domain || "shm.to", [], options2.apikey)
+    )
   );
 };
-async function test() {
-  const key = "XXXX";
-  print(await shorten("https://example.com", "shm.to", [], key));
-}
