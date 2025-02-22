@@ -2,7 +2,7 @@
   "popclipVersion": 4586,
   "name": "Short Menu",
   "icon": "shortmenu.png",
-  "identifier": "xcom.pilotmoon.popclip.extension.short-menu",
+  "identifier": "com.pilotmoon.popclip.extension.short-menu",
   "entitlements": ["network"],
   "requirements": ["urls"],
   "after": "paste-result",
