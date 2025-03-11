@@ -5,13 +5,13 @@
 // icon: Shuffle.png
 // description: Randomize the order of the selected lines.
 
-// require inputs with at least two lines
-export const regex = /\n/s;
-
-// the action
-export const action: ActionFunction = (input) => {
-  popclip.pasteText(shuffleLines(input.text));
-};
+defineExtension({
+  regex: /\n/s, // require inputs with at least two lines
+  action: (input) => {
+    popclip.pasteText(shuffleLines(input.text));
+  },
+  test,
+});
 
 // shuffle array in-place using Knuth-Fisher-Yates algorithm
 function shuffleArray(array: unknown[]) {
@@ -37,7 +37,7 @@ function shuffleLines(text: string) {
 Terminal command to run this test:
     /Applications/PopClip.app/Contents/MacOS/PopClip run Config.ts test
 */
-export function test() {
+function test() {
   const inputs = [
     "",
     "Just one line",
