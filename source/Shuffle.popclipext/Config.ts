@@ -5,7 +5,7 @@
 // icon: Shuffle.png
 // description: Randomize the order of the selected lines.
 
-// regex to match inputs with at least two lines
+// require inputs with at least two lines
 export const regex = /\n/s;
 
 // the action
@@ -13,7 +13,7 @@ export const action: ActionFunction = (input) => {
   popclip.pasteText(shuffleLines(input.text));
 };
 
-// shuffle supplied array in-place using Knuth-Fisher-Yates shuffle algorithm
+// shuffle array in-place using Knuth-Fisher-Yates algorithm
 function shuffleArray(array: unknown[]) {
   for (let i = array.length - 1; i > 0; i--) {
     // Generate a random integer in the range [0, i]
