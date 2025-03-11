@@ -7,9 +7,7 @@
 
 defineExtension({
   regex: /\n/s, // require inputs with at least two lines
-  action: (input) => {
-    popclip.pasteText(shuffleLines(input.text));
-  },
+  action: (input) => popclip.pasteText(shuffleLines(input.text)),
   test,
 });
 
