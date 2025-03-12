@@ -27,15 +27,7 @@ function randomUniform(max: number): number {
     throw new Error("max must be non-negative 32-bit integer");
   }
 
-  // Short-circuit for degenerate cases
-  if (max === 0) {
-    return 0;
-  }
-  if (max === UINT32_MAX) {
-    return randomUint32();
-  }
-
-  // For all other cases, we generate in range [0, max+1)
+  // We generate in range [0, max+1)
   const upperBound = max + 1;
 
   // Calculate minimum acceptable value to ensure uniform distribution
@@ -103,5 +95,5 @@ function testRandomUniform() {
   print(randomUniform(0));
   print(randomUniform(1));
   print(randomUniform(2));
-  print(randomUniform(4));
+  print(randomUniform(0xffffffff));
 }
