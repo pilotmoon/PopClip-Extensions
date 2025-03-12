@@ -99,4 +99,9 @@ function testRandomUniform() {
   for (const [value, count] of sortedCounts) {
     print(`${value}: ${count}`);
   }
+
+  print(randomUniform(0));
+  print(randomUniform(1));
+  print(randomUniform(2));
+  print(randomUniform(4));
 }
