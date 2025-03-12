@@ -18,25 +18,28 @@ function randomUint32(): number {
   return randomArray[0];
 }
 
-// Generate a random integer in the range [0, upperBound) with uniform distribution
+// Generate a random integer in the range [0, max] with uniform distribution
 // avoiding "modulo bias".
 // Adapted from https://github.com/openbsd/src/blob/master/lib/libc/crypt/arc4random_uniform.c
-function randomUniform(upperBound: number): number {
-  if (
-    !Number.isSafeInteger(upperBound) ||
-    upperBound < 0 ||
-    upperBound > 0xffffffff
-  ) {
-    throw new Error("upper bound must be non-negative 32-bit integer");
+function randomUniform(max: number): number {
+  const UINT32_MAX = 0xffffffff;
+  if (!Number.isSafeInteger(max) || max < 0 || max > UINT32_MAX) {
+    throw new Error("max must be non-negative 32-bit integer");
   }
 
   // Short-circuit for degenerate cases
-  if (upperBound < 2) {
+  if (max === 0) {
     return 0;
   }
+  if (max === UINT32_MAX) {
+    return randomUint32();
+  }
+
+  // For all other cases, we generate in range [0, max+1)
+  const upperBound = max + 1;
 
   // Calculate minimum acceptable value to ensure uniform distribution
-  const min = 0x100000000 % upperBound;
+  const min = (UINT32_MAX + 1) % upperBound;
 
   // Keep generating random numbers until we get one in acceptable range
   while (true) {
@@ -50,7 +53,7 @@ function randomUniform(upperBound: number): number {
 // Shuffle array in-place using Knuth-Fisher-Yates algorithm
 function shuffleArray<T>(array: T[]): void {
   for (let i = array.length - 1; i > 0; i--) {
-    const j = randomUniform(i + 1);
+    const j = randomUniform(i);
     [array[i], array[j]] = [array[j], array[i]]; // Swap elements
   }
 }
@@ -88,7 +91,7 @@ function testShuffle() {
 function testRandomUniform() {
   const counts = new Map<number, number>();
   for (let i = 0; i < 1000000; i++) {
-    const r = randomUniform(10);
+    const r = randomUniform(9);
     counts.set(r, (counts.get(r) || 0) + 1);
   }
   // sort by value
