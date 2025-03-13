@@ -1,33 +1,33 @@
-import axios from 'axios'
-import superagent = require('superagent')
+import axios from "axios";
+import superagent = require("superagent");
 
 const starIcon = `svg:
 <svg enable-background="new 0 0 510 510" version="1.1" viewBox="0 0 510 510" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
 <polygon points="255 402.21 412.59 497.25 370.9 318.01 510 197.47 326.63 181.74 255 12.75 183.37 181.74 0 197.47 139.1 318.01 97.41 497.25"/>
 </svg>
-`
+`;
 
 const testAction: Action = {
   code: () => {
-    return 'code ran'
-  }
-}
+    return "code ran";
+  },
+};
 
-testAction.after = 'show-result'
+testAction.after = "show-result";
 
 // const f = popclip.input?.text
 // print(f)
 
 defineExtension({
-  title: 'fallback title',
+  title: "fallback title",
   icon: starIcon,
   name: {
-    en: 'Test the JS plz',
-    fr: 'Test SVP',
-    pt: 'test pt',
-    'pt-BR': 'test BRAZIL',
-    'en-GB': 'alright guv\'na',
-    'zh-Hans': '你好'
+    en: "Test the JS plz",
+    fr: "Test SVP",
+    pt: "test pt",
+    "pt-BR": "test BRAZIL",
+    "en-GB": "alright guv'na",
+    "zh-Hans": "你好",
   },
   // options: [
   //   {
@@ -39,156 +39,199 @@ defineExtension({
   actions: [
     testAction,
     {
-      title: 'Data',
-      icon: '((D))',
+      title: "Data",
+      icon: "circle D",
       code: (selection) => {
-        print(selection.data)
-        print(selection.data.paths)
-        print(selection.data.paths.ranges)
-      }
+        print(selection.data);
+        print(selection.data.paths);
+        print(selection.data.paths.ranges);
+      },
     },
     {
-      title: 'TimeZone',
-      icon: 'TZ',
+      title: "TimeZone",
+      icon: "TZ",
       requirements: [],
-      code (selection) {
-        popclip.pasteText(JSON.stringify(util.timeZoneInfo))
-      }
+      code(selection) {
+        popclip.pasteText(JSON.stringify(util.timeZoneInfo));
+      },
     },
     {
-      title: 'Locale',
-      icon: 'Loc',
+      title: "Locale",
+      icon: "Loc",
       requirements: [],
-      code (selection) {
-        popclip.pasteText(JSON.stringify(util.localeInfo))
-      }
+      code(selection) {
+        popclip.pasteText(JSON.stringify(util.localeInfo));
+      },
     },
     {
-      title: 'RTF',
-      icon: 'RTF',
+      title: "RTF",
+      icon: "RTF",
       captureRtf: true,
-      code (selection) {
-        print(selection.rtf)
-      }
-    }, {
-      title: 'Show Success',
-      icon: 'symbol:checkmark',
-      code () {
-        popclip.showSuccess()
-      }
-    }, {
-      title: 'Show Success Async',
-      icon: 'symbol:checkmark.circle',
-      code () {
-        setTimeout(() => {
-          popclip.showSuccess()
-        }, 1000)
-      }
-    }, {
-      title: 'Timer 5s',
-      icon: 'text:(5s)',
-      code (selection) {
-        setTimeout(() => {
-          print('5s timer fired')
-          return 'my string 456'
-        }, 5000)
+      code(selection) {
+        print(selection.rtf);
       },
-      after: 'show-result'
-    }, {
-      title: 'Interval',
-      icon: '(int)',
-      code (selection) {
+    },
+    {
+      title: "Show Success",
+      icon: "symbol:checkmark",
+      code() {
+        popclip.showSuccess();
+      },
+    },
+    {
+      title: "Show Success Async",
+      icon: "symbol:checkmark.circle",
+      code() {
+        setTimeout(() => {
+          popclip.showSuccess();
+        }, 1000);
+      },
+    },
+    {
+      title: "Timer 5s",
+      icon: "text:circle 5s",
+      code(selection) {
+        setTimeout(() => {
+          print("5s timer fired");
+          return "my string 456";
+        }, 5000);
+      },
+      after: "show-result",
+    },
+    {
+      title: "Interval",
+      icon: "circle int",
+      code(selection) {
         setInterval(() => {
-          print('100ms timer fired')
-        }, 1)
+          print("100ms timer fired");
+        }, 1);
       },
-      after: 'show-result'
-    }, {
-      title: 'HTTP',
-      icon: 'symbol:hand.raised',
-      async code (selection) {
-        print((await axios.get('http://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
-      }
-    }, {
-      title: 'Large File',
-      icon: 'symbol:bus.fill',
-      async code (selection) {
-        popclip.showText((await axios.get('https://sabnzbd.org/tests/internetspeed/10MB.bin')).statusText)
-      }
-    }, {
-      title: 'Large File with timeout',
-      icon: 'symbol:clock',
-      async code (selection) {
+      after: "show-result",
+    },
+    {
+      title: "HTTP",
+      icon: "symbol:hand.raised",
+      async code(selection) {
+        print(
+          (await axios.get("http://sabnzbd.org/tests/internetspeed/10MB.bin"))
+            .statusText,
+        );
+      },
+    },
+    {
+      title: "Large File",
+      icon: "symbol:bus.fill",
+      async code(selection) {
+        popclip.showText(
+          (await axios.get("https://sabnzbd.org/tests/internetspeed/10MB.bin"))
+            .statusText,
+        );
+      },
+    },
+    {
+      title: "HTTP timeout",
+      icon: "symbol:clock",
+      async code(selection) {
         // https://stackoverflow.com/questions/100841/artificially-create-a-connection-timeout-error
-        popclip.showText((await axios.get('https://10.255.255.1/')).statusText)
-      }
-    }, {
-      title: 'Example.com',
-      icon: 'symbol:seal',
-      async code (selection) {
-        print((await axios.get('https://example.com/')).statusText)
-      }
-    }, {
-      title: 'Example.com 404',
-      icon: 'symbol:nosign',
-      async code (selection) {
-        print((await axios.get('https://example.com/sdkfjhdkjf')).statusText)
-      }
-    }, {
-      title: '301 Redirect',
-      icon: 'symbol:arrowshape.bounce.right',
-      async code (selection) {
-        print((await axios.get('https://pilotmoon.com/link/popclip')).statusText)
-      }
-    }, {
-      title: 'JSON',
-      icon: 'symbol:number',
-      async code (selection) {
-        print((await axios.get('https://dog.ceo/api/breeds/image/random')).statusText)
-      }
-    }, {
-      title: 'Settings',
-      icon: 'symbol:gear',
-      code (selection) {
-        popclip.showSettings()
-      }
-    }, {
-      title: 'POST JSON',
-      icon: 'symbol:signpost.right',
-      async code (selection) {
+        popclip.showText((await axios.get("https://10.255.255.1/")).statusText);
+      },
+    },
+    {
+      title: "Example.com",
+      icon: "symbol:seal",
+      async code(selection) {
+        print((await axios.get("https://example.com/")).statusText);
+      },
+    },
+    {
+      title: "Example.com 404",
+      icon: "symbol:nosign",
+      async code(selection) {
+        print((await axios.get("https://example.com/sdkfjhdkjf")).statusText);
+      },
+    },
+    {
+      title: "301 Redirect",
+      icon: "symbol:arrowshape.bounce.right",
+      async code(selection) {
+        print(
+          (await axios.get("https://pilotmoon.com/link/popclip")).statusText,
+        );
+      },
+    },
+    {
+      title: "JSON",
+      icon: "symbol:number",
+      async code(selection) {
+        print(
+          (await axios.get("https://dog.ceo/api/breeds/image/random"))
+            .statusText,
+        );
+      },
+    },
+    {
+      title: "Settings",
+      icon: "symbol:gear",
+      code(selection) {
+        popclip.showSettings();
+      },
+    },
+    {
+      title: "POST JSON",
+      icon: "symbol:signpost.right",
+      async code(selection) {
         const info = {
-          name: 'zzzzz',
-          job: 'ZZ66'
-        }
-        print((await axios.post('https://reqres.in/api/users', info)).statusText)
-      }
-    }, {
-      title: 'POST superagent',
-      icon: 'symbol:signpost.left',
-      async code (selection) {
+          name: "zzzzz",
+          job: "ZZ66",
+        };
+        print(
+          (await axios.post("https://reqres.in/api/users", info)).statusText,
+        );
+      },
+    },
+    {
+      title: "POST superagent",
+      icon: "symbol:signpost.left",
+      async code(selection) {
         const info = {
-          name: 'yyyyy',
-          job: 'QY77'
-        }
-        const res = await superagent.post('https://reqres.in/api/users').send(info)
-        print(res)
-        print({ myFunc: () => {} })
-      }
-    }, {
-      title: 'POST Blob',
-      async code (selection) {
-        const a = new Blob(['test blob'])
-        print((await axios.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText)
-      }
-    }, {
-      title: 'POST ArrayBuffer',
-      async code (selection) {
-        const a = new Int8Array([21, 31])
-        print((await axios.post('https://reqres.in/api/users', a, { headers: { 'Content-Type': 'application/octet-stream' } })).statusText)
-      }
-    }
-  ]
-})
+          name: "yyyyy",
+          job: "QY77",
+        };
+        const res = await superagent
+          .post("https://reqres.in/api/users")
+          .send(info);
+        print(res);
+        print({ myFunc: () => {} });
+      },
+    },
+    {
+      title: "POST Blob",
+      async code(selection) {
+        const a = new Blob(["test blob"]);
+        print(
+          (
+            await axios.post("https://reqres.in/api/users", a, {
+              headers: { "Content-Type": "application/octet-stream" },
+            })
+          ).statusText,
+        );
+      },
+    },
+    {
+      title: "POST ArrayBuffer",
+      async code(selection) {
+        const a = new Int8Array([21, 31]);
+        print(
+          (
+            await axios.post("https://reqres.in/api/users", a, {
+              headers: { "Content-Type": "application/octet-stream" },
+            })
+          ).statusText,
+        );
+      },
+    },
+  ],
+});
 
 // var xhr = new XMLHttpRequest()
 // xhr.onreadystatechange = function handleLoad () {
