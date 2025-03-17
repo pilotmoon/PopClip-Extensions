@@ -1,7 +1,7 @@
 {
   "scripts": {
     "check": "tsc --noEmit",
-    "convert": "../../misc/pcxconvert"
+    "convert": "misc/pcxconvert"
   },
   "dependencies": {
     "@noble/hashes": "^1.4.0",
