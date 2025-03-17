@@ -1,7 +1,7 @@
 name: IMDb
 identifier: com.pilotmoon.popclip.extension.imdb
 description: Search movie data on IMDb.
-icon: imdb.png
+icon: imdb.svg
 url: http://{popclip option site}/find?q={popclip text}&s=all
 popclipVersion: 3785
 options:
