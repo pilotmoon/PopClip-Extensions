@@ -1,0 +1,10 @@
+#!/bin/zsh
+# #popclip
+# identifier: com.pilotmoon.popclip.extension.say
+# name: Say
+# popclipVersion: 4586
+# description: Speak the selected text aloud, using the system default voice.
+# icon: speechicon.png
+# stdin: text
+
+say
