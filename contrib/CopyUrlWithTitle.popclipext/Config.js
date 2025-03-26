@@ -24,15 +24,16 @@ exports.actions = [
   {
     title: "Copy as HTML Link",
     icon: "symbol:chevron.left.slash.chevron.right",
-    regex: /https?:\/\/[^\s<>"']+/,
+    requirements: ["url"],
     code: async (selection) => {
       try {
-        const url = selection.text;
+        const url = selection.data.urls[0];
         const title = await getTitle(url);
         return `<a href="${url}">${title}</a>`;
       } catch (error) {
         popclip.copyText(`Error in HTML action: ${error.toString()}`);
-        return `<a href="${selection.text}">${selection.text}</a>`;
+        const fallbackUrl = selection.data.urls[0] || selection.text;
+        return `<a href="${fallbackUrl}">${fallbackUrl}</a>`;
       }
     },
     after: "copy-result"
@@ -40,15 +41,16 @@ exports.actions = [
   {
     title: "Copy as Markdown Link",
     icon: "iconify:devicon:markdown",
-    regex: /https?:\/\/[^\s<>"']+/,
+    requirements: ["url"],
     code: async (selection) => {
       try {
-        const url = selection.text;
+        const url = selection.data.urls[0];
         const title = await getTitle(url);
         return `[${title}](${url})`;
       } catch (error) {
         popclip.copyText(`Error in Markdown action: ${error.toString()}`);
-        return `[${selection.text}](${selection.text})`;
+        const fallbackUrl = selection.data.urls[0] || selection.text;
+        return `[${fallbackUrl}](${fallbackUrl})`;
       }
     },
     after: "copy-result"
