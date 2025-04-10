@@ -28,28 +28,21 @@
       "requiredApps": [
         "com.devon-technologies.thinkpro2",
         "com.devon-technologies.think3",
+        "com.devon-technologies.think",
         "com.Alternote"
       ]
     },
     {
       "keyCombo": "shift command U",
-      "requiredApps": [
-        "pro.writer.mac",
-        "net.ia.presenter"
-      ]
+      "requiredApps": ["pro.writer.mac", "net.ia.presenter"]
     },
     {
       "keyCombo": "option shift command 1",
-      "requiredApps": [
-        "com.smileonmymac.PDFpenPro",
-        "com.smileonmymac.PDFpen"
-      ]
+      "requiredApps": ["com.smileonmymac.PDFpenPro", "com.smileonmymac.PDFpen"]
     },
     {
       "keyCombo": "shift command e",
-      "requiredApps": [
-        "com.apple.Notes"
-      ]
+      "requiredApps": ["com.apple.Notes"]
     }
   ],
   "description": "Highlight the selected text. Works in Pages, Preview, Alternote, DevonThink, Evernote, iA Writer, iA Presenter, LogSeq, Obsidian, PDFpen, PDF Expert, Scrivener, Skim and Apple Notes only."
