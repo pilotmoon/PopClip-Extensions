@@ -1,0 +1,30 @@
+name: DEVONthink
+identifier: com.pilotmoon.popclip.extension.devonthink3
+popclipVersion: 4151
+description: Clip text to your DEVONthink inbox, or search your open databases.
+icon: DEVONthinkClip.png
+app:
+  link: https://www.devontechnologies.com/apps/devonthink
+  name: DEVONthink
+options:
+  - label: Clip to DEVONthink
+    identifier: clip-enabled
+    icon: DEVONthinkClip.png
+    type: boolean
+  - label: Search in DEVONthink
+    identifier: search-enabled
+    icon: DEVONthinkSearch.png
+    type: boolean
+actions:
+  - serviceName: "DEVONthink Pro: Take Plain Note"
+    title: Clip to DEVONthink
+    icon: DEVONthinkClip.png
+    requirements:
+      - copy
+      - option-clip-enabled=1
+  - serviceName: "DEVONthink Pro: Lookup..."
+    title: Search in DEVONthink
+    icon: DEVONthinkSearch.png
+    requirements:
+      - copy
+      - option-search-enabled=1
