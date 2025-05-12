@@ -1,0 +1,12 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.qwant",
+  "name": "Qwant",
+  "popclip version": 4151,
+  "icon": "qwant-dark-logo.svg",
+  "url": "https://www.qwant.com/?q={popclip text}&t=web",
+  "app": {
+    "link": "http://qwant.com/",
+    "name": "Qwant"
+  },
+  "description": "Search the web using Qwant."
+}
