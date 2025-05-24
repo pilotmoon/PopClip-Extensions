@@ -1,0 +1,6 @@
+#popclip
+name: RottenTomatoes
+description: Search movie data on RottenTomatoes.
+icon: rottentomatoes-svgrepo-com.svg
+url: http://rottentomatoes.com/search?search={popclip text}
+popclipVersion: 3785
