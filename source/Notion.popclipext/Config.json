@@ -1,0 +1,19 @@
+{
+    "popclipVersion": 3942,
+    "name": "Notion",
+    "identifier": "com.pilotmoon.popclip.extension.notion",
+    "icon": "notion-logo.svg",
+    "entitlements": ["network"],
+    "captureHtml": true,
+    "module": "notion.bundle.js.lzfse",
+    "description": "Append the selection to a note in Notion.",
+    "options": [
+    {
+        "type": "string",
+        "identifier": "page",
+        "label": "Page Name",
+        "defaultValue": "Quick Note",
+        "description": "PopClip will append text clips to a page with this name. It is case sensitive. PopClip must have access permission to the page."
+    }
+    ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Name</key>
+	<string>Gmail Compose</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.gmail-compose</string>
+	<key>Extension Description</key>
+	<string>Open Gmail compose window with selected email</string>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>URL</key>
+			<string>https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to={popclip text}</string>
+			<key>Image File</key>
+			<string>gmail.png</string>
+			<key>Title</key>
+			<string>Gmail Compose</string>
+			<key>Requirements</key>
+			<array>
+			    <string>email</string>
+			</array>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+{
+  "name": "helpers",
+  "version": "0.1.0",
+  "description": "Helper functions for PopClip Extensions",
+  "main": "index.js",
+  "scripts": {
+    "test": "/Applications/PopClip.app/Contents/MacOS/PopClip run test.js"
+  },
+  "author": "Nick Moore",
+  "license": "ISC",
+  "private": true
+}

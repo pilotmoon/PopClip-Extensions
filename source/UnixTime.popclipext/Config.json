@@ -1,0 +1,10 @@
+{
+	"regex": "^\\d[ \\d]{3,15}\\d$",
+	"description": "Convert Unix time (in seconds since 01-01-1970) to UTC.",
+	"identifier": "com.pilotmoon.popclip.extension.unix-time",
+	"name": "Unix Time",
+	"icon": "UnixTime.png",
+	"module": "unixtime.js",
+	"note" : "Updated for macOS 12.0 Monterey.",
+	"popclipVersion": 3543
+}

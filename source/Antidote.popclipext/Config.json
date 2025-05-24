@@ -1,0 +1,14 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.antidote",
+  "name": "Antidote",
+  "icon": "Antidote.png",
+  "app": {
+    "link": "http://www.antidote.info/antidote/",
+    "name": "Antidote"
+  },
+  "description": {
+    "en": "Look up the text in Antidote, the French dictionary and spellchecker.",
+    "fr": "Ouvre votre texte dans Antidote."
+  },
+  "serviceName": "Antidote - Correcteur"
+}

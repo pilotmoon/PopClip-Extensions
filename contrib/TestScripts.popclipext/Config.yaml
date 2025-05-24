@@ -1,0 +1,31 @@
+name: Test Scripts
+descrtiption: Simple tests with examples of various scripting languages and ways of calling the,.
+after: show-result
+actions:
+- title: Hi Py
+  shell script file: hello.py # without shebang, not executable
+  interpreter: python3
+- title: Bye Py
+  shell script file: goodbye.py # with shebang, executable
+- title: Hi Rb
+  shell script file: hello.rb
+- title: Hi Swift
+  shell script file: hello.swift
+  script interpreter: /usr/bin/swift
+#- title: No Interpreter (should not load)
+#   shell script file: hello.swift
+# - title: No Shebang (should not load)
+#   shell script file: exe_no_shebang
+- title: No Interpreter sh
+  shell script file: hello.sh
+- title: Direct zsh
+  shell script: echo "direct script"
+  interpreter: zsh
+- title: Direct ruby
+  interpreter: ruby
+  shell script: print 'Hello, ' + ENV['POPCLIP_TEXT'] + ', from Ruby direct'
+- title: Direct python
+  interpreter: python3
+  shell script: |
+    import os
+    print('Hello, ' + os.environ['POPCLIP_TEXT'] + ', from Python')

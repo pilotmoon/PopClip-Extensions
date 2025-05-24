@@ -1,5 +1,11 @@
-*.popclipext
+extensions/
 source/*.popclipextz
 .DS_Store
 *.pyc
 .nova/
+node_modules/
+temp/
+scratch/
+bun.lockb
+bun.lock
+package-lock.json

@@ -1,0 +1,43 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.amazon-search",
+  "name": "Amazon",
+  "icon": "amazon.svg",
+  "url": "http://{popclip option site}/s?k={popclip text}",  
+  "popclipVersion": 3895,
+  "description": "Search for products on Amazon.",
+  "note": "Updated 2022-11-28 to add more country sites.",
+  "options": [
+    {
+      "label": "Amazon Site",
+      "defaultValue": "www.amazon.com",
+      "type": "multiple",
+      "values": [
+        "smile.amazon.co.uk",
+        "smile.amazon.com",
+        "smile.amazon.de",
+        "www.amazon.ae",
+        "www.amazon.ca",
+        "www.amazon.cn",
+        "www.amazon.co.jp",
+        "www.amazon.co.uk",
+        "www.amazon.com.au",
+        "www.amazon.com.be",
+        "www.amazon.com.br",
+        "www.amazon.com.mx",
+        "www.amazon.com.tr",
+        "www.amazon.com",
+        "www.amazon.de",
+        "www.amazon.es",
+        "www.amazon.fr",
+        "www.amazon.in",
+        "www.amazon.it",
+        "www.amazon.nl",
+        "www.amazon.pl",
+        "www.amazon.sa",
+        "www.amazon.se",
+        "www.amazon.sg"
+      ],
+      "identifier": "site"
+    }
+  ]
+}

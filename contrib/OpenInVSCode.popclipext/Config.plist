@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>Actions</key>
+		<array>
+			<dict>
+				<key>Title</key>
+				<string>Open in VS Code</string>
+				<key>Requirements</key>
+				<array>
+					<string>path</string>
+				</array>
+				<key>Applescript File</key>
+				<string>OpenPathInVSCode.applescript</string>
+				<key>Image File</key>
+				<string>vscode.png</string>
+			</dict>
+			<dict>
+				<key>Title</key>
+				<string>Paste into VS Code</string>
+				<key>Requirements</key>
+				<array>
+					<string>text</string>
+					<string>paste</string>
+					<string>!path</string>
+				</array>
+				<key>Before</key>
+				<string>copy</string>
+				<key>Applescript File</key>
+				<string>PasteIntoVSCode.applescript</string>
+				<key>Image File</key>
+				<string>vscode.png</string>
+			</dict>
+		</array>
+
+		<key>Apps</key>
+		<array>
+			<dict>
+				<key>Bundle Identifiers</key>
+				<array>
+					<string>com.microsoft.VSCode</string>
+				</array>
+				<key>Check Installed</key>
+				<true/>
+				<key>Link</key>
+				<string>https://code.visualstudio.com/</string>
+				<key>Name</key>
+				<string>Visual Studio Code</string>
+			</dict>
+		</array>
+
+		<key>Credits</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Lothar Haeger</string>
+				<key>Link</key>
+				<string>www.github.com/lhaeger</string>
+			</dict>
+		</array>
+
+		<key>Extension Description</key>
+		<string>Opens the selected text or file in Visual Studio Code.</string>
+
+		<key>Extension Identifier</key>
+		<string>com.brummelhook.popclip.extension.OpenInVSCode</string>
+
+		<key>Extension Name</key>
+		<string>Open In VS Code</string>
+	</dict>
+</plist>

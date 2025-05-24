@@ -1,0 +1,9 @@
+#!/bin/zsh
+set -e
+bun run check
+bun run esbuild \
+  --external:./dict/s2t-char.json \
+  --external:./dict/s2t-phrase.json \
+  --external:./dict/t2s-char.json \
+  --external:./dict/t2s-phrase.json \
+  --bundle --format=cjs --target=es2018 _module.ts > module.bundle.js

@@ -1,0 +1,21 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.bbedit",
+  "name": "BBEdit",
+  "icon": "bbedit.png",
+  "title": "BBedit",
+  "app": {
+    "checkInstalled": true,
+    "name": "BBEdit",
+    "link": "http://www.barebones.com/products/bbedit/",
+    "bundleIdentifier": "com.barebones.bbedit"
+  },
+  "applescriptCall": {
+    "file": "bbedit.applescript",
+    "handler": "newDocument",
+    "parameters": [
+      "text"
+    ]
+  },
+  "popclipVersion": 3895,
+  "description": "Create a new BBEdit document containing the selected text."
+}

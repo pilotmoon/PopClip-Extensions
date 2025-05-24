@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>JoinLines</title>
+    <g id="JoinLines" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M175.597488,193.229715 C168.853439,193.229715 213.6094,153.991612 217.287972,126.402321 C219.740353,108.009461 214.835591,98.4043001 202.573684,97.5868396 L211.770114,74.2892161 C238.746309,79.6027092 251.212582,94.1126326 249.16893,117.818986 C246.103454,153.378517 182.341537,193.229715 175.597488,193.229715 Z" id="Path-2" fill="#000000"></path>
+        <polygon id="Triangle" fill="#000000" points="165.097957 67.9408351 222.287274 57.3233422 198.860978 115.305458"></polygon>
+        <rect id="Rectangle" fill="#000000" x="7" y="53" width="139" height="30"></rect>
+        <rect id="Rectangle" fill="#000000" x="7" y="110.12" width="126" height="30"></rect>
+        <rect id="Rectangle" fill="#000000" x="7" y="167.12" width="145" height="30"></rect>
+    </g>
+</svg>

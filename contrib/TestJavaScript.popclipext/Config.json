@@ -1,0 +1,11 @@
+{
+  "identifier": "com.pilotmoonunsignedtest.popclip.extension.test-js",
+  "name": "TestJS",
+  "flags": {
+    "captureHtml": true,
+    "captureRtf": true
+  },
+  "popclipVersion": 4225,
+  "entitlements": ["network"],
+  "module": "testjs.ts"
+}

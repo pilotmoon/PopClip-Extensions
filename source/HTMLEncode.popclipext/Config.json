@@ -1,0 +1,8 @@
+{
+  "description": "HTML-encode or decode the selected text.",
+  "identifier": "com.pilotmoon.popclip.extension.htmlencode",
+  "icon": "square filled monospaced &;",
+  "name": "HTML Encode",
+  "module": "main.ts",
+  "popclipVersion": 4225
+}

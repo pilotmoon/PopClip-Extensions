@@ -1,0 +1,27 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.taskpaper",
+  "popclip version": 3895,
+  "name": "TaskPaper",
+  "icon": "ttick.png",
+  "regex": "(?s)^[\\n\\r]*[^\\n\\r]{1,300}[\\n\\r]*$",
+  "applescript call": {
+    "file": "tp.scpt",
+    "handler": "inbox",
+    "parameters": [
+      "text"
+    ]
+  },
+  "after": "show-status",
+  "app": {
+    "check installed": true,
+    "name": "TaskPaper 3",
+    "link": "https://www.taskpaper.com/",
+    "bundle identifiers": [
+      "com.hogbaysoftware.TaskPaper3",
+      "com.hogbaysoftware.TaskPaper3.direct",
+      "com.hogbaysoftware.TaskPaper3-setapp"
+    ]
+  },
+  "description": "Send the text to TaskPaper 3 as a new Inbox task.",
+  "note": "Updated 5 May 2022 for macOS Monterey."
+}

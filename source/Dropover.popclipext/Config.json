@@ -1,0 +1,15 @@
+{
+  "name": "Dropover",
+  "identifier": "com.pilotmoon.popclip.extension.dropiver",
+  "description": "Send the selected text to Dropover.",
+  "popclipVersion": 4151,
+  "icon": "dropover.svg",
+  "app": {
+    "name": "Dropover",
+    "link": "https://dropoverapp.com/",
+    "bundleIdentifier": "me.damir.dropover-mac",
+    "checkInstalled": true
+  },
+  "serviceName": "Add to Dropover",
+  "captureHtml": true
+}

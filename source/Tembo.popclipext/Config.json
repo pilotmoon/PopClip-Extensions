@@ -1,0 +1,34 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.tembo",
+  "name": "Tembo",
+  "icon": "tembo.png",
+  "regex": "(?s)^[^\\n\\r]{1,300}$",
+  "app": {
+    "checkInstalled": true,
+    "name": "Tembo",
+    "link": "http://www.houdah.com/tembo",
+    "bundleIdentifiers": [
+      "com.houdah.Tembo3",
+      "com.houdah.Tembo2",
+      "com.houdah.Tembo"
+    ]
+  },
+  "popclipVersion": 693,
+  "credits": [
+    {
+      "link": "http://www.houdah.com/",
+      "name": "Houdah Software s.à r.l."
+    }
+  ],
+  "description": {
+    "de": "Startet eine Suche in Tembo mit dem ausgewählten Text.",
+    "en": "Start a Tembo search with the selected text.",
+    "jp": "選択したテキストを使って Tembo 検索を開始します",
+    "fr": "Lance une recherche Tembo sur le texte sélectionné."
+  },
+  "actions": [
+    {
+      "serviceName": "Search in Tembo"
+    }
+  ]
+}

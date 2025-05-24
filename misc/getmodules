@@ -1,0 +1,30 @@
+#!/bin/zsh
+set -eu
+
+mkdir -p temp
+echo "--ignore canvas" > temp/cmds
+count=2
+here=${0:a:h}
+root=$here/..
+
+list=($*)
+for name in $list; do
+    flatname=$(echo $name | tr "/" "+")
+    print "*" $name $flatname
+    print "Browserifying..."
+    print $root/lib
+    cat temp/cmds | xargs -n $count npx browserify --standalone $flatname -e $root/node_modules/$name -o temp/$flatname.bundle.js
+    # print "Uglifying..."
+    # cat temp/$flatname.bundle.js | npx uglifyjs > temp/$flatname.ugly.js
+    # print "Compressing..."
+    # lzfse -encode -i temp/$flatname.ugly.js > temp/$flatname.js.lzfse
+    print "Copying..."    
+    cp temp/$flatname.bundle.js $flatname.js
+    # cp temp/$name.js.lzfse .
+    print "Done"
+    print 
+    count=$((count+2))
+    echo "-x $name" >> temp/cmds
+done
+rm -r temp
+

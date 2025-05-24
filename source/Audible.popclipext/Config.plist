@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>audible.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,}$</string>
+			<key>Title</key>
+			<string>Audible</string>
+			<key>URL</key>
+			<string>https://{popclip option site}/search?keywords={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search for audiobooks on Audible.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.audible-search</string>
+	<key>Extension Name</key>
+	<string>Audible</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Default Value</key>
+			<string>www.audible.com</string>
+			<key>Option Identifier</key>
+			<string>site</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Audible Site</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>www.audible.ca</string>
+				<string>www.audible.com</string>								
+				<string>www.audible.com.au</string>				
+				<string>www.audible.co.jp</string>
+				<string>www.audible.co.uk</string>
+				<string>www.audible.de</string>
+				<string>www.audible.es</string>
+				<string>www.audible.fr</string>
+				<string>www.audible.it</string>
+			</array>
+		</dict>
+	</array>
+	<key>Options Title</key>
+	<dict>
+		<key>en</key>
+		<string>Choose the Audible site for your country.</string>
+	</dict>
+</dict>
+</plist>

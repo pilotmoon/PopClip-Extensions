@@ -1,1 +1,0 @@
-echo "$POPCLIP_TEXT" | ./Markdown.pl

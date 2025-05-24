@@ -1,0 +1,28 @@
+{
+  "actions" : [
+    { 
+      "title" : "Tot",
+      "url" : "tot://{popclip option page}/append?text={popclip text}"      
+    }
+  ],
+  "app": {
+      "bundleIdentifiers": ["com.iconfactory.Tot"],
+      "checkInstalled": true,
+      "link": "https://tot.rocks",
+      "name": "Tot"
+  },
+  "options": [
+    {
+      "identifier": "page",
+      "label": "Tot Page",
+      "type": "multiple",
+      "values": ["1", "2", "3", "4", "5", "6", "7"],
+      "valueLabels": ["Dot 1", "Dot 2", "Dot 3", "Dot 4", "Dot 5", "Dot 6", "Dot 7"]
+    }
+  ],
+  "icon" : "tot-icon.svg",
+  "description" : "Append the text to a chosen page in Tot.",
+  "identifier" : "com.pilotmoon.popclip.extension.tot",
+  "name" : "Tot",
+  "popclipVersion" : 3543
+}

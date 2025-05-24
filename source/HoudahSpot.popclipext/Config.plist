@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>HoudahSpot.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^[^\n\r]{1,300}$</string>
+			<key>Service Name</key>
+			<string>Search in HoudahSpot</string>
+			<key>Title</key>
+			<string>HoudahSpot</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+      <array>
+			  <string>com.houdah.HoudahSpot4</string>
+        <string>com.houdah.HoudahSpot-setapp</string>
+      </array>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>https://www.houdah.com/houdahSpot/</string>
+			<key>Name</key>
+			<string>HoudahSpot</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.houdah.com/</string>
+			<key>Name</key>
+			<string>Houdah Software s.à r.l.</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>de</key>
+		<string>Startet eine Suche in HoudahSpot mit dem ausgewählten Text.</string>
+		<key>en</key>
+		<string>Search files on your Mac using HoudahSpot.</string>
+		<key>fr</key>
+		<string>Lance une recherche HoudahSpot sur le texte sélectionné.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.HoudahSpot</string>
+	<key>Extension Name</key>
+	<string>HoudahSpot</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>

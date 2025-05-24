@@ -1,0 +1,10 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.open-in-browser",
+  "name": "Open in Browser",
+  "popclipVersion": 4225,
+  "icon": "mdi-open-in-browser.svg",
+  "module": "open.ts",
+  "entitlements": ["dynamic"],
+  "description": "Open URLs in a specific browser. Supports Safari, Chrome, Firefox, Arc, Brave, DEVONagent Pro, DuckDuckGo, Edge, Mullvad, Opera, Orion, Tor Browser, Vivaldi and Waterfox.",
+  "keywords": "Safari Chrome Firefox Arc Brave DEVONagent Pro DuckDuckGo Edge Mullvad Opera Orion Tor Browser Vivaldi Waterfox"
+}

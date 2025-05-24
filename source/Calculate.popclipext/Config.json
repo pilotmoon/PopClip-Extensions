@@ -1,0 +1,10 @@
+{
+  "popclip version": 4151,
+  "identifier": "com.pilotmoon.popclip.extension.calculate",
+  "name": "Calculate",
+  "icon": "calc.png",
+  "module": "calculate.ts",
+  "entitlements": ["dynamic"],
+  "after": "paste-result",
+  "description": "Evaluate the text as a mathematical expression."
+}

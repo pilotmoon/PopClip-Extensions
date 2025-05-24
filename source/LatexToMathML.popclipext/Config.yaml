@@ -1,0 +1,7 @@
+#popclip
+name: Latex to MathML
+identifier: com.pilotmoon.popclip.extension.latextomathml
+description: Convert LaTeX to MathML.
+popclip version: 4151
+icon: iconify:tabler:tex
+module: module.bundle.js

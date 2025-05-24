@@ -1,0 +1,13 @@
+{
+    "popclipVersion": 4586,
+    "name": {
+        "en": "Pinyin",
+        "zh-Hans": "拼音",
+        "zh-Hant": "拼寫"
+    },
+    "icon": "pinyin.png",
+    "identifier": "com.pilotmoon.popclip.extension.pinyin",
+    "javascript file": "pinyin.js",
+    "after": "show-result",
+    "description": "Display Chinese characters as pinyin."
+}

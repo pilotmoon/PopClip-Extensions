@@ -1,0 +1,91 @@
+{
+  "browsers": [
+    {
+      "name": "Safari",
+      "bundleId": "com.apple.Safari",
+      "icon": "icons/fa6-brands-safari.svg",
+      "link": "https://www.apple.com/safari/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Chrome",
+      "bundleId": "com.google.Chrome",
+      "icon": "icons/fa6-brands-chrome.svg",
+      "link": "https://www.google.com/chrome/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Firefox",
+      "bundleId": "org.mozilla.firefox",
+      "icon": "icons/fa6-brands-firefox-browser.svg",
+      "link": "https://getfirefox.com/",
+      "defaultEnabled": true
+    },
+    {
+      "name": "Arc",
+      "bundleId": "company.thebrowser.Browser",
+      "icon": "icons/arc-browser.svg",
+      "link": "https://www.apple.com/safari/"
+    },
+    {
+      "name": "Brave",
+      "bundleId": "com.brave.Browser",
+      "icon": "icons/simple-icons-brave.svg",
+      "link": "https://brave.com/"
+    },
+    {
+      "name": "DEVONagent Pro",
+      "bundleId": "com.devon-technologies.agent",
+      "icon": "icons/devontech-dap.svg",
+      "link": "https://devontechnologies.com/apps/devonagent"
+    },
+    {
+      "name": "DuckDuckGo",
+      "bundleId": "com.duckduckgo.macos.browser",
+      "icon": "icons/simple-icons-duckduckgo.svg",
+      "link": "https://duckduckgo.com/mac"
+    },
+    {
+      "name": "Edge",
+      "bundleId": "com.microsoft.edgemac",
+      "icon": "icons/fa6-brands-edge.svg",
+      "link": "https://www.microsoft.com/edge"
+    },
+    {
+      "name": "Mullvad",
+      "bundleId": "net.mullvad.mullvadbrowser",
+      "icon": "icons/M.png",
+      "link": "https://mullvad.net/browser"
+    },
+    {
+      "name": "Opera",
+      "bundleId": "com.operasoftware.Opera",
+      "icon": "icons/fa6-brands-opera.svg",
+      "link": "https://www.opera.com/"
+    },
+    {
+      "name": "Orion",
+      "bundleId": "com.kagi.kagimacOS",
+      "icon": "icons/mdi-star-four-points-circle-outline.svg",
+      "link": "https://browser.kagi.com/"
+    },
+    {
+      "name": "Tor Browser",
+      "bundleId": "org.torproject.torbrowser",
+      "icon": "icons/simple-icons-torbrowser.svg",
+      "link": "https://www.torproject.org/download/"
+    },
+    {
+      "name": "Vivaldi",
+      "bundleId": "com.vivaldi.Vivaldi",
+      "icon": "icons/simple-icons-vivaldi.svg",
+      "link": "https://vivaldi.com/"
+    },
+    {
+      "name": "Waterfox",
+      "bundleId": "net.waterfox.waterfox",
+      "icon": "icons/waterfox.png",
+      "link": "https://www.waterfox.net/"
+    }
+  ]
+}

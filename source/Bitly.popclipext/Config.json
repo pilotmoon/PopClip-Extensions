@@ -1,0 +1,20 @@
+{
+  "popclipVersion": 3895,
+  "name": "Bitly",
+  "icon": "bitly-icon.svg",
+  "identifier": "com.pilotmoon.popclip.extension.bitly",
+  "entitlements": [
+    "network"
+  ],
+  "requirements": [
+    "urls"
+  ],
+  "after": "paste-result",
+  "module": "bitly.bundle.js",
+  "description": "Shorten URLs in the text using Bitly.",
+  "app": {
+    "name": "Bitly",
+    "link": "http://bitly.com/"
+  },
+  "note": "1 Nov 2021: Updated for macOS Monterey. Requires PopClip 2021.11."
+}

@@ -1,0 +1,2 @@
+npx tsc
+npx browserify --standalone foo --external @popclip/axios shorten-link.js > shorten-link.bundle.js

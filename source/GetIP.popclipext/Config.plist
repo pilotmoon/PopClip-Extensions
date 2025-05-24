@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>preview-result</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurl</string>
+			</array>
+			<key>Shell Script File</key>
+			<string>getip.sh</string>
+			<key>Title</key>
+			<string>IP</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://hzlzh.io/</string>
+			<key>Name</key>
+			<string>hzlzh</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Get the selected URL's IP address.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.getip</string>
+	<key>Extension Image File</key>
+	<string>getip.png</string>
+	<key>Extension Name</key>
+	<string>Get IP</string>
+</dict>
+</plist>

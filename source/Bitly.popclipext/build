@@ -1,0 +1,2 @@
+npx tsc
+npx browserify --external axios --standalone foo bitly.js > bitly.bundle.js

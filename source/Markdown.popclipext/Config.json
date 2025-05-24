@@ -1,0 +1,14 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.markdown-to-html",
+  "popclipVersion": 4069,
+  "name": "Markdown",
+  "icon": "dfstar.png",
+  "shellScriptFile": "Markdown.pl",
+  "stdin": "text",
+  "after": "paste-result",  
+  "app": {    
+    "name": "Markdown",
+    "link": "https://daringfireball.net/projects/markdown/syntax"
+  },
+  "description": "Convert Markdown-formatted text to HTML."
+}

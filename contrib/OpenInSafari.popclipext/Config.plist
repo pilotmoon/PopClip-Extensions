@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>compass.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>httpurls</string>
+			</array>
+			<key>Shell Script File</key>
+			<string>open-in-safari.sh</string>
+			<key>Title</key>
+			<string>Open in Safari</string>
+		</dict>
+	</array>
+	<key>Blocked Apps</key>
+	<array>
+		<string>com.apple.Safari</string>
+	</array>
+	<key>Extension Description</key>
+	<string>Open the link in Safari.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.open-in-safari</string>
+	<key>Extension Name</key>
+	<string>Open in Safari</string>
+</dict>
+</plist>

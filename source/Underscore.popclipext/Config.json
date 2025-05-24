@@ -1,0 +1,11 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.underscore",
+  "name": "Underscore",
+  "icon": "underscore.png",
+  "module": "underscore.bundle.js",
+  "entitlements": [
+    "dynamic"
+  ],
+  "popclipVersion": 3785,
+  "description": "Replace spaces between words with underscores, and vice versa."
+}

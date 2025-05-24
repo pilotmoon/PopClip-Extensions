@@ -1,0 +1,9 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.sort",
+  "name": "Sort",  
+  "icon": "sort.png",
+  "regex": "(?s)^(.+)[\\r\\n](.+)$",
+  "javascript file": "sort.js",
+  "description": "Sort the selected lines alphabetically."
+}

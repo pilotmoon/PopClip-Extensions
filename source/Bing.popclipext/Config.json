@@ -1,0 +1,18 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.bing",
+  "name": "Bing",
+  "icon": "bing.svg",
+  "regex": "(?s)^.{1,1900}$",
+  "url": "http://www.bing.com/search?q={popclip text}",
+  "app": {
+    "link": "http://www.bing.com/",
+    "name": "Bing"
+  },
+  "description": "Search the web using Bing.",
+  "credits": [
+    {
+      "link": "https://github.com/mortonfox",
+      "name": "Morton Fox"
+    }
+  ]
+}

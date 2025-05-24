@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>phind.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,200}$</string>
+			<key>Title</key>
+			<string>Phind</string>
+			<key>URL</key>
+			<string>https://www.phind.com/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.phind.com</string>
+			<key>Name</key>
+			<string>Phind</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search the web using Phind.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>us.kary.popclip.extension.phind</string>
+	<key>Extension Name</key>
+	<string>Phind</string>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>

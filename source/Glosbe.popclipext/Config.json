@@ -1,0 +1,30 @@
+{
+    "popclipVersion": 3543,
+    "name": "Glosbe",
+    "identifier": "com.pilotmoon.popclip.extension.glosbe",
+    "description": "Look up the selected text using Glosbe, the global dictionary website.",
+    "app": {
+        "name": "Glosbe",
+        "link": "https://glosbe.com/"
+    },
+    "actions": [{
+        "title": "Glosbe",
+        "url": "https://glosbe.com/{popclip option src}/{popclip option dst}/{popclip text}"
+    }],
+    "options": [
+        {
+            "identifier": "src",
+            "label": "Source language",
+            "type": "string",
+            "defaultValue": "en" 
+        },
+        {
+            "identifier": "dst",
+            "label": "Destination language",
+            "type": "string",
+            "defaultValue": "ja",
+            "description": "Glosbe contains over 6000 languages. You can find the language codes at: https://glosbe.com/all-languages"
+        }
+    ],
+    "icon": "glosbe-bird-outline.svg"
+}

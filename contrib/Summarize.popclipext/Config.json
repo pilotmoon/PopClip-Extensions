@@ -1,0 +1,7 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.summarize",
+  "name": "Summarize",
+  "title": "Summ.",
+  "service name": "Summarize",
+  "description": "Invoke the OS X Summarize service."
+}

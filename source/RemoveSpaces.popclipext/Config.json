@@ -1,0 +1,7 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.remove-spaces",
+  "name": "Remove Spaces",
+  "icon": "remspace.png",
+  "javascript": "popclip.pasteText(popclip.input.text.replace(/\\s/g, ''))",
+  "description": "Remove spaces from the selected text."
+}

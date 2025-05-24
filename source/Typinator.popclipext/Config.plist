@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>Typinator.png</string>
+			<key>Regular Expression</key>
+			<string>.+</string>
+			<key>AppleScript File</key>
+			<string>CreateTypinatorSnippet.applescript</string>
+			<key>Title</key>
+			<string>Create Typinator Snippet</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.macility.typinator2</string>
+			</array>
+			<key>Check Installed</key>
+			<false/>
+			<key>Link</key>
+			<string>http://www.ergonis.com/products/typinator</string>
+			<key>Name</key>
+			<string>Typinator</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>http://www.ergonis.com/products/typinator/</string>
+			<key>Name</key>
+			<string>Ergonis Software</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Create a Typinator expansion with the selected text.</string>
+	<key>Note</key>
+    <string>Requires Typinator v5.8 or newer.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.typinator</string>
+	<key>Extension Name</key>
+	<string>Typinator</string>
+	<key>Required Software Version</key>
+	<integer>701</integer>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.deepl-app",
+  "popclipVersion": 3895,
+  "name": "DeepL App",
+  "icon": "deepl.png",
+  "module": "deepl.js",
+  "app": {
+    "link": "https://www.deepl.com/translator",
+    "name": "DeepL"
+  },
+  "description": "Translate with DeepL app."
+}

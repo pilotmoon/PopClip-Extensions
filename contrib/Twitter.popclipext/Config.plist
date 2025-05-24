@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Extension Name</key>
+	<string>Twitter for Mac</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.twitter</string>
+	<key>Extension Description</key>
+	<string>Compose a new tweet using Twitter for Mac.</string>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Check Installed</key>
+			<true/>
+			<key>Link</key>
+			<string>http://itunes.apple.com/app/twitter/id409789998</string>
+			<key>Name</key>
+			<string>Twitter for Mac</string>
+			<key>Bundle Identifier</key>
+			<string>com.twitter.twitter-mac</string>
+		</dict>
+	</array>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Service Name</key>
+			<string>Tweet</string>
+			<key>Image File</key>
+			<string>newtwitterbird.png</string>
+			<key>Title</key>
+			<string>Twitter</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,195}$</string>
+		</dict>
+		<dict>
+			<key>Service Name</key>
+			<string>Open as Twitter Username</string>
+			<key>Title</key>
+			<string>{popclip text}</string>
+			<key>Regular Expression</key>
+			<string>^@\w{1,20}$</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -1,0 +1,8 @@
+{
+  "name": "Large Type",
+  "identifier": "com.pilotmoon.popclip.extension.large-type",
+  "description": "Display the selected text in large, clear type in the middle of the screen.",
+  "popclipVersion": 4610,
+  "icon": "large.png",
+  "javascript": "popclip.showText(popclip.input.text, { style: 'large' });"
+}

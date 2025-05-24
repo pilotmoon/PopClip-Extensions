@@ -1,0 +1,18 @@
+{
+  "popclip version": 3837,
+  "identifier": "com.pilotmoon.popclip.extension.onenote",
+  "name": "OneNote",
+  "icon": "onenote.png",
+  "capture html": true,
+  "module": "onenote.js",
+  "entitlements": [
+    "network"
+  ],
+  "after": "show-status",
+  "app": {
+    "link": "https://www.onenote.com/",
+    "name": "Microsoft OneNote"
+  },
+  "description": "Add the text as a Quick Note in Microsoft OneNote.",
+  "note": "5 May 2022: Updated for macOS 12 Monterey"
+}

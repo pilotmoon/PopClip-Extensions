@@ -1,0 +1,8 @@
+{
+  "name" : "Sentence Case",  
+  "identifier" : "com.pilotmoon.popclip.extension.sentence-case",
+  "description" : "Start each selected sentence with a capital letter.",
+  "icon": "square filled S",
+  "popclip version" : 4151,
+  "module": "sentence-case.js"
+}

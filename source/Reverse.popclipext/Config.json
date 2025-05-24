@@ -1,0 +1,9 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.reverse",
+  "name": "Reverse",
+  "icon": "reverse.png",
+  "regex": "(?s)^(.+)[\\r\\n](.+)$",
+  "javascript file": "reverse.js",
+  "description": "Reverse the order of the selected lines.",
+  "popclipVersion": 3785
+}

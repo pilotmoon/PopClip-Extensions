@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>ecosia.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,1900}$</string>
+			<key>Title</key>
+			<string>Ecosia</string>
+			<key>URL</key>
+			<string>https://www.ecosia.org/search?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://www.ecosia.org/</string>
+			<key>Name</key>
+			<string>Ecosia</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://github.com/hansibansix</string>
+			<key>Name</key>
+			<string>Blubb</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Search the web using Ecosia.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.ecosia</string>
+	<key>Extension Name</key>
+	<string>Ecosia</string>
+</dict>
+</plist>

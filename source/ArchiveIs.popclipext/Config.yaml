@@ -1,0 +1,9 @@
+name: Archive.today
+identifier: com.pilotmoon.popclip.extension.archiveis
+description: Submit the selected URL for archiving by Archive.today (Archive.is)
+popclip version: 4151
+keywords: archive.is
+icon: iconify:solar:archive-bold
+app: { name: Archive.today, link: https://archive.today/ }
+requirements: [url]
+url: https://archive.today/submit/?run=1&url=***

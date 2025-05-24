@@ -1,0 +1,16 @@
+#popclip
+name: Kagi Translate
+identifier: com.pilotmoon.popclip.extension.kagi-translate
+popclip version: 4684
+icon: KagiTranslate.svg
+app:
+  link: https://translate.kagi.com/
+  name: Kagi Translate
+description: Translate text or a URL using Kagi Translate.
+actions:
+  - requirements: [isurl]
+    title: Kagi Translate (URL)
+    url: https://translate.kagi.com/?url={popclip text}
+  - requirements: ["!isurl", text]
+    title: Kagi Translate (Text)
+    url: https://translate.kagi.com/?text={popclip text}

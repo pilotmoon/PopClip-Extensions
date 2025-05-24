@@ -1,0 +1,33 @@
+name: Formatting
+identifier: com.pilotmoon.popclip.extension.formatting
+description: Bold, italic and underline.
+popclip version: 4151
+icon: symbol:bold.italic.underline
+keywords: bold italic underline
+stayVisible: true
+actions:
+  - title: Bold
+    icon: symbol:bold
+    keyCombo: command b
+    requirements: [cut, formatting, option-bold=1]
+  - title: Italic
+    icon: symbol:italic
+    keyCombo: command i
+    requirements: [cut, formatting, option-italic=1]
+  - title: Underline
+    icon: symbol:underline
+    keyCombo: command u
+    requirements: [cut, formatting, option-underline=1]
+options:
+  - identifier: bold
+    label: Bold
+    type: boolean
+    icon: symbol:bold
+  - identifier: italic
+    label: Italic
+    type: boolean
+    icon: symbol:italic
+  - identifier: underline
+    label: Underline
+    type: boolean
+    icon: symbol:underline

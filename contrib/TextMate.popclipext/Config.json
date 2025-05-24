@@ -1,0 +1,17 @@
+{
+  "popclip version": 701,
+  "identifier": "com.pilotmoon.popclip.extension.textmate",
+  "name": "TextMate",
+  "title": "TM",
+  "shell script file": "textmate.sh",
+  "app": {
+    "check installed": false,
+    "name": "TextMate",
+    "link": "https://www.macromates.com/",
+    "bundle identifiers": [
+      "com.macromates.textmate",
+      "com.macromates.TextMate.preview"
+    ]
+  },
+  "description": "Open the selected text as a new file in TextMate."
+}

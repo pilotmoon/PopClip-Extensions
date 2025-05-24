@@ -1,0 +1,10 @@
+name: MDN Web Docs
+identifier: com.pilotmoon.popclip.extension.mdn
+description: Search MDN Web Docs with the selected text.
+keywords: mozilla developer network
+popclipVersion: 4151
+icon: "iconify:simple-icons:mdnwebdocs"
+app:
+  name: MDN Web Docs
+  link: "https://developer.mozilla.org/"
+url: "https://developer.mozilla.org/search?q={popclip text}"

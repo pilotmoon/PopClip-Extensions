@@ -1,0 +1,9 @@
+{
+  "description" : "Put quotation marks around the selected text, choosing from several styles.",
+  "identifier" : "com.pilotmoon.popclip.extension.quotes",
+  "name" : "Quotes",
+  "icon" : "quotes.png",
+  "popclipVersion" : 4225,
+  "entitlements" : ["dynamic"],
+  "module" : "quotes.ts"
+}

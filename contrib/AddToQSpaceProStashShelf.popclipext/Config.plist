@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Requirements</key>
+			<array>
+				<string>path</string>
+			</array>
+			<key>Service Name</key>
+			<string>QSpace Pro/Add to Stash Shelf</string>
+			<key>Title</key>
+			<string>Add to Stash Shelf</string>
+		</dict>
+	</array>
+	<key>Apps</key>
+	<array>
+		<dict>
+			<key>Bundle Identifiers</key>
+			<array>
+				<string>com.jinghaoshe.qspace.pro</string>
+			</array>
+			<key>Check Installed</key>
+			<false/>
+			<key>Link</key>
+			<string>https://qspace.awehunt.com/</string>
+			<key>Name</key>
+			<string>QSpace Pro</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Link</key>
+			<string>https://qspace.awehunt.com</string>
+			<key>Name</key>
+			<string>Tian Wenda</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Add files to QSpace Pro Stash Shelf.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.add-to-qspace-pro-stashshelf</string>
+	<key>Extension Name</key>
+	<string>Add to Stash Shelf</string>
+	<key>Version</key>
+	<integer>2</integer>
+</dict>
+</plist>

@@ -1,0 +1,40 @@
+{
+  "popclipVersion": 3895,
+  "name" : "Email",
+  "identifier" : "com.pilotmoon.popclip.extension.generic-mail",
+  "description" : "Create a new mail message with the selected \"to:\" address, or with the selected text, in the default mail client.",  
+  "icon" : "envelope.png",
+  "module": "email.js",
+  "entitlements": ["dynamic"],
+  "options" : [
+    {
+      "Identifier" : "actions-heading",
+      "Label" : "Actions",
+      "Type" : "heading"
+    },
+    {
+      "Icon" : "at.png",
+      "Identifier" : "enable-at",
+      "Label" : "New email to address",
+      "Type" : "boolean"
+    },
+    {
+      "Icon" : "envelope.png",
+      "Identifier" : "enable-body",
+      "Label" : "New email with text",
+      "Type" : "boolean"
+    },
+    {
+      "Description" : "The default \"to:\" address for new emails. (Or leave blank.)",
+      "Identifier" : "default",
+      "Label" : "Default Address",
+      "Type" : "string"
+    },
+    {      
+      "Description" : "Includes the page URL if the text is selected from a web page.",
+      "Identifier" : "source",
+      "Label" : "Add source URL",
+      "Type" : "boolean"
+    }
+  ]
+}

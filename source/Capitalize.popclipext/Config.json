@@ -1,0 +1,8 @@
+{
+  "name" : "Capitalize Words",
+  "identifier" : "com.pilotmoon.popclip.extension.capitalize",
+  "description" : "Start each selected word with a capital letter.",
+  "icon" : "square filled Ab",
+  "popclipVersion" : 4151,  
+  "module": "capitalize.js"
+}

@@ -1,0 +1,40 @@
+{
+  "scripts": {
+    "check": "tsc --noEmit",
+    "convert": "misc/pcxconvert"
+  },
+  "dependencies": {
+    "@noble/hashes": "^1.4.0",
+    "@types/js-yaml": "^4.0.9",
+    "buffer": "6.0.3",
+    "js-yaml": "^4.1.0",
+    "latextomathml": "0.0.4",
+    "oauth-1.0a": "^2.2.6",
+    "tongwen-core": "4.1.1",
+    "@joplin/turndown-plugin-gfm": "^1.0.43",
+    "@popclip/helpers": "file:lib/popclip-helpers",
+    "@popclip/types": "1.4688.1",
+    "@tryfabric/martian": "^1.2.4",
+    "@types/crypto-js": "^4.1.1",
+    "@types/voca": "^1.4.1",
+    "axios": "1.6.8",
+    "browserify": "^17.0.0",
+    "case-anything": "^2.1.10",
+    "core-js": "^3.22.7",
+    "crypto-js": "^4.1.1",
+    "entities": "^4.5.0",
+    "esbuild": "^0.21.4",
+    "evernote": "^2.0.5",
+    "html-entities": "^2.3.3",
+    "linkedom": "0.18.0",
+    "mathjs": "^10.0.0",
+    "rot13-cipher": "1.0.0",
+    "sanitize-html": "2.13.0",
+    "slackify-markdown": "^4.3.1",
+    "superagent": "^9.0.2",
+    "turndown": "7.1.3",
+    "typescript": "^5.5.2",
+    "voca": "^1.4.0",
+    "zod": "^3.17.3"
+  }
+}

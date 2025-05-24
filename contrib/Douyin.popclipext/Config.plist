@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>Actions</key>
+        <array>
+            <dict>
+                <key>Image File</key>
+                <string>Douyin.png</string>
+                <key>Regular Expression</key>
+                <string>(?s)^.{1,1900}$</string>
+                <key>Title</key>
+                <string>Douyin</string>
+                <key>URL</key>
+                <string>https://www.douyin.com/search/{popclip text}</string>
+            </dict>
+        </array>
+        <key>Apps</key>
+        <array>
+            <dict>
+                <key>Link</key>
+                <string>https://www.douyin.com/</string>
+                <key>Name</key>
+                <string>抖音</string>
+            </dict>
+        </array>
+        <key>Credits</key>
+        <array>
+            <dict>
+                <key>Name</key>
+                <string>Xf Lau</string>
+            </dict>
+        </array>
+        <key>Extension Description</key>
+        <string>Search for keywords on Douyin.</string>
+        <key>Extension Identifier</key>
+        <string>com.lauxf.popclip.extension.douyin</string>
+        <key>Extension Name</key>
+        <string>抖音</string>
+        <key>Version</key>
+        <integer>1</integer>
+    </dict>
+</plist>

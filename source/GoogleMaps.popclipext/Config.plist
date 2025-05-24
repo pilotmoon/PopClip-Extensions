@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>pin.png</string>
+			<key>Regular Expression</key>
+			<string>(?s)^.{1,500}$</string>
+			<key>Title</key>
+			<string>Google Maps</string>
+			<key>URL</key>
+			<string>https://{popclip option site}/maps?q={popclip text}</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<dict>
+		<key>en</key>
+		<string>Search Google Maps.</string>
+	</dict>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.google-maps</string>
+	<key>Extension Name</key>
+	<string>Google Maps</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Option Identifier</key>
+			<string>site</string>
+			<key>Option Label</key>
+			<dict>
+				<key>en</key>
+				<string>Google Maps Site</string>
+			</dict>
+			<key>Option Type</key>
+			<string>multiple</string>
+			<key>Option Values</key>
+			<array>
+				<string>google.com</string>
+				<string>google.ae</string>
+				<string>google.at</string>
+				<string>google.az</string>
+				<string>google.be</string>
+				<string>google.bg</string>
+				<string>google.ca</string>
+				<string>google.ch</string>
+				<string>google.cl</string>
+				<string>google.cn</string>
+				<string>google.co.id</string>
+				<string>google.co.il</string>
+				<string>google.co.in</string>
+				<string>google.co.jp</string>
+				<string>google.co.kr</string>
+				<string>google.co.ma</string>
+				<string>google.co.nz</string>
+				<string>google.co.th</string>
+				<string>google.co.uk</string>
+				<string>google.co.ve</string>
+				<string>google.co.za</string>
+				<string>google.com.ar</string>
+				<string>google.com.au</string>
+				<string>google.com.br</string>
+				<string>google.com.co</string>
+				<string>google.com.do</string>
+				<string>google.com.ec</string>
+				<string>google.com.eg</string>
+				<string>google.com.hk</string>
+				<string>google.com.kw</string>
+				<string>google.com.ly</string>
+				<string>google.com.mx</string>
+				<string>google.com.my</string>
+				<string>google.com.ng</string>
+				<string>google.com.pe</string>
+				<string>google.com.ph</string>
+				<string>google.com.pk</string>
+				<string>google.com.qa</string>
+				<string>google.com.sa</string>
+				<string>google.com.sg</string>
+				<string>google.com.tn</string>
+				<string>google.com.tr</string>
+				<string>google.com.tw</string>
+				<string>google.com.ua</string>
+				<string>google.com.vn</string>
+				<string>google.cz</string>
+				<string>google.de</string>
+				<string>google.dk</string>
+				<string>google.dz</string>
+				<string>google.es</string>
+				<string>google.fi</string>
+				<string>google.fr</string>
+				<string>google.gr</string>
+				<string>google.hr</string>
+				<string>google.hu</string>
+				<string>google.ie</string>
+				<string>google.it</string>
+				<string>google.kz</string>
+				<string>google.lk</string>
+				<string>google.lt</string>
+				<string>google.nl</string>
+				<string>google.no</string>
+				<string>google.pl</string>
+				<string>google.pt</string>
+				<string>google.ro</string>
+				<string>google.rs</string>
+				<string>google.ru</string>
+				<string>google.se</string>
+				<string>google.sk</string>
+			</array>
+		</dict>
+	</array>
+	<key>Required Software Version</key>
+	<integer>693</integer>
+</dict>
+</plist>

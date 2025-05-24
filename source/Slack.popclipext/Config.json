@@ -1,0 +1,17 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.slack",
+  "name": "Slack",
+  "icon": "slack.png",
+  "after": "show-status",
+  "captureHtml": true,
+  "app": {
+    "link": "https://slack.com/",
+    "name": "Slack"
+  },
+  "popclipVersion": 3895,
+  "entitlements": [
+    "network"
+  ],
+  "description": "Post the selection to a channel in Slack.",
+  "module": "slack.bundle.js.lzfse"
+}

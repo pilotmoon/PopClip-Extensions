@@ -1,0 +1,2 @@
+name: Config only
+javascript: popclip.showText('hi')

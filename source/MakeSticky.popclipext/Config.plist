@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>Image File</key>
+			<string>stickies.png</string>
+			<key>Service Name</key>
+			<string>Make Sticky</string>
+			<key>Title</key>
+			<string>Make Sticky</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>Make a new Stickies note with the selected text.</string>
+	<key>Extension Identifier</key>
+	<string>com.pilotmoon.popclip.extension.make-sticky</string>
+	<key>Extension Name</key>
+	<string>Stickies</string>
+	<key>Required OS Version</key>
+	<string>10.7</string>
+</dict>
+</plist>

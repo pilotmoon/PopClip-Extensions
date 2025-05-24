@@ -1,0 +1,14 @@
+{
+  "popclip version": 4586,
+  "identifier": "com.pilotmoon.popclip.extension.evernote",
+  "name": "Evernote",
+  "icon": "evernote-logo.svg",
+  "capture html": true,
+  "module": "main.bundle.js.lzfse",
+  "entitlements": ["network"],
+  "app": {
+    "name": "Evernote",
+    "link": "https://evernote.com/"
+  },
+  "description": "Send the selected text to Evernote."
+}

@@ -1,0 +1,39 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.scrivener",
+  "name": "Scrivener",
+  "icon": "scriv.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "Scrivener",
+    "link": "https://www.literatureandlatte.com/scrivener.php",
+    "bundleIdentifiers": [
+      "com.literatureandlatte.scrivener2",
+      "com.literatureandlatte.scrivener3"
+    ]
+  },
+  "popclipVersion": 4151,
+  "description": "Make a new clipping in the currently open Scrivener document.",
+  "actions": [
+    {
+      "requirements": ["option-action=new"],
+      "serviceName": "Scrivener/Scrivener: Make New Clipping"
+    },
+    {
+      "requirements": ["option-action=text"],
+      "serviceName": "Scrivener/Scrivener: Append to Text"
+    },
+    {
+      "requirements": ["option-action=notes"],
+      "serviceName": "Scrivener/Scrivener: Append to Notes"
+    }
+  ],
+  "options": [
+    {
+      "identifier": "action",
+      "label": "Action",
+      "type": "multiple",
+      "values": ["new", "text", "notes"],
+      "valueLabels": ["Make New Clipping", "Append to Text", "Append to Notes"]
+    }
+  ]
+}

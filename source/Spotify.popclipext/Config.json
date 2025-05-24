@@ -1,0 +1,15 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.spotify-search",
+  "name": "Spotify",
+  "icon": "sifynew.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "Spotify",
+    "link": "https://www.spotify.com/",
+    "bundleIdentifier": "com.spotify.client"
+  },
+  "popclipVersion": 4225,
+  "description": "Search Spotify.",
+  "url": "spotify:search:***",
+  "cleanQuery": true
+}

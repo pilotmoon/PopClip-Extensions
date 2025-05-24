@@ -1,0 +1,10 @@
+name: PopDo
+identifier: com.pilotmoon.popclip.extension.popdo
+description: Add a new task in PopDo.
+popclip version: 4151
+icon: iconify:iconoir:task-list
+app:
+  name: PopDo
+  link: https://ds9soft.com/popdo/
+  bundleIdentifiers: [com.ds9soft.PopDo]
+service name: Add as Task to PopDo

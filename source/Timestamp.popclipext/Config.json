@@ -1,0 +1,13 @@
+{
+  "popclip version": 3783,
+  "identifier": "com.pilotmoon.popclip.extension.timestamp",
+  "name": "Timestamp",
+  "icon": "clock.png",
+  "requirements": [
+    "paste"
+  ],
+  "module": "timestamp.js",
+  "after": "paste-result",
+  "description": "Paste the current date and time.",
+  "note": "Updated for macOS 12 Monterey"
+}

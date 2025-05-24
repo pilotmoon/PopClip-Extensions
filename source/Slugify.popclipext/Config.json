@@ -1,0 +1,8 @@
+{
+  "description" : "Replace spaces between words with hyphens, remove anything that is not a letter or number, and downcase.",
+  "identifier" : "com.pilotmoon.popclip.extension.slugify",
+  "icon" : "slug.png",
+  "module": "main.js",
+  "name" : "Slugify",
+  "popclip version" : 3783
+}

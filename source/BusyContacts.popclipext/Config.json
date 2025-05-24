@@ -1,0 +1,17 @@
+{
+  "name": "BusyContacts",
+  "identifier": "com.pilotmoon.popclip.extension.busycontacts",
+  "description": "Create a new contact in BusyContacts.",
+  "popclip version": 4151,
+  "icon": "contact.png",
+  "app": {
+    "checkInstalled": true,
+    "name": "BusyContacts",
+    "link": "http://www.busycal.com/busycontacts/",
+    "bundleIdentifiers": [
+      "com.busymac.busycontacts",
+      "com.busymac.busycontacts-setapp"
+    ]
+  },
+  "url": "busycontacts://new/{popclip text}"
+}

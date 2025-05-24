@@ -1,0 +1,8 @@
+#popclip
+name: Presearch
+identifier: com.pilotmoon.popclip.extension.presearch
+description: Search Presearch, the decentralized search engine.
+icon: presearch.svg
+popclip version: 4151
+app: { name: Presearch, link: https://www.presearch.io/ }
+url: https://presearch.com/search?q=***

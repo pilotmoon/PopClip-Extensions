@@ -1,0 +1,22 @@
+{
+  "popclip version": 3785,
+  "identifier": "com.pilotmoon.popclip.extension.nvalt",
+  "name": "nvALT",
+  "icon": "rocket.png",
+  "url": "nvALT.sh",
+  "app": {
+    "check installed": false,
+    "name": "nvALT",
+    "link": "http://brettterpstra.com/project/nvalt/",
+    "bundle identifiers": [
+      "net.elasticthreads.nv"
+    ]
+  },
+  "actions": [
+    {
+      "url": "nvalt://make/?txt={popclip text}"
+    }
+  ],
+  "description": "Create a note in nvALT.",
+  "note": "18 Nov 2021: Minor update to tidy code."
+}

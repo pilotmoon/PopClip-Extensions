@@ -1,0 +1,5 @@
+#!/bin/zsh
+print "Compiling TypeScript..."
+npx tsc
+print "Browserifying..."
+npx browserify --standalone foo hyphenate.js > hyphenate.bundle.js
