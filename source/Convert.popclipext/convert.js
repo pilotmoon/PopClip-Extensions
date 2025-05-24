@@ -12,6 +12,7 @@ const gPerOz = (kgPerLb / 16) * 1000;
 const mPerFoot = (cmPerInch * 12) / 100;
 const mPerYard = mPerFoot * 3;
 const kmPerMile = (mPerYard * 1760) / 1000;
+const mmPerInch = 10 * cmPerInch;
 function formatOutput(num, places) {
     return Intl.NumberFormat(undefined, {
         useGrouping: false,
@@ -45,6 +46,7 @@ const conversions = [
     { regex: makeRegex('yards?|yds?'), outputUnit: 'm', factor: mPerYard },
     { regex: makeRegex('miles?|mi'), outputUnit: 'km', factor: kmPerMile },
     { regex: makeRegex('centimetres?|centimeters?|cm'), outputUnit: '"', factor: 1 / cmPerInch, space: 0 },
+    { regex: makeRegex('millimetres?|millimeters?|mm'), outputUnit: '"', factor: 1 / mmPerInch, space: 0 },
     { regex: makeRegex('kilometres?|kilometers?|km?'), outputUnit: 'miles', factor: 1 / kmPerMile, space: 1 },
     { regex: makeRegex('metres?|meters?|m'), outputUnit: "'", factor: 1 / mPerFoot, space: 0 },
     // temperature
