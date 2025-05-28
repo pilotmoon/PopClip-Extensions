@@ -5,9 +5,23 @@ tell application "Terminal"
     -- Bring Terminal to the foreground
     activate
     
-    -- If there are no open windows, create a new Terminal window
+    -- Get the "Use New Tab" option
+    set use_new_tab to "{popclip option newtab}" is "1"
+    
+    -- If there are no open windows, open one.
     if (count of windows) is less than 1 then
         do script ""
+        set use_new_tab to false -- No need for new tab if we just opened a window
+    end if
+    
+    -- Create a new tab if requested
+    if use_new_tab then
+        tell application "System Events"
+            tell process "Terminal"
+                keystroke "t" using command down
+            end tell
+        end tell
+        delay 0.5 -- Give the new tab time to initialize
     end if
     
     -- Get a reference to the currently active tab in the first window

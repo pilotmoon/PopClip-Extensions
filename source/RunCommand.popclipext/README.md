@@ -9,6 +9,7 @@ One can choose either default Terminal, [iTerm2](https://iterm2.com/) or [Warp](
 - Execute selected text as a command in your terminal of choice
 - Optionally prepend text before the selected command
 - Optionally append text after the selected command
+- Run commands in a new tab instead of the current tab
 
 ### Usage Examples
 
@@ -30,6 +31,7 @@ In the extension settings, you can configure:
 - Terminal Emulator: Choose between Terminal, iTerm2, or Warp
 - Prepend Command: Text to insert before the selected text (optional)
 - Append Command: Text to insert after the selected text (optional)
+- Use New Tab: Opens command in a new tab instead of the current tab
 
 ### About
 
@@ -37,6 +39,7 @@ Original extension and icon created by [James Smith](https://twitter.com/smithjw
 
 ## Changelog
 
+- 28 May 2025: Added 'Use New Tab' option to run commands in a new terminal tab
 - 28 May 2025: Added prepend/append functionality to customize command execution
 - 9 Nov 2024: Remove needless line from iTerm2 script
 - 21 May 2024: Add filter keywords for directory and update readme.

@@ -50,6 +50,13 @@
       "type": "string",
       "identifier": "append",
       "description": "Text to insert after the selected text (optional)"
+    },
+    {
+      "label": "Use New Tab",
+      "type": "boolean",
+      "identifier": "newtab",
+      "description": "Open command in a new tab instead of current tab",
+      "defaultValue": false
     }
   ]
 }

@@ -6,6 +6,17 @@ tell application id "com.googlecode.iterm2"
 	-- Bring iTerm2 to the foreground
 	activate
 	
+	-- Get the "Use New Tab" option
+	set use_new_tab to "{popclip option newtab}" is "1"
+	
+	-- Create a new tab if requested
+	if use_new_tab then
+		tell current window
+			create tab with default profile
+		end tell
+		delay 0.5 -- Give the new tab time to initialize
+	end if
+	
 	-- Get a reference to the current terminal session
 	-- This targets the active session in the frontmost window
 	set _session to current session of current window

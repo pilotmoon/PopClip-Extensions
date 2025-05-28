@@ -72,12 +72,15 @@ end send_text
 -- First activate Warp and bring it to the foreground
 call_forward()
 
+-- Get the "Use New Tab" option from PopClip
+set use_new_tab to "{popclip option newtab}" is "1"
+
 -- Determine where to send the command based on configuration
 if open_in_new_window then
 	-- Create a new window if configured to do so
 	new_window()
-else if open_in_new_tab then
-	-- Create a new tab if configured to do so
+else if use_new_tab then
+	-- Create a new tab if requested via PopClip option
 	new_tab()
 else
 	-- Otherwise reuse the current tab (no action needed)
