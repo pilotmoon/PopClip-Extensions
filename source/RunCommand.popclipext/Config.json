@@ -1,7 +1,7 @@
 {
   "name": "Terminal",
   "identifier": "com.pilotmoon.popclip.extension.rtc",
-  "description": "Run the selected text as a command in the active terminal window. Supports Terminal, iTerm2 and Warp.",
+  "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2 and Warp.",
   "keywords": "terminal iterm2 warp run command",
   "popclip version": 4151,
   "icon": "RTC.png",
@@ -38,6 +38,18 @@
       "values": ["Terminal", "iTerm2 v2.9+", "Warp"],
       "valueLabels": ["Terminal", "iTerm2", "Warp"],
       "identifier": "term"
+    },
+    {
+      "label": "Prepend Command",
+      "type": "string",
+      "identifier": "prepend",
+      "description": "Text to insert before the selected text (optional)"
+    },
+    {
+      "label": "Append Command",
+      "type": "string",
+      "identifier": "append",
+      "description": "Text to insert after the selected text (optional)"
     }
   ]
 }

@@ -59,4 +59,17 @@ else
 end if
 
 call_forward()
-send_text("{popclip text}")
+
+-- Prepare the command with optional prepend/append text
+set prepend_text to "{popclip option prepend}"
+set append_text to "{popclip option append}"
+
+if prepend_text is not "" and append_text is not "" then
+	send_text(prepend_text & " {popclip text} " & append_text)
+else if prepend_text is not "" then
+	send_text(prepend_text & " {popclip text}")
+else if append_text is not "" then
+	send_text("{popclip text} " & append_text)
+else
+	send_text("{popclip text}")
+end if

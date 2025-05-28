@@ -5,5 +5,18 @@ tell application "Terminal"
         do script ""
     end if
     set theTab to selected tab in first window
-    do script "{popclip text}" in theTab
+    
+    -- Prepare the command with optional prepend/append text
+    set prepend_text to "{popclip option prepend}"
+    set append_text to "{popclip option append}"
+    
+    if prepend_text is not "" and append_text is not "" then
+        do script prepend_text & " {popclip text} " & append_text in theTab
+    else if prepend_text is not "" then
+        do script prepend_text & " {popclip text}" in theTab
+    else if append_text is not "" then
+        do script "{popclip text} " & append_text in theTab
+    else
+        do script "{popclip text}" in theTab
+    end if
 end tell
