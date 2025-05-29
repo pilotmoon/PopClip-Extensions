@@ -1,6 +1,6 @@
 {
-  "name": "Terminal+",
-  "identifier": "com.shayonpal.popclip.runcommand.enhanced",
+  "name": "Terminal",
+  "identifier": "com.pilotmoon.popclip.extension.rtc",
   "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2 and Warp.",
   "keywords": "terminal iterm2 warp run command",
   "popclip version": 4151,
