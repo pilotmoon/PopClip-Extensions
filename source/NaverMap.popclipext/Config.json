@@ -1,0 +1,15 @@
+{
+  "name": { "en": "Naver Map", "ko": "네이버 지도 검색" },
+  "identifier": "com.pilotmoon.popclip.extension.navermap",
+  "popclipVersion": 4151,
+  "icon": "navermap.svg",
+  "description": {
+    "en": "Search Naver Map",
+    "ko": "네이버 지도 검색"
+  },
+  "app": {
+    "name": "Naver Map",
+    "link": "https://map.naver.com/"
+  },
+  "url": "https://map.naver.com/p/search/***"
+}
