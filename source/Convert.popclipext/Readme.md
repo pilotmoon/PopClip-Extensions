@@ -4,7 +4,7 @@ Convert quantities in metric units to US/imperial units, and vice-versa.
 
 <img src="https://github.com/pilotmoon/PopClip-Extensions/blob/master/source/Convert.popclipext/Convert-demo.gif?raw=true" width=360>
 
-Supports the following conversions: lb↔kg, oz↔g,  miles↔km, feet/yards↔m, inches↔cm, °F↔°C.
+Supports the following conversions: lb↔kg, oz↔g,  miles↔km, feet/yards↔m, inches↔cm/mm, °F↔°C.
 
 The result will be shown as the action's button title. Click the button to paste the result, or shift-click to copy it.
 
@@ -21,7 +21,7 @@ The output will attempt to match the number of decimal places of the input, so `
 Accepts either `,` or `.` as the decimal separator in the input. The output decimal separator
 will be according to the current system locale.
 
-Does not accept numbers with thousands separators in the input. (This would ne a nice improvement.)
+Does not accept numbers with thousands separators in the input. (This would be a nice improvement.)
 
 Wikipedia links:
 
