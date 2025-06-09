@@ -1,0 +1,243 @@
+{
+    "name": "Exchange Rate",
+    "icon": "circle $\u20ac\u00a5",
+    "identifier": "com.oxxie.popclipextensions.exchangerate",
+    "description": "Shows monetary amount in preferred currencies.",
+    "options": [
+        {
+            "identifier": "target_AUD",
+            "type": "boolean",
+            "label": "AUD Australian Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_BGN",
+            "type": "boolean",
+            "label": "BGN Bulgarian Lev",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_BRL",
+            "type": "boolean",
+            "label": "BRL Brazilian Real",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_CAD",
+            "type": "boolean",
+            "label": "CAD Canadian Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_CHF",
+            "type": "boolean",
+            "label": "CHF Swiss Franc",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_CNY",
+            "type": "boolean",
+            "label": "CNY Chinese Renminbi Yuan",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_CZK",
+            "type": "boolean",
+            "label": "CZK Czech Koruna",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_DKK",
+            "type": "boolean",
+            "label": "DKK Danish Krone",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_EUR",
+            "type": "boolean",
+            "label": "EUR Euro",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_GBP",
+            "type": "boolean",
+            "label": "GBP British Pound",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_HKD",
+            "type": "boolean",
+            "label": "HKD Hong Kong Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_HUF",
+            "type": "boolean",
+            "label": "HUF Hungarian Forint",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_IDR",
+            "type": "boolean",
+            "label": "IDR Indonesian Rupiah",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_ILS",
+            "type": "boolean",
+            "label": "ILS Israeli New Sheqel",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_INR",
+            "type": "boolean",
+            "label": "INR Indian Rupee",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_ISK",
+            "type": "boolean",
+            "label": "ISK Icelandic Kr\u00f3na",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_JPY",
+            "type": "boolean",
+            "label": "JPY Japanese Yen",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_KRW",
+            "type": "boolean",
+            "label": "KRW South Korean Won",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_MXN",
+            "type": "boolean",
+            "label": "MXN Mexican Peso",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_MYR",
+            "type": "boolean",
+            "label": "MYR Malaysian Ringgit",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_NOK",
+            "type": "boolean",
+            "label": "NOK Norwegian Krone",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_NZD",
+            "type": "boolean",
+            "label": "NZD New Zealand Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_PHP",
+            "type": "boolean",
+            "label": "PHP Philippine Peso",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_PLN",
+            "type": "boolean",
+            "label": "PLN Polish Z\u0142oty",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_RON",
+            "type": "boolean",
+            "label": "RON Romanian Leu",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_SEK",
+            "type": "boolean",
+            "label": "SEK Swedish Krona",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_SGD",
+            "type": "boolean",
+            "label": "SGD Singapore Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_THB",
+            "type": "boolean",
+            "label": "THB Thai Baht",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_TRY",
+            "type": "boolean",
+            "label": "TRY Turkish Lira",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_USD",
+            "type": "boolean",
+            "label": "USD United States Dollar",
+            "defaultValue": false
+        },
+        {
+            "identifier": "target_ZAR",
+            "type": "boolean",
+            "label": "ZAR South African Rand",
+            "defaultValue": false
+        }
+    ],
+    "optionsTitle": "Exchange Rate shows monetary amount in preferred currencies.\n\nSelect currencies to show monetary amount in:",
+    "action": {
+        "regex": "^(MXN|DKK|US\\$|EUR|NOK|CNY|ISK|MYR|\u00a5|HKD|ILS|ZAR|\u20ac|SGD|TRY|CAD|INR|\u00a3|PHP|BGN|KRW|BRL|SEK|\\$|JPY|RON|HUF|CZK|THB|NZD|USD|IDR|GBP|PLN|AUD|CHF)\\s?(\\d{1,3}([\\.,]?\\d{3})*([\\.,]\\d{2})?)$",
+        "after": "preview-result",
+        "app": {
+            "name": "Frankfurter",
+            "link": "https://frankfurter.dev"
+        },
+        "shellScriptFile": "exchangerate.py",
+        "interpreter": "/usr/bin/python3"
+    },
+    "supported_symbols": {
+        "MXN": "MXN",
+        "DKK": "DKK",
+        "US$": "USD",
+        "EUR": "EUR",
+        "NOK": "NOK",
+        "CNY": "CNY",
+        "ISK": "ISK",
+        "MYR": "MYR",
+        "\u00a5": "JPY",
+        "HKD": "HKD",
+        "ILS": "ILS",
+        "ZAR": "ZAR",
+        "\u20ac": "EUR",
+        "SGD": "SGD",
+        "TRY": "TRY",
+        "CAD": "CAD",
+        "INR": "INR",
+        "\u00a3": "GBP",
+        "PHP": "PHP",
+        "BGN": "BGN",
+        "KRW": "KRW",
+        "BRL": "BRL",
+        "SEK": "SEK",
+        "$": "USD",
+        "JPY": "JPY",
+        "RON": "RON",
+        "HUF": "HUF",
+        "CZK": "CZK",
+        "THB": "THB",
+        "NZD": "NZD",
+        "USD": "USD",
+        "IDR": "IDR",
+        "GBP": "GBP",
+        "PLN": "PLN",
+        "AUD": "AUD",
+        "CHF": "CHF"
+    }
+}
