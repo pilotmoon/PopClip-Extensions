@@ -22,8 +22,8 @@ export const options = [
 		identifier: "model",
 		label: "Model",
 		type: "multiple",
-		defaultValue: "gpt-4o-mini",
-		values: ["gpt-4o", "gpt-4o-mini", "o1", "o1-mini", "o3-mini"],
+		defaultValue: "gpt-4.1-nano",
+		values: ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "o3", "o3-mini", "o4-mini"],
 	},
 	{
 		identifier: "systemMessage",
