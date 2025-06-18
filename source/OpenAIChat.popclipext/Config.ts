@@ -26,6 +26,12 @@ export const options = [
 		values: ["gpt-4.1", "gpt-4.1-mini", "gpt-4.1-nano", "o3", "o3-mini", "o4-mini"],
 	},
 	{
+    identifier: "customModel",
+    label: "Custom Model",
+    type: "string",
+    description: "Enter a custom model name. See actual list here https://platform.openai.com/docs/models",
+  },
+	{
 		identifier: "systemMessage",
 		label: "System Message",
 		type: "string",
@@ -129,7 +135,7 @@ const chat: ActionFunction<Options> = async (input, options) => {
 	// send the whole message history to OpenAI
 	try {
 		const { data }: Response = await openai.post("chat/completions", {
-			model: options.model || "gpt-3.5-turbo",
+			model: options.customModel || options.model || "gpt-4.1-nano",
 			messages,
 		});
 
