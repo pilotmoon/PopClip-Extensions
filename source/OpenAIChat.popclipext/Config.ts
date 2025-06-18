@@ -37,7 +37,7 @@ export const options = [
     label: "Custom Model",
     type: "string",
     description:
-      "Enter a custom model name. See actual list here https://platform.openai.com/docs/models",
+      "Will override 'Model'. Model list: https://platform.openai.com/docs/pricing",
   },
   {
     identifier: "systemMessage",

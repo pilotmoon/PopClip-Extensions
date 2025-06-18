@@ -30,9 +30,18 @@ account. To get an API Key:
 3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
 
-#### Model
+#### Model / Custom Model
 
-Available values are `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o3-mini` and `o4-mini`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
+Available pre-set values are `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`
+(default), `o3`, `o3-mini` and `o4-mini`.
+
+To use a different model that's not listed, enter the model name in the _Custom
+Model_ field.
+
+Links to useful OpenAI docs pages:
+
+- [Model info](https://platform.openai.com/docs/models)
+- [Pricing](https://platform.openai.com/docs/pricing)
 
 #### System Message
 
@@ -96,8 +105,12 @@ Icons:
 
 ## Changelog
 
-- 2025-06-18: Add "Custom model" setting. Add `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o4-mini`. Set default to `gpt-4.1-nano`. Remove `o1`, `o3-mini` `gpt-4o-mini` models from list.
-- 2025-02-04: Add `o1` and `o3-mini` models. Set default to `gpt-4o-mini`. Remove `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `o1-preview` models from list.
+- 2025-06-18: Add "Custom Model" setting. Add `gpt-4.1`, `gpt-4.1-mini`,
+  `gpt-4.1-nano`, `o3`, `o4-mini` to drop-down. Set default to `gpt-4.1-nano`.
+  Remove `o1`, `o3-mini`, `gpt-4o`, `gpt-4o-mini` models from list.
+- 2025-02-04: Add `o1` and `o3-mini` models. Set default to `gpt-4o-mini`.
+  Remove `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `o1-preview` models from
+  list.
 - 2024-11-20: Add `o1-preview` and `o1-mini` models.
 - 2024-11-15: Add "Copy" tp Response Handcling options.
 - 2024-11-12: Add "Response Handling" setting. Thanks to
