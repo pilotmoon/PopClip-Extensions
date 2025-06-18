@@ -32,8 +32,7 @@ account. To get an API Key:
 
 #### Model
 
-Available values are `gpt-4o`, `gpt-4o-mini`, `o1`, `o1-mini` and `o3-mini`. Note that some accounts might not be
-able to access all models — see OpenAI's documentation for details.
+Available values are `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o3-mini` and `o4-mini`. Note that some accounts might not be able to access all models — see OpenAI's documentation for details.
 
 #### System Message
 
@@ -97,6 +96,7 @@ Icons:
 
 ## Changelog
 
+- 2025-06-18: Add "Custom model" setting. Add `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o4-mini`. Set default to `gpt-4.1-nano`. Remove `o1`, `o3-mini` `gpt-4o-mini` models from list.
 - 2025-02-04: Add `o1` and `o3-mini` models. Set default to `gpt-4o-mini`. Remove `gpt-3.5-turbo`, `gpt-4`, `gpt-4-turbo` and `o1-preview` models from list.
 - 2024-11-20: Add `o1-preview` and `o1-mini` models.
 - 2024-11-15: Add "Copy" tp Response Handcling options.
