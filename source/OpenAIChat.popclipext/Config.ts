@@ -115,8 +115,8 @@ const chat: ActionFunction<Options> = async (input, options) => {
 
 	// if the last chat was long enough ago, reset the history
 	if (options.resetMinutes.length > 0) {
-		const resetInterval = parseInt(options.resetMinutes) * 1000 * 60;
-		if (new Date().getTime() - lastChat.getTime() > resetInterval) {
+		const resetInterval = Number.parseInt(options.resetMinutes) * 1000 * 60;
+		if (Date.now()- lastChat.getTime() > resetInterval) {
 			reset();
 		}
 	}
@@ -170,9 +170,8 @@ export function getErrorInfo(error: unknown): string {
 	if (typeof error === "object" && error !== null && "response" in error) {
 		const response = (error as any).response;
 		return `Message from OpenAI (code ${response.status}): ${response.data.error.message}`;
-	} else {
-		return String(error);
 	}
+		return String(error);
 }
 
 // export the actions
