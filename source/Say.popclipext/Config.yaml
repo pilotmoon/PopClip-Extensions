@@ -1,0 +1,34 @@
+#popclip
+identifier: com.pilotmoon.popclip.extension.say
+name: Say
+popclipVersion: 4586
+description: Speak the selected text aloud using the macOS system voice.
+icon: speechicon.png
+interpreter: zsh
+shell script: |
+  args=("say")
+
+  if [[ -n "$POPCLIP_OPTION_VOICE" ]]; then
+    args+=("-v" "$POPCLIP_OPTION_VOICE")
+  fi
+
+  if [[ -n "$POPCLIP_OPTION_RATE" ]]; then
+    args+=("-r" "$POPCLIP_OPTION_RATE")
+  fi
+
+  args+=("$POPCLIP_TEXT")
+
+  "${args[@]}"
+options:
+  - identifier: voice
+    label: Voice
+    type: string
+    description: "The voice to use for speaking the text. Leave blank for the system default voice."
+  - identifier: rate
+    label: Rate
+    type: string
+    description: "Speech rate in words per minute. Leave blank for the system default rate."
+  - identifier: info
+    label: Info
+    type: heading
+    description: "Defaults are in System Settings → Accessibility → Spoken Content. Voices list: https://www.popclip.app/extensions/x/emvaxx"
