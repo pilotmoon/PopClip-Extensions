@@ -10,7 +10,7 @@ which sends the text directly the API.
 
 #### Model
 
-Specify the desired model to use, or "Default" to let the website to
+Specify the desired model to use, or "Default" to let the website pick
 automatically.
 
 #### Prompt
