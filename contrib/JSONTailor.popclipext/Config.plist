@@ -16,7 +16,7 @@
             <key>Title</key>
             <string>JSON Tailor</string>
             <key>URL</key>
-            <string>https://jsontailor.top/?input=***</string>
+            <string>https://jsontailor.top/#input=***</string>
             <key>Icon</key>
             <string>icon.svg</string>
             <key>Requirements</key>
