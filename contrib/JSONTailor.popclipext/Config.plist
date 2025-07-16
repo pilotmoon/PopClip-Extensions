@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Extension Name</key>
+    <string>JSON Tailor</string>
+    <key>Extension Description</key>
+    <string>Load selected JSON directly into JSON Tailor for editing and formatting</string>
+    <key>Extension Identifier</key>
+    <string>com.jsontailor.popclip</string>
+    <key>Extension Version</key>
+    <string>1.0</string>
+    <key>Actions</key>
+    <array>
+        <dict>
+            <key>Title</key>
+            <string>JSON Tailor</string>
+            <key>URL</key>
+            <string>https://jsontailor.top/#input=***</string>
+            <key>Icon</key>
+            <string>icon.svg</string>
+            <key>Requirements</key>
+            <array>
+            </array>
+        </dict>
+    </array>
+    <key>Apps</key>
+    <array>
+        <dict>
+            <key>Link</key>
+            <string>https://jsontailor.top</string>
+            <key>Name</key>
+            <string>JSON Tailor</string>
+        </dict>
+    </array>
+    <key>Credits</key>
+    <array>
+        <dict>
+            <key>Name</key>
+            <string>Yimin Wang</string>
+            <key>Link</key>
+            <string>https://github.com/Wangggym</string>
+        </dict>
+    </array>
+</dict>
+</plist> 
