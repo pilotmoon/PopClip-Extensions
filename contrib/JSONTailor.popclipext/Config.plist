@@ -5,23 +5,43 @@
     <key>Extension Name</key>
     <string>JSON Tailor</string>
     <key>Extension Description</key>
-    <string>Load selected JSON directly into JSON Tailor for editing and formatting</string>
+    <string>Open selected text directly in JSON Tailor for editing. Hold Option (⌥) key to send data via cURL first, then view the response.</string>
     <key>Extension Identifier</key>
     <string>com.jsontailor.popclip</string>
     <key>Extension Version</key>
-    <string>1.0</string>
+    <string>2.0</string>
     <key>Actions</key>
     <array>
         <dict>
             <key>Title</key>
             <string>JSON Tailor</string>
-            <key>URL</key>
-            <string>https://jsontailor.top/#input=***</string>
+            <key>Shell Script File</key>
+            <string>jsontailor.sh</string>
             <key>Icon</key>
             <string>icon.svg</string>
             <key>Requirements</key>
             <array>
             </array>
+        </dict>
+    </array>
+    <key>Options</key>
+    <array>
+        <dict>
+            <key>Option Identifier</key>
+            <string>curl_command</string>
+            <key>Option Label</key>
+            <string>cURL Command Template</string>
+            <key>Option Type</key>
+            <string>string</string>
+            <key>Option Default Value</key>
+            <string></string>
+            <key>Option Description</key>
+            <string>Complete cURL command template for Option key action.
+
+Use *** as placeholder for selected text.
+
+Example:
+curl -X GET 'https://jsonplaceholder.typicode.com/users/***' -H 'Accept: application/json'</string>
         </dict>
     </array>
     <key>Apps</key>
