@@ -32,8 +32,8 @@ account. To get an API Key:
 
 #### Model / Custom Model
 
-Available pre-set values are `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`
-(default), `o3`, `o3-mini` and `o4-mini`.
+Available pre-set values are `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`,
+`gpt-4.1-mini`, `gpt-4.1-nano` (default), `o3`, `o3-mini` and `o4-mini`.
 
 To use a different model that's not listed, enter the model name in the _Custom
 Model_ field.
@@ -105,6 +105,7 @@ Icons:
 
 ## Changelog
 
+- 2025-08-20: Add `gpt-5`, `gpt-5-mini`, `gpt-5-nano` to drop-down.
 - 2025-06-18: Add "Custom Model" setting. Add `gpt-4.1`, `gpt-4.1-mini`,
   `gpt-4.1-nano`, `o3`, `o4-mini` to drop-down. Set default to `gpt-4.1-nano`.
   Remove `o1`, `o3-mini`, `gpt-4o`, `gpt-4o-mini` models from list.
