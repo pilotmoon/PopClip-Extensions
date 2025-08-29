@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Image File</key>
+			<string>icon.png</string>
+			<key>Shell Script File</key>
+			<string>main.sh</string>
+			<key>Title</key>
+			<string>JSONer</string>
+		</dict>
+	</array>
+	<key>Extension Description</key>
+	<string>format string to a readable json format.</string>
+	<key>Extension Identifier</key>
+	<string>com.ihtcboy.popclip.extension.jsoner</string>
+	<key>Extension Name</key>
+	<string>JSONer</string>
+	<key>Extension Long Name</key>
+	<string>JSON Snippet</string>
+</dict>
+</plist>
