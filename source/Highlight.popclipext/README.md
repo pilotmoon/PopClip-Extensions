@@ -16,6 +16,7 @@ keyboard shortcut, so cannot be added.)
 - Skim
 - Evernote
 - Obsidian
+- Goodlinks
 
 ### ⇧⌘H
 
@@ -38,6 +39,7 @@ keyboard shortcut, so cannot be added.)
 
 ## Changelog
 
+- 1 Sep 2025: Suuport Goodlinks.
 - 10 April 2024: Support DEVONthink 4.
 - 24 September 2024: Added support for Apple Notes
 - 17 June 2022: Added support for iA Writer
