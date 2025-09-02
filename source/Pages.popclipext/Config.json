@@ -1,0 +1,18 @@
+{
+  "identifier": "com.pilotmoon.popclip.extension.pages",
+  "name": "Pages",
+  "icon": "iconify:mdi:file-document-edit",
+  "popclipVersion": 4151,
+  "app": {
+    "checkInstalled": true,
+    "name": "Pages",
+    "link": "https://www.apple.com/pages/",
+    "bundleIdentifier": "com.apple.iWork.Pages"
+  },
+  "applescriptCall": {
+    "file": "Pages.applescript",
+    "handler": "newDocument",
+    "parameters": ["text"]
+  },
+  "description": "Create a new Pages document containing the selected text."
+}
