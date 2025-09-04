@@ -22,7 +22,7 @@ export const options = [
 
 type Options = InferOptions<typeof options>;
 
-const saveToFlomo: ActionFunction<Options> = async (input, options) => {
+export const action: ActionFunction<Options> = async (input, options) => {
   const url = options.apiurl.trim();
   if (url.length === 0) {
     throw new Error("Settings error: API URL not configured");
@@ -39,12 +39,3 @@ const saveToFlomo: ActionFunction<Options> = async (input, options) => {
     popclip.showText(String(e));
   }
 };
-
-export const actions: Action<Options>[] = [
-  {
-    title: "Save to Flomo",
-    icon: "logo.png",
-    requirements: ["text"],
-    code: saveToFlomo,
-  },
-];
