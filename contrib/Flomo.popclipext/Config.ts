@@ -25,15 +25,9 @@ type Options = InferOptions<typeof options>;
 const saveToFlomo: ActionFunction<Options> = async (input, options) => {
   const url = options.apiurl.trim();
   if (url.length === 0) {
-    popclip.showText("Error: API URL not configured");
-    return;
+    throw new Error("Settings error: API URL not configured");
   }
   const content = input.text.trim();
-  if (content.length === 0) {
-    popclip.showText("Error: No text selected");
-    return;
-  }
-
   try {
     await axios.post(
       url,
