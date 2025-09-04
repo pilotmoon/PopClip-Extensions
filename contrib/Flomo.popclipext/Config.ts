@@ -1,0 +1,56 @@
+// #popclip
+// name: Flomo
+// identifier: com.popclip.extension.popcliptoflomo
+// description: Save selected text to flomo via incoming webhook API.
+// icon: flomoapp.png
+// popclip version: 4688
+// apps:
+// - { name: flomo, link: 'https://flomoapp.com/' }
+// entitlements: [network]
+
+import axios from "axios";
+
+export const options = [
+  {
+    identifier: "apiurl",
+    label: "Flomo API URL",
+    type: "string",
+    description:
+      "Your flomo incoming webhook URL (get it from https://flomoapp.com/mine?source=incoming_webhook)",
+  },
+] as const;
+
+type Options = InferOptions<typeof options>;
+
+const saveToFlomo: ActionFunction<Options> = async (input, options) => {
+  const url = options.apiurl.trim();
+  if (url.length === 0) {
+    popclip.showText("Error: API URL not configured");
+    return;
+  }
+  const content = input.text.trim();
+  if (content.length === 0) {
+    popclip.showText("Error: No text selected");
+    return;
+  }
+
+  try {
+    await axios.post(
+      url,
+      { content },
+      { headers: { "Content-Type": "application/json" } },
+    );
+    popclip.showSuccess();
+  } catch (e) {
+    popclip.showText(String(e));
+  }
+};
+
+export const actions: Action<Options>[] = [
+  {
+    title: "Save to Flomo",
+    icon: "logo.png",
+    requirements: ["text"],
+    code: saveToFlomo,
+  },
+];
