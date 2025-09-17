@@ -6,46 +6,54 @@
 // entitlements: [dynamic]
 // icon: monospaced ()
 
-const styles = ["(round)", "[square]", "{curly}", "<angle>", "/regex/"];
+const styles = [
+  "(round)",
+  "[square]",
+  "{curly}",
+  "<angle>",
+  "/regex/",
+  "〔hexagonal〕",
+];
 
 function makeIcon(index: number): string {
-	return [
-		"monospaced ()",
-		"monospaced []",
-		"monospaced {}",
-		"monospaced <>",
-		"monospaced //",
-	][index];
+  return [
+    "monospaced ()",
+    "monospaced []",
+    "monospaced {}",
+    "monospaced <>",
+    "monospaced //",
+    "〔",
+  ][index];
 }
 
 function makeIdentifier(index: number): string {
-	return `style-${index}`;
+  return `style-${index}`;
 }
 
 defineExtension({
-	options: styles.map((style, index) => {
-		return {
-			identifier: makeIdentifier(index),
-			label: style,
-			type: "boolean",
-			icon: makeIcon(index),
-			defaultValue: !(index > 0),
-		};
-	}),
-	actions: function (input, options) {
-		if (input.text) {
-			return styles
-				.map((style, index) => {
-					const action: Action = {
-						title: styles[index],
-						icon: makeIcon(index),
-						code: (input) => {
-							popclip.pasteText(style[0] + input.text + style.at(-1));
-						},
-					};
-					return action;
-				})
-				.filter((_, index) => options[makeIdentifier(index)]);
-		}
-	},
+  options: styles.map((style, index) => {
+    return {
+      identifier: makeIdentifier(index),
+      label: style,
+      type: "boolean",
+      icon: makeIcon(index),
+      defaultValue: !(index > 0),
+    };
+  }),
+  actions: (input, options) => {
+    if (input.text) {
+      return styles
+        .map((style, index) => {
+          const action: Action = {
+            title: styles[index],
+            icon: makeIcon(index),
+            code: (input) => {
+              popclip.pasteText(style[0] + input.text + style.at(-1));
+            },
+          };
+          return action;
+        })
+        .filter((_, index) => options[makeIdentifier(index)]);
+    }
+  },
 });
