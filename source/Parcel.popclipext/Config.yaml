@@ -1,0 +1,11 @@
+name: Parcel
+identifier: com.pilotmoon.popclip.extension.parcel
+description: Track a package delivery using Parcel.
+icon: parcel.png
+app:
+  checkInstalled: true
+  name: Parcel
+  link: http://parcelapp.net/
+  bundleIdentifiers: [com.mr-brightside.ParcelOSX, com.mr-brightside.myParcel]
+url: parcel://automatic/?{popclip text}
+popclipVersion: 4151
