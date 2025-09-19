@@ -22,7 +22,7 @@ export const options = [
     identifier: "model",
     label: "Model",
     type: "multiple",
-    defaultValue: "gpt-4.1-nano",
+    defaultValue: "gpt-5-nano",
     values: [
       "gpt-5",
       "gpt-5-mini",

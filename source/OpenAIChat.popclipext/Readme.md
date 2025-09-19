@@ -105,6 +105,7 @@ Icons:
 
 ## Changelog
 
+- 2025-09-19: Change default model to `gpt-5-nano` (currently the cheapest).
 - 2025-08-20: Add `gpt-5`, `gpt-5-mini`, `gpt-5-nano` to drop-down.
 - 2025-06-18: Add "Custom Model" setting. Add `gpt-4.1`, `gpt-4.1-mini`,
   `gpt-4.1-nano`, `o3`, `o4-mini` to drop-down. Set default to `gpt-4.1-nano`.
