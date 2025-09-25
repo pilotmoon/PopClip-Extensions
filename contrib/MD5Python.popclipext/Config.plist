@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Actions</key>
+	<array>
+		<dict>
+			<key>After</key>
+			<string>paste-result</string>
+			<key>Shell Script File</key>
+			<string>md5_hash.py</string>
+			<key>Icon</key>
+			<string>#️⃣</string>
+			<key>Stoppable</key>
+			<true/>
+			<key>Title</key>
+			<string>MD5 (Python)</string>
+		</dict>
+	</array>
+	<key>Credits</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>AI Assistant</string>
+		</dict>
+	</array>
+	<key>Extension Name</key>
+	<string>MD5 Python</string>
+	<key>Version</key>
+	<integer>1</integer>
+	<key>Extension Description</key>
+	<string>Calculate MD5 hash from selected text using Python. 使用Python计算选中文本的MD5哈希值。</string>
+	<key>Extension Identifier</key>
+	<string>com.custom.popclip.extension.md5python</string>
+</dict>
+</plist>
