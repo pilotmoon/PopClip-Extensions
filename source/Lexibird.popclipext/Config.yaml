@@ -1,0 +1,12 @@
+name: Lexibird
+identifier: com.pilotmoon.popclip.extension.lexibird
+description: Translate the text using Lexibird.
+popclip version: 4151
+icon: lexibird.png
+app:
+  checkInstalled: true
+  name: Lexibird
+  link: https://lexibird.com/home/
+  bundleIdentifiers:
+    - com.lexibird.app
+url: lexibird://translate?text={popclip text}
