@@ -6,7 +6,7 @@ icon: lexibird.png
 app:
   checkInstalled: true
   name: Lexibird
-  link: https://lexibird.com/home/
+  link: https://lexibird.com/
   bundleIdentifiers:
     - com.lexibird.app
 url: lexibird://translate?text={popclip text}
