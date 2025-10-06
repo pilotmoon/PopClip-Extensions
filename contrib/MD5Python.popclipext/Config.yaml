@@ -1,0 +1,10 @@
+name: MD5 Python
+identifier: com.custom.popclip.extension.md5python
+description: Calculate MD5 hash from selected text using Python. 使用Python计算选中文本的MD5哈希值。
+icon: '#️⃣'
+after: show-result
+actions:
+- title: MD5 (Python)
+  interpreter: python3
+  stoppable: true
+  shellScriptFile: md5_hash.py
