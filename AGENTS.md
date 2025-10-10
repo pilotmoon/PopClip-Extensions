@@ -4,7 +4,8 @@
 
 - `source/`: Official extensions, each in `Name.popclipext` with
   `Config.ts|js|json|yaml`, optional `Readme.md`, and assets.
-- `contrib/`: Community and experimental extensions. New submissions go here.
+- `contrib/`: Community and experimental extensions. DO NOT USE THESE AS
+  EXAMPLES.
 - `lib/`: Shared helpers published locally as `@popclip/helpers`.
 - `misc/`: Maintenance tools (e.g., `misc/pcxconvert` to migrate legacy
   configs).
