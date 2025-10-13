@@ -1,49 +1,57 @@
-# JSON Tailor
+# JSON Tailor PopClip Extension
 
-One-click loading of selected text into the [JSON Tailor](https://jsontailor.top) online editor for JSON formatting and editing.
+A PopClip extension that provides two ways to handle text data with JSON Tailor.
 
 ## Features
 
-- ⚡ **One-Click Loading**: Directly opens selected text in JSON Tailor
-- 🔧 **Online Editing**: Edit and validate using the powerful Monaco editor
-- 🌐 **Web-Based**: No additional software installation required
-- 📝 **Flexible Input**: Works with any selected text, not just JSON
+### Primary Function
+- **JSON Tailor**: Load selected text directly into JSON Tailor website for editing and formatting
+
+### Alternative Function (Option ⌥ key)
+- **cURL → JSON Tailor**: Send text using custom cURL command, then open the response in JSON Tailor
 
 ## Usage
 
-1. Select any text in any application
-2. Click the `{}` icon in the PopClip popup menu
-3. JSON Tailor will automatically open in your default web browser with your text loaded and ready for editing
+1. **Default Mode**: Select text, click the extension button in PopClip
+   - **Direct Jump**: Opens JSON Tailor in browser with selected text loaded
 
-## Example
+2. **cURL Mode**: Select text, **hold Option (⌥) key** and click the extension button
+   - **Execute cURL First**: Sends selected text using configured cURL command template
+   - **Then Jump**: After receiving response, automatically opens response data in JSON Tailor
+   - **Status Notifications**: Shows loading state and success/failure notifications
 
-Try selecting this JSON text:
-```json
-{"name": "John Doe", "age": 30, "city": "New York", "active": true}
-```
+## ⚙️ Configuration
 
-After selection, click the JSON Tailor button in PopClip to see it formatted and ready for editing in your browser.
+To access configuration options:
+   - Right-click the extension icon in PopClip
+   - Select "Extension Options..."
 
-## About JSON Tailor
+### Browser Selection
+   - **Browser**: Choose which browser to open JSON Tailor in
+   - Available options: Safari (default), Google Chrome, Microsoft Edge, Firefox, Arc, Brave Browser, Opera
+   - This setting applies to both direct and cURL modes
 
-JSON Tailor is a powerful online JSON editor that provides:
-- Syntax highlighting and validation
-- Tree view for easy navigation
-- Formatting and minification
-- Monaco editor (VS Code editor) interface
-- No registration required
+### cURL Command Template (Option key alternative action only)
+   - Enter your complete cURL command in "cURL Command Template" field
+   - Use `***` as placeholder for selected text
+   - **Note**: This configuration only affects Option key behavior
+   - **Required**: Must be configured to use Option key functionality
 
-Visit [jsontailor.top](https://jsontailor.top) to learn more about the service.
+## 💡 cURL Command Examples
 
-## Credits
+- **Basic POST**: `curl -X POST -H "Content-Type: application/json" -d '***' https://api.example.com/data`
+- **With Auth**: `curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer YOUR_TOKEN" -d '***' https://api.example.com/data`
+- **PUT Request**: `curl -X PUT -H "Content-Type: application/json" -d '***' https://api.example.com/users/123`
+- **Custom Headers**: `curl -X POST -H "Content-Type: application/json" -H "X-API-Key: YOUR_KEY" -d '***' https://api.example.com/webhook`
+- **Get User Data**: `curl -X GET 'https://jsonplaceholder.typicode.com/users/***' -H 'Accept: application/json'`
 
-- **Author**: Yimin Wang
-- **GitHub**: [Wangggym](https://github.com/Wangggym)
-- **JSON Tailor Service**: [jsontailor.top](https://jsontailor.top)
+## Customization
 
-## Changelog
+You can modify the script to:
+- Change default cURL endpoints
+- Add custom HTTP headers
+- Adjust cURL parameters
 
-### Version 1.0
-- Initial release
-- Basic text loading functionality
-- One-click access to JSON Tailor online editor
+## Author
+
+Yimin Wang - [GitHub](https://github.com/Wangggym)
