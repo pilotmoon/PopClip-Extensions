@@ -1,0 +1,19 @@
+[
+  {
+    "name": "JSONPlaceholder - Get User",
+    "command": "curl -X GET 'https://jsonplaceholder.typicode.com/users/***' -H 'Accept: application/json'"
+  },
+  {
+    "name": "JSONPlaceholder - Get Post",
+    "command": "curl -X GET 'https://jsonplaceholder.typicode.com/posts/***' -H 'Accept: application/json'"
+  },
+  {
+    "name": "POST Example",
+    "command": "curl -X POST -H 'Content-Type: application/json' -d '***' https://httpbin.org/post"
+  },
+  {
+    "name": "Echo Test",
+    "command": "curl -X POST -H 'Content-Type: application/json' -d '{\"input\": \"***\"}' https://httpbin.org/post"
+  }
+]
+

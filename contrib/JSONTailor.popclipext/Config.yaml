@@ -1,0 +1,25 @@
+#popclip
+name: JSON Tailor
+identifier: com.jsontailor.popclip
+description: Open selected text in JSON Tailor. Hold Option (⌥) to choose a cURL command to send first.
+version: 4.0
+author: Yimin Wang
+icon: icon.svg
+popclip version: 4688
+entitlements: [network]
+shell script file: jsontailor-multi.sh
+interpreter: /bin/bash
+options:
+  - identifier: config_file_path
+    label: Configuration File Path
+    type: string
+    description: Path to JSON config file. E.g. ~/Documents/jsontailor-config.json or ~/Library/Mobile Documents/com~apple~CloudDocs/jsontailor-config.json for iCloud sync.
+  
+  - identifier: browser
+    label: Browser
+    type: multiple
+    values: [Safari, Google Chrome, Microsoft Edge, Firefox, Arc, Brave Browser, Opera]
+    value labels: [Safari, Chrome, Edge, Firefox, Arc, Brave, Opera]
+    default value: Safari
+    description: Browser to open JSON Tailor in
+
