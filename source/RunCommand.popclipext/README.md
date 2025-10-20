@@ -2,8 +2,8 @@
 
 Runs the selected text as a command in the current terminal window.
 
-One can choose either default Terminal, [iTerm2](https://iterm2.com/) or
-[Warp](https://www.warp.dev/).
+One can choose either default Terminal, [iTerm2](https://iterm2.com/),
+[Warp](https://www.warp.dev/) or [Ghostty](https://ghostty.org/).
 
 ## Features
 
@@ -42,10 +42,12 @@ Original extension and icon created by
 option added by [honnix](https://github.com/honnix). Warp support added by
 Oliver using script from
 [parterburn](https://gist.github.com/parterburn/e832b9090ee35eb830529de8bd978b82).
-Prepend/append functionality added by Shayon Pal.
+Prepend/append functionality added by Shayon Pal. Ghosstty support added by
+[Licardo](https://github.com/L1cardo).
 
 ## Changelog
 
+- 20 Oct 2025: Add Ghostty support.
 - 29 May 2025: Added 'Use New Tab' option to run commands in a new terminal tab;
   added prepend/append functionality to customize command execution.
 - 9 Nov 2024: Remove needless line from iTerm2 script.

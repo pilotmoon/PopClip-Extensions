@@ -1,8 +1,8 @@
 {
   "name": "Terminal",
   "identifier": "com.pilotmoon.popclip.extension.rtc",
-  "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2 and Warp.",
-  "keywords": "terminal iterm2 warp run command",
+  "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp and Ghostty.",
+  "keywords": "terminal iterm2 warp ghostty run command",
   "popclip version": 4151,
   "icon": "RTC.png",
   "actions": [
@@ -29,14 +29,24 @@
         "bundleIdentifiers": ["dev.warp.Warp-Stable"],
         "checkInstalled": false
       }
+    },
+    {
+      "requirements": ["text", "option-term=Ghostty"],
+      "applescript file": "ghostty.applescript",
+      "app": {
+        "name": "Ghostty",
+        "link": "https://ghostty.org/",
+        "bundleIdentifiers": ["com.mitchellh.ghostty"],
+        "checkInstalled": false
+      }
     }
   ],
   "options": [
     {
       "label": "Terminal Emulator",
       "type": "multiple",
-      "values": ["Terminal", "iTerm2 v2.9+", "Warp"],
-      "valueLabels": ["Terminal", "iTerm2", "Warp"],
+      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty"],
+      "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty"],
       "identifier": "term"
     },
     {
