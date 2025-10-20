@@ -4,7 +4,7 @@
   "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp and Ghostty.",
   "keywords": "terminal iterm2 warp ghostty run command",
   "popclip version": 4151,
-  "icon": "symbol:terminal",
+  "icon": "RTC.png",
   "actions": [
     {
       "requirements": ["text", "option-term=Terminal"],
