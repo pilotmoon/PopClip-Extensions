@@ -58,16 +58,28 @@ on send_text(custom_text)
 		tell process "Ghostty"
 			-- Small delay to ensure Ghostty is ready
 			delay 0.1
+
+			-- Get the previous value of the clipboard
+			set previousClipboard to the clipboard
+			-- Set the custom text to the clipboard
+			set the clipboard to custom_text
+
+			delay 0.05
 			
-			-- Type the text into Ghostty
-			keystroke custom_text
+			-- Paste the text into Ghostty
+			keystroke "v" using {command down}
 			
 			-- Small delay before pressing Return
-			delay 0.1
+			delay 0.05
 			
 			-- Press Return to execute the command
 			-- Key code 36 is the Return key
 			key code 36
+
+			-- Set the clipboard to previous value
+			if previousClipboard is not missing value then
+                set the clipboard to previousClipboard
+            end if
 		end tell
 	end tell
 end send_text
