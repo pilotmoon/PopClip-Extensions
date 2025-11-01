@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Google Search",
+    "url": "https://www.google.com/search?q={text}",
+    "description": "Search on Google"
+  },
+  {
+    "name": "GitHub Search",
+    "url": "https://github.com/search?q={text}&type=code",
+    "description": "Search code on GitHub"
+  },
+  {
+    "name": "Stack Overflow",
+    "url": "https://stackoverflow.com/search?q={text}",
+    "description": "Search technical questions on Stack Overflow"
+  },
+  {
+    "name": "YouTube Search",
+    "url": "https://www.youtube.com/results?search_query={text}",
+    "description": "Search videos on YouTube"
+  }
+]
+

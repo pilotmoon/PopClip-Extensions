@@ -1,0 +1,29 @@
+#popclip
+name: Quick Navigate
+identifier: com.quicknavigate.popclip
+description: Navigate to preset websites with selected text. Click to choose from your configured URLs.
+version: 1.0
+author: Yimin Wang
+icon: symbol:arrow.up.forward.circle.fill
+popclip version: 4688
+shell script file: quicknavigate.sh
+interpreter: /bin/bash
+options:
+  - identifier: config_file_path
+    label: Configuration File Path
+    type: string
+    description: Path to JSON config file. E.g. ~/Documents/quicknavigate-config.json or ~/Library/Mobile Documents/com~apple~CloudDocs/quicknavigate-config.json for iCloud sync.
+  
+  - identifier: browser
+    label: Browser
+    type: multiple
+    values: [Safari, Google Chrome, Microsoft Edge, Firefox, Arc, Brave Browser, Opera]
+    value labels: [Safari, Chrome, Edge, Firefox, Arc, Brave, Opera]
+    default value: Safari
+    description: Browser to open URLs in
+
+  - identifier: skip_dialog
+    label: Skip Selection Dialog
+    type: boolean
+    description: If enabled, always use the first configuration without showing selection dialog.
+
