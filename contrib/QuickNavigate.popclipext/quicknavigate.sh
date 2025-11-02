@@ -8,38 +8,60 @@ browser="$POPCLIP_OPTION_BROWSER"
 config_file_path="$POPCLIP_OPTION_CONFIG_FILE_PATH"
 skip_dialog="$POPCLIP_OPTION_SKIP_DIALOG"
 
-# Function to open URL in specified browser
+# Function to open URL in specified browser  
 open_in_browser() {
     local url="$1"
     
-    if [ -z "$browser" ]; then
-        # No browser specified, use system default
-        open "$url"
-    else
-        # Use specified browser
-        open -a "$browser" "$url"
-    fi
+    # Use Python's webbrowser module - it doesn't re-encode URLs
+    export FINAL_URL="$url"
+    export BROWSER_NAME="$browser"
+    
+    python3 <<'PYEOF'
+import webbrowser
+import os
+
+url = os.environ.get('FINAL_URL')
+browser_name = os.environ.get('BROWSER_NAME')
+
+# Simply use webbrowser.open() which doesn't modify the URL
+# Browser name is ignored for now as webbrowser.open() uses default browser
+# TODO: Add browser-specific support if needed
+webbrowser.open(url)
+PYEOF
 }
 
 # Function to build URL with selected text
 build_url() {
     local url_template="$1"
     
-    # Use Python to replace {text} with the actual text (no encoding)
-    # The browser will handle URL encoding when opening the URL
+    # Simple string replacement - no URL encoding
+    # The URL template should already be properly encoded
+    # Just replace __TEXT__ or {text} placeholder with the selected text
     export URL_TEMPLATE="$url_template"
     export SELECTED_TEXT="$selected_text"
     
     final_url=$(python3 <<'PYEOF'
 import os
-import sys
+import urllib.parse
+import unicodedata
 
 url_template = os.environ.get('URL_TEMPLATE')
 selected_text = os.environ.get('SELECTED_TEXT')
 
-# Replace {text} or *** placeholder with the original text (no encoding)
-# The browser will handle URL encoding automatically
-final_url = url_template.replace('{text}', selected_text).replace('***', selected_text)
+# IMPORTANT: Normalize Unicode text to NFC form
+# This converts combined characters (e.g. プ) to single characters (プ)
+# This is critical for Japanese text to match browser encoding
+normalized_text = unicodedata.normalize('NFC', selected_text)
+
+# URL encode the normalized text
+# Use quote_plus() which encodes spaces as + (not %20)
+# This is required for Grafana's URL format
+encoded_text = urllib.parse.quote_plus(normalized_text, safe='')
+
+# Support multiple placeholder formats
+# {text} - for simple URLs
+# __TEXT__ - for pre-encoded URLs (will replace with encoded text)
+final_url = url_template.replace('{text}', encoded_text).replace('__TEXT__', encoded_text).replace('***', encoded_text)
 
 print(final_url)
 PYEOF
@@ -70,8 +92,24 @@ if ! python3 -c "import json; json.load(open('$config_file_path'))" >/dev/null 2
 fi
 
 # Check if we should show the selection dialog
-# Skip dialog if skip_dialog is true, otherwise always show dialog
-if [ "$skip_dialog" != "1" ]; then
+# Logic:
+# - If skip_dialog is NOT checked (false): always show dialog
+# - If skip_dialog IS checked (true):
+#   - Default: use first config (skip dialog)
+#   - With Option key (⌥): show dialog
+show_dialog=false
+if [ "$skip_dialog" = "1" ]; then
+    # Skip dialog is enabled - check if Option key is pressed
+    if [ "$POPCLIP_MODIFIER_FLAGS" = "524288" ]; then
+        # Option key pressed - show dialog
+        show_dialog=true
+    fi
+else
+    # Skip dialog is disabled - always show dialog
+    show_dialog=true
+fi
+
+if [ "$show_dialog" = "true" ]; then
     # Show configuration selection menu
     
     # Export config file path for Python script
@@ -152,14 +190,48 @@ EOF
         exit 0
     fi
     
-    # Extract the original name from the display name (remove number prefix and description)
-    # Format is "1. Name - Description", we want just "Name"
-    selected_name=$(echo "$selected_display" | sed 's/^[0-9]*\. \(.*\) - .*$/\1/')
+    # Extract the original name from the display name
+    # Format is "1. Name - Description"
+    # We need to match against the actual config file to get the correct name
+    export SELECTED_DISPLAY="$selected_display"
+    export CONFIG_FILE_PATH="$config_file_path"
     
-    # If there's no description (no " - "), just remove the number prefix
-    if [ "$selected_name" = "$selected_display" ]; then
-        selected_name=$(echo "$selected_display" | sed 's/^[0-9]*\. //')
-    fi
+    selected_name=$(python3 <<'PYEOF'
+import json
+import os
+
+selected_display = os.environ.get('SELECTED_DISPLAY')
+config_file = os.environ.get('CONFIG_FILE_PATH')
+
+# Remove number prefix: "1. Name - Description" -> "Name - Description"
+import re
+without_number = re.sub(r'^\d+\.\s+', '', selected_display)
+
+# Load config to match against actual names
+with open(config_file, 'r') as f:
+    configs = json.load(f)
+
+# Try to match the display name to actual config names
+for config in configs:
+    name = config.get('name', '')
+    desc = config.get('description', '')
+    
+    # Build the display string as we did when creating the list
+    if desc:
+        display_str = f'{name} - {desc}'
+    else:
+        display_str = name
+    
+    # Check if this matches
+    if display_str == without_number:
+        print(name)
+        break
+else:
+    # Fallback: just use the part before the first " - "
+    parts = without_number.split(' - ', 1)
+    print(parts[0])
+PYEOF
+)
     
 else
     # Skip dialog mode - use the first configuration
