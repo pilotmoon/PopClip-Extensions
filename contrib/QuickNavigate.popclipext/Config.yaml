@@ -25,5 +25,5 @@ options:
   - identifier: skip_dialog
     label: Skip Selection Dialog
     type: boolean
-    description: If enabled, always use the first configuration without showing selection dialog.
+    description: If enabled, use first config by default. Hold Option (⌥) to show selection dialog. If disabled, always show selection dialog.
 
