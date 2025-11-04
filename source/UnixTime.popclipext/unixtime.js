@@ -13,6 +13,10 @@ const systemSetting = ["", "System"];
 // Detect if input is a date string or Unix timestamp
 const isDateString = (input) => {
 	const cleaned = input.trim();
+	// Negative numbers are always timestamps (Unix epoch can be before 1970)
+	if (cleaned.startsWith('-') && /^-[\d\s]+$/.test(cleaned)) {
+		return false;
+	}
 	// If it contains date separators or is clearly a date format
 	if (/[-\/]/.test(cleaned) || /^\+\d+-\d+-\d+/.test(cleaned) || /^\d{4}-\d+-\d+/.test(cleaned)) {
 		return true;
@@ -84,19 +88,106 @@ const convert = (unixTime) => {
 		throw new Error(`Invalid Unix timestamp: ${unixTime}`);
 	}
 	
-	// Auto-detect if timestamp is in seconds or milliseconds
-	// Unix timestamps in seconds are typically 10 digits (up to year 2286)
-	// Unix timestamps in milliseconds are typically 13 digits (up to year 2286)
-	// If timestamp is >= 1e12 (1 trillion), it's likely in milliseconds
-	// If timestamp is < 1e12, it's likely in seconds
-	const isMilliseconds = timestamp >= 1e12;
+	// Unix timestamp standard: seconds since 1970-01-01 (Unix epoch)
+	// Optimal detection algorithm combining digit count and date range validation
+	// Based on industry standards (epochconverter.com, unixtimestamp.com) and
+	// avoiding pitfalls from naive approaches (see Pydantic issue #7940)
 	
-	if (isMilliseconds) {
-		// Already in milliseconds, use directly
-		return new Date(timestamp);
-	} else {
-		// Convert seconds to milliseconds
+	// Handle negative timestamps (before 1970) - always treat as seconds
+	// Negative timestamps are rarely used in milliseconds in practice
+	if (timestamp < 0) {
 		return new Date(timestamp * 1000);
+	}
+	
+	// Calculate digit count (handle edge case for 0)
+	const digitCount = timestamp === 0 ? 1 : Math.floor(Math.log10(Math.abs(timestamp))) + 1;
+	
+	// Try both interpretations for ambiguous cases (11-12 digits: seconds vs milliseconds)
+	if (digitCount === 11 || digitCount === 12) {
+		const dateAsSeconds = new Date(timestamp * 1000);
+		const dateAsMilliseconds = new Date(timestamp);
+		
+		// Validate date ranges: reasonable Unix epoch dates (1970-2300)
+		// This prevents false positives for old timestamps in milliseconds
+		// Extended to 2300 to handle edge cases like 2286 (max reasonable 10-digit seconds)
+		const yearAsSeconds = dateAsSeconds.getFullYear();
+		const yearAsMilliseconds = dateAsMilliseconds.getFullYear();
+		
+		const isValidYear = (year) => year >= 1970 && year <= 2300;
+		
+		const secondsValid = isValidYear(yearAsSeconds);
+		const millisecondsValid = isValidYear(yearAsMilliseconds);
+		
+		if (millisecondsValid && !secondsValid) {
+			// Only milliseconds gives valid date
+			return dateAsMilliseconds;
+		} else if (secondsValid && !millisecondsValid) {
+			// Only seconds gives valid date
+			return dateAsSeconds;
+		} else if (millisecondsValid && secondsValid) {
+			// Both valid - use magnitude heuristic:
+			// Threshold: 1e10 (10 billion) - if timestamp is larger, prefer milliseconds
+			// This handles cases like 10000000000 (10 billion) where both are valid
+			// but milliseconds interpretation is more likely for 11-12 digit numbers > 10 billion
+			if (timestamp >= 1e10) {
+				return dateAsMilliseconds;
+			} else {
+				// Prefer seconds (Unix standard) for smaller values
+				return dateAsSeconds;
+			}
+		}
+		// Neither valid - fall through to digit count logic
+		// If neither gives valid date, prefer milliseconds for 11-12 digits
+		// (as they're more likely to be JavaScript timestamps)
+		if (digitCount === 11 || digitCount === 12) {
+			return dateAsMilliseconds;
+		}
+	}
+	
+	// Try both interpretations for ambiguous cases (14-15 digits: milliseconds vs microseconds)
+	if (digitCount === 14 || digitCount === 15) {
+		const dateAsMilliseconds = new Date(timestamp);
+		const dateAsMicroseconds = new Date(timestamp / 1000);
+		
+		// Validate date ranges: reasonable Unix epoch dates (1970-2300)
+		// Extended to 2300 to handle edge cases like 2286 (max reasonable 10-digit seconds)
+		const yearAsMilliseconds = dateAsMilliseconds.getFullYear();
+		const yearAsMicroseconds = dateAsMicroseconds.getFullYear();
+		
+		const isValidYear = (year) => year >= 1970 && year <= 2300;
+		
+		const millisecondsValid = isValidYear(yearAsMilliseconds);
+		const microsecondsValid = isValidYear(yearAsMicroseconds);
+		
+		if (millisecondsValid && !microsecondsValid) {
+			// Only milliseconds gives valid date
+			return dateAsMilliseconds;
+		} else if (microsecondsValid && !millisecondsValid) {
+			// Only microseconds gives valid date
+			return dateAsMicroseconds;
+		} else if (millisecondsValid && microsecondsValid) {
+			// Both valid - prefer milliseconds (more common in practice)
+			return dateAsMilliseconds;
+		}
+		// Neither valid - prefer milliseconds for 14-15 digits
+		if (digitCount === 14 || digitCount === 15) {
+			return dateAsMilliseconds;
+		}
+	}
+	
+	// Clear cases based on digit count (industry standard)
+	if (digitCount <= 10) {
+		// Standard Unix timestamp in seconds
+		return new Date(timestamp * 1000);
+	} else if (digitCount === 13) {
+		// Milliseconds (JavaScript Date format) - clear case
+		return new Date(timestamp);
+	} else if (digitCount === 16) {
+		// Microseconds - convert to milliseconds - clear case
+		return new Date(timestamp / 1000);
+	} else if (digitCount > 16) {
+		// Nanoseconds - convert to milliseconds
+		return new Date(timestamp / 1000000);
 	}
 }
 
