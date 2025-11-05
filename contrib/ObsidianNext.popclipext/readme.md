@@ -1,6 +1,6 @@
 # Obsidian Next PopClip Extension
 
-This is a simplified version of the [Obsidian PopClip Extension] [obsidian-ext] with the following changes:
+This is a simplified version of the [Obsidian PopClip Extension][obsidian-ext] with the following changes:
 
 - a separate standalone extension to capture text to Obsidian
 - a different name (ObsidianNext)
