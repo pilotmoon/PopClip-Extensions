@@ -2,7 +2,7 @@
 # ABOUTME: Opens Claude app with a prompt to create an ICS file from the highlighted text
 
 name: Claude ICS
-identifier: com.pilotmoon.popclip.extension.claude-ics
+identifier: com.joecotellese.popclip.extension.claude-ics
 description: Generate ICS calendar files from selected text using Claude.
 popclip version: 4151
 icon: iconify:material-symbols:calendar-month
