@@ -11,4 +11,4 @@ app:
   link: https://claude.ai
   bundleIdentifiers: [com.anthropic.claudefordesktop]
   checkInstalled: true
-url: "claude://claude.ai/new?q=Generate an ICS calendar file from this text. Today's date is {date yyyy-MM-dd}. If no year is specified, assume the date is in the future. Text: {popclip text}"
+javascript file: claude-ics.js
