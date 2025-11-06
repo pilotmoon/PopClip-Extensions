@@ -1,0 +1,14 @@
+# ABOUTME: PopClip extension to generate ICS calendar files from selected text using Claude
+# ABOUTME: Opens Claude app with a prompt to create an ICS file from the highlighted text
+
+name: Claude ICS
+identifier: com.joecotellese.popclip.extension.claude-ics
+description: Generate ICS calendar files from selected text using Claude.
+popclip version: 4151
+icon: iconify:material-symbols:calendar-month
+app:
+  name: Claude
+  link: https://claude.ai
+  bundleIdentifiers: [com.anthropic.claudefordesktop]
+  checkInstalled: true
+javascript file: claude-ics.js
