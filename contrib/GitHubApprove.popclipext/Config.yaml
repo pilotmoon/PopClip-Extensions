@@ -1,0 +1,49 @@
+#popclip
+name: GitHub PR Approve
+identifier: com.wangyimin.popclip.extension.github-approve
+description: Approve a GitHub Pull Request using qkflow, with optional auto-merge.
+popclipVersion: 4586
+icon: 👍
+regex: https://github\.com/[^/]+/[^/]+/pull/\d+
+interpreter: zsh
+shell script: |
+  # 添加 Go bin 到 PATH
+  export PATH="$HOME/go/bin:$PATH"
+  
+  URL="$POPCLIP_TEXT"
+  
+  # 构建命令
+  CMD="qkflow pr approve \"$URL\""
+  
+  # 如果 autoMerge 选项为 true，添加 -m 参数
+  if [[ "$POPCLIP_OPTION_AUTOMERGE" == "1" ]]; then
+    CMD="$CMD -m"
+  fi
+  
+  # 执行命令并捕获输出
+  OUTPUT=$(eval $CMD 2>&1)
+  EXIT_CODE=$?
+  
+  # 解析输出判断成功或失败
+  if [[ $EXIT_CODE -eq 0 ]]; then
+    if echo "$OUTPUT" | grep -q "✅.*approved"; then
+      echo "✅ PR approved successfully!"
+    elif echo "$OUTPUT" | grep -q "❌"; then
+      # 提取错误信息
+      ERROR=$(echo "$OUTPUT" | grep "❌" | tail -1)
+      echo "$ERROR"
+    else
+      echo "✅ Command completed"
+    fi
+  else
+    echo "❌ Failed to approve PR"
+    echo "$OUTPUT"
+  fi
+after: show-result
+options:
+  - identifier: autoMerge
+    label: Auto Merge
+    type: boolean
+    defaultValue: true
+    description: "Add '-m' flag to trigger auto-merge when approving the PR."
+
