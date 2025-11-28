@@ -39,14 +39,24 @@
         "bundleIdentifiers": ["com.mitchellh.ghostty"],
         "checkInstalled": false
       }
+    },
+      {
+      "requirements": ["text", "option-term=kitty"],
+      "applescript file": "kitty.applescript",
+      "app": {
+        "name": "kitty",
+        "link": "https://sw.kovidgoyal.net/kitty/",
+        "bundleIdentifiers": ["net.kovidgoyal.kitty"],
+        "checkInstalled": false
+      }
     }
   ],
   "options": [
     {
       "label": "Terminal Emulator",
       "type": "multiple",
-      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty"],
-      "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty"],
+      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty", "kitty"],
+      "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty", "kitty"],
       "identifier": "term"
     },
     {
