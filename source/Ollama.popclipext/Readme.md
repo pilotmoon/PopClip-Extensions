@@ -16,14 +16,15 @@ fresh conversation.
 Requires Ollama to be installed locally. Please see
 [Ollama's Docs](https://docs.ollama.com/) for instructions.
 
+Important: after installation you will need, at minimum, to download a model
+(`ollama pull <modelname>`) and then start the Ollama server (`ollama serve`).
+
 ## Configuration
 
 ### Model
 
-Specify the model name, for example `gemma3`.
-
-- You can install a model using command `ollama pull <modelname>`.
-- Find models at: <https://ollama.com/search>
+Specify the model name, for example `gemma3`. Find models at:
+<https://ollama.com/search>.
 
 #### System Message
 
