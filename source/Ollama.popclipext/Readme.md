@@ -31,8 +31,7 @@ Optional message to tell the assistant how to behave.
 
 #### API Root
 
-The base URL for the Openllama API. The default is:
-`http://127.0.0.1:11434/api`.
+The base URL for the Ollama API. The default is: `http://127.0.0.1:11434/api`.
 
 #### Response Handling
 
@@ -59,7 +58,7 @@ Control whether or not to show the reset action in the popup.
 
 ## Notes
 
-Author: Nick Moore, with additional contributions.
+Author: Nick Moore.
 
 Icons:
 

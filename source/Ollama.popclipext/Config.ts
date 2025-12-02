@@ -2,7 +2,7 @@
 // name: Ollama
 // icon: iconify:simple-icons:ollama
 // identifier: com.pilotmoon.popclip.extension.ollama
-// description: Send the selected text to local Ollama model.
+// description: Send the selected text to a local Ollama model.
 // app: { name: Ollama, link: 'https://ollama.com/' }
 // popclipVersion: 5155
 // keywords: ai
