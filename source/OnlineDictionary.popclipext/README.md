@@ -1,8 +1,13 @@
 # Online Dictionary
 
-Search in one of many online dictionaries. Original extension credit: [zhiyelee](http://zhiye.li)
+Search in one of many online dictionaries. Original extension credit:
+[zhiyelee](http://zhiye.li)
 
 ## Changelog
+
+### 3 Dec 2025
+
+- Update URL for `dictionary.com`.
 
 ### 28 Feb 2014
 

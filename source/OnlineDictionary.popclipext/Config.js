@@ -11,7 +11,7 @@ let services = {
   "dict.cn": "https://dict.cn/***",
   "dict.leo.org": "https://dict.leo.org/?search=***",
   "dict.youdao.com": "https://dict.youdao.com/search?q=***",
-  "dictionary.com": "https://dictionary.reference.com/browse/***",
+  "dictionary.com": "https://dictionary.com/browse/***",
   "merriam-webster.com": "https://www.merriam-webster.com/dictionary/***",
   "oxfordlearnersdictionaries.com":
     "https://www.oxfordlearnersdictionaries.com/definition/english/***",
@@ -25,13 +25,15 @@ let services = {
 let names = Object.keys(services).sort();
 let urls = names.map((key) => services[key]);
 
-exports.options = [{
-  identifier: "service",
-  type: "multiple",
-  label: "Dictionary Service",
-  values: urls,
-  valueLabels: names,
-}];
+exports.options = [
+  {
+    identifier: "service",
+    type: "multiple",
+    label: "Dictionary Service",
+    values: urls,
+    valueLabels: names,
+  },
+];
 
 exports.action = (input, options) => {
   popclip.openUrl(
