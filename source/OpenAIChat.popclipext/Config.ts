@@ -53,8 +53,9 @@ export const options = [
     identifier: "domain",
     label: "API Base Domain",
     type: "string",
-    defaultValue: "api.openai.com",
-    description: "Leave as default unless you use a custom server.",
+    defaultValue: "api.openai.com/v1",
+    description:
+      "Leave as default (api.openai.com/v1) unless you use a custom server.",
   },
   {
     identifier: "textMode",
@@ -120,13 +121,13 @@ function getTranscript(n: number): string {
 // the main chat action
 const chat: ActionFunction<Options> = async (input, options) => {
   const openai = axios.create({
-    baseURL: `https://${options.domain}/v1`,
+    baseURL: `https://${options.domain}`,
     headers: { Authorization: `Bearer ${options.apikey}` },
   });
 
   // if the last chat was long enough ago, reset the history
   if (options.resetMinutes.length > 0) {
-    const resetInterval = Number.parseInt(options.resetMinutes) * 1000 * 60;
+    const resetInterval = Number.parseInt(options.resetMinutes, 10) * 1000 * 60;
     if (Date.now() - lastChat.getTime() > resetInterval) {
       reset();
     }
