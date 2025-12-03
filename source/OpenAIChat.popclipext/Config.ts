@@ -53,7 +53,7 @@ export const options = [
     identifier: "domain",
     label: "API Base Domain",
     type: "string",
-    defaultValue: "api.openai.com",
+    defaultValue: "api.openai.com/v1",
     description: "Leave as default unless you use a custom server.",
   },
   {
@@ -120,7 +120,7 @@ function getTranscript(n: number): string {
 // the main chat action
 const chat: ActionFunction<Options> = async (input, options) => {
   const openai = axios.create({
-    baseURL: `https://${options.domain}/v1`,
+    baseURL: `https://${options.domain}`,
     headers: { Authorization: `Bearer ${options.apikey}` },
   });
 

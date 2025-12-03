@@ -59,8 +59,14 @@ specified.
 
 #### API Base Domain
 
-The base domain for the OpenAI API. This should be `api.openai.com` unless you
-are using a custom domain to access the API.
+The base URL path for the API. The default is `api.openai.com/v1` for OpenAI.
+
+You can change this to use other OpenAI-compatible APIs:
+
+- **OpenAI**: `api.openai.com/v1` (default)
+- **Google Gemini**: `generativelanguage.googleapis.com/v1beta/openai`
+- **Azure OpenAI**: `YOUR_RESOURCE.openai.azure.com/openai/deployments/YOUR_DEPLOYMENT`
+- **Other providers**: Check their documentation for the OpenAI-compatible endpoint
 
 #### Response Handling
 
@@ -105,6 +111,8 @@ Icons:
 
 ## Changelog
 
+- 2025-12-03: Allow full API base path for better compatibility with
+  OpenAI-compatible APIs (Gemini, Azure, etc.).
 - 2025-09-19: Change default model to `gpt-5-nano` (currently the cheapest).
 - 2025-08-20: Add `gpt-5`, `gpt-5-mini`, `gpt-5-nano` to drop-down.
 - 2025-06-18: Add "Custom Model" setting. Add `gpt-4.1`, `gpt-4.1-mini`,
