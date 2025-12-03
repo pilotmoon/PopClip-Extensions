@@ -54,7 +54,8 @@ export const options = [
     label: "API Base Domain",
     type: "string",
     defaultValue: "api.openai.com/v1",
-    description: "Leave as default unless you use a custom server.",
+    description:
+      "Leave as default (api.openai.com/v1) unless you use a custom server.",
   },
   {
     identifier: "textMode",
@@ -126,7 +127,7 @@ const chat: ActionFunction<Options> = async (input, options) => {
 
   // if the last chat was long enough ago, reset the history
   if (options.resetMinutes.length > 0) {
-    const resetInterval = Number.parseInt(options.resetMinutes) * 1000 * 60;
+    const resetInterval = Number.parseInt(options.resetMinutes, 10) * 1000 * 60;
     if (Date.now() - lastChat.getTime() > resetInterval) {
       reset();
     }
