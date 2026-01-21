@@ -9,4 +9,4 @@ else
     BASE64_STRING=$(echo -n "$INPUT" | /usr/bin/base64 -b 0 | tr '+/' '-_' | tr -d '=')
     /usr/bin/curl -sf "https://mermaid.ink/svg/${BASE64_STRING}" -o "$TEMP_FILE" || exit 1
 fi
-qlmanage -p "${TEMP_FILE}" &>/dev/null &
+./qlf.swift "$TEMP_FILE" &>/dev/null &
