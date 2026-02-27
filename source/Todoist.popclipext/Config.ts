@@ -65,7 +65,7 @@ interface Task {
 }
 
 // Todoist Unified API v1 root
-const TODOIST_BASE_URL = "https://api.todoist.com/api/v1/";
+const TODOIST_BASE_URL = "https://api.todoist.com/api/v1";
 
 /**
  * Parses and validates API response using Valibot schema.
@@ -127,9 +127,9 @@ async function createTask(
 
     // Find section if specified (sections only make sense with a project)
     if (sectionSpecified) {
-      const sectionsResponse = await client.get(
-        `sections?project_id=${task.project_id}`,
-      );
+      const sectionsResponse = await client.get("sections", {
+        params: { project_id: task.project_id },
+      });
       const sections = parseApiResponse(
         SectionsResponseSchema,
         sectionsResponse.data,
@@ -168,6 +168,7 @@ export const action: ActionFunction<Options> = async (input, options) => {
   const todoist = axios.create({
     baseURL: TODOIST_BASE_URL,
     headers: { Authorization: `Bearer ${options.authsecret}` },
+    timeout: 10000, // 10 second timeout
   });
 
   try {
@@ -202,11 +203,17 @@ export const auth: AuthFunction = async (_info, flow) => {
   });
 
   const { default: axios } = await import("axios");
-  const response = await axios.post("https://todoist.com/oauth/access_token", {
-    client_id,
-    client_secret,
-    code,
-  });
+  const response = await axios.post(
+    "https://todoist.com/oauth/access_token",
+    {
+      client_id,
+      client_secret,
+      code,
+    },
+    {
+      validateStatus: (status) => status === 200,
+    },
+  );
 
   const data = parseApiResponse(
     OAuthResponseSchema,
