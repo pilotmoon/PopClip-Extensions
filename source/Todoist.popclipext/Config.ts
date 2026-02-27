@@ -9,7 +9,7 @@
 // after: show-status
 // app: { name: Todoist, link: https://todoist.com/ }
 
-import type { AxiosInstance } from "axios";
+import axios, { type AxiosInstance } from "axios";
 import * as v from "valibot";
 
 export const options = [
@@ -63,9 +63,6 @@ interface Task {
   section_id?: string;
   due_string?: string;
 }
-
-// Todoist Unified API v1 root
-const TODOIST_BASE_URL = "https://api.todoist.com/api/v1";
 
 /**
  * Parses and validates API response using Valibot schema.
@@ -163,10 +160,8 @@ async function createTask(
 
 // Action function
 export const action: ActionFunction<Options> = async (input, options) => {
-  const { default: axios } = await import("axios");
-
   const todoist = axios.create({
-    baseURL: TODOIST_BASE_URL,
+    baseURL: "https://api.todoist.com/api/v1",
     headers: { Authorization: `Bearer ${options.authsecret}` },
     timeout: 10000, // 10 second timeout
   });
@@ -202,7 +197,6 @@ export const auth: AuthFunction = async (_info, flow) => {
     token_type: v.string(),
   });
 
-  const { default: axios } = await import("axios");
   const response = await axios.post(
     "https://todoist.com/oauth/access_token",
     {
