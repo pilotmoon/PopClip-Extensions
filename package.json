@@ -35,6 +35,7 @@
     "tongwen-core": "4.1.1",
     "turndown": "7.1.3",
     "typescript": "^5.5.2",
+    "valibot": "1.1.0",
     "voca": "^1.4.0",
     "zod": "^3.17.3"
   }

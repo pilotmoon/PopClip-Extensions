@@ -12,13 +12,15 @@
 
 ## Build, Test, and Development Commands
 
-- `npm run check`: Type-check the repo via `tsc --noEmit`.
-- `npx biome check .`: Lint code using Biome.
-- `npx biome format . --write`: Auto-format files.
+- `bun run check`: Type-check the repo via `tsc --noEmit`.
+- `bunx biome check .`: Lint code using Biome.
+- `bunx biome format . --write`: Auto-format files.
 - `misc/pcxconvert`: Convert `Config.plist` → YAML via `convert.ts` (run in an
   extension folder).
 
 No bundle step is required for extensions; PopClip loads source files directly.
+Use `bun` for package management and running scripts instead of `npm` where
+possible.
 
 ## Coding Style & Naming Conventions
 
@@ -32,7 +34,7 @@ No bundle step is required for extensions; PopClip loads source files directly.
 
 ## Testing Guidelines
 
-- Required: pass `npm run check` and `npx biome check .` before PR.
+- Required: pass `bun run check` and `bunx biome check .` before PR.
 - Manual verification: install your extension build into PopClip and confirm
   actions/options work.
 - Optional unit tests for helper code may live next to sources (e.g.,
