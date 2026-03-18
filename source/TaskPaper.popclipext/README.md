@@ -10,7 +10,7 @@ If no TaskPaper document is currently open, the extension will show an "X".
 
 ## About
 
-Author: Nick Moore.
+Author: Nick Moore
 
 The JSX script used is based on the one
 [posted](https://support.hogbaysoftware.com/t/basic-script-to-add-selected-text-to-taskpaper-3-inbox/1681)
