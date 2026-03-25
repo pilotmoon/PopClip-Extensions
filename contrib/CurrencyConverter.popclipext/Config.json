@@ -1,0 +1,56 @@
+{
+  "name": "Currency Converter",
+  "identifier": "com.losokao.popclip.extension.currency-converter",
+  "description": "Convert currency amounts with real-time exchange rates",
+  "icon": "symbol:dollarsign.circle.fill",
+  "popclipVersion": 4225,
+  "language": "javascript",
+  "module": "currency-converter.js",
+  "entitlements": [
+    "network"
+  ],
+  "regex": "(?:[$€£¥￥₹₽฿₱₩₪₨₦₴₡₵¢円元]\\s*[\\d,.]+(?:[.,]\\d{2,})?)|(?:\\b(?:USD?|EUR?|GBP|JPY|CNY|TWD|HKD|SGD|AUD|CAD|CHF|SEK|NZD|KRW|INR|BRL|ZAR|MXN|RUB|THB|MYR|IDR|PHP|VND|AED|Dh|Dirham|Dhiram)\\b\\s+[\\d,.]+(?:[.,]\\d{2,})?)|(?:[\\d,.]+(?:[.,]\\d{2,})?\\s*(?:USD?|EUR?|GBP|JPY|CNY|TWD|HKD|SGD|AUD|CAD|CHF|SEK|NZD|KRW|INR|BRL|ZAR|MXN|RUB|THB|MYR|IDR|PHP|VND|AED|Dh|Dirham|Dhiram|円|元|日圓|台幣|美金|美元|歐元|英鎊|港幣|人民幣|韓元|泰銖))",
+  "options": [
+    {
+      "identifier": "targetCurrency",
+      "label": "Target Currency",
+      "type": "multiple",
+      "defaultValue": "🇹🇼 TWD",
+      "description": "Select your preferred currency",
+      "values": [
+        "🇦🇪 AED",
+        "🇦🇺 AUD",
+        "🇧🇷 BRL",
+        "🇨🇦 CAD",
+        "🇨🇭 CHF",
+        "🇨🇳 CNY",
+        "🇪🇺 EUR",
+        "🇬🇧 GBP",
+        "🇭🇰 HKD",
+        "🇮🇩 IDR",
+        "🇮🇳 INR",
+        "🇯🇵 JPY",
+        "🇰🇷 KRW",
+        "🇲🇽 MXN",
+        "🇲🇾 MYR",
+        "🇳🇿 NZD",
+        "🇵🇭 PHP",
+        "🇷🇺 RUB",
+        "🇸🇪 SEK",
+        "🇸🇬 SGD",
+        "🇹🇭 THB",
+        "🇹🇼 TWD",
+        "🇺🇸 USD",
+        "🇻🇳 VND",
+        "🇿🇦 ZAR"
+      ]
+    },
+    {
+      "identifier": "apiKey",
+      "label": "API Key (Optional)",
+      "type": "string",
+      "defaultValue": "",
+      "description": "ExchangeRate-API key for higher rate limits. Get free key at https://www.exchangerate-api.com"
+    }
+  ]
+}
