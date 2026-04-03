@@ -11,7 +11,7 @@ Before using the extension:
 2. Enable `API Server`.
 3. Copy the API Token into the PopClip extension settings.
 
-![GoodLinks Settings Window](./_goodlinks-api-settings.png)
+![GoodLinks Settings Window](_goodlinks-api-settings.png)
 
 Optional settings:
 
