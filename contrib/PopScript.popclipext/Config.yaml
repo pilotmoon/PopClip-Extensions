@@ -1,0 +1,27 @@
+name: PopScript
+identifier: com.furthersecrets.popclip.popscript
+description: Convert numbers in selected text to Unicode subscript or superscript.
+icon: icon.png
+
+options:
+  - identifier: convert_symbols
+    type: boolean
+    label: Convert + - = ( ) symbols too
+    default value: true
+  - identifier: convert_text
+    type: boolean
+    label: Also convert text
+    default value: false
+
+actions:
+  - title: ₓ
+    requirements: [text]
+    shell script file: to_subscript.sh
+    interpreter: /bin/zsh
+    after: paste-result
+
+  - title: ˣ
+    requirements: [text]
+    shell script file: to_superscript.sh
+    interpreter: /bin/zsh
+    after: paste-result
