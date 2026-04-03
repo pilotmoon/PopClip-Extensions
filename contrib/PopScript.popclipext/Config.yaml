@@ -10,17 +10,19 @@ options:
     default value: true
   - identifier: convert_text
     type: boolean
-    label: Also convert text
+    label: Convert text
     default value: false
 
 actions:
-  - title: ₓ
+  - title: Subscript
+    icon: ₓ
     requirements: [text]
     shell script file: to_subscript.sh
     interpreter: /bin/zsh
     after: paste-result
 
-  - title: ˣ
+  - title: Superscript
+    icon: ˣ
     requirements: [text]
     shell script file: to_superscript.sh
     interpreter: /bin/zsh
