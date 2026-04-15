@@ -44,6 +44,33 @@ function transformGraphemes(
   transform: (graphemes: string[]) => string[],
 ): string {
   const graphemes = segmentGraphemes(text);
+  const output: string[] = [];
+  let currentSet: string[] = [];
+
+  for (const grapheme of graphemes) {
+    if (isSetMarker(grapheme)) {
+      output.push(transformSet(currentSet, transform), grapheme);
+      currentSet = [];
+    } else {
+      currentSet.push(grapheme);
+    }
+  }
+
+  output.push(transformSet(currentSet, transform));
+  return output.join("");
+}
+
+function segmentGraphemes(text: string): string[] {
+  return Array.from(
+    new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(text),
+    ({ segment }) => segment,
+  );
+}
+
+function transformSet(
+  graphemes: string[],
+  transform: (graphemes: string[]) => string[],
+): string {
   const indices: number[] = [];
   const selected: string[] = [];
 
@@ -55,7 +82,7 @@ function transformGraphemes(
   });
 
   if (selected.length === 0) {
-    return text;
+    return graphemes.join("");
   }
 
   const transformed = selected.length < 2 ? selected : transform(selected);
@@ -66,11 +93,8 @@ function transformGraphemes(
   return output.join("");
 }
 
-function segmentGraphemes(text: string): string[] {
-  return Array.from(
-    new Intl.Segmenter(undefined, { granularity: "grapheme" }).segment(text),
-    ({ segment }) => segment,
-  );
+function isSetMarker(grapheme: string): boolean {
+  return grapheme === " " || /[\r\n]/u.test(grapheme);
 }
 
 function isTransformable(grapheme: string): boolean {
@@ -123,7 +147,22 @@ Terminal command to run this test:
     /Applications/PopClip.app/Contents/MacOS/PopClip run Config.ts test
 */
 function runAlphagramTests() {
-  const inputs = [
+  assertEqual(makeAlphagram("for example"), "FOR AEELMPX", "alphagram by word");
+  assertEqual(
+    makeAlphagram("for\nexample"),
+    "FOR\nAEELMPX",
+    "alphagram by line",
+  );
+  assertEqual(
+    makeAlphagram("e\u0301lan vital"),
+    "AE\u0301LN AILTV",
+    "grapheme clusters stay intact",
+  );
+
+  assertScramblePreservesSets("for example");
+  assertScramblePreservesSets("for\nexample");
+
+  const sampleInputs = [
     "",
     "a1",
     "tea",
@@ -133,13 +172,88 @@ function runAlphagramTests() {
     "straße 2",
     "A1 B2",
     "line one\nline two",
+    "for example",
+    "for\nexample",
   ];
 
-  for (const input of inputs) {
+  for (const input of sampleInputs) {
     print({
       input,
       alphagram: makeAlphagram(input),
       scramble: scrambleText(input),
     });
+  }
+}
+
+function assertScramblePreservesSets(input: string) {
+  const output = scrambleText(input);
+  const inputChunks = partitionBySetMarkers(input);
+  const outputChunks = partitionBySetMarkers(output);
+
+  assertEqual(
+    String(outputChunks.length),
+    String(inputChunks.length),
+    `chunk count for ${JSON.stringify(input)}`,
+  );
+
+  inputChunks.forEach((inputChunk, index) => {
+    const outputChunk = outputChunks[index];
+    if (isSetMarker(inputChunk)) {
+      assertEqual(
+        outputChunk,
+        inputChunk,
+        `marker chunk ${index} for ${JSON.stringify(input)}`,
+      );
+      return;
+    }
+    assertEqual(
+      letterSignature(outputChunk),
+      letterSignature(inputChunk),
+      `letter signature for chunk ${index} of ${JSON.stringify(input)}`,
+    );
+  });
+}
+
+function partitionBySetMarkers(text: string): string[] {
+  const chunks: string[] = [];
+  let currentChunk = "";
+  let currentChunkIsMarker: boolean | undefined;
+
+  for (const grapheme of segmentGraphemes(text)) {
+    const graphemeIsMarker = isSetMarker(grapheme);
+    if (
+      currentChunkIsMarker === undefined ||
+      graphemeIsMarker === currentChunkIsMarker
+    ) {
+      currentChunk += grapheme;
+    } else {
+      chunks.push(currentChunk);
+      currentChunk = grapheme;
+    }
+    currentChunkIsMarker = graphemeIsMarker;
+  }
+
+  if (currentChunk.length > 0) {
+    chunks.push(currentChunk);
+  }
+
+  return chunks;
+}
+
+function letterSignature(text: string): string {
+  return segmentGraphemes(text)
+    .filter(isTransformable)
+    .map((grapheme) => grapheme.toLocaleUpperCase())
+    .toSorted(compareCharacters)
+    .join("");
+}
+
+function assertEqual(actual: string, expected: string, label: string) {
+  if (actual !== expected) {
+    throw new Error(
+      `${label}: expected ${JSON.stringify(expected)}, got ${JSON.stringify(
+        actual,
+      )}`,
+    );
   }
 }
