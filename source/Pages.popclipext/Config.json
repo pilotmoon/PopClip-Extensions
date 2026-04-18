@@ -7,7 +7,7 @@
     "checkInstalled": true,
     "name": "Pages",
     "link": "https://www.apple.com/pages/",
-    "bundleIdentifier": "com.apple.iWork.Pages"
+    "bundleIdentifiers": ["com.apple.iWork.Pages", "com.apple.Pages"]
   },
   "applescriptCall": {
     "file": "Pages.applescript",
