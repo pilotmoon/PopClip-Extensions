@@ -1,0 +1,3 @@
+#popclip
+name: NoId
+javascript: popclip.showText(`NoID!`)
