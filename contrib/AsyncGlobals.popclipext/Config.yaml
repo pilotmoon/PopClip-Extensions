@@ -1,0 +1,5 @@
+name: JS Async Globals
+identifier: com.pilotmoon.popclip.test-async-globals
+javascript: |
+  await util.sleep(1000*10);
+  popclip.showText(popclip.input.text);
