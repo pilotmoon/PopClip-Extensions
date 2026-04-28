@@ -1,10 +1,10 @@
 {
-  "name": "Music",
+  "name": "Apple Music",
   "identifier": "com.pilotmoon.popclip.extension.music",
-  "description": "Search in Music app.",
+  "description": "Search in Apple Music.",
   "icon": "itunes.png",
   "macosVersion": "10.15",
-  "applescriptFile": "musicsearch.applescript",
+  "url": "music://music.apple.com/search?term=***",
   "keywords": "apple itunes",
   "popclipVersion": 4225
 }
