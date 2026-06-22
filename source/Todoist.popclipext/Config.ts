@@ -3,7 +3,7 @@
 // icon: todoist.png
 // identifier: com.pilotmoon.popclip.extension.todoist
 // description: Add the selected text as a task in Todoist.
-// popclipVersion: 5155
+// popclipVersion: 5774
 // entitlements: [network]
 // captureHtml: true
 // after: show-status
@@ -183,7 +183,10 @@ export const action: ActionFunction<Options> = async (input, options) => {
 };
 
 // sign in to todoist
-export const auth: AuthFunction = async (_info, flow) => {
+export const auth: AuthFunction = async (
+  _: AuthInfo,
+  flow: AuthFlowFunction,
+) => {
   const { client } = await import("./client.json");
   const { client_id, client_secret } = util.clarify(client);
   const { code } = await flow("https://todoist.com/oauth/authorize", {
@@ -195,6 +198,11 @@ export const auth: AuthFunction = async (_info, flow) => {
   const OAuthResponseSchema = v.object({
     access_token: v.string(),
     token_type: v.string(),
+  });
+
+  const UserInfoSchema = v.object({
+    full_name: v.optional(v.string()),
+    email: v.optional(v.string()),
   });
 
   const response = await axios.post(
@@ -214,5 +222,17 @@ export const auth: AuthFunction = async (_info, flow) => {
     response.data,
     "OAuth token",
   );
-  return data.access_token;
+
+  const userResponse = await axios.get("https://api.todoist.com/api/v1/user", {
+    headers: { Authorization: `Bearer ${data.access_token}` },
+    validateStatus: (status) => status === 200,
+  });
+  const userInfo = parseApiResponse(
+    UserInfoSchema,
+    userResponse.data,
+    "user info",
+  );
+  const label = `${userInfo.full_name} (${userInfo.email})` || undefined;
+
+  return { secret: data.access_token, label };
 };
