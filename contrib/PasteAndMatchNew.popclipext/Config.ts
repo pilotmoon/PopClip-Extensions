@@ -4,19 +4,14 @@
 // description: Paste as plain text only, without formatting.
 // icon: paste-equal.png
 // entitlements: [dynamic]
+// requirements: [paste]
+// showAs: text
 // popclipVersion: 5247
 defineExtension({
-  showAs: "text",
-  dynamicAction() {
-    if (popclip.context.canPaste) {
-      return {
-        title: `${util.localize("Paste")} =`,
-        // `undefined` will fall back to the extension's icon; `null` sets no icon
-        icon: popclip.options.showIcon ? undefined : null,
-        code() {
-          popclip.pasteText(pasteboard.text);
-        },
-      };
-    }
+  action: {
+    title: `${util.localize("Paste")} =`,
+    code() {
+      popclip.pasteText(pasteboard.text);
+    },
   },
 });
