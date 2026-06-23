@@ -165,10 +165,11 @@ const action: ActionFunction = async (input, options, context) => {
     const status = await noteStore.createNote(note);
     print("status", status);
   } catch (e) {
+    const errstr = `Evernote API error: ${JSON.stringify(e)}`;
     if (isAuthError(e)) {
-      throw new Error("not signed in");
+      throw popclip.signInRequiredError(errstr);
     }
-    throw new Error("Evernote API error: " + JSON.stringify(e));
+    throw new Error(errstr);
   }
   popclip.showSuccess();
 };
