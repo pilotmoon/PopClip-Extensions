@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
-import { Client } from "evernote";
+import { Client, Errors } from "evernote";
 import { consumer } from "./consumer.json";
 import { renderEnml } from "./enml";
 
@@ -128,7 +128,26 @@ const auth: AuthFunction = async (info, flow) => {
   return result;
 };
 
+// Evernote signals authentication/authorization failures via EDAM error codes on the
+// thrown exception. Map those to PopClip's "not signed in" error so the user is prompted to
+// sign in again rather than shown a generic failure.
+const isAuthError = (e: unknown): boolean => {
+  if (typeof e !== "object" || e === null) {
+    return false;
+  }
+  const { errorCode } = e as { errorCode?: number };
+  return (
+    errorCode === Errors.EDAMErrorCode.AUTH_EXPIRED ||
+    errorCode === Errors.EDAMErrorCode.INVALID_AUTH ||
+    errorCode === Errors.EDAMErrorCode.PERMISSION_DENIED
+  );
+};
+
 const action: ActionFunction = async (input, options, context) => {
+  // Accessing authsecret throws "Not signed in" when there is no valid token (missing or
+  // expired). Read it outside the try so that signal reaches PopClip unwrapped.
+  const token = options.authsecret;
+
   const content = renderEnml(input.html);
   const title =
     context.browserTitle.length > 0 ? context.browserTitle : "New Note";
@@ -139,13 +158,16 @@ const action: ActionFunction = async (input, options, context) => {
   const note = { title, content, attributes };
   try {
     const authenticatedClient = new Client({
-      token: options.authsecret,
+      token,
       sandbox: false,
     });
     const noteStore = authenticatedClient.getNoteStore();
     const status = await noteStore.createNote(note);
     print("status", status);
   } catch (e) {
+    if (isAuthError(e)) {
+      throw new Error("not signed in");
+    }
     throw new Error("Evernote API error: " + JSON.stringify(e));
   }
   popclip.showSuccess();
