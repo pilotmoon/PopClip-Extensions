@@ -1,0 +1,47 @@
+{
+  "identifier": "com.pestly.popclip.extension.llm-cli-rewrite",
+  "popclip version": 5155,
+  "name": "LLM CLI",
+  "icon": "symbol:brain",
+  "description": "Rewrite selected text through Codex, Claude, Gemini, or OpenCode CLI.",
+  "requirements": ["text"],
+  "after": "paste-result",
+  "restore pasteboard": false,
+  "interpreter": "/bin/zsh",
+  "shell script file": "rewrite.zsh",
+  "stdin": "text",
+  "options": [
+    {
+      "identifier": "provider",
+      "label": "Provider",
+      "type": "multiple",
+      "values": ["codex", "claude", "gemini", "opencode"],
+      "valueLabels": ["Codex CLI", "Claude CLI", "Gemini CLI", "OpenCode CLI"],
+      "defaultValue": "codex",
+      "description": "CLI provider to use. The provider must already be installed and logged in."
+    },
+    {
+      "identifier": "preset",
+      "label": "Preset",
+      "type": "multiple",
+      "values": ["duzelt", "chat", "mail", "musteri", "custom"],
+      "valueLabels": ["Düzelt", "Chat Kurumsal", "Mail Kurumsal", "Müşteri Tonu", "Custom"],
+      "defaultValue": "duzelt",
+      "description": "Rewrite style."
+    },
+    {
+      "identifier": "model",
+      "label": "Model",
+      "type": "string",
+      "defaultValue": "",
+      "description": "Optional model name. Leave blank to use the CLI default."
+    },
+    {
+      "identifier": "customprompt",
+      "label": "Custom Prompt",
+      "type": "string",
+      "defaultValue": "",
+      "description": "Used only when Preset is Custom."
+    }
+  ]
+}
