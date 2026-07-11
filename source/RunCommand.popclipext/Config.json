@@ -55,7 +55,7 @@
       "applescript file": "cmux.applescript",
       "app": {
         "name": "cmux",
-        "link": "https://cmux.io/",
+        "link": "https://cmux.com/",
         "bundleIdentifiers": ["com.cmuxterm.app"],
         "checkInstalled": false
       }

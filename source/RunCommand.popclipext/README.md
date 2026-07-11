@@ -4,7 +4,7 @@ Runs the selected text as a command in the current terminal window.
 
 One can choose either default Terminal, [iTerm2](https://iterm2.com/),
 [Warp](https://www.warp.dev/), [Ghostty](https://ghostty.org/),
-[kitty](https://sw.kovidgoyal.net/kitty/), or [cmux](https://cmux.io/).
+[kitty](https://sw.kovidgoyal.net/kitty/), or [cmux](https://cmux.com/).
 
 ## Features
 
