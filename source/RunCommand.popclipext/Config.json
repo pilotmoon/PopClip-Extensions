@@ -1,8 +1,8 @@
 {
   "name": "Terminal",
   "identifier": "com.pilotmoon.popclip.extension.rtc",
-  "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp, Ghostty, and kitty.",
-  "keywords": "terminal iterm2 warp ghostty kitty run command",
+  "description": "Run the selected text as a command in the active terminal window with optional prepend/append text. Supports Terminal, iTerm2, Warp, Ghostty, kitty, and cmux.",
+  "keywords": "terminal iterm2 warp ghostty kitty cmux run command",
   "popclip version": 4151,
   "icon": "RTC.png",
   "actions": [
@@ -49,14 +49,24 @@
         "bundleIdentifiers": ["net.kovidgoyal.kitty"],
         "checkInstalled": false
       }
+    },
+    {
+      "requirements": ["text", "option-term=cmux"],
+      "applescript file": "cmux.applescript",
+      "app": {
+        "name": "cmux",
+        "link": "https://cmux.io/",
+        "bundleIdentifiers": ["com.cmuxterm.app"],
+        "checkInstalled": false
+      }
     }
   ],
   "options": [
     {
       "label": "Terminal Emulator",
       "type": "multiple",
-      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty", "kitty"],
-      "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty", "kitty"],
+      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty", "kitty", "cmux"],
+      "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty", "kitty", "cmux"],
       "identifier": "term"
     },
     {
