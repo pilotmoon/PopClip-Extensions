@@ -72,7 +72,7 @@ module.exports = {
   options: [
     {
       identifier: "apikey",
-      type: "string",
+      type: "secret",
       label: "API Key",
       description: "Create an API key in your Jmpy.me dashboard → API Settings."
     },
@@ -107,8 +107,8 @@ module.exports = {
             timeout: 10000 // 10s timeout
           });
 
-          if (response.data && response.data.short_url) {
-            return response.data.short_url;
+          if (response.data && response.data.data && response.data.data.short_url) {
+            return response.data.data.short_url;
           } else {
             throw new Error("Invalid response format received from Jmpy.");
           }
@@ -133,7 +133,9 @@ module.exports = {
             is_dynamic: true,
             tracking_enabled: true,
             use_short_url: true,
-            source: 'EXTENSION'
+            source: 'EXTENSION',
+            channel: 'popclip',
+            qr_format: 'json'
           }, {
             headers: {
               'x-api-key': apiKey,
@@ -142,8 +144,8 @@ module.exports = {
             timeout: 10000 // 10s timeout
           });
 
-          if (response.data && response.data.qr_code_url) {
-            popclip.openUrl(response.data.qr_code_url);
+          if (response.data && response.data.data && response.data.data.qr_code_url) {
+            popclip.openUrl(response.data.data.qr_code_url);
           } else {
             throw new Error("Invalid response format received from Jmpy.");
           }
