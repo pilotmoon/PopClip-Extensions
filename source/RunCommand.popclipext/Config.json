@@ -65,7 +65,14 @@
     {
       "label": "Terminal Emulator",
       "type": "multiple",
-      "values": ["Terminal", "iTerm2 v2.9+", "Warp", "Ghostty", "kitty", "cmux"],
+      "values": [
+        "Terminal",
+        "iTerm2 v2.9+",
+        "Warp",
+        "Ghostty",
+        "kitty",
+        "cmux"
+      ],
       "valueLabels": ["Terminal", "iTerm2", "Warp", "Ghostty", "kitty", "cmux"],
       "identifier": "term"
     },

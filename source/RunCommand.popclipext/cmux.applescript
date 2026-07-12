@@ -11,20 +11,11 @@ property open_in_new_tab : false
 
 -- ========== Handler Definitions ==========
 
--- Creates a new cmux window using keyboard shortcut Cmd+N
-on new_window()
-	tell application "System Events"
-		tell process "cmux"
-			keystroke "n" using command down
-		end tell
-	end tell
-end new_window
-
--- Creates a new tab in the current cmux window using keyboard shortcut Cmd+T
+-- Creates a new cmux workspace (tab) using keyboard shortcut Cmd+N
 on new_tab()
 	tell application "System Events"
 		tell process "cmux"
-			keystroke "t" using command down
+			keystroke "n" using command down
 		end tell
 	end tell
 end new_tab
