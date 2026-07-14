@@ -8,4 +8,5 @@ Requires ScreenFloat version 2.2 or later.
 
 ## Changelog
 
+- 14 Jul 2026: Fix bug which preventd loading on latest PopClip version.
 - 5 Jun 2024: Initial release
