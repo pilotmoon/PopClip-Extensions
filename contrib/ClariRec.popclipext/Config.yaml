@@ -1,0 +1,14 @@
+# popclip extension for ClariRec
+# https://clarirec.com
+name: ClariRec
+identifier: com.guodongzhu.clarirec.popclip
+description: Translate the selected text with ClariRec.
+icon: symbol:translate
+popclip version: 5155
+app:
+  name: ClariRec
+  link: https://clarirec.com
+  check installed: true
+  bundle identifiers:
+    - com.guodongzhu.ClariRec
+service name: Translate with ClariRec
