@@ -8,7 +8,11 @@
     "@joplin/turndown-plugin-gfm": "^1.0.43",
     "@noble/hashes": "^1.4.0",
     "@popclip/helpers": "file:lib/popclip-helpers",
+<<<<<<< HEAD
     "@popclip/types": "1.5793.0",
+=======
+    "@popclip/types": "1.5973.1",
+>>>>>>> master
     "@tryfabric/martian": "^1.2.4",
     "@types/crypto-js": "^4.1.1",
     "@types/js-yaml": "^4.0.9",

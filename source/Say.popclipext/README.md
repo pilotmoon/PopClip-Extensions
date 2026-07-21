@@ -35,16 +35,19 @@ command in Terminal:
 say -v '?'
 ```
 
-This is the current list of voices on my macOS Sequoia system — yours may vary!
+This is the current list of voices on my macOS Tahoe system — yours may vary!
 
 | Voice                                | Locale | Sample                                |
 | ------------------------------------ | ------ | ------------------------------------- |
 | `Albert`                             | en_US  | Hello! My name is Albert.             |
 | `Alice`                              | it_IT  | Ciao! Mi chiamo Alice.                |
+| `Soumya`                             | kn_IN  | Hello! My name is Soumya.             |
 | `Alva`                               | sv_SE  | Hej! Jag heter Alva.                  |
-| `Amélie`                             | fr_CA  | Bonjour! Je m'appelle Amélie.         |
-| `Amira`                              | ms_MY  | Hi my name is Amira                   |
+| `Aman`                               | en_IN  | Hello! My name is Aman.               |
+| `Amélie`                             | fr_CA  | Bonjour! Je m’appelle Amélie.         |
+| `Amira`                              | ms_MY  | Helo! Nama saya Amira.                |
 | `Anna`                               | de_DE  | Hallo! Ich heiße Anna.                |
+| `Aru`                                | kk_KZ  | Hello! My name is Aru.                |
 | `Bad News`                           | en_US  | Hello! My name is Bad News.           |
 | `Bahh`                               | en_US  | Hello! My name is Bahh.               |
 | `Bells`                              | en_US  | Hello! My name is Bells.              |
@@ -63,8 +66,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Eddy (Spanish (Spain))`             | es_ES  | ¡Hola! Me llamo Eddy.                 |
 | `Eddy (Spanish (Mexico))`            | es_MX  | ¡Hola! Me llamo Eddy.                 |
 | `Eddy (Finnish (Finland))`           | fi_FI  | Hei! Nimeni on Eddy.                  |
-| `Eddy (French (Canada))`             | fr_CA  | Bonjour! Je m'appelle Eddy.           |
-| `Eddy (French (France))`             | fr_FR  | Bonjour, je m'appelle Eddy.           |
+| `Eddy (French (Canada))`             | fr_CA  | Bonjour! Je m’appelle Eddy.           |
+| `Eddy (French (France))`             | fr_FR  | Bonjour, je m’appelle Eddy.           |
 | `Eddy (Italian (Italy))`             | it_IT  | Ciao! Mi chiamo Eddy.                 |
 | `Eddy (Japanese (Japan))`            | ja_JP  | こんにちは! 私の名前はEddyです。      |
 | `Eddy (Korean (South Korea))`        | ko_KR  | 안녕하세요. 제 이름은 Eddy입니다.     |
@@ -78,8 +81,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Flo (Spanish (Spain))`              | es_ES  | ¡Hola! Me llamo Flo.                  |
 | `Flo (Spanish (Mexico))`             | es_MX  | ¡Hola! Me llamo Flo.                  |
 | `Flo (Finnish (Finland))`            | fi_FI  | Hei! Nimeni on Flo.                   |
-| `Flo (French (Canada))`              | fr_CA  | Bonjour! Je m'appelle Flo.            |
-| `Flo (French (France))`              | fr_FR  | Bonjour, je m'appelle Flo.            |
+| `Flo (French (Canada))`              | fr_CA  | Bonjour! Je m’appelle Flo.            |
+| `Flo (French (France))`              | fr_FR  | Bonjour, je m’appelle Flo.            |
 | `Flo (Italian (Italy))`              | it_IT  | Ciao! Mi chiamo Flo.                  |
 | `Flo (Japanese (Japan))`             | ja_JP  | こんにちは! 私の名前はFloです。       |
 | `Flo (Korean (South Korea))`         | ko_KR  | 안녕하세요. 제 이름은 Flo입니다.      |
@@ -87,6 +90,7 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Flo (Chinese (China mainland))`     | zh_CN  | 你好！我叫Flo。                       |
 | `Flo (Chinese (Taiwan))`             | zh_TW  | 你好，我叫Flo。                       |
 | `Fred`                               | en_US  | Hello! My name is Fred.               |
+| `Geeta`                              | te_IN  | Hello! My name is Geeta.              |
 | `Good News`                          | en_US  | Hello! My name is Good News.          |
 | `Grandma (German (Germany))`         | de_DE  | Hallo! Ich heiße Grandma.             |
 | `Grandma (English (UK))`             | en_GB  | Hello! My name is Grandma.            |
@@ -94,8 +98,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Grandma (Spanish (Spain))`          | es_ES  | ¡Hola! Me llamo Grandma.              |
 | `Grandma (Spanish (Mexico))`         | es_MX  | ¡Hola! Me llamo Grandma.              |
 | `Grandma (Finnish (Finland))`        | fi_FI  | Hei! Nimeni on Grandma.               |
-| `Grandma (French (Canada))`          | fr_CA  | Bonjour! Je m'appelle Grandma.        |
-| `Grandma (French (France))`          | fr_FR  | Bonjour, je m'appelle Grandma.        |
+| `Grandma (French (Canada))`          | fr_CA  | Bonjour! Je m’appelle Grandma.        |
+| `Grandma (French (France))`          | fr_FR  | Bonjour, je m’appelle Grandma.        |
 | `Grandma (Italian (Italy))`          | it_IT  | Ciao! Mi chiamo Grandma.              |
 | `Grandma (Japanese (Japan))`         | ja_JP  | こんにちは! 私の名前はGrandmaです。   |
 | `Grandma (Korean (South Korea))`     | ko_KR  | 안녕하세요. 제 이름은 Grandma입니다.  |
@@ -108,8 +112,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Grandpa (Spanish (Spain))`          | es_ES  | ¡Hola! Me llamo Grandpa.              |
 | `Grandpa (Spanish (Mexico))`         | es_MX  | ¡Hola! Me llamo Grandpa.              |
 | `Grandpa (Finnish (Finland))`        | fi_FI  | Hei! Nimeni on Grandpa.               |
-| `Grandpa (French (Canada))`          | fr_CA  | Bonjour! Je m'appelle Grandpa.        |
-| `Grandpa (French (France))`          | fr_FR  | Bonjour, je m'appelle Grandpa.        |
+| `Grandpa (French (Canada))`          | fr_CA  | Bonjour! Je m’appelle Grandpa.        |
+| `Grandpa (French (France))`          | fr_FR  | Bonjour, je m’appelle Grandpa.        |
 | `Grandpa (Italian (Italy))`          | it_IT  | Ciao! Mi chiamo Grandpa.              |
 | `Grandpa (Japanese (Japan))`         | ja_JP  | こんにちは! 私の名前はGrandpaです。   |
 | `Grandpa (Korean (South Korea))`     | ko_KR  | 안녕하세요. 제 이름은 Grandpa입니다.  |
@@ -118,11 +122,11 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Grandpa (Chinese (Taiwan))`         | zh_TW  | 你好，我叫Grandpa。                   |
 | `Jester`                             | en_US  | Hello! My name is Jester.             |
 | `Ioana`                              | ro_RO  | Salut! Numele meu este Ioana.         |
-| `Jacques`                            | fr_FR  | Bonjour, je m'appelle Jacques.        |
+| `Jacques`                            | fr_FR  | Bonjour, je m’appelle Jacques.        |
 | `Joana`                              | pt_PT  | Olá! Chamo‑me Joana.                  |
 | `Junior`                             | en_US  | Hello! My name is Junior.             |
 | `Kanya`                              | th_TH  | สวัสดี! ฉันชื่อกันยา                  |
-| `Karen`                              | en_AU  | Hi my name is Karen                   |
+| `Karen`                              | en_AU  | Hello! My name is Karen.              |
 | `Kathy`                              | en_US  | Hello! My name is Kathy.              |
 | `Kyoko`                              | ja_JP  | こんにちは! 私の名前はKyokoです。     |
 | `Lana`                               | hr_HR  | Bok, zovem se Lana.                   |
@@ -140,8 +144,10 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Mónica`                             | es_ES  | ¡Hola! Me llamo Mónica.               |
 | `Montse`                             | ca_ES  | Hola! Em dic Montse.                  |
 | `Nora`                               | nb_NO  | Hei! Jeg heter Nora.                  |
+| `Ona`                                | lt_LT  | Hello! My name is Ona.                |
 | `Organ`                              | en_US  | Hello! My name is Organ.              |
 | `Paulina`                            | es_MX  | ¡Hola! Me llamo Paulina.              |
+| `Piya`                               | bn_IN  | Hello! My name is Piya.               |
 | `Superstar`                          | en_US  | Hello! My name is Superstar.          |
 | `Ralph`                              | en_US  | Hello! My name is Ralph.              |
 | `Reed (German (Germany))`            | de_DE  | Hallo! Ich heiße Reed.                |
@@ -150,7 +156,7 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Reed (Spanish (Spain))`             | es_ES  | ¡Hola! Me llamo Reed.                 |
 | `Reed (Spanish (Mexico))`            | es_MX  | ¡Hola! Me llamo Reed.                 |
 | `Reed (Finnish (Finland))`           | fi_FI  | Hei! Nimeni on Reed.                  |
-| `Reed (French (Canada))`             | fr_CA  | Bonjour! Je m'appelle Reed.           |
+| `Reed (French (Canada))`             | fr_CA  | Bonjour! Je m’appelle Reed.           |
 | `Reed (Italian (Italy))`             | it_IT  | Ciao! Mi chiamo Reed.                 |
 | `Reed (Japanese (Japan))`            | ja_JP  | こんにちは! 私の名前はReedです。      |
 | `Reed (Korean (South Korea))`        | ko_KR  | 안녕하세요. 제 이름은 Reed입니다.     |
@@ -164,8 +170,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Rocko (Spanish (Spain))`            | es_ES  | ¡Hola! Me llamo Rocko.                |
 | `Rocko (Spanish (Mexico))`           | es_MX  | ¡Hola! Me llamo Rocko.                |
 | `Rocko (Finnish (Finland))`          | fi_FI  | Hei! Nimeni on Rocko.                 |
-| `Rocko (French (Canada))`            | fr_CA  | Bonjour! Je m'appelle Rocko.          |
-| `Rocko (French (France))`            | fr_FR  | Bonjour, je m'appelle Rocko.          |
+| `Rocko (French (Canada))`            | fr_CA  | Bonjour! Je m’appelle Rocko.          |
+| `Rocko (French (France))`            | fr_FR  | Bonjour, je m’appelle Rocko.          |
 | `Rocko (Italian (Italy))`            | it_IT  | Ciao! Mi chiamo Rocko.                |
 | `Rocko (Japanese (Japan))`           | ja_JP  | こんにちは! 私の名前はRockoです。     |
 | `Rocko (Korean (South Korea))`       | ko_KR  | 안녕하세요. 제 이름은 Rocko입니다.    |
@@ -179,8 +185,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Sandy (Spanish (Spain))`            | es_ES  | ¡Hola! Me llamo Sandy.                |
 | `Sandy (Spanish (Mexico))`           | es_MX  | ¡Hola! Me llamo Sandy.                |
 | `Sandy (Finnish (Finland))`          | fi_FI  | Hei! Nimeni on Sandy.                 |
-| `Sandy (French (Canada))`            | fr_CA  | Bonjour! Je m'appelle Sandy.          |
-| `Sandy (French (France))`            | fr_FR  | Bonjour, je m'appelle Sandy.          |
+| `Sandy (French (Canada))`            | fr_CA  | Bonjour! Je m’appelle Sandy.          |
+| `Sandy (French (France))`            | fr_FR  | Bonjour, je m’appelle Sandy.          |
 | `Sandy (Italian (Italy))`            | it_IT  | Ciao! Mi chiamo Sandy.                |
 | `Sandy (Japanese (Japan))`           | ja_JP  | こんにちは! 私の名前はSandyです。     |
 | `Sandy (Korean (South Korea))`       | ko_KR  | 안녕하세요. 제 이름은 Sandy입니다.    |
@@ -195,8 +201,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Shelley (Spanish (Spain))`          | es_ES  | ¡Hola! Me llamo Shelley.              |
 | `Shelley (Spanish (Mexico))`         | es_MX  | ¡Hola! Me llamo Shelley.              |
 | `Shelley (Finnish (Finland))`        | fi_FI  | Hei! Nimeni on Shelley.               |
-| `Shelley (French (Canada))`          | fr_CA  | Bonjour! Je m'appelle Shelley.        |
-| `Shelley (French (France))`          | fr_FR  | Bonjour, je m'appelle Shelley.        |
+| `Shelley (French (Canada))`          | fr_CA  | Bonjour! Je m’appelle Shelley.        |
+| `Shelley (French (France))`          | fr_FR  | Bonjour, je m’appelle Shelley.        |
 | `Shelley (Italian (Italy))`          | it_IT  | Ciao! Mi chiamo Shelley.              |
 | `Shelley (Japanese (Japan))`         | ja_JP  | こんにちは! 私の名前はShelleyです。   |
 | `Shelley (Korean (South Korea))`     | ko_KR  | 안녕하세요. 제 이름은 Shelley입니다.  |
@@ -204,8 +210,9 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Shelley (Chinese (China mainland))` | zh_CN  | 你好！我叫Shelley。                   |
 | `Shelley (Chinese (Taiwan))`         | zh_TW  | 你好，我叫Shelley。                   |
 | `Sinji`                              | zh_HK  | 你好！我叫善怡。                      |
+| `Tara`                               | en_IN  | Hello! My name is Tara.               |
 | `Tessa`                              | en_ZA  | Hello! My name is Tessa.              |
-| `Thomas`                             | fr_FR  | Bonjour, je m'appelle Thomas.         |
+| `Thomas`                             | fr_FR  | Bonjour, je m’appelle Thomas.         |
 | `Tina`                               | sl_SI  | Živijo, ime mi je Tina.               |
 | `Tingting`                           | zh_CN  | 你好！我叫婷婷。                      |
 | `Trinoids`                           | en_US  | Hello! My name is Trinoids.           |
@@ -215,8 +222,8 @@ This is the current list of voices on my macOS Sequoia system — yours may vary
 | `Yelda`                              | tr_TR  | Merhaba, benim adım Yelda.            |
 | `Yuna`                               | ko_KR  | 안녕하세요. 제 이름은 유나입니다.     |
 | `Zarvox`                             | en_US  | Hello! My name is Zarvox.             |
-| `Zosia`                              | pl_PL  | Hi my name is Zosia                   |
-| `Zuzana`                             | cs_CZ  | Hi my name is Zuzana                  |
+| `Zosia`                              | pl_PL  | Witaj, nazywam się Zosia.             |
+| `Zuzana`                             | cs_CZ  | Ahoj! Já jsem Zuzana.                 |
 
 ## Changelog
 
