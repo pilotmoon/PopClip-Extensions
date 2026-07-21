@@ -9,5 +9,6 @@ scratch/
 bun.lockb
 bun.lock
 package-lock.json
+lock.yaml
 CLAUDE.md
 _Signature.plist
