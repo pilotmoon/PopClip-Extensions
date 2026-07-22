@@ -3,7 +3,7 @@
 // icon: todoist.png
 // identifier: com.pilotmoon.popclip.extension.todoist
 // description: Add the selected text as a task in Todoist.
-// popclipVersion: 5774
+// popclipVersion: 5997
 // entitlements: [network]
 // captureHtml: true
 // after: show-status

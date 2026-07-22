@@ -12,6 +12,11 @@ Author: Nick Moore
 
 ## Changelog
 
+### 22 July 2026
+
+- Updated for PopClip 2026.7.
+- Shows signed-in user in settings.
+
 ### 27 Feb 2026
 
 - Updated to use Todoist unified API v1.
