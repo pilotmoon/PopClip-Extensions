@@ -8,12 +8,13 @@
 // language: typescript
 // module: true
 
-function createHighlightLink(page, text) {
+function createHighlightLink(page: string, text: string) {
   const url = new URL(page);
   url.hash = ""; // remove any existing fragmemt
   const encodedText = encodeURIComponent(text).replace(/-/g, "%2D"); // additionally encode "-" as per spec
   return `${url.href}#:~:text=${encodedText}`;
 }
+
 defineExtension({
   actions() {
     if (popclip.input.text && popclip.context.browserUrl) {
