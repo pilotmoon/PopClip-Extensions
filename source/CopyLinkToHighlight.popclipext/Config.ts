@@ -1,6 +1,7 @@
 // #popclip
 // name: Copy Link to Highlight
 // identifier: com.pilotmoon.popclip.extension.copy-link-to-Highlight
+// description: Copies a URL that points to the text currently selected in a web page
 // popclip version: 5155
 // icon: iconify:hugeicons:copy-link
 // entitlements: [dynamic]
