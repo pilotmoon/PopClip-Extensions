@@ -1,0 +1,12 @@
+name: GitHub Hop
+icon: iconify:simple-icons:github
+identifier: com.ajanlab.popclip.github-hop
+popclip version: 4631
+version: 1.0.0
+description: 选中项目名 → 直达 GitHub 仓库首页。支持 owner/repo 格式直跳和 API 智能解析。
+
+actions:
+  - title: GitHub
+    icon: iconify:simple-icons:github
+    requirements: [text]
+    shell script file: Source/github-hop.sh
