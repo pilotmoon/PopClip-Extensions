@@ -1,4 +1,5 @@
 name: Mapy
+identifier: com.pilotmoon.popclip.extension.mapy
 description: Search Mapy.com
 icon: Mapy.svg
 popclip version: 5155
