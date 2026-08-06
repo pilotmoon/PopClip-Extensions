@@ -1,0 +1,8 @@
+name: Mapy
+description: Search Mapy.com
+icon: Mapy.svg
+popclip version: 5155
+url: https://mapy.com/turisticka?q=***
+app:
+  name: Mapy.com
+  link: https://mapy.com/
