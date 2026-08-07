@@ -1,0 +1,43 @@
+{
+  "identifier": "com.oyomi.extension",
+  "name": "Oyomi",
+  "icon": "Oyomi.svg",
+  "description": "Analyze Japanese text and provide translation and explanation.",
+  "app": {
+    "name": "Oyomi",
+    "bundle": "com.kevinzhow.pengdu",
+    "link": "https://miaojiandao.com"
+  },
+  "required app version": "1.5.14",
+  "regex": "(?s)^.{1,}$",
+  "options": [
+    {
+      "identifier": "show_icons",
+      "type": "boolean",
+      "label": "Show Icons Only",
+      "description": "When enabled, only icons will be displayed. When disabled, text labels will be shown.",
+      "default value": false
+    },
+    {
+      "identifier": "enable_analyze",
+      "type": "boolean",
+      "label": "Enable Analyze",
+      "description": "Show the Analyze action",
+      "default value": true
+    }
+  ],
+  "actions": [
+    {
+      "title": "Analyze",
+      "icon": null,
+      "url": "oyomi://analyze?text={popclip text}",
+      "requirements": ["text", "option-enable_analyze=1", "!option-show_icons=1"]
+    },
+    {
+      "title": "Analyze",
+      "icon": "icon/analyze.svg",
+      "url": "oyomi://analyze?text={popclip text}",
+      "requirements": ["text", "option-enable_analyze=1", "option-show_icons=1"]
+    }
+  ]
+} 
