@@ -9,13 +9,11 @@
 defineExtension({
   action: {
     title: `${util.localize("Paste")} + ↵`,
-    code() {
-      if (popclip.modifiers.shift) {
-        popclip.pasteText(pasteboard.text);
-      } else {
-        popclip.performCommand("paste");
-      }
-      popclip.pressKey(util.constant.KEY_RETURN);
+    async code() {
+      await popclip.performCommand("paste", {
+        transform: popclip.modifiers.shift ? "plain" : "none",
+      });
+      await popclip.pressKey("return");
     },
   },
 });

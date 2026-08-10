@@ -9,8 +9,8 @@
 defineExtension({
   action: {
     title: `${util.localize("Paste")} =`,
-    code() {
-      popclip.pasteText(pasteboard.text);
+    async code() {
+      await popclip.performCommand("paste", { transform: "plain" });
     },
   },
 });
