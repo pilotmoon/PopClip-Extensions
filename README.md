@@ -5,9 +5,18 @@
 
 # PopClip Extensions
 
-This repository contains the source files for most of the extensions published
+This repository contains the source files for many of the extensions published
 in the official
 [PopClip Extensions Directory](https://www.popclip.app/extensions/).
+
+## Contributing
+
+Fixes and improvements to existing extensions are welcome via pull request.
+
+**THE REPO IS CLOSED TO NEW SUBMISSIONS.**
+
+To submit a new extension to the PopClip Extensions Directory, see here:
+[Submit an Extension](https://www.popclip.app/extensions/submit)
 
 ## Repository Layout
 
@@ -17,17 +26,6 @@ The main folders:
   me)
 - `contrib` - folder for unpublished / user-contributed / experimental / niche /
   archived extensions (not maintained or supported)
-
-## Contributing
-
-Fixes and improvements to existing extensions are welcome via pull request.
-
-**THE REPO IS CURRENTLY CLOSED TO NEW SUBMISSIONS.**
-
-Due to the maintenance burden of an ever-increasing library, I am not accepting
-new submissions. However, I will soon announce a new mechanism by which you can
-add your own extensions to the PopClip Extensions Directory and get them signed.
-Please stand by for further details.
 
 ## Credits
 
