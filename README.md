@@ -1,5 +1,6 @@
 > **Developer documentation has moved! See <https://www.popclip.app/dev/> for
-> the latest docs.**
+> the latest docs.**<br>
+> Want to submit the PopClip Extensions Directory? 👉[**Submit an Extension**](https://www.popclip.app/extensions/submit)👈
 
 ---
 
@@ -13,10 +14,9 @@ in the official
 
 Fixes and improvements to existing extensions are welcome via pull request.
 
-**THE REPO IS CLOSED TO NEW SUBMISSIONS.**
+**THE REPO IS CLOSED FOR NEW SUBMISSIONS.**
 
-To submit a new extension to the PopClip Extensions Directory, see here:
-[Submit an Extension](https://www.popclip.app/extensions/submit)
+_To submit a new extension to the PopClip Extensions Directory, see [Submit an Extension](https://www.popclip.app/extensions/submit)._
 
 ## Repository Layout
 
