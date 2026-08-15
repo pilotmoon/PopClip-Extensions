@@ -3,7 +3,7 @@ identifier: com.pilotmoon.popclip.extension.say
 name: Say
 popclipVersion: 4586
 description: Speak the selected text aloud using the macOS system voice.
-keywords: speak
+keywords: speak talk voice
 icon: speechicon.png
 interpreter: zsh
 shell script: |
