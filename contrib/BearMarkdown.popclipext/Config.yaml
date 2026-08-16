@@ -1,0 +1,13 @@
+name: Bear Markdown
+identifier: nl.pkops.popclip.bear-markdown
+description: Create a new Bear note from the selected text, preserving formatting as Markdown.
+icon: iconify:simple-icons:bear
+requirements: [text]
+capture html: true
+app:
+  name: Bear
+  link: https://bear.app/
+  check installed: true
+  bundle identifiers:
+    - net.shinyfrog.bear
+javascript file: bear-markdown.js
