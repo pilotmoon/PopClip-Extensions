@@ -1,0 +1,32 @@
+{
+    "identifier": "com.leafy.popclip.lookup",
+    "name": "Leafy",
+    "icon": "icon.png",
+    "description": "Look up, translate, or save the selected text with Leafy.",
+    "app": {
+        "name": "Leafy",
+        "link": "https://leafyapp.uk",
+        "bundleIdentifiers": ["com.Leafy"],
+        "checkInstalled": true
+    },
+    "actions": [
+        {
+            "title": "Define",
+            "icon": "symbol:character.book.closed.fill",
+            "javascript": "popclip.openUrl('leafy://lookup?mode=define&text=' + encodeURIComponent(popclip.input.text) + '&app=' + encodeURIComponent(popclip.context.appName || ''), { activate: false });",
+            "requirements": ["text", "!url", "!email"]
+        },
+        {
+            "title": "Translate",
+            "icon": "symbol:globe",
+            "javascript": "popclip.openUrl('leafy://lookup?mode=translate&text=' + encodeURIComponent(popclip.input.text) + '&app=' + encodeURIComponent(popclip.context.appName || ''), { activate: false });",
+            "requirements": ["text", "!url", "!email"]
+        },
+        {
+            "title": "Save",
+            "icon": "symbol:bookmark.fill",
+            "javascript": "popclip.openUrl('leafy://lookup?mode=save&text=' + encodeURIComponent(popclip.input.text) + '&app=' + encodeURIComponent(popclip.context.appName || ''), { activate: false }); popclip.showSuccess();",
+            "requirements": ["text", "!url", "!email"]
+        }
+    ]
+}
