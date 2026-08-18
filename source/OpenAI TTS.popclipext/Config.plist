@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>OpenAI TTS</string>
+	<key>identifier</key>
+	<string>com.user.openai-tts</string>
+	<key>description</key>
+	<string>Convert selected text to speech using OpenAI TTS API</string>
+	<key>icon</key>
+	<string>symbol:message.and.waveform</string>
+	<key>popclip version</key>
+	<integer>4151</integer>
+	<key>options</key>
+	<array>
+		<dict>
+			<key>identifier</key>
+			<string>apikey</string>
+			<key>label</key>
+			<string>OpenAI API Key</string>
+			<key>type</key>
+			<string>secret</string>
+			<key>description</key>
+			<string>Your OpenAI API Key</string>
+		</dict>
+		<dict>
+			<key>identifier</key>
+			<string>base_url</string>
+			<key>label</key>
+			<string>Base URL</string>
+			<key>type</key>
+			<string>string</string>
+			<key>default value</key>
+			<string>https://api.openai.com/v1</string>
+			<key>description</key>
+			<string>API base URL (e.g., https://api.openai.com/v1 or custom proxy)</string>
+		</dict>
+		<dict>
+			<key>identifier</key>
+			<string>model</string>
+			<key>label</key>
+			<string>Model</string>
+			<key>type</key>
+			<string>string</string>
+			<key>default value</key>
+			<string>tts-1</string>
+			<key>description</key>
+			<string>TTS model (e.g., tts-1, tts-1-hd, or any custom model)</string>
+		</dict>
+		<dict>
+			<key>identifier</key>
+			<string>voice</string>
+			<key>label</key>
+			<string>Voice</string>
+			<key>type</key>
+			<string>string</string>
+			<key>default value</key>
+			<string>alloy</string>
+			<key>description</key>
+			<string>Voice name (e.g., alloy, echo, fable, onyx, nova, shimmer, or any custom voice)</string>
+		</dict>
+		<dict>
+			<key>identifier</key>
+			<string>format</string>
+			<key>label</key>
+			<string>Audio Format</string>
+			<key>type</key>
+			<string>multiple</string>
+			<key>default value</key>
+			<string>mp3</string>
+			<key>description</key>
+			<string>Audio output format</string>
+			<key>values</key>
+			<array>
+				<string>mp3</string>
+				<string>opus</string>
+				<string>aac</string>
+				<string>flac</string>
+			</array>
+		</dict>
+		<dict>
+			<key>identifier</key>
+			<string>speed</string>
+			<key>label</key>
+			<string>Speed</string>
+			<key>type</key>
+			<string>string</string>
+			<key>default value</key>
+			<string>1.0</string>
+			<key>description</key>
+			<string>Speech speed (0.25 to 4.0)</string>
+		</dict>
+	</array>
+	<key>action</key>
+	<dict>
+		<key>shell script file</key>
+		<string>openai-tts.sh</string>
+		<key>script interpreter</key>
+		<string>/bin/zsh</string>
+		<key>requirements</key>
+		<array>
+			<string>text</string>
+		</array>
+	</dict>
+</dict>
+</plist> 
