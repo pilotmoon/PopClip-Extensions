@@ -1,4 +1,7 @@
 on capture(capturedText, documentPath, inboxName, capturePosition)
+	set capturedText to my trimWhitespaceAndNewlines(capturedText)
+	if capturedText is "" then return
+
 	if documentPath is "" then
 		error "Set the Bike document path in this extension's settings." number 502
 	else if documentPath does not start with "/" then
@@ -8,6 +11,8 @@ on capture(capturedText, documentPath, inboxName, capturePosition)
 	set targetFile to POSIX file documentPath
 
 	tell application "Bike"
+		launch
+
 		try
 			set targetDocument to first document whose file is targetFile
 		on error
@@ -37,3 +42,24 @@ on capture(capturedText, documentPath, inboxName, capturePosition)
 		end tell
 	end tell
 end capture
+
+on trimWhitespaceAndNewlines(sourceText)
+	set whitespaceCharacters to {" ", tab, return, linefeed}
+	set characterCount to count characters of sourceText
+	set startIndex to 1
+
+	repeat while startIndex is less than or equal to characterCount
+		if character startIndex of sourceText is not in whitespaceCharacters then exit repeat
+		set startIndex to startIndex + 1
+	end repeat
+
+	if startIndex is greater than characterCount then return ""
+
+	set endIndex to characterCount
+	repeat while endIndex is greater than or equal to startIndex
+		if character endIndex of sourceText is not in whitespaceCharacters then exit repeat
+		set endIndex to endIndex - 1
+	end repeat
+
+	return text startIndex thru endIndex of sourceText
+end trimWhitespaceAndNewlines
