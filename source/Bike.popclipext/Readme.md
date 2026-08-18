@@ -6,7 +6,7 @@ You can specify a row to act as an "inbox", or simply add rows to the document r
 The selection is treated as plain text, so formatting is not preserved.
 Multi-line selections are imported as separate rows.
 
-### Options
+### Settings
 
 - **Document Path**: The absolute path of a saved Bike document, such as
   `/Users/me/Documents/Ideas.bike`.
