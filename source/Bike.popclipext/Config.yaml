@@ -1,0 +1,33 @@
+name: Bike
+identifier: com.pilotmoon.popclip.extension.bike
+description: Capture text to a Bike document.
+icon: symbol:bicycle
+popclip version: 4151
+app:
+  name: Bike
+  link: https://www.hogbaysoftware.com/bike/
+  bundle identifiers: [com.hogbaysoftware.Bike, com.hogbaysoftware.Bike-setapp]
+  check installed: true
+options:
+  - identifier: document
+    label: Document Path
+    type: string
+    description: Absolute path to the Bike document, such as "/Users/me/Documents/Inbox.bike".
+  - identifier: row
+    label: Inbox Row
+    type: string
+    default value: Inbox
+    description: Inbox row name. Leave blank to add directly to the root.
+  - identifier: position
+    label: Add At
+    type: multiple
+    values: [top, bottom]
+    value labels: [Top, Bottom]
+    default value: bottom
+    description: Where in the list to add new rows.
+requirements: [text]
+applescript file: Bike.applescript
+applescript call:
+  handler: capture
+  parameters: [text, option document, option row, option position]
+after: show-status
