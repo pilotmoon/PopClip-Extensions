@@ -3,6 +3,7 @@ identifier: com.pilotmoon.popclip.extension.bike
 description: Capture text to a Bike document.
 icon: symbol:bicycle
 popclip version: 4151
+keywords: outliner
 app:
   name: Bike
   link: https://www.hogbaysoftware.com/bike/

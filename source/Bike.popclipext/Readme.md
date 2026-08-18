@@ -18,10 +18,13 @@ Multi-line selections are imported as separate rows.
 
 - **Add At**: Whether to add rows at the **Top** or **Bottom** of the existing list.
 
-## About
+## Notes
 
-- Works with [Bike Outliner][1], a native Mac app by Jesse Grosjean (Hog Bay Software).
-- The extension uses [Bike's AppleScript interface][2].
+Author: Nick Moore
+
+Works with [Bike Outliner][1], a native Mac app by Jesse Grosjean (Hog Bay Software).
+
+The extension uses [Bike's AppleScript interface][2].
 
 ## Changelog
 
