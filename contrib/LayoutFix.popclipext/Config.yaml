@@ -1,0 +1,17 @@
+#popclip
+name: Layout Fix
+identifier: com.pilotmoon.popclip.extension.layout-fix
+description: Fix text typed on the wrong keyboard layout.
+icon: iconify:lucide:keyboard
+popclipVersion: 4688
+after: paste-result
+stdin: text
+interpreter: zsh
+shell script file: layout-fix.zsh
+options:
+  - identifier: mode
+    label: Direction
+    type: multiple
+    values: ["auto", "latin-to-layout", "layout-to-latin"]
+    valueLabels: ["Auto", "Latin → Layout", "Layout → Latin"]
+    defaultValue: "auto"
