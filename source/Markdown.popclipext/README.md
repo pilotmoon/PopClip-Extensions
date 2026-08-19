@@ -1,13 +1,12 @@
-Markdown
-========
+# Markdown
 
 Markdown-to-HTML conversion extension for PopClip.
 
 This extension uses the original [Markdown](https://daringfireball.net/projects/markdown/) Perl script by John Gruber (see license below).
 
 ```text
-Copyright (c) 2004, John Gruber  
-<http://daringfireball.net/>  
+Copyright (c) 2004, John Gruber
+<http://daringfireball.net/>
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
