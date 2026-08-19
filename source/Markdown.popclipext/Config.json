@@ -5,10 +5,10 @@
   "icon": "dfstar.png",
   "shellScriptFile": "Markdown.pl",
   "stdin": "text",
-  "after": "paste-result",  
-  "app": {    
+  "after": "paste-result",
+  "app": {
     "name": "Markdown",
     "link": "https://daringfireball.net/projects/markdown/syntax"
   },
-  "description": "Convert Markdown-formatted text to HTML."
+  "description": "Convert Markdown-formatted text to HTML using John Gruber's original Perl script."
 }
