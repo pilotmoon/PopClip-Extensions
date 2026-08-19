@@ -10,5 +10,6 @@
     "name": "Markdown",
     "link": "https://daringfireball.net/projects/markdown/syntax"
   },
-  "description": "Convert Markdown-formatted text to HTML using John Gruber's original Perl script."
+  "description": "Convert Markdown-formatted text to HTML using John Gruber's original Perl script.",
+  "shell script rationale": "The extension specifically uses the original Gruber Markdown Perl script v1.0.1"
 }
