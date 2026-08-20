@@ -180,6 +180,7 @@ var S_ICON = "\u7B80";
 var S_TITLE = "Convert to Simplified";
 var T_ICON = "\u7E41";
 var T_TITLE = "Convert to Traditional";
+var MODE_LABEL = "Conversion Mode";
 var options = [
   {
     identifier: "showSimplified",
@@ -192,41 +193,53 @@ var options = [
     label: T_TITLE,
     icon: T_ICON,
     type: "boolean"
+  },
+  {
+    identifier: "conversionMode",
+    label: MODE_LABEL,
+    type: "multiple",
+    values: ["phrase", "char"],
+    "value labels": ["Phrase", "Character"],
+    "default value": "phrase"
   }
 ];
 var mConv = createConverterMap({
   s2t: [import_s2t_char.default, import_s2t_phrase.default],
   t2s: [import_t2s_char.default, import_t2s_phrase.default]
 });
-function toSimplified(text) {
-  return mConv.phrase(LangType.t2s, text);
+function convertText(type, text, options2) {
+  return options2.conversionMode === "char" ? mConv.char(type, text) : mConv.phrase(type, text);
 }
-function toTraditional(text) {
-  return mConv.phrase(LangType.s2t, text);
+function toSimplified(text, options2) {
+  return convertText(LangType.t2s, text, options2);
+}
+function toTraditional(text, options2) {
+  return convertText(LangType.s2t, text, options2);
 }
 var actions = [
   {
     icon: S_ICON,
     title: S_TITLE,
     requirements: ["option-showSimplified=1"],
-    code(input) {
-      popclip.pasteText(toSimplified(input.text));
+    code(input, options2) {
+      popclip.pasteText(toSimplified(input.text, options2));
     }
   },
   {
     icon: T_ICON,
     title: T_TITLE,
     requirements: ["option-showTraditional=1"],
-    code(input) {
-      popclip.pasteText(toTraditional(input.text));
+    code(input, options2) {
+      popclip.pasteText(toTraditional(input.text, options2));
     }
   }
 ];
 var T_SAMPLE = `\u4EBA\u4EBA\u751F\u800C\u81EA\u7531\uFE50\u5728\u5C0A\u56B4\u548C\u6B0A\u5229\u4E0A\u4E00\u5F8B\u5E73\u7B49\u3002\u4ED6\u5011\u8CE6\u6709\u7406\u6027\u548C\u826F\u5FC3\uFE50\u4E26\u61C9\u4EE5\u5144\u5F1F\u95DC\u4FC2\u7684\u7CBE\u795E\u4E92\u76F8\u5C0D\u5F85\u3002`;
 var S_SAMPLE = `\u4EBA\u4EBA\u751F\u800C\u81EA\u7531\uFE50\u5728\u5C0A\u4E25\u548C\u6743\u5229\u4E0A\u4E00\u5F8B\u5E73\u7B49\u3002\u4ED6\u4EEC\u8D4B\u6709\u7406\u6027\u548C\u826F\u5FC3\uFE50\u5E76\u5E94\u4EE5\u5144\u5F1F\u5173\u7CFB\u7684\u7CBE\u795E\u4E92\u76F8\u5BF9\u5F85\u3002`;
 function test() {
-  const s = toSimplified(T_SAMPLE);
-  const t = toTraditional(S_SAMPLE);
+  const options2 = { showSimplified: true, showTraditional: true, conversionMode: "phrase" };
+  const s = toSimplified(T_SAMPLE, options2);
+  const t = toTraditional(S_SAMPLE, options2);
   print({ s, t });
   print(s === S_SAMPLE, t === T_SAMPLE);
 }
