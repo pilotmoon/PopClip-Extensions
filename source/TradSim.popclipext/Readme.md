@@ -19,5 +19,6 @@ The regex is based on "CJK Unified Ideographs" and "CJK Unified Ideographs Exten
 
 ## Changelog
 
+- 20 Aug 2026: Add conversion mode option for phrase or character mapping
 - 25 Jun 2024: Add keywords to metadata
 - 21 Jun 2024: Initial release
