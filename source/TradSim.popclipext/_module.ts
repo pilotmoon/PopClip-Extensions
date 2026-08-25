@@ -57,7 +57,7 @@ function toTraditional(text: string, options: Options) {
   return convertText(LangType.s2t, text, options);
 }
 
-export const actions: Action[] = [
+export const actions: Action<Options>[] = [
   {
     icon: S_ICON,
     title: S_TITLE,
