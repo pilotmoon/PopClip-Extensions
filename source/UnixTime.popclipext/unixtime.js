@@ -12,7 +12,7 @@ const systemSetting = ["", "System"];
 
 const process = (selection, options) => {
   const unixTime = selection.replace(/\s/g, ""); // remove spaces;
-  const date = convert(unixTime);
+  const date = convert(unixTime, options.handleMilliseconds);
 
   const custom_settings =
     options.timeZone !== defaultTimezone[0] ||
@@ -30,7 +30,10 @@ const process = (selection, options) => {
   return standardize(date, true);
 };
 
-const convert = (unixTime) => {
+const convert = (unixTime, handleMilliseconds) => {
+  if (handleMilliseconds && unixTime > 2 ** 32 - 1) {
+    return new Date(Number(unixTime));
+  }
   const seconds = unixTime;
   const milliseconds = 1000;
   return new Date(seconds * milliseconds);
@@ -66,6 +69,7 @@ module.exports = {
   action(selection, context, options) {
     popclip.showText(process(selection.text, options));
   },
+  icon: "UnixTime.png",
   options: [
     {
       identifier: "locale",
@@ -88,6 +92,12 @@ module.exports = {
       valueLabels: [defaultTimezone[1], systemSetting[1]].concat(
         Array.from(TIMEZONES.keys()),
       ),
+    },
+    {
+      identifier: "handleMilliseconds",
+      label: "Automatically handle milliseconds",
+      type: "boolean",
+      default: true,
     },
   ],
   test: process,
