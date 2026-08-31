@@ -36,7 +36,6 @@ Author: Nick Moore, [@kstrauser](https://github.com/pilotmoon/PopClip-Extensions
 ## Changelog
 
 - 31 Aug 2026: Add automatic handling of timestamps expressed in milliseconds.
-  Convert to TypeScript and display the converted value directly
-  in the button. Clicking the action copies the result.
+  Convert to TypeScript and display the converted value directly. Clicking the action copies the result.
 - 12 Nov 2024: Improve Unix timestamp matching.
 - 18 Apr 2022: Rewrite the extension in JavaScript for macOS Monterey.
