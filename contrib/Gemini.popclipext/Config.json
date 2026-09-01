@@ -1,0 +1,16 @@
+{
+  "name": "Gemini",
+  "identifier": "com.gravitypoet.popclip.extension.gemini",
+  "description": "Open Gemini and copy your selected text plus custom question for quick paste.",
+  "icon": "gemini.png",
+  "title": "\u200B",
+  "popclipVersion": 4586,
+  "app": {
+    "name": "Google Gemini",
+    "link": "https://gemini.google.com/"
+  },
+  "requirements": [
+    "text"
+  ],
+  "applescriptFile": "gemini.applescript"
+}
