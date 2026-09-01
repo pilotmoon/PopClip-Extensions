@@ -1,0 +1,13 @@
+# popclip
+name: GitHub Search
+identifier: com.github.search
+description: Search GitHub for repositories, code, issues, or users
+icon: iconify:mdi:github
+url: https://github.com/search?q=***&type={popclip option searchType}
+options:
+  - identifier: searchType
+    label: 搜索类型
+    type: multiple
+    values: [repositories, code, issues, users]
+    valueLabels: [仓库, 代码, Issues, 用户]
+    defaultValue: repositories
