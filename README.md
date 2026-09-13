@@ -1,5 +1,6 @@
 > **Developer documentation has moved! See <https://www.popclip.app/dev/> for
 > the latest docs.**<br>
+> Using an AI coding agent? Install the [PopClip extension authoring skill](https://www.popclip.app/dev/skills/popclip-extension-authoring/SKILL.md) (this replaces the old `CHEATSHEET.md`).<br>
 > Want to submit the PopClip Extensions Directory? 👉[**Submit an Extension**](https://www.popclip.app/extensions/submit)👈
 
 ---
