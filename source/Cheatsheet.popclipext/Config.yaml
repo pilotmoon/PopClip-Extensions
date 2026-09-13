@@ -1,0 +1,13 @@
+name: Cheatsheet
+identifier: com.pilotmoon.popclip.extension.cheatsheet
+description: Create a new Cheatsheet note with the selected text.
+keywords: notes capture sticky
+popclipVersion: 4069
+icon: iconify:icon-park-outline:view-grid-list
+app:
+  name: Cheatsheet
+  link: https://overdesigned.net/cheatsheet/
+  bundleIdentifiers: [maccatalyst.com.overdesigned.Cheatsheet]
+  checkInstalled: true
+requirements: [text]
+url: cheatsheet://add?text={popclip text}
