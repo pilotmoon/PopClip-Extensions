@@ -40,7 +40,8 @@ function createClipping(content: string, options: Options) {
 	url.searchParams.set("spaceId", options.spaceId);
 	url.searchParams.set("content", content);
 	url.searchParams.set("folder", options.folderName);
-	popclip.openUrl(url.href);
+	// searchParams encodes spaces as "+"; send them as "%20" for the receiving app
+	popclip.openUrl(url.href.replace(/\+/g, "%20"));
 }
 
 const SAMPLE_SPACEID = "6035f4d1-43da-a41e-e344-9d7e5b612d9c";

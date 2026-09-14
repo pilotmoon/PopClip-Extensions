@@ -44,7 +44,8 @@ function addNote(text: string, options: AgendaOptions) {
   }
   url.searchParams.set("title", options.noteTitle);
   url.searchParams.set("text", text);
-  popclip.openUrl(url.href);
+  // searchParams encodes spaces as "+"; send them as "%20" for the receiving app
+  popclip.openUrl(url.href.replace(/\+/g, "%20"));
 }
 export function test() {
   addNote("Hello, World!", { title: "Snippets", noteTitle: "" });

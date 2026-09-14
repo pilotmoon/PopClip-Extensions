@@ -30,7 +30,8 @@ defineExtension<InferOptions<typeof options>>({
 function openSite(text: string) {
   const url = new URL("https://claude.ai/new");
   url.searchParams.append("q", text.trim());
-  popclip.openUrl(url.href);
+  // searchParams encodes spaces as "+"; send them as "%20" for the receiving app
+  popclip.openUrl(url.href.replace(/\+/g, "%20"));
 }
 
 function prepareText(text: string, prompt: string) {
