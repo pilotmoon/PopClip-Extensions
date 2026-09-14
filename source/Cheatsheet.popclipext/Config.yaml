@@ -1,9 +1,9 @@
 name: Cheatsheet
 identifier: com.pilotmoon.popclip.extension.cheatsheet
 description: Create a new Cheatsheet note with the selected text.
-keywords: notes capture sticky
+keywords: notes
 popclipVersion: 4069
-icon: file:cheatsheet.svg
+icon: cheatsheet.svg
 app:
   name: Cheatsheet
   link: https://overdesigned.net/cheatsheet/
