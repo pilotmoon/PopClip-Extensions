@@ -30,7 +30,7 @@ defineExtension<InferOptions<typeof grokWebsiteOptions>>({
 function openGrokWebsite(text: string) {
   const url = new URL("https://grok.com/");
   url.searchParams.append("q", text.trim());
-  popclip.openUrl(url);
+  popclip.openUrl(url.href);
 }
 
 function prepareGrokWebsiteText(text: string, prompt: string) {

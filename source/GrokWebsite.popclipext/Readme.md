@@ -23,4 +23,5 @@ This extension is based on the snippet shared on the PopClip forum:
 
 ## Changelog
 
+- 14 Sep 2026: Pass URL string to openUrl explicitly (works around a PopClip 2026.8.1 bug with URL objects).
 - 28 April 2026: Initial release

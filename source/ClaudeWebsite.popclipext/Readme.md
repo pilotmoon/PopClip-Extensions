@@ -20,4 +20,5 @@ The basic URL format is: `https://claude.ai/new?q={text}`
 
 ## Changelog
 
+- 14 Sep 2026: Pass URL string to openUrl explicitly (works around a PopClip 2026.8.1 bug with URL objects).
 - 16 April 2026: Initial release

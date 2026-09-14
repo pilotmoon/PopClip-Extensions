@@ -30,7 +30,7 @@ defineExtension<InferOptions<typeof options>>({
 function openSite(text: string) {
   const url = new URL("https://claude.ai/new");
   url.searchParams.append("q", text.trim());
-  popclip.openUrl(url);
+  popclip.openUrl(url.href);
 }
 
 function prepareText(text: string, prompt: string) {

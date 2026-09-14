@@ -40,7 +40,7 @@ function createClipping(content: string, options: Options) {
 	url.searchParams.set("spaceId", options.spaceId);
 	url.searchParams.set("content", content);
 	url.searchParams.set("folder", options.folderName);
-	popclip.openUrl(url);
+	popclip.openUrl(url.href);
 }
 
 const SAMPLE_SPACEID = "6035f4d1-43da-a41e-e344-9d7e5b612d9c";
