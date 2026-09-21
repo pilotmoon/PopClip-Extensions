@@ -10,8 +10,8 @@ credits. API usage is billed separately from a ChatGPT subscription.
 OpenAI Prompt is a new extension intended to replace the older
 [OpenAI Chat](https://www.popclip.app/extensions/x/48f32j) extension. Install
 and configure it separately; it does not automatically replace your existing
-installation or import its settings. OpenAI Chat remains available if you
-want to continue a conversation across selections.
+installation or import its settings. Each request starts fresh, so there is
+no conversation reset button or timer.
 
 ## Actions
 
@@ -96,5 +96,5 @@ OpenAI icon by [Simple Icons](https://simpleicons.org/).
 
 ## Changelog
 
-- 2026-09-08: Initial release. Independent prompts with custom instructions,
+- 2026-09-15: Initial release. Independent prompts with custom instructions,
   model selection, thinking effort, response detail, and Copy Last Response.

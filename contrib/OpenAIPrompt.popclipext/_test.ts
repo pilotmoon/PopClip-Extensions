@@ -324,6 +324,32 @@ test("response handling replaces or copies, with Shift to copy and no Option ove
   }
 });
 
+test("Shift is captured before the request, even if released while waiting", async () => {
+  const h = load();
+  h.modifiers.shift = true;
+  h.respond(async () => {
+    h.modifiers.shift = false;
+    return {
+      choices: [{ finish_reason: "stop", message: { content: "Reply" } }],
+    };
+  });
+  await h.prompt("Input");
+  assert.deepEqual(h.copied, ["Reply"]);
+  assert.deepEqual(h.pasted, []);
+});
+
+test("a failed paste leaves the generated response available to copy", async () => {
+  const h = load();
+  h.ui.pasteText = async () => {
+    throw new Error("Paste failed");
+  };
+  await h.prompt("Input");
+  assert.deepEqual(h.errors, ["Paste failed"]);
+  await h.menu("Copy Last Response").code();
+  assert.deepEqual(h.copied, ["Reply"]);
+  assert.equal(h.requests.length, 1);
+});
+
 test("bundled Axios sends the expected URL, credentials and JSON body", async () => {
   const h = load();
   const adapter = axios.defaults.adapter;

@@ -19,7 +19,7 @@ export const options = [
     label: "API Key",
     type: "secret",
     description:
-      "Obtain an API key from: https://platform.openai.com/account/api-keys",
+      "Obtain an API key from the [API keys page](https://platform.openai.com/api-keys).",
   },
   {
     identifier: "model",
@@ -87,10 +87,10 @@ export const options = [
   },
 ] as const;
 
-type Options = InferOptions<typeof options>;
+type PromptOptions = InferOptions<typeof options>;
 
 interface Message {
-  role: "user" | "system" | "assistant";
+  role: "user" | "system";
   content: string;
 }
 
@@ -195,10 +195,10 @@ export function createActions(
     const { data } = await openai.post("chat/completions", body);
     return data;
   },
-): Action<Options>[] {
+): Action<PromptOptions>[] {
   let lastResponse = "";
 
-  const prompt: ActionFunction<Options> = async (input, options) => {
+  const prompt: ActionFunction<PromptOptions> = async (input, options) => {
     const model = options.model.trim() || defaultModel;
     const domain = options.domain.trim().replace(/\/+$/, "");
     if (
