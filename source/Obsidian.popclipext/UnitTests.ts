@@ -10,7 +10,7 @@ function assertEqual(actual: string, expected: string, testName: string) {
     passed++;
     console.log(`✓ ${testName}`);
   } else {
-    failed++
+    failed++;
     console.log(`✗ ${testName}`);
     console.log(`  Expected: ${expected}`);
     console.log(`  Actual:   ${actual}`);
@@ -31,40 +31,40 @@ const sourceTitle = "Lorem Ipsum - All the facts - Lipsum generator";
 const content = "Lorem Ipsum has been the industry's standard dummy"
 const testDate = new Date("2024-01-15T14:30:00");
 
-let testUrl: URL;
+let testUrl: string;
 let expectedUrl: string;
 let testContent: string;
 let expectedContent: string;
 
 // Test 1: clippings file, no heading
 testUrl = buildUri(content, { ...baseOptions, fileName: "Clippings", }, sourceUrl, sourceTitle);
-expectedUrl = `obsidian://advanced-uri?vault=Dry%2C+Dark+Place&filename=Clippings&data=%0ALorem+Ipsum+has+been+the+industry%27s+standard+dummy%0A%5BLorem+Ipsum+-+All+the+facts+-+Lipsum+generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
+expectedUrl = `obsidian://advanced-uri?vault=Dry%2C%20Dark%20Place&filename=Clippings&data=%0ALorem%20Ipsum%20has%20been%20the%20industry%27s%20standard%20dummy%0A%5BLorem%20Ipsum%20-%20All%20the%20facts%20-%20Lipsum%20generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
 
-assertEqual(testUrl.toString(), expectedUrl.toString(), "Test 1: clippings file, no heading");
+assertEqual(testUrl, expectedUrl, "Test 1: clippings file, no heading");
 
 // Test 2: clippings file, no heading, new file
 testUrl = buildUri(content, { ...baseOptions, fileName: "Clippings", newFile: true, }, sourceUrl, sourceTitle);
-expectedUrl = `obsidian://advanced-uri?vault=Dry%2C+Dark+Place&filename=Clippings&data=Lorem+Ipsum+has+been+the+industry%27s+standard+dummy%0A%5BLorem+Ipsum+-+All+the+facts+-+Lipsum+generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=new`;
+expectedUrl = `obsidian://advanced-uri?vault=Dry%2C%20Dark%20Place&filename=Clippings&data=Lorem%20Ipsum%20has%20been%20the%20industry%27s%20standard%20dummy%0A%5BLorem%20Ipsum%20-%20All%20the%20facts%20-%20Lipsum%20generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=new`;
 
-assertEqual(testUrl.toString(), expectedUrl.toString(), "Test 2: clippings file, no heading, new file",);
+assertEqual(testUrl, expectedUrl, "Test 2: clippings file, no heading, new file",);
 
 // Test 3: clippings file, with heading
 testUrl = buildUri(content, { ...baseOptions, fileName: "Clippings", heading: "My Heading", }, sourceUrl, sourceTitle);
-expectedUrl = `obsidian://advanced-uri?vault=Dry%2C+Dark+Place&filename=Clippings&heading=My+Heading&data=%0ALorem+Ipsum+has+been+the+industry%27s+standard+dummy%0A%5BLorem+Ipsum+-+All+the+facts+-+Lipsum+generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
+expectedUrl = `obsidian://advanced-uri?vault=Dry%2C%20Dark%20Place&filename=Clippings&heading=My%20Heading&data=%0ALorem%20Ipsum%20has%20been%20the%20industry%27s%20standard%20dummy%0A%5BLorem%20Ipsum%20-%20All%20the%20facts%20-%20Lipsum%20generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
 
-assertEqual(testUrl.toString(), expectedUrl.toString(), "Test 3: clippings file, with heading",);
+assertEqual(testUrl, expectedUrl, "Test 3: clippings file, with heading",);
 
 // Test 4: daily note file, no heading
 testUrl = buildUri(content, { ...baseOptions, }, sourceUrl, sourceTitle);
-expectedUrl = `obsidian://advanced-uri?vault=Dry%2C+Dark+Place&daily=true&data=%0ALorem+Ipsum+has+been+the+industry%27s+standard+dummy%0A%5BLorem+Ipsum+-+All+the+facts+-+Lipsum+generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
+expectedUrl = `obsidian://advanced-uri?vault=Dry%2C%20Dark%20Place&daily=true&data=%0ALorem%20Ipsum%20has%20been%20the%20industry%27s%20standard%20dummy%0A%5BLorem%20Ipsum%20-%20All%20the%20facts%20-%20Lipsum%20generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`;
 
-assertEqual(testUrl.toString(), expectedUrl.toString(), "Test 4: daily note file, no heading",);
+assertEqual(testUrl, expectedUrl, "Test 4: daily note file, no heading",);
 
 // Test 5: daily note file, with heading
 testUrl = buildUri(content, { ...baseOptions, heading: "My Heading", }, sourceUrl, sourceTitle);
-expectedUrl = `obsidian://advanced-uri?vault=Dry%2C+Dark+Place&daily=true&heading=My+Heading&data=%0ALorem+Ipsum+has+been+the+industry%27s+standard+dummy%0A%5BLorem+Ipsum+-+All+the+facts+-+Lipsum+generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`
+expectedUrl = `obsidian://advanced-uri?vault=Dry%2C%20Dark%20Place&daily=true&heading=My%20Heading&data=%0ALorem%20Ipsum%20has%20been%20the%20industry%27s%20standard%20dummy%0A%5BLorem%20Ipsum%20-%20All%20the%20facts%20-%20Lipsum%20generator%5D%28https%3A%2F%2Fwww.lipsum.com%2F%29&mode=append`
 
-assertEqual(testUrl.toString(), expectedUrl.toString(), "Test 5: daily note file, with heading",);
+assertEqual(testUrl, expectedUrl, "Test 5: daily note file, with heading",);
 
 // Test 6: sourceLink: false should omit link, return content
 testContent = buildContent(content, { ...baseOptions, sourceLink: false }, sourceUrl, sourceTitle);

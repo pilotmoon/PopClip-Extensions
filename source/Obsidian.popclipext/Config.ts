@@ -106,28 +106,30 @@ export function buildContent(
   return result;
 }
 
-export function buildUri(markdown: string, options: Options, url?: string, title?: string): URL {
+export function buildUri(markdown: string, options: Options, url?: string, title?: string): string {
   const content = buildContent(markdown, options, url, title);
 
-  const result = new URL("obsidian://advanced-uri");
-  result.searchParams.append("vault", options.vaultName);
+  const uri = new URL("obsidian://advanced-uri");
+  uri.searchParams.append("vault", options.vaultName);
   if (options.fileName) {
-    result.searchParams.append("filename", options.fileName);
+    uri.searchParams.append("filename", options.fileName);
   } else {
-    result.searchParams.append("daily", "true");
+    uri.searchParams.append("daily", "true");
   }
   if (options.heading) {
-    result.searchParams.append("heading", options.heading);
+    uri.searchParams.append("heading", options.heading);
   }
-  result.searchParams.append("data", content);
-  result.searchParams.append("mode", options.newFile ? "new" : "append");
+  uri.searchParams.append("data", content);
+  uri.searchParams.append("mode", options.newFile ? "new" : "append");
 
+  // Convert from form-style query encoding to conventional percent encoding
+  const result = uri.href.replace(/\+/g, "%20");
   return result;
 }
 
 function capture(markdown: string, options: Options, url?: string, title?: string) {
-  const obsidianUri = buildUri(markdown, options, url, title);
-  popclip.openUrl(obsidianUri, { activate: false });
+  const href = buildUri(markdown, options, url, title);
+  popclip.openUrl(href, { activate: false });
 }
 
 export const action: Action<Options> = {
