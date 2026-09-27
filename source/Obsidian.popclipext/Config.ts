@@ -63,44 +63,83 @@ export const options = [
 
 type Options = InferOptions<typeof options>;
 
-function capture(markdown: string, options: Options) {
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Add markdown link builder (allows testing)
+function buildMarkdownLink(url: string, title?: string): string {
+  return `[${title || "Source"}](${url})`;
+}
+
+export function buildContent(
+  markdown: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  now: Date = new Date()
+): string {
+  let result = "";
+
+  if (options.sourceLink && url) {
+    // Trailing slash should not prevent URL matching
+    if (markdown.replace(/\/$/, '') === url.replace(/\/$/, '')) {
+      result += buildMarkdownLink(url, title);
+    } else {
+      result += markdown + `\n` + buildMarkdownLink(url, title);
+    }
+  } else {
+    result += markdown;
+  }
+
   if (options.includeTimestamp) {
-    const timestamp = new Date().toLocaleTimeString([], {
+    const timestamp = now.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
     });
-    markdown = `- ${timestamp} ${markdown}`;
+    result = `- ${timestamp} ${result}`;
   }
 
-  const url = new URL("obsidian://advanced-uri");
-  url.searchParams.append("vault", options.vaultName);
+  if (!options.newFile) {
+    result = `\n${result}`;
+  }
+
+  return result;
+}
+
+export function buildUri(markdown: string, options: Options, url?: string, title?: string): string {
+  const content = buildContent(markdown, options, url, title);
+
+  const uri = new URL("obsidian://advanced-uri");
+  uri.searchParams.append("vault", options.vaultName);
   if (options.fileName) {
-    url.searchParams.append("filename", options.fileName);
+    uri.searchParams.append("filename", options.fileName);
   } else {
-    url.searchParams.append("daily", "true");
+    uri.searchParams.append("daily", "true");
   }
   if (options.heading) {
-    url.searchParams.append("heading", options.heading);
+    uri.searchParams.append("heading", options.heading);
   }
-  url.searchParams.append("data", markdown);
-  url.searchParams.append("mode", options.newFile ? "new" : "append");
-  popclip.openUrl(url, { activate: false });
+  uri.searchParams.append("data", content);
+  uri.searchParams.append("mode", options.newFile ? "new" : "append");
+
+  // Convert from form-style query encoding to conventional percent encoding
+  const result = uri.href.replace(/\+/g, "%20");
+  return result;
+}
+
+function capture(markdown: string, options: Options, url?: string, title?: string) {
+  const href = buildUri(markdown, options, url, title);
+  popclip.openUrl(href, { activate: false });
 }
 
 export const action: Action<Options> = {
   captureHtml: true,
   code(input, options, context) {
-    let content = (options.newFile ? "" : "\n") + input.markdown.trim();
-    if (options.sourceLink && context?.browserUrl) {
-      content += `\n[${context?.browserTitle || "Source"}](${
-        context?.browserUrl
-      })`;
-    }
-    capture(content, options);
+    capture(input.markdown.trim(), options, context?.browserUrl, context?.browserTitle);
   },
 };
 
+// Note: Run these tests with: `Applications/PopClip.app/Contents/MacOS/PopClip run Config.ts test`
 export async function test() {
   capture("in clippings file, no heading", {
     vaultName: "Dry, Dark Place",
@@ -110,6 +149,7 @@ export async function test() {
     sourceLink: true,
     includeTimestamp: true,
   });
+  await sleep(100);
   capture("in clippings file, no heading, new file", {
     vaultName: "Dry, Dark Place",
     fileName: "Clippings",
