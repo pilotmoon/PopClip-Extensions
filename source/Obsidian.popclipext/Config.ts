@@ -85,7 +85,7 @@ function capture(markdown: string, options: Options) {
   }
   url.searchParams.append("data", markdown);
   url.searchParams.append("mode", options.newFile ? "new" : "append");
-  popclip.openUrl(url, { activate: false });
+  popclip.openUrl(url.href.replaceAll("+", "%20"), { activate: false });
 }
 
 export const action: Action<Options> = {
