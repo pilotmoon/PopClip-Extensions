@@ -43,6 +43,12 @@ exports.options = [
   },
 ];
 
+// Turndown would otherwise emit the text of <style> and <script> elements,
+// which pages often embed inline (Wikipedia puts CSS inside table headers).
+function createService(options) {
+  return new TurndownService(options).remove(["style", "script"]);
+}
+
 function htmlToMarkdown(html, options) {
   // generate DOM object from HTML
   function JSDOM(html) {
@@ -50,7 +56,7 @@ function htmlToMarkdown(html, options) {
   } // facade to work like jsdom
   const { document } = new JSDOM(html);
   // extract markdown using turndown
-  const turndownService = new TurndownService(options);
+  const turndownService = createService(options);
   return turndownService.turndown(document);
 }
 
