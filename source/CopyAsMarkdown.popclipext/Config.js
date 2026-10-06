@@ -271,6 +271,58 @@ function addTableRule(service) {
   });
 }
 
+// --- Tab-separated text ---------------------------------------------------
+
+// Parse tab-separated text as spreadsheets write it: a field that starts
+// with a double quote may contain tabs and line breaks, and "" inside it is
+// a literal quote.
+function parseTsv(text) {
+  const rows = [];
+  let row = [];
+  let i = 0;
+  while (i <= text.length) {
+    let field = "";
+    if (text[i] === '"') {
+      i++;
+      while (i < text.length && !(text[i] === '"' && text[i + 1] !== '"')) {
+        if (text[i] === '"') i++;
+        field += text[i++];
+      }
+      i++;
+      // anything between the closing quote and the next separator
+      while (i < text.length && text[i] !== "\t" && text[i] !== "\n" && text[i] !== "\r") field += text[i++];
+    } else {
+      while (i < text.length && text[i] !== "\t" && text[i] !== "\n" && text[i] !== "\r") field += text[i++];
+    }
+    row.push(field);
+    if (text[i] === "\t") {
+      i++;
+      continue;
+    }
+    rows.push(row);
+    row = [];
+    if (text[i] === "\r") i++;
+    if (text[i] === "\n") i++;
+    if (i >= text.length) break;
+  }
+  return rows;
+}
+
+// Plain text copied from a spreadsheet arrives as tab-separated rows. Only
+// treat it as a table when every row has the same number of fields, and
+// not when every row starts with a tab (tab-indented code or notes).
+function tsvMarkdown(text, options) {
+  if (!text.includes("\t")) return null;
+  const rows = parseTsv(text.replace(/\r?\n$/, ""));
+  const columns = rows[0].length;
+  if (rows.length < 2 || columns < 2) return null;
+  if (rows.some((row) => row.length !== columns)) return null;
+  if (rows.every((row) => row[0] === "")) return null;
+
+  const cells = rows.map((row) => row.map((field) => flattenCell(escapeInline(field), options)));
+  return renderTable({ header: cells[0], body: cells.slice(1), aligns: [] }, options);
+}
+
 // --------------------------------------------------------------------------
 
 // The raw pasteboard HTML keeps its CSS, so drop what the page hid.
@@ -319,7 +371,7 @@ function selectionToMarkdown(input, options) {
     }
     return htmlToMarkdown(input.html, options);
   }
-  return htmlToMarkdown(input.html, options);
+  return tsvMarkdown(input.text || "", options) ?? htmlToMarkdown(input.html, options);
 }
 
 exports.action = {

@@ -9,6 +9,7 @@ HTML tables are converted to GitHub-flavored Markdown tables:
 * Column alignment comes from the `<td>` cells' `align` attribute or `text-align` style, when they agree. `<th>` cells are ignored because browsers copy them with their default centering.
 * Line breaks and paragraphs inside a cell become `<br>` or a space (see options), and `|` is escaped as `\|`. Links inside tables are always inline, because a cell has to stay on one line.
 * Tables that contain other tables, or have only one cell, are treated as page layout and their contents are converted as ordinary blocks.
+* Tab-separated text, as spreadsheets copy it as plain text, becomes a table when every line has the same number of fields.
 * PopClip's sanitized HTML drops `colspan` and `rowspan`, so for tables the extension reads the raw HTML of the selection instead.
 
 ### Options
@@ -33,6 +34,7 @@ Hat-tip to Brett Terpstra whose [Web Markdownifier](http://brettterpstra.com/201
 
 ## Changelog
 
+- 5 October 2026: Tab-separated text is converted to a Markdown table.
 - 5 October 2026: Added conversion of HTML tables to Markdown tables, and the Pad Table Columns and Line Breaks in Table Cells options.
 - 5 October 2026: The contents of `<style>` and `<script>` elements are no longer emitted as text.
 - 8 June 2024: Updated required PopClip version to 2024.5.2.
