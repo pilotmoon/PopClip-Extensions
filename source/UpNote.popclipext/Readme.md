@@ -5,8 +5,8 @@ Create a new note, append to a specific note, or create a note in a specific not
 ## Actions
 
 - **UpNote New Note**: Create a new note with the selected text. If the text comes from a [supported browser](https://www.popclip.app/kb/browsers), the source page link will be added.
-- **UpNote Append to Note**: Append the selected text to the end of a specified note, automatically inserted after a blank line.
-- **UpNote New Note in Notebook**: Create a new note directly inside a specific notebook.
+- **UpNote Append to Note**: Append the selected text to the end of a specified note, automatically inserted after a blank line. (Visible when **Target Note URL or ID** is configured.)
+- **UpNote New Note in Notebook**: Create a new note directly inside a specific notebook. (Visible when **Target Notebook Name** is configured.)
 
 ## Configuration
 
@@ -21,6 +21,6 @@ Author: Nick Moore (enhanced by @houtacheng)
 
 ## Changelog
 
+- 12 Oct 2026: Dynamically show append to note and new note in notebook actions only when configured.
 - 17 Sep 2024: Added append to specific note and create in notebook actions.
 - 25 May 2024: Initial release.
-

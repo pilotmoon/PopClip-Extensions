@@ -6,7 +6,7 @@
 // popclipVersion: 4586
 // icon: upnote.svg
 // captureHtml: true
-// entitlements: [script]
+// entitlements: [dynamic]
 
 export const options = [
   {
@@ -41,7 +41,7 @@ export const options = [
   },
 ] as const;
 
-type Options = InferOptions<typeof options>;
+type UpNoteOptions = InferOptions<typeof options>;
 
 function extractNoteId(value: string): string {
   if (!value) return "";
@@ -52,7 +52,7 @@ function extractNoteId(value: string): string {
 
 function formatContent(
   input: Input,
-  options: Options,
+  options: UpNoteOptions,
   context: Context,
 ): string {
   let content = (input.markdown || input.text || "").trim();
@@ -72,7 +72,7 @@ function formatContent(
   return content;
 }
 
-function newNote(input: Input, options: Options, context: Context) {
+function newNote(input: Input, options: UpNoteOptions, context: Context) {
   try {
     const content = formatContent(input, options, context);
     const url = new URL("upnote://x-callback-url/note/new");
@@ -80,14 +80,16 @@ function newNote(input: Input, options: Options, context: Context) {
     url.searchParams.set("markdown", "true");
     popclip.openUrl(url.href, { app: "com.getupnote.desktop", activate: true });
     popclip.showSuccess();
-  } catch (err: any) {
-    popclip.showText("Error: " + (err?.message || String(err)));
+  } catch (err: unknown) {
+    popclip.showText(
+      `Error: ${err instanceof Error ? err.message : String(err)}`,
+    );
   }
 }
 
 function newNoteInNotebook(
   input: Input,
-  options: Options,
+  options: UpNoteOptions,
   context: Context,
 ) {
   try {
@@ -103,14 +105,16 @@ function newNoteInNotebook(
     url.searchParams.set("markdown", "true");
     popclip.openUrl(url.href, { app: "com.getupnote.desktop", activate: true });
     popclip.showSuccess();
-  } catch (err: any) {
-    popclip.showText("Error: " + (err?.message || String(err)));
+  } catch (err: unknown) {
+    popclip.showText(
+      `Error: ${err instanceof Error ? err.message : String(err)}`,
+    );
   }
 }
 
 async function appendToNote(
   input: Input,
-  options: Options,
+  options: UpNoteOptions,
   context: Context,
 ) {
   try {
@@ -128,18 +132,13 @@ async function appendToNote(
     const content = formatContent(input, options, context);
 
     // Append to note: prepend newline to clipboard content to create a clear separation
-    pasteboard.text = "\n" + content;
+    pasteboard.text = `\n${content}`;
 
     // Open target note in UpNote and activate
     await popclip.openUrl(
       `upnote://x-callback-url/openNote?noteId=${encodeURIComponent(noteId)}`,
       { app: "com.getupnote.desktop", activate: true },
     );
-
-    // Ensure UpNote application window is focused
-    try {
-      await popclip.runAppleScript('tell application "UpNote" to activate');
-    } catch (_) {}
 
     // Wait for note rendering
     await util.sleep(700);
@@ -157,34 +156,52 @@ async function appendToNote(
     await util.sleep(200);
 
     popclip.showSuccess();
-  } catch (err: any) {
-    popclip.showText("Error: " + (err?.message || String(err)));
+  } catch (err: unknown) {
+    popclip.showText(
+      `Error: ${err instanceof Error ? err.message : String(err)}`,
+    );
   }
 }
 
-export const actions: Action<Options>[] = [
-  {
-    title: "UpNote New Note",
-    icon: "upnote.svg",
-    captureHtml: true,
-    code(input, options, context) {
-      newNote(input, options, context);
+export const actions: PopulationFunction<UpNoteOptions> = (
+  input,
+  options,
+  _context,
+) => {
+  if (!input.text) return;
+
+  const actionList: Action[] = [
+    {
+      title: "UpNote New Note",
+      icon: "upnote.svg",
+      captureHtml: true,
+      code(input, _options, context) {
+        newNote(input, options, context);
+      },
     },
-  },
-  {
-    title: "UpNote Append to Note",
-    icon: "symbol:doc.badge.plus",
-    captureHtml: true,
-    async code(input, options, context) {
-      await appendToNote(input, options, context);
-    },
-  },
-  {
-    title: "UpNote New Note in Notebook",
-    icon: "symbol:folder.badge.plus",
-    captureHtml: true,
-    code(input, options, context) {
-      newNoteInNotebook(input, options, context);
-    },
-  },
-];
+  ];
+
+  if ((options.targetNote || "").trim()) {
+    actionList.push({
+      title: "UpNote Append to Note",
+      icon: "symbol:doc.badge.plus",
+      captureHtml: true,
+      async code(input, _options, context) {
+        await appendToNote(input, options, context);
+      },
+    });
+  }
+
+  if ((options.targetNotebook || "").trim()) {
+    actionList.push({
+      title: "UpNote New Note in Notebook",
+      icon: "symbol:folder.badge.plus",
+      captureHtml: true,
+      code(input, _options, context) {
+        newNoteInNotebook(input, options, context);
+      },
+    });
+  }
+
+  return actionList;
+};
