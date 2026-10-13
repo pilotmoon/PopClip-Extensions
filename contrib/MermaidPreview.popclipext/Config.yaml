@@ -1,0 +1,9 @@
+name: Mermaid Preview
+identifier: com.custom.popclip.extension.mermaid_preview
+description: Preview mermaid diagrams
+icon: square filled M
+actions:
+  - title: mermaid preview
+    interpreter: /bin/zsh
+    stoppable: true
+    shellScriptFile: mermaid_preview.zsh
