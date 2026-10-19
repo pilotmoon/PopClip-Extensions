@@ -71,7 +71,7 @@ function buildMarkdownLink(url: string, title?: string): string {
 }
 
 export function buildContent(
-  markdown: string,
+  copiedText: string,
   options: Options,
   url?: string,
   title?: string,
@@ -80,14 +80,14 @@ export function buildContent(
   let result = "";
 
   if (options.sourceLink && url) {
-    // Trailing slash should not prevent URL matching
-    if (markdown.replace(/\/$/, '') === url.replace(/\/$/, '')) {
+    // Safari appends a trailing slash to the url. Remove trailing slashes from both before comparing.
+    if (copiedText.replace(/\/$/, '') === url.replace(/\/$/, '')) {
       result += buildMarkdownLink(url, title);
     } else {
-      result += markdown + `\n` + buildMarkdownLink(url, title);
+      result += copiedText + `\n` + buildMarkdownLink(url, title);
     }
   } else {
-    result += markdown;
+    result += copiedText;
   }
 
   if (options.includeTimestamp) {
@@ -106,8 +106,8 @@ export function buildContent(
   return result;
 }
 
-export function buildUri(markdown: string, options: Options, url?: string, title?: string): string {
-  const content = buildContent(markdown, options, url, title);
+export function buildUri(copiedText: string, options: Options, url?: string, title?: string): string {
+  const uriData = buildContent(copiedText, options, url, title);
 
   const uri = new URL("obsidian://advanced-uri");
   uri.searchParams.append("vault", options.vaultName);
@@ -119,7 +119,7 @@ export function buildUri(markdown: string, options: Options, url?: string, title
   if (options.heading) {
     uri.searchParams.append("heading", options.heading);
   }
-  uri.searchParams.append("data", content);
+  uri.searchParams.append("data", uriData);
   uri.searchParams.append("mode", options.newFile ? "new" : "append");
 
   // Convert from form-style query encoding to conventional percent encoding
@@ -127,8 +127,8 @@ export function buildUri(markdown: string, options: Options, url?: string, title
   return result;
 }
 
-function capture(markdown: string, options: Options, url?: string, title?: string) {
-  const href = buildUri(markdown, options, url, title);
+function capture(copiedText: string, options: Options, url?: string, title?: string) {
+  const href = buildUri(copiedText, options, url, title);
   popclip.openUrl(href, { activate: false });
 }
 
