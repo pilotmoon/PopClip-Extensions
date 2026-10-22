@@ -64,7 +64,7 @@ Icon by Simple Icons.
 
 ## Changelog
 
-- 22 Oct 2026: When the selection is just the page's URL, capture only the source link instead of the showing the URL twice.
+- 22 Oct 2026: When the selection is just the page's URL, capture only the source link instead of showing the URL twice.
   Keep the timestamp on the same line as the captured text. Thanks, [PushOrigin](https://github.com/pilotmoon/PopClip-Extensions/pull/1321).
 - 28 Sep 2026: Fix for openURL issue in PopClip 2026.8.1.
 - 7 Feb 2025: Add "Include timestamp" option. Thanks,
