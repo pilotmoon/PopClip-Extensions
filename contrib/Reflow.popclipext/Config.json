@@ -1,0 +1,7 @@
+{
+  "identifier": "com.stympy.popclip.extension.clean-paste",
+  "name": "Reflow",
+  "icon": "symbol:wand.and.stars",
+  "description": "Clean up messy terminal paste by removing prompts, fixing line wrapping, and joining paragraphs.",
+  "javascript": "const text = popclip.input.text.replace(/^❯\\s*/gm, ''); const lines = text.split('\\n'); const paragraphs = []; let current = []; for (const line of lines) { if (line.trim() === '') { if (current.length) { paragraphs.push(current); current = []; } } else { current.push(line.trim()); } } if (current.length) paragraphs.push(current); popclip.pasteText(paragraphs.map(p => p.join(' ').replace(/\\s{2,}/g, ' ')).join('\\n\\n'));"
+}

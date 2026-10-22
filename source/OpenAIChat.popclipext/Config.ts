@@ -4,11 +4,13 @@
 // identifier: com.pilotmoon.popclip.extension.chatgpt
 // description: Send the selected text to OpenAI's Chat API.
 // app: { name: Chat API, link: 'https://platform.openai.com/docs/api-reference/chat' }
-// popclipVersion: 4586
+// popclipVersion: 6221
 // keywords: openai chatgpt
 // entitlements: [network]
 
 import axios from "axios";
+
+const defaultModel = "gpt-5.6-luna";
 
 export const options = [
   {
@@ -16,36 +18,24 @@ export const options = [
     label: "API Key",
     type: "secret",
     description:
-      "Obtain an API key from: https://platform.openai.com/account/api-keys",
+      "Obtain an API key from the [API keys page](https://platform.openai.com/account/api-keys).",
   },
   {
     identifier: "model",
     label: "Model",
     type: "multiple",
-    defaultValue: "gpt-5-nano",
-    values: [
-      "gpt-5",
-      "gpt-5-mini",
-      "gpt-5-nano",
-      "gpt-4.1",
-      "gpt-4.1-mini",
-      "gpt-4.1-nano",
-      "o3",
-      "o3-mini",
-      "o4-mini",
-    ],
-  },
-  {
-    identifier: "customModel",
-    label: "Custom Model",
-    type: "string",
+    defaultValue: defaultModel,
+    values: ["gpt-5.6-luna", "gpt-5.6-terra", "gpt-5.6-sol", "gpt-6-astra"],
+    allowOther: true,
+    migrateFrom: "customModel",
     description:
-      "Will override 'Model'. Model list: https://platform.openai.com/docs/pricing",
+      "[Models and pricing](https://developers.openai.com/api/docs/models)",
   },
   {
     identifier: "systemMessage",
     label: "System Message",
     type: "string",
+    multiline: true,
     description:
       "Optional system message to specify the behaviour of the AI assistant.",
   },
@@ -147,7 +137,7 @@ const chat: ActionFunction<Options> = async (input, options) => {
   // send the whole message history to OpenAI
   try {
     const { data }: Response = await openai.post("chat/completions", {
-      model: options.customModel || options.model || "gpt-4.1-nano",
+      model: options.model || defaultModel,
       messages,
     });
 

@@ -1,6 +1,7 @@
 {
   "identifier": "com.pilotmoon.popclip.extension.antidote",
   "name": "Antidote",
+  "popclipVersion": 5155,
   "icon": "Antidote.png",
   "app": {
     "link": "http://www.antidote.info/antidote/",

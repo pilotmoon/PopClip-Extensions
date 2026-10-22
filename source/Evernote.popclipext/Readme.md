@@ -20,11 +20,12 @@ Icon from [svgrepo](https://www.svgrepo.com/svg/24585/evernote) (CC0).
 
 ### Requirements
 
-- PopClip 2024.5 or later
+- PopClip 2026.7 or later
 - An Evernote account
 
 ## Changelog
 
+- 22 July 2026: Update for PopClip 2026.7. Shows signed-in user in settings; detects sign-in expiry and prompts to sign in again.
 - 14 May 2024: Fix for PopClip 2024.5.
 - 15 Sep 2022: Fix bug with build, extension not working.
 - 5 May 2022: Rewritten to send the to the Evernote servers directly using the Evernote API.

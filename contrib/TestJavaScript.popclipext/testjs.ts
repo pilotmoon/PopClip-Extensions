@@ -1,4 +1,5 @@
 import axios from "axios";
+
 import superagent = require("superagent");
 
 const starIcon = `svg:
@@ -20,15 +21,6 @@ testAction.after = "show-result";
 
 defineExtension({
   title: "fallback title",
-  icon: starIcon,
-  name: {
-    en: "Test the JS plz",
-    fr: "Test SVP",
-    pt: "test pt",
-    "pt-BR": "test BRAZIL",
-    "en-GB": "alright guv'na",
-    "zh-Hans": "你好",
-  },
   // options: [
   //   {
   //     identifier: 'test',

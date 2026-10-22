@@ -20,6 +20,8 @@ let services = {
   "wordwebonline.com": "https://www.wordwebonline.com/search.pl?w=***",
   "collinsdictionary.com":
     "https://www.collinsdictionary.com/dictionary/english/***",
+  "dictionary.cambridge.org":
+    "https://dictionary.cambridge.org/search/english/direct/?q=***",
 };
 // sorted array of display names
 let names = Object.keys(services).sort();
@@ -32,6 +34,9 @@ exports.options = [
     label: "Dictionary Service",
     values: urls,
     valueLabels: names,
+    allowOther: true,
+    description:
+      "Choose from the list, or enter a custom URL using '***' in place of the search term.",
   },
 ];
 

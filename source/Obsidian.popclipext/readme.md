@@ -64,6 +64,7 @@ Icon by Simple Icons.
 
 ## Changelog
 
+- 28 Sep 2026: Fix for openURL issue in PopClip 2026.8.1.
 - 7 Feb 2025: Add "Include timestamp" option. Thanks,
   [dangehub](https://github.com/pilotmoon/PopClip-Extensions/pull/1271).
 - 22 Nov 2024: Add option to create new file every time (as per

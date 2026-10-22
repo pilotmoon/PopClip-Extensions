@@ -119,17 +119,9 @@ export function buildUri(copiedText: string, options: Options, url?: string, tit
   if (options.heading) {
     uri.searchParams.append("heading", options.heading);
   }
-  uri.searchParams.append("data", uriData);
-  uri.searchParams.append("mode", options.newFile ? "new" : "append");
-
-  // Convert from form-style query encoding to conventional percent encoding
-  const result = uri.href.replace(/\+/g, "%20");
-  return result;
-}
-
-function capture(copiedText: string, options: Options, url?: string, title?: string) {
-  const href = buildUri(copiedText, options, url, title);
-  popclip.openUrl(href, { activate: false });
+  url.searchParams.append("data", markdown);
+  url.searchParams.append("mode", options.newFile ? "new" : "append");
+  popclip.openUrl(url.href.replaceAll("+", "%20"), { activate: false });
 }
 
 export const action: Action<Options> = {

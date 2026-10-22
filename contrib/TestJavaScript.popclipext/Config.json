@@ -1,6 +1,13 @@
 {
   "identifier": "com.pilotmoonunsignedtest.popclip.extension.test-js",
-  "name": "TestJS",
+  "name": {
+    "en": "Test the JS plz",
+    "fr": "Test SVP",
+    "pt": "test pt",
+    "pt-BR": "test BRAZIL",
+    "en-GB": "alright guv'na",
+    "zh-Hans": "你好"
+  },
   "flags": {
     "captureHtml": true,
     "captureRtf": true
