@@ -39,7 +39,7 @@ export const options = [
     label: "Heading",
     type: "string",
     description:
-      "Optional heading to insert captures under. Leave blank to append at the bottom of the file.",
+      "Optional heading to insert captures under. The heading must already exist in the file or note template, or nothing is captured. Leave blank to append at the bottom of the file.",
   },
   {
     identifier: "captureOptionsHeading",
