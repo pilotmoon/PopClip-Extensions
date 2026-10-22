@@ -61,7 +61,7 @@ export const options = [
   },
 ] as const;
 
-type Options = InferOptions<typeof options>;
+export type Options = InferOptions<typeof options>;
 
 // Add markdown link builder (allows testing)
 function buildMarkdownLink(url: string, title?: string): string {
@@ -142,7 +142,7 @@ export function buildUri(
   return result;
 }
 
-function capture(
+export function capture(
   copiedText: string,
   options: Options,
   url?: string,
@@ -167,51 +167,3 @@ export const action: Action<Options> = {
     );
   },
 };
-
-// Note: Run these tests with: `Applications/PopClip.app/Contents/MacOS/PopClip run Config.ts test`
-export async function test() {
-  capture("in clippings file, no heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "",
-    newFile: false,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in clippings file, no heading, new file", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "",
-    newFile: true,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in clippings file, with heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "My Heading",
-    newFile: false,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in daily note file, no heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "",
-    newFile: false,
-    heading: "",
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in daily note file, with heading", {
-    vaultName: "Dry, Dark Place",
-    newFile: false,
-    fileName: "",
-    heading: "My Heading",
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-}
