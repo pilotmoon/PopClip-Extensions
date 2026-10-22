@@ -79,7 +79,7 @@ expectedContent = `\n${content}`;
 assertEqual(testContent, expectedContent, "Test 7: No link provided should return content");
 
 // Test 8: When content contains only URL, return markdown link
-testContent = buildContent(sourceUrl, { ...baseOptions, }, sourceUrl, sourceTitle);
+testContent = buildContent(sourceUrl, { ...baseOptions, }, sourceUrl, sourceTitle, undefined, sourceUrl);
 expectedContent = `\n[Lorem Ipsum - All the facts - Lipsum generator](https://www.lipsum.com/)`;
 
 assertEqual(testContent, expectedContent, "Test 8: When content contains only the URL, return markdown link");
@@ -92,21 +92,35 @@ expectedContent = `\n- 14:30 Lorem Ipsum has been the industry's standard dummy
 assertEqual(testContent, expectedContent, "Test 9: Timestamp is shown");
 
 // Test 10: Timestamp is included when only the markdown link is returned
-testContent = buildContent(sourceUrl, { ...baseOptions, includeTimestamp: true }, sourceUrl, sourceTitle, testDate);
+testContent = buildContent(sourceUrl, { ...baseOptions, includeTimestamp: true }, sourceUrl, sourceTitle, testDate, sourceUrl);
 expectedContent = `\n- 14:30 [Lorem Ipsum - All the facts - Lipsum generator](https://www.lipsum.com/)`;
 
 assertEqual(testContent, expectedContent, "Test 10: Timestamp is included when only the markdown link is returned");
 
 // Test 11: Trailing slash should not prevent URL matching
-// Set up the site that caused the issue
+// Safari reports the page URL with a trailing slash, but the selected text on
+// this site lacks it. Both normalize to the same URL.
 const test11Url = `https://wasp.sh/`;
 const test11Title = `Wasp`;
-const test11Markdown = test11Url.replace(/\/$/, ''); // The trailing slash gets stripped from the popclip content for this site for some reason.
+const test11Markdown = `https://wasp.sh`;
 
-testContent = buildContent(test11Markdown, { ...baseOptions, }, test11Url, test11Title);
+testContent = buildContent(test11Markdown, { ...baseOptions, }, test11Url, test11Title, undefined, test11Markdown);
 expectedContent = `\n[Wasp](https://wasp.sh/)`;
 
 assertEqual(testContent, expectedContent, "Test 11: Trailing slash should not prevent URL matching");
+
+// Test 12: A selected URL that differs from the page URL keeps both
+const test12Selected = `https://example.com/other`;
+testContent = buildContent(test12Selected, { ...baseOptions, }, sourceUrl, sourceTitle, undefined, test12Selected);
+expectedContent = `\n${test12Selected}\n[Lorem Ipsum - All the facts - Lipsum generator](https://www.lipsum.com/)`;
+
+assertEqual(testContent, expectedContent, "Test 12: Different selected URL keeps text and link");
+
+// Test 13: Selected text equal to the page URL but not detected as a URL by PopClip keeps both
+testContent = buildContent(sourceUrl, { ...baseOptions, }, sourceUrl, sourceTitle);
+expectedContent = `\n${sourceUrl}\n[Lorem Ipsum - All the facts - Lipsum generator](https://www.lipsum.com/)`;
+
+assertEqual(testContent, expectedContent, "Test 13: No detected URL falls back to text and link");
 
 
 // Test run results

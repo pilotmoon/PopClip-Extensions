@@ -68,18 +68,29 @@ function buildMarkdownLink(url: string, title?: string): string {
   return `[${title || "Source"}](${url})`;
 }
 
+// Compare two URLs after normalizing them with the URL parser, so that
+// e.g. `https://wasp.sh` and `https://wasp.sh/` are treated as the same.
+function isSameUrl(a: string, b: string): boolean {
+  try {
+    return new URL(a).href === new URL(b).href;
+  } catch {
+    return a === b;
+  }
+}
+
 export function buildContent(
   copiedText: string,
   options: Options,
   url?: string,
   title?: string,
-  now: Date = new Date()
+  now: Date = new Date(),
+  selectedUrl?: string
 ): string {
   let result = "";
 
   if (options.sourceLink && url) {
-    // Safari appends a trailing slash to the url. Remove trailing slashes from both before comparing.
-    if (copiedText.replace(/\/$/, '') === url.replace(/\/$/, '')) {
+    // If the selection is just the page's own URL, output only the link.
+    if (selectedUrl && isSameUrl(selectedUrl, url)) {
       result += buildMarkdownLink(url, title);
     } else {
       result += copiedText + `\n` + buildMarkdownLink(url, title);
@@ -104,8 +115,14 @@ export function buildContent(
   return result;
 }
 
-export function buildUri(copiedText: string, options: Options, url?: string, title?: string): string {
-  const uriData = buildContent(copiedText, options, url, title);
+export function buildUri(
+  copiedText: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  selectedUrl?: string
+): string {
+  const uriData = buildContent(copiedText, options, url, title, new Date(), selectedUrl);
 
   const uri = new URL("obsidian://advanced-uri");
   uri.searchParams.append("vault", options.vaultName);
@@ -125,15 +142,29 @@ export function buildUri(copiedText: string, options: Options, url?: string, tit
   return result;
 }
 
-function capture(copiedText: string, options: Options, url?: string, title?: string) {
-  const href = buildUri(copiedText, options, url, title);
+function capture(
+  copiedText: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  selectedUrl?: string
+) {
+  const href = buildUri(copiedText, options, url, title, selectedUrl);
   popclip.openUrl(href, { activate: false });
 }
 
 export const action: Action<Options> = {
   captureHtml: true,
   code(input, options, context) {
-    capture(input.markdown.trim(), options, context?.browserUrl, context?.browserTitle);
+    // When the selection is just a URL, use PopClip's parsed form of it.
+    const selectedUrl = input.isUrl ? input.data.urls[0] : undefined;
+    capture(
+      input.markdown.trim(),
+      options,
+      context?.browserUrl,
+      context?.browserTitle,
+      selectedUrl
+    );
   },
 };
 
