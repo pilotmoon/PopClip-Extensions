@@ -4,6 +4,11 @@ import { capture } from "./Config";
 //   /Applications/PopClip.app/Contents/MacOS/PopClip run _SmokeTests.ts test
 // The leading underscore keeps this file out of the packaged extension.
 // For the unit tests of the pure helpers, see _UnitTests.ts.
+//
+// Vault setup: the vault needs a Clippings.md file, the Daily Notes plugin, and
+// the Advanced URI plugin. The heading cases need a "My Heading" heading in both
+// Clippings.md and today's daily note. If the heading is missing, Advanced URI
+// shows "Can't find heading" and writes nothing.
 export async function test() {
   capture("in clippings file, no heading", {
     vaultName: "Dry, Dark Place",
