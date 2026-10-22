@@ -84,7 +84,7 @@ export function buildContent(
   url?: string,
   title?: string,
   now: Date = new Date(),
-  selectedUrl?: string
+  selectedUrl?: string,
 ): string {
   let result = "";
 
@@ -93,7 +93,7 @@ export function buildContent(
     if (selectedUrl && isSameUrl(selectedUrl, url)) {
       result += buildMarkdownLink(url, title);
     } else {
-      result += copiedText + `\n` + buildMarkdownLink(url, title);
+      result += `${copiedText}\n${buildMarkdownLink(url, title)}`;
     }
   } else {
     result += copiedText;
@@ -120,9 +120,16 @@ export function buildUri(
   options: Options,
   url?: string,
   title?: string,
-  selectedUrl?: string
+  selectedUrl?: string,
 ): string {
-  const uriData = buildContent(copiedText, options, url, title, new Date(), selectedUrl);
+  const uriData = buildContent(
+    copiedText,
+    options,
+    url,
+    title,
+    new Date(),
+    selectedUrl,
+  );
 
   const uri = new URL("obsidian://advanced-uri");
   uri.searchParams.append("vault", options.vaultName);
@@ -147,7 +154,7 @@ export function capture(
   options: Options,
   url?: string,
   title?: string,
-  selectedUrl?: string
+  selectedUrl?: string,
 ) {
   const href = buildUri(copiedText, options, url, title, selectedUrl);
   popclip.openUrl(href, { activate: false });
@@ -163,7 +170,7 @@ export const action: Action<Options> = {
       options,
       context?.browserUrl,
       context?.browserTitle,
-      selectedUrl
+      selectedUrl,
     );
   },
 };
