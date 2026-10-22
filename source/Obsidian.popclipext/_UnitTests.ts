@@ -1,6 +1,6 @@
 import { buildContent, buildUri, } from "./Config";
 
-// Note: Run these tests with: `npx tsx UnitTests.ts`
+// Note: Run these tests with: `npx tsx _UnitTests.ts`
 
 let passed = 0;
 let failed = 0;

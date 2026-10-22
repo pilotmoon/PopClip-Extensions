@@ -63,8 +63,6 @@ export const options = [
 
 type Options = InferOptions<typeof options>;
 
-const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
-
 // Add markdown link builder (allows testing)
 function buildMarkdownLink(url: string, title?: string): string {
   return `[${title || "Source"}](${url})`;
