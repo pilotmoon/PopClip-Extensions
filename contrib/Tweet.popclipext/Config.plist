@@ -5,8 +5,6 @@
 	<key>Actions</key>
 	<array>
 		<dict>
-			<key>After</key>
-			<string>nowait</string>
 			<key>Image File</key>
 			<string>newtwitterbird.png</string>
 			<key>Shell Script File</key>

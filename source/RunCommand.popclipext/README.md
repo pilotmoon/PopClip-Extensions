@@ -3,7 +3,8 @@
 Runs the selected text as a command in the current terminal window.
 
 One can choose either default Terminal, [iTerm2](https://iterm2.com/),
-[Warp](https://www.warp.dev/) or [Ghostty](https://ghostty.org/).
+[Warp](https://www.warp.dev/), [Ghostty](https://ghostty.org/),
+[kitty](https://sw.kovidgoyal.net/kitty/), or [cmux](https://cmux.com/).
 
 ## Features
 
@@ -30,7 +31,8 @@ One can choose either default Terminal, [iTerm2](https://iterm2.com/),
 
 In the extension settings, you can configure:
 
-- Terminal Emulator: Choose between Terminal, iTerm2, or Warp
+- Terminal Emulator: Choose between Terminal, iTerm2, Warp, Ghostty, kitty, or
+  cmux.
 - Prepend Command: Text to insert before the selected text (optional)
 - Append Command: Text to insert after the selected text (optional)
 - Use New Tab: Opens command in a new tab instead of the current tab
@@ -43,10 +45,14 @@ option added by [honnix](https://github.com/honnix). Warp support added by
 Oliver using script from
 [parterburn](https://gist.github.com/parterburn/e832b9090ee35eb830529de8bd978b82).
 Prepend/append functionality added by Shayon Pal. Ghosstty support added by
-[Licardo](https://github.com/L1cardo).
+[Licardo](https://github.com/L1cardo). Kitty support added by 
+[herbhuang](https://github.com/herbhuang).
+
 
 ## Changelog
 
+- 11 Jul 2026: Add cmux support.
+- 28 Nov 2025: Add kitty support.
 - 20 Oct 2025: Add Ghostty support.
 - 29 May 2025: Added 'Use New Tab' option to run commands in a new terminal tab;
   added prepend/append functionality to customize command execution.

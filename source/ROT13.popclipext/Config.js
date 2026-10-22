@@ -4,6 +4,7 @@
 // name: ROT13
 // icon: square filled R13
 // description: Apply the ROT13 cipher to the text.
+// keywords: cipher
 
 const rot13Cipher = require("rot13-cipher");
 exports.action = function (input) {

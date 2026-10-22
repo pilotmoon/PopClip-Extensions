@@ -1,0 +1,30 @@
+name: CamelCamelCamel
+identifier: com.pilotmoon.popclip.extension.camelcamelcamel
+description: Track the price of the selected Amazon product code or URL, using CamelCamelCamel.
+keywords: amazon price tracker shopping
+icon: camel.png
+popclipVersion: 3785
+url: https://{popclip option site}/search?sq={popclip text}
+options:
+  - identifier: site
+    label: Country
+    type: multiple
+    defaultValue: camelcamelcamel.com
+    values:
+      - au.camelcamelcamel.com
+      - ca.camelcamelcamel.com
+      - fr.camelcamelcamel.com
+      - de.camelcamelcamel.com
+      - it.camelcamelcamel.com
+      - es.camelcamelcamel.com
+      - uk.camelcamelcamel.com
+      - camelcamelcamel.com
+    valueLabels:
+      - Australia
+      - Canada
+      - France
+      - Germany
+      - Italy
+      - Spain
+      - United Kingdom
+      - United States

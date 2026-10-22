@@ -20,5 +20,6 @@ Technical notes:
 
 ## Changelog
 
+- 14 Sep 2026: Pass URL string to openUrl explicitly (works around a PopClip 2026.8.1 bug with URL objects).
 - 31 Dec 2024: Update code to use new openUrl API
 - 29 May 2024: Initial release

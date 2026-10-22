@@ -11,4 +11,6 @@ Author: Nick Moore
 
 ## Changelog
 
+- 2025-04-18: Add support for the new Creator Studio edition of Pages (new
+  bundle id `com.apple.Pages`)
 - 2025-09-02: Initial release

@@ -4,11 +4,13 @@
 # For Usage see LICENSE in the same folder
 # Version 1.0
 
+import json
 import os
+import re
+import subprocess
 import sys
 import syslog
 import stat
-import pickle
 from collections import deque
 
 keyShift =		131072
@@ -105,12 +107,12 @@ def main(clipNum):
 def saveClip():
 	try:
 		#log("TRY WRITE")
-		fp = open(path, "wb")
+		fp = open(path, "w")
 		#log("DID IT now dump!")
 		try:
-			pickle.dump(dict, fp, pickle.HIGHEST_PROTOCOL)
+			json.dump({k: list(v) for k, v in dict.items()}, fp)
 		except:
-			log("pickle dump failed!")
+			log("json dump failed!")
 		else:
 			log("successfully dumped!")
 		fp.close()
@@ -118,45 +120,40 @@ def saveClip():
 		log("Failed to save Clip file")
 	return
 
+def _safe_clip_path(base_dir, board_name):
+	safe_name = re.sub(r'[^A-Za-z0-9_-]', '_', board_name.strip())
+	return os.path.join(base_dir, safe_name + ".pic")
+
 def makeOrFetchDict(clibBoard):
 	global path
-	path = os.getcwd() + "/../../Klipz"
-	log("Path1: " + path)
+	base = os.path.realpath(os.getcwd() + "/../../Klipz")
+	log("Path1: " + base)
 	
 	try:
-		mode = os.stat(path).st_mode;
+		mode = os.stat(base).st_mode;
 	except OSError:
 		try:
-			os.mkdir(path)
+			os.mkdir(base)
 		except OSError:
-			log("Failed to create directory at " + path)
+			log("Failed to create directory at " + base)
 			exit(1)
 
-	path += "/" + clibBoard.strip() + ".pic"
+	path = _safe_clip_path(base, clibBoard)
 	log("Path2: " + path)
 
 	global dict
 	dict = {}
 
 	try:
-		fp = open(path, "rb")
+		fp = open(path, "r")
 	except IOError:
 		dict = {}
 	else:
 		try:
-			dict = pickle.load(fp)
-		except EOFError:
-			log("EOFError on pickle.load")
-		except IOError as e:
-			log("IOError on pickle.load")
-			#if e.errno != errno.ENOENT:
-				#sys.exit("Can't open factors.dat for reading.")
-		except PickleError:
-			log("PickleError on load")
-		except Exception as e:
-			log("EXCEPT on pickle.load: " + e.__name__)
-		except:
-			log("EXCEPTION on pickle.load")
+			raw = json.load(fp)
+			dict = {k: deque(v) for k, v in raw.items()}
+		except (ValueError, KeyError) as e:
+			log("Error on json.load: " + str(e))
 		fp.close()
 
 	return
@@ -177,10 +174,10 @@ def getOne(clipNum, deleteIt, chooseOne):
 		for s in d:
 			s2 = snipper(s)
 			l.append(s2)
-		cmd = "osascript script0.txt " + "\"Clipboard " + str(clipNum) + "\" '" + "' '".join(enumerateFunction(l)) + "'"
-		log("Cmd: %s" % cmd)
+		args = ["osascript", "script0.txt", "Clipboard " + str(clipNum)] + list(enumerateFunction(l))
+		log("Cmd: %s" % str(args))
 
-		option = os.popen(cmd).read().strip()
+		option = subprocess.check_output(args).decode().strip()
 		if option == "false":
 			return ""
 		else:

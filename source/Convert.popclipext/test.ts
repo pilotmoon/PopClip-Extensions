@@ -7,10 +7,6 @@
 import { testData } from "./testData.json";
 import * as extension from "./convert.ts";
 
-if (typeof print === "undefined") {
-  globalThis.print = console.log;
-}
-
 // simulate using the extension; assume single action returned
 function simulate(testString: string): unknown {
   // eslint-disable-next-line @typescript-eslint/consistent-type-assertions

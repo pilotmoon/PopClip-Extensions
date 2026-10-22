@@ -8,5 +8,6 @@ app:
   name: Lexibird
   link: https://lexibird.com/
   bundleIdentifiers:
+    - com.lexibird.app2
     - com.lexibird.app
 url: lexibird://translate?text={popclip text}

@@ -1,7 +1,7 @@
 import 'core-js/es/string/match-all' // temporary until next popclip version
 import * as ca from 'case-anything'
 
-const config = [
+const config: { icon: string; method: keyof typeof ca; title: string }[] = [
   { icon: 'camel-case.svg', method: 'camelCase', title: 'camelCase' },
   { icon: 'pascal-case.svg', method: 'upperCamelCase', title: 'UpperCamelCase' },
   { icon: 'kebab-case.svg', method: 'kebabCase', title: 'kebab-case' },

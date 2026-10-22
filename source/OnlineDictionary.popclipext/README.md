@@ -1,6 +1,7 @@
 # Online Dictionary
 
-Search in one of many online dictionaries. Original extension credit: [zhiyelee](http://zhiye.li)
+Search in one of many online dictionaries. Original extension credit:
+[zhiyelee](http://zhiye.li)
 
 ## Changelog
 
@@ -17,3 +18,12 @@ Search in one of many online dictionaries. Original extension credit: [zhiyelee]
 ### 10 May 2024
 
 - Update for compatibility with new extensions directory.
+
+### 3 Dec 2025
+
+- Update URL for `dictionary.com`.
+
+### 17 Oct 2026
+
+- Add Cambridge Dictionary - `dictionary.cambridge.org`
+- Add ability to specify custom URL using "Other" option in pull-down menu.

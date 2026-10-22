@@ -30,13 +30,21 @@ account. To get an API Key:
 3. Copy and paste the API Key (it starts with `sk-`) into the _API Key_ field in
    the extension's settings.
 
-#### Model / Custom Model
+#### Model
 
-Available pre-set values are `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`,
-`gpt-4.1-mini`, `gpt-4.1-nano` (default), `o3`, `o3-mini` and `o4-mini`.
+Available pre-set values are:
 
-To use a different model that's not listed, enter the model name in the _Custom
-Model_ field.
+- `gpt-5.6-luna` (default): An economical choice for everyday tasks.
+- `gpt-5.6-terra`: Balances capability and cost.
+- `gpt-5.6-sol`: For more complex work.
+- `gpt-6-astra`: The most capable option.
+
+To use a different model, choose **Other…** and enter its model name. The model
+must support the Chat Completions API.
+
+Saved model overrides are preserved when updating, including a previous
+_Custom Model_. If you used the default model without a saved override, the
+new default is `gpt-5.6-luna`.
 
 Links to useful OpenAI docs pages:
 
@@ -59,8 +67,14 @@ specified.
 
 #### API Base Domain
 
-The base domain for the OpenAI API. This should be `api.openai.com` unless you
-are using a custom domain to access the API.
+The base URL path for the API. The default is `api.openai.com/v1` for OpenAI.
+
+You can change this to use other OpenAI-compatible APIs:
+
+- **OpenAI**: `api.openai.com/v1` (default)
+- **Google Gemini**: `generativelanguage.googleapis.com/v1beta/openai`
+- **Azure OpenAI**: `YOUR_RESOURCE.openai.azure.com/openai/deployments/YOUR_DEPLOYMENT`
+- **Other providers**: Check their documentation for the OpenAI-compatible endpoint
 
 #### Response Handling
 
@@ -105,6 +119,12 @@ Icons:
 
 ## Changelog
 
+- 2026-09-08: Combine Model and Custom Model into one setting with an "Other…"
+  choice, preserving saved overrides. Refresh the suggested models and set
+  the default to `gpt-5.6-luna`. Add a labelled API keys link and a multiline
+  System Message field. Requires PopClip 2026.8.1 (6221).
+- 2025-12-03: Allow full API base path for better compatibility with
+  OpenAI-compatible APIs (Gemini, Azure, etc.).
 - 2025-09-19: Change default model to `gpt-5-nano` (currently the cheapest).
 - 2025-08-20: Add `gpt-5`, `gpt-5-mini`, `gpt-5-nano` to drop-down.
 - 2025-06-18: Add "Custom Model" setting. Add `gpt-4.1`, `gpt-4.1-mini`,

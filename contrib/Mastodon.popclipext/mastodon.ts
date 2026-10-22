@@ -9,7 +9,7 @@ const scopes = "read:search write:follows";
 
 // helper to create an axios instance for a given server
 function getInstance(server: string, token?: string) {
-  const headers = { Accept: "application/json" };
+  const headers: Record<string, string> = { Accept: "application/json" };
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
   }
@@ -66,7 +66,9 @@ const follow: ActionFunction = async (input, options) => {
   });
 
   // look through search results to find the account we want
-  const id = accounts.find((account) => account.acct === accountToFollow)?.id;
+  const id = accounts.find(
+    (account: { acct: string; id: string }) => account.acct === accountToFollow,
+  )?.id;
   if (!id) throw new Error("Account not found");
 
   // follow the account
