@@ -39,7 +39,7 @@ export const options = [
     label: "Heading",
     type: "string",
     description:
-      "Optional heading to insert captures under. Leave blank to append at the bottom of the file.",
+      "Optional heading to insert captures under. The heading must already exist in the file or note template, or nothing is captured. Leave blank to append at the bottom of the file.",
   },
   {
     identifier: "captureOptionsHeading",
@@ -61,88 +61,116 @@ export const options = [
   },
 ] as const;
 
-type Options = InferOptions<typeof options>;
+export type Options = InferOptions<typeof options>;
 
-function capture(markdown: string, options: Options) {
+// Add markdown link builder (allows testing)
+function buildMarkdownLink(url: string, title?: string): string {
+  return `[${title || "Source"}](${url})`;
+}
+
+// Compare two URLs after normalizing them with the URL parser, so that
+// e.g. `https://wasp.sh` and `https://wasp.sh/` are treated as the same.
+function isSameUrl(a: string, b: string): boolean {
+  try {
+    return new URL(a).href === new URL(b).href;
+  } catch {
+    return a === b;
+  }
+}
+
+export function buildContent(
+  copiedText: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  now: Date = new Date(),
+  selectedUrl?: string,
+): string {
+  let result = "";
+
+  if (options.sourceLink && url) {
+    // If the selection is just the page's own URL, output only the link.
+    if (selectedUrl && isSameUrl(selectedUrl, url)) {
+      result += buildMarkdownLink(url, title);
+    } else {
+      result += `${copiedText}\n${buildMarkdownLink(url, title)}`;
+    }
+  } else {
+    result += copiedText;
+  }
+
   if (options.includeTimestamp) {
-    const timestamp = new Date().toLocaleTimeString([], {
+    const timestamp = now.toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
       hour12: false,
     });
-    markdown = `- ${timestamp} ${markdown}`;
+    result = `- ${timestamp} ${result}`;
   }
 
-  const url = new URL("obsidian://advanced-uri");
-  url.searchParams.append("vault", options.vaultName);
+  if (!options.newFile) {
+    result = `\n${result}`;
+  }
+
+  return result;
+}
+
+export function buildUri(
+  copiedText: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  selectedUrl?: string,
+): string {
+  const uriData = buildContent(
+    copiedText,
+    options,
+    url,
+    title,
+    new Date(),
+    selectedUrl,
+  );
+
+  const uri = new URL("obsidian://advanced-uri");
+  uri.searchParams.append("vault", options.vaultName);
   if (options.fileName) {
-    url.searchParams.append("filename", options.fileName);
+    uri.searchParams.append("filename", options.fileName);
   } else {
-    url.searchParams.append("daily", "true");
+    uri.searchParams.append("daily", "true");
   }
   if (options.heading) {
-    url.searchParams.append("heading", options.heading);
+    uri.searchParams.append("heading", options.heading);
   }
-  url.searchParams.append("data", markdown);
-  url.searchParams.append("mode", options.newFile ? "new" : "append");
-  popclip.openUrl(url.href.replaceAll("+", "%20"), { activate: false });
+  uri.searchParams.append("data", uriData);
+  uri.searchParams.append("mode", options.newFile ? "new" : "append");
+
+  // Convert from form-style query encoding to conventional percent encoding
+  const result = uri.href.replace(/\+/g, "%20");
+  return result;
+}
+
+export function capture(
+  copiedText: string,
+  options: Options,
+  url?: string,
+  title?: string,
+  selectedUrl?: string,
+) {
+  const href = buildUri(copiedText, options, url, title, selectedUrl);
+  popclip.openUrl(href, { activate: false });
 }
 
 export const action: Action<Options> = {
   captureHtml: true,
   code(input, options, context) {
-    let content = (options.newFile ? "" : "\n") + input.markdown.trim();
-    if (options.sourceLink && context?.browserUrl) {
-      content += `\n[${context?.browserTitle || "Source"}](${
-        context?.browserUrl
-      })`;
-    }
-    capture(content, options);
+    // When the selection is just a URL, use PopClip's parsed form of it.
+    const selectedUrl = input.isUrl ? input.data.urls[0] : undefined;
+    capture(
+      input.markdown.trim(),
+      options,
+      context?.browserUrl,
+      context?.browserTitle,
+      selectedUrl,
+    );
   },
 };
-
-export async function test() {
-  capture("in clippings file, no heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "",
-    newFile: false,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  capture("in clippings file, no heading, new file", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "",
-    newFile: true,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in clippings file, with heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "Clippings",
-    heading: "My Heading",
-    newFile: false,
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in daily note file, no heading", {
-    vaultName: "Dry, Dark Place",
-    fileName: "",
-    newFile: false,
-    heading: "",
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-  await sleep(100);
-  capture("in daily note file, with heading", {
-    vaultName: "Dry, Dark Place",
-    newFile: false,
-    fileName: "",
-    heading: "My Heading",
-    sourceLink: true,
-    includeTimestamp: true,
-  });
-}
