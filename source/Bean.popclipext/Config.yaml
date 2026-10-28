@@ -1,0 +1,12 @@
+name: Bean
+identifier: com.pilotmoon.popclip.extension.bean
+description: Create a new Bean document containing the selected text.
+keywords: word processor
+popclipVersion: 4151
+icon: bean.png
+app:
+  name: Bean
+  link: https://www.bean-osx.com/Bean.html
+  bundleIdentifiers: [com.bean-osx.Bean]
+  checkInstalled: true
+service name: Bean/New Bean Document Containing Selection
