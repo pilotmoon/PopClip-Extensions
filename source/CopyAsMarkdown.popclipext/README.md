@@ -2,6 +2,8 @@
 
 Copy web page content as Markdown source code. Also works on plain text and RTF content.
 
+The conversion is built into PopClip, so it improves with PopClip updates. In newer versions of PopClip, HTML tables become Markdown tables.
+
 ### Options
 
 * **Heading Style**: Choose between ATX-style headings (`# Heading`) and Setext-style headings (`Heading\n=======`).
@@ -22,6 +24,7 @@ Hat-tip to Brett Terpstra whose [Web Markdownifier](http://brettterpstra.com/201
 
 ## Changelog
 
+- 5 November 2026: Use PopClip's built-in HTML to Markdown conversion, which converts tables in newer PopClip versions.
 - 8 June 2024: Updated required PopClip version to 2024.5.2.
 - 13 May 2024: Added output format options as per [forum request](https://forum.popclip.app/t/updated-extension-copy-as-markdown/603/4).
 - 3 Feb 2022: Rewritten in JavaScript & Turndown.

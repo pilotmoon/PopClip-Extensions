@@ -5,9 +5,6 @@
 // icon: '>md.png'
 // popclip version: 4615
 
-const linkedom = require("linkedom");
-const TurndownService = require("turndown");
-
 exports.options = [
   {
     identifier: "headingStyle",
@@ -43,20 +40,9 @@ exports.options = [
   },
 ];
 
-function htmlToMarkdown(html, options) {
-  // generate DOM object from HTML
-  function JSDOM(html) {
-    return linkedom.parseHTML(html);
-  } // facade to work like jsdom
-  const { document } = new JSDOM(html);
-  // extract markdown using turndown
-  const turndownService = new TurndownService(options);
-  return turndownService.turndown(document);
-}
-
 exports.action = {
   captureHtml: true,
   code(input, options) {
-    popclip.copyText(htmlToMarkdown(input.html, options));
+    popclip.copyText(util.htmlToMarkdown(input.html, options));
   },
 };
