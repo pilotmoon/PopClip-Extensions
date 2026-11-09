@@ -1,7 +1,7 @@
 // #popclip
 // name: Instant Translate
 // identifier: com.popclip.extension.instant-translate
-// description: Translate the selected word or short phrase instantly within PopClip, using your own Microsoft Translator key.
+// description: Translate the selected word or short phrase instantly within PopClip, powered by DeepL.
 // icon: itrans.png
 // popclipVersion: 4586
 // regex: (?s)^.{1,200}$
@@ -9,25 +9,16 @@
 // after: preview-result
 
 import axios from "axios";
-import { translation } from "./langs.json";
+import { target } from "./langs.json";
 
-const setupLink = "https://www.popclip.app/extensions/x/08hhdb";
-
-// build the language list from the json file
-// To fetch latest: `curl https://api.cognitive.microsofttranslator.com/languages\?api-version\=3.0\&scope\=translation > langs.json`
-function languageList(): { names: string[]; codes: string[] } {
-  const entries = Object.entries(translation).sort(([, a], [, b]) =>
-    a.name.localeCompare(b.name),
-  );
-  return {
-    codes: entries.map(([code]) => code),
-    names: entries.map(([, v]) =>
-      v.name === v.nativeName ? v.name : `${v.name} / ${v.nativeName}`,
-    ),
-  };
-}
-
-const { names, codes } = languageList();
+// language list, from DeepL's API wrapped as {"target": [...]}. To refresh:
+// curl -H "Authorization: DeepL-Auth-Key $KEY" "https://api-free.deepl.com/v2/languages?type=target"
+// Codes hidden from the menu because another entry has the same name:
+// DE-DE/ES-ES/FR-FR duplicate DE/ES/FR, and ZH is DeepL's legacy alias for ZH-HANS.
+const hidden = new Set(["DE-DE", "ES-ES", "FR-FR", "ZH"]);
+const languages = target
+  .filter((l) => !hidden.has(l.language))
+  .sort((a, b) => a.name.localeCompare(b.name));
 
 export const options = [
   {
@@ -38,67 +29,79 @@ export const options = [
       "zh-Hant": "轉換為",
     },
     type: "multiple",
-    valueLabels: names,
-    values: codes,
-    defaultValue: "en",
+    valueLabels: languages.map((l) => l.name),
+    values: languages.map((l) => l.language),
+    defaultValue: "EN-US",
   },
   {
-    identifier: "apikey",
-    label: "Translator Key",
+    identifier: "deeplKey",
+    label: "DeepL API Key",
     type: "secret",
-    description: `Your Microsoft Translator key (Key 1). Follow the [setup instructions](${setupLink}) to get a free key.`,
-  },
-  {
-    identifier: "region",
-    label: "Region",
-    type: "string",
     description:
-      "Leave blank if you chose the Global region (recommended). Otherwise enter the resource's region, e.g. westeurope.",
+      "Instant Translate now requires a DeepL API key, which is available free. From the API Keys tab of your [DeepL account](https://www.deepl.com/your-account/keys). Sign up at [DeepL API](https://www.deepl.com/pro-api).",
   },
 ] as const;
 
 type Options = InferOptions<typeof options>;
 
+// Older versions used Microsoft Translator language codes ("en", "zh-Hans"),
+// which may still be saved in the settings. Convert them to DeepL codes.
+function deeplTarget(code: string): string {
+  const legacy: Record<string, string> = {
+    en: "EN-US",
+    pt: "PT-BR",
+    fil: "TL",
+    "mn-Cyrl": "MN",
+    "sr-Cyrl": "SR",
+    "sr-Latn": "SR",
+  };
+  return legacy[code] ?? code.toUpperCase();
+}
+
+interface ErrorResponse {
+  status: number;
+  data?: { message?: string };
+}
+
 // turn API errors into messages a user can act on
 function errorMessage(error: unknown): string {
-  // biome-ignore lint/suspicious/noExplicitAny: axios error shape
-  const response = (error as any)?.response;
-  const status: number | undefined = response?.status;
-  const detail: string | undefined = response?.data?.error?.message;
-  switch (status) {
-    case 401:
-      return "Microsoft Translator rejected the key. Check that you copied Key 1 correctly, and set the Region option if your resource isn't Global.";
+  const response = (error as { response?: ErrorResponse } | null)?.response;
+  if (!response) {
+    return `Could not reach DeepL: ${String(error)}`;
+  }
+  switch (response.status) {
+    case 400:
+      return "DeepL couldn't translate into the selected language. Please choose a Destination Language in the extension's settings.";
     case 403:
-      return "Your Microsoft Translator free quota has been used up for this month, or the key is not allowed to translate.";
+      return "DeepL rejected the API key. Check that you copied it correctly from your DeepL account.";
     case 429:
-      return "Microsoft Translator is rate-limiting requests. Please wait a moment and try again.";
-    case undefined:
-      return `Could not reach Microsoft Translator: ${String(error)}`;
-    default:
-      return `Microsoft Translator error ${status}${detail ? `: ${detail}` : ""}`;
+      return "DeepL is rate-limiting requests. Please wait a moment and try again.";
+    case 456:
+      return "Your DeepL quota has been used up for this month.";
+    default: {
+      const detail = response.data?.message;
+      return `DeepL error ${response.status}${detail ? `: ${detail}` : ""}`;
+    }
   }
 }
 
 export const action: ActionFunction<Options> = async (input, options) => {
-  const key = options.apikey.trim();
+  const key = options.deeplKey.trim();
   if (!key) {
     popclip.showText(
-      "Instant Translate needs your Microsoft Translator key. Add it in the extension's settings.",
+      "Instant Translate needs your DeepL API key. Add it in the extension's settings.",
     );
     return;
   }
-  const headers: Record<string, string> = { "Ocp-Apim-Subscription-Key": key };
-  const region = options.region.trim();
-  if (region) {
-    headers["Ocp-Apim-Subscription-Region"] = region;
-  }
+  // free API keys end with ":fx" and use a different host
+  const host = key.endsWith(":fx") ? "api-free.deepl.com" : "api.deepl.com";
   try {
     const response = await axios.post(
-      "https://api.cognitive.microsofttranslator.com/translate",
-      [{ Text: input.text }],
-      { headers, params: { "api-version": "3.0", to: options.destlang } },
+      `https://${host}/v2/translate`,
+      { text: [input.text], target_lang: deeplTarget(options.destlang) },
+      { headers: { Authorization: `DeepL-Auth-Key ${key}` } },
     );
-    return response.data[0].translations[0].text as string;
+    return response.data.translations[0].text as string;
   } catch (e) {
     popclip.showText(errorMessage(e));
     return;

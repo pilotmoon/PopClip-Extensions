@@ -1,45 +1,20 @@
 # Instant Translate
 
-Translate the selected word or short phrase instantly within PopClip, using Microsoft Translator.
+Translate the selected word or short phrase instantly within PopClip, using DeepL.
 
-## Setting up your Microsoft Translator key
+The extension needs your own DeepL API key. The free plan allows 500,000 characters per month.
 
-Instant Translate needs your own Microsoft Translator key. The free tier allows 2 million characters per month. When the quota runs out, translation simply stops until the next month — you will not be charged.
+## Setting up your DeepL API key
 
-You need a Microsoft Azure account. If you don't have one, [sign up here](https://azure.microsoft.com/free/). Microsoft asks for a credit card to verify your identity, even for free services.
+1. Go to the [DeepL API plans](https://www.deepl.com/pro-api) page and sign up for **DeepL API Free**. DeepL asks for a credit card to verify your identity, but the free plan is not charged.
+2. Once signed in, open the [API Keys](https://www.deepl.com/your-account/keys) tab of your account and copy your key. Free keys end in `:fx`.
+3. In PopClip's settings, click the Instant Translate extension's settings button, and paste the key into **DeepL API Key**.
 
-First, create a resource group (a folder that holds Azure resources):
-
-1. Open the [Create a resource group](https://portal.azure.com/#create/Microsoft.ResourceGroup) page.
-2. Fill in the form:
-   - **Subscription**: leave as is.
-   - **Resource group**: enter any name, e.g. `popclip`.
-   - **Region**: choose any region near you, e.g. East US or West Europe.
-3. Click **Review + create**, then **Create**.
-
-Then create the Translator resource:
-
-4. Open the [Create Translator](https://portal.azure.com/#create/Microsoft.CognitiveServicesTextTranslation) page.
-5. Fill in the form:
-   - **Subscription**: leave as is.
-   - **Resource group**: choose the group you just created, e.g. `popclip`. Don't use **Create new** here, because it doesn't work with the Global region.
-   - **Region**: choose **Global**.
-   - **Name**: enter any name, e.g. `popclip-translate-yourname`. It must be unique across Azure.
-   - **Pricing tier**: choose **Free F0**.
-6. Click **Review + create**, then **Create**. Wait for the deployment to finish (about a minute).
-7. Click **Go to resource**.
-8. In the left sidebar, open **Resource Management → Keys and Endpoint**.
-9. Copy **KEY 1**.
-10. In PopClip's settings, click the Instant Translate extension's settings button, and paste the key into **Translator Key**. Leave **Region** blank.
-
-Notes:
-
-- Each Azure subscription can have only one free (F0) Translator resource. If Free F0 is not offered, you may already have one; use its key instead.
-- If you chose a region other than Global, enter that region (e.g. `westeurope`) in the extension's **Region** setting.
+DeepL API Pro keys work too.
 
 ## Changelog
 
-- 9 Nov 2026: The extension now uses your own Microsoft Translator key, entered in its settings. The previous shared key has been withdrawn. Converted to the modern Config.ts format, with clearer error messages.
+- 9 Nov 2026: Switched from Microsoft Translator to DeepL, using your own DeepL API key entered in the extension's settings. The previous shared Microsoft key has been withdrawn. Converted to the modern Config.ts format, with clearer error messages.
 - 20 Apr 2022: Increased the language list to the latest supported languages.
 - 20 Apr 2022: Rewrote the extension in JavaScript and moved to version 3 of the Translator API (it was using version 2). Response times are faster because the key is now used directly, instead of first being exchanged for an access token.
 - 20 Apr 2022: Updated for Python 3, thanks to [harrtho](https://github.com/harrtho).
