@@ -1,0 +1,12 @@
+name: BusyCal
+identifier: com.pilotmoon.popclip.extension.busycal
+description: Use the text to create a calendar entry in BusyCal.
+icon: busycal.png
+app:
+  checkInstalled: true
+  name: BusyCal
+  link: https://www.busymac.com/busycal/
+  bundleIdentifiers:
+    - com.busymac.busycal3
+    - com.busymac.busycal-setapp
+url: busycalevent://new/{popclip text}
