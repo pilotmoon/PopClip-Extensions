@@ -2,6 +2,7 @@ name: BusyCal
 identifier: com.pilotmoon.popclip.extension.busycal
 description: Use the text to create a calendar entry in BusyCal.
 icon: busycal.png
+popclip version: 5155
 app:
   checkInstalled: true
   name: BusyCal
