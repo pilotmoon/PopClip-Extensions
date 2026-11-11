@@ -1,10 +1,10 @@
 // #popclip
 // name: Instant Translate
 // identifier: com.popclip.extension.instant-translate
-// description: Translate the selected word or short phrase instantly within PopClip.
+// description: Translate the selected text instantly within PopClip.
 // icon: itrans.png
 // popclipVersion: 4586
-// regex: (?s)^.{1,200}$
+// regex: (?s)^.{1,5000}$
 // entitlements: [network]
 // after: preview-result
 
