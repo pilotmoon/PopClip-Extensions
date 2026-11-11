@@ -1,10 +1,10 @@
 # Instant Translate
 
-Translate the selected word or short phrase instantly within PopClip, using DeepL.
+Translate the selected word or short phrase instantly within PopClip.
 
-The extension needs your own DeepL API key. The free plan allows 500,000 characters per month.
+Instant Translate works without any setup, using a free service with a daily limit. To translate without that limit, add your own DeepL API key. The free DeepL plan allows 500,000 characters per month.
 
-## Setting up your DeepL API key
+## Setting up a DeepL API key (optional)
 
 1. Go to the [DeepL API plans](https://www.deepl.com/pro-api) page and sign up for **DeepL API Free**. DeepL asks for a credit card to verify your identity, but the free plan is not charged.
 2. Once signed in, open the [API Keys](https://www.deepl.com/your-account/keys) tab of your account and copy your key. Free keys end in `:fx`.
@@ -12,8 +12,13 @@ The extension needs your own DeepL API key. The free plan allows 500,000 charact
 
 DeepL API Pro keys work too.
 
+## Privacy
+
+Without a DeepL key, the selected text is sent to Pilotmoon's server, which passes it to Microsoft Translator. Pilotmoon doesn't log or store the text. With a DeepL key, the text goes directly to DeepL.
+
 ## Changelog
 
+- 11 Nov 2026: Works again without an API key, using a free Pilotmoon service (powered by Microsoft Translator) with a daily limit. A DeepL API key is now optional and removes the limit. The language list now covers the 89 languages both services support.
 - 9 Nov 2026: Switched from Microsoft Translator to DeepL, using your own DeepL API key entered in the extension's settings. The previous shared Microsoft key has been withdrawn. Converted to the modern Config.ts format, with clearer error messages.
 - 20 Apr 2022: Increased the language list to the latest supported languages.
 - 20 Apr 2022: Rewrote the extension in JavaScript and moved to version 3 of the Translator API (it was using version 2). Response times are faster because the key is now used directly, instead of first being exchanged for an access token.
