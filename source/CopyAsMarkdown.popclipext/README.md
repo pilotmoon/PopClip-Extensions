@@ -1,6 +1,6 @@
 # Copy as Markdown
 
-Copy web page or rich text content as Markdown source code. Plain text is converted too, with any characters that have special meaning in Markdown escaped.
+Copy web page or rich text content as Markdown source code.
 
 ### Options
 
