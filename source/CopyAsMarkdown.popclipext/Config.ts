@@ -3,12 +3,9 @@
 // identifier: com.pilotmoon.popclip.extension.copy-as-markdown
 // description: Copy web content as Markdown.
 // icon: '>md.png'
-// popclip version: 4615
+// popclip version: 6285
 
-const linkedom = require("linkedom");
-const TurndownService = require("turndown");
-
-exports.options = [
+const markdownOptions = [
   {
     identifier: "headingStyle",
     label: "Heading Style",
@@ -41,22 +38,15 @@ exports.options = [
     values: ["inlined", "referenced"],
     valueLabels: ["Inline — [text](url)", "Reference — [text][id]"],
   },
-];
+] as const;
+type MarkdownOptions = InferOptions<typeof markdownOptions>;
 
-function htmlToMarkdown(html, options) {
-  // generate DOM object from HTML
-  function JSDOM(html) {
-    return linkedom.parseHTML(html);
-  } // facade to work like jsdom
-  const { document } = new JSDOM(html);
-  // extract markdown using turndown
-  const turndownService = new TurndownService(options);
-  return turndownService.turndown(document);
-}
-
-exports.action = {
-  captureHtml: true,
-  code(input, options) {
-    popclip.copyText(htmlToMarkdown(input.html, options));
+defineExtension<MarkdownOptions>({
+  options: markdownOptions,
+  action: {
+    captureHtml: true,
+    code(input, options) {
+      popclip.copyText(util.htmlToMarkdown(input.html, options));
+    },
   },
-};
+});
