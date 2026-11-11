@@ -17,4 +17,4 @@ Uses MarkdownMate's `markdownmate://create` URL.
 
 ## Changelog
 
-- 1 Nov 2026: Initial release.
+- 11 Nov 2026: Initial release.

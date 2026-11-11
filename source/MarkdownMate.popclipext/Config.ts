@@ -4,8 +4,8 @@
 // description: Create a new MarkdownMate note from the selected text, with formatting converted to Markdown.
 // keywords: markdown notes
 // popclip version: 6260
-// captureMarkdown: true
-// icon: symbol:square.and.pencil
+// captureHtml: true
+// icon: markdownmate.svg
 // app:
 //   name: MarkdownMate
 //   link: https://markdownmate.homielab.com/
