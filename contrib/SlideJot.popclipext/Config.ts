@@ -1,10 +1,10 @@
 // #popclip
 // name: SlideJot
-// identifier: com.pilotmoon.popclip.extension.slidejot
+// identifier: com.dreamyfrog.popclip.slidejot
 // description: Send selected text to SlideJot as a new Jot. Option (⌥) to append, Shift (⇧) to prepend.
 // icon: icon.png
 // popclipVersion: 4225
-// app: { name: SlideJot, link: https://slidejot.com, checkInstalled: true, bundleIdentifiers: [com.dreamyfrog.SlideJot] }
+// app: { name: SlideJot, link: https://slidejot.com, checkInstalled: true, bundleIdentifiers: [com.slidejot.mac,com.dreamyfrog.SlideJot] }
 
 export const action: ActionFunction = (input) => {
   const text = encodeURIComponent(input.text);
