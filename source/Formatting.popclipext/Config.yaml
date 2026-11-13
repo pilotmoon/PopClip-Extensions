@@ -9,14 +9,17 @@ actions:
   - title: Bold
     icon: symbol:bold
     keyCombo: command b
+    keyComboTarget: app
     requirements: [cut, formatting, option-bold=1]
   - title: Italic
     icon: symbol:italic
     keyCombo: command i
+    keyComboTarget: app
     requirements: [cut, formatting, option-italic=1]
   - title: Underline
     icon: symbol:underline
     keyCombo: command u
+    keyComboTarget: app
     requirements: [cut, formatting, option-underline=1]
 options:
   - identifier: bold
