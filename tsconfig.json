@@ -4,6 +4,7 @@
     "lib": ["ES2023"],
     "module": "preserve",
     "moduleResolution": "bundler",
+    "moduleDetection": "force",
     "skipLibCheck": true,
     "strict": true,
     "allowImportingTsExtensions": true,
