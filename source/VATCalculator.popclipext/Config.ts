@@ -39,6 +39,11 @@ function parseAmount(text: string): number {
     s = s.replace(/\./g, "").replace(",", ".");
   } else {
     s = s.replace(/,/g, "");
+    // Dots that only separate groups of three digits are thousands separators,
+    // as in "1.234" or "1.234.567".
+    if (/^-?[1-9]\d{0,2}(\.\d{3})+$/.test(s)) {
+      s = s.replace(/\./g, "");
+    }
   }
   return Number(s);
 }
