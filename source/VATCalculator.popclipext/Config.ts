@@ -1,5 +1,6 @@
 // #popclip
 // name: VAT Calculator
+// identifier: com.pilotmoon.popclip.extension.vat-calculator
 // description: Add or remove VAT (or GST, sales tax, etc.) on an amount.
 // icon: iconify:tabler:receipt-tax
 // keywords: vat gst sales tax tva iva mwst
