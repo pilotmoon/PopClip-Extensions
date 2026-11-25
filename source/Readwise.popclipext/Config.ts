@@ -2,13 +2,14 @@
 // name: Readwise
 // identifier: com.pilotmoon.popclip.extension.readwise
 // description: Save a highlight or URL to Readwise.
-// popclip version: 4615
+// popclip version: 4688
 // icon: readwise.svg
 // apps:
 // - { name: Readwise, link: 'https://readwise.io/' }
 // entitlements: [network]
 
 import axios from "axios";
+
 const readwise = axios.create({ baseURL: "https://readwise.io/api/" });
 
 const readerIcon = "square filled scale=85 file:readwise.svg";
@@ -44,7 +45,7 @@ const saveHighlight: ActionFunction<AuthOptions> = async (
   options,
   context,
 ) => {
-  const payload: Record<string, string> = { text: input.text };
+  const payload: Record<string, string> = { text: input.markdown.trim() };
   if (context.browserUrl.length > 0) {
     payload.source_url = context.browserUrl;
   }
@@ -83,6 +84,7 @@ export const actions: Action<AuthOptions>[] = [
   {
     title: "Save Highlight",
     requirements: ["text", "!url"],
+    captureHtml: true,
     code: saveHighlight,
   },
   {
