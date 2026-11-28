@@ -1,0 +1,16 @@
+{
+  "identifier": "com.typostudio.popclip.extension.naverdictionary",
+  "popclipVersion": 4151,
+  "name": "Naver Dictionary",
+  "description": "Look up selected text in Naver Dictionary.",
+  "icon": "character.book.closed.fill.png",
+  "version": 1,
+  "actions": [
+    {
+      "type": "url",
+      "title": "Naver Dictionary",
+      "url": "https://dict.naver.com/search.dict?dicQuery={popclip text}&query={popclip text}&target=dic",
+      "requirements": ["text"]
+    }
+  ]
+}
